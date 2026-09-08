@@ -61,8 +61,14 @@ struct OrderResult {
 
 class MT5Client {
 public:
-    MT5Client(const std::string& host, int port = 443);
+    MT5Client(const std::string& host = "mt5.mrpc.pro", int port = 443, const std::string& apiKey = "");
     ~MT5Client();
+
+    std::string getId(int64_t login, const std::string& password);
+    void setApiKey(const std::string& apiKey) { m_apiKey = apiKey; }
+    void setId(const std::string& id) { m_id = id; }
+    const std::string& getId() const { return m_id; }
+    const std::string& getApiKey() const { return m_apiKey; }
 
     bool connect(int64_t login, const std::string& password);
     void disconnect();
@@ -77,6 +83,8 @@ public:
 private:
     std::string m_host;
     int m_port;
+    std::string m_apiKey;
+    std::string m_id;
     bool m_connected{false};
 };
 

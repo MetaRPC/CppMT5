@@ -1,10 +1,15 @@
-﻿#include "metarpc/mt5.hpp"
+#include "metarpc/mt5.hpp"
 #include <cassert>
 #include <iostream>
 
 void testClientLifecycle() {
-    metarpc::MT5Client client("mt5.mrpc.pro", 443);
+    metarpc::MT5Client client("mt5.mrpc.pro", 443, "mrpc_test_key");
     assert(!client.isConnected());
+    assert(client.getApiKey() == "mrpc_test_key");
+
+    std::string id = client.getId(1001, "demo_pass");
+    assert(!id.empty());
+    assert(client.getId() == id);
 
     bool connected = client.connect(1001, "demo_pass");
     assert(connected);

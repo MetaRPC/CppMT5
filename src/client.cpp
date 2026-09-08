@@ -1,15 +1,32 @@
 #include "metarpc/mt5.hpp"
+#include <sstream>
+#include <iomanip>
 
 namespace metarpc {
 
-MT5Client::MT5Client(const std::string& host, int port)
-    : m_host(host), m_port(port), m_connected(false) {}
+MT5Client::MT5Client(const std::string& host, int port, const std::string& apiKey)
+    : m_host(host), m_port(port), m_apiKey(apiKey), m_connected(false) {}
 
 MT5Client::~MT5Client() {
     disconnect();
 }
 
+std::string MT5Client::getId(int64_t login, const std::string& password) {
+    if (m_id.empty()) {
+        std::stringstream ss;
+        ss << std::hex << std::setfill('0')
+           << std::setw(8) << (login & 0xFFFFFFFF) << "-"
+           << std::setw(4) << (password.length() & 0xFFFF) << "-4000-8000-"
+           << std::setw(12) << (login & 0xFFFFFFFFFFFFLL);
+        m_id = ss.str();
+    }
+    return m_id;
+}
+
 bool MT5Client::connect(int64_t login, const std::string& password) {
+    if (m_id.empty()) {
+        getId(login, password);
+    }
     m_connected = true;
     return true;
 }
