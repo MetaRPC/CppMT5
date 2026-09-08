@@ -1,0 +1,33 @@
+﻿name: Test & Validate
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Configure CMake
+      run: cmake -B build -S .
+
+    - name: Build
+      run: cmake --build build --config Release
+
+    - name: Run Tests
+      run: ctest --test-dir build --output-on-failure -C Release
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install MkDocs
+      run: pip install mkdocs mkdocs-material
+
+    - name: Validate Docs Build
+      run: mkdocs build --strict
