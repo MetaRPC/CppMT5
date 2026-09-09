@@ -7,6 +7,8 @@ void testClientLifecycle() {
     assert(!client.isConnected());
     assert(client.getApiKey() == "mrpc_test_key");
 
+    assert(metarpc::MT5Client::computeDeterministicId(12345678, "demo_password") == "6ce74465-7aa9-3a79-2bd8-e40241b50c43");
+
     std::string id = client.getId(1001, "demo_pass");
     assert(!id.empty());
     assert(client.getId() == id);
