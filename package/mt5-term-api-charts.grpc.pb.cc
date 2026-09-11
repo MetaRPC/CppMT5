@@ -24,6 +24,10 @@ namespace mt5_term_api {
 static const char* Charts_method_names[] = {
   "/mt5_term_api.Charts/OpenTerminalChartWithEa",
   "/mt5_term_api.Charts/GetEaParams",
+  "/mt5_term_api.Charts/AttachEa",
+  "/mt5_term_api.Charts/GetRunningEas",
+  "/mt5_term_api.Charts/GetEaLogs",
+  "/mt5_term_api.Charts/StopEa",
 };
 
 std::unique_ptr< Charts::Stub> Charts::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -35,6 +39,10 @@ std::unique_ptr< Charts::Stub> Charts::NewStub(const std::shared_ptr< ::grpc::Ch
 Charts::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
   : channel_(channel), rpcmethod_OpenTerminalChartWithEa_(Charts_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetEaParams_(Charts_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AttachEa_(Charts_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetRunningEas_(Charts_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetEaLogs_(Charts_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_StopEa_(Charts_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status Charts::Stub::OpenTerminalChartWithEa(::grpc::ClientContext* context, const ::mt5_term_api::OpenTerminalChartWithEaRequest& request, ::mt5_term_api::OpenTerminalChartWithEaReply* response) {
@@ -83,6 +91,98 @@ void Charts::Stub::async::GetEaParams(::grpc::ClientContext* context, const ::mt
   return result;
 }
 
+::grpc::Status Charts::Stub::AttachEa(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest& request, ::mt5_term_api::AttachEaReply* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::mt5_term_api::AttachEaRequest, ::mt5_term_api::AttachEaReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_AttachEa_, context, request, response);
+}
+
+void Charts::Stub::async::AttachEa(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest* request, ::mt5_term_api::AttachEaReply* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::mt5_term_api::AttachEaRequest, ::mt5_term_api::AttachEaReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AttachEa_, context, request, response, std::move(f));
+}
+
+void Charts::Stub::async::AttachEa(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest* request, ::mt5_term_api::AttachEaReply* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AttachEa_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mt5_term_api::AttachEaReply>* Charts::Stub::PrepareAsyncAttachEaRaw(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::mt5_term_api::AttachEaReply, ::mt5_term_api::AttachEaRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_AttachEa_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::mt5_term_api::AttachEaReply>* Charts::Stub::AsyncAttachEaRaw(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncAttachEaRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status Charts::Stub::GetRunningEas(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest& request, ::mt5_term_api::GetRunningEasReply* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::mt5_term_api::GetRunningEasRequest, ::mt5_term_api::GetRunningEasReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetRunningEas_, context, request, response);
+}
+
+void Charts::Stub::async::GetRunningEas(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest* request, ::mt5_term_api::GetRunningEasReply* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::mt5_term_api::GetRunningEasRequest, ::mt5_term_api::GetRunningEasReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetRunningEas_, context, request, response, std::move(f));
+}
+
+void Charts::Stub::async::GetRunningEas(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest* request, ::mt5_term_api::GetRunningEasReply* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetRunningEas_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetRunningEasReply>* Charts::Stub::PrepareAsyncGetRunningEasRaw(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::mt5_term_api::GetRunningEasReply, ::mt5_term_api::GetRunningEasRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetRunningEas_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetRunningEasReply>* Charts::Stub::AsyncGetRunningEasRaw(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetRunningEasRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status Charts::Stub::GetEaLogs(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest& request, ::mt5_term_api::GetEaLogsReply* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::mt5_term_api::GetEaLogsRequest, ::mt5_term_api::GetEaLogsReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetEaLogs_, context, request, response);
+}
+
+void Charts::Stub::async::GetEaLogs(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest* request, ::mt5_term_api::GetEaLogsReply* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::mt5_term_api::GetEaLogsRequest, ::mt5_term_api::GetEaLogsReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetEaLogs_, context, request, response, std::move(f));
+}
+
+void Charts::Stub::async::GetEaLogs(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest* request, ::mt5_term_api::GetEaLogsReply* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetEaLogs_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetEaLogsReply>* Charts::Stub::PrepareAsyncGetEaLogsRaw(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::mt5_term_api::GetEaLogsReply, ::mt5_term_api::GetEaLogsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetEaLogs_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetEaLogsReply>* Charts::Stub::AsyncGetEaLogsRaw(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetEaLogsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status Charts::Stub::StopEa(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest& request, ::mt5_term_api::StopEaReply* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::mt5_term_api::StopEaRequest, ::mt5_term_api::StopEaReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_StopEa_, context, request, response);
+}
+
+void Charts::Stub::async::StopEa(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest* request, ::mt5_term_api::StopEaReply* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::mt5_term_api::StopEaRequest, ::mt5_term_api::StopEaReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_StopEa_, context, request, response, std::move(f));
+}
+
+void Charts::Stub::async::StopEa(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest* request, ::mt5_term_api::StopEaReply* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_StopEa_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mt5_term_api::StopEaReply>* Charts::Stub::PrepareAsyncStopEaRaw(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::mt5_term_api::StopEaReply, ::mt5_term_api::StopEaRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_StopEa_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::mt5_term_api::StopEaReply>* Charts::Stub::AsyncStopEaRaw(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncStopEaRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 Charts::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Charts_method_names[0],
@@ -104,6 +204,46 @@ Charts::Service::Service() {
              ::mt5_term_api::GetEaParamsReply* resp) {
                return service->GetEaParams(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Charts_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Charts::Service, ::mt5_term_api::AttachEaRequest, ::mt5_term_api::AttachEaReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](Charts::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::mt5_term_api::AttachEaRequest* req,
+             ::mt5_term_api::AttachEaReply* resp) {
+               return service->AttachEa(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Charts_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Charts::Service, ::mt5_term_api::GetRunningEasRequest, ::mt5_term_api::GetRunningEasReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](Charts::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::mt5_term_api::GetRunningEasRequest* req,
+             ::mt5_term_api::GetRunningEasReply* resp) {
+               return service->GetRunningEas(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Charts_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Charts::Service, ::mt5_term_api::GetEaLogsRequest, ::mt5_term_api::GetEaLogsReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](Charts::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::mt5_term_api::GetEaLogsRequest* req,
+             ::mt5_term_api::GetEaLogsReply* resp) {
+               return service->GetEaLogs(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Charts_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Charts::Service, ::mt5_term_api::StopEaRequest, ::mt5_term_api::StopEaReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](Charts::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::mt5_term_api::StopEaRequest* req,
+             ::mt5_term_api::StopEaReply* resp) {
+               return service->StopEa(ctx, req, resp);
+             }, this)));
 }
 
 Charts::Service::~Service() {
@@ -117,6 +257,34 @@ Charts::Service::~Service() {
 }
 
 ::grpc::Status Charts::Service::GetEaParams(::grpc::ServerContext* context, const ::mt5_term_api::GetEaParamsRequest* request, ::mt5_term_api::GetEaParamsReply* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Charts::Service::AttachEa(::grpc::ServerContext* context, const ::mt5_term_api::AttachEaRequest* request, ::mt5_term_api::AttachEaReply* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Charts::Service::GetRunningEas(::grpc::ServerContext* context, const ::mt5_term_api::GetRunningEasRequest* request, ::mt5_term_api::GetRunningEasReply* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Charts::Service::GetEaLogs(::grpc::ServerContext* context, const ::mt5_term_api::GetEaLogsRequest* request, ::mt5_term_api::GetEaLogsReply* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Charts::Service::StopEa(::grpc::ServerContext* context, const ::mt5_term_api::StopEaRequest* request, ::mt5_term_api::StopEaReply* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -2294,7 +2294,6 @@ class ConnectExRequest final :
     kExpertsToAddFieldNumber = 5,
     kPasswordFieldNumber = 2,
     kMtClusterNameFieldNumber = 3,
-    kBaseChartSymbolFieldNumber = 4,
     kNameFieldNumber = 7,
     kUserFieldNumber = 1,
     kTimeoutSecondsFieldNumber = 6,
@@ -2344,24 +2343,6 @@ class ConnectExRequest final :
   const std::string& _internal_mt_cluster_name() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_mt_cluster_name(const std::string& value);
   std::string* _internal_mutable_mt_cluster_name();
-  public:
-
-  // optional string base_chart_symbol = 4;
-  bool has_base_chart_symbol() const;
-  private:
-  bool _internal_has_base_chart_symbol() const;
-  public:
-  void clear_base_chart_symbol();
-  const std::string& base_chart_symbol() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_base_chart_symbol(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_base_chart_symbol();
-  PROTOBUF_NODISCARD std::string* release_base_chart_symbol();
-  void set_allocated_base_chart_symbol(std::string* base_chart_symbol);
-  private:
-  const std::string& _internal_base_chart_symbol() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_base_chart_symbol(const std::string& value);
-  std::string* _internal_mutable_base_chart_symbol();
   public:
 
   // optional string name = 7;
@@ -2430,7 +2411,6 @@ class ConnectExRequest final :
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::ExpertAdviser > experts_to_add_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr password_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mt_cluster_name_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr base_chart_symbol_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
     uint64_t user_;
     uint32_t timeout_seconds_;
@@ -2562,28 +2542,9 @@ class ConnectByTokenRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBaseChartSymbolFieldNumber = 1,
     kTimeoutSecondsFieldNumber = 2,
     kExpirationFieldNumber = 3,
   };
-  // optional string base_chart_symbol = 1;
-  bool has_base_chart_symbol() const;
-  private:
-  bool _internal_has_base_chart_symbol() const;
-  public:
-  void clear_base_chart_symbol();
-  const std::string& base_chart_symbol() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_base_chart_symbol(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_base_chart_symbol();
-  PROTOBUF_NODISCARD std::string* release_base_chart_symbol();
-  void set_allocated_base_chart_symbol(std::string* base_chart_symbol);
-  private:
-  const std::string& _internal_base_chart_symbol() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_base_chart_symbol(const std::string& value);
-  std::string* _internal_mutable_base_chart_symbol();
-  public:
-
   // optional uint32 timeout_seconds = 2;
   bool has_timeout_seconds() const;
   private:
@@ -2620,7 +2581,6 @@ class ConnectByTokenRequest final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr base_chart_symbol_;
     uint32_t timeout_seconds_;
     uint32_t expiration_;
   };
@@ -10187,74 +10147,6 @@ inline void ConnectExRequest::set_allocated_mt_cluster_name(std::string* mt_clus
   // @@protoc_insertion_point(field_set_allocated:mt5_term_api.ConnectExRequest.mt_cluster_name)
 }
 
-// optional string base_chart_symbol = 4;
-inline bool ConnectExRequest::_internal_has_base_chart_symbol() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline bool ConnectExRequest::has_base_chart_symbol() const {
-  return _internal_has_base_chart_symbol();
-}
-inline void ConnectExRequest::clear_base_chart_symbol() {
-  _impl_.base_chart_symbol_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
-inline const std::string& ConnectExRequest::base_chart_symbol() const {
-  // @@protoc_insertion_point(field_get:mt5_term_api.ConnectExRequest.base_chart_symbol)
-  return _internal_base_chart_symbol();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void ConnectExRequest::set_base_chart_symbol(ArgT0&& arg0, ArgT... args) {
- _impl_._has_bits_[0] |= 0x00000001u;
- _impl_.base_chart_symbol_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:mt5_term_api.ConnectExRequest.base_chart_symbol)
-}
-inline std::string* ConnectExRequest::mutable_base_chart_symbol() {
-  std::string* _s = _internal_mutable_base_chart_symbol();
-  // @@protoc_insertion_point(field_mutable:mt5_term_api.ConnectExRequest.base_chart_symbol)
-  return _s;
-}
-inline const std::string& ConnectExRequest::_internal_base_chart_symbol() const {
-  return _impl_.base_chart_symbol_.Get();
-}
-inline void ConnectExRequest::_internal_set_base_chart_symbol(const std::string& value) {
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.base_chart_symbol_.Set(value, GetArenaForAllocation());
-}
-inline std::string* ConnectExRequest::_internal_mutable_base_chart_symbol() {
-  _impl_._has_bits_[0] |= 0x00000001u;
-  return _impl_.base_chart_symbol_.Mutable(GetArenaForAllocation());
-}
-inline std::string* ConnectExRequest::release_base_chart_symbol() {
-  // @@protoc_insertion_point(field_release:mt5_term_api.ConnectExRequest.base_chart_symbol)
-  if (!_internal_has_base_chart_symbol()) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  auto* p = _impl_.base_chart_symbol_.Release();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.base_chart_symbol_.IsDefault()) {
-    _impl_.base_chart_symbol_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return p;
-}
-inline void ConnectExRequest::set_allocated_base_chart_symbol(std::string* base_chart_symbol) {
-  if (base_chart_symbol != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-  _impl_.base_chart_symbol_.SetAllocated(base_chart_symbol, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.base_chart_symbol_.IsDefault()) {
-    _impl_.base_chart_symbol_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.ConnectExRequest.base_chart_symbol)
-}
-
 // repeated .mt5_term_api.ExpertAdviser experts_to_add = 5;
 inline int ConnectExRequest::_internal_experts_to_add_size() const {
   return _impl_.experts_to_add_.size();
@@ -10297,7 +10189,7 @@ ConnectExRequest::experts_to_add() const {
 
 // optional uint32 timeout_seconds = 6;
 inline bool ConnectExRequest::_internal_has_timeout_seconds() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
 inline bool ConnectExRequest::has_timeout_seconds() const {
@@ -10305,7 +10197,7 @@ inline bool ConnectExRequest::has_timeout_seconds() const {
 }
 inline void ConnectExRequest::clear_timeout_seconds() {
   _impl_.timeout_seconds_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline uint32_t ConnectExRequest::_internal_timeout_seconds() const {
   return _impl_.timeout_seconds_;
@@ -10315,7 +10207,7 @@ inline uint32_t ConnectExRequest::timeout_seconds() const {
   return _internal_timeout_seconds();
 }
 inline void ConnectExRequest::_internal_set_timeout_seconds(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.timeout_seconds_ = value;
 }
 inline void ConnectExRequest::set_timeout_seconds(uint32_t value) {
@@ -10325,7 +10217,7 @@ inline void ConnectExRequest::set_timeout_seconds(uint32_t value) {
 
 // optional string name = 7;
 inline bool ConnectExRequest::_internal_has_name() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
 }
 inline bool ConnectExRequest::has_name() const {
@@ -10333,7 +10225,7 @@ inline bool ConnectExRequest::has_name() const {
 }
 inline void ConnectExRequest::clear_name() {
   _impl_.name_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 inline const std::string& ConnectExRequest::name() const {
   // @@protoc_insertion_point(field_get:mt5_term_api.ConnectExRequest.name)
@@ -10342,7 +10234,7 @@ inline const std::string& ConnectExRequest::name() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void ConnectExRequest::set_name(ArgT0&& arg0, ArgT... args) {
- _impl_._has_bits_[0] |= 0x00000002u;
+ _impl_._has_bits_[0] |= 0x00000001u;
  _impl_.name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:mt5_term_api.ConnectExRequest.name)
 }
@@ -10355,11 +10247,11 @@ inline const std::string& ConnectExRequest::_internal_name() const {
   return _impl_.name_.Get();
 }
 inline void ConnectExRequest::_internal_set_name(const std::string& value) {
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.name_.Set(value, GetArenaForAllocation());
 }
 inline std::string* ConnectExRequest::_internal_mutable_name() {
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   return _impl_.name_.Mutable(GetArenaForAllocation());
 }
 inline std::string* ConnectExRequest::release_name() {
@@ -10367,7 +10259,7 @@ inline std::string* ConnectExRequest::release_name() {
   if (!_internal_has_name()) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
   auto* p = _impl_.name_.Release();
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (_impl_.name_.IsDefault()) {
@@ -10378,9 +10270,9 @@ inline std::string* ConnectExRequest::release_name() {
 }
 inline void ConnectExRequest::set_allocated_name(std::string* name) {
   if (name != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000002u;
+    _impl_._has_bits_[0] |= 0x00000001u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000002u;
+    _impl_._has_bits_[0] &= ~0x00000001u;
   }
   _impl_.name_.SetAllocated(name, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -10393,7 +10285,7 @@ inline void ConnectExRequest::set_allocated_name(std::string* name) {
 
 // optional uint32 expiration = 8;
 inline bool ConnectExRequest::_internal_has_expiration() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool ConnectExRequest::has_expiration() const {
@@ -10401,7 +10293,7 @@ inline bool ConnectExRequest::has_expiration() const {
 }
 inline void ConnectExRequest::clear_expiration() {
   _impl_.expiration_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline uint32_t ConnectExRequest::_internal_expiration() const {
   return _impl_.expiration_;
@@ -10411,7 +10303,7 @@ inline uint32_t ConnectExRequest::expiration() const {
   return _internal_expiration();
 }
 inline void ConnectExRequest::_internal_set_expiration(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.expiration_ = value;
 }
 inline void ConnectExRequest::set_expiration(uint32_t value) {
@@ -10423,77 +10315,9 @@ inline void ConnectExRequest::set_expiration(uint32_t value) {
 
 // ConnectByTokenRequest
 
-// optional string base_chart_symbol = 1;
-inline bool ConnectByTokenRequest::_internal_has_base_chart_symbol() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline bool ConnectByTokenRequest::has_base_chart_symbol() const {
-  return _internal_has_base_chart_symbol();
-}
-inline void ConnectByTokenRequest::clear_base_chart_symbol() {
-  _impl_.base_chart_symbol_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
-inline const std::string& ConnectByTokenRequest::base_chart_symbol() const {
-  // @@protoc_insertion_point(field_get:mt5_term_api.ConnectByTokenRequest.base_chart_symbol)
-  return _internal_base_chart_symbol();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void ConnectByTokenRequest::set_base_chart_symbol(ArgT0&& arg0, ArgT... args) {
- _impl_._has_bits_[0] |= 0x00000001u;
- _impl_.base_chart_symbol_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:mt5_term_api.ConnectByTokenRequest.base_chart_symbol)
-}
-inline std::string* ConnectByTokenRequest::mutable_base_chart_symbol() {
-  std::string* _s = _internal_mutable_base_chart_symbol();
-  // @@protoc_insertion_point(field_mutable:mt5_term_api.ConnectByTokenRequest.base_chart_symbol)
-  return _s;
-}
-inline const std::string& ConnectByTokenRequest::_internal_base_chart_symbol() const {
-  return _impl_.base_chart_symbol_.Get();
-}
-inline void ConnectByTokenRequest::_internal_set_base_chart_symbol(const std::string& value) {
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.base_chart_symbol_.Set(value, GetArenaForAllocation());
-}
-inline std::string* ConnectByTokenRequest::_internal_mutable_base_chart_symbol() {
-  _impl_._has_bits_[0] |= 0x00000001u;
-  return _impl_.base_chart_symbol_.Mutable(GetArenaForAllocation());
-}
-inline std::string* ConnectByTokenRequest::release_base_chart_symbol() {
-  // @@protoc_insertion_point(field_release:mt5_term_api.ConnectByTokenRequest.base_chart_symbol)
-  if (!_internal_has_base_chart_symbol()) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  auto* p = _impl_.base_chart_symbol_.Release();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.base_chart_symbol_.IsDefault()) {
-    _impl_.base_chart_symbol_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return p;
-}
-inline void ConnectByTokenRequest::set_allocated_base_chart_symbol(std::string* base_chart_symbol) {
-  if (base_chart_symbol != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-  _impl_.base_chart_symbol_.SetAllocated(base_chart_symbol, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.base_chart_symbol_.IsDefault()) {
-    _impl_.base_chart_symbol_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.ConnectByTokenRequest.base_chart_symbol)
-}
-
 // optional uint32 timeout_seconds = 2;
 inline bool ConnectByTokenRequest::_internal_has_timeout_seconds() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
 }
 inline bool ConnectByTokenRequest::has_timeout_seconds() const {
@@ -10501,7 +10325,7 @@ inline bool ConnectByTokenRequest::has_timeout_seconds() const {
 }
 inline void ConnectByTokenRequest::clear_timeout_seconds() {
   _impl_.timeout_seconds_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 inline uint32_t ConnectByTokenRequest::_internal_timeout_seconds() const {
   return _impl_.timeout_seconds_;
@@ -10511,7 +10335,7 @@ inline uint32_t ConnectByTokenRequest::timeout_seconds() const {
   return _internal_timeout_seconds();
 }
 inline void ConnectByTokenRequest::_internal_set_timeout_seconds(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.timeout_seconds_ = value;
 }
 inline void ConnectByTokenRequest::set_timeout_seconds(uint32_t value) {
@@ -10521,7 +10345,7 @@ inline void ConnectByTokenRequest::set_timeout_seconds(uint32_t value) {
 
 // optional uint32 expiration = 3;
 inline bool ConnectByTokenRequest::_internal_has_expiration() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
 inline bool ConnectByTokenRequest::has_expiration() const {
@@ -10529,7 +10353,7 @@ inline bool ConnectByTokenRequest::has_expiration() const {
 }
 inline void ConnectByTokenRequest::clear_expiration() {
   _impl_.expiration_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline uint32_t ConnectByTokenRequest::_internal_expiration() const {
   return _impl_.expiration_;
@@ -10539,7 +10363,7 @@ inline uint32_t ConnectByTokenRequest::expiration() const {
   return _internal_expiration();
 }
 inline void ConnectByTokenRequest::_internal_set_expiration(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.expiration_ = value;
 }
 inline void ConnectByTokenRequest::set_expiration(uint32_t value) {

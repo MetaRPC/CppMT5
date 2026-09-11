@@ -141,8 +141,232 @@ struct OpenTerminalChartWithEaDataDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OpenTerminalChartWithEaDataDefaultTypeInternal _OpenTerminalChartWithEaData_default_instance_;
+PROTOBUF_CONSTEXPR AttachEaRequest::AttachEaRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.ea_parameters_)*/{}
+  , /*decltype(_impl_.session_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ea_file_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.symbol_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ea_file_content_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.max_cpu_percent_)*/0
+  , /*decltype(_impl_.max_ram_bytes_)*/int64_t{0}
+  , /*decltype(_impl_.chart_period_)*/0} {}
+struct AttachEaRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR AttachEaRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~AttachEaRequestDefaultTypeInternal() {}
+  union {
+    AttachEaRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AttachEaRequestDefaultTypeInternal _AttachEaRequest_default_instance_;
+PROTOBUF_CONSTEXPR AttachEaReply::AttachEaReply(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.response_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_._oneof_case_)*/{}} {}
+struct AttachEaReplyDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR AttachEaReplyDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~AttachEaReplyDefaultTypeInternal() {}
+  union {
+    AttachEaReply _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AttachEaReplyDefaultTypeInternal _AttachEaReply_default_instance_;
+PROTOBUF_CONSTEXPR AttachEaData::AttachEaData(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.ea_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ea_terminal_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.parent_session_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ea_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.state_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.process_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct AttachEaDataDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR AttachEaDataDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~AttachEaDataDefaultTypeInternal() {}
+  union {
+    AttachEaData _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AttachEaDataDefaultTypeInternal _AttachEaData_default_instance_;
+PROTOBUF_CONSTEXPR GetRunningEasRequest::GetRunningEasRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.session_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ea_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}} {}
+struct GetRunningEasRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetRunningEasRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetRunningEasRequestDefaultTypeInternal() {}
+  union {
+    GetRunningEasRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRunningEasRequestDefaultTypeInternal _GetRunningEasRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetRunningEasReply::GetRunningEasReply(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.response_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_._oneof_case_)*/{}} {}
+struct GetRunningEasReplyDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetRunningEasReplyDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetRunningEasReplyDefaultTypeInternal() {}
+  union {
+    GetRunningEasReply _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRunningEasReplyDefaultTypeInternal _GetRunningEasReply_default_instance_;
+PROTOBUF_CONSTEXPR GetRunningEasData::GetRunningEasData(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.eas_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetRunningEasDataDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetRunningEasDataDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetRunningEasDataDefaultTypeInternal() {}
+  union {
+    GetRunningEasData _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRunningEasDataDefaultTypeInternal _GetRunningEasData_default_instance_;
+PROTOBUF_CONSTEXPR RunningEaInfo::RunningEaInfo(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.ea_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ea_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.parent_session_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ea_terminal_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.symbol_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.period_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.state_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.started_at_)*/nullptr
+  , /*decltype(_impl_.ea_cpu_percent_)*/0
+  , /*decltype(_impl_.ref_cpu_percent_)*/0
+  , /*decltype(_impl_.cpu_ratio_)*/0
+  , /*decltype(_impl_.ea_ram_bytes_)*/int64_t{0}
+  , /*decltype(_impl_.ref_ram_bytes_)*/int64_t{0}
+  , /*decltype(_impl_.ram_ratio_)*/0
+  , /*decltype(_impl_.resource_multiplier_)*/0
+  , /*decltype(_impl_.process_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct RunningEaInfoDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR RunningEaInfoDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~RunningEaInfoDefaultTypeInternal() {}
+  union {
+    RunningEaInfo _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RunningEaInfoDefaultTypeInternal _RunningEaInfo_default_instance_;
+PROTOBUF_CONSTEXPR GetEaLogsRequest::GetEaLogsRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.ea_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.log_type_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}} {}
+struct GetEaLogsRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetEaLogsRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetEaLogsRequestDefaultTypeInternal() {}
+  union {
+    GetEaLogsRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetEaLogsRequestDefaultTypeInternal _GetEaLogsRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetEaLogsReply::GetEaLogsReply(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.response_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_._oneof_case_)*/{}} {}
+struct GetEaLogsReplyDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetEaLogsReplyDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetEaLogsReplyDefaultTypeInternal() {}
+  union {
+    GetEaLogsReply _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetEaLogsReplyDefaultTypeInternal _GetEaLogsReply_default_instance_;
+PROTOBUF_CONSTEXPR GetEaLogsData::GetEaLogsData(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.rows_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetEaLogsDataDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetEaLogsDataDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetEaLogsDataDefaultTypeInternal() {}
+  union {
+    GetEaLogsData _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetEaLogsDataDefaultTypeInternal _GetEaLogsData_default_instance_;
+PROTOBUF_CONSTEXPR EaLogRow::EaLogRow(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.source_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.message_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.time_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct EaLogRowDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR EaLogRowDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~EaLogRowDefaultTypeInternal() {}
+  union {
+    EaLogRow _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EaLogRowDefaultTypeInternal _EaLogRow_default_instance_;
+PROTOBUF_CONSTEXPR StopEaRequest::StopEaRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.ea_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.reason_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}} {}
+struct StopEaRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR StopEaRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~StopEaRequestDefaultTypeInternal() {}
+  union {
+    StopEaRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StopEaRequestDefaultTypeInternal _StopEaRequest_default_instance_;
+PROTOBUF_CONSTEXPR StopEaReply::StopEaReply(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.response_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_._oneof_case_)*/{}} {}
+struct StopEaReplyDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR StopEaReplyDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~StopEaReplyDefaultTypeInternal() {}
+  union {
+    StopEaReply _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StopEaReplyDefaultTypeInternal _StopEaReply_default_instance_;
+PROTOBUF_CONSTEXPR StopEaData::StopEaData(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.ea_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.message_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.success_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct StopEaDataDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR StopEaDataDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~StopEaDataDefaultTypeInternal() {}
+  union {
+    StopEaData _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StopEaDataDefaultTypeInternal _StopEaData_default_instance_;
 }  // namespace mt5_term_api
-static ::_pb::Metadata file_level_metadata_mt5_2dterm_2dapi_2dcharts_2eproto[8];
+static ::_pb::Metadata file_level_metadata_mt5_2dterm_2dapi_2dcharts_2eproto[22];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_mt5_2dterm_2dapi_2dcharts_2eproto[3];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_mt5_2dterm_2dapi_2dcharts_2eproto = nullptr;
 
@@ -227,6 +451,160 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dcharts_2eproto::offsets[] PROTOBUF
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::OpenTerminalChartWithEaData, _impl_.chart_id_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaRequest, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaRequest, _impl_.session_id_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaRequest, _impl_.ea_file_name_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaRequest, _impl_.symbol_name_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaRequest, _impl_.chart_period_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaRequest, _impl_.ea_parameters_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaRequest, _impl_.ea_file_content_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaRequest, _impl_.max_cpu_percent_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaRequest, _impl_.max_ram_bytes_),
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  0,
+  1,
+  2,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaReply, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaReply, _impl_._oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaReply, _impl_.response_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaData, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaData, _impl_.ea_id_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaData, _impl_.ea_terminal_id_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaData, _impl_.parent_session_id_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaData, _impl_.ea_name_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaData, _impl_.state_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AttachEaData, _impl_.process_id_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetRunningEasRequest, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetRunningEasRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetRunningEasRequest, _impl_.session_id_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetRunningEasRequest, _impl_.ea_id_),
+  0,
+  1,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetRunningEasReply, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetRunningEasReply, _impl_._oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetRunningEasReply, _impl_.response_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetRunningEasData, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetRunningEasData, _impl_.eas_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::RunningEaInfo, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::RunningEaInfo, _impl_.ea_id_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::RunningEaInfo, _impl_.ea_name_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::RunningEaInfo, _impl_.parent_session_id_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::RunningEaInfo, _impl_.ea_terminal_id_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::RunningEaInfo, _impl_.process_id_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::RunningEaInfo, _impl_.symbol_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::RunningEaInfo, _impl_.period_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::RunningEaInfo, _impl_.state_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::RunningEaInfo, _impl_.started_at_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::RunningEaInfo, _impl_.ea_cpu_percent_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::RunningEaInfo, _impl_.ref_cpu_percent_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::RunningEaInfo, _impl_.cpu_ratio_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::RunningEaInfo, _impl_.ea_ram_bytes_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::RunningEaInfo, _impl_.ref_ram_bytes_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::RunningEaInfo, _impl_.ram_ratio_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::RunningEaInfo, _impl_.resource_multiplier_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetEaLogsRequest, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetEaLogsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetEaLogsRequest, _impl_.ea_id_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetEaLogsRequest, _impl_.log_type_),
+  ~0u,
+  0,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetEaLogsReply, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetEaLogsReply, _impl_._oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetEaLogsReply, _impl_.response_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetEaLogsData, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetEaLogsData, _impl_.rows_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::EaLogRow, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::EaLogRow, _impl_.time_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::EaLogRow, _impl_.source_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::EaLogRow, _impl_.message_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::StopEaRequest, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::StopEaRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::StopEaRequest, _impl_.ea_id_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::StopEaRequest, _impl_.reason_),
+  ~0u,
+  0,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::StopEaReply, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::StopEaReply, _impl_._oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::StopEaReply, _impl_.response_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::StopEaData, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::StopEaData, _impl_.success_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::StopEaData, _impl_.ea_id_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::StopEaData, _impl_.message_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::mt5_term_api::GetEaParamsRequest)},
@@ -237,6 +615,20 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 44, 57, -1, sizeof(::mt5_term_api::OpenTerminalChartWithEaParameter)},
   { 64, -1, -1, sizeof(::mt5_term_api::OpenTerminalChartWithEaReply)},
   { 73, -1, -1, sizeof(::mt5_term_api::OpenTerminalChartWithEaData)},
+  { 80, 94, -1, sizeof(::mt5_term_api::AttachEaRequest)},
+  { 102, -1, -1, sizeof(::mt5_term_api::AttachEaReply)},
+  { 111, -1, -1, sizeof(::mt5_term_api::AttachEaData)},
+  { 123, 131, -1, sizeof(::mt5_term_api::GetRunningEasRequest)},
+  { 133, -1, -1, sizeof(::mt5_term_api::GetRunningEasReply)},
+  { 142, -1, -1, sizeof(::mt5_term_api::GetRunningEasData)},
+  { 149, -1, -1, sizeof(::mt5_term_api::RunningEaInfo)},
+  { 171, 179, -1, sizeof(::mt5_term_api::GetEaLogsRequest)},
+  { 181, -1, -1, sizeof(::mt5_term_api::GetEaLogsReply)},
+  { 190, -1, -1, sizeof(::mt5_term_api::GetEaLogsData)},
+  { 197, -1, -1, sizeof(::mt5_term_api::EaLogRow)},
+  { 206, 214, -1, sizeof(::mt5_term_api::StopEaRequest)},
+  { 216, -1, -1, sizeof(::mt5_term_api::StopEaReply)},
+  { 225, -1, -1, sizeof(::mt5_term_api::StopEaData)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -248,84 +640,157 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::mt5_term_api::_OpenTerminalChartWithEaParameter_default_instance_._instance,
   &::mt5_term_api::_OpenTerminalChartWithEaReply_default_instance_._instance,
   &::mt5_term_api::_OpenTerminalChartWithEaData_default_instance_._instance,
+  &::mt5_term_api::_AttachEaRequest_default_instance_._instance,
+  &::mt5_term_api::_AttachEaReply_default_instance_._instance,
+  &::mt5_term_api::_AttachEaData_default_instance_._instance,
+  &::mt5_term_api::_GetRunningEasRequest_default_instance_._instance,
+  &::mt5_term_api::_GetRunningEasReply_default_instance_._instance,
+  &::mt5_term_api::_GetRunningEasData_default_instance_._instance,
+  &::mt5_term_api::_RunningEaInfo_default_instance_._instance,
+  &::mt5_term_api::_GetEaLogsRequest_default_instance_._instance,
+  &::mt5_term_api::_GetEaLogsReply_default_instance_._instance,
+  &::mt5_term_api::_GetEaLogsData_default_instance_._instance,
+  &::mt5_term_api::_EaLogRow_default_instance_._instance,
+  &::mt5_term_api::_StopEaRequest_default_instance_._instance,
+  &::mt5_term_api::_StopEaReply_default_instance_._instance,
+  &::mt5_term_api::_StopEaData_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_mt5_2dterm_2dapi_2dcharts_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\031mt5-term-api-charts.proto\022\014mt5_term_ap"
-  "i\032\034google/api/annotations.proto\032\024mrpc-mt"
-  "5-error.proto\"*\n\022GetEaParamsRequest\022\024\n\014e"
-  "a_file_name\030\001 \001(\t\"s\n\020GetEaParamsReply\022-\n"
-  "\004data\030\001 \001(\0132\035.mt5_term_api.GetEaParamsDa"
-  "taH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.Error"
-  "H\000B\n\n\010response\"v\n\017GetEaParamsData\022\017\n\007ea_"
-  "name\030\001 \001(\t\022\020\n\010ea_found\030\002 \001(\010\022\025\n\rea_has_p"
-  "arams\030\003 \001(\010\022)\n\nparameters\030\004 \003(\0132\025.mt5_te"
-  "rm_api.EaParam\"B\n\007EaParam\022\014\n\004name\030\001 \001(\t\022"
-  ")\n\004type\030\002 \001(\0162\033.mt5_term_api.EA_PARAM_TY"
-  "PE\"\335\001\n\036OpenTerminalChartWithEaRequest\022\023\n"
-  "\013symbol_name\030\001 \001(\t\022\024\n\014ea_file_name\030\002 \001(\t"
-  "\022I\n\014chart_period\030\003 \001(\01623.mt5_term_api.En"
-  "umOpenTerminalChartWithEaChatPeriod\022E\n\re"
-  "a_parameters\030\004 \003(\0132..mt5_term_api.OpenTe"
-  "rminalChartWithEaParameter\"\201\003\n OpenTermi"
-  "nalChartWithEaParameter\022\r\n\005index\030\001 \001(\005\022D"
-  "\n\004type\030\002 \001(\01626.mt5_term_api.EnumOpenTerm"
-  "inalChartWithEaParameterType\022\034\n\017int_para"
-  "m_value\030\003 \001(\005H\000\210\001\001\022\035\n\020long_param_value\030\004"
-  " \001(\003H\001\210\001\001\022\035\n\020bool_param_value\030\005 \001(\010H\002\210\001\001"
-  "\022\037\n\022string_param_value\030\006 \001(\tH\003\210\001\001\022\037\n\022dou"
-  "ble_param_value\030\007 \001(\001H\004\210\001\001B\022\n\020_int_param"
-  "_valueB\023\n\021_long_param_valueB\023\n\021_bool_par"
-  "am_valueB\025\n\023_string_param_valueB\025\n\023_doub"
-  "le_param_value\"\213\001\n\034OpenTerminalChartWith"
-  "EaReply\0229\n\004data\030\001 \001(\0132).mt5_term_api.Ope"
-  "nTerminalChartWithEaDataH\000\022$\n\005error\030\002 \001("
-  "\0132\023.mt5_term_api.ErrorH\000B\n\n\010response\"/\n\033"
-  "OpenTerminalChartWithEaData\022\020\n\010chart_id\030"
-  "\001 \001(\003*\226\001\n\rEA_PARAM_TYPE\022\033\n\027EA_PARAM_TYPE"
-  "_UNDEFINED\020\000\022\030\n\024EA_PARAM_TYPE_STRING\020\001\022\031"
-  "\n\025EA_PARAM_TYPE_INTEGER\020\002\022\030\n\024EA_PARAM_TY"
-  "PE_DOUBLE\020\003\022\031\n\025EA_PARAM_TYPE_BOOLEAN\020\004*\245"
-  "\001\n(EnumOpenTerminalChartWithEaParameterT"
-  "ype\022\025\n\021MRPC_EA_PARAM_INT\020\000\022\026\n\022MRPC_EA_PA"
-  "RAM_LONG\020\001\022\026\n\022MRPC_EA_PARAM_BOOL\020\002\022\030\n\024MR"
-  "PC_EA_PARAM_STRING\020\003\022\030\n\024MRPC_EA_PARAM_DO"
-  "UBLE\020\004*\261\005\n%EnumOpenTerminalChartWithEaCh"
-  "atPeriod\022 \n\034MRPC_EA_CHART_PERIOD_CURRENT"
-  "\020\000\022\033\n\027MRPC_EA_CHART_PERIOD_M1\020\001\022\033\n\027MRPC_"
-  "EA_CHART_PERIOD_M2\020\002\022\033\n\027MRPC_EA_CHART_PE"
-  "RIOD_M3\020\003\022\033\n\027MRPC_EA_CHART_PERIOD_M4\020\004\022\033"
-  "\n\027MRPC_EA_CHART_PERIOD_M5\020\005\022\033\n\027MRPC_EA_C"
-  "HART_PERIOD_M6\020\006\022\034\n\030MRPC_EA_CHART_PERIOD"
-  "_M10\020\007\022\034\n\030MRPC_EA_CHART_PERIOD_M12\020\010\022\034\n\030"
-  "MRPC_EA_CHART_PERIOD_M15\020\t\022\034\n\030MRPC_EA_CH"
-  "ART_PERIOD_M20\020\n\022\034\n\030MRPC_EA_CHART_PERIOD"
-  "_M30\020\013\022\033\n\027MRPC_EA_CHART_PERIOD_H1\020\014\022\033\n\027M"
-  "RPC_EA_CHART_PERIOD_H2\020\r\022\033\n\027MRPC_EA_CHAR"
-  "T_PERIOD_H3\020\016\022\033\n\027MRPC_EA_CHART_PERIOD_H4"
-  "\020\017\022\033\n\027MRPC_EA_CHART_PERIOD_H6\020\020\022\033\n\027MRPC_"
-  "EA_CHART_PERIOD_H8\020\021\022\034\n\030MRPC_EA_CHART_PE"
-  "RIOD_H12\020\022\022\033\n\027MRPC_EA_CHART_PERIOD_D1\020\023\022"
-  "\033\n\027MRPC_EA_CHART_PERIOD_W1\020\024\022\034\n\030MRPC_EA_"
-  "CHART_PERIOD_MN1\020\0252\207\002\n\006Charts\022\225\001\n\027OpenTe"
-  "rminalChartWithEa\022,.mt5_term_api.OpenTer"
-  "minalChartWithEaRequest\032*.mt5_term_api.O"
-  "penTerminalChartWithEaReply\" \202\323\344\223\002\032\022\030/Op"
-  "enTerminalChartWithEa\022e\n\013GetEaParams\022 .m"
-  "t5_term_api.GetEaParamsRequest\032\036.mt5_ter"
-  "m_api.GetEaParamsReply\"\024\202\323\344\223\002\016\022\014/GetEaPa"
-  "ramsBBZ1git.mtapi.io/root/mrpc-proto.git"
-  "/mt5/libraries/go\252\002\014mt5_term_apib\006proto3"
+  "i\032\034google/api/annotations.proto\032\037google/"
+  "protobuf/timestamp.proto\032\024mrpc-mt5-error"
+  ".proto\"*\n\022GetEaParamsRequest\022\024\n\014ea_file_"
+  "name\030\001 \001(\t\"s\n\020GetEaParamsReply\022-\n\004data\030\001"
+  " \001(\0132\035.mt5_term_api.GetEaParamsDataH\000\022$\n"
+  "\005error\030\002 \001(\0132\023.mt5_term_api.ErrorH\000B\n\n\010r"
+  "esponse\"v\n\017GetEaParamsData\022\017\n\007ea_name\030\001 "
+  "\001(\t\022\020\n\010ea_found\030\002 \001(\010\022\025\n\rea_has_params\030\003"
+  " \001(\010\022)\n\nparameters\030\004 \003(\0132\025.mt5_term_api."
+  "EaParam\"B\n\007EaParam\022\014\n\004name\030\001 \001(\t\022)\n\004type"
+  "\030\002 \001(\0162\033.mt5_term_api.EA_PARAM_TYPE\"\335\001\n\036"
+  "OpenTerminalChartWithEaRequest\022\023\n\013symbol"
+  "_name\030\001 \001(\t\022\024\n\014ea_file_name\030\002 \001(\t\022I\n\014cha"
+  "rt_period\030\003 \001(\01623.mt5_term_api.EnumOpenT"
+  "erminalChartWithEaChatPeriod\022E\n\rea_param"
+  "eters\030\004 \003(\0132..mt5_term_api.OpenTerminalC"
+  "hartWithEaParameter\"\201\003\n OpenTerminalChar"
+  "tWithEaParameter\022\r\n\005index\030\001 \001(\005\022D\n\004type\030"
+  "\002 \001(\01626.mt5_term_api.EnumOpenTerminalCha"
+  "rtWithEaParameterType\022\034\n\017int_param_value"
+  "\030\003 \001(\005H\000\210\001\001\022\035\n\020long_param_value\030\004 \001(\003H\001\210"
+  "\001\001\022\035\n\020bool_param_value\030\005 \001(\010H\002\210\001\001\022\037\n\022str"
+  "ing_param_value\030\006 \001(\tH\003\210\001\001\022\037\n\022double_par"
+  "am_value\030\007 \001(\001H\004\210\001\001B\022\n\020_int_param_valueB"
+  "\023\n\021_long_param_valueB\023\n\021_bool_param_valu"
+  "eB\025\n\023_string_param_valueB\025\n\023_double_para"
+  "m_value\"\213\001\n\034OpenTerminalChartWithEaReply"
+  "\0229\n\004data\030\001 \001(\0132).mt5_term_api.OpenTermin"
+  "alChartWithEaDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5"
+  "_term_api.ErrorH\000B\n\n\010response\"/\n\033OpenTer"
+  "minalChartWithEaData\022\020\n\010chart_id\030\001 \001(\003\"\364"
+  "\002\n\017AttachEaRequest\022\022\n\nsession_id\030\001 \001(\t\022\024"
+  "\n\014ea_file_name\030\002 \001(\t\022\023\n\013symbol_name\030\003 \001("
+  "\t\022I\n\014chart_period\030\004 \001(\01623.mt5_term_api.E"
+  "numOpenTerminalChartWithEaChatPeriod\022E\n\r"
+  "ea_parameters\030\005 \003(\0132..mt5_term_api.OpenT"
+  "erminalChartWithEaParameter\022\034\n\017ea_file_c"
+  "ontent\030\006 \001(\014H\000\210\001\001\022\034\n\017max_cpu_percent\030\007 \001"
+  "(\001H\001\210\001\001\022\032\n\rmax_ram_bytes\030\010 \001(\003H\002\210\001\001B\022\n\020_"
+  "ea_file_contentB\022\n\020_max_cpu_percentB\020\n\016_"
+  "max_ram_bytes\"m\n\rAttachEaReply\022*\n\004data\030\001"
+  " \001(\0132\032.mt5_term_api.AttachEaDataH\000\022$\n\005er"
+  "ror\030\002 \001(\0132\023.mt5_term_api.ErrorH\000B\n\n\010resp"
+  "onse\"\204\001\n\014AttachEaData\022\r\n\005ea_id\030\001 \001(\t\022\026\n\016"
+  "ea_terminal_id\030\002 \001(\t\022\031\n\021parent_session_i"
+  "d\030\003 \001(\t\022\017\n\007ea_name\030\004 \001(\t\022\r\n\005state\030\005 \001(\t\022"
+  "\022\n\nprocess_id\030\006 \001(\005\"\\\n\024GetRunningEasRequ"
+  "est\022\027\n\nsession_id\030\001 \001(\tH\000\210\001\001\022\022\n\005ea_id\030\002 "
+  "\001(\tH\001\210\001\001B\r\n\013_session_idB\010\n\006_ea_id\"w\n\022Get"
+  "RunningEasReply\022/\n\004data\030\001 \001(\0132\037.mt5_term"
+  "_api.GetRunningEasDataH\000\022$\n\005error\030\002 \001(\0132"
+  "\023.mt5_term_api.ErrorH\000B\n\n\010response\"=\n\021Ge"
+  "tRunningEasData\022(\n\003eas\030\001 \003(\0132\033.mt5_term_"
+  "api.RunningEaInfo\"\366\002\n\rRunningEaInfo\022\r\n\005e"
+  "a_id\030\001 \001(\t\022\017\n\007ea_name\030\002 \001(\t\022\031\n\021parent_se"
+  "ssion_id\030\003 \001(\t\022\026\n\016ea_terminal_id\030\004 \001(\t\022\022"
+  "\n\nprocess_id\030\005 \001(\005\022\016\n\006symbol\030\006 \001(\t\022\016\n\006pe"
+  "riod\030\007 \001(\t\022\r\n\005state\030\010 \001(\t\022.\n\nstarted_at\030"
+  "\t \001(\0132\032.google.protobuf.Timestamp\022\026\n\016ea_"
+  "cpu_percent\030\n \001(\001\022\027\n\017ref_cpu_percent\030\013 \001"
+  "(\001\022\021\n\tcpu_ratio\030\014 \001(\001\022\024\n\014ea_ram_bytes\030\r "
+  "\001(\003\022\025\n\rref_ram_bytes\030\016 \001(\003\022\021\n\tram_ratio\030"
+  "\017 \001(\001\022\033\n\023resource_multiplier\030\020 \001(\001\"E\n\020Ge"
+  "tEaLogsRequest\022\r\n\005ea_id\030\001 \001(\t\022\025\n\010log_typ"
+  "e\030\002 \001(\tH\000\210\001\001B\013\n\t_log_type\"o\n\016GetEaLogsRe"
+  "ply\022+\n\004data\030\001 \001(\0132\033.mt5_term_api.GetEaLo"
+  "gsDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.E"
+  "rrorH\000B\n\n\010response\"5\n\rGetEaLogsData\022$\n\004r"
+  "ows\030\001 \003(\0132\026.mt5_term_api.EaLogRow\"U\n\010EaL"
+  "ogRow\022(\n\004time\030\001 \001(\0132\032.google.protobuf.Ti"
+  "mestamp\022\016\n\006source\030\002 \001(\t\022\017\n\007message\030\003 \001(\t"
+  "\">\n\rStopEaRequest\022\r\n\005ea_id\030\001 \001(\t\022\023\n\006reas"
+  "on\030\002 \001(\tH\000\210\001\001B\t\n\007_reason\"i\n\013StopEaReply\022"
+  "(\n\004data\030\001 \001(\0132\030.mt5_term_api.StopEaDataH"
+  "\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.ErrorH\000B"
+  "\n\n\010response\"=\n\nStopEaData\022\017\n\007success\030\001 \001"
+  "(\010\022\r\n\005ea_id\030\002 \001(\t\022\017\n\007message\030\003 \001(\t*\226\001\n\rE"
+  "A_PARAM_TYPE\022\033\n\027EA_PARAM_TYPE_UNDEFINED\020"
+  "\000\022\030\n\024EA_PARAM_TYPE_STRING\020\001\022\031\n\025EA_PARAM_"
+  "TYPE_INTEGER\020\002\022\030\n\024EA_PARAM_TYPE_DOUBLE\020\003"
+  "\022\031\n\025EA_PARAM_TYPE_BOOLEAN\020\004*\245\001\n(EnumOpen"
+  "TerminalChartWithEaParameterType\022\025\n\021MRPC"
+  "_EA_PARAM_INT\020\000\022\026\n\022MRPC_EA_PARAM_LONG\020\001\022"
+  "\026\n\022MRPC_EA_PARAM_BOOL\020\002\022\030\n\024MRPC_EA_PARAM"
+  "_STRING\020\003\022\030\n\024MRPC_EA_PARAM_DOUBLE\020\004*\261\005\n%"
+  "EnumOpenTerminalChartWithEaChatPeriod\022 \n"
+  "\034MRPC_EA_CHART_PERIOD_CURRENT\020\000\022\033\n\027MRPC_"
+  "EA_CHART_PERIOD_M1\020\001\022\033\n\027MRPC_EA_CHART_PE"
+  "RIOD_M2\020\002\022\033\n\027MRPC_EA_CHART_PERIOD_M3\020\003\022\033"
+  "\n\027MRPC_EA_CHART_PERIOD_M4\020\004\022\033\n\027MRPC_EA_C"
+  "HART_PERIOD_M5\020\005\022\033\n\027MRPC_EA_CHART_PERIOD"
+  "_M6\020\006\022\034\n\030MRPC_EA_CHART_PERIOD_M10\020\007\022\034\n\030M"
+  "RPC_EA_CHART_PERIOD_M12\020\010\022\034\n\030MRPC_EA_CHA"
+  "RT_PERIOD_M15\020\t\022\034\n\030MRPC_EA_CHART_PERIOD_"
+  "M20\020\n\022\034\n\030MRPC_EA_CHART_PERIOD_M30\020\013\022\033\n\027M"
+  "RPC_EA_CHART_PERIOD_H1\020\014\022\033\n\027MRPC_EA_CHAR"
+  "T_PERIOD_H2\020\r\022\033\n\027MRPC_EA_CHART_PERIOD_H3"
+  "\020\016\022\033\n\027MRPC_EA_CHART_PERIOD_H4\020\017\022\033\n\027MRPC_"
+  "EA_CHART_PERIOD_H6\020\020\022\033\n\027MRPC_EA_CHART_PE"
+  "RIOD_H8\020\021\022\034\n\030MRPC_EA_CHART_PERIOD_H12\020\022\022"
+  "\033\n\027MRPC_EA_CHART_PERIOD_D1\020\023\022\033\n\027MRPC_EA_"
+  "CHART_PERIOD_W1\020\024\022\034\n\030MRPC_EA_CHART_PERIO"
+  "D_MN1\020\0252\245\005\n\006Charts\022\225\001\n\027OpenTerminalChart"
+  "WithEa\022,.mt5_term_api.OpenTerminalChartW"
+  "ithEaRequest\032*.mt5_term_api.OpenTerminal"
+  "ChartWithEaReply\" \202\323\344\223\002\032\022\030/OpenTerminalC"
+  "hartWithEa\022e\n\013GetEaParams\022 .mt5_term_api"
+  ".GetEaParamsRequest\032\036.mt5_term_api.GetEa"
+  "ParamsReply\"\024\202\323\344\223\002\016\022\014/GetEaParams\022c\n\010Att"
+  "achEa\022\035.mt5_term_api.AttachEaRequest\032\033.m"
+  "t5_term_api.AttachEaReply\"\033\202\323\344\223\002\025\"\020/Char"
+  "ts/AttachEa:\001*\022t\n\rGetRunningEas\022\".mt5_te"
+  "rm_api.GetRunningEasRequest\032 .mt5_term_a"
+  "pi.GetRunningEasReply\"\035\202\323\344\223\002\027\022\025/Charts/G"
+  "etRunningEas\022d\n\tGetEaLogs\022\036.mt5_term_api"
+  ".GetEaLogsRequest\032\034.mt5_term_api.GetEaLo"
+  "gsReply\"\031\202\323\344\223\002\023\022\021/Charts/GetEaLogs\022[\n\006St"
+  "opEa\022\033.mt5_term_api.StopEaRequest\032\031.mt5_"
+  "term_api.StopEaReply\"\031\202\323\344\223\002\023\"\016/Charts/St"
+  "opEa:\001*BBZ1git.mtapi.io/root/mrpc-proto."
+  "git/mt5/libraries/go\252\002\014mt5_term_apib\006pro"
+  "to3"
   ;
-static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_deps[2] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_deps[3] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
+  &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
   &::descriptor_table_mrpc_2dmt5_2derror_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto = {
-    false, false, 2600, descriptor_table_protodef_mt5_2dterm_2dapi_2dcharts_2eproto,
+    false, false, 4883, descriptor_table_protodef_mt5_2dterm_2dapi_2dcharts_2eproto,
     "mt5-term-api-charts.proto",
-    &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_deps, 2, 8,
+    &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_deps, 3, 22,
     schemas, file_default_instances, TableStruct_mt5_2dterm_2dapi_2dcharts_2eproto::offsets,
     file_level_metadata_mt5_2dterm_2dapi_2dcharts_2eproto, file_level_enum_descriptors_mt5_2dterm_2dapi_2dcharts_2eproto,
     file_level_service_descriptors_mt5_2dterm_2dapi_2dcharts_2eproto,
@@ -2665,6 +3130,4770 @@ void OpenTerminalChartWithEaData::InternalSwap(OpenTerminalChartWithEaData* othe
       file_level_metadata_mt5_2dterm_2dapi_2dcharts_2eproto[7]);
 }
 
+// ===================================================================
+
+class AttachEaRequest::_Internal {
+ public:
+  using HasBits = decltype(std::declval<AttachEaRequest>()._impl_._has_bits_);
+  static void set_has_ea_file_content(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_max_cpu_percent(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_max_ram_bytes(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+};
+
+AttachEaRequest::AttachEaRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.AttachEaRequest)
+}
+AttachEaRequest::AttachEaRequest(const AttachEaRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  AttachEaRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.ea_parameters_){from._impl_.ea_parameters_}
+    , decltype(_impl_.session_id_){}
+    , decltype(_impl_.ea_file_name_){}
+    , decltype(_impl_.symbol_name_){}
+    , decltype(_impl_.ea_file_content_){}
+    , decltype(_impl_.max_cpu_percent_){}
+    , decltype(_impl_.max_ram_bytes_){}
+    , decltype(_impl_.chart_period_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.session_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.session_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_session_id().empty()) {
+    _this->_impl_.session_id_.Set(from._internal_session_id(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.ea_file_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_file_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_ea_file_name().empty()) {
+    _this->_impl_.ea_file_name_.Set(from._internal_ea_file_name(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.symbol_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.symbol_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_symbol_name().empty()) {
+    _this->_impl_.symbol_name_.Set(from._internal_symbol_name(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.ea_file_content_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_file_content_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_ea_file_content()) {
+    _this->_impl_.ea_file_content_.Set(from._internal_ea_file_content(), 
+      _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.max_cpu_percent_, &from._impl_.max_cpu_percent_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.chart_period_) -
+    reinterpret_cast<char*>(&_impl_.max_cpu_percent_)) + sizeof(_impl_.chart_period_));
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.AttachEaRequest)
+}
+
+inline void AttachEaRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.ea_parameters_){arena}
+    , decltype(_impl_.session_id_){}
+    , decltype(_impl_.ea_file_name_){}
+    , decltype(_impl_.symbol_name_){}
+    , decltype(_impl_.ea_file_content_){}
+    , decltype(_impl_.max_cpu_percent_){0}
+    , decltype(_impl_.max_ram_bytes_){int64_t{0}}
+    , decltype(_impl_.chart_period_){0}
+  };
+  _impl_.session_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.session_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ea_file_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_file_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.symbol_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.symbol_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ea_file_content_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_file_content_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+AttachEaRequest::~AttachEaRequest() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.AttachEaRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void AttachEaRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.ea_parameters_.~RepeatedPtrField();
+  _impl_.session_id_.Destroy();
+  _impl_.ea_file_name_.Destroy();
+  _impl_.symbol_name_.Destroy();
+  _impl_.ea_file_content_.Destroy();
+}
+
+void AttachEaRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void AttachEaRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.AttachEaRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.ea_parameters_.Clear();
+  _impl_.session_id_.ClearToEmpty();
+  _impl_.ea_file_name_.ClearToEmpty();
+  _impl_.symbol_name_.ClearToEmpty();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    _impl_.ea_file_content_.ClearNonDefaultToEmpty();
+  }
+  if (cached_has_bits & 0x00000006u) {
+    ::memset(&_impl_.max_cpu_percent_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.max_ram_bytes_) -
+        reinterpret_cast<char*>(&_impl_.max_cpu_percent_)) + sizeof(_impl_.max_ram_bytes_));
+  }
+  _impl_.chart_period_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AttachEaRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string session_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_session_id();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.AttachEaRequest.session_id"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string ea_file_name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_ea_file_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.AttachEaRequest.ea_file_name"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string symbol_name = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_symbol_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.AttachEaRequest.symbol_name"));
+        } else
+          goto handle_unusual;
+        continue;
+      // .mt5_term_api.EnumOpenTerminalChartWithEaChatPeriod chart_period = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_chart_period(static_cast<::mt5_term_api::EnumOpenTerminalChartWithEaChatPeriod>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .mt5_term_api.OpenTerminalChartWithEaParameter ea_parameters = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_ea_parameters(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // optional bytes ea_file_content = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+          auto str = _internal_mutable_ea_file_content();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional double max_cpu_percent = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 57)) {
+          _Internal::set_has_max_cpu_percent(&has_bits);
+          _impl_.max_cpu_percent_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional int64 max_ram_bytes = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+          _Internal::set_has_max_ram_bytes(&has_bits);
+          _impl_.max_ram_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* AttachEaRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.AttachEaRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string session_id = 1;
+  if (!this->_internal_session_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_session_id().data(), static_cast<int>(this->_internal_session_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.AttachEaRequest.session_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_session_id(), target);
+  }
+
+  // string ea_file_name = 2;
+  if (!this->_internal_ea_file_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_ea_file_name().data(), static_cast<int>(this->_internal_ea_file_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.AttachEaRequest.ea_file_name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_ea_file_name(), target);
+  }
+
+  // string symbol_name = 3;
+  if (!this->_internal_symbol_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_symbol_name().data(), static_cast<int>(this->_internal_symbol_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.AttachEaRequest.symbol_name");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_symbol_name(), target);
+  }
+
+  // .mt5_term_api.EnumOpenTerminalChartWithEaChatPeriod chart_period = 4;
+  if (this->_internal_chart_period() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      4, this->_internal_chart_period(), target);
+  }
+
+  // repeated .mt5_term_api.OpenTerminalChartWithEaParameter ea_parameters = 5;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_ea_parameters_size()); i < n; i++) {
+    const auto& repfield = this->_internal_ea_parameters(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(5, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // optional bytes ea_file_content = 6;
+  if (_internal_has_ea_file_content()) {
+    target = stream->WriteBytesMaybeAliased(
+        6, this->_internal_ea_file_content(), target);
+  }
+
+  // optional double max_cpu_percent = 7;
+  if (_internal_has_max_cpu_percent()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(7, this->_internal_max_cpu_percent(), target);
+  }
+
+  // optional int64 max_ram_bytes = 8;
+  if (_internal_has_max_ram_bytes()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(8, this->_internal_max_ram_bytes(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.AttachEaRequest)
+  return target;
+}
+
+size_t AttachEaRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.AttachEaRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .mt5_term_api.OpenTerminalChartWithEaParameter ea_parameters = 5;
+  total_size += 1UL * this->_internal_ea_parameters_size();
+  for (const auto& msg : this->_impl_.ea_parameters_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string session_id = 1;
+  if (!this->_internal_session_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_session_id());
+  }
+
+  // string ea_file_name = 2;
+  if (!this->_internal_ea_file_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_ea_file_name());
+  }
+
+  // string symbol_name = 3;
+  if (!this->_internal_symbol_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_symbol_name());
+  }
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    // optional bytes ea_file_content = 6;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+          this->_internal_ea_file_content());
+    }
+
+    // optional double max_cpu_percent = 7;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 + 8;
+    }
+
+    // optional int64 max_ram_bytes = 8;
+    if (cached_has_bits & 0x00000004u) {
+      total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_max_ram_bytes());
+    }
+
+  }
+  // .mt5_term_api.EnumOpenTerminalChartWithEaChatPeriod chart_period = 4;
+  if (this->_internal_chart_period() != 0) {
+    total_size += 1 +
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_chart_period());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AttachEaRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    AttachEaRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AttachEaRequest::GetClassData() const { return &_class_data_; }
+
+
+void AttachEaRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<AttachEaRequest*>(&to_msg);
+  auto& from = static_cast<const AttachEaRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.AttachEaRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.ea_parameters_.MergeFrom(from._impl_.ea_parameters_);
+  if (!from._internal_session_id().empty()) {
+    _this->_internal_set_session_id(from._internal_session_id());
+  }
+  if (!from._internal_ea_file_name().empty()) {
+    _this->_internal_set_ea_file_name(from._internal_ea_file_name());
+  }
+  if (!from._internal_symbol_name().empty()) {
+    _this->_internal_set_symbol_name(from._internal_symbol_name());
+  }
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_ea_file_content(from._internal_ea_file_content());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.max_cpu_percent_ = from._impl_.max_cpu_percent_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.max_ram_bytes_ = from._impl_.max_ram_bytes_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  if (from._internal_chart_period() != 0) {
+    _this->_internal_set_chart_period(from._internal_chart_period());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void AttachEaRequest::CopyFrom(const AttachEaRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.AttachEaRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AttachEaRequest::IsInitialized() const {
+  return true;
+}
+
+void AttachEaRequest::InternalSwap(AttachEaRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.ea_parameters_.InternalSwap(&other->_impl_.ea_parameters_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.session_id_, lhs_arena,
+      &other->_impl_.session_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.ea_file_name_, lhs_arena,
+      &other->_impl_.ea_file_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.symbol_name_, lhs_arena,
+      &other->_impl_.symbol_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.ea_file_content_, lhs_arena,
+      &other->_impl_.ea_file_content_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(AttachEaRequest, _impl_.chart_period_)
+      + sizeof(AttachEaRequest::_impl_.chart_period_)
+      - PROTOBUF_FIELD_OFFSET(AttachEaRequest, _impl_.max_cpu_percent_)>(
+          reinterpret_cast<char*>(&_impl_.max_cpu_percent_),
+          reinterpret_cast<char*>(&other->_impl_.max_cpu_percent_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AttachEaRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2dcharts_2eproto[8]);
+}
+
+// ===================================================================
+
+class AttachEaReply::_Internal {
+ public:
+  static const ::mt5_term_api::AttachEaData& data(const AttachEaReply* msg);
+  static const ::mt5_term_api::Error& error(const AttachEaReply* msg);
+};
+
+const ::mt5_term_api::AttachEaData&
+AttachEaReply::_Internal::data(const AttachEaReply* msg) {
+  return *msg->_impl_.response_.data_;
+}
+const ::mt5_term_api::Error&
+AttachEaReply::_Internal::error(const AttachEaReply* msg) {
+  return *msg->_impl_.response_.error_;
+}
+void AttachEaReply::set_allocated_data(::mt5_term_api::AttachEaData* data) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (data) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(data);
+    if (message_arena != submessage_arena) {
+      data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, data, submessage_arena);
+    }
+    set_has_data();
+    _impl_.response_.data_ = data;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.AttachEaReply.data)
+}
+void AttachEaReply::set_allocated_error(::mt5_term_api::Error* error) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (error) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(error));
+    if (message_arena != submessage_arena) {
+      error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, error, submessage_arena);
+    }
+    set_has_error();
+    _impl_.response_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.AttachEaReply.error)
+}
+void AttachEaReply::clear_error() {
+  if (_internal_has_error()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.response_.error_;
+    }
+    clear_has_response();
+  }
+}
+AttachEaReply::AttachEaReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.AttachEaReply)
+}
+AttachEaReply::AttachEaReply(const AttachEaReply& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  AttachEaReply* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.response_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  clear_has_response();
+  switch (from.response_case()) {
+    case kData: {
+      _this->_internal_mutable_data()->::mt5_term_api::AttachEaData::MergeFrom(
+          from._internal_data());
+      break;
+    }
+    case kError: {
+      _this->_internal_mutable_error()->::mt5_term_api::Error::MergeFrom(
+          from._internal_error());
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.AttachEaReply)
+}
+
+inline void AttachEaReply::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.response_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}
+  };
+  clear_has_response();
+}
+
+AttachEaReply::~AttachEaReply() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.AttachEaReply)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void AttachEaReply::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (has_response()) {
+    clear_response();
+  }
+}
+
+void AttachEaReply::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void AttachEaReply::clear_response() {
+// @@protoc_insertion_point(one_of_clear_start:mt5_term_api.AttachEaReply)
+  switch (response_case()) {
+    case kData: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete _impl_.response_.data_;
+      }
+      break;
+    }
+    case kError: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete _impl_.response_.error_;
+      }
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _impl_._oneof_case_[0] = RESPONSE_NOT_SET;
+}
+
+
+void AttachEaReply::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.AttachEaReply)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_response();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AttachEaReply::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .mt5_term_api.AttachEaData data = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_data(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .mt5_term_api.Error error = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* AttachEaReply::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.AttachEaReply)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .mt5_term_api.AttachEaData data = 1;
+  if (_internal_has_data()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, _Internal::data(this),
+        _Internal::data(this).GetCachedSize(), target, stream);
+  }
+
+  // .mt5_term_api.Error error = 2;
+  if (_internal_has_error()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::error(this),
+        _Internal::error(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.AttachEaReply)
+  return target;
+}
+
+size_t AttachEaReply::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.AttachEaReply)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  switch (response_case()) {
+    // .mt5_term_api.AttachEaData data = 1;
+    case kData: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.response_.data_);
+      break;
+    }
+    // .mt5_term_api.Error error = 2;
+    case kError: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.response_.error_);
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AttachEaReply::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    AttachEaReply::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AttachEaReply::GetClassData() const { return &_class_data_; }
+
+
+void AttachEaReply::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<AttachEaReply*>(&to_msg);
+  auto& from = static_cast<const AttachEaReply&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.AttachEaReply)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  switch (from.response_case()) {
+    case kData: {
+      _this->_internal_mutable_data()->::mt5_term_api::AttachEaData::MergeFrom(
+          from._internal_data());
+      break;
+    }
+    case kError: {
+      _this->_internal_mutable_error()->::mt5_term_api::Error::MergeFrom(
+          from._internal_error());
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void AttachEaReply::CopyFrom(const AttachEaReply& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.AttachEaReply)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AttachEaReply::IsInitialized() const {
+  return true;
+}
+
+void AttachEaReply::InternalSwap(AttachEaReply* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.response_, other->_impl_.response_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AttachEaReply::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2dcharts_2eproto[9]);
+}
+
+// ===================================================================
+
+class AttachEaData::_Internal {
+ public:
+};
+
+AttachEaData::AttachEaData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.AttachEaData)
+}
+AttachEaData::AttachEaData(const AttachEaData& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  AttachEaData* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ea_id_){}
+    , decltype(_impl_.ea_terminal_id_){}
+    , decltype(_impl_.parent_session_id_){}
+    , decltype(_impl_.ea_name_){}
+    , decltype(_impl_.state_){}
+    , decltype(_impl_.process_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.ea_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_ea_id().empty()) {
+    _this->_impl_.ea_id_.Set(from._internal_ea_id(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.ea_terminal_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_terminal_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_ea_terminal_id().empty()) {
+    _this->_impl_.ea_terminal_id_.Set(from._internal_ea_terminal_id(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.parent_session_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.parent_session_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_parent_session_id().empty()) {
+    _this->_impl_.parent_session_id_.Set(from._internal_parent_session_id(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.ea_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_ea_name().empty()) {
+    _this->_impl_.ea_name_.Set(from._internal_ea_name(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.state_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.state_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_state().empty()) {
+    _this->_impl_.state_.Set(from._internal_state(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.process_id_ = from._impl_.process_id_;
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.AttachEaData)
+}
+
+inline void AttachEaData::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ea_id_){}
+    , decltype(_impl_.ea_terminal_id_){}
+    , decltype(_impl_.parent_session_id_){}
+    , decltype(_impl_.ea_name_){}
+    , decltype(_impl_.state_){}
+    , decltype(_impl_.process_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.ea_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ea_terminal_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_terminal_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.parent_session_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.parent_session_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ea_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.state_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.state_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+AttachEaData::~AttachEaData() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.AttachEaData)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void AttachEaData::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.ea_id_.Destroy();
+  _impl_.ea_terminal_id_.Destroy();
+  _impl_.parent_session_id_.Destroy();
+  _impl_.ea_name_.Destroy();
+  _impl_.state_.Destroy();
+}
+
+void AttachEaData::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void AttachEaData::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.AttachEaData)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.ea_id_.ClearToEmpty();
+  _impl_.ea_terminal_id_.ClearToEmpty();
+  _impl_.parent_session_id_.ClearToEmpty();
+  _impl_.ea_name_.ClearToEmpty();
+  _impl_.state_.ClearToEmpty();
+  _impl_.process_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AttachEaData::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string ea_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_ea_id();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.AttachEaData.ea_id"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string ea_terminal_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_ea_terminal_id();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.AttachEaData.ea_terminal_id"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string parent_session_id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_parent_session_id();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.AttachEaData.parent_session_id"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string ea_name = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          auto str = _internal_mutable_ea_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.AttachEaData.ea_name"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string state = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          auto str = _internal_mutable_state();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.AttachEaData.state"));
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 process_id = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _impl_.process_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* AttachEaData::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.AttachEaData)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string ea_id = 1;
+  if (!this->_internal_ea_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_ea_id().data(), static_cast<int>(this->_internal_ea_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.AttachEaData.ea_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_ea_id(), target);
+  }
+
+  // string ea_terminal_id = 2;
+  if (!this->_internal_ea_terminal_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_ea_terminal_id().data(), static_cast<int>(this->_internal_ea_terminal_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.AttachEaData.ea_terminal_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_ea_terminal_id(), target);
+  }
+
+  // string parent_session_id = 3;
+  if (!this->_internal_parent_session_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_parent_session_id().data(), static_cast<int>(this->_internal_parent_session_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.AttachEaData.parent_session_id");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_parent_session_id(), target);
+  }
+
+  // string ea_name = 4;
+  if (!this->_internal_ea_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_ea_name().data(), static_cast<int>(this->_internal_ea_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.AttachEaData.ea_name");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_ea_name(), target);
+  }
+
+  // string state = 5;
+  if (!this->_internal_state().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_state().data(), static_cast<int>(this->_internal_state().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.AttachEaData.state");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_state(), target);
+  }
+
+  // int32 process_id = 6;
+  if (this->_internal_process_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_process_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.AttachEaData)
+  return target;
+}
+
+size_t AttachEaData::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.AttachEaData)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string ea_id = 1;
+  if (!this->_internal_ea_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_ea_id());
+  }
+
+  // string ea_terminal_id = 2;
+  if (!this->_internal_ea_terminal_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_ea_terminal_id());
+  }
+
+  // string parent_session_id = 3;
+  if (!this->_internal_parent_session_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_parent_session_id());
+  }
+
+  // string ea_name = 4;
+  if (!this->_internal_ea_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_ea_name());
+  }
+
+  // string state = 5;
+  if (!this->_internal_state().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_state());
+  }
+
+  // int32 process_id = 6;
+  if (this->_internal_process_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_process_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AttachEaData::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    AttachEaData::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AttachEaData::GetClassData() const { return &_class_data_; }
+
+
+void AttachEaData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<AttachEaData*>(&to_msg);
+  auto& from = static_cast<const AttachEaData&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.AttachEaData)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_ea_id().empty()) {
+    _this->_internal_set_ea_id(from._internal_ea_id());
+  }
+  if (!from._internal_ea_terminal_id().empty()) {
+    _this->_internal_set_ea_terminal_id(from._internal_ea_terminal_id());
+  }
+  if (!from._internal_parent_session_id().empty()) {
+    _this->_internal_set_parent_session_id(from._internal_parent_session_id());
+  }
+  if (!from._internal_ea_name().empty()) {
+    _this->_internal_set_ea_name(from._internal_ea_name());
+  }
+  if (!from._internal_state().empty()) {
+    _this->_internal_set_state(from._internal_state());
+  }
+  if (from._internal_process_id() != 0) {
+    _this->_internal_set_process_id(from._internal_process_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void AttachEaData::CopyFrom(const AttachEaData& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.AttachEaData)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AttachEaData::IsInitialized() const {
+  return true;
+}
+
+void AttachEaData::InternalSwap(AttachEaData* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.ea_id_, lhs_arena,
+      &other->_impl_.ea_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.ea_terminal_id_, lhs_arena,
+      &other->_impl_.ea_terminal_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.parent_session_id_, lhs_arena,
+      &other->_impl_.parent_session_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.ea_name_, lhs_arena,
+      &other->_impl_.ea_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.state_, lhs_arena,
+      &other->_impl_.state_, rhs_arena
+  );
+  swap(_impl_.process_id_, other->_impl_.process_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AttachEaData::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2dcharts_2eproto[10]);
+}
+
+// ===================================================================
+
+class GetRunningEasRequest::_Internal {
+ public:
+  using HasBits = decltype(std::declval<GetRunningEasRequest>()._impl_._has_bits_);
+  static void set_has_session_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_ea_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+};
+
+GetRunningEasRequest::GetRunningEasRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.GetRunningEasRequest)
+}
+GetRunningEasRequest::GetRunningEasRequest(const GetRunningEasRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetRunningEasRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.session_id_){}
+    , decltype(_impl_.ea_id_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.session_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.session_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_session_id()) {
+    _this->_impl_.session_id_.Set(from._internal_session_id(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.ea_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_ea_id()) {
+    _this->_impl_.ea_id_.Set(from._internal_ea_id(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.GetRunningEasRequest)
+}
+
+inline void GetRunningEasRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.session_id_){}
+    , decltype(_impl_.ea_id_){}
+  };
+  _impl_.session_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.session_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ea_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+GetRunningEasRequest::~GetRunningEasRequest() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.GetRunningEasRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetRunningEasRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.session_id_.Destroy();
+  _impl_.ea_id_.Destroy();
+}
+
+void GetRunningEasRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetRunningEasRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.GetRunningEasRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _impl_.session_id_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _impl_.ea_id_.ClearNonDefaultToEmpty();
+    }
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetRunningEasRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional string session_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_session_id();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.GetRunningEasRequest.session_id"));
+        } else
+          goto handle_unusual;
+        continue;
+      // optional string ea_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_ea_id();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.GetRunningEasRequest.ea_id"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetRunningEasRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.GetRunningEasRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // optional string session_id = 1;
+  if (_internal_has_session_id()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_session_id().data(), static_cast<int>(this->_internal_session_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.GetRunningEasRequest.session_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_session_id(), target);
+  }
+
+  // optional string ea_id = 2;
+  if (_internal_has_ea_id()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_ea_id().data(), static_cast<int>(this->_internal_ea_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.GetRunningEasRequest.ea_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_ea_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.GetRunningEasRequest)
+  return target;
+}
+
+size_t GetRunningEasRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.GetRunningEasRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // optional string session_id = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_session_id());
+    }
+
+    // optional string ea_id = 2;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_ea_id());
+    }
+
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetRunningEasRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetRunningEasRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetRunningEasRequest::GetClassData() const { return &_class_data_; }
+
+
+void GetRunningEasRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetRunningEasRequest*>(&to_msg);
+  auto& from = static_cast<const GetRunningEasRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.GetRunningEasRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_session_id(from._internal_session_id());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_set_ea_id(from._internal_ea_id());
+    }
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetRunningEasRequest::CopyFrom(const GetRunningEasRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.GetRunningEasRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetRunningEasRequest::IsInitialized() const {
+  return true;
+}
+
+void GetRunningEasRequest::InternalSwap(GetRunningEasRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.session_id_, lhs_arena,
+      &other->_impl_.session_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.ea_id_, lhs_arena,
+      &other->_impl_.ea_id_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetRunningEasRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2dcharts_2eproto[11]);
+}
+
+// ===================================================================
+
+class GetRunningEasReply::_Internal {
+ public:
+  static const ::mt5_term_api::GetRunningEasData& data(const GetRunningEasReply* msg);
+  static const ::mt5_term_api::Error& error(const GetRunningEasReply* msg);
+};
+
+const ::mt5_term_api::GetRunningEasData&
+GetRunningEasReply::_Internal::data(const GetRunningEasReply* msg) {
+  return *msg->_impl_.response_.data_;
+}
+const ::mt5_term_api::Error&
+GetRunningEasReply::_Internal::error(const GetRunningEasReply* msg) {
+  return *msg->_impl_.response_.error_;
+}
+void GetRunningEasReply::set_allocated_data(::mt5_term_api::GetRunningEasData* data) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (data) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(data);
+    if (message_arena != submessage_arena) {
+      data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, data, submessage_arena);
+    }
+    set_has_data();
+    _impl_.response_.data_ = data;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.GetRunningEasReply.data)
+}
+void GetRunningEasReply::set_allocated_error(::mt5_term_api::Error* error) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (error) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(error));
+    if (message_arena != submessage_arena) {
+      error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, error, submessage_arena);
+    }
+    set_has_error();
+    _impl_.response_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.GetRunningEasReply.error)
+}
+void GetRunningEasReply::clear_error() {
+  if (_internal_has_error()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.response_.error_;
+    }
+    clear_has_response();
+  }
+}
+GetRunningEasReply::GetRunningEasReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.GetRunningEasReply)
+}
+GetRunningEasReply::GetRunningEasReply(const GetRunningEasReply& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetRunningEasReply* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.response_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  clear_has_response();
+  switch (from.response_case()) {
+    case kData: {
+      _this->_internal_mutable_data()->::mt5_term_api::GetRunningEasData::MergeFrom(
+          from._internal_data());
+      break;
+    }
+    case kError: {
+      _this->_internal_mutable_error()->::mt5_term_api::Error::MergeFrom(
+          from._internal_error());
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.GetRunningEasReply)
+}
+
+inline void GetRunningEasReply::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.response_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}
+  };
+  clear_has_response();
+}
+
+GetRunningEasReply::~GetRunningEasReply() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.GetRunningEasReply)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetRunningEasReply::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (has_response()) {
+    clear_response();
+  }
+}
+
+void GetRunningEasReply::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetRunningEasReply::clear_response() {
+// @@protoc_insertion_point(one_of_clear_start:mt5_term_api.GetRunningEasReply)
+  switch (response_case()) {
+    case kData: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete _impl_.response_.data_;
+      }
+      break;
+    }
+    case kError: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete _impl_.response_.error_;
+      }
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _impl_._oneof_case_[0] = RESPONSE_NOT_SET;
+}
+
+
+void GetRunningEasReply::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.GetRunningEasReply)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_response();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetRunningEasReply::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .mt5_term_api.GetRunningEasData data = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_data(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .mt5_term_api.Error error = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetRunningEasReply::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.GetRunningEasReply)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .mt5_term_api.GetRunningEasData data = 1;
+  if (_internal_has_data()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, _Internal::data(this),
+        _Internal::data(this).GetCachedSize(), target, stream);
+  }
+
+  // .mt5_term_api.Error error = 2;
+  if (_internal_has_error()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::error(this),
+        _Internal::error(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.GetRunningEasReply)
+  return target;
+}
+
+size_t GetRunningEasReply::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.GetRunningEasReply)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  switch (response_case()) {
+    // .mt5_term_api.GetRunningEasData data = 1;
+    case kData: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.response_.data_);
+      break;
+    }
+    // .mt5_term_api.Error error = 2;
+    case kError: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.response_.error_);
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetRunningEasReply::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetRunningEasReply::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetRunningEasReply::GetClassData() const { return &_class_data_; }
+
+
+void GetRunningEasReply::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetRunningEasReply*>(&to_msg);
+  auto& from = static_cast<const GetRunningEasReply&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.GetRunningEasReply)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  switch (from.response_case()) {
+    case kData: {
+      _this->_internal_mutable_data()->::mt5_term_api::GetRunningEasData::MergeFrom(
+          from._internal_data());
+      break;
+    }
+    case kError: {
+      _this->_internal_mutable_error()->::mt5_term_api::Error::MergeFrom(
+          from._internal_error());
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetRunningEasReply::CopyFrom(const GetRunningEasReply& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.GetRunningEasReply)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetRunningEasReply::IsInitialized() const {
+  return true;
+}
+
+void GetRunningEasReply::InternalSwap(GetRunningEasReply* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.response_, other->_impl_.response_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetRunningEasReply::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2dcharts_2eproto[12]);
+}
+
+// ===================================================================
+
+class GetRunningEasData::_Internal {
+ public:
+};
+
+GetRunningEasData::GetRunningEasData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.GetRunningEasData)
+}
+GetRunningEasData::GetRunningEasData(const GetRunningEasData& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetRunningEasData* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.eas_){from._impl_.eas_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.GetRunningEasData)
+}
+
+inline void GetRunningEasData::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.eas_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetRunningEasData::~GetRunningEasData() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.GetRunningEasData)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetRunningEasData::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.eas_.~RepeatedPtrField();
+}
+
+void GetRunningEasData::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetRunningEasData::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.GetRunningEasData)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.eas_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetRunningEasData::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .mt5_term_api.RunningEaInfo eas = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_eas(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetRunningEasData::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.GetRunningEasData)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .mt5_term_api.RunningEaInfo eas = 1;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_eas_size()); i < n; i++) {
+    const auto& repfield = this->_internal_eas(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.GetRunningEasData)
+  return target;
+}
+
+size_t GetRunningEasData::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.GetRunningEasData)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .mt5_term_api.RunningEaInfo eas = 1;
+  total_size += 1UL * this->_internal_eas_size();
+  for (const auto& msg : this->_impl_.eas_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetRunningEasData::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetRunningEasData::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetRunningEasData::GetClassData() const { return &_class_data_; }
+
+
+void GetRunningEasData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetRunningEasData*>(&to_msg);
+  auto& from = static_cast<const GetRunningEasData&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.GetRunningEasData)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.eas_.MergeFrom(from._impl_.eas_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetRunningEasData::CopyFrom(const GetRunningEasData& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.GetRunningEasData)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetRunningEasData::IsInitialized() const {
+  return true;
+}
+
+void GetRunningEasData::InternalSwap(GetRunningEasData* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.eas_.InternalSwap(&other->_impl_.eas_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetRunningEasData::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2dcharts_2eproto[13]);
+}
+
+// ===================================================================
+
+class RunningEaInfo::_Internal {
+ public:
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& started_at(const RunningEaInfo* msg);
+};
+
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+RunningEaInfo::_Internal::started_at(const RunningEaInfo* msg) {
+  return *msg->_impl_.started_at_;
+}
+void RunningEaInfo::clear_started_at() {
+  if (GetArenaForAllocation() == nullptr && _impl_.started_at_ != nullptr) {
+    delete _impl_.started_at_;
+  }
+  _impl_.started_at_ = nullptr;
+}
+RunningEaInfo::RunningEaInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.RunningEaInfo)
+}
+RunningEaInfo::RunningEaInfo(const RunningEaInfo& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  RunningEaInfo* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ea_id_){}
+    , decltype(_impl_.ea_name_){}
+    , decltype(_impl_.parent_session_id_){}
+    , decltype(_impl_.ea_terminal_id_){}
+    , decltype(_impl_.symbol_){}
+    , decltype(_impl_.period_){}
+    , decltype(_impl_.state_){}
+    , decltype(_impl_.started_at_){nullptr}
+    , decltype(_impl_.ea_cpu_percent_){}
+    , decltype(_impl_.ref_cpu_percent_){}
+    , decltype(_impl_.cpu_ratio_){}
+    , decltype(_impl_.ea_ram_bytes_){}
+    , decltype(_impl_.ref_ram_bytes_){}
+    , decltype(_impl_.ram_ratio_){}
+    , decltype(_impl_.resource_multiplier_){}
+    , decltype(_impl_.process_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.ea_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_ea_id().empty()) {
+    _this->_impl_.ea_id_.Set(from._internal_ea_id(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.ea_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_ea_name().empty()) {
+    _this->_impl_.ea_name_.Set(from._internal_ea_name(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.parent_session_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.parent_session_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_parent_session_id().empty()) {
+    _this->_impl_.parent_session_id_.Set(from._internal_parent_session_id(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.ea_terminal_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_terminal_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_ea_terminal_id().empty()) {
+    _this->_impl_.ea_terminal_id_.Set(from._internal_ea_terminal_id(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.symbol_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.symbol_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_symbol().empty()) {
+    _this->_impl_.symbol_.Set(from._internal_symbol(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.period_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.period_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_period().empty()) {
+    _this->_impl_.period_.Set(from._internal_period(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.state_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.state_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_state().empty()) {
+    _this->_impl_.state_.Set(from._internal_state(), 
+      _this->GetArenaForAllocation());
+  }
+  if (from._internal_has_started_at()) {
+    _this->_impl_.started_at_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.started_at_);
+  }
+  ::memcpy(&_impl_.ea_cpu_percent_, &from._impl_.ea_cpu_percent_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.process_id_) -
+    reinterpret_cast<char*>(&_impl_.ea_cpu_percent_)) + sizeof(_impl_.process_id_));
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.RunningEaInfo)
+}
+
+inline void RunningEaInfo::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ea_id_){}
+    , decltype(_impl_.ea_name_){}
+    , decltype(_impl_.parent_session_id_){}
+    , decltype(_impl_.ea_terminal_id_){}
+    , decltype(_impl_.symbol_){}
+    , decltype(_impl_.period_){}
+    , decltype(_impl_.state_){}
+    , decltype(_impl_.started_at_){nullptr}
+    , decltype(_impl_.ea_cpu_percent_){0}
+    , decltype(_impl_.ref_cpu_percent_){0}
+    , decltype(_impl_.cpu_ratio_){0}
+    , decltype(_impl_.ea_ram_bytes_){int64_t{0}}
+    , decltype(_impl_.ref_ram_bytes_){int64_t{0}}
+    , decltype(_impl_.ram_ratio_){0}
+    , decltype(_impl_.resource_multiplier_){0}
+    , decltype(_impl_.process_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.ea_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ea_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.parent_session_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.parent_session_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ea_terminal_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_terminal_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.symbol_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.symbol_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.period_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.period_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.state_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.state_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+RunningEaInfo::~RunningEaInfo() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.RunningEaInfo)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void RunningEaInfo::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.ea_id_.Destroy();
+  _impl_.ea_name_.Destroy();
+  _impl_.parent_session_id_.Destroy();
+  _impl_.ea_terminal_id_.Destroy();
+  _impl_.symbol_.Destroy();
+  _impl_.period_.Destroy();
+  _impl_.state_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.started_at_;
+}
+
+void RunningEaInfo::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void RunningEaInfo::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.RunningEaInfo)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.ea_id_.ClearToEmpty();
+  _impl_.ea_name_.ClearToEmpty();
+  _impl_.parent_session_id_.ClearToEmpty();
+  _impl_.ea_terminal_id_.ClearToEmpty();
+  _impl_.symbol_.ClearToEmpty();
+  _impl_.period_.ClearToEmpty();
+  _impl_.state_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.started_at_ != nullptr) {
+    delete _impl_.started_at_;
+  }
+  _impl_.started_at_ = nullptr;
+  ::memset(&_impl_.ea_cpu_percent_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.process_id_) -
+      reinterpret_cast<char*>(&_impl_.ea_cpu_percent_)) + sizeof(_impl_.process_id_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* RunningEaInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string ea_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_ea_id();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.RunningEaInfo.ea_id"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string ea_name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_ea_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.RunningEaInfo.ea_name"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string parent_session_id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_parent_session_id();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.RunningEaInfo.parent_session_id"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string ea_terminal_id = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          auto str = _internal_mutable_ea_terminal_id();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.RunningEaInfo.ea_terminal_id"));
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 process_id = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _impl_.process_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string symbol = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+          auto str = _internal_mutable_symbol();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.RunningEaInfo.symbol"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string period = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          auto str = _internal_mutable_period();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.RunningEaInfo.period"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string state = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+          auto str = _internal_mutable_state();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.RunningEaInfo.state"));
+        } else
+          goto handle_unusual;
+        continue;
+      // .google.protobuf.Timestamp started_at = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
+          ptr = ctx->ParseMessage(_internal_mutable_started_at(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double ea_cpu_percent = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 81)) {
+          _impl_.ea_cpu_percent_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double ref_cpu_percent = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 89)) {
+          _impl_.ref_cpu_percent_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double cpu_ratio = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 97)) {
+          _impl_.cpu_ratio_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 ea_ram_bytes = 13;
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
+          _impl_.ea_ram_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 ref_ram_bytes = 14;
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
+          _impl_.ref_ram_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double ram_ratio = 15;
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 121)) {
+          _impl_.ram_ratio_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double resource_multiplier = 16;
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 129)) {
+          _impl_.resource_multiplier_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* RunningEaInfo::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.RunningEaInfo)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string ea_id = 1;
+  if (!this->_internal_ea_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_ea_id().data(), static_cast<int>(this->_internal_ea_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.RunningEaInfo.ea_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_ea_id(), target);
+  }
+
+  // string ea_name = 2;
+  if (!this->_internal_ea_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_ea_name().data(), static_cast<int>(this->_internal_ea_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.RunningEaInfo.ea_name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_ea_name(), target);
+  }
+
+  // string parent_session_id = 3;
+  if (!this->_internal_parent_session_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_parent_session_id().data(), static_cast<int>(this->_internal_parent_session_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.RunningEaInfo.parent_session_id");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_parent_session_id(), target);
+  }
+
+  // string ea_terminal_id = 4;
+  if (!this->_internal_ea_terminal_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_ea_terminal_id().data(), static_cast<int>(this->_internal_ea_terminal_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.RunningEaInfo.ea_terminal_id");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_ea_terminal_id(), target);
+  }
+
+  // int32 process_id = 5;
+  if (this->_internal_process_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_process_id(), target);
+  }
+
+  // string symbol = 6;
+  if (!this->_internal_symbol().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_symbol().data(), static_cast<int>(this->_internal_symbol().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.RunningEaInfo.symbol");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_symbol(), target);
+  }
+
+  // string period = 7;
+  if (!this->_internal_period().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_period().data(), static_cast<int>(this->_internal_period().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.RunningEaInfo.period");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_period(), target);
+  }
+
+  // string state = 8;
+  if (!this->_internal_state().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_state().data(), static_cast<int>(this->_internal_state().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.RunningEaInfo.state");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_state(), target);
+  }
+
+  // .google.protobuf.Timestamp started_at = 9;
+  if (this->_internal_has_started_at()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(9, _Internal::started_at(this),
+        _Internal::started_at(this).GetCachedSize(), target, stream);
+  }
+
+  // double ea_cpu_percent = 10;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_ea_cpu_percent = this->_internal_ea_cpu_percent();
+  uint64_t raw_ea_cpu_percent;
+  memcpy(&raw_ea_cpu_percent, &tmp_ea_cpu_percent, sizeof(tmp_ea_cpu_percent));
+  if (raw_ea_cpu_percent != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(10, this->_internal_ea_cpu_percent(), target);
+  }
+
+  // double ref_cpu_percent = 11;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_ref_cpu_percent = this->_internal_ref_cpu_percent();
+  uint64_t raw_ref_cpu_percent;
+  memcpy(&raw_ref_cpu_percent, &tmp_ref_cpu_percent, sizeof(tmp_ref_cpu_percent));
+  if (raw_ref_cpu_percent != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(11, this->_internal_ref_cpu_percent(), target);
+  }
+
+  // double cpu_ratio = 12;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_cpu_ratio = this->_internal_cpu_ratio();
+  uint64_t raw_cpu_ratio;
+  memcpy(&raw_cpu_ratio, &tmp_cpu_ratio, sizeof(tmp_cpu_ratio));
+  if (raw_cpu_ratio != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(12, this->_internal_cpu_ratio(), target);
+  }
+
+  // int64 ea_ram_bytes = 13;
+  if (this->_internal_ea_ram_bytes() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(13, this->_internal_ea_ram_bytes(), target);
+  }
+
+  // int64 ref_ram_bytes = 14;
+  if (this->_internal_ref_ram_bytes() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(14, this->_internal_ref_ram_bytes(), target);
+  }
+
+  // double ram_ratio = 15;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_ram_ratio = this->_internal_ram_ratio();
+  uint64_t raw_ram_ratio;
+  memcpy(&raw_ram_ratio, &tmp_ram_ratio, sizeof(tmp_ram_ratio));
+  if (raw_ram_ratio != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(15, this->_internal_ram_ratio(), target);
+  }
+
+  // double resource_multiplier = 16;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_resource_multiplier = this->_internal_resource_multiplier();
+  uint64_t raw_resource_multiplier;
+  memcpy(&raw_resource_multiplier, &tmp_resource_multiplier, sizeof(tmp_resource_multiplier));
+  if (raw_resource_multiplier != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(16, this->_internal_resource_multiplier(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.RunningEaInfo)
+  return target;
+}
+
+size_t RunningEaInfo::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.RunningEaInfo)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string ea_id = 1;
+  if (!this->_internal_ea_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_ea_id());
+  }
+
+  // string ea_name = 2;
+  if (!this->_internal_ea_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_ea_name());
+  }
+
+  // string parent_session_id = 3;
+  if (!this->_internal_parent_session_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_parent_session_id());
+  }
+
+  // string ea_terminal_id = 4;
+  if (!this->_internal_ea_terminal_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_ea_terminal_id());
+  }
+
+  // string symbol = 6;
+  if (!this->_internal_symbol().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_symbol());
+  }
+
+  // string period = 7;
+  if (!this->_internal_period().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_period());
+  }
+
+  // string state = 8;
+  if (!this->_internal_state().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_state());
+  }
+
+  // .google.protobuf.Timestamp started_at = 9;
+  if (this->_internal_has_started_at()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.started_at_);
+  }
+
+  // double ea_cpu_percent = 10;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_ea_cpu_percent = this->_internal_ea_cpu_percent();
+  uint64_t raw_ea_cpu_percent;
+  memcpy(&raw_ea_cpu_percent, &tmp_ea_cpu_percent, sizeof(tmp_ea_cpu_percent));
+  if (raw_ea_cpu_percent != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double ref_cpu_percent = 11;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_ref_cpu_percent = this->_internal_ref_cpu_percent();
+  uint64_t raw_ref_cpu_percent;
+  memcpy(&raw_ref_cpu_percent, &tmp_ref_cpu_percent, sizeof(tmp_ref_cpu_percent));
+  if (raw_ref_cpu_percent != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double cpu_ratio = 12;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_cpu_ratio = this->_internal_cpu_ratio();
+  uint64_t raw_cpu_ratio;
+  memcpy(&raw_cpu_ratio, &tmp_cpu_ratio, sizeof(tmp_cpu_ratio));
+  if (raw_cpu_ratio != 0) {
+    total_size += 1 + 8;
+  }
+
+  // int64 ea_ram_bytes = 13;
+  if (this->_internal_ea_ram_bytes() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_ea_ram_bytes());
+  }
+
+  // int64 ref_ram_bytes = 14;
+  if (this->_internal_ref_ram_bytes() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_ref_ram_bytes());
+  }
+
+  // double ram_ratio = 15;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_ram_ratio = this->_internal_ram_ratio();
+  uint64_t raw_ram_ratio;
+  memcpy(&raw_ram_ratio, &tmp_ram_ratio, sizeof(tmp_ram_ratio));
+  if (raw_ram_ratio != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double resource_multiplier = 16;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_resource_multiplier = this->_internal_resource_multiplier();
+  uint64_t raw_resource_multiplier;
+  memcpy(&raw_resource_multiplier, &tmp_resource_multiplier, sizeof(tmp_resource_multiplier));
+  if (raw_resource_multiplier != 0) {
+    total_size += 2 + 8;
+  }
+
+  // int32 process_id = 5;
+  if (this->_internal_process_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_process_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RunningEaInfo::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    RunningEaInfo::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RunningEaInfo::GetClassData() const { return &_class_data_; }
+
+
+void RunningEaInfo::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<RunningEaInfo*>(&to_msg);
+  auto& from = static_cast<const RunningEaInfo&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.RunningEaInfo)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_ea_id().empty()) {
+    _this->_internal_set_ea_id(from._internal_ea_id());
+  }
+  if (!from._internal_ea_name().empty()) {
+    _this->_internal_set_ea_name(from._internal_ea_name());
+  }
+  if (!from._internal_parent_session_id().empty()) {
+    _this->_internal_set_parent_session_id(from._internal_parent_session_id());
+  }
+  if (!from._internal_ea_terminal_id().empty()) {
+    _this->_internal_set_ea_terminal_id(from._internal_ea_terminal_id());
+  }
+  if (!from._internal_symbol().empty()) {
+    _this->_internal_set_symbol(from._internal_symbol());
+  }
+  if (!from._internal_period().empty()) {
+    _this->_internal_set_period(from._internal_period());
+  }
+  if (!from._internal_state().empty()) {
+    _this->_internal_set_state(from._internal_state());
+  }
+  if (from._internal_has_started_at()) {
+    _this->_internal_mutable_started_at()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+        from._internal_started_at());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_ea_cpu_percent = from._internal_ea_cpu_percent();
+  uint64_t raw_ea_cpu_percent;
+  memcpy(&raw_ea_cpu_percent, &tmp_ea_cpu_percent, sizeof(tmp_ea_cpu_percent));
+  if (raw_ea_cpu_percent != 0) {
+    _this->_internal_set_ea_cpu_percent(from._internal_ea_cpu_percent());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_ref_cpu_percent = from._internal_ref_cpu_percent();
+  uint64_t raw_ref_cpu_percent;
+  memcpy(&raw_ref_cpu_percent, &tmp_ref_cpu_percent, sizeof(tmp_ref_cpu_percent));
+  if (raw_ref_cpu_percent != 0) {
+    _this->_internal_set_ref_cpu_percent(from._internal_ref_cpu_percent());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_cpu_ratio = from._internal_cpu_ratio();
+  uint64_t raw_cpu_ratio;
+  memcpy(&raw_cpu_ratio, &tmp_cpu_ratio, sizeof(tmp_cpu_ratio));
+  if (raw_cpu_ratio != 0) {
+    _this->_internal_set_cpu_ratio(from._internal_cpu_ratio());
+  }
+  if (from._internal_ea_ram_bytes() != 0) {
+    _this->_internal_set_ea_ram_bytes(from._internal_ea_ram_bytes());
+  }
+  if (from._internal_ref_ram_bytes() != 0) {
+    _this->_internal_set_ref_ram_bytes(from._internal_ref_ram_bytes());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_ram_ratio = from._internal_ram_ratio();
+  uint64_t raw_ram_ratio;
+  memcpy(&raw_ram_ratio, &tmp_ram_ratio, sizeof(tmp_ram_ratio));
+  if (raw_ram_ratio != 0) {
+    _this->_internal_set_ram_ratio(from._internal_ram_ratio());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_resource_multiplier = from._internal_resource_multiplier();
+  uint64_t raw_resource_multiplier;
+  memcpy(&raw_resource_multiplier, &tmp_resource_multiplier, sizeof(tmp_resource_multiplier));
+  if (raw_resource_multiplier != 0) {
+    _this->_internal_set_resource_multiplier(from._internal_resource_multiplier());
+  }
+  if (from._internal_process_id() != 0) {
+    _this->_internal_set_process_id(from._internal_process_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void RunningEaInfo::CopyFrom(const RunningEaInfo& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.RunningEaInfo)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RunningEaInfo::IsInitialized() const {
+  return true;
+}
+
+void RunningEaInfo::InternalSwap(RunningEaInfo* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.ea_id_, lhs_arena,
+      &other->_impl_.ea_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.ea_name_, lhs_arena,
+      &other->_impl_.ea_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.parent_session_id_, lhs_arena,
+      &other->_impl_.parent_session_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.ea_terminal_id_, lhs_arena,
+      &other->_impl_.ea_terminal_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.symbol_, lhs_arena,
+      &other->_impl_.symbol_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.period_, lhs_arena,
+      &other->_impl_.period_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.state_, lhs_arena,
+      &other->_impl_.state_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(RunningEaInfo, _impl_.process_id_)
+      + sizeof(RunningEaInfo::_impl_.process_id_)
+      - PROTOBUF_FIELD_OFFSET(RunningEaInfo, _impl_.started_at_)>(
+          reinterpret_cast<char*>(&_impl_.started_at_),
+          reinterpret_cast<char*>(&other->_impl_.started_at_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RunningEaInfo::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2dcharts_2eproto[14]);
+}
+
+// ===================================================================
+
+class GetEaLogsRequest::_Internal {
+ public:
+  using HasBits = decltype(std::declval<GetEaLogsRequest>()._impl_._has_bits_);
+  static void set_has_log_type(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+};
+
+GetEaLogsRequest::GetEaLogsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.GetEaLogsRequest)
+}
+GetEaLogsRequest::GetEaLogsRequest(const GetEaLogsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetEaLogsRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.ea_id_){}
+    , decltype(_impl_.log_type_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.ea_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_ea_id().empty()) {
+    _this->_impl_.ea_id_.Set(from._internal_ea_id(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.log_type_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.log_type_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_log_type()) {
+    _this->_impl_.log_type_.Set(from._internal_log_type(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.GetEaLogsRequest)
+}
+
+inline void GetEaLogsRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.ea_id_){}
+    , decltype(_impl_.log_type_){}
+  };
+  _impl_.ea_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.log_type_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.log_type_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+GetEaLogsRequest::~GetEaLogsRequest() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.GetEaLogsRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetEaLogsRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.ea_id_.Destroy();
+  _impl_.log_type_.Destroy();
+}
+
+void GetEaLogsRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetEaLogsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.GetEaLogsRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.ea_id_.ClearToEmpty();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    _impl_.log_type_.ClearNonDefaultToEmpty();
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetEaLogsRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string ea_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_ea_id();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.GetEaLogsRequest.ea_id"));
+        } else
+          goto handle_unusual;
+        continue;
+      // optional string log_type = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_log_type();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.GetEaLogsRequest.log_type"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetEaLogsRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.GetEaLogsRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string ea_id = 1;
+  if (!this->_internal_ea_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_ea_id().data(), static_cast<int>(this->_internal_ea_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.GetEaLogsRequest.ea_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_ea_id(), target);
+  }
+
+  // optional string log_type = 2;
+  if (_internal_has_log_type()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_log_type().data(), static_cast<int>(this->_internal_log_type().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.GetEaLogsRequest.log_type");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_log_type(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.GetEaLogsRequest)
+  return target;
+}
+
+size_t GetEaLogsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.GetEaLogsRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string ea_id = 1;
+  if (!this->_internal_ea_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_ea_id());
+  }
+
+  // optional string log_type = 2;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_log_type());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetEaLogsRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetEaLogsRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetEaLogsRequest::GetClassData() const { return &_class_data_; }
+
+
+void GetEaLogsRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetEaLogsRequest*>(&to_msg);
+  auto& from = static_cast<const GetEaLogsRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.GetEaLogsRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_ea_id().empty()) {
+    _this->_internal_set_ea_id(from._internal_ea_id());
+  }
+  if (from._internal_has_log_type()) {
+    _this->_internal_set_log_type(from._internal_log_type());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetEaLogsRequest::CopyFrom(const GetEaLogsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.GetEaLogsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetEaLogsRequest::IsInitialized() const {
+  return true;
+}
+
+void GetEaLogsRequest::InternalSwap(GetEaLogsRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.ea_id_, lhs_arena,
+      &other->_impl_.ea_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.log_type_, lhs_arena,
+      &other->_impl_.log_type_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetEaLogsRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2dcharts_2eproto[15]);
+}
+
+// ===================================================================
+
+class GetEaLogsReply::_Internal {
+ public:
+  static const ::mt5_term_api::GetEaLogsData& data(const GetEaLogsReply* msg);
+  static const ::mt5_term_api::Error& error(const GetEaLogsReply* msg);
+};
+
+const ::mt5_term_api::GetEaLogsData&
+GetEaLogsReply::_Internal::data(const GetEaLogsReply* msg) {
+  return *msg->_impl_.response_.data_;
+}
+const ::mt5_term_api::Error&
+GetEaLogsReply::_Internal::error(const GetEaLogsReply* msg) {
+  return *msg->_impl_.response_.error_;
+}
+void GetEaLogsReply::set_allocated_data(::mt5_term_api::GetEaLogsData* data) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (data) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(data);
+    if (message_arena != submessage_arena) {
+      data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, data, submessage_arena);
+    }
+    set_has_data();
+    _impl_.response_.data_ = data;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.GetEaLogsReply.data)
+}
+void GetEaLogsReply::set_allocated_error(::mt5_term_api::Error* error) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (error) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(error));
+    if (message_arena != submessage_arena) {
+      error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, error, submessage_arena);
+    }
+    set_has_error();
+    _impl_.response_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.GetEaLogsReply.error)
+}
+void GetEaLogsReply::clear_error() {
+  if (_internal_has_error()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.response_.error_;
+    }
+    clear_has_response();
+  }
+}
+GetEaLogsReply::GetEaLogsReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.GetEaLogsReply)
+}
+GetEaLogsReply::GetEaLogsReply(const GetEaLogsReply& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetEaLogsReply* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.response_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  clear_has_response();
+  switch (from.response_case()) {
+    case kData: {
+      _this->_internal_mutable_data()->::mt5_term_api::GetEaLogsData::MergeFrom(
+          from._internal_data());
+      break;
+    }
+    case kError: {
+      _this->_internal_mutable_error()->::mt5_term_api::Error::MergeFrom(
+          from._internal_error());
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.GetEaLogsReply)
+}
+
+inline void GetEaLogsReply::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.response_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}
+  };
+  clear_has_response();
+}
+
+GetEaLogsReply::~GetEaLogsReply() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.GetEaLogsReply)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetEaLogsReply::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (has_response()) {
+    clear_response();
+  }
+}
+
+void GetEaLogsReply::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetEaLogsReply::clear_response() {
+// @@protoc_insertion_point(one_of_clear_start:mt5_term_api.GetEaLogsReply)
+  switch (response_case()) {
+    case kData: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete _impl_.response_.data_;
+      }
+      break;
+    }
+    case kError: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete _impl_.response_.error_;
+      }
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _impl_._oneof_case_[0] = RESPONSE_NOT_SET;
+}
+
+
+void GetEaLogsReply::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.GetEaLogsReply)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_response();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetEaLogsReply::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .mt5_term_api.GetEaLogsData data = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_data(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .mt5_term_api.Error error = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetEaLogsReply::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.GetEaLogsReply)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .mt5_term_api.GetEaLogsData data = 1;
+  if (_internal_has_data()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, _Internal::data(this),
+        _Internal::data(this).GetCachedSize(), target, stream);
+  }
+
+  // .mt5_term_api.Error error = 2;
+  if (_internal_has_error()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::error(this),
+        _Internal::error(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.GetEaLogsReply)
+  return target;
+}
+
+size_t GetEaLogsReply::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.GetEaLogsReply)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  switch (response_case()) {
+    // .mt5_term_api.GetEaLogsData data = 1;
+    case kData: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.response_.data_);
+      break;
+    }
+    // .mt5_term_api.Error error = 2;
+    case kError: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.response_.error_);
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetEaLogsReply::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetEaLogsReply::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetEaLogsReply::GetClassData() const { return &_class_data_; }
+
+
+void GetEaLogsReply::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetEaLogsReply*>(&to_msg);
+  auto& from = static_cast<const GetEaLogsReply&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.GetEaLogsReply)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  switch (from.response_case()) {
+    case kData: {
+      _this->_internal_mutable_data()->::mt5_term_api::GetEaLogsData::MergeFrom(
+          from._internal_data());
+      break;
+    }
+    case kError: {
+      _this->_internal_mutable_error()->::mt5_term_api::Error::MergeFrom(
+          from._internal_error());
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetEaLogsReply::CopyFrom(const GetEaLogsReply& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.GetEaLogsReply)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetEaLogsReply::IsInitialized() const {
+  return true;
+}
+
+void GetEaLogsReply::InternalSwap(GetEaLogsReply* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.response_, other->_impl_.response_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetEaLogsReply::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2dcharts_2eproto[16]);
+}
+
+// ===================================================================
+
+class GetEaLogsData::_Internal {
+ public:
+};
+
+GetEaLogsData::GetEaLogsData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.GetEaLogsData)
+}
+GetEaLogsData::GetEaLogsData(const GetEaLogsData& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetEaLogsData* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.rows_){from._impl_.rows_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.GetEaLogsData)
+}
+
+inline void GetEaLogsData::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.rows_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetEaLogsData::~GetEaLogsData() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.GetEaLogsData)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetEaLogsData::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.rows_.~RepeatedPtrField();
+}
+
+void GetEaLogsData::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetEaLogsData::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.GetEaLogsData)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.rows_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetEaLogsData::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .mt5_term_api.EaLogRow rows = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_rows(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetEaLogsData::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.GetEaLogsData)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .mt5_term_api.EaLogRow rows = 1;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_rows_size()); i < n; i++) {
+    const auto& repfield = this->_internal_rows(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.GetEaLogsData)
+  return target;
+}
+
+size_t GetEaLogsData::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.GetEaLogsData)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .mt5_term_api.EaLogRow rows = 1;
+  total_size += 1UL * this->_internal_rows_size();
+  for (const auto& msg : this->_impl_.rows_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetEaLogsData::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetEaLogsData::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetEaLogsData::GetClassData() const { return &_class_data_; }
+
+
+void GetEaLogsData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetEaLogsData*>(&to_msg);
+  auto& from = static_cast<const GetEaLogsData&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.GetEaLogsData)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.rows_.MergeFrom(from._impl_.rows_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetEaLogsData::CopyFrom(const GetEaLogsData& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.GetEaLogsData)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetEaLogsData::IsInitialized() const {
+  return true;
+}
+
+void GetEaLogsData::InternalSwap(GetEaLogsData* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.rows_.InternalSwap(&other->_impl_.rows_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetEaLogsData::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2dcharts_2eproto[17]);
+}
+
+// ===================================================================
+
+class EaLogRow::_Internal {
+ public:
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& time(const EaLogRow* msg);
+};
+
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+EaLogRow::_Internal::time(const EaLogRow* msg) {
+  return *msg->_impl_.time_;
+}
+void EaLogRow::clear_time() {
+  if (GetArenaForAllocation() == nullptr && _impl_.time_ != nullptr) {
+    delete _impl_.time_;
+  }
+  _impl_.time_ = nullptr;
+}
+EaLogRow::EaLogRow(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.EaLogRow)
+}
+EaLogRow::EaLogRow(const EaLogRow& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  EaLogRow* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.source_){}
+    , decltype(_impl_.message_){}
+    , decltype(_impl_.time_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.source_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.source_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_source().empty()) {
+    _this->_impl_.source_.Set(from._internal_source(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.message_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.message_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_message().empty()) {
+    _this->_impl_.message_.Set(from._internal_message(), 
+      _this->GetArenaForAllocation());
+  }
+  if (from._internal_has_time()) {
+    _this->_impl_.time_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.time_);
+  }
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.EaLogRow)
+}
+
+inline void EaLogRow::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.source_){}
+    , decltype(_impl_.message_){}
+    , decltype(_impl_.time_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.source_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.source_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.message_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.message_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+EaLogRow::~EaLogRow() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.EaLogRow)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void EaLogRow::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.source_.Destroy();
+  _impl_.message_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.time_;
+}
+
+void EaLogRow::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void EaLogRow::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.EaLogRow)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.source_.ClearToEmpty();
+  _impl_.message_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.time_ != nullptr) {
+    delete _impl_.time_;
+  }
+  _impl_.time_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* EaLogRow::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .google.protobuf.Timestamp time = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_time(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string source = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_source();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.EaLogRow.source"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string message = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_message();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.EaLogRow.message"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* EaLogRow::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.EaLogRow)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .google.protobuf.Timestamp time = 1;
+  if (this->_internal_has_time()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, _Internal::time(this),
+        _Internal::time(this).GetCachedSize(), target, stream);
+  }
+
+  // string source = 2;
+  if (!this->_internal_source().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_source().data(), static_cast<int>(this->_internal_source().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.EaLogRow.source");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_source(), target);
+  }
+
+  // string message = 3;
+  if (!this->_internal_message().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.EaLogRow.message");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_message(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.EaLogRow)
+  return target;
+}
+
+size_t EaLogRow::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.EaLogRow)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string source = 2;
+  if (!this->_internal_source().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_source());
+  }
+
+  // string message = 3;
+  if (!this->_internal_message().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_message());
+  }
+
+  // .google.protobuf.Timestamp time = 1;
+  if (this->_internal_has_time()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.time_);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData EaLogRow::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    EaLogRow::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*EaLogRow::GetClassData() const { return &_class_data_; }
+
+
+void EaLogRow::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<EaLogRow*>(&to_msg);
+  auto& from = static_cast<const EaLogRow&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.EaLogRow)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_source().empty()) {
+    _this->_internal_set_source(from._internal_source());
+  }
+  if (!from._internal_message().empty()) {
+    _this->_internal_set_message(from._internal_message());
+  }
+  if (from._internal_has_time()) {
+    _this->_internal_mutable_time()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+        from._internal_time());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void EaLogRow::CopyFrom(const EaLogRow& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.EaLogRow)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool EaLogRow::IsInitialized() const {
+  return true;
+}
+
+void EaLogRow::InternalSwap(EaLogRow* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.source_, lhs_arena,
+      &other->_impl_.source_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.message_, lhs_arena,
+      &other->_impl_.message_, rhs_arena
+  );
+  swap(_impl_.time_, other->_impl_.time_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata EaLogRow::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2dcharts_2eproto[18]);
+}
+
+// ===================================================================
+
+class StopEaRequest::_Internal {
+ public:
+  using HasBits = decltype(std::declval<StopEaRequest>()._impl_._has_bits_);
+  static void set_has_reason(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+};
+
+StopEaRequest::StopEaRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.StopEaRequest)
+}
+StopEaRequest::StopEaRequest(const StopEaRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  StopEaRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.ea_id_){}
+    , decltype(_impl_.reason_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.ea_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_ea_id().empty()) {
+    _this->_impl_.ea_id_.Set(from._internal_ea_id(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.reason_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.reason_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_reason()) {
+    _this->_impl_.reason_.Set(from._internal_reason(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.StopEaRequest)
+}
+
+inline void StopEaRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.ea_id_){}
+    , decltype(_impl_.reason_){}
+  };
+  _impl_.ea_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.reason_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.reason_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+StopEaRequest::~StopEaRequest() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.StopEaRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void StopEaRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.ea_id_.Destroy();
+  _impl_.reason_.Destroy();
+}
+
+void StopEaRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void StopEaRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.StopEaRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.ea_id_.ClearToEmpty();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    _impl_.reason_.ClearNonDefaultToEmpty();
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* StopEaRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string ea_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_ea_id();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.StopEaRequest.ea_id"));
+        } else
+          goto handle_unusual;
+        continue;
+      // optional string reason = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_reason();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.StopEaRequest.reason"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* StopEaRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.StopEaRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string ea_id = 1;
+  if (!this->_internal_ea_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_ea_id().data(), static_cast<int>(this->_internal_ea_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.StopEaRequest.ea_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_ea_id(), target);
+  }
+
+  // optional string reason = 2;
+  if (_internal_has_reason()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_reason().data(), static_cast<int>(this->_internal_reason().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.StopEaRequest.reason");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_reason(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.StopEaRequest)
+  return target;
+}
+
+size_t StopEaRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.StopEaRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string ea_id = 1;
+  if (!this->_internal_ea_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_ea_id());
+  }
+
+  // optional string reason = 2;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_reason());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StopEaRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    StopEaRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StopEaRequest::GetClassData() const { return &_class_data_; }
+
+
+void StopEaRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<StopEaRequest*>(&to_msg);
+  auto& from = static_cast<const StopEaRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.StopEaRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_ea_id().empty()) {
+    _this->_internal_set_ea_id(from._internal_ea_id());
+  }
+  if (from._internal_has_reason()) {
+    _this->_internal_set_reason(from._internal_reason());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void StopEaRequest::CopyFrom(const StopEaRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.StopEaRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool StopEaRequest::IsInitialized() const {
+  return true;
+}
+
+void StopEaRequest::InternalSwap(StopEaRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.ea_id_, lhs_arena,
+      &other->_impl_.ea_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.reason_, lhs_arena,
+      &other->_impl_.reason_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata StopEaRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2dcharts_2eproto[19]);
+}
+
+// ===================================================================
+
+class StopEaReply::_Internal {
+ public:
+  static const ::mt5_term_api::StopEaData& data(const StopEaReply* msg);
+  static const ::mt5_term_api::Error& error(const StopEaReply* msg);
+};
+
+const ::mt5_term_api::StopEaData&
+StopEaReply::_Internal::data(const StopEaReply* msg) {
+  return *msg->_impl_.response_.data_;
+}
+const ::mt5_term_api::Error&
+StopEaReply::_Internal::error(const StopEaReply* msg) {
+  return *msg->_impl_.response_.error_;
+}
+void StopEaReply::set_allocated_data(::mt5_term_api::StopEaData* data) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (data) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(data);
+    if (message_arena != submessage_arena) {
+      data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, data, submessage_arena);
+    }
+    set_has_data();
+    _impl_.response_.data_ = data;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.StopEaReply.data)
+}
+void StopEaReply::set_allocated_error(::mt5_term_api::Error* error) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (error) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(error));
+    if (message_arena != submessage_arena) {
+      error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, error, submessage_arena);
+    }
+    set_has_error();
+    _impl_.response_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.StopEaReply.error)
+}
+void StopEaReply::clear_error() {
+  if (_internal_has_error()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.response_.error_;
+    }
+    clear_has_response();
+  }
+}
+StopEaReply::StopEaReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.StopEaReply)
+}
+StopEaReply::StopEaReply(const StopEaReply& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  StopEaReply* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.response_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  clear_has_response();
+  switch (from.response_case()) {
+    case kData: {
+      _this->_internal_mutable_data()->::mt5_term_api::StopEaData::MergeFrom(
+          from._internal_data());
+      break;
+    }
+    case kError: {
+      _this->_internal_mutable_error()->::mt5_term_api::Error::MergeFrom(
+          from._internal_error());
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.StopEaReply)
+}
+
+inline void StopEaReply::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.response_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}
+  };
+  clear_has_response();
+}
+
+StopEaReply::~StopEaReply() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.StopEaReply)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void StopEaReply::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (has_response()) {
+    clear_response();
+  }
+}
+
+void StopEaReply::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void StopEaReply::clear_response() {
+// @@protoc_insertion_point(one_of_clear_start:mt5_term_api.StopEaReply)
+  switch (response_case()) {
+    case kData: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete _impl_.response_.data_;
+      }
+      break;
+    }
+    case kError: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete _impl_.response_.error_;
+      }
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _impl_._oneof_case_[0] = RESPONSE_NOT_SET;
+}
+
+
+void StopEaReply::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.StopEaReply)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_response();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* StopEaReply::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .mt5_term_api.StopEaData data = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_data(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .mt5_term_api.Error error = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* StopEaReply::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.StopEaReply)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .mt5_term_api.StopEaData data = 1;
+  if (_internal_has_data()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, _Internal::data(this),
+        _Internal::data(this).GetCachedSize(), target, stream);
+  }
+
+  // .mt5_term_api.Error error = 2;
+  if (_internal_has_error()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::error(this),
+        _Internal::error(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.StopEaReply)
+  return target;
+}
+
+size_t StopEaReply::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.StopEaReply)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  switch (response_case()) {
+    // .mt5_term_api.StopEaData data = 1;
+    case kData: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.response_.data_);
+      break;
+    }
+    // .mt5_term_api.Error error = 2;
+    case kError: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.response_.error_);
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StopEaReply::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    StopEaReply::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StopEaReply::GetClassData() const { return &_class_data_; }
+
+
+void StopEaReply::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<StopEaReply*>(&to_msg);
+  auto& from = static_cast<const StopEaReply&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.StopEaReply)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  switch (from.response_case()) {
+    case kData: {
+      _this->_internal_mutable_data()->::mt5_term_api::StopEaData::MergeFrom(
+          from._internal_data());
+      break;
+    }
+    case kError: {
+      _this->_internal_mutable_error()->::mt5_term_api::Error::MergeFrom(
+          from._internal_error());
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void StopEaReply::CopyFrom(const StopEaReply& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.StopEaReply)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool StopEaReply::IsInitialized() const {
+  return true;
+}
+
+void StopEaReply::InternalSwap(StopEaReply* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.response_, other->_impl_.response_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata StopEaReply::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2dcharts_2eproto[20]);
+}
+
+// ===================================================================
+
+class StopEaData::_Internal {
+ public:
+};
+
+StopEaData::StopEaData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.StopEaData)
+}
+StopEaData::StopEaData(const StopEaData& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  StopEaData* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ea_id_){}
+    , decltype(_impl_.message_){}
+    , decltype(_impl_.success_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.ea_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_ea_id().empty()) {
+    _this->_impl_.ea_id_.Set(from._internal_ea_id(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.message_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.message_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_message().empty()) {
+    _this->_impl_.message_.Set(from._internal_message(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.success_ = from._impl_.success_;
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.StopEaData)
+}
+
+inline void StopEaData::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ea_id_){}
+    , decltype(_impl_.message_){}
+    , decltype(_impl_.success_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.ea_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ea_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.message_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.message_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+StopEaData::~StopEaData() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.StopEaData)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void StopEaData::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.ea_id_.Destroy();
+  _impl_.message_.Destroy();
+}
+
+void StopEaData::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void StopEaData::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.StopEaData)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.ea_id_.ClearToEmpty();
+  _impl_.message_.ClearToEmpty();
+  _impl_.success_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* StopEaData::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool success = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string ea_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_ea_id();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.StopEaData.ea_id"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string message = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_message();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.StopEaData.message"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* StopEaData::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.StopEaData)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_success(), target);
+  }
+
+  // string ea_id = 2;
+  if (!this->_internal_ea_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_ea_id().data(), static_cast<int>(this->_internal_ea_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.StopEaData.ea_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_ea_id(), target);
+  }
+
+  // string message = 3;
+  if (!this->_internal_message().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.StopEaData.message");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_message(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.StopEaData)
+  return target;
+}
+
+size_t StopEaData::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.StopEaData)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string ea_id = 2;
+  if (!this->_internal_ea_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_ea_id());
+  }
+
+  // string message = 3;
+  if (!this->_internal_message().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_message());
+  }
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StopEaData::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    StopEaData::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StopEaData::GetClassData() const { return &_class_data_; }
+
+
+void StopEaData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<StopEaData*>(&to_msg);
+  auto& from = static_cast<const StopEaData&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.StopEaData)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_ea_id().empty()) {
+    _this->_internal_set_ea_id(from._internal_ea_id());
+  }
+  if (!from._internal_message().empty()) {
+    _this->_internal_set_message(from._internal_message());
+  }
+  if (from._internal_success() != 0) {
+    _this->_internal_set_success(from._internal_success());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void StopEaData::CopyFrom(const StopEaData& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.StopEaData)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool StopEaData::IsInitialized() const {
+  return true;
+}
+
+void StopEaData::InternalSwap(StopEaData* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.ea_id_, lhs_arena,
+      &other->_impl_.ea_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.message_, lhs_arena,
+      &other->_impl_.message_, rhs_arena
+  );
+  swap(_impl_.success_, other->_impl_.success_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata StopEaData::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dcharts_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2dcharts_2eproto[21]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace mt5_term_api
 PROTOBUF_NAMESPACE_OPEN
@@ -2699,6 +7928,62 @@ Arena::CreateMaybeMessage< ::mt5_term_api::OpenTerminalChartWithEaReply >(Arena*
 template<> PROTOBUF_NOINLINE ::mt5_term_api::OpenTerminalChartWithEaData*
 Arena::CreateMaybeMessage< ::mt5_term_api::OpenTerminalChartWithEaData >(Arena* arena) {
   return Arena::CreateMessageInternal< ::mt5_term_api::OpenTerminalChartWithEaData >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mt5_term_api::AttachEaRequest*
+Arena::CreateMaybeMessage< ::mt5_term_api::AttachEaRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::AttachEaRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mt5_term_api::AttachEaReply*
+Arena::CreateMaybeMessage< ::mt5_term_api::AttachEaReply >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::AttachEaReply >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mt5_term_api::AttachEaData*
+Arena::CreateMaybeMessage< ::mt5_term_api::AttachEaData >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::AttachEaData >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mt5_term_api::GetRunningEasRequest*
+Arena::CreateMaybeMessage< ::mt5_term_api::GetRunningEasRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::GetRunningEasRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mt5_term_api::GetRunningEasReply*
+Arena::CreateMaybeMessage< ::mt5_term_api::GetRunningEasReply >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::GetRunningEasReply >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mt5_term_api::GetRunningEasData*
+Arena::CreateMaybeMessage< ::mt5_term_api::GetRunningEasData >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::GetRunningEasData >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mt5_term_api::RunningEaInfo*
+Arena::CreateMaybeMessage< ::mt5_term_api::RunningEaInfo >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::RunningEaInfo >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mt5_term_api::GetEaLogsRequest*
+Arena::CreateMaybeMessage< ::mt5_term_api::GetEaLogsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::GetEaLogsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mt5_term_api::GetEaLogsReply*
+Arena::CreateMaybeMessage< ::mt5_term_api::GetEaLogsReply >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::GetEaLogsReply >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mt5_term_api::GetEaLogsData*
+Arena::CreateMaybeMessage< ::mt5_term_api::GetEaLogsData >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::GetEaLogsData >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mt5_term_api::EaLogRow*
+Arena::CreateMaybeMessage< ::mt5_term_api::EaLogRow >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::EaLogRow >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mt5_term_api::StopEaRequest*
+Arena::CreateMaybeMessage< ::mt5_term_api::StopEaRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::StopEaRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mt5_term_api::StopEaReply*
+Arena::CreateMaybeMessage< ::mt5_term_api::StopEaReply >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::StopEaReply >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mt5_term_api::StopEaData*
+Arena::CreateMaybeMessage< ::mt5_term_api::StopEaData >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::StopEaData >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

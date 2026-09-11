@@ -49,6 +49,34 @@ class Charts final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GetEaParamsReply>> PrepareAsyncGetEaParams(::grpc::ClientContext* context, const ::mt5_term_api::GetEaParamsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GetEaParamsReply>>(PrepareAsyncGetEaParamsRaw(context, request, cq));
     }
+    virtual ::grpc::Status AttachEa(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest& request, ::mt5_term_api::AttachEaReply* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::AttachEaReply>> AsyncAttachEa(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::AttachEaReply>>(AsyncAttachEaRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::AttachEaReply>> PrepareAsyncAttachEa(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::AttachEaReply>>(PrepareAsyncAttachEaRaw(context, request, cq));
+    }
+    virtual ::grpc::Status GetRunningEas(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest& request, ::mt5_term_api::GetRunningEasReply* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GetRunningEasReply>> AsyncGetRunningEas(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GetRunningEasReply>>(AsyncGetRunningEasRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GetRunningEasReply>> PrepareAsyncGetRunningEas(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GetRunningEasReply>>(PrepareAsyncGetRunningEasRaw(context, request, cq));
+    }
+    virtual ::grpc::Status GetEaLogs(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest& request, ::mt5_term_api::GetEaLogsReply* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GetEaLogsReply>> AsyncGetEaLogs(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GetEaLogsReply>>(AsyncGetEaLogsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GetEaLogsReply>> PrepareAsyncGetEaLogs(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GetEaLogsReply>>(PrepareAsyncGetEaLogsRaw(context, request, cq));
+    }
+    virtual ::grpc::Status StopEa(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest& request, ::mt5_term_api::StopEaReply* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::StopEaReply>> AsyncStopEa(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::StopEaReply>>(AsyncStopEaRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::StopEaReply>> PrepareAsyncStopEa(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::StopEaReply>>(PrepareAsyncStopEaRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
@@ -56,6 +84,14 @@ class Charts final {
       virtual void OpenTerminalChartWithEa(::grpc::ClientContext* context, const ::mt5_term_api::OpenTerminalChartWithEaRequest* request, ::mt5_term_api::OpenTerminalChartWithEaReply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void GetEaParams(::grpc::ClientContext* context, const ::mt5_term_api::GetEaParamsRequest* request, ::mt5_term_api::GetEaParamsReply* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetEaParams(::grpc::ClientContext* context, const ::mt5_term_api::GetEaParamsRequest* request, ::mt5_term_api::GetEaParamsReply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void AttachEa(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest* request, ::mt5_term_api::AttachEaReply* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AttachEa(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest* request, ::mt5_term_api::AttachEaReply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetRunningEas(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest* request, ::mt5_term_api::GetRunningEasReply* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetRunningEas(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest* request, ::mt5_term_api::GetRunningEasReply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetEaLogs(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest* request, ::mt5_term_api::GetEaLogsReply* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetEaLogs(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest* request, ::mt5_term_api::GetEaLogsReply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void StopEa(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest* request, ::mt5_term_api::StopEaReply* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void StopEa(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest* request, ::mt5_term_api::StopEaReply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -65,6 +101,14 @@ class Charts final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::OpenTerminalChartWithEaReply>* PrepareAsyncOpenTerminalChartWithEaRaw(::grpc::ClientContext* context, const ::mt5_term_api::OpenTerminalChartWithEaRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GetEaParamsReply>* AsyncGetEaParamsRaw(::grpc::ClientContext* context, const ::mt5_term_api::GetEaParamsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GetEaParamsReply>* PrepareAsyncGetEaParamsRaw(::grpc::ClientContext* context, const ::mt5_term_api::GetEaParamsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::AttachEaReply>* AsyncAttachEaRaw(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::AttachEaReply>* PrepareAsyncAttachEaRaw(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GetRunningEasReply>* AsyncGetRunningEasRaw(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GetRunningEasReply>* PrepareAsyncGetRunningEasRaw(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GetEaLogsReply>* AsyncGetEaLogsRaw(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GetEaLogsReply>* PrepareAsyncGetEaLogsRaw(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::StopEaReply>* AsyncStopEaRaw(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::StopEaReply>* PrepareAsyncStopEaRaw(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -83,6 +127,34 @@ class Charts final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetEaParamsReply>> PrepareAsyncGetEaParams(::grpc::ClientContext* context, const ::mt5_term_api::GetEaParamsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetEaParamsReply>>(PrepareAsyncGetEaParamsRaw(context, request, cq));
     }
+    ::grpc::Status AttachEa(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest& request, ::mt5_term_api::AttachEaReply* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::AttachEaReply>> AsyncAttachEa(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::AttachEaReply>>(AsyncAttachEaRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::AttachEaReply>> PrepareAsyncAttachEa(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::AttachEaReply>>(PrepareAsyncAttachEaRaw(context, request, cq));
+    }
+    ::grpc::Status GetRunningEas(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest& request, ::mt5_term_api::GetRunningEasReply* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetRunningEasReply>> AsyncGetRunningEas(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetRunningEasReply>>(AsyncGetRunningEasRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetRunningEasReply>> PrepareAsyncGetRunningEas(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetRunningEasReply>>(PrepareAsyncGetRunningEasRaw(context, request, cq));
+    }
+    ::grpc::Status GetEaLogs(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest& request, ::mt5_term_api::GetEaLogsReply* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetEaLogsReply>> AsyncGetEaLogs(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetEaLogsReply>>(AsyncGetEaLogsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetEaLogsReply>> PrepareAsyncGetEaLogs(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetEaLogsReply>>(PrepareAsyncGetEaLogsRaw(context, request, cq));
+    }
+    ::grpc::Status StopEa(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest& request, ::mt5_term_api::StopEaReply* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::StopEaReply>> AsyncStopEa(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::StopEaReply>>(AsyncStopEaRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::StopEaReply>> PrepareAsyncStopEa(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::StopEaReply>>(PrepareAsyncStopEaRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
@@ -90,6 +162,14 @@ class Charts final {
       void OpenTerminalChartWithEa(::grpc::ClientContext* context, const ::mt5_term_api::OpenTerminalChartWithEaRequest* request, ::mt5_term_api::OpenTerminalChartWithEaReply* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetEaParams(::grpc::ClientContext* context, const ::mt5_term_api::GetEaParamsRequest* request, ::mt5_term_api::GetEaParamsReply* response, std::function<void(::grpc::Status)>) override;
       void GetEaParams(::grpc::ClientContext* context, const ::mt5_term_api::GetEaParamsRequest* request, ::mt5_term_api::GetEaParamsReply* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void AttachEa(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest* request, ::mt5_term_api::AttachEaReply* response, std::function<void(::grpc::Status)>) override;
+      void AttachEa(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest* request, ::mt5_term_api::AttachEaReply* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetRunningEas(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest* request, ::mt5_term_api::GetRunningEasReply* response, std::function<void(::grpc::Status)>) override;
+      void GetRunningEas(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest* request, ::mt5_term_api::GetRunningEasReply* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetEaLogs(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest* request, ::mt5_term_api::GetEaLogsReply* response, std::function<void(::grpc::Status)>) override;
+      void GetEaLogs(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest* request, ::mt5_term_api::GetEaLogsReply* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void StopEa(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest* request, ::mt5_term_api::StopEaReply* response, std::function<void(::grpc::Status)>) override;
+      void StopEa(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest* request, ::mt5_term_api::StopEaReply* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -105,8 +185,20 @@ class Charts final {
     ::grpc::ClientAsyncResponseReader< ::mt5_term_api::OpenTerminalChartWithEaReply>* PrepareAsyncOpenTerminalChartWithEaRaw(::grpc::ClientContext* context, const ::mt5_term_api::OpenTerminalChartWithEaRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetEaParamsReply>* AsyncGetEaParamsRaw(::grpc::ClientContext* context, const ::mt5_term_api::GetEaParamsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetEaParamsReply>* PrepareAsyncGetEaParamsRaw(::grpc::ClientContext* context, const ::mt5_term_api::GetEaParamsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mt5_term_api::AttachEaReply>* AsyncAttachEaRaw(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mt5_term_api::AttachEaReply>* PrepareAsyncAttachEaRaw(::grpc::ClientContext* context, const ::mt5_term_api::AttachEaRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetRunningEasReply>* AsyncGetRunningEasRaw(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetRunningEasReply>* PrepareAsyncGetRunningEasRaw(::grpc::ClientContext* context, const ::mt5_term_api::GetRunningEasRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetEaLogsReply>* AsyncGetEaLogsRaw(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GetEaLogsReply>* PrepareAsyncGetEaLogsRaw(::grpc::ClientContext* context, const ::mt5_term_api::GetEaLogsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mt5_term_api::StopEaReply>* AsyncStopEaRaw(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mt5_term_api::StopEaReply>* PrepareAsyncStopEaRaw(::grpc::ClientContext* context, const ::mt5_term_api::StopEaRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_OpenTerminalChartWithEa_;
     const ::grpc::internal::RpcMethod rpcmethod_GetEaParams_;
+    const ::grpc::internal::RpcMethod rpcmethod_AttachEa_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetRunningEas_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetEaLogs_;
+    const ::grpc::internal::RpcMethod rpcmethod_StopEa_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -116,6 +208,10 @@ class Charts final {
     virtual ~Service();
     virtual ::grpc::Status OpenTerminalChartWithEa(::grpc::ServerContext* context, const ::mt5_term_api::OpenTerminalChartWithEaRequest* request, ::mt5_term_api::OpenTerminalChartWithEaReply* response);
     virtual ::grpc::Status GetEaParams(::grpc::ServerContext* context, const ::mt5_term_api::GetEaParamsRequest* request, ::mt5_term_api::GetEaParamsReply* response);
+    virtual ::grpc::Status AttachEa(::grpc::ServerContext* context, const ::mt5_term_api::AttachEaRequest* request, ::mt5_term_api::AttachEaReply* response);
+    virtual ::grpc::Status GetRunningEas(::grpc::ServerContext* context, const ::mt5_term_api::GetRunningEasRequest* request, ::mt5_term_api::GetRunningEasReply* response);
+    virtual ::grpc::Status GetEaLogs(::grpc::ServerContext* context, const ::mt5_term_api::GetEaLogsRequest* request, ::mt5_term_api::GetEaLogsReply* response);
+    virtual ::grpc::Status StopEa(::grpc::ServerContext* context, const ::mt5_term_api::StopEaRequest* request, ::mt5_term_api::StopEaReply* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_OpenTerminalChartWithEa : public BaseClass {
@@ -157,7 +253,87 @@ class Charts final {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_OpenTerminalChartWithEa<WithAsyncMethod_GetEaParams<Service > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_AttachEa : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_AttachEa() {
+      ::grpc::Service::MarkMethodAsync(2);
+    }
+    ~WithAsyncMethod_AttachEa() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AttachEa(::grpc::ServerContext* /*context*/, const ::mt5_term_api::AttachEaRequest* /*request*/, ::mt5_term_api::AttachEaReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAttachEa(::grpc::ServerContext* context, ::mt5_term_api::AttachEaRequest* request, ::grpc::ServerAsyncResponseWriter< ::mt5_term_api::AttachEaReply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetRunningEas : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetRunningEas() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_GetRunningEas() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetRunningEas(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GetRunningEasRequest* /*request*/, ::mt5_term_api::GetRunningEasReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetRunningEas(::grpc::ServerContext* context, ::mt5_term_api::GetRunningEasRequest* request, ::grpc::ServerAsyncResponseWriter< ::mt5_term_api::GetRunningEasReply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetEaLogs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetEaLogs() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_GetEaLogs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetEaLogs(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GetEaLogsRequest* /*request*/, ::mt5_term_api::GetEaLogsReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetEaLogs(::grpc::ServerContext* context, ::mt5_term_api::GetEaLogsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mt5_term_api::GetEaLogsReply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_StopEa : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_StopEa() {
+      ::grpc::Service::MarkMethodAsync(5);
+    }
+    ~WithAsyncMethod_StopEa() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status StopEa(::grpc::ServerContext* /*context*/, const ::mt5_term_api::StopEaRequest* /*request*/, ::mt5_term_api::StopEaReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestStopEa(::grpc::ServerContext* context, ::mt5_term_api::StopEaRequest* request, ::grpc::ServerAsyncResponseWriter< ::mt5_term_api::StopEaReply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_OpenTerminalChartWithEa<WithAsyncMethod_GetEaParams<WithAsyncMethod_AttachEa<WithAsyncMethod_GetRunningEas<WithAsyncMethod_GetEaLogs<WithAsyncMethod_StopEa<Service > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_OpenTerminalChartWithEa : public BaseClass {
    private:
@@ -212,7 +388,115 @@ class Charts final {
     virtual ::grpc::ServerUnaryReactor* GetEaParams(
       ::grpc::CallbackServerContext* /*context*/, const ::mt5_term_api::GetEaParamsRequest* /*request*/, ::mt5_term_api::GetEaParamsReply* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_OpenTerminalChartWithEa<WithCallbackMethod_GetEaParams<Service > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_AttachEa : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_AttachEa() {
+      ::grpc::Service::MarkMethodCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::mt5_term_api::AttachEaRequest, ::mt5_term_api::AttachEaReply>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::mt5_term_api::AttachEaRequest* request, ::mt5_term_api::AttachEaReply* response) { return this->AttachEa(context, request, response); }));}
+    void SetMessageAllocatorFor_AttachEa(
+        ::grpc::MessageAllocator< ::mt5_term_api::AttachEaRequest, ::mt5_term_api::AttachEaReply>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mt5_term_api::AttachEaRequest, ::mt5_term_api::AttachEaReply>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_AttachEa() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AttachEa(::grpc::ServerContext* /*context*/, const ::mt5_term_api::AttachEaRequest* /*request*/, ::mt5_term_api::AttachEaReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* AttachEa(
+      ::grpc::CallbackServerContext* /*context*/, const ::mt5_term_api::AttachEaRequest* /*request*/, ::mt5_term_api::AttachEaReply* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_GetRunningEas : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_GetRunningEas() {
+      ::grpc::Service::MarkMethodCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::mt5_term_api::GetRunningEasRequest, ::mt5_term_api::GetRunningEasReply>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::mt5_term_api::GetRunningEasRequest* request, ::mt5_term_api::GetRunningEasReply* response) { return this->GetRunningEas(context, request, response); }));}
+    void SetMessageAllocatorFor_GetRunningEas(
+        ::grpc::MessageAllocator< ::mt5_term_api::GetRunningEasRequest, ::mt5_term_api::GetRunningEasReply>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mt5_term_api::GetRunningEasRequest, ::mt5_term_api::GetRunningEasReply>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_GetRunningEas() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetRunningEas(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GetRunningEasRequest* /*request*/, ::mt5_term_api::GetRunningEasReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetRunningEas(
+      ::grpc::CallbackServerContext* /*context*/, const ::mt5_term_api::GetRunningEasRequest* /*request*/, ::mt5_term_api::GetRunningEasReply* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_GetEaLogs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_GetEaLogs() {
+      ::grpc::Service::MarkMethodCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::mt5_term_api::GetEaLogsRequest, ::mt5_term_api::GetEaLogsReply>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::mt5_term_api::GetEaLogsRequest* request, ::mt5_term_api::GetEaLogsReply* response) { return this->GetEaLogs(context, request, response); }));}
+    void SetMessageAllocatorFor_GetEaLogs(
+        ::grpc::MessageAllocator< ::mt5_term_api::GetEaLogsRequest, ::mt5_term_api::GetEaLogsReply>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mt5_term_api::GetEaLogsRequest, ::mt5_term_api::GetEaLogsReply>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_GetEaLogs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetEaLogs(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GetEaLogsRequest* /*request*/, ::mt5_term_api::GetEaLogsReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetEaLogs(
+      ::grpc::CallbackServerContext* /*context*/, const ::mt5_term_api::GetEaLogsRequest* /*request*/, ::mt5_term_api::GetEaLogsReply* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_StopEa : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_StopEa() {
+      ::grpc::Service::MarkMethodCallback(5,
+          new ::grpc::internal::CallbackUnaryHandler< ::mt5_term_api::StopEaRequest, ::mt5_term_api::StopEaReply>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::mt5_term_api::StopEaRequest* request, ::mt5_term_api::StopEaReply* response) { return this->StopEa(context, request, response); }));}
+    void SetMessageAllocatorFor_StopEa(
+        ::grpc::MessageAllocator< ::mt5_term_api::StopEaRequest, ::mt5_term_api::StopEaReply>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mt5_term_api::StopEaRequest, ::mt5_term_api::StopEaReply>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_StopEa() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status StopEa(::grpc::ServerContext* /*context*/, const ::mt5_term_api::StopEaRequest* /*request*/, ::mt5_term_api::StopEaReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* StopEa(
+      ::grpc::CallbackServerContext* /*context*/, const ::mt5_term_api::StopEaRequest* /*request*/, ::mt5_term_api::StopEaReply* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_OpenTerminalChartWithEa<WithCallbackMethod_GetEaParams<WithCallbackMethod_AttachEa<WithCallbackMethod_GetRunningEas<WithCallbackMethod_GetEaLogs<WithCallbackMethod_StopEa<Service > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_OpenTerminalChartWithEa : public BaseClass {
@@ -244,6 +528,74 @@ class Charts final {
     }
     // disable synchronous version of this method
     ::grpc::Status GetEaParams(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GetEaParamsRequest* /*request*/, ::mt5_term_api::GetEaParamsReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_AttachEa : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_AttachEa() {
+      ::grpc::Service::MarkMethodGeneric(2);
+    }
+    ~WithGenericMethod_AttachEa() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AttachEa(::grpc::ServerContext* /*context*/, const ::mt5_term_api::AttachEaRequest* /*request*/, ::mt5_term_api::AttachEaReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetRunningEas : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetRunningEas() {
+      ::grpc::Service::MarkMethodGeneric(3);
+    }
+    ~WithGenericMethod_GetRunningEas() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetRunningEas(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GetRunningEasRequest* /*request*/, ::mt5_term_api::GetRunningEasReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetEaLogs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetEaLogs() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_GetEaLogs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetEaLogs(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GetEaLogsRequest* /*request*/, ::mt5_term_api::GetEaLogsReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_StopEa : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_StopEa() {
+      ::grpc::Service::MarkMethodGeneric(5);
+    }
+    ~WithGenericMethod_StopEa() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status StopEa(::grpc::ServerContext* /*context*/, const ::mt5_term_api::StopEaRequest* /*request*/, ::mt5_term_api::StopEaReply* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -289,6 +641,86 @@ class Charts final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_AttachEa : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_AttachEa() {
+      ::grpc::Service::MarkMethodRaw(2);
+    }
+    ~WithRawMethod_AttachEa() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AttachEa(::grpc::ServerContext* /*context*/, const ::mt5_term_api::AttachEaRequest* /*request*/, ::mt5_term_api::AttachEaReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAttachEa(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetRunningEas : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetRunningEas() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_GetRunningEas() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetRunningEas(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GetRunningEasRequest* /*request*/, ::mt5_term_api::GetRunningEasReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetRunningEas(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetEaLogs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetEaLogs() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_GetEaLogs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetEaLogs(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GetEaLogsRequest* /*request*/, ::mt5_term_api::GetEaLogsReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetEaLogs(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_StopEa : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_StopEa() {
+      ::grpc::Service::MarkMethodRaw(5);
+    }
+    ~WithRawMethod_StopEa() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status StopEa(::grpc::ServerContext* /*context*/, const ::mt5_term_api::StopEaRequest* /*request*/, ::mt5_term_api::StopEaReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestStopEa(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_OpenTerminalChartWithEa : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -330,6 +762,94 @@ class Charts final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* GetEaParams(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_AttachEa : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_AttachEa() {
+      ::grpc::Service::MarkMethodRawCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->AttachEa(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_AttachEa() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AttachEa(::grpc::ServerContext* /*context*/, const ::mt5_term_api::AttachEaRequest* /*request*/, ::mt5_term_api::AttachEaReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* AttachEa(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_GetRunningEas : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_GetRunningEas() {
+      ::grpc::Service::MarkMethodRawCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetRunningEas(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_GetRunningEas() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetRunningEas(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GetRunningEasRequest* /*request*/, ::mt5_term_api::GetRunningEasReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetRunningEas(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_GetEaLogs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_GetEaLogs() {
+      ::grpc::Service::MarkMethodRawCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetEaLogs(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_GetEaLogs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetEaLogs(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GetEaLogsRequest* /*request*/, ::mt5_term_api::GetEaLogsReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetEaLogs(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_StopEa : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_StopEa() {
+      ::grpc::Service::MarkMethodRawCallback(5,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->StopEa(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_StopEa() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status StopEa(::grpc::ServerContext* /*context*/, const ::mt5_term_api::StopEaRequest* /*request*/, ::mt5_term_api::StopEaReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* StopEa(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -386,9 +906,117 @@ class Charts final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetEaParams(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mt5_term_api::GetEaParamsRequest,::mt5_term_api::GetEaParamsReply>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_OpenTerminalChartWithEa<WithStreamedUnaryMethod_GetEaParams<Service > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_AttachEa : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_AttachEa() {
+      ::grpc::Service::MarkMethodStreamed(2,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mt5_term_api::AttachEaRequest, ::mt5_term_api::AttachEaReply>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::mt5_term_api::AttachEaRequest, ::mt5_term_api::AttachEaReply>* streamer) {
+                       return this->StreamedAttachEa(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_AttachEa() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status AttachEa(::grpc::ServerContext* /*context*/, const ::mt5_term_api::AttachEaRequest* /*request*/, ::mt5_term_api::AttachEaReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedAttachEa(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mt5_term_api::AttachEaRequest,::mt5_term_api::AttachEaReply>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetRunningEas : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetRunningEas() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mt5_term_api::GetRunningEasRequest, ::mt5_term_api::GetRunningEasReply>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::mt5_term_api::GetRunningEasRequest, ::mt5_term_api::GetRunningEasReply>* streamer) {
+                       return this->StreamedGetRunningEas(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GetRunningEas() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetRunningEas(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GetRunningEasRequest* /*request*/, ::mt5_term_api::GetRunningEasReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetRunningEas(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mt5_term_api::GetRunningEasRequest,::mt5_term_api::GetRunningEasReply>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetEaLogs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetEaLogs() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mt5_term_api::GetEaLogsRequest, ::mt5_term_api::GetEaLogsReply>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::mt5_term_api::GetEaLogsRequest, ::mt5_term_api::GetEaLogsReply>* streamer) {
+                       return this->StreamedGetEaLogs(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GetEaLogs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetEaLogs(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GetEaLogsRequest* /*request*/, ::mt5_term_api::GetEaLogsReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetEaLogs(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mt5_term_api::GetEaLogsRequest,::mt5_term_api::GetEaLogsReply>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_StopEa : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_StopEa() {
+      ::grpc::Service::MarkMethodStreamed(5,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mt5_term_api::StopEaRequest, ::mt5_term_api::StopEaReply>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::mt5_term_api::StopEaRequest, ::mt5_term_api::StopEaReply>* streamer) {
+                       return this->StreamedStopEa(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_StopEa() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status StopEa(::grpc::ServerContext* /*context*/, const ::mt5_term_api::StopEaRequest* /*request*/, ::mt5_term_api::StopEaReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedStopEa(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mt5_term_api::StopEaRequest,::mt5_term_api::StopEaReply>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_OpenTerminalChartWithEa<WithStreamedUnaryMethod_GetEaParams<WithStreamedUnaryMethod_AttachEa<WithStreamedUnaryMethod_GetRunningEas<WithStreamedUnaryMethod_GetEaLogs<WithStreamedUnaryMethod_StopEa<Service > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_OpenTerminalChartWithEa<WithStreamedUnaryMethod_GetEaParams<Service > > StreamedService;
+  typedef WithStreamedUnaryMethod_OpenTerminalChartWithEa<WithStreamedUnaryMethod_GetEaParams<WithStreamedUnaryMethod_AttachEa<WithStreamedUnaryMethod_GetRunningEas<WithStreamedUnaryMethod_GetEaLogs<WithStreamedUnaryMethod_StopEa<Service > > > > > > StreamedService;
 };
 
 }  // namespace mt5_term_api
