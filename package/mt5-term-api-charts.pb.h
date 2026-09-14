@@ -106,6 +106,15 @@ extern OpenTerminalChartWithEaRequestDefaultTypeInternal _OpenTerminalChartWithE
 class RunningEaInfo;
 struct RunningEaInfoDefaultTypeInternal;
 extern RunningEaInfoDefaultTypeInternal _RunningEaInfo_default_instance_;
+class StartEaData;
+struct StartEaDataDefaultTypeInternal;
+extern StartEaDataDefaultTypeInternal _StartEaData_default_instance_;
+class StartEaReply;
+struct StartEaReplyDefaultTypeInternal;
+extern StartEaReplyDefaultTypeInternal _StartEaReply_default_instance_;
+class StartEaRequest;
+struct StartEaRequestDefaultTypeInternal;
+extern StartEaRequestDefaultTypeInternal _StartEaRequest_default_instance_;
 class StopEaData;
 struct StopEaDataDefaultTypeInternal;
 extern StopEaDataDefaultTypeInternal _StopEaData_default_instance_;
@@ -136,6 +145,9 @@ template<> ::mt5_term_api::OpenTerminalChartWithEaParameter* Arena::CreateMaybeM
 template<> ::mt5_term_api::OpenTerminalChartWithEaReply* Arena::CreateMaybeMessage<::mt5_term_api::OpenTerminalChartWithEaReply>(Arena*);
 template<> ::mt5_term_api::OpenTerminalChartWithEaRequest* Arena::CreateMaybeMessage<::mt5_term_api::OpenTerminalChartWithEaRequest>(Arena*);
 template<> ::mt5_term_api::RunningEaInfo* Arena::CreateMaybeMessage<::mt5_term_api::RunningEaInfo>(Arena*);
+template<> ::mt5_term_api::StartEaData* Arena::CreateMaybeMessage<::mt5_term_api::StartEaData>(Arena*);
+template<> ::mt5_term_api::StartEaReply* Arena::CreateMaybeMessage<::mt5_term_api::StartEaReply>(Arena*);
+template<> ::mt5_term_api::StartEaRequest* Arena::CreateMaybeMessage<::mt5_term_api::StartEaRequest>(Arena*);
 template<> ::mt5_term_api::StopEaData* Arena::CreateMaybeMessage<::mt5_term_api::StopEaData>(Arena*);
 template<> ::mt5_term_api::StopEaReply* Arena::CreateMaybeMessage<::mt5_term_api::StopEaReply>(Arena*);
 template<> ::mt5_term_api::StopEaRequest* Arena::CreateMaybeMessage<::mt5_term_api::StopEaRequest>(Arena*);
@@ -4580,6 +4592,535 @@ class StopEaData final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_mt5_2dterm_2dapi_2dcharts_2eproto;
 };
+// -------------------------------------------------------------------
+
+class StartEaRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mt5_term_api.StartEaRequest) */ {
+ public:
+  inline StartEaRequest() : StartEaRequest(nullptr) {}
+  ~StartEaRequest() override;
+  explicit PROTOBUF_CONSTEXPR StartEaRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  StartEaRequest(const StartEaRequest& from);
+  StartEaRequest(StartEaRequest&& from) noexcept
+    : StartEaRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline StartEaRequest& operator=(const StartEaRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StartEaRequest& operator=(StartEaRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const StartEaRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const StartEaRequest* internal_default_instance() {
+    return reinterpret_cast<const StartEaRequest*>(
+               &_StartEaRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  friend void swap(StartEaRequest& a, StartEaRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StartEaRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StartEaRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  StartEaRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<StartEaRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const StartEaRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const StartEaRequest& from) {
+    StartEaRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StartEaRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mt5_term_api.StartEaRequest";
+  }
+  protected:
+  explicit StartEaRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kEaIdFieldNumber = 1,
+  };
+  // string ea_id = 1;
+  void clear_ea_id();
+  const std::string& ea_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ea_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ea_id();
+  PROTOBUF_NODISCARD std::string* release_ea_id();
+  void set_allocated_ea_id(std::string* ea_id);
+  private:
+  const std::string& _internal_ea_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ea_id(const std::string& value);
+  std::string* _internal_mutable_ea_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:mt5_term_api.StartEaRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ea_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_mt5_2dterm_2dapi_2dcharts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class StartEaReply final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mt5_term_api.StartEaReply) */ {
+ public:
+  inline StartEaReply() : StartEaReply(nullptr) {}
+  ~StartEaReply() override;
+  explicit PROTOBUF_CONSTEXPR StartEaReply(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  StartEaReply(const StartEaReply& from);
+  StartEaReply(StartEaReply&& from) noexcept
+    : StartEaReply() {
+    *this = ::std::move(from);
+  }
+
+  inline StartEaReply& operator=(const StartEaReply& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StartEaReply& operator=(StartEaReply&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const StartEaReply& default_instance() {
+    return *internal_default_instance();
+  }
+  enum ResponseCase {
+    kData = 1,
+    kError = 2,
+    RESPONSE_NOT_SET = 0,
+  };
+
+  static inline const StartEaReply* internal_default_instance() {
+    return reinterpret_cast<const StartEaReply*>(
+               &_StartEaReply_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    23;
+
+  friend void swap(StartEaReply& a, StartEaReply& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StartEaReply* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StartEaReply* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  StartEaReply* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<StartEaReply>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const StartEaReply& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const StartEaReply& from) {
+    StartEaReply::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StartEaReply* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mt5_term_api.StartEaReply";
+  }
+  protected:
+  explicit StartEaReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDataFieldNumber = 1,
+    kErrorFieldNumber = 2,
+  };
+  // .mt5_term_api.StartEaData data = 1;
+  bool has_data() const;
+  private:
+  bool _internal_has_data() const;
+  public:
+  void clear_data();
+  const ::mt5_term_api::StartEaData& data() const;
+  PROTOBUF_NODISCARD ::mt5_term_api::StartEaData* release_data();
+  ::mt5_term_api::StartEaData* mutable_data();
+  void set_allocated_data(::mt5_term_api::StartEaData* data);
+  private:
+  const ::mt5_term_api::StartEaData& _internal_data() const;
+  ::mt5_term_api::StartEaData* _internal_mutable_data();
+  public:
+  void unsafe_arena_set_allocated_data(
+      ::mt5_term_api::StartEaData* data);
+  ::mt5_term_api::StartEaData* unsafe_arena_release_data();
+
+  // .mt5_term_api.Error error = 2;
+  bool has_error() const;
+  private:
+  bool _internal_has_error() const;
+  public:
+  void clear_error();
+  const ::mt5_term_api::Error& error() const;
+  PROTOBUF_NODISCARD ::mt5_term_api::Error* release_error();
+  ::mt5_term_api::Error* mutable_error();
+  void set_allocated_error(::mt5_term_api::Error* error);
+  private:
+  const ::mt5_term_api::Error& _internal_error() const;
+  ::mt5_term_api::Error* _internal_mutable_error();
+  public:
+  void unsafe_arena_set_allocated_error(
+      ::mt5_term_api::Error* error);
+  ::mt5_term_api::Error* unsafe_arena_release_error();
+
+  void clear_response();
+  ResponseCase response_case() const;
+  // @@protoc_insertion_point(class_scope:mt5_term_api.StartEaReply)
+ private:
+  class _Internal;
+  void set_has_data();
+  void set_has_error();
+
+  inline bool has_response() const;
+  inline void clear_has_response();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    union ResponseUnion {
+      constexpr ResponseUnion() : _constinit_{} {}
+        ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+      ::mt5_term_api::StartEaData* data_;
+      ::mt5_term_api::Error* error_;
+    } response_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    uint32_t _oneof_case_[1];
+
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_mt5_2dterm_2dapi_2dcharts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class StartEaData final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mt5_term_api.StartEaData) */ {
+ public:
+  inline StartEaData() : StartEaData(nullptr) {}
+  ~StartEaData() override;
+  explicit PROTOBUF_CONSTEXPR StartEaData(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  StartEaData(const StartEaData& from);
+  StartEaData(StartEaData&& from) noexcept
+    : StartEaData() {
+    *this = ::std::move(from);
+  }
+
+  inline StartEaData& operator=(const StartEaData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StartEaData& operator=(StartEaData&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const StartEaData& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const StartEaData* internal_default_instance() {
+    return reinterpret_cast<const StartEaData*>(
+               &_StartEaData_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    24;
+
+  friend void swap(StartEaData& a, StartEaData& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StartEaData* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StartEaData* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  StartEaData* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<StartEaData>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const StartEaData& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const StartEaData& from) {
+    StartEaData::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StartEaData* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mt5_term_api.StartEaData";
+  }
+  protected:
+  explicit StartEaData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kEaIdFieldNumber = 2,
+    kMessageFieldNumber = 3,
+    kSuccessFieldNumber = 1,
+  };
+  // string ea_id = 2;
+  void clear_ea_id();
+  const std::string& ea_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ea_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ea_id();
+  PROTOBUF_NODISCARD std::string* release_ea_id();
+  void set_allocated_ea_id(std::string* ea_id);
+  private:
+  const std::string& _internal_ea_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ea_id(const std::string& value);
+  std::string* _internal_mutable_ea_id();
+  public:
+
+  // string message = 3;
+  void clear_message();
+  const std::string& message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_NODISCARD std::string* release_message();
+  void set_allocated_message(std::string* message);
+  private:
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
+  public:
+
+  // bool success = 1;
+  void clear_success();
+  bool success() const;
+  void set_success(bool value);
+  private:
+  bool _internal_success() const;
+  void _internal_set_success(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mt5_term_api.StartEaData)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ea_id_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+    bool success_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_mt5_2dterm_2dapi_2dcharts_2eproto;
+};
 // ===================================================================
 
 
@@ -8175,9 +8716,346 @@ inline void StopEaData::set_allocated_message(std::string* message) {
   // @@protoc_insertion_point(field_set_allocated:mt5_term_api.StopEaData.message)
 }
 
+// -------------------------------------------------------------------
+
+// StartEaRequest
+
+// string ea_id = 1;
+inline void StartEaRequest::clear_ea_id() {
+  _impl_.ea_id_.ClearToEmpty();
+}
+inline const std::string& StartEaRequest::ea_id() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.StartEaRequest.ea_id)
+  return _internal_ea_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StartEaRequest::set_ea_id(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.ea_id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mt5_term_api.StartEaRequest.ea_id)
+}
+inline std::string* StartEaRequest::mutable_ea_id() {
+  std::string* _s = _internal_mutable_ea_id();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.StartEaRequest.ea_id)
+  return _s;
+}
+inline const std::string& StartEaRequest::_internal_ea_id() const {
+  return _impl_.ea_id_.Get();
+}
+inline void StartEaRequest::_internal_set_ea_id(const std::string& value) {
+  
+  _impl_.ea_id_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StartEaRequest::_internal_mutable_ea_id() {
+  
+  return _impl_.ea_id_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StartEaRequest::release_ea_id() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.StartEaRequest.ea_id)
+  return _impl_.ea_id_.Release();
+}
+inline void StartEaRequest::set_allocated_ea_id(std::string* ea_id) {
+  if (ea_id != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.ea_id_.SetAllocated(ea_id, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.ea_id_.IsDefault()) {
+    _impl_.ea_id_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.StartEaRequest.ea_id)
+}
+
+// -------------------------------------------------------------------
+
+// StartEaReply
+
+// .mt5_term_api.StartEaData data = 1;
+inline bool StartEaReply::_internal_has_data() const {
+  return response_case() == kData;
+}
+inline bool StartEaReply::has_data() const {
+  return _internal_has_data();
+}
+inline void StartEaReply::set_has_data() {
+  _impl_._oneof_case_[0] = kData;
+}
+inline void StartEaReply::clear_data() {
+  if (_internal_has_data()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.response_.data_;
+    }
+    clear_has_response();
+  }
+}
+inline ::mt5_term_api::StartEaData* StartEaReply::release_data() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.StartEaReply.data)
+  if (_internal_has_data()) {
+    clear_has_response();
+    ::mt5_term_api::StartEaData* temp = _impl_.response_.data_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.response_.data_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::mt5_term_api::StartEaData& StartEaReply::_internal_data() const {
+  return _internal_has_data()
+      ? *_impl_.response_.data_
+      : reinterpret_cast< ::mt5_term_api::StartEaData&>(::mt5_term_api::_StartEaData_default_instance_);
+}
+inline const ::mt5_term_api::StartEaData& StartEaReply::data() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.StartEaReply.data)
+  return _internal_data();
+}
+inline ::mt5_term_api::StartEaData* StartEaReply::unsafe_arena_release_data() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:mt5_term_api.StartEaReply.data)
+  if (_internal_has_data()) {
+    clear_has_response();
+    ::mt5_term_api::StartEaData* temp = _impl_.response_.data_;
+    _impl_.response_.data_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void StartEaReply::unsafe_arena_set_allocated_data(::mt5_term_api::StartEaData* data) {
+  clear_response();
+  if (data) {
+    set_has_data();
+    _impl_.response_.data_ = data;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.StartEaReply.data)
+}
+inline ::mt5_term_api::StartEaData* StartEaReply::_internal_mutable_data() {
+  if (!_internal_has_data()) {
+    clear_response();
+    set_has_data();
+    _impl_.response_.data_ = CreateMaybeMessage< ::mt5_term_api::StartEaData >(GetArenaForAllocation());
+  }
+  return _impl_.response_.data_;
+}
+inline ::mt5_term_api::StartEaData* StartEaReply::mutable_data() {
+  ::mt5_term_api::StartEaData* _msg = _internal_mutable_data();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.StartEaReply.data)
+  return _msg;
+}
+
+// .mt5_term_api.Error error = 2;
+inline bool StartEaReply::_internal_has_error() const {
+  return response_case() == kError;
+}
+inline bool StartEaReply::has_error() const {
+  return _internal_has_error();
+}
+inline void StartEaReply::set_has_error() {
+  _impl_._oneof_case_[0] = kError;
+}
+inline ::mt5_term_api::Error* StartEaReply::release_error() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.StartEaReply.error)
+  if (_internal_has_error()) {
+    clear_has_response();
+    ::mt5_term_api::Error* temp = _impl_.response_.error_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.response_.error_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::mt5_term_api::Error& StartEaReply::_internal_error() const {
+  return _internal_has_error()
+      ? *_impl_.response_.error_
+      : reinterpret_cast< ::mt5_term_api::Error&>(::mt5_term_api::_Error_default_instance_);
+}
+inline const ::mt5_term_api::Error& StartEaReply::error() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.StartEaReply.error)
+  return _internal_error();
+}
+inline ::mt5_term_api::Error* StartEaReply::unsafe_arena_release_error() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:mt5_term_api.StartEaReply.error)
+  if (_internal_has_error()) {
+    clear_has_response();
+    ::mt5_term_api::Error* temp = _impl_.response_.error_;
+    _impl_.response_.error_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void StartEaReply::unsafe_arena_set_allocated_error(::mt5_term_api::Error* error) {
+  clear_response();
+  if (error) {
+    set_has_error();
+    _impl_.response_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.StartEaReply.error)
+}
+inline ::mt5_term_api::Error* StartEaReply::_internal_mutable_error() {
+  if (!_internal_has_error()) {
+    clear_response();
+    set_has_error();
+    _impl_.response_.error_ = CreateMaybeMessage< ::mt5_term_api::Error >(GetArenaForAllocation());
+  }
+  return _impl_.response_.error_;
+}
+inline ::mt5_term_api::Error* StartEaReply::mutable_error() {
+  ::mt5_term_api::Error* _msg = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.StartEaReply.error)
+  return _msg;
+}
+
+inline bool StartEaReply::has_response() const {
+  return response_case() != RESPONSE_NOT_SET;
+}
+inline void StartEaReply::clear_has_response() {
+  _impl_._oneof_case_[0] = RESPONSE_NOT_SET;
+}
+inline StartEaReply::ResponseCase StartEaReply::response_case() const {
+  return StartEaReply::ResponseCase(_impl_._oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// StartEaData
+
+// bool success = 1;
+inline void StartEaData::clear_success() {
+  _impl_.success_ = false;
+}
+inline bool StartEaData::_internal_success() const {
+  return _impl_.success_;
+}
+inline bool StartEaData::success() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.StartEaData.success)
+  return _internal_success();
+}
+inline void StartEaData::_internal_set_success(bool value) {
+  
+  _impl_.success_ = value;
+}
+inline void StartEaData::set_success(bool value) {
+  _internal_set_success(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.StartEaData.success)
+}
+
+// string ea_id = 2;
+inline void StartEaData::clear_ea_id() {
+  _impl_.ea_id_.ClearToEmpty();
+}
+inline const std::string& StartEaData::ea_id() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.StartEaData.ea_id)
+  return _internal_ea_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StartEaData::set_ea_id(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.ea_id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mt5_term_api.StartEaData.ea_id)
+}
+inline std::string* StartEaData::mutable_ea_id() {
+  std::string* _s = _internal_mutable_ea_id();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.StartEaData.ea_id)
+  return _s;
+}
+inline const std::string& StartEaData::_internal_ea_id() const {
+  return _impl_.ea_id_.Get();
+}
+inline void StartEaData::_internal_set_ea_id(const std::string& value) {
+  
+  _impl_.ea_id_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StartEaData::_internal_mutable_ea_id() {
+  
+  return _impl_.ea_id_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StartEaData::release_ea_id() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.StartEaData.ea_id)
+  return _impl_.ea_id_.Release();
+}
+inline void StartEaData::set_allocated_ea_id(std::string* ea_id) {
+  if (ea_id != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.ea_id_.SetAllocated(ea_id, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.ea_id_.IsDefault()) {
+    _impl_.ea_id_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.StartEaData.ea_id)
+}
+
+// string message = 3;
+inline void StartEaData::clear_message() {
+  _impl_.message_.ClearToEmpty();
+}
+inline const std::string& StartEaData::message() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.StartEaData.message)
+  return _internal_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StartEaData::set_message(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mt5_term_api.StartEaData.message)
+}
+inline std::string* StartEaData::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.StartEaData.message)
+  return _s;
+}
+inline const std::string& StartEaData::_internal_message() const {
+  return _impl_.message_.Get();
+}
+inline void StartEaData::_internal_set_message(const std::string& value) {
+  
+  _impl_.message_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StartEaData::_internal_mutable_message() {
+  
+  return _impl_.message_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StartEaData::release_message() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.StartEaData.message)
+  return _impl_.message_.Release();
+}
+inline void StartEaData::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.message_.SetAllocated(message, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.message_.IsDefault()) {
+    _impl_.message_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.StartEaData.message)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
