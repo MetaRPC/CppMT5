@@ -3100,6 +3100,7 @@ class RunningEaInfo final :
     kPeriodFieldNumber = 7,
     kStateFieldNumber = 8,
     kStartedAtFieldNumber = 9,
+    kStoppedAtFieldNumber = 19,
     kEaCpuPercentFieldNumber = 10,
     kRefCpuPercentFieldNumber = 11,
     kCpuRatioFieldNumber = 12,
@@ -3107,6 +3108,8 @@ class RunningEaInfo final :
     kRefRamBytesFieldNumber = 14,
     kRamRatioFieldNumber = 15,
     kResourceMultiplierFieldNumber = 16,
+    kMeteredHoursFieldNumber = 17,
+    kChargedAmountFieldNumber = 18,
     kProcessIdFieldNumber = 5,
   };
   // string ea_id = 1;
@@ -3225,6 +3228,24 @@ class RunningEaInfo final :
       ::PROTOBUF_NAMESPACE_ID::Timestamp* started_at);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_started_at();
 
+  // .google.protobuf.Timestamp stopped_at = 19;
+  bool has_stopped_at() const;
+  private:
+  bool _internal_has_stopped_at() const;
+  public:
+  void clear_stopped_at();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& stopped_at() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_stopped_at();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_stopped_at();
+  void set_allocated_stopped_at(::PROTOBUF_NAMESPACE_ID::Timestamp* stopped_at);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_stopped_at() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_stopped_at();
+  public:
+  void unsafe_arena_set_allocated_stopped_at(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* stopped_at);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_stopped_at();
+
   // double ea_cpu_percent = 10;
   void clear_ea_cpu_percent();
   double ea_cpu_percent() const;
@@ -3288,6 +3309,24 @@ class RunningEaInfo final :
   void _internal_set_resource_multiplier(double value);
   public:
 
+  // double metered_hours = 17;
+  void clear_metered_hours();
+  double metered_hours() const;
+  void set_metered_hours(double value);
+  private:
+  double _internal_metered_hours() const;
+  void _internal_set_metered_hours(double value);
+  public:
+
+  // double charged_amount = 18;
+  void clear_charged_amount();
+  double charged_amount() const;
+  void set_charged_amount(double value);
+  private:
+  double _internal_charged_amount() const;
+  void _internal_set_charged_amount(double value);
+  public:
+
   // int32 process_id = 5;
   void clear_process_id();
   int32_t process_id() const;
@@ -3313,6 +3352,7 @@ class RunningEaInfo final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr period_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr state_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* started_at_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* stopped_at_;
     double ea_cpu_percent_;
     double ref_cpu_percent_;
     double cpu_ratio_;
@@ -3320,6 +3360,8 @@ class RunningEaInfo final :
     int64_t ref_ram_bytes_;
     double ram_ratio_;
     double resource_multiplier_;
+    double metered_hours_;
+    double charged_amount_;
     int32_t process_id_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -7807,6 +7849,131 @@ inline void RunningEaInfo::_internal_set_resource_multiplier(double value) {
 inline void RunningEaInfo::set_resource_multiplier(double value) {
   _internal_set_resource_multiplier(value);
   // @@protoc_insertion_point(field_set:mt5_term_api.RunningEaInfo.resource_multiplier)
+}
+
+// double metered_hours = 17;
+inline void RunningEaInfo::clear_metered_hours() {
+  _impl_.metered_hours_ = 0;
+}
+inline double RunningEaInfo::_internal_metered_hours() const {
+  return _impl_.metered_hours_;
+}
+inline double RunningEaInfo::metered_hours() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.RunningEaInfo.metered_hours)
+  return _internal_metered_hours();
+}
+inline void RunningEaInfo::_internal_set_metered_hours(double value) {
+  
+  _impl_.metered_hours_ = value;
+}
+inline void RunningEaInfo::set_metered_hours(double value) {
+  _internal_set_metered_hours(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.RunningEaInfo.metered_hours)
+}
+
+// double charged_amount = 18;
+inline void RunningEaInfo::clear_charged_amount() {
+  _impl_.charged_amount_ = 0;
+}
+inline double RunningEaInfo::_internal_charged_amount() const {
+  return _impl_.charged_amount_;
+}
+inline double RunningEaInfo::charged_amount() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.RunningEaInfo.charged_amount)
+  return _internal_charged_amount();
+}
+inline void RunningEaInfo::_internal_set_charged_amount(double value) {
+  
+  _impl_.charged_amount_ = value;
+}
+inline void RunningEaInfo::set_charged_amount(double value) {
+  _internal_set_charged_amount(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.RunningEaInfo.charged_amount)
+}
+
+// .google.protobuf.Timestamp stopped_at = 19;
+inline bool RunningEaInfo::_internal_has_stopped_at() const {
+  return this != internal_default_instance() && _impl_.stopped_at_ != nullptr;
+}
+inline bool RunningEaInfo::has_stopped_at() const {
+  return _internal_has_stopped_at();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& RunningEaInfo::_internal_stopped_at() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.stopped_at_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& RunningEaInfo::stopped_at() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.RunningEaInfo.stopped_at)
+  return _internal_stopped_at();
+}
+inline void RunningEaInfo::unsafe_arena_set_allocated_stopped_at(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* stopped_at) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.stopped_at_);
+  }
+  _impl_.stopped_at_ = stopped_at;
+  if (stopped_at) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.RunningEaInfo.stopped_at)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RunningEaInfo::release_stopped_at() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.stopped_at_;
+  _impl_.stopped_at_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RunningEaInfo::unsafe_arena_release_stopped_at() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.RunningEaInfo.stopped_at)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.stopped_at_;
+  _impl_.stopped_at_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RunningEaInfo::_internal_mutable_stopped_at() {
+  
+  if (_impl_.stopped_at_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.stopped_at_ = p;
+  }
+  return _impl_.stopped_at_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RunningEaInfo::mutable_stopped_at() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_stopped_at();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.RunningEaInfo.stopped_at)
+  return _msg;
+}
+inline void RunningEaInfo::set_allocated_stopped_at(::PROTOBUF_NAMESPACE_ID::Timestamp* stopped_at) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.stopped_at_);
+  }
+  if (stopped_at) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(stopped_at));
+    if (message_arena != submessage_arena) {
+      stopped_at = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, stopped_at, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.stopped_at_ = stopped_at;
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.RunningEaInfo.stopped_at)
 }
 
 // -------------------------------------------------------------------
