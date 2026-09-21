@@ -37,7 +37,7 @@ Create your main application file and paste the following snippet:
 ```
 #include <metarpc/mt5_account.hpp>
 
-// Account ID generation (GetId) and authentication are handled automatically
+// Session ID generation on Connect and authentication are handled automatically
 metarpc::MT5Account account(user, password, grpc_server, apiKey);
 account.connect_by_server_name(server_name, "EURUSD", 30);
 auto summary = account.account_summary();

@@ -117,8 +117,8 @@ std::string MT5Client::computeDeterministicId(int64_t login, const std::string& 
     return std::string(buf);
 }
 
-MT5Client::MT5Client(const std::string& host, int port, const std::string& apiKey)
-    : m_host(host), m_port(port), m_apiKey(apiKey), m_connected(false) {
+MT5Client::MT5Client(const std::string& host, int port, const std::string& apiKey, const std::string& name)
+    : m_host(host), m_port(port), m_apiKey(apiKey), m_name(name), m_connected(false) {
     if (m_apiKey.empty()) {
         const char* envKey = std::getenv("MRPC_API_KEY");
         if (envKey) {
@@ -136,7 +136,10 @@ std::string MT5Client::getId(int64_t login, const std::string& password) {
     return m_id;
 }
 
-bool MT5Client::connect(int64_t login, const std::string& password) {
+bool MT5Client::connect(int64_t login, const std::string& password, const std::string& name) {
+    if (!name.empty()) {
+        m_name = name;
+    }
     if (m_id.empty()) {
         m_id = computeDeterministicId(login, password);
     }
