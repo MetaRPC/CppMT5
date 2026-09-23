@@ -217,81 +217,6 @@ struct GuiCloseDialogsReplyDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GuiCloseDialogsReplyDefaultTypeInternal _GuiCloseDialogsReply_default_instance_;
-PROTOBUF_CONSTEXPR GuiDemoFindCompaniesRequest::GuiDemoFindCompaniesRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.search_text_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.timeout_seconds_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct GuiDemoFindCompaniesRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GuiDemoFindCompaniesRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GuiDemoFindCompaniesRequestDefaultTypeInternal() {}
-  union {
-    GuiDemoFindCompaniesRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GuiDemoFindCompaniesRequestDefaultTypeInternal _GuiDemoFindCompaniesRequest_default_instance_;
-PROTOBUF_CONSTEXPR GuiDemoFindCompaniesReply::GuiDemoFindCompaniesReply(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.companies_)*/{}
-  , /*decltype(_impl_.debug_log_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.result_code_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct GuiDemoFindCompaniesReplyDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GuiDemoFindCompaniesReplyDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GuiDemoFindCompaniesReplyDefaultTypeInternal() {}
-  union {
-    GuiDemoFindCompaniesReply _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GuiDemoFindCompaniesReplyDefaultTypeInternal _GuiDemoFindCompaniesReply_default_instance_;
-PROTOBUF_CONSTEXPR GuiDemoCompany::GuiDemoCompany(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.short_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct GuiDemoCompanyDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GuiDemoCompanyDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GuiDemoCompanyDefaultTypeInternal() {}
-  union {
-    GuiDemoCompany _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GuiDemoCompanyDefaultTypeInternal _GuiDemoCompany_default_instance_;
-PROTOBUF_CONSTEXPR GuiDemoServersAndTypesRequest::GuiDemoServersAndTypesRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.company_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.timeout_seconds_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct GuiDemoServersAndTypesRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GuiDemoServersAndTypesRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GuiDemoServersAndTypesRequestDefaultTypeInternal() {}
-  union {
-    GuiDemoServersAndTypesRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GuiDemoServersAndTypesRequestDefaultTypeInternal _GuiDemoServersAndTypesRequest_default_instance_;
-PROTOBUF_CONSTEXPR GuiDemoServersAndTypesReply::GuiDemoServersAndTypesReply(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.servers_)*/{}
-  , /*decltype(_impl_.account_types_)*/{}
-  , /*decltype(_impl_.deposits_)*/{}
-  , /*decltype(_impl_.leverages_)*/{}
-  , /*decltype(_impl_.debug_log_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.result_code_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct GuiDemoServersAndTypesReplyDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GuiDemoServersAndTypesReplyDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GuiDemoServersAndTypesReplyDefaultTypeInternal() {}
-  union {
-    GuiDemoServersAndTypesReply _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GuiDemoServersAndTypesReplyDefaultTypeInternal _GuiDemoServersAndTypesReply_default_instance_;
 PROTOBUF_CONSTEXPR GuiDemoOpenAccountRequest::GuiDemoOpenAccountRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.company_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
@@ -330,49 +255,6 @@ struct GuiDemoOpenAccountReplyDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GuiDemoOpenAccountReplyDefaultTypeInternal _GuiDemoOpenAccountReply_default_instance_;
-PROTOBUF_CONSTEXPR GuiDemoEnumControlsRequest::GuiDemoEnumControlsRequest(
-    ::_pbi::ConstantInitialized) {}
-struct GuiDemoEnumControlsRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GuiDemoEnumControlsRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GuiDemoEnumControlsRequestDefaultTypeInternal() {}
-  union {
-    GuiDemoEnumControlsRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GuiDemoEnumControlsRequestDefaultTypeInternal _GuiDemoEnumControlsRequest_default_instance_;
-PROTOBUF_CONSTEXPR GuiDemoEnumControlsReply::GuiDemoEnumControlsReply(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.controls_dump_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.control_count_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct GuiDemoEnumControlsReplyDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GuiDemoEnumControlsReplyDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GuiDemoEnumControlsReplyDefaultTypeInternal() {}
-  union {
-    GuiDemoEnumControlsReply _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GuiDemoEnumControlsReplyDefaultTypeInternal _GuiDemoEnumControlsReply_default_instance_;
-PROTOBUF_CONSTEXPR GuiDemoProgressEvent::GuiDemoProgressEvent(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.step_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.message_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.account_data_)*/nullptr
-  , /*decltype(_impl_.elapsed_ms_)*/int64_t{0}
-  , /*decltype(_impl_.is_final_)*/false
-  , /*decltype(_impl_.error_code_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct GuiDemoProgressEventDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GuiDemoProgressEventDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GuiDemoProgressEventDefaultTypeInternal() {}
-  union {
-    GuiDemoProgressEvent _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GuiDemoProgressEventDefaultTypeInternal _GuiDemoProgressEvent_default_instance_;
 PROTOBUF_CONSTEXPR GuiDemoInteractiveClientMessage::GuiDemoInteractiveClientMessage(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.session_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
@@ -679,7 +561,7 @@ struct GuiDemoInteractiveScreenshotDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GuiDemoInteractiveScreenshotDefaultTypeInternal _GuiDemoInteractiveScreenshot_default_instance_;
 }  // namespace mt5_term_api
-static ::_pb::Metadata file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[44];
+static ::_pb::Metadata file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[36];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_mt5_2dterm_2dapi_2dgui_2eproto[2];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_mt5_2dterm_2dapi_2dgui_2eproto = nullptr;
 
@@ -801,51 +683,6 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dgui_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiCloseDialogsReply, _impl_.closed_count_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoFindCompaniesRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoFindCompaniesRequest, _impl_.search_text_),
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoFindCompaniesRequest, _impl_.timeout_seconds_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoFindCompaniesReply, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoFindCompaniesReply, _impl_.result_code_),
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoFindCompaniesReply, _impl_.companies_),
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoFindCompaniesReply, _impl_.debug_log_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoCompany, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoCompany, _impl_.name_),
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoCompany, _impl_.short_name_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoServersAndTypesRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoServersAndTypesRequest, _impl_.company_name_),
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoServersAndTypesRequest, _impl_.timeout_seconds_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoServersAndTypesReply, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoServersAndTypesReply, _impl_.result_code_),
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoServersAndTypesReply, _impl_.servers_),
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoServersAndTypesReply, _impl_.account_types_),
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoServersAndTypesReply, _impl_.deposits_),
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoServersAndTypesReply, _impl_.leverages_),
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoServersAndTypesReply, _impl_.debug_log_),
-  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoOpenAccountRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -871,32 +708,6 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dgui_2eproto::offsets[] PROTOBUF_SE
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoOpenAccountReply, _impl_.investor_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoOpenAccountReply, _impl_.server_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoOpenAccountReply, _impl_.debug_log_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoEnumControlsRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoEnumControlsReply, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoEnumControlsReply, _impl_.control_count_),
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoEnumControlsReply, _impl_.controls_dump_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoProgressEvent, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoProgressEvent, _impl_.step_),
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoProgressEvent, _impl_.message_),
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoProgressEvent, _impl_.elapsed_ms_),
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoProgressEvent, _impl_.is_final_),
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoProgressEvent, _impl_.account_data_),
-  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoProgressEvent, _impl_.error_code_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::GuiDemoInteractiveClientMessage, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1119,36 +930,28 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 96, -1, -1, sizeof(::mt5_term_api::GuiLoginExError)},
   { 103, -1, -1, sizeof(::mt5_term_api::GuiCloseDialogsRequest)},
   { 109, -1, -1, sizeof(::mt5_term_api::GuiCloseDialogsReply)},
-  { 116, -1, -1, sizeof(::mt5_term_api::GuiDemoFindCompaniesRequest)},
-  { 124, -1, -1, sizeof(::mt5_term_api::GuiDemoFindCompaniesReply)},
-  { 133, -1, -1, sizeof(::mt5_term_api::GuiDemoCompany)},
-  { 141, -1, -1, sizeof(::mt5_term_api::GuiDemoServersAndTypesRequest)},
-  { 149, -1, -1, sizeof(::mt5_term_api::GuiDemoServersAndTypesReply)},
-  { 161, -1, -1, sizeof(::mt5_term_api::GuiDemoOpenAccountRequest)},
-  { 175, -1, -1, sizeof(::mt5_term_api::GuiDemoOpenAccountReply)},
-  { 187, -1, -1, sizeof(::mt5_term_api::GuiDemoEnumControlsRequest)},
-  { 193, -1, -1, sizeof(::mt5_term_api::GuiDemoEnumControlsReply)},
-  { 201, -1, -1, sizeof(::mt5_term_api::GuiDemoProgressEvent)},
-  { 213, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveClientMessage)},
-  { 227, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveSearchCompany)},
-  { 235, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveSelectCompany)},
-  { 245, 253, -1, sizeof(::mt5_term_api::GuiDemoInteractiveSubmitForm_FieldsEntry_DoNotUse)},
-  { 255, 263, -1, sizeof(::mt5_term_api::GuiDemoInteractiveSubmitForm_DropdownSelectionsEntry_DoNotUse)},
-  { 265, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveSubmitForm)},
-  { 274, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveSubmitTwoFactor)},
-  { 281, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveCancelSession)},
-  { 288, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveRequestScreenshot)},
-  { 295, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveServerMessage)},
-  { 311, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveCompanyItem)},
-  { 321, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveCompanyList)},
-  { 330, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveFormField)},
-  { 342, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveDropdown)},
-  { 354, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveFormSchema)},
-  { 367, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveTwoFactorChallenge)},
-  { 379, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveCompleted)},
-  { 391, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveProgress)},
-  { 400, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveError)},
-  { 410, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveScreenshot)},
+  { 116, -1, -1, sizeof(::mt5_term_api::GuiDemoOpenAccountRequest)},
+  { 130, -1, -1, sizeof(::mt5_term_api::GuiDemoOpenAccountReply)},
+  { 142, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveClientMessage)},
+  { 156, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveSearchCompany)},
+  { 164, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveSelectCompany)},
+  { 174, 182, -1, sizeof(::mt5_term_api::GuiDemoInteractiveSubmitForm_FieldsEntry_DoNotUse)},
+  { 184, 192, -1, sizeof(::mt5_term_api::GuiDemoInteractiveSubmitForm_DropdownSelectionsEntry_DoNotUse)},
+  { 194, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveSubmitForm)},
+  { 203, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveSubmitTwoFactor)},
+  { 210, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveCancelSession)},
+  { 217, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveRequestScreenshot)},
+  { 224, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveServerMessage)},
+  { 240, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveCompanyItem)},
+  { 250, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveCompanyList)},
+  { 259, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveFormField)},
+  { 271, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveDropdown)},
+  { 283, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveFormSchema)},
+  { 296, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveTwoFactorChallenge)},
+  { 308, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveCompleted)},
+  { 320, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveProgress)},
+  { 329, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveError)},
+  { 339, -1, -1, sizeof(::mt5_term_api::GuiDemoInteractiveScreenshot)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -1166,16 +969,8 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::mt5_term_api::_GuiLoginExError_default_instance_._instance,
   &::mt5_term_api::_GuiCloseDialogsRequest_default_instance_._instance,
   &::mt5_term_api::_GuiCloseDialogsReply_default_instance_._instance,
-  &::mt5_term_api::_GuiDemoFindCompaniesRequest_default_instance_._instance,
-  &::mt5_term_api::_GuiDemoFindCompaniesReply_default_instance_._instance,
-  &::mt5_term_api::_GuiDemoCompany_default_instance_._instance,
-  &::mt5_term_api::_GuiDemoServersAndTypesRequest_default_instance_._instance,
-  &::mt5_term_api::_GuiDemoServersAndTypesReply_default_instance_._instance,
   &::mt5_term_api::_GuiDemoOpenAccountRequest_default_instance_._instance,
   &::mt5_term_api::_GuiDemoOpenAccountReply_default_instance_._instance,
-  &::mt5_term_api::_GuiDemoEnumControlsRequest_default_instance_._instance,
-  &::mt5_term_api::_GuiDemoEnumControlsReply_default_instance_._instance,
-  &::mt5_term_api::_GuiDemoProgressEvent_default_instance_._instance,
   &::mt5_term_api::_GuiDemoInteractiveClientMessage_default_instance_._instance,
   &::mt5_term_api::_GuiDemoInteractiveSearchCompany_default_instance_._instance,
   &::mt5_term_api::_GuiDemoInteractiveSelectCompany_default_instance_._instance,
@@ -1226,156 +1021,126 @@ const char descriptor_table_protodef_mt5_2dterm_2dapi_2dgui_2eproto[] PROTOBUF_S
   "ble_servers\030\003 \003(\t\022\021\n\tdebug_log\030\004 \001(\t\"(\n\017"
   "GuiLoginExError\022\025\n\rerror_message\030\001 \001(\t\"\030"
   "\n\026GuiCloseDialogsRequest\",\n\024GuiCloseDial"
-  "ogsReply\022\024\n\014closed_count\030\001 \001(\005\"K\n\033GuiDem"
-  "oFindCompaniesRequest\022\023\n\013search_text\030\001 \001"
-  "(\t\022\027\n\017timeout_seconds\030\002 \001(\005\"t\n\031GuiDemoFi"
-  "ndCompaniesReply\022\023\n\013result_code\030\001 \001(\005\022/\n"
-  "\tcompanies\030\002 \003(\0132\034.mt5_term_api.GuiDemoC"
-  "ompany\022\021\n\tdebug_log\030\003 \001(\t\"2\n\016GuiDemoComp"
-  "any\022\014\n\004name\030\001 \001(\t\022\022\n\nshort_name\030\002 \001(\t\"N\n"
-  "\035GuiDemoServersAndTypesRequest\022\024\n\014compan"
-  "y_name\030\001 \001(\t\022\027\n\017timeout_seconds\030\002 \001(\005\"\222\001"
-  "\n\033GuiDemoServersAndTypesReply\022\023\n\013result_"
-  "code\030\001 \001(\005\022\017\n\007servers\030\002 \003(\t\022\025\n\raccount_t"
-  "ypes\030\003 \003(\t\022\020\n\010deposits\030\004 \003(\t\022\021\n\tleverage"
-  "s\030\005 \003(\t\022\021\n\tdebug_log\030\006 \001(\t\"\260\001\n\031GuiDemoOp"
-  "enAccountRequest\022\017\n\007company\030\001 \001(\t\022\022\n\nfir"
-  "st_name\030\002 \001(\t\022\021\n\tlast_name\030\003 \001(\t\022\r\n\005emai"
-  "l\030\004 \001(\t\022\r\n\005phone\030\005 \001(\t\022\016\n\006server\030\006 \001(\t\022\024"
-  "\n\014account_type\030\007 \001(\t\022\027\n\017timeout_seconds\030"
-  "\010 \001(\005\"\204\001\n\027GuiDemoOpenAccountReply\022\023\n\013res"
-  "ult_code\030\001 \001(\005\022\r\n\005login\030\002 \001(\t\022\020\n\010passwor"
-  "d\030\003 \001(\t\022\020\n\010investor\030\004 \001(\t\022\016\n\006server\030\005 \001("
-  "\t\022\021\n\tdebug_log\030\006 \001(\t\"\034\n\032GuiDemoEnumContr"
-  "olsRequest\"H\n\030GuiDemoEnumControlsReply\022\025"
-  "\n\rcontrol_count\030\001 \001(\005\022\025\n\rcontrols_dump\030\002"
-  " \001(\t\"\254\001\n\024GuiDemoProgressEvent\022\014\n\004step\030\001 "
-  "\001(\t\022\017\n\007message\030\002 \001(\t\022\022\n\nelapsed_ms\030\003 \001(\003"
-  "\022\020\n\010is_final\030\004 \001(\010\022;\n\014account_data\030\005 \001(\013"
-  "2%.mt5_term_api.GuiDemoOpenAccountReply\022"
-  "\022\n\nerror_code\030\006 \001(\005\"\375\003\n\037GuiDemoInteracti"
-  "veClientMessage\022\022\n\nsession_id\030\001 \001(\t\022G\n\016s"
-  "earch_company\030\002 \001(\0132-.mt5_term_api.GuiDe"
-  "moInteractiveSearchCompanyH\000\022G\n\016select_c"
-  "ompany\030\003 \001(\0132-.mt5_term_api.GuiDemoInter"
-  "activeSelectCompanyH\000\022A\n\013submit_form\030\004 \001"
-  "(\0132*.mt5_term_api.GuiDemoInteractiveSubm"
-  "itFormH\000\022L\n\021submit_two_factor\030\005 \001(\0132/.mt"
-  "5_term_api.GuiDemoInteractiveSubmitTwoFa"
-  "ctorH\000\022G\n\016cancel_session\030\006 \001(\0132-.mt5_ter"
-  "m_api.GuiDemoInteractiveCancelSessionH\000\022"
-  "O\n\022request_screenshot\030\007 \001(\01321.mt5_term_a"
-  "pi.GuiDemoInteractiveRequestScreenshotH\000"
-  "B\t\n\007payload\"P\n\037GuiDemoInteractiveSearchC"
-  "ompany\022\024\n\014search_query\030\001 \001(\t\022\027\n\017timeout_"
-  "seconds\030\002 \001(\005\"y\n\037GuiDemoInteractiveSelec"
-  "tCompany\022\025\n\rcompany_index\030\001 \001(\005\022\024\n\014compa"
-  "ny_name\030\002 \001(\t\022\023\n\013server_name\030\003 \001(\t\022\024\n\014ac"
-  "count_mode\030\004 \001(\005\"\311\002\n\034GuiDemoInteractiveS"
-  "ubmitForm\022F\n\006fields\030\001 \003(\01326.mt5_term_api"
-  ".GuiDemoInteractiveSubmitForm.FieldsEntr"
-  "y\022_\n\023dropdown_selections\030\002 \003(\0132B.mt5_ter"
-  "m_api.GuiDemoInteractiveSubmitForm.Dropd"
-  "ownSelectionsEntry\022\026\n\016agree_to_terms\030\003 \001"
-  "(\010\032-\n\013FieldsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
-  "\002 \001(\t:\0028\001\0329\n\027DropdownSelectionsEntry\022\013\n\003"
-  "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"1\n!GuiDemoI"
-  "nteractiveSubmitTwoFactor\022\014\n\004code\030\001 \001(\t\""
-  "1\n\037GuiDemoInteractiveCancelSession\022\016\n\006re"
-  "ason\030\001 \001(\t\"2\n#GuiDemoInteractiveRequestS"
-  "creenshot\022\013\n\003tag\030\001 \001(\t\"\252\004\n\037GuiDemoIntera"
-  "ctiveServerMessage\022\022\n\nsession_id\030\001 \001(\t\022\024"
-  "\n\014timestamp_ms\030\002 \001(\003\022C\n\014company_list\030\003 \001"
-  "(\0132+.mt5_term_api.GuiDemoInteractiveComp"
-  "anyListH\000\022A\n\013form_schema\030\004 \001(\0132*.mt5_ter"
-  "m_api.GuiDemoInteractiveFormSchemaH\000\022R\n\024"
-  "two_factor_challenge\030\005 \001(\01322.mt5_term_ap"
-  "i.GuiDemoInteractiveTwoFactorChallengeH\000"
-  "\022>\n\tcompleted\030\006 \001(\0132).mt5_term_api.GuiDe"
-  "moInteractiveCompletedH\000\022<\n\010progress\030\007 \001"
-  "(\0132(.mt5_term_api.GuiDemoInteractiveProg"
-  "ressH\000\0226\n\005error\030\010 \001(\0132%.mt5_term_api.Gui"
-  "DemoInteractiveErrorH\000\022@\n\nscreenshot\030\t \001"
-  "(\0132*.mt5_term_api.GuiDemoInteractiveScre"
-  "enshotH\000B\t\n\007payload\"j\n\035GuiDemoInteractiv"
-  "eCompanyItem\022\r\n\005index\030\001 \001(\005\022\024\n\014company_n"
-  "ame\030\002 \001(\t\022\023\n\013server_name\030\003 \001(\t\022\017\n\007ping_m"
-  "s\030\004 \001(\005\"\213\001\n\035GuiDemoInteractiveCompanyLis"
-  "t\022>\n\tcompanies\030\001 \003(\0132+.mt5_term_api.GuiD"
-  "emoInteractiveCompanyItem\022\025\n\rcurrent_que"
-  "ry\030\002 \001(\t\022\023\n\013can_proceed\030\003 \001(\010\"\264\001\n\033GuiDem"
-  "oInteractiveFormField\022\022\n\ncontrol_id\030\001 \001("
-  "\005\022\022\n\nfield_name\030\002 \001(\t\022\r\n\005label\030\003 \001(\t\022\025\n\r"
-  "current_value\030\004 \001(\t\022\023\n\013is_required\030\005 \001(\010"
-  "\0222\n\nfield_type\030\006 \001(\0162\036.mt5_term_api.GuiF"
-  "ormFieldType\"\227\001\n\032GuiDemoInteractiveDropd"
-  "own\022\022\n\ncontrol_id\030\001 \001(\005\022\025\n\rdropdown_name"
-  "\030\002 \001(\t\022\r\n\005label\030\003 \001(\t\022\026\n\016selected_index\030"
-  "\004 \001(\005\022\026\n\016selected_value\030\005 \001(\t\022\017\n\007options"
-  "\030\006 \003(\t\"\211\002\n\034GuiDemoInteractiveFormSchema\022"
-  "\022\n\npage_title\030\001 \001(\t\022\022\n\npage_index\030\002 \001(\005\022"
-  "9\n\006fields\030\003 \003(\0132).mt5_term_api.GuiDemoIn"
-  "teractiveFormField\022;\n\tdropdowns\030\004 \003(\0132(."
-  "mt5_term_api.GuiDemoInteractiveDropdown\022"
-  "\033\n\023has_terms_agreement\030\005 \001(\010\022\024\n\014terms_ag"
-  "reed\030\006 \001(\010\022\026\n\016prompt_message\030\007 \001(\t\"\317\001\n$G"
-  "uiDemoInteractiveTwoFactorChallenge\022,\n\004t"
-  "ype\030\001 \001(\0162\036.mt5_term_api.GuiTwoFactorTyp"
-  "e\022\023\n\013prompt_text\030\002 \001(\t\022\032\n\022destination_ma"
-  "sked\030\003 \001(\t\022\023\n\013code_length\030\004 \001(\005\022\027\n\017timeo"
-  "ut_seconds\030\005 \001(\005\022\032\n\022remaining_attempts\030\006"
-  " \001(\005\"\241\001\n\033GuiDemoInteractiveCompleted\022\r\n\005"
-  "login\030\001 \001(\003\022\020\n\010password\030\002 \001(\t\022\031\n\021investo"
-  "r_password\030\003 \001(\t\022\016\n\006server\030\004 \001(\t\022\030\n\020is_l"
-  "ive_verified\030\005 \001(\010\022\034\n\024trade_server_messa"
-  "ge\030\006 \001(\t\"]\n\032GuiDemoInteractiveProgress\022\021"
-  "\n\tstep_name\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\022\033\n\023pr"
-  "ogress_percentage\030\003 \001(\005\"r\n\027GuiDemoIntera"
-  "ctiveError\022\022\n\nerror_code\030\001 \001(\005\022\025\n\rerror_"
-  "message\030\002 \001(\t\022\024\n\014current_step\030\003 \001(\t\022\026\n\016i"
-  "s_recoverable\030\004 \001(\010\"R\n\034GuiDemoInteractiv"
-  "eScreenshot\022\013\n\003tag\030\001 \001(\t\022\022\n\nimage_data\030\002"
-  " \001(\014\022\021\n\tmime_type\030\003 \001(\t*\234\001\n\020GuiFormField"
-  "Type\022\023\n\017FIELD_TYPE_TEXT\020\000\022\024\n\020FIELD_TYPE_"
-  "EMAIL\020\001\022\024\n\020FIELD_TYPE_PHONE\020\002\022\025\n\021FIELD_T"
-  "YPE_NUMBER\020\003\022\027\n\023FIELD_TYPE_CHECKBOX\020\004\022\027\n"
-  "\023FIELD_TYPE_PASSWORD\020\005*v\n\020GuiTwoFactorTy"
-  "pe\022\026\n\022TWO_FACTOR_UNKNOWN\020\000\022\024\n\020TWO_FACTOR"
-  "_EMAIL\020\001\022\022\n\016TWO_FACTOR_SMS\020\002\022 \n\034TWO_FACT"
-  "OR_APP_AUTHENTICATOR\020\0032\330\007\n\003Gui\022C\n\005Login\022"
-  "\035.mt5_term_api.GuiLoginRequest\032\033.mt5_ter"
-  "m_api.GuiLoginReply\022X\n\014BrokerSearch\022$.mt"
-  "5_term_api.GuiBrokerSearchRequest\032\".mt5_"
-  "term_api.GuiBrokerSearchReply\022I\n\007LoginEx"
-  "\022\037.mt5_term_api.GuiLoginExRequest\032\035.mt5_"
-  "term_api.GuiLoginExReply\022X\n\014CloseDialogs"
-  "\022$.mt5_term_api.GuiCloseDialogsRequest\032\""
-  ".mt5_term_api.GuiCloseDialogsReply\022g\n\021De"
-  "moFindCompanies\022).mt5_term_api.GuiDemoFi"
-  "ndCompaniesRequest\032\'.mt5_term_api.GuiDem"
-  "oFindCompaniesReply\022m\n\023DemoServersAndTyp"
-  "es\022+.mt5_term_api.GuiDemoServersAndTypes"
-  "Request\032).mt5_term_api.GuiDemoServersAnd"
-  "TypesReply\022a\n\017DemoOpenAccount\022\'.mt5_term"
-  "_api.GuiDemoOpenAccountRequest\032%.mt5_ter"
-  "m_api.GuiDemoOpenAccountReply\022d\n\020DemoEnu"
-  "mControls\022(.mt5_term_api.GuiDemoEnumCont"
-  "rolsRequest\032&.mt5_term_api.GuiDemoEnumCo"
-  "ntrolsReply\022l\n\033DemoOpenAccountWithProgre"
-  "ss\022\'.mt5_term_api.GuiDemoOpenAccountRequ"
-  "est\032\".mt5_term_api.GuiDemoProgressEvent0"
-  "\001\022~\n\032DemoOpenAccountInteractive\022-.mt5_te"
-  "rm_api.GuiDemoInteractiveClientMessage\032-"
-  ".mt5_term_api.GuiDemoInteractiveServerMe"
-  "ssage(\0010\001BBZ1git.mtapi.io/root/mrpc-prot"
-  "o.git/mt5/libraries/go\252\002\014mt5_term_apib\006p"
-  "roto3"
+  "ogsReply\022\024\n\014closed_count\030\001 \001(\005\"\260\001\n\031GuiDe"
+  "moOpenAccountRequest\022\017\n\007company\030\001 \001(\t\022\022\n"
+  "\nfirst_name\030\002 \001(\t\022\021\n\tlast_name\030\003 \001(\t\022\r\n\005"
+  "email\030\004 \001(\t\022\r\n\005phone\030\005 \001(\t\022\016\n\006server\030\006 \001"
+  "(\t\022\024\n\014account_type\030\007 \001(\t\022\027\n\017timeout_seco"
+  "nds\030\010 \001(\005\"\204\001\n\027GuiDemoOpenAccountReply\022\023\n"
+  "\013result_code\030\001 \001(\005\022\r\n\005login\030\002 \001(\t\022\020\n\010pas"
+  "sword\030\003 \001(\t\022\020\n\010investor\030\004 \001(\t\022\016\n\006server\030"
+  "\005 \001(\t\022\021\n\tdebug_log\030\006 \001(\t\"\375\003\n\037GuiDemoInte"
+  "ractiveClientMessage\022\022\n\nsession_id\030\001 \001(\t"
+  "\022G\n\016search_company\030\002 \001(\0132-.mt5_term_api."
+  "GuiDemoInteractiveSearchCompanyH\000\022G\n\016sel"
+  "ect_company\030\003 \001(\0132-.mt5_term_api.GuiDemo"
+  "InteractiveSelectCompanyH\000\022A\n\013submit_for"
+  "m\030\004 \001(\0132*.mt5_term_api.GuiDemoInteractiv"
+  "eSubmitFormH\000\022L\n\021submit_two_factor\030\005 \001(\013"
+  "2/.mt5_term_api.GuiDemoInteractiveSubmit"
+  "TwoFactorH\000\022G\n\016cancel_session\030\006 \001(\0132-.mt"
+  "5_term_api.GuiDemoInteractiveCancelSessi"
+  "onH\000\022O\n\022request_screenshot\030\007 \001(\01321.mt5_t"
+  "erm_api.GuiDemoInteractiveRequestScreens"
+  "hotH\000B\t\n\007payload\"P\n\037GuiDemoInteractiveSe"
+  "archCompany\022\024\n\014search_query\030\001 \001(\t\022\027\n\017tim"
+  "eout_seconds\030\002 \001(\005\"y\n\037GuiDemoInteractive"
+  "SelectCompany\022\025\n\rcompany_index\030\001 \001(\005\022\024\n\014"
+  "company_name\030\002 \001(\t\022\023\n\013server_name\030\003 \001(\t\022"
+  "\024\n\014account_mode\030\004 \001(\005\"\311\002\n\034GuiDemoInterac"
+  "tiveSubmitForm\022F\n\006fields\030\001 \003(\01326.mt5_ter"
+  "m_api.GuiDemoInteractiveSubmitForm.Field"
+  "sEntry\022_\n\023dropdown_selections\030\002 \003(\0132B.mt"
+  "5_term_api.GuiDemoInteractiveSubmitForm."
+  "DropdownSelectionsEntry\022\026\n\016agree_to_term"
+  "s\030\003 \001(\010\032-\n\013FieldsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
+  "alue\030\002 \001(\t:\0028\001\0329\n\027DropdownSelectionsEntr"
+  "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"1\n!Gui"
+  "DemoInteractiveSubmitTwoFactor\022\014\n\004code\030\001"
+  " \001(\t\"1\n\037GuiDemoInteractiveCancelSession\022"
+  "\016\n\006reason\030\001 \001(\t\"2\n#GuiDemoInteractiveReq"
+  "uestScreenshot\022\013\n\003tag\030\001 \001(\t\"\252\004\n\037GuiDemoI"
+  "nteractiveServerMessage\022\022\n\nsession_id\030\001 "
+  "\001(\t\022\024\n\014timestamp_ms\030\002 \001(\003\022C\n\014company_lis"
+  "t\030\003 \001(\0132+.mt5_term_api.GuiDemoInteractiv"
+  "eCompanyListH\000\022A\n\013form_schema\030\004 \001(\0132*.mt"
+  "5_term_api.GuiDemoInteractiveFormSchemaH"
+  "\000\022R\n\024two_factor_challenge\030\005 \001(\01322.mt5_te"
+  "rm_api.GuiDemoInteractiveTwoFactorChalle"
+  "ngeH\000\022>\n\tcompleted\030\006 \001(\0132).mt5_term_api."
+  "GuiDemoInteractiveCompletedH\000\022<\n\010progres"
+  "s\030\007 \001(\0132(.mt5_term_api.GuiDemoInteractiv"
+  "eProgressH\000\0226\n\005error\030\010 \001(\0132%.mt5_term_ap"
+  "i.GuiDemoInteractiveErrorH\000\022@\n\nscreensho"
+  "t\030\t \001(\0132*.mt5_term_api.GuiDemoInteractiv"
+  "eScreenshotH\000B\t\n\007payload\"j\n\035GuiDemoInter"
+  "activeCompanyItem\022\r\n\005index\030\001 \001(\005\022\024\n\014comp"
+  "any_name\030\002 \001(\t\022\023\n\013server_name\030\003 \001(\t\022\017\n\007p"
+  "ing_ms\030\004 \001(\005\"\213\001\n\035GuiDemoInteractiveCompa"
+  "nyList\022>\n\tcompanies\030\001 \003(\0132+.mt5_term_api"
+  ".GuiDemoInteractiveCompanyItem\022\025\n\rcurren"
+  "t_query\030\002 \001(\t\022\023\n\013can_proceed\030\003 \001(\010\"\264\001\n\033G"
+  "uiDemoInteractiveFormField\022\022\n\ncontrol_id"
+  "\030\001 \001(\005\022\022\n\nfield_name\030\002 \001(\t\022\r\n\005label\030\003 \001("
+  "\t\022\025\n\rcurrent_value\030\004 \001(\t\022\023\n\013is_required\030"
+  "\005 \001(\010\0222\n\nfield_type\030\006 \001(\0162\036.mt5_term_api"
+  ".GuiFormFieldType\"\227\001\n\032GuiDemoInteractive"
+  "Dropdown\022\022\n\ncontrol_id\030\001 \001(\005\022\025\n\rdropdown"
+  "_name\030\002 \001(\t\022\r\n\005label\030\003 \001(\t\022\026\n\016selected_i"
+  "ndex\030\004 \001(\005\022\026\n\016selected_value\030\005 \001(\t\022\017\n\007op"
+  "tions\030\006 \003(\t\"\211\002\n\034GuiDemoInteractiveFormSc"
+  "hema\022\022\n\npage_title\030\001 \001(\t\022\022\n\npage_index\030\002"
+  " \001(\005\0229\n\006fields\030\003 \003(\0132).mt5_term_api.GuiD"
+  "emoInteractiveFormField\022;\n\tdropdowns\030\004 \003"
+  "(\0132(.mt5_term_api.GuiDemoInteractiveDrop"
+  "down\022\033\n\023has_terms_agreement\030\005 \001(\010\022\024\n\014ter"
+  "ms_agreed\030\006 \001(\010\022\026\n\016prompt_message\030\007 \001(\t\""
+  "\317\001\n$GuiDemoInteractiveTwoFactorChallenge"
+  "\022,\n\004type\030\001 \001(\0162\036.mt5_term_api.GuiTwoFact"
+  "orType\022\023\n\013prompt_text\030\002 \001(\t\022\032\n\022destinati"
+  "on_masked\030\003 \001(\t\022\023\n\013code_length\030\004 \001(\005\022\027\n\017"
+  "timeout_seconds\030\005 \001(\005\022\032\n\022remaining_attem"
+  "pts\030\006 \001(\005\"\241\001\n\033GuiDemoInteractiveComplete"
+  "d\022\r\n\005login\030\001 \001(\003\022\020\n\010password\030\002 \001(\t\022\031\n\021in"
+  "vestor_password\030\003 \001(\t\022\016\n\006server\030\004 \001(\t\022\030\n"
+  "\020is_live_verified\030\005 \001(\010\022\034\n\024trade_server_"
+  "message\030\006 \001(\t\"]\n\032GuiDemoInteractiveProgr"
+  "ess\022\021\n\tstep_name\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\022"
+  "\033\n\023progress_percentage\030\003 \001(\005\"r\n\027GuiDemoI"
+  "nteractiveError\022\022\n\nerror_code\030\001 \001(\005\022\025\n\re"
+  "rror_message\030\002 \001(\t\022\024\n\014current_step\030\003 \001(\t"
+  "\022\026\n\016is_recoverable\030\004 \001(\010\"R\n\034GuiDemoInter"
+  "activeScreenshot\022\013\n\003tag\030\001 \001(\t\022\022\n\nimage_d"
+  "ata\030\002 \001(\014\022\021\n\tmime_type\030\003 \001(\t*\234\001\n\020GuiForm"
+  "FieldType\022\023\n\017FIELD_TYPE_TEXT\020\000\022\024\n\020FIELD_"
+  "TYPE_EMAIL\020\001\022\024\n\020FIELD_TYPE_PHONE\020\002\022\025\n\021FI"
+  "ELD_TYPE_NUMBER\020\003\022\027\n\023FIELD_TYPE_CHECKBOX"
+  "\020\004\022\027\n\023FIELD_TYPE_PASSWORD\020\005*v\n\020GuiTwoFac"
+  "torType\022\026\n\022TWO_FACTOR_UNKNOWN\020\000\022\024\n\020TWO_F"
+  "ACTOR_EMAIL\020\001\022\022\n\016TWO_FACTOR_SMS\020\002\022 \n\034TWO"
+  "_FACTOR_APP_AUTHENTICATOR\020\0032\254\004\n\003Gui\022C\n\005L"
+  "ogin\022\035.mt5_term_api.GuiLoginRequest\032\033.mt"
+  "5_term_api.GuiLoginReply\022X\n\014BrokerSearch"
+  "\022$.mt5_term_api.GuiBrokerSearchRequest\032\""
+  ".mt5_term_api.GuiBrokerSearchReply\022I\n\007Lo"
+  "ginEx\022\037.mt5_term_api.GuiLoginExRequest\032\035"
+  ".mt5_term_api.GuiLoginExReply\022X\n\014CloseDi"
+  "alogs\022$.mt5_term_api.GuiCloseDialogsRequ"
+  "est\032\".mt5_term_api.GuiCloseDialogsReply\022"
+  "a\n\017DemoOpenAccount\022\'.mt5_term_api.GuiDem"
+  "oOpenAccountRequest\032%.mt5_term_api.GuiDe"
+  "moOpenAccountReply\022~\n\032DemoOpenAccountInt"
+  "eractive\022-.mt5_term_api.GuiDemoInteracti"
+  "veClientMessage\032-.mt5_term_api.GuiDemoIn"
+  "teractiveServerMessage(\0010\001BBZ1git.mtapi."
+  "io/root/mrpc-proto.git/mt5/libraries/go\252"
+  "\002\014mt5_term_apib\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto = {
-    false, false, 6805, descriptor_table_protodef_mt5_2dterm_2dapi_2dgui_2eproto,
+    false, false, 5622, descriptor_table_protodef_mt5_2dterm_2dapi_2dgui_2eproto,
     "mt5-term-api-gui.proto",
-    &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once, nullptr, 0, 44,
+    &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once, nullptr, 0, 36,
     schemas, file_default_instances, TableStruct_mt5_2dterm_2dapi_2dgui_2eproto::offsets,
     file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto, file_level_enum_descriptors_mt5_2dterm_2dapi_2dgui_2eproto,
     file_level_service_descriptors_mt5_2dterm_2dapi_2dgui_2eproto,
@@ -4869,1369 +4634,6 @@ void GuiCloseDialogsReply::InternalSwap(GuiCloseDialogsReply* other) {
 
 // ===================================================================
 
-class GuiDemoFindCompaniesRequest::_Internal {
- public:
-};
-
-GuiDemoFindCompaniesRequest::GuiDemoFindCompaniesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:mt5_term_api.GuiDemoFindCompaniesRequest)
-}
-GuiDemoFindCompaniesRequest::GuiDemoFindCompaniesRequest(const GuiDemoFindCompaniesRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  GuiDemoFindCompaniesRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.search_text_){}
-    , decltype(_impl_.timeout_seconds_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.search_text_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.search_text_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_search_text().empty()) {
-    _this->_impl_.search_text_.Set(from._internal_search_text(), 
-      _this->GetArenaForAllocation());
-  }
-  _this->_impl_.timeout_seconds_ = from._impl_.timeout_seconds_;
-  // @@protoc_insertion_point(copy_constructor:mt5_term_api.GuiDemoFindCompaniesRequest)
-}
-
-inline void GuiDemoFindCompaniesRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.search_text_){}
-    , decltype(_impl_.timeout_seconds_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.search_text_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.search_text_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-GuiDemoFindCompaniesRequest::~GuiDemoFindCompaniesRequest() {
-  // @@protoc_insertion_point(destructor:mt5_term_api.GuiDemoFindCompaniesRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void GuiDemoFindCompaniesRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.search_text_.Destroy();
-}
-
-void GuiDemoFindCompaniesRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void GuiDemoFindCompaniesRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mt5_term_api.GuiDemoFindCompaniesRequest)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.search_text_.ClearToEmpty();
-  _impl_.timeout_seconds_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* GuiDemoFindCompaniesRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string search_text = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_search_text();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.GuiDemoFindCompaniesRequest.search_text"));
-        } else
-          goto handle_unusual;
-        continue;
-      // int32 timeout_seconds = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.timeout_seconds_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* GuiDemoFindCompaniesRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.GuiDemoFindCompaniesRequest)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string search_text = 1;
-  if (!this->_internal_search_text().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_search_text().data(), static_cast<int>(this->_internal_search_text().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mt5_term_api.GuiDemoFindCompaniesRequest.search_text");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_search_text(), target);
-  }
-
-  // int32 timeout_seconds = 2;
-  if (this->_internal_timeout_seconds() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_timeout_seconds(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.GuiDemoFindCompaniesRequest)
-  return target;
-}
-
-size_t GuiDemoFindCompaniesRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.GuiDemoFindCompaniesRequest)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string search_text = 1;
-  if (!this->_internal_search_text().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_search_text());
-  }
-
-  // int32 timeout_seconds = 2;
-  if (this->_internal_timeout_seconds() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_timeout_seconds());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GuiDemoFindCompaniesRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    GuiDemoFindCompaniesRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GuiDemoFindCompaniesRequest::GetClassData() const { return &_class_data_; }
-
-
-void GuiDemoFindCompaniesRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<GuiDemoFindCompaniesRequest*>(&to_msg);
-  auto& from = static_cast<const GuiDemoFindCompaniesRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.GuiDemoFindCompaniesRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_search_text().empty()) {
-    _this->_internal_set_search_text(from._internal_search_text());
-  }
-  if (from._internal_timeout_seconds() != 0) {
-    _this->_internal_set_timeout_seconds(from._internal_timeout_seconds());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void GuiDemoFindCompaniesRequest::CopyFrom(const GuiDemoFindCompaniesRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.GuiDemoFindCompaniesRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool GuiDemoFindCompaniesRequest::IsInitialized() const {
-  return true;
-}
-
-void GuiDemoFindCompaniesRequest::InternalSwap(GuiDemoFindCompaniesRequest* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.search_text_, lhs_arena,
-      &other->_impl_.search_text_, rhs_arena
-  );
-  swap(_impl_.timeout_seconds_, other->_impl_.timeout_seconds_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoFindCompaniesRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[14]);
-}
-
-// ===================================================================
-
-class GuiDemoFindCompaniesReply::_Internal {
- public:
-};
-
-GuiDemoFindCompaniesReply::GuiDemoFindCompaniesReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:mt5_term_api.GuiDemoFindCompaniesReply)
-}
-GuiDemoFindCompaniesReply::GuiDemoFindCompaniesReply(const GuiDemoFindCompaniesReply& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  GuiDemoFindCompaniesReply* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.companies_){from._impl_.companies_}
-    , decltype(_impl_.debug_log_){}
-    , decltype(_impl_.result_code_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.debug_log_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.debug_log_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_debug_log().empty()) {
-    _this->_impl_.debug_log_.Set(from._internal_debug_log(), 
-      _this->GetArenaForAllocation());
-  }
-  _this->_impl_.result_code_ = from._impl_.result_code_;
-  // @@protoc_insertion_point(copy_constructor:mt5_term_api.GuiDemoFindCompaniesReply)
-}
-
-inline void GuiDemoFindCompaniesReply::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.companies_){arena}
-    , decltype(_impl_.debug_log_){}
-    , decltype(_impl_.result_code_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.debug_log_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.debug_log_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-GuiDemoFindCompaniesReply::~GuiDemoFindCompaniesReply() {
-  // @@protoc_insertion_point(destructor:mt5_term_api.GuiDemoFindCompaniesReply)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void GuiDemoFindCompaniesReply::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.companies_.~RepeatedPtrField();
-  _impl_.debug_log_.Destroy();
-}
-
-void GuiDemoFindCompaniesReply::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void GuiDemoFindCompaniesReply::Clear() {
-// @@protoc_insertion_point(message_clear_start:mt5_term_api.GuiDemoFindCompaniesReply)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.companies_.Clear();
-  _impl_.debug_log_.ClearToEmpty();
-  _impl_.result_code_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* GuiDemoFindCompaniesReply::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // int32 result_code = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.result_code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .mt5_term_api.GuiDemoCompany companies = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_companies(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // string debug_log = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_debug_log();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.GuiDemoFindCompaniesReply.debug_log"));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* GuiDemoFindCompaniesReply::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.GuiDemoFindCompaniesReply)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // int32 result_code = 1;
-  if (this->_internal_result_code() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_result_code(), target);
-  }
-
-  // repeated .mt5_term_api.GuiDemoCompany companies = 2;
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_companies_size()); i < n; i++) {
-    const auto& repfield = this->_internal_companies(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
-  }
-
-  // string debug_log = 3;
-  if (!this->_internal_debug_log().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_debug_log().data(), static_cast<int>(this->_internal_debug_log().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mt5_term_api.GuiDemoFindCompaniesReply.debug_log");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_debug_log(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.GuiDemoFindCompaniesReply)
-  return target;
-}
-
-size_t GuiDemoFindCompaniesReply::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.GuiDemoFindCompaniesReply)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .mt5_term_api.GuiDemoCompany companies = 2;
-  total_size += 1UL * this->_internal_companies_size();
-  for (const auto& msg : this->_impl_.companies_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // string debug_log = 3;
-  if (!this->_internal_debug_log().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_debug_log());
-  }
-
-  // int32 result_code = 1;
-  if (this->_internal_result_code() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_result_code());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GuiDemoFindCompaniesReply::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    GuiDemoFindCompaniesReply::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GuiDemoFindCompaniesReply::GetClassData() const { return &_class_data_; }
-
-
-void GuiDemoFindCompaniesReply::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<GuiDemoFindCompaniesReply*>(&to_msg);
-  auto& from = static_cast<const GuiDemoFindCompaniesReply&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.GuiDemoFindCompaniesReply)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.companies_.MergeFrom(from._impl_.companies_);
-  if (!from._internal_debug_log().empty()) {
-    _this->_internal_set_debug_log(from._internal_debug_log());
-  }
-  if (from._internal_result_code() != 0) {
-    _this->_internal_set_result_code(from._internal_result_code());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void GuiDemoFindCompaniesReply::CopyFrom(const GuiDemoFindCompaniesReply& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.GuiDemoFindCompaniesReply)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool GuiDemoFindCompaniesReply::IsInitialized() const {
-  return true;
-}
-
-void GuiDemoFindCompaniesReply::InternalSwap(GuiDemoFindCompaniesReply* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.companies_.InternalSwap(&other->_impl_.companies_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.debug_log_, lhs_arena,
-      &other->_impl_.debug_log_, rhs_arena
-  );
-  swap(_impl_.result_code_, other->_impl_.result_code_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoFindCompaniesReply::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[15]);
-}
-
-// ===================================================================
-
-class GuiDemoCompany::_Internal {
- public:
-};
-
-GuiDemoCompany::GuiDemoCompany(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:mt5_term_api.GuiDemoCompany)
-}
-GuiDemoCompany::GuiDemoCompany(const GuiDemoCompany& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  GuiDemoCompany* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.name_){}
-    , decltype(_impl_.short_name_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_name().empty()) {
-    _this->_impl_.name_.Set(from._internal_name(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.short_name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.short_name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_short_name().empty()) {
-    _this->_impl_.short_name_.Set(from._internal_short_name(), 
-      _this->GetArenaForAllocation());
-  }
-  // @@protoc_insertion_point(copy_constructor:mt5_term_api.GuiDemoCompany)
-}
-
-inline void GuiDemoCompany::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.name_){}
-    , decltype(_impl_.short_name_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.short_name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.short_name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-GuiDemoCompany::~GuiDemoCompany() {
-  // @@protoc_insertion_point(destructor:mt5_term_api.GuiDemoCompany)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void GuiDemoCompany::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.name_.Destroy();
-  _impl_.short_name_.Destroy();
-}
-
-void GuiDemoCompany::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void GuiDemoCompany::Clear() {
-// @@protoc_insertion_point(message_clear_start:mt5_term_api.GuiDemoCompany)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.name_.ClearToEmpty();
-  _impl_.short_name_.ClearToEmpty();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* GuiDemoCompany::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string name = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_name();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.GuiDemoCompany.name"));
-        } else
-          goto handle_unusual;
-        continue;
-      // string short_name = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_short_name();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.GuiDemoCompany.short_name"));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* GuiDemoCompany::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.GuiDemoCompany)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string name = 1;
-  if (!this->_internal_name().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mt5_term_api.GuiDemoCompany.name");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_name(), target);
-  }
-
-  // string short_name = 2;
-  if (!this->_internal_short_name().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_short_name().data(), static_cast<int>(this->_internal_short_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mt5_term_api.GuiDemoCompany.short_name");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_short_name(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.GuiDemoCompany)
-  return target;
-}
-
-size_t GuiDemoCompany::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.GuiDemoCompany)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string name = 1;
-  if (!this->_internal_name().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_name());
-  }
-
-  // string short_name = 2;
-  if (!this->_internal_short_name().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_short_name());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GuiDemoCompany::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    GuiDemoCompany::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GuiDemoCompany::GetClassData() const { return &_class_data_; }
-
-
-void GuiDemoCompany::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<GuiDemoCompany*>(&to_msg);
-  auto& from = static_cast<const GuiDemoCompany&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.GuiDemoCompany)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_name().empty()) {
-    _this->_internal_set_name(from._internal_name());
-  }
-  if (!from._internal_short_name().empty()) {
-    _this->_internal_set_short_name(from._internal_short_name());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void GuiDemoCompany::CopyFrom(const GuiDemoCompany& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.GuiDemoCompany)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool GuiDemoCompany::IsInitialized() const {
-  return true;
-}
-
-void GuiDemoCompany::InternalSwap(GuiDemoCompany* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.name_, lhs_arena,
-      &other->_impl_.name_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.short_name_, lhs_arena,
-      &other->_impl_.short_name_, rhs_arena
-  );
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoCompany::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[16]);
-}
-
-// ===================================================================
-
-class GuiDemoServersAndTypesRequest::_Internal {
- public:
-};
-
-GuiDemoServersAndTypesRequest::GuiDemoServersAndTypesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:mt5_term_api.GuiDemoServersAndTypesRequest)
-}
-GuiDemoServersAndTypesRequest::GuiDemoServersAndTypesRequest(const GuiDemoServersAndTypesRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  GuiDemoServersAndTypesRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.company_name_){}
-    , decltype(_impl_.timeout_seconds_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.company_name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.company_name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_company_name().empty()) {
-    _this->_impl_.company_name_.Set(from._internal_company_name(), 
-      _this->GetArenaForAllocation());
-  }
-  _this->_impl_.timeout_seconds_ = from._impl_.timeout_seconds_;
-  // @@protoc_insertion_point(copy_constructor:mt5_term_api.GuiDemoServersAndTypesRequest)
-}
-
-inline void GuiDemoServersAndTypesRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.company_name_){}
-    , decltype(_impl_.timeout_seconds_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.company_name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.company_name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-GuiDemoServersAndTypesRequest::~GuiDemoServersAndTypesRequest() {
-  // @@protoc_insertion_point(destructor:mt5_term_api.GuiDemoServersAndTypesRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void GuiDemoServersAndTypesRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.company_name_.Destroy();
-}
-
-void GuiDemoServersAndTypesRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void GuiDemoServersAndTypesRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mt5_term_api.GuiDemoServersAndTypesRequest)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.company_name_.ClearToEmpty();
-  _impl_.timeout_seconds_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* GuiDemoServersAndTypesRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string company_name = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_company_name();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.GuiDemoServersAndTypesRequest.company_name"));
-        } else
-          goto handle_unusual;
-        continue;
-      // int32 timeout_seconds = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.timeout_seconds_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* GuiDemoServersAndTypesRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.GuiDemoServersAndTypesRequest)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string company_name = 1;
-  if (!this->_internal_company_name().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_company_name().data(), static_cast<int>(this->_internal_company_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mt5_term_api.GuiDemoServersAndTypesRequest.company_name");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_company_name(), target);
-  }
-
-  // int32 timeout_seconds = 2;
-  if (this->_internal_timeout_seconds() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_timeout_seconds(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.GuiDemoServersAndTypesRequest)
-  return target;
-}
-
-size_t GuiDemoServersAndTypesRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.GuiDemoServersAndTypesRequest)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string company_name = 1;
-  if (!this->_internal_company_name().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_company_name());
-  }
-
-  // int32 timeout_seconds = 2;
-  if (this->_internal_timeout_seconds() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_timeout_seconds());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GuiDemoServersAndTypesRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    GuiDemoServersAndTypesRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GuiDemoServersAndTypesRequest::GetClassData() const { return &_class_data_; }
-
-
-void GuiDemoServersAndTypesRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<GuiDemoServersAndTypesRequest*>(&to_msg);
-  auto& from = static_cast<const GuiDemoServersAndTypesRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.GuiDemoServersAndTypesRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_company_name().empty()) {
-    _this->_internal_set_company_name(from._internal_company_name());
-  }
-  if (from._internal_timeout_seconds() != 0) {
-    _this->_internal_set_timeout_seconds(from._internal_timeout_seconds());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void GuiDemoServersAndTypesRequest::CopyFrom(const GuiDemoServersAndTypesRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.GuiDemoServersAndTypesRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool GuiDemoServersAndTypesRequest::IsInitialized() const {
-  return true;
-}
-
-void GuiDemoServersAndTypesRequest::InternalSwap(GuiDemoServersAndTypesRequest* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.company_name_, lhs_arena,
-      &other->_impl_.company_name_, rhs_arena
-  );
-  swap(_impl_.timeout_seconds_, other->_impl_.timeout_seconds_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoServersAndTypesRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[17]);
-}
-
-// ===================================================================
-
-class GuiDemoServersAndTypesReply::_Internal {
- public:
-};
-
-GuiDemoServersAndTypesReply::GuiDemoServersAndTypesReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:mt5_term_api.GuiDemoServersAndTypesReply)
-}
-GuiDemoServersAndTypesReply::GuiDemoServersAndTypesReply(const GuiDemoServersAndTypesReply& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  GuiDemoServersAndTypesReply* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.servers_){from._impl_.servers_}
-    , decltype(_impl_.account_types_){from._impl_.account_types_}
-    , decltype(_impl_.deposits_){from._impl_.deposits_}
-    , decltype(_impl_.leverages_){from._impl_.leverages_}
-    , decltype(_impl_.debug_log_){}
-    , decltype(_impl_.result_code_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.debug_log_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.debug_log_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_debug_log().empty()) {
-    _this->_impl_.debug_log_.Set(from._internal_debug_log(), 
-      _this->GetArenaForAllocation());
-  }
-  _this->_impl_.result_code_ = from._impl_.result_code_;
-  // @@protoc_insertion_point(copy_constructor:mt5_term_api.GuiDemoServersAndTypesReply)
-}
-
-inline void GuiDemoServersAndTypesReply::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.servers_){arena}
-    , decltype(_impl_.account_types_){arena}
-    , decltype(_impl_.deposits_){arena}
-    , decltype(_impl_.leverages_){arena}
-    , decltype(_impl_.debug_log_){}
-    , decltype(_impl_.result_code_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.debug_log_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.debug_log_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-GuiDemoServersAndTypesReply::~GuiDemoServersAndTypesReply() {
-  // @@protoc_insertion_point(destructor:mt5_term_api.GuiDemoServersAndTypesReply)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void GuiDemoServersAndTypesReply::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.servers_.~RepeatedPtrField();
-  _impl_.account_types_.~RepeatedPtrField();
-  _impl_.deposits_.~RepeatedPtrField();
-  _impl_.leverages_.~RepeatedPtrField();
-  _impl_.debug_log_.Destroy();
-}
-
-void GuiDemoServersAndTypesReply::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void GuiDemoServersAndTypesReply::Clear() {
-// @@protoc_insertion_point(message_clear_start:mt5_term_api.GuiDemoServersAndTypesReply)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.servers_.Clear();
-  _impl_.account_types_.Clear();
-  _impl_.deposits_.Clear();
-  _impl_.leverages_.Clear();
-  _impl_.debug_log_.ClearToEmpty();
-  _impl_.result_code_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* GuiDemoServersAndTypesReply::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // int32 result_code = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.result_code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated string servers = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            auto str = _internal_add_servers();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(ptr);
-            CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.GuiDemoServersAndTypesReply.servers"));
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated string account_types = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            auto str = _internal_add_account_types();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(ptr);
-            CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.GuiDemoServersAndTypesReply.account_types"));
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated string deposits = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            auto str = _internal_add_deposits();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(ptr);
-            CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.GuiDemoServersAndTypesReply.deposits"));
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated string leverages = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            auto str = _internal_add_leverages();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(ptr);
-            CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.GuiDemoServersAndTypesReply.leverages"));
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // string debug_log = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
-          auto str = _internal_mutable_debug_log();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.GuiDemoServersAndTypesReply.debug_log"));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* GuiDemoServersAndTypesReply::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.GuiDemoServersAndTypesReply)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // int32 result_code = 1;
-  if (this->_internal_result_code() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_result_code(), target);
-  }
-
-  // repeated string servers = 2;
-  for (int i = 0, n = this->_internal_servers_size(); i < n; i++) {
-    const auto& s = this->_internal_servers(i);
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      s.data(), static_cast<int>(s.length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mt5_term_api.GuiDemoServersAndTypesReply.servers");
-    target = stream->WriteString(2, s, target);
-  }
-
-  // repeated string account_types = 3;
-  for (int i = 0, n = this->_internal_account_types_size(); i < n; i++) {
-    const auto& s = this->_internal_account_types(i);
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      s.data(), static_cast<int>(s.length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mt5_term_api.GuiDemoServersAndTypesReply.account_types");
-    target = stream->WriteString(3, s, target);
-  }
-
-  // repeated string deposits = 4;
-  for (int i = 0, n = this->_internal_deposits_size(); i < n; i++) {
-    const auto& s = this->_internal_deposits(i);
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      s.data(), static_cast<int>(s.length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mt5_term_api.GuiDemoServersAndTypesReply.deposits");
-    target = stream->WriteString(4, s, target);
-  }
-
-  // repeated string leverages = 5;
-  for (int i = 0, n = this->_internal_leverages_size(); i < n; i++) {
-    const auto& s = this->_internal_leverages(i);
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      s.data(), static_cast<int>(s.length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mt5_term_api.GuiDemoServersAndTypesReply.leverages");
-    target = stream->WriteString(5, s, target);
-  }
-
-  // string debug_log = 6;
-  if (!this->_internal_debug_log().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_debug_log().data(), static_cast<int>(this->_internal_debug_log().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mt5_term_api.GuiDemoServersAndTypesReply.debug_log");
-    target = stream->WriteStringMaybeAliased(
-        6, this->_internal_debug_log(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.GuiDemoServersAndTypesReply)
-  return target;
-}
-
-size_t GuiDemoServersAndTypesReply::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.GuiDemoServersAndTypesReply)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated string servers = 2;
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.servers_.size());
-  for (int i = 0, n = _impl_.servers_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      _impl_.servers_.Get(i));
-  }
-
-  // repeated string account_types = 3;
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.account_types_.size());
-  for (int i = 0, n = _impl_.account_types_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      _impl_.account_types_.Get(i));
-  }
-
-  // repeated string deposits = 4;
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.deposits_.size());
-  for (int i = 0, n = _impl_.deposits_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      _impl_.deposits_.Get(i));
-  }
-
-  // repeated string leverages = 5;
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.leverages_.size());
-  for (int i = 0, n = _impl_.leverages_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      _impl_.leverages_.Get(i));
-  }
-
-  // string debug_log = 6;
-  if (!this->_internal_debug_log().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_debug_log());
-  }
-
-  // int32 result_code = 1;
-  if (this->_internal_result_code() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_result_code());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GuiDemoServersAndTypesReply::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    GuiDemoServersAndTypesReply::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GuiDemoServersAndTypesReply::GetClassData() const { return &_class_data_; }
-
-
-void GuiDemoServersAndTypesReply::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<GuiDemoServersAndTypesReply*>(&to_msg);
-  auto& from = static_cast<const GuiDemoServersAndTypesReply&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.GuiDemoServersAndTypesReply)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.servers_.MergeFrom(from._impl_.servers_);
-  _this->_impl_.account_types_.MergeFrom(from._impl_.account_types_);
-  _this->_impl_.deposits_.MergeFrom(from._impl_.deposits_);
-  _this->_impl_.leverages_.MergeFrom(from._impl_.leverages_);
-  if (!from._internal_debug_log().empty()) {
-    _this->_internal_set_debug_log(from._internal_debug_log());
-  }
-  if (from._internal_result_code() != 0) {
-    _this->_internal_set_result_code(from._internal_result_code());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void GuiDemoServersAndTypesReply::CopyFrom(const GuiDemoServersAndTypesReply& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.GuiDemoServersAndTypesReply)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool GuiDemoServersAndTypesReply::IsInitialized() const {
-  return true;
-}
-
-void GuiDemoServersAndTypesReply::InternalSwap(GuiDemoServersAndTypesReply* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.servers_.InternalSwap(&other->_impl_.servers_);
-  _impl_.account_types_.InternalSwap(&other->_impl_.account_types_);
-  _impl_.deposits_.InternalSwap(&other->_impl_.deposits_);
-  _impl_.leverages_.InternalSwap(&other->_impl_.leverages_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.debug_log_, lhs_arena,
-      &other->_impl_.debug_log_, rhs_arena
-  );
-  swap(_impl_.result_code_, other->_impl_.result_code_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoServersAndTypesReply::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[18]);
-}
-
-// ===================================================================
-
 class GuiDemoOpenAccountRequest::_Internal {
  public:
 };
@@ -6757,7 +5159,7 @@ void GuiDemoOpenAccountRequest::InternalSwap(GuiDemoOpenAccountRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoOpenAccountRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[19]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[14]);
 }
 
 // ===================================================================
@@ -7187,655 +5589,7 @@ void GuiDemoOpenAccountReply::InternalSwap(GuiDemoOpenAccountReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoOpenAccountReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[20]);
-}
-
-// ===================================================================
-
-class GuiDemoEnumControlsRequest::_Internal {
- public:
-};
-
-GuiDemoEnumControlsRequest::GuiDemoEnumControlsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
-  // @@protoc_insertion_point(arena_constructor:mt5_term_api.GuiDemoEnumControlsRequest)
-}
-GuiDemoEnumControlsRequest::GuiDemoEnumControlsRequest(const GuiDemoEnumControlsRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  GuiDemoEnumControlsRequest* const _this = this; (void)_this;
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mt5_term_api.GuiDemoEnumControlsRequest)
-}
-
-
-
-
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GuiDemoEnumControlsRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GuiDemoEnumControlsRequest::GetClassData() const { return &_class_data_; }
-
-
-
-
-
-
-
-::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoEnumControlsRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[21]);
-}
-
-// ===================================================================
-
-class GuiDemoEnumControlsReply::_Internal {
- public:
-};
-
-GuiDemoEnumControlsReply::GuiDemoEnumControlsReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:mt5_term_api.GuiDemoEnumControlsReply)
-}
-GuiDemoEnumControlsReply::GuiDemoEnumControlsReply(const GuiDemoEnumControlsReply& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  GuiDemoEnumControlsReply* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.controls_dump_){}
-    , decltype(_impl_.control_count_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.controls_dump_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.controls_dump_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_controls_dump().empty()) {
-    _this->_impl_.controls_dump_.Set(from._internal_controls_dump(), 
-      _this->GetArenaForAllocation());
-  }
-  _this->_impl_.control_count_ = from._impl_.control_count_;
-  // @@protoc_insertion_point(copy_constructor:mt5_term_api.GuiDemoEnumControlsReply)
-}
-
-inline void GuiDemoEnumControlsReply::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.controls_dump_){}
-    , decltype(_impl_.control_count_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.controls_dump_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.controls_dump_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-GuiDemoEnumControlsReply::~GuiDemoEnumControlsReply() {
-  // @@protoc_insertion_point(destructor:mt5_term_api.GuiDemoEnumControlsReply)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void GuiDemoEnumControlsReply::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.controls_dump_.Destroy();
-}
-
-void GuiDemoEnumControlsReply::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void GuiDemoEnumControlsReply::Clear() {
-// @@protoc_insertion_point(message_clear_start:mt5_term_api.GuiDemoEnumControlsReply)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.controls_dump_.ClearToEmpty();
-  _impl_.control_count_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* GuiDemoEnumControlsReply::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // int32 control_count = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.control_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string controls_dump = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_controls_dump();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.GuiDemoEnumControlsReply.controls_dump"));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* GuiDemoEnumControlsReply::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.GuiDemoEnumControlsReply)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // int32 control_count = 1;
-  if (this->_internal_control_count() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_control_count(), target);
-  }
-
-  // string controls_dump = 2;
-  if (!this->_internal_controls_dump().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_controls_dump().data(), static_cast<int>(this->_internal_controls_dump().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mt5_term_api.GuiDemoEnumControlsReply.controls_dump");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_controls_dump(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.GuiDemoEnumControlsReply)
-  return target;
-}
-
-size_t GuiDemoEnumControlsReply::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.GuiDemoEnumControlsReply)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string controls_dump = 2;
-  if (!this->_internal_controls_dump().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_controls_dump());
-  }
-
-  // int32 control_count = 1;
-  if (this->_internal_control_count() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_control_count());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GuiDemoEnumControlsReply::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    GuiDemoEnumControlsReply::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GuiDemoEnumControlsReply::GetClassData() const { return &_class_data_; }
-
-
-void GuiDemoEnumControlsReply::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<GuiDemoEnumControlsReply*>(&to_msg);
-  auto& from = static_cast<const GuiDemoEnumControlsReply&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.GuiDemoEnumControlsReply)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_controls_dump().empty()) {
-    _this->_internal_set_controls_dump(from._internal_controls_dump());
-  }
-  if (from._internal_control_count() != 0) {
-    _this->_internal_set_control_count(from._internal_control_count());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void GuiDemoEnumControlsReply::CopyFrom(const GuiDemoEnumControlsReply& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.GuiDemoEnumControlsReply)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool GuiDemoEnumControlsReply::IsInitialized() const {
-  return true;
-}
-
-void GuiDemoEnumControlsReply::InternalSwap(GuiDemoEnumControlsReply* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.controls_dump_, lhs_arena,
-      &other->_impl_.controls_dump_, rhs_arena
-  );
-  swap(_impl_.control_count_, other->_impl_.control_count_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoEnumControlsReply::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[22]);
-}
-
-// ===================================================================
-
-class GuiDemoProgressEvent::_Internal {
- public:
-  static const ::mt5_term_api::GuiDemoOpenAccountReply& account_data(const GuiDemoProgressEvent* msg);
-};
-
-const ::mt5_term_api::GuiDemoOpenAccountReply&
-GuiDemoProgressEvent::_Internal::account_data(const GuiDemoProgressEvent* msg) {
-  return *msg->_impl_.account_data_;
-}
-GuiDemoProgressEvent::GuiDemoProgressEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:mt5_term_api.GuiDemoProgressEvent)
-}
-GuiDemoProgressEvent::GuiDemoProgressEvent(const GuiDemoProgressEvent& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  GuiDemoProgressEvent* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.step_){}
-    , decltype(_impl_.message_){}
-    , decltype(_impl_.account_data_){nullptr}
-    , decltype(_impl_.elapsed_ms_){}
-    , decltype(_impl_.is_final_){}
-    , decltype(_impl_.error_code_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.step_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.step_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_step().empty()) {
-    _this->_impl_.step_.Set(from._internal_step(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.message_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.message_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_message().empty()) {
-    _this->_impl_.message_.Set(from._internal_message(), 
-      _this->GetArenaForAllocation());
-  }
-  if (from._internal_has_account_data()) {
-    _this->_impl_.account_data_ = new ::mt5_term_api::GuiDemoOpenAccountReply(*from._impl_.account_data_);
-  }
-  ::memcpy(&_impl_.elapsed_ms_, &from._impl_.elapsed_ms_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.error_code_) -
-    reinterpret_cast<char*>(&_impl_.elapsed_ms_)) + sizeof(_impl_.error_code_));
-  // @@protoc_insertion_point(copy_constructor:mt5_term_api.GuiDemoProgressEvent)
-}
-
-inline void GuiDemoProgressEvent::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.step_){}
-    , decltype(_impl_.message_){}
-    , decltype(_impl_.account_data_){nullptr}
-    , decltype(_impl_.elapsed_ms_){int64_t{0}}
-    , decltype(_impl_.is_final_){false}
-    , decltype(_impl_.error_code_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.step_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.step_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.message_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.message_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-GuiDemoProgressEvent::~GuiDemoProgressEvent() {
-  // @@protoc_insertion_point(destructor:mt5_term_api.GuiDemoProgressEvent)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void GuiDemoProgressEvent::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.step_.Destroy();
-  _impl_.message_.Destroy();
-  if (this != internal_default_instance()) delete _impl_.account_data_;
-}
-
-void GuiDemoProgressEvent::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void GuiDemoProgressEvent::Clear() {
-// @@protoc_insertion_point(message_clear_start:mt5_term_api.GuiDemoProgressEvent)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.step_.ClearToEmpty();
-  _impl_.message_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && _impl_.account_data_ != nullptr) {
-    delete _impl_.account_data_;
-  }
-  _impl_.account_data_ = nullptr;
-  ::memset(&_impl_.elapsed_ms_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.error_code_) -
-      reinterpret_cast<char*>(&_impl_.elapsed_ms_)) + sizeof(_impl_.error_code_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* GuiDemoProgressEvent::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string step = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_step();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.GuiDemoProgressEvent.step"));
-        } else
-          goto handle_unusual;
-        continue;
-      // string message = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_message();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.GuiDemoProgressEvent.message"));
-        } else
-          goto handle_unusual;
-        continue;
-      // int64 elapsed_ms = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          _impl_.elapsed_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool is_final = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          _impl_.is_final_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .mt5_term_api.GuiDemoOpenAccountReply account_data = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          ptr = ctx->ParseMessage(_internal_mutable_account_data(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // int32 error_code = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          _impl_.error_code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* GuiDemoProgressEvent::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.GuiDemoProgressEvent)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string step = 1;
-  if (!this->_internal_step().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_step().data(), static_cast<int>(this->_internal_step().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mt5_term_api.GuiDemoProgressEvent.step");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_step(), target);
-  }
-
-  // string message = 2;
-  if (!this->_internal_message().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mt5_term_api.GuiDemoProgressEvent.message");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_message(), target);
-  }
-
-  // int64 elapsed_ms = 3;
-  if (this->_internal_elapsed_ms() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt64ToArray(3, this->_internal_elapsed_ms(), target);
-  }
-
-  // bool is_final = 4;
-  if (this->_internal_is_final() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(4, this->_internal_is_final(), target);
-  }
-
-  // .mt5_term_api.GuiDemoOpenAccountReply account_data = 5;
-  if (this->_internal_has_account_data()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(5, _Internal::account_data(this),
-        _Internal::account_data(this).GetCachedSize(), target, stream);
-  }
-
-  // int32 error_code = 6;
-  if (this->_internal_error_code() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_error_code(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.GuiDemoProgressEvent)
-  return target;
-}
-
-size_t GuiDemoProgressEvent::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.GuiDemoProgressEvent)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string step = 1;
-  if (!this->_internal_step().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_step());
-  }
-
-  // string message = 2;
-  if (!this->_internal_message().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_message());
-  }
-
-  // .mt5_term_api.GuiDemoOpenAccountReply account_data = 5;
-  if (this->_internal_has_account_data()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.account_data_);
-  }
-
-  // int64 elapsed_ms = 3;
-  if (this->_internal_elapsed_ms() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_elapsed_ms());
-  }
-
-  // bool is_final = 4;
-  if (this->_internal_is_final() != 0) {
-    total_size += 1 + 1;
-  }
-
-  // int32 error_code = 6;
-  if (this->_internal_error_code() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_error_code());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GuiDemoProgressEvent::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    GuiDemoProgressEvent::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GuiDemoProgressEvent::GetClassData() const { return &_class_data_; }
-
-
-void GuiDemoProgressEvent::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<GuiDemoProgressEvent*>(&to_msg);
-  auto& from = static_cast<const GuiDemoProgressEvent&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.GuiDemoProgressEvent)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_step().empty()) {
-    _this->_internal_set_step(from._internal_step());
-  }
-  if (!from._internal_message().empty()) {
-    _this->_internal_set_message(from._internal_message());
-  }
-  if (from._internal_has_account_data()) {
-    _this->_internal_mutable_account_data()->::mt5_term_api::GuiDemoOpenAccountReply::MergeFrom(
-        from._internal_account_data());
-  }
-  if (from._internal_elapsed_ms() != 0) {
-    _this->_internal_set_elapsed_ms(from._internal_elapsed_ms());
-  }
-  if (from._internal_is_final() != 0) {
-    _this->_internal_set_is_final(from._internal_is_final());
-  }
-  if (from._internal_error_code() != 0) {
-    _this->_internal_set_error_code(from._internal_error_code());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void GuiDemoProgressEvent::CopyFrom(const GuiDemoProgressEvent& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.GuiDemoProgressEvent)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool GuiDemoProgressEvent::IsInitialized() const {
-  return true;
-}
-
-void GuiDemoProgressEvent::InternalSwap(GuiDemoProgressEvent* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.step_, lhs_arena,
-      &other->_impl_.step_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.message_, lhs_arena,
-      &other->_impl_.message_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(GuiDemoProgressEvent, _impl_.error_code_)
-      + sizeof(GuiDemoProgressEvent::_impl_.error_code_)
-      - PROTOBUF_FIELD_OFFSET(GuiDemoProgressEvent, _impl_.account_data_)>(
-          reinterpret_cast<char*>(&_impl_.account_data_),
-          reinterpret_cast<char*>(&other->_impl_.account_data_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoProgressEvent::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[23]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[15]);
 }
 
 // ===================================================================
@@ -8424,7 +6178,7 @@ void GuiDemoInteractiveClientMessage::InternalSwap(GuiDemoInteractiveClientMessa
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveClientMessage::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[24]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[16]);
 }
 
 // ===================================================================
@@ -8654,7 +6408,7 @@ void GuiDemoInteractiveSearchCompany::InternalSwap(GuiDemoInteractiveSearchCompa
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveSearchCompany::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[25]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[17]);
 }
 
 // ===================================================================
@@ -8967,7 +6721,7 @@ void GuiDemoInteractiveSelectCompany::InternalSwap(GuiDemoInteractiveSelectCompa
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveSelectCompany::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[26]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[18]);
 }
 
 // ===================================================================
@@ -8981,7 +6735,7 @@ void GuiDemoInteractiveSubmitForm_FieldsEntry_DoNotUse::MergeFrom(const GuiDemoI
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveSubmitForm_FieldsEntry_DoNotUse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[27]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[19]);
 }
 
 // ===================================================================
@@ -8995,7 +6749,7 @@ void GuiDemoInteractiveSubmitForm_DropdownSelectionsEntry_DoNotUse::MergeFrom(co
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveSubmitForm_DropdownSelectionsEntry_DoNotUse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[28]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[20]);
 }
 
 // ===================================================================
@@ -9302,7 +7056,7 @@ void GuiDemoInteractiveSubmitForm::InternalSwap(GuiDemoInteractiveSubmitForm* ot
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveSubmitForm::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[29]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[21]);
 }
 
 // ===================================================================
@@ -9505,7 +7259,7 @@ void GuiDemoInteractiveSubmitTwoFactor::InternalSwap(GuiDemoInteractiveSubmitTwo
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveSubmitTwoFactor::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[30]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[22]);
 }
 
 // ===================================================================
@@ -9708,7 +7462,7 @@ void GuiDemoInteractiveCancelSession::InternalSwap(GuiDemoInteractiveCancelSessi
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveCancelSession::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[31]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[23]);
 }
 
 // ===================================================================
@@ -9911,7 +7665,7 @@ void GuiDemoInteractiveRequestScreenshot::InternalSwap(GuiDemoInteractiveRequest
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveRequestScreenshot::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[32]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[24]);
 }
 
 // ===================================================================
@@ -10585,7 +8339,7 @@ void GuiDemoInteractiveServerMessage::InternalSwap(GuiDemoInteractiveServerMessa
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveServerMessage::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[33]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[25]);
 }
 
 // ===================================================================
@@ -10898,7 +8652,7 @@ void GuiDemoInteractiveCompanyItem::InternalSwap(GuiDemoInteractiveCompanyItem* 
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveCompanyItem::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[34]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[26]);
 }
 
 // ===================================================================
@@ -11162,7 +8916,7 @@ void GuiDemoInteractiveCompanyList::InternalSwap(GuiDemoInteractiveCompanyList* 
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveCompanyList::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[35]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[27]);
 }
 
 // ===================================================================
@@ -11552,7 +9306,7 @@ void GuiDemoInteractiveFormField::InternalSwap(GuiDemoInteractiveFormField* othe
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveFormField::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[36]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[28]);
 }
 
 // ===================================================================
@@ -11954,7 +9708,7 @@ void GuiDemoInteractiveDropdown::InternalSwap(GuiDemoInteractiveDropdown* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveDropdown::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[37]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[29]);
 }
 
 // ===================================================================
@@ -12359,7 +10113,7 @@ void GuiDemoInteractiveFormSchema::InternalSwap(GuiDemoInteractiveFormSchema* ot
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveFormSchema::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[38]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[30]);
 }
 
 // ===================================================================
@@ -12723,7 +10477,7 @@ void GuiDemoInteractiveTwoFactorChallenge::InternalSwap(GuiDemoInteractiveTwoFac
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveTwoFactorChallenge::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[39]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[31]);
 }
 
 // ===================================================================
@@ -13136,7 +10890,7 @@ void GuiDemoInteractiveCompleted::InternalSwap(GuiDemoInteractiveCompleted* othe
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveCompleted::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[40]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[32]);
 }
 
 // ===================================================================
@@ -13416,7 +11170,7 @@ void GuiDemoInteractiveProgress::InternalSwap(GuiDemoInteractiveProgress* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveProgress::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[41]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[33]);
 }
 
 // ===================================================================
@@ -13729,7 +11483,7 @@ void GuiDemoInteractiveError::InternalSwap(GuiDemoInteractiveError* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveError::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[42]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[34]);
 }
 
 // ===================================================================
@@ -14027,7 +11781,7 @@ void GuiDemoInteractiveScreenshot::InternalSwap(GuiDemoInteractiveScreenshot* ot
 ::PROTOBUF_NAMESPACE_ID::Metadata GuiDemoInteractiveScreenshot::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dgui_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[43]);
+      file_level_metadata_mt5_2dterm_2dapi_2dgui_2eproto[35]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -14089,26 +11843,6 @@ template<> PROTOBUF_NOINLINE ::mt5_term_api::GuiCloseDialogsReply*
 Arena::CreateMaybeMessage< ::mt5_term_api::GuiCloseDialogsReply >(Arena* arena) {
   return Arena::CreateMessageInternal< ::mt5_term_api::GuiCloseDialogsReply >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mt5_term_api::GuiDemoFindCompaniesRequest*
-Arena::CreateMaybeMessage< ::mt5_term_api::GuiDemoFindCompaniesRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mt5_term_api::GuiDemoFindCompaniesRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::mt5_term_api::GuiDemoFindCompaniesReply*
-Arena::CreateMaybeMessage< ::mt5_term_api::GuiDemoFindCompaniesReply >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mt5_term_api::GuiDemoFindCompaniesReply >(arena);
-}
-template<> PROTOBUF_NOINLINE ::mt5_term_api::GuiDemoCompany*
-Arena::CreateMaybeMessage< ::mt5_term_api::GuiDemoCompany >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mt5_term_api::GuiDemoCompany >(arena);
-}
-template<> PROTOBUF_NOINLINE ::mt5_term_api::GuiDemoServersAndTypesRequest*
-Arena::CreateMaybeMessage< ::mt5_term_api::GuiDemoServersAndTypesRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mt5_term_api::GuiDemoServersAndTypesRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::mt5_term_api::GuiDemoServersAndTypesReply*
-Arena::CreateMaybeMessage< ::mt5_term_api::GuiDemoServersAndTypesReply >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mt5_term_api::GuiDemoServersAndTypesReply >(arena);
-}
 template<> PROTOBUF_NOINLINE ::mt5_term_api::GuiDemoOpenAccountRequest*
 Arena::CreateMaybeMessage< ::mt5_term_api::GuiDemoOpenAccountRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::mt5_term_api::GuiDemoOpenAccountRequest >(arena);
@@ -14116,18 +11850,6 @@ Arena::CreateMaybeMessage< ::mt5_term_api::GuiDemoOpenAccountRequest >(Arena* ar
 template<> PROTOBUF_NOINLINE ::mt5_term_api::GuiDemoOpenAccountReply*
 Arena::CreateMaybeMessage< ::mt5_term_api::GuiDemoOpenAccountReply >(Arena* arena) {
   return Arena::CreateMessageInternal< ::mt5_term_api::GuiDemoOpenAccountReply >(arena);
-}
-template<> PROTOBUF_NOINLINE ::mt5_term_api::GuiDemoEnumControlsRequest*
-Arena::CreateMaybeMessage< ::mt5_term_api::GuiDemoEnumControlsRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mt5_term_api::GuiDemoEnumControlsRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::mt5_term_api::GuiDemoEnumControlsReply*
-Arena::CreateMaybeMessage< ::mt5_term_api::GuiDemoEnumControlsReply >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mt5_term_api::GuiDemoEnumControlsReply >(arena);
-}
-template<> PROTOBUF_NOINLINE ::mt5_term_api::GuiDemoProgressEvent*
-Arena::CreateMaybeMessage< ::mt5_term_api::GuiDemoProgressEvent >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mt5_term_api::GuiDemoProgressEvent >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mt5_term_api::GuiDemoInteractiveClientMessage*
 Arena::CreateMaybeMessage< ::mt5_term_api::GuiDemoInteractiveClientMessage >(Arena* arena) {
