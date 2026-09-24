@@ -102,6 +102,9 @@ extern GetTerminalJournalReplyDefaultTypeInternal _GetTerminalJournalReply_defau
 class GetTerminalJournalRequest;
 struct GetTerminalJournalRequestDefaultTypeInternal;
 extern GetTerminalJournalRequestDefaultTypeInternal _GetTerminalJournalRequest_default_instance_;
+class KillAllTrialTerminalsReply;
+struct KillAllTrialTerminalsReplyDefaultTypeInternal;
+extern KillAllTrialTerminalsReplyDefaultTypeInternal _KillAllTrialTerminalsReply_default_instance_;
 class ListLogFilesReply;
 struct ListLogFilesReplyDefaultTypeInternal;
 extern ListLogFilesReplyDefaultTypeInternal _ListLogFilesReply_default_instance_;
@@ -158,6 +161,7 @@ template<> ::mrpc_admin::GetSessionRestoreLogsRequest* Arena::CreateMaybeMessage
 template<> ::mrpc_admin::GetSessionRestoreStatusReply* Arena::CreateMaybeMessage<::mrpc_admin::GetSessionRestoreStatusReply>(Arena*);
 template<> ::mrpc_admin::GetTerminalJournalReply* Arena::CreateMaybeMessage<::mrpc_admin::GetTerminalJournalReply>(Arena*);
 template<> ::mrpc_admin::GetTerminalJournalRequest* Arena::CreateMaybeMessage<::mrpc_admin::GetTerminalJournalRequest>(Arena*);
+template<> ::mrpc_admin::KillAllTrialTerminalsReply* Arena::CreateMaybeMessage<::mrpc_admin::KillAllTrialTerminalsReply>(Arena*);
 template<> ::mrpc_admin::ListLogFilesReply* Arena::CreateMaybeMessage<::mrpc_admin::ListLogFilesReply>(Arena*);
 template<> ::mrpc_admin::LogFileEntry* Arena::CreateMaybeMessage<::mrpc_admin::LogFileEntry>(Arena*);
 template<> ::mrpc_admin::PodTerminals* Arena::CreateMaybeMessage<::mrpc_admin::PodTerminals>(Arena*);
@@ -664,6 +668,212 @@ class GetSessionRestoreStatusReply final :
 };
 // -------------------------------------------------------------------
 
+class KillAllTrialTerminalsReply final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mrpc_admin.KillAllTrialTerminalsReply) */ {
+ public:
+  inline KillAllTrialTerminalsReply() : KillAllTrialTerminalsReply(nullptr) {}
+  ~KillAllTrialTerminalsReply() override;
+  explicit PROTOBUF_CONSTEXPR KillAllTrialTerminalsReply(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  KillAllTrialTerminalsReply(const KillAllTrialTerminalsReply& from);
+  KillAllTrialTerminalsReply(KillAllTrialTerminalsReply&& from) noexcept
+    : KillAllTrialTerminalsReply() {
+    *this = ::std::move(from);
+  }
+
+  inline KillAllTrialTerminalsReply& operator=(const KillAllTrialTerminalsReply& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline KillAllTrialTerminalsReply& operator=(KillAllTrialTerminalsReply&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const KillAllTrialTerminalsReply& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const KillAllTrialTerminalsReply* internal_default_instance() {
+    return reinterpret_cast<const KillAllTrialTerminalsReply*>(
+               &_KillAllTrialTerminalsReply_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(KillAllTrialTerminalsReply& a, KillAllTrialTerminalsReply& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(KillAllTrialTerminalsReply* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(KillAllTrialTerminalsReply* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  KillAllTrialTerminalsReply* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<KillAllTrialTerminalsReply>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const KillAllTrialTerminalsReply& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const KillAllTrialTerminalsReply& from) {
+    KillAllTrialTerminalsReply::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(KillAllTrialTerminalsReply* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mrpc_admin.KillAllTrialTerminalsReply";
+  }
+  protected:
+  explicit KillAllTrialTerminalsReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kKilledTerminalIdsFieldNumber = 2,
+    kMessageFieldNumber = 3,
+    kErrorFieldNumber = 4,
+    kKilledCountFieldNumber = 1,
+  };
+  // repeated string killed_terminal_ids = 2;
+  int killed_terminal_ids_size() const;
+  private:
+  int _internal_killed_terminal_ids_size() const;
+  public:
+  void clear_killed_terminal_ids();
+  const std::string& killed_terminal_ids(int index) const;
+  std::string* mutable_killed_terminal_ids(int index);
+  void set_killed_terminal_ids(int index, const std::string& value);
+  void set_killed_terminal_ids(int index, std::string&& value);
+  void set_killed_terminal_ids(int index, const char* value);
+  void set_killed_terminal_ids(int index, const char* value, size_t size);
+  std::string* add_killed_terminal_ids();
+  void add_killed_terminal_ids(const std::string& value);
+  void add_killed_terminal_ids(std::string&& value);
+  void add_killed_terminal_ids(const char* value);
+  void add_killed_terminal_ids(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& killed_terminal_ids() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_killed_terminal_ids();
+  private:
+  const std::string& _internal_killed_terminal_ids(int index) const;
+  std::string* _internal_add_killed_terminal_ids();
+  public:
+
+  // string message = 3;
+  void clear_message();
+  const std::string& message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_NODISCARD std::string* release_message();
+  void set_allocated_message(std::string* message);
+  private:
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
+  public:
+
+  // string error = 4;
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_NODISCARD std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // int32 killed_count = 1;
+  void clear_killed_count();
+  int32_t killed_count() const;
+  void set_killed_count(int32_t value);
+  private:
+  int32_t _internal_killed_count() const;
+  void _internal_set_killed_count(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mrpc_admin.KillAllTrialTerminalsReply)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> killed_terminal_ids_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+    int32_t killed_count_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_mt5_2dterm_2dapi_2dadmin_2eproto;
+};
+// -------------------------------------------------------------------
+
 class GetSessionRestoreLogsRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mrpc_admin.GetSessionRestoreLogsRequest) */ {
  public:
@@ -712,7 +922,7 @@ class GetSessionRestoreLogsRequest final :
                &_GetSessionRestoreLogsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(GetSessionRestoreLogsRequest& a, GetSessionRestoreLogsRequest& b) {
     a.Swap(&b);
@@ -892,7 +1102,7 @@ class SessionRestoreLogEntry final :
                &_SessionRestoreLogEntry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(SessionRestoreLogEntry& a, SessionRestoreLogEntry& b) {
     a.Swap(&b);
@@ -1179,7 +1389,7 @@ class GetSessionRestoreLogsReply final :
                &_GetSessionRestoreLogsReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(GetSessionRestoreLogsReply& a, GetSessionRestoreLogsReply& b) {
     a.Swap(&b);
@@ -1352,7 +1562,7 @@ class GetAllLogsRequest final :
                &_GetAllLogsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(GetAllLogsRequest& a, GetAllLogsRequest& b) {
     a.Swap(&b);
@@ -1527,7 +1737,7 @@ class AllLogsEntry final :
                &_AllLogsEntry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(AllLogsEntry& a, AllLogsEntry& b) {
     a.Swap(&b);
@@ -1782,7 +1992,7 @@ class GetAllLogsReply final :
                &_GetAllLogsReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(GetAllLogsReply& a, GetAllLogsReply& b) {
     a.Swap(&b);
@@ -1954,7 +2164,7 @@ class VersionRequest final :
                &_VersionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   friend void swap(VersionRequest& a, VersionRequest& b) {
     a.Swap(&b);
@@ -2073,7 +2283,7 @@ class VersionReply final :
                &_VersionReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   friend void swap(VersionReply& a, VersionReply& b) {
     a.Swap(&b);
@@ -2274,7 +2484,7 @@ class ListLogFilesReply final :
                &_ListLogFilesReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   friend void swap(ListLogFilesReply& a, ListLogFilesReply& b) {
     a.Swap(&b);
@@ -2447,7 +2657,7 @@ class LogFileEntry final :
                &_LogFileEntry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(LogFileEntry& a, LogFileEntry& b) {
     a.Swap(&b);
@@ -2631,7 +2841,7 @@ class GetLogFileRequest final :
                &_GetLogFileRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(GetLogFileRequest& a, GetLogFileRequest& b) {
     a.Swap(&b);
@@ -2811,7 +3021,7 @@ class GetLogFileReply final :
                &_GetLogFileReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   friend void swap(GetLogFileReply& a, GetLogFileReply& b) {
     a.Swap(&b);
@@ -3002,7 +3212,7 @@ class GetTerminalJournalRequest final :
                &_GetTerminalJournalRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   friend void swap(GetTerminalJournalRequest& a, GetTerminalJournalRequest& b) {
     a.Swap(&b);
@@ -3182,7 +3392,7 @@ class TerminalJournalFile final :
                &_TerminalJournalFile_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   friend void swap(TerminalJournalFile& a, TerminalJournalFile& b) {
     a.Swap(&b);
@@ -3373,7 +3583,7 @@ class GetTerminalJournalReply final :
                &_GetTerminalJournalReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   friend void swap(GetTerminalJournalReply& a, GetTerminalJournalReply& b) {
     a.Swap(&b);
@@ -3562,7 +3772,7 @@ class GetEventLogEntriesRequest final :
                &_GetEventLogEntriesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   friend void swap(GetEventLogEntriesRequest& a, GetEventLogEntriesRequest& b) {
     a.Swap(&b);
@@ -3742,7 +3952,7 @@ class GetEventLogEntriesReply final :
                &_GetEventLogEntriesReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   friend void swap(GetEventLogEntriesReply& a, GetEventLogEntriesReply& b) {
     a.Swap(&b);
@@ -3921,7 +4131,7 @@ class CaptureSessionScreenshotRequest final :
                &_CaptureSessionScreenshotRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   friend void swap(CaptureSessionScreenshotRequest& a, CaptureSessionScreenshotRequest& b) {
     a.Swap(&b);
@@ -4090,7 +4300,7 @@ class CaptureSessionScreenshotOnPodRequest final :
                &_CaptureSessionScreenshotOnPodRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   friend void swap(CaptureSessionScreenshotOnPodRequest& a, CaptureSessionScreenshotOnPodRequest& b) {
     a.Swap(&b);
@@ -4275,7 +4485,7 @@ class CaptureSessionScreenshotReply final :
                &_CaptureSessionScreenshotReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   friend void swap(CaptureSessionScreenshotReply& a, CaptureSessionScreenshotReply& b) {
     a.Swap(&b);
@@ -4444,7 +4654,7 @@ class RefreshMrpcRestReply final :
                &_RefreshMrpcRestReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   friend void swap(RefreshMrpcRestReply& a, RefreshMrpcRestReply& b) {
     a.Swap(&b);
@@ -4624,7 +4834,7 @@ class UsageSample final :
                &_UsageSample_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   friend void swap(UsageSample& a, UsageSample& b) {
     a.Swap(&b);
@@ -4814,7 +5024,7 @@ class SystemUsageReply final :
                &_SystemUsageReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   friend void swap(SystemUsageReply& a, SystemUsageReply& b) {
     a.Swap(&b);
@@ -5020,7 +5230,7 @@ class ActiveTerminalsRequest final :
                &_ActiveTerminalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   friend void swap(ActiveTerminalsRequest& a, ActiveTerminalsRequest& b) {
     a.Swap(&b);
@@ -5173,7 +5383,7 @@ class TerminalInfo final :
                &_TerminalInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   friend void swap(TerminalInfo& a, TerminalInfo& b) {
     a.Swap(&b);
@@ -5555,7 +5765,7 @@ class ActiveTerminalsReply final :
                &_ActiveTerminalsReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   friend void swap(ActiveTerminalsReply& a, ActiveTerminalsReply& b) {
     a.Swap(&b);
@@ -5849,7 +6059,7 @@ class PodTerminals final :
                &_PodTerminals_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    29;
 
   friend void swap(PodTerminals& a, PodTerminals& b) {
     a.Swap(&b);
@@ -6175,7 +6385,7 @@ class ActiveTerminalsClusterReply final :
                &_ActiveTerminalsClusterReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    30;
 
   friend void swap(ActiveTerminalsClusterReply& a, ActiveTerminalsClusterReply& b) {
     a.Swap(&b);
@@ -6865,6 +7075,205 @@ inline void GetSessionRestoreStatusReply::set_allocated_error(std::string* error
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:mrpc_admin.GetSessionRestoreStatusReply.error)
+}
+
+// -------------------------------------------------------------------
+
+// KillAllTrialTerminalsReply
+
+// int32 killed_count = 1;
+inline void KillAllTrialTerminalsReply::clear_killed_count() {
+  _impl_.killed_count_ = 0;
+}
+inline int32_t KillAllTrialTerminalsReply::_internal_killed_count() const {
+  return _impl_.killed_count_;
+}
+inline int32_t KillAllTrialTerminalsReply::killed_count() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.KillAllTrialTerminalsReply.killed_count)
+  return _internal_killed_count();
+}
+inline void KillAllTrialTerminalsReply::_internal_set_killed_count(int32_t value) {
+  
+  _impl_.killed_count_ = value;
+}
+inline void KillAllTrialTerminalsReply::set_killed_count(int32_t value) {
+  _internal_set_killed_count(value);
+  // @@protoc_insertion_point(field_set:mrpc_admin.KillAllTrialTerminalsReply.killed_count)
+}
+
+// repeated string killed_terminal_ids = 2;
+inline int KillAllTrialTerminalsReply::_internal_killed_terminal_ids_size() const {
+  return _impl_.killed_terminal_ids_.size();
+}
+inline int KillAllTrialTerminalsReply::killed_terminal_ids_size() const {
+  return _internal_killed_terminal_ids_size();
+}
+inline void KillAllTrialTerminalsReply::clear_killed_terminal_ids() {
+  _impl_.killed_terminal_ids_.Clear();
+}
+inline std::string* KillAllTrialTerminalsReply::add_killed_terminal_ids() {
+  std::string* _s = _internal_add_killed_terminal_ids();
+  // @@protoc_insertion_point(field_add_mutable:mrpc_admin.KillAllTrialTerminalsReply.killed_terminal_ids)
+  return _s;
+}
+inline const std::string& KillAllTrialTerminalsReply::_internal_killed_terminal_ids(int index) const {
+  return _impl_.killed_terminal_ids_.Get(index);
+}
+inline const std::string& KillAllTrialTerminalsReply::killed_terminal_ids(int index) const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.KillAllTrialTerminalsReply.killed_terminal_ids)
+  return _internal_killed_terminal_ids(index);
+}
+inline std::string* KillAllTrialTerminalsReply::mutable_killed_terminal_ids(int index) {
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.KillAllTrialTerminalsReply.killed_terminal_ids)
+  return _impl_.killed_terminal_ids_.Mutable(index);
+}
+inline void KillAllTrialTerminalsReply::set_killed_terminal_ids(int index, const std::string& value) {
+  _impl_.killed_terminal_ids_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:mrpc_admin.KillAllTrialTerminalsReply.killed_terminal_ids)
+}
+inline void KillAllTrialTerminalsReply::set_killed_terminal_ids(int index, std::string&& value) {
+  _impl_.killed_terminal_ids_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:mrpc_admin.KillAllTrialTerminalsReply.killed_terminal_ids)
+}
+inline void KillAllTrialTerminalsReply::set_killed_terminal_ids(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.killed_terminal_ids_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:mrpc_admin.KillAllTrialTerminalsReply.killed_terminal_ids)
+}
+inline void KillAllTrialTerminalsReply::set_killed_terminal_ids(int index, const char* value, size_t size) {
+  _impl_.killed_terminal_ids_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:mrpc_admin.KillAllTrialTerminalsReply.killed_terminal_ids)
+}
+inline std::string* KillAllTrialTerminalsReply::_internal_add_killed_terminal_ids() {
+  return _impl_.killed_terminal_ids_.Add();
+}
+inline void KillAllTrialTerminalsReply::add_killed_terminal_ids(const std::string& value) {
+  _impl_.killed_terminal_ids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:mrpc_admin.KillAllTrialTerminalsReply.killed_terminal_ids)
+}
+inline void KillAllTrialTerminalsReply::add_killed_terminal_ids(std::string&& value) {
+  _impl_.killed_terminal_ids_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:mrpc_admin.KillAllTrialTerminalsReply.killed_terminal_ids)
+}
+inline void KillAllTrialTerminalsReply::add_killed_terminal_ids(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.killed_terminal_ids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:mrpc_admin.KillAllTrialTerminalsReply.killed_terminal_ids)
+}
+inline void KillAllTrialTerminalsReply::add_killed_terminal_ids(const char* value, size_t size) {
+  _impl_.killed_terminal_ids_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:mrpc_admin.KillAllTrialTerminalsReply.killed_terminal_ids)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+KillAllTrialTerminalsReply::killed_terminal_ids() const {
+  // @@protoc_insertion_point(field_list:mrpc_admin.KillAllTrialTerminalsReply.killed_terminal_ids)
+  return _impl_.killed_terminal_ids_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+KillAllTrialTerminalsReply::mutable_killed_terminal_ids() {
+  // @@protoc_insertion_point(field_mutable_list:mrpc_admin.KillAllTrialTerminalsReply.killed_terminal_ids)
+  return &_impl_.killed_terminal_ids_;
+}
+
+// string message = 3;
+inline void KillAllTrialTerminalsReply::clear_message() {
+  _impl_.message_.ClearToEmpty();
+}
+inline const std::string& KillAllTrialTerminalsReply::message() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.KillAllTrialTerminalsReply.message)
+  return _internal_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void KillAllTrialTerminalsReply::set_message(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.KillAllTrialTerminalsReply.message)
+}
+inline std::string* KillAllTrialTerminalsReply::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.KillAllTrialTerminalsReply.message)
+  return _s;
+}
+inline const std::string& KillAllTrialTerminalsReply::_internal_message() const {
+  return _impl_.message_.Get();
+}
+inline void KillAllTrialTerminalsReply::_internal_set_message(const std::string& value) {
+  
+  _impl_.message_.Set(value, GetArenaForAllocation());
+}
+inline std::string* KillAllTrialTerminalsReply::_internal_mutable_message() {
+  
+  return _impl_.message_.Mutable(GetArenaForAllocation());
+}
+inline std::string* KillAllTrialTerminalsReply::release_message() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.KillAllTrialTerminalsReply.message)
+  return _impl_.message_.Release();
+}
+inline void KillAllTrialTerminalsReply::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.message_.SetAllocated(message, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.message_.IsDefault()) {
+    _impl_.message_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.KillAllTrialTerminalsReply.message)
+}
+
+// string error = 4;
+inline void KillAllTrialTerminalsReply::clear_error() {
+  _impl_.error_.ClearToEmpty();
+}
+inline const std::string& KillAllTrialTerminalsReply::error() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.KillAllTrialTerminalsReply.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void KillAllTrialTerminalsReply::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.error_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.KillAllTrialTerminalsReply.error)
+}
+inline std::string* KillAllTrialTerminalsReply::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.KillAllTrialTerminalsReply.error)
+  return _s;
+}
+inline const std::string& KillAllTrialTerminalsReply::_internal_error() const {
+  return _impl_.error_.Get();
+}
+inline void KillAllTrialTerminalsReply::_internal_set_error(const std::string& value) {
+  
+  _impl_.error_.Set(value, GetArenaForAllocation());
+}
+inline std::string* KillAllTrialTerminalsReply::_internal_mutable_error() {
+  
+  return _impl_.error_.Mutable(GetArenaForAllocation());
+}
+inline std::string* KillAllTrialTerminalsReply::release_error() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.KillAllTrialTerminalsReply.error)
+  return _impl_.error_.Release();
+}
+inline void KillAllTrialTerminalsReply::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.error_.SetAllocated(error, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.error_.IsDefault()) {
+    _impl_.error_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.KillAllTrialTerminalsReply.error)
 }
 
 // -------------------------------------------------------------------
@@ -12081,6 +12490,8 @@ ActiveTerminalsClusterReply::pods() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -36,6 +36,8 @@ static const char* AdminApi_method_names[] = {
   "/mrpc_admin.AdminApi/GetAllLogs",
   "/mrpc_admin.AdminApi/GetSessionRestoreLogs",
   "/mrpc_admin.AdminApi/GetSessionRestoreStatus",
+  "/mrpc_admin.AdminApi/KillAllTrialTerminals",
+  "/mrpc_admin.AdminApi/KillAllTrialTerminalsLocal",
 };
 
 std::unique_ptr< AdminApi::Stub> AdminApi::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -59,6 +61,8 @@ AdminApi::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, 
   , rpcmethod_GetAllLogs_(AdminApi_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetSessionRestoreLogs_(AdminApi_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetSessionRestoreStatus_(AdminApi_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_KillAllTrialTerminals_(AdminApi_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_KillAllTrialTerminalsLocal_(AdminApi_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status AdminApi::Stub::ActiveTerminals(::grpc::ClientContext* context, const ::mrpc_admin::ActiveTerminalsRequest& request, ::mrpc_admin::ActiveTerminalsReply* response) {
@@ -383,6 +387,52 @@ void AdminApi::Stub::async::GetSessionRestoreStatus(::grpc::ClientContext* conte
   return result;
 }
 
+::grpc::Status AdminApi::Stub::KillAllTrialTerminals(::grpc::ClientContext* context, const ::mrpc_admin::ActiveTerminalsRequest& request, ::mrpc_admin::KillAllTrialTerminalsReply* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::mrpc_admin::ActiveTerminalsRequest, ::mrpc_admin::KillAllTrialTerminalsReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_KillAllTrialTerminals_, context, request, response);
+}
+
+void AdminApi::Stub::async::KillAllTrialTerminals(::grpc::ClientContext* context, const ::mrpc_admin::ActiveTerminalsRequest* request, ::mrpc_admin::KillAllTrialTerminalsReply* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::mrpc_admin::ActiveTerminalsRequest, ::mrpc_admin::KillAllTrialTerminalsReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_KillAllTrialTerminals_, context, request, response, std::move(f));
+}
+
+void AdminApi::Stub::async::KillAllTrialTerminals(::grpc::ClientContext* context, const ::mrpc_admin::ActiveTerminalsRequest* request, ::mrpc_admin::KillAllTrialTerminalsReply* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_KillAllTrialTerminals_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mrpc_admin::KillAllTrialTerminalsReply>* AdminApi::Stub::PrepareAsyncKillAllTrialTerminalsRaw(::grpc::ClientContext* context, const ::mrpc_admin::ActiveTerminalsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::mrpc_admin::KillAllTrialTerminalsReply, ::mrpc_admin::ActiveTerminalsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_KillAllTrialTerminals_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::mrpc_admin::KillAllTrialTerminalsReply>* AdminApi::Stub::AsyncKillAllTrialTerminalsRaw(::grpc::ClientContext* context, const ::mrpc_admin::ActiveTerminalsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncKillAllTrialTerminalsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status AdminApi::Stub::KillAllTrialTerminalsLocal(::grpc::ClientContext* context, const ::mrpc_admin::ActiveTerminalsRequest& request, ::mrpc_admin::KillAllTrialTerminalsReply* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::mrpc_admin::ActiveTerminalsRequest, ::mrpc_admin::KillAllTrialTerminalsReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_KillAllTrialTerminalsLocal_, context, request, response);
+}
+
+void AdminApi::Stub::async::KillAllTrialTerminalsLocal(::grpc::ClientContext* context, const ::mrpc_admin::ActiveTerminalsRequest* request, ::mrpc_admin::KillAllTrialTerminalsReply* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::mrpc_admin::ActiveTerminalsRequest, ::mrpc_admin::KillAllTrialTerminalsReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_KillAllTrialTerminalsLocal_, context, request, response, std::move(f));
+}
+
+void AdminApi::Stub::async::KillAllTrialTerminalsLocal(::grpc::ClientContext* context, const ::mrpc_admin::ActiveTerminalsRequest* request, ::mrpc_admin::KillAllTrialTerminalsReply* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_KillAllTrialTerminalsLocal_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mrpc_admin::KillAllTrialTerminalsReply>* AdminApi::Stub::PrepareAsyncKillAllTrialTerminalsLocalRaw(::grpc::ClientContext* context, const ::mrpc_admin::ActiveTerminalsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::mrpc_admin::KillAllTrialTerminalsReply, ::mrpc_admin::ActiveTerminalsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_KillAllTrialTerminalsLocal_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::mrpc_admin::KillAllTrialTerminalsReply>* AdminApi::Stub::AsyncKillAllTrialTerminalsLocalRaw(::grpc::ClientContext* context, const ::mrpc_admin::ActiveTerminalsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncKillAllTrialTerminalsLocalRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 AdminApi::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AdminApi_method_names[0],
@@ -524,6 +574,26 @@ AdminApi::Service::Service() {
              ::mrpc_admin::GetSessionRestoreStatusReply* resp) {
                return service->GetSessionRestoreStatus(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AdminApi_method_names[14],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AdminApi::Service, ::mrpc_admin::ActiveTerminalsRequest, ::mrpc_admin::KillAllTrialTerminalsReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](AdminApi::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::mrpc_admin::ActiveTerminalsRequest* req,
+             ::mrpc_admin::KillAllTrialTerminalsReply* resp) {
+               return service->KillAllTrialTerminals(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AdminApi_method_names[15],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AdminApi::Service, ::mrpc_admin::ActiveTerminalsRequest, ::mrpc_admin::KillAllTrialTerminalsReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](AdminApi::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::mrpc_admin::ActiveTerminalsRequest* req,
+             ::mrpc_admin::KillAllTrialTerminalsReply* resp) {
+               return service->KillAllTrialTerminalsLocal(ctx, req, resp);
+             }, this)));
 }
 
 AdminApi::Service::~Service() {
@@ -621,6 +691,20 @@ AdminApi::Service::~Service() {
 }
 
 ::grpc::Status AdminApi::Service::GetSessionRestoreStatus(::grpc::ServerContext* context, const ::mrpc_admin::ActiveTerminalsRequest* request, ::mrpc_admin::GetSessionRestoreStatusReply* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AdminApi::Service::KillAllTrialTerminals(::grpc::ServerContext* context, const ::mrpc_admin::ActiveTerminalsRequest* request, ::mrpc_admin::KillAllTrialTerminalsReply* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AdminApi::Service::KillAllTrialTerminalsLocal(::grpc::ServerContext* context, const ::mrpc_admin::ActiveTerminalsRequest* request, ::mrpc_admin::KillAllTrialTerminalsReply* response) {
   (void) context;
   (void) request;
   (void) response;
