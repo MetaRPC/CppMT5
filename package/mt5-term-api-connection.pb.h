@@ -5673,6 +5673,7 @@ class DisconnectRequest final :
 
   enum : int {
     kReasonFieldNumber = 1,
+    kDeleteFieldNumber = 2,
   };
   // optional string reason = 1;
   bool has_reason() const;
@@ -5692,6 +5693,19 @@ class DisconnectRequest final :
   std::string* _internal_mutable_reason();
   public:
 
+  // optional bool delete = 2;
+  bool has_delete_() const;
+  private:
+  bool _internal_has_delete_() const;
+  public:
+  void clear_delete_();
+  bool delete_() const;
+  void set_delete_(bool value);
+  private:
+  bool _internal_delete_() const;
+  void _internal_set_delete_(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mt5_term_api.DisconnectRequest)
  private:
   class _Internal;
@@ -5703,6 +5717,7 @@ class DisconnectRequest final :
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reason_;
+    bool delete__;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_mt5_2dterm_2dapi_2dconnection_2eproto;
@@ -12934,6 +12949,34 @@ inline void DisconnectRequest::set_allocated_reason(std::string* reason) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:mt5_term_api.DisconnectRequest.reason)
+}
+
+// optional bool delete = 2;
+inline bool DisconnectRequest::_internal_has_delete_() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool DisconnectRequest::has_delete_() const {
+  return _internal_has_delete_();
+}
+inline void DisconnectRequest::clear_delete_() {
+  _impl_.delete__ = false;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline bool DisconnectRequest::_internal_delete_() const {
+  return _impl_.delete__;
+}
+inline bool DisconnectRequest::delete_() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.DisconnectRequest.delete)
+  return _internal_delete_();
+}
+inline void DisconnectRequest::_internal_set_delete_(bool value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.delete__ = value;
+}
+inline void DisconnectRequest::set_delete_(bool value) {
+  _internal_set_delete_(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.DisconnectRequest.delete)
 }
 
 // -------------------------------------------------------------------
