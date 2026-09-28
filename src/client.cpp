@@ -147,7 +147,8 @@ bool MT5Client::connect(int64_t login, const std::string& password, const std::s
     return true;
 }
 
-void MT5Client::disconnect() {
+void MT5Client::disconnect(bool delete_terminal) {
+    (void)delete_terminal;
     m_connected = false;
 }
 

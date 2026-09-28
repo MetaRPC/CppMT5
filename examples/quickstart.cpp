@@ -35,7 +35,7 @@ int main(int argc, char* argv[]) {
         std::cerr << "Error: " << ex.what() << std::endl;
     }
 
-    client.disconnect();
+    client.disconnect(true);
     std::cout << "\nDisconnected successfully." << std::endl;
     return 0;
 }

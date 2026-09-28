@@ -39,7 +39,7 @@ void testClientLifecycle() {
     assert(client.orderModify(res.ticket, 1.0800, 1.0900));
     assert(client.orderClose(res.ticket, 0.1));
 
-    client.disconnect();
+    client.disconnect(true);
     assert(!client.isConnected());
 
     std::cout << "All CppMT5 client tests passed successfully!" << std::endl;

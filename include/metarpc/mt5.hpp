@@ -74,7 +74,7 @@ public:
     const std::string& getName() const { return m_name; }
 
     bool connect(int64_t login, const std::string& password, const std::string& name = "");
-    void disconnect();
+    void disconnect(bool delete_terminal = false);
     bool isConnected() const;
 
     AccountInfo getAccountInfo();
