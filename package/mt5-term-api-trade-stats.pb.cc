@@ -194,7 +194,12 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR MarketTradeCountData::MarketTradeCountData(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.market_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.lots_)*/0
+  , /*decltype(_impl_.profit_)*/0
   , /*decltype(_impl_.count_)*/0
+  , /*decltype(_impl_.won_count_)*/0
+  , /*decltype(_impl_.win_rate_)*/0
+  , /*decltype(_impl_.lost_count_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct MarketTradeCountDataDefaultTypeInternal {
   PROTOBUF_CONSTEXPR MarketTradeCountDataDefaultTypeInternal()
@@ -296,6 +301,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR StatsWithChartsData::StatsWithChartsData(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.charts_)*/{}
+  , /*decltype(_impl_.trades_)*/{}
+  , /*decltype(_impl_.open_trades_)*/{}
   , /*decltype(_impl_.stats_)*/nullptr
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct StatsWithChartsDataDefaultTypeInternal {
@@ -307,6 +314,30 @@ struct StatsWithChartsDataDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StatsWithChartsDataDefaultTypeInternal _StatsWithChartsData_default_instance_;
+PROTOBUF_CONSTEXPR TradeHistoryItemData::TradeHistoryItemData(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.symbol_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.comment_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.open_time_)*/nullptr
+  , /*decltype(_impl_.close_time_)*/nullptr
+  , /*decltype(_impl_.ticket_)*/int64_t{0}
+  , /*decltype(_impl_.lots_)*/0
+  , /*decltype(_impl_.open_price_)*/0
+  , /*decltype(_impl_.close_price_)*/0
+  , /*decltype(_impl_.profit_)*/0
+  , /*decltype(_impl_.commission_)*/0
+  , /*decltype(_impl_.swap_)*/0
+  , /*decltype(_impl_.is_buy_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct TradeHistoryItemDataDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR TradeHistoryItemDataDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~TradeHistoryItemDataDefaultTypeInternal() {}
+  union {
+    TradeHistoryItemData _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TradeHistoryItemDataDefaultTypeInternal _TradeHistoryItemData_default_instance_;
 PROTOBUF_CONSTEXPR EquityHistoryData::EquityHistoryData(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.points_)*/{}
@@ -373,7 +404,7 @@ struct TradeUnrealizedExtremaDataDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TradeUnrealizedExtremaDataDefaultTypeInternal _TradeUnrealizedExtremaData_default_instance_;
 }  // namespace mt5_term_api
-static ::_pb::Metadata file_level_metadata_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto[22];
+static ::_pb::Metadata file_level_metadata_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto[23];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto = nullptr;
 
@@ -502,6 +533,11 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto::offsets[] P
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::MarketTradeCountData, _impl_.market_name_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::MarketTradeCountData, _impl_.count_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::MarketTradeCountData, _impl_.lots_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::MarketTradeCountData, _impl_.profit_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::MarketTradeCountData, _impl_.win_rate_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::MarketTradeCountData, _impl_.won_count_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::MarketTradeCountData, _impl_.lost_count_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::ProfitabilityData, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -562,6 +598,26 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto::offsets[] P
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::StatsWithChartsData, _impl_.stats_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::StatsWithChartsData, _impl_.charts_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::StatsWithChartsData, _impl_.trades_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::StatsWithChartsData, _impl_.open_trades_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::TradeHistoryItemData, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::TradeHistoryItemData, _impl_.ticket_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::TradeHistoryItemData, _impl_.symbol_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::TradeHistoryItemData, _impl_.is_buy_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::TradeHistoryItemData, _impl_.lots_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::TradeHistoryItemData, _impl_.open_price_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::TradeHistoryItemData, _impl_.close_price_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::TradeHistoryItemData, _impl_.open_time_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::TradeHistoryItemData, _impl_.close_time_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::TradeHistoryItemData, _impl_.profit_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::TradeHistoryItemData, _impl_.commission_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::TradeHistoryItemData, _impl_.swap_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::TradeHistoryItemData, _impl_.comment_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::EquityHistoryData, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -616,17 +672,18 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 72, -1, -1, sizeof(::mt5_term_api::StatsData)},
   { 104, -1, -1, sizeof(::mt5_term_api::TradeSummaryData)},
   { 116, -1, -1, sizeof(::mt5_term_api::MarketTradeCountData)},
-  { 124, -1, -1, sizeof(::mt5_term_api::ProfitabilityData)},
-  { 134, -1, -1, sizeof(::mt5_term_api::AveragePipsUsdData)},
-  { 142, -1, -1, sizeof(::mt5_term_api::WonData)},
-  { 151, -1, -1, sizeof(::mt5_term_api::ProfitData)},
-  { 160, -1, -1, sizeof(::mt5_term_api::ZScoreData)},
-  { 168, -1, -1, sizeof(::mt5_term_api::ExpectancyData)},
-  { 176, -1, -1, sizeof(::mt5_term_api::StatsWithChartsData)},
-  { 184, -1, -1, sizeof(::mt5_term_api::EquityHistoryData)},
-  { 191, -1, -1, sizeof(::mt5_term_api::EquityPointData)},
-  { 206, -1, -1, sizeof(::mt5_term_api::TradeUnrealizedPLData)},
-  { 213, -1, -1, sizeof(::mt5_term_api::TradeUnrealizedExtremaData)},
+  { 129, -1, -1, sizeof(::mt5_term_api::ProfitabilityData)},
+  { 139, -1, -1, sizeof(::mt5_term_api::AveragePipsUsdData)},
+  { 147, -1, -1, sizeof(::mt5_term_api::WonData)},
+  { 156, -1, -1, sizeof(::mt5_term_api::ProfitData)},
+  { 165, -1, -1, sizeof(::mt5_term_api::ZScoreData)},
+  { 173, -1, -1, sizeof(::mt5_term_api::ExpectancyData)},
+  { 181, -1, -1, sizeof(::mt5_term_api::StatsWithChartsData)},
+  { 191, -1, -1, sizeof(::mt5_term_api::TradeHistoryItemData)},
+  { 209, -1, -1, sizeof(::mt5_term_api::EquityHistoryData)},
+  { 216, -1, -1, sizeof(::mt5_term_api::EquityPointData)},
+  { 231, -1, -1, sizeof(::mt5_term_api::TradeUnrealizedPLData)},
+  { 238, -1, -1, sizeof(::mt5_term_api::TradeUnrealizedExtremaData)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -648,6 +705,7 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::mt5_term_api::_ZScoreData_default_instance_._instance,
   &::mt5_term_api::_ExpectancyData_default_instance_._instance,
   &::mt5_term_api::_StatsWithChartsData_default_instance_._instance,
+  &::mt5_term_api::_TradeHistoryItemData_default_instance_._instance,
   &::mt5_term_api::_EquityHistoryData_default_instance_._instance,
   &::mt5_term_api::_EquityPointData_default_instance_._instance,
   &::mt5_term_api::_TradeUnrealizedPLData_default_instance_._instance,
@@ -707,53 +765,65 @@ const char descriptor_table_protodef_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto[] 
   "pen_trades\030\001 \001(\005\022\023\n\013open_profit\030\002 \001(\001\022\022\n"
   "\nday_profit\030\003 \001(\001\022\023\n\013week_profit\030\004 \001(\001\022\024"
   "\n\014month_profit\030\005 \001(\001\022\024\n\014total_profit\030\006 \001"
-  "(\001\":\n\024MarketTradeCountData\022\023\n\013market_nam"
-  "e\030\001 \001(\t\022\r\n\005count\030\002 \001(\005\"u\n\021ProfitabilityD"
-  "ata\022\022\n\nwon_trades\030\001 \001(\003\022\032\n\022won_trades_pe"
-  "rcent\030\002 \001(\001\022\023\n\013lost_trades\030\003 \001(\003\022\033\n\023lost"
-  "_trades_percent\030\004 \001(\001\"\?\n\022AveragePipsUsdD"
-  "ata\022\024\n\014average_pips\030\001 \001(\001\022\023\n\013average_usd"
-  "\030\002 \001(\001\">\n\007WonData\022\021\n\twon_count\030\001 \001(\005\022\013\n\003"
-  "all\030\002 \001(\005\022\023\n\013won_persent\030\003 \001(\001\"U\n\nProfit"
-  "Data\022\r\n\005tiket\030\001 \001(\003\022(\n\004date\030\002 \001(\0132\032.goog"
-  "le.protobuf.Timestamp\022\016\n\006profit\030\003 \001(\001\"B\n"
-  "\nZScoreData\022\027\n\017z_score_decimal\030\001 \001(\001\022\033\n\023"
-  "z_score_probability\030\002 \001(\001\".\n\016ExpectancyD"
-  "ata\022\014\n\004pips\030\001 \001(\001\022\016\n\006dollar\030\002 \001(\001\"l\n\023Sta"
-  "tsWithChartsData\022&\n\005stats\030\001 \001(\0132\027.mt5_te"
-  "rm_api.StatsData\022-\n\006charts\030\002 \003(\0132\035.mt5_t"
-  "erm_api.EquityPointData\"B\n\021EquityHistory"
-  "Data\022-\n\006points\030\001 \003(\0132\035.mt5_term_api.Equi"
-  "tyPointData\"\210\002\n\017EquityPointData\022(\n\004time\030"
-  "\001 \001(\0132\032.google.protobuf.Timestamp\022\017\n\007bal"
-  "ance\030\002 \001(\001\022\016\n\006equity\030\003 \001(\001\022\034\n\024balance_dr"
-  "awdown_raw\030\004 \001(\001\022!\n\031balance_drawdown_rel"
-  "ative\030\005 \001(\001\022\033\n\023equity_drawdown_raw\030\006 \001(\001"
-  "\022 \n\030equity_drawdown_relative\030\007 \001(\001\022\023\n\013re"
-  "alized_pl\030\010 \001(\001\022\025\n\runrealized_pl\030\t \001(\001\"R"
-  "\n\025TradeUnrealizedPLData\0229\n\007extrema\030\001 \003(\013"
-  "2(.mt5_term_api.TradeUnrealizedExtremaDa"
-  "ta\"\344\001\n\032TradeUnrealizedExtremaData\022\016\n\006tic"
-  "ket\030\001 \001(\003\022\016\n\006symbol\030\002 \001(\t\0227\n\023max_unreali"
-  "zed_time\030\003 \001(\0132\032.google.protobuf.Timesta"
-  "mp\022\031\n\021max_unrealized_pl\030\004 \001(\001\0227\n\023min_unr"
-  "ealized_time\030\005 \001(\0132\032.google.protobuf.Tim"
-  "estamp\022\031\n\021min_unrealized_pl\030\006 \001(\0012\365\003\n\nTr"
-  "adeStats\022a\n\nTradeStats\022\037.mt5_term_api.Tr"
-  "adeStatsRequest\032\035.mt5_term_api.TradeStat"
-  "sReply\"\023\202\323\344\223\002\r\022\013/TradeStats\022\225\001\n\027TradeSta"
-  "tsEquityHistory\022,.mt5_term_api.TradeStat"
-  "sEquityHistoryRequest\032*.mt5_term_api.Tra"
-  "deStatsEquityHistoryReply\" \202\323\344\223\002\032\022\030/Trad"
-  "eStatsEquityHistory\022m\n\rEquityHistory\022\".m"
-  "t5_term_api.EquityHistoryRequest\032 .mt5_t"
-  "erm_api.EquityHistoryReply\"\026\202\323\344\223\002\020\022\016/Equ"
-  "ityHistory\022}\n\021TradeUnrealizedPL\022&.mt5_te"
-  "rm_api.TradeUnrealizedPLRequest\032$.mt5_te"
-  "rm_api.TradeUnrealizedPLReply\"\032\202\323\344\223\002\024\022\022/"
-  "TradeUnrealizedPLBBZ1git.mtapi.io/root/m"
-  "rpc-proto.git/mt5/libraries/go\252\002\014mt5_ter"
-  "m_apib\006proto3"
+  "(\001\"\221\001\n\024MarketTradeCountData\022\023\n\013market_na"
+  "me\030\001 \001(\t\022\r\n\005count\030\002 \001(\005\022\014\n\004lots\030\003 \001(\001\022\016\n"
+  "\006profit\030\004 \001(\001\022\020\n\010win_rate\030\005 \001(\001\022\021\n\twon_c"
+  "ount\030\006 \001(\005\022\022\n\nlost_count\030\007 \001(\005\"u\n\021Profit"
+  "abilityData\022\022\n\nwon_trades\030\001 \001(\003\022\032\n\022won_t"
+  "rades_percent\030\002 \001(\001\022\023\n\013lost_trades\030\003 \001(\003"
+  "\022\033\n\023lost_trades_percent\030\004 \001(\001\"\?\n\022Average"
+  "PipsUsdData\022\024\n\014average_pips\030\001 \001(\001\022\023\n\013ave"
+  "rage_usd\030\002 \001(\001\">\n\007WonData\022\021\n\twon_count\030\001"
+  " \001(\005\022\013\n\003all\030\002 \001(\005\022\023\n\013won_persent\030\003 \001(\001\"U"
+  "\n\nProfitData\022\r\n\005tiket\030\001 \001(\003\022(\n\004date\030\002 \001("
+  "\0132\032.google.protobuf.Timestamp\022\016\n\006profit\030"
+  "\003 \001(\001\"B\n\nZScoreData\022\027\n\017z_score_decimal\030\001"
+  " \001(\001\022\033\n\023z_score_probability\030\002 \001(\001\".\n\016Exp"
+  "ectancyData\022\014\n\004pips\030\001 \001(\001\022\016\n\006dollar\030\002 \001("
+  "\001\"\331\001\n\023StatsWithChartsData\022&\n\005stats\030\001 \001(\013"
+  "2\027.mt5_term_api.StatsData\022-\n\006charts\030\002 \003("
+  "\0132\035.mt5_term_api.EquityPointData\0222\n\006trad"
+  "es\030\003 \003(\0132\".mt5_term_api.TradeHistoryItem"
+  "Data\0227\n\013open_trades\030\004 \003(\0132\".mt5_term_api"
+  ".TradeHistoryItemData\"\237\002\n\024TradeHistoryIt"
+  "emData\022\016\n\006ticket\030\001 \001(\003\022\016\n\006symbol\030\002 \001(\t\022\016"
+  "\n\006is_buy\030\003 \001(\010\022\014\n\004lots\030\004 \001(\001\022\022\n\nopen_pri"
+  "ce\030\005 \001(\001\022\023\n\013close_price\030\006 \001(\001\022-\n\topen_ti"
+  "me\030\007 \001(\0132\032.google.protobuf.Timestamp\022.\n\n"
+  "close_time\030\010 \001(\0132\032.google.protobuf.Times"
+  "tamp\022\016\n\006profit\030\t \001(\001\022\022\n\ncommission\030\n \001(\001"
+  "\022\014\n\004swap\030\013 \001(\001\022\017\n\007comment\030\014 \001(\t\"B\n\021Equit"
+  "yHistoryData\022-\n\006points\030\001 \003(\0132\035.mt5_term_"
+  "api.EquityPointData\"\210\002\n\017EquityPointData\022"
+  "(\n\004time\030\001 \001(\0132\032.google.protobuf.Timestam"
+  "p\022\017\n\007balance\030\002 \001(\001\022\016\n\006equity\030\003 \001(\001\022\034\n\024ba"
+  "lance_drawdown_raw\030\004 \001(\001\022!\n\031balance_draw"
+  "down_relative\030\005 \001(\001\022\033\n\023equity_drawdown_r"
+  "aw\030\006 \001(\001\022 \n\030equity_drawdown_relative\030\007 \001"
+  "(\001\022\023\n\013realized_pl\030\010 \001(\001\022\025\n\runrealized_pl"
+  "\030\t \001(\001\"R\n\025TradeUnrealizedPLData\0229\n\007extre"
+  "ma\030\001 \003(\0132(.mt5_term_api.TradeUnrealizedE"
+  "xtremaData\"\344\001\n\032TradeUnrealizedExtremaDat"
+  "a\022\016\n\006ticket\030\001 \001(\003\022\016\n\006symbol\030\002 \001(\t\0227\n\023max"
+  "_unrealized_time\030\003 \001(\0132\032.google.protobuf"
+  ".Timestamp\022\031\n\021max_unrealized_pl\030\004 \001(\001\0227\n"
+  "\023min_unrealized_time\030\005 \001(\0132\032.google.prot"
+  "obuf.Timestamp\022\031\n\021min_unrealized_pl\030\006 \001("
+  "\0012\365\003\n\nTradeStats\022a\n\nTradeStats\022\037.mt5_ter"
+  "m_api.TradeStatsRequest\032\035.mt5_term_api.T"
+  "radeStatsReply\"\023\202\323\344\223\002\r\022\013/TradeStats\022\225\001\n\027"
+  "TradeStatsEquityHistory\022,.mt5_term_api.T"
+  "radeStatsEquityHistoryRequest\032*.mt5_term"
+  "_api.TradeStatsEquityHistoryReply\" \202\323\344\223\002"
+  "\032\022\030/TradeStatsEquityHistory\022m\n\rEquityHis"
+  "tory\022\".mt5_term_api.EquityHistoryRequest"
+  "\032 .mt5_term_api.EquityHistoryReply\"\026\202\323\344\223"
+  "\002\020\022\016/EquityHistory\022}\n\021TradeUnrealizedPL\022"
+  "&.mt5_term_api.TradeUnrealizedPLRequest\032"
+  "$.mt5_term_api.TradeUnrealizedPLReply\"\032\202"
+  "\323\344\223\002\024\022\022/TradeUnrealizedPLBBZ1git.mtapi.i"
+  "o/root/mrpc-proto.git/mt5/libraries/go\252\002"
+  "\014mt5_term_apib\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_deps[3] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -762,9 +832,9 @@ static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2d
 };
 static ::_pbi::once_flag descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto = {
-    false, false, 3933, descriptor_table_protodef_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto,
+    false, false, 4421, descriptor_table_protodef_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto,
     "mt5-term-api-trade-stats.proto",
-    &descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_deps, 3, 22,
+    &descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_deps, 3, 23,
     schemas, file_default_instances, TableStruct_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto::offsets,
     file_level_metadata_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto, file_level_enum_descriptors_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto,
     file_level_service_descriptors_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto,
@@ -4522,7 +4592,12 @@ MarketTradeCountData::MarketTradeCountData(const MarketTradeCountData& from)
   MarketTradeCountData* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.market_name_){}
+    , decltype(_impl_.lots_){}
+    , decltype(_impl_.profit_){}
     , decltype(_impl_.count_){}
+    , decltype(_impl_.won_count_){}
+    , decltype(_impl_.win_rate_){}
+    , decltype(_impl_.lost_count_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -4534,7 +4609,9 @@ MarketTradeCountData::MarketTradeCountData(const MarketTradeCountData& from)
     _this->_impl_.market_name_.Set(from._internal_market_name(), 
       _this->GetArenaForAllocation());
   }
-  _this->_impl_.count_ = from._impl_.count_;
+  ::memcpy(&_impl_.lots_, &from._impl_.lots_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.lost_count_) -
+    reinterpret_cast<char*>(&_impl_.lots_)) + sizeof(_impl_.lost_count_));
   // @@protoc_insertion_point(copy_constructor:mt5_term_api.MarketTradeCountData)
 }
 
@@ -4544,7 +4621,12 @@ inline void MarketTradeCountData::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.market_name_){}
+    , decltype(_impl_.lots_){0}
+    , decltype(_impl_.profit_){0}
     , decltype(_impl_.count_){0}
+    , decltype(_impl_.won_count_){0}
+    , decltype(_impl_.win_rate_){0}
+    , decltype(_impl_.lost_count_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.market_name_.InitDefault();
@@ -4578,7 +4660,9 @@ void MarketTradeCountData::Clear() {
   (void) cached_has_bits;
 
   _impl_.market_name_.ClearToEmpty();
-  _impl_.count_ = 0;
+  ::memset(&_impl_.lots_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.lost_count_) -
+      reinterpret_cast<char*>(&_impl_.lots_)) + sizeof(_impl_.lost_count_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4602,6 +4686,46 @@ const char* MarketTradeCountData::_InternalParse(const char* ptr, ::_pbi::ParseC
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _impl_.count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double lots = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _impl_.lots_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double profit = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 33)) {
+          _impl_.profit_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double win_rate = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 41)) {
+          _impl_.win_rate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 won_count = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _impl_.won_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 lost_count = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _impl_.lost_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4651,6 +4775,48 @@ uint8_t* MarketTradeCountData::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_count(), target);
   }
 
+  // double lots = 3;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_lots = this->_internal_lots();
+  uint64_t raw_lots;
+  memcpy(&raw_lots, &tmp_lots, sizeof(tmp_lots));
+  if (raw_lots != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_lots(), target);
+  }
+
+  // double profit = 4;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_profit = this->_internal_profit();
+  uint64_t raw_profit;
+  memcpy(&raw_profit, &tmp_profit, sizeof(tmp_profit));
+  if (raw_profit != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(4, this->_internal_profit(), target);
+  }
+
+  // double win_rate = 5;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_win_rate = this->_internal_win_rate();
+  uint64_t raw_win_rate;
+  memcpy(&raw_win_rate, &tmp_win_rate, sizeof(tmp_win_rate));
+  if (raw_win_rate != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(5, this->_internal_win_rate(), target);
+  }
+
+  // int32 won_count = 6;
+  if (this->_internal_won_count() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_won_count(), target);
+  }
+
+  // int32 lost_count = 7;
+  if (this->_internal_lost_count() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_lost_count(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -4674,9 +4840,46 @@ size_t MarketTradeCountData::ByteSizeLong() const {
         this->_internal_market_name());
   }
 
+  // double lots = 3;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_lots = this->_internal_lots();
+  uint64_t raw_lots;
+  memcpy(&raw_lots, &tmp_lots, sizeof(tmp_lots));
+  if (raw_lots != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double profit = 4;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_profit = this->_internal_profit();
+  uint64_t raw_profit;
+  memcpy(&raw_profit, &tmp_profit, sizeof(tmp_profit));
+  if (raw_profit != 0) {
+    total_size += 1 + 8;
+  }
+
   // int32 count = 2;
   if (this->_internal_count() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_count());
+  }
+
+  // int32 won_count = 6;
+  if (this->_internal_won_count() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_won_count());
+  }
+
+  // double win_rate = 5;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_win_rate = this->_internal_win_rate();
+  uint64_t raw_win_rate;
+  memcpy(&raw_win_rate, &tmp_win_rate, sizeof(tmp_win_rate));
+  if (raw_win_rate != 0) {
+    total_size += 1 + 8;
+  }
+
+  // int32 lost_count = 7;
+  if (this->_internal_lost_count() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_lost_count());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -4700,8 +4903,35 @@ void MarketTradeCountData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, c
   if (!from._internal_market_name().empty()) {
     _this->_internal_set_market_name(from._internal_market_name());
   }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_lots = from._internal_lots();
+  uint64_t raw_lots;
+  memcpy(&raw_lots, &tmp_lots, sizeof(tmp_lots));
+  if (raw_lots != 0) {
+    _this->_internal_set_lots(from._internal_lots());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_profit = from._internal_profit();
+  uint64_t raw_profit;
+  memcpy(&raw_profit, &tmp_profit, sizeof(tmp_profit));
+  if (raw_profit != 0) {
+    _this->_internal_set_profit(from._internal_profit());
+  }
   if (from._internal_count() != 0) {
     _this->_internal_set_count(from._internal_count());
+  }
+  if (from._internal_won_count() != 0) {
+    _this->_internal_set_won_count(from._internal_won_count());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_win_rate = from._internal_win_rate();
+  uint64_t raw_win_rate;
+  memcpy(&raw_win_rate, &tmp_win_rate, sizeof(tmp_win_rate));
+  if (raw_win_rate != 0) {
+    _this->_internal_set_win_rate(from._internal_win_rate());
+  }
+  if (from._internal_lost_count() != 0) {
+    _this->_internal_set_lost_count(from._internal_lost_count());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -4726,7 +4956,12 @@ void MarketTradeCountData::InternalSwap(MarketTradeCountData* other) {
       &_impl_.market_name_, lhs_arena,
       &other->_impl_.market_name_, rhs_arena
   );
-  swap(_impl_.count_, other->_impl_.count_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(MarketTradeCountData, _impl_.lost_count_)
+      + sizeof(MarketTradeCountData::_impl_.lost_count_)
+      - PROTOBUF_FIELD_OFFSET(MarketTradeCountData, _impl_.lots_)>(
+          reinterpret_cast<char*>(&_impl_.lots_),
+          reinterpret_cast<char*>(&other->_impl_.lots_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata MarketTradeCountData::GetMetadata() const {
@@ -6262,6 +6497,8 @@ StatsWithChartsData::StatsWithChartsData(const StatsWithChartsData& from)
   StatsWithChartsData* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.charts_){from._impl_.charts_}
+    , decltype(_impl_.trades_){from._impl_.trades_}
+    , decltype(_impl_.open_trades_){from._impl_.open_trades_}
     , decltype(_impl_.stats_){nullptr}
     , /*decltype(_impl_._cached_size_)*/{}};
 
@@ -6278,6 +6515,8 @@ inline void StatsWithChartsData::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.charts_){arena}
+    , decltype(_impl_.trades_){arena}
+    , decltype(_impl_.open_trades_){arena}
     , decltype(_impl_.stats_){nullptr}
     , /*decltype(_impl_._cached_size_)*/{}
   };
@@ -6295,6 +6534,8 @@ StatsWithChartsData::~StatsWithChartsData() {
 inline void StatsWithChartsData::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.charts_.~RepeatedPtrField();
+  _impl_.trades_.~RepeatedPtrField();
+  _impl_.open_trades_.~RepeatedPtrField();
   if (this != internal_default_instance()) delete _impl_.stats_;
 }
 
@@ -6309,6 +6550,8 @@ void StatsWithChartsData::Clear() {
   (void) cached_has_bits;
 
   _impl_.charts_.Clear();
+  _impl_.trades_.Clear();
+  _impl_.open_trades_.Clear();
   if (GetArenaForAllocation() == nullptr && _impl_.stats_ != nullptr) {
     delete _impl_.stats_;
   }
@@ -6340,6 +6583,32 @@ const char* StatsWithChartsData::_InternalParse(const char* ptr, ::_pbi::ParseCo
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .mt5_term_api.TradeHistoryItemData trades = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_trades(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .mt5_term_api.TradeHistoryItemData open_trades = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_open_trades(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -6387,6 +6656,22 @@ uint8_t* StatsWithChartsData::_InternalSerialize(
         InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
   }
 
+  // repeated .mt5_term_api.TradeHistoryItemData trades = 3;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_trades_size()); i < n; i++) {
+    const auto& repfield = this->_internal_trades(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(3, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .mt5_term_api.TradeHistoryItemData open_trades = 4;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_open_trades_size()); i < n; i++) {
+    const auto& repfield = this->_internal_open_trades(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(4, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -6406,6 +6691,20 @@ size_t StatsWithChartsData::ByteSizeLong() const {
   // repeated .mt5_term_api.EquityPointData charts = 2;
   total_size += 1UL * this->_internal_charts_size();
   for (const auto& msg : this->_impl_.charts_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .mt5_term_api.TradeHistoryItemData trades = 3;
+  total_size += 1UL * this->_internal_trades_size();
+  for (const auto& msg : this->_impl_.trades_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .mt5_term_api.TradeHistoryItemData open_trades = 4;
+  total_size += 1UL * this->_internal_open_trades_size();
+  for (const auto& msg : this->_impl_.open_trades_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -6436,6 +6735,8 @@ void StatsWithChartsData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, co
   (void) cached_has_bits;
 
   _this->_impl_.charts_.MergeFrom(from._impl_.charts_);
+  _this->_impl_.trades_.MergeFrom(from._impl_.trades_);
+  _this->_impl_.open_trades_.MergeFrom(from._impl_.open_trades_);
   if (from._internal_has_stats()) {
     _this->_internal_mutable_stats()->::mt5_term_api::StatsData::MergeFrom(
         from._internal_stats());
@@ -6458,6 +6759,8 @@ void StatsWithChartsData::InternalSwap(StatsWithChartsData* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.charts_.InternalSwap(&other->_impl_.charts_);
+  _impl_.trades_.InternalSwap(&other->_impl_.trades_);
+  _impl_.open_trades_.InternalSwap(&other->_impl_.open_trades_);
   swap(_impl_.stats_, other->_impl_.stats_);
 }
 
@@ -6465,6 +6768,629 @@ void StatsWithChartsData::InternalSwap(StatsWithChartsData* other) {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_once,
       file_level_metadata_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto[17]);
+}
+
+// ===================================================================
+
+class TradeHistoryItemData::_Internal {
+ public:
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& open_time(const TradeHistoryItemData* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& close_time(const TradeHistoryItemData* msg);
+};
+
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+TradeHistoryItemData::_Internal::open_time(const TradeHistoryItemData* msg) {
+  return *msg->_impl_.open_time_;
+}
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+TradeHistoryItemData::_Internal::close_time(const TradeHistoryItemData* msg) {
+  return *msg->_impl_.close_time_;
+}
+void TradeHistoryItemData::clear_open_time() {
+  if (GetArenaForAllocation() == nullptr && _impl_.open_time_ != nullptr) {
+    delete _impl_.open_time_;
+  }
+  _impl_.open_time_ = nullptr;
+}
+void TradeHistoryItemData::clear_close_time() {
+  if (GetArenaForAllocation() == nullptr && _impl_.close_time_ != nullptr) {
+    delete _impl_.close_time_;
+  }
+  _impl_.close_time_ = nullptr;
+}
+TradeHistoryItemData::TradeHistoryItemData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.TradeHistoryItemData)
+}
+TradeHistoryItemData::TradeHistoryItemData(const TradeHistoryItemData& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  TradeHistoryItemData* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.symbol_){}
+    , decltype(_impl_.comment_){}
+    , decltype(_impl_.open_time_){nullptr}
+    , decltype(_impl_.close_time_){nullptr}
+    , decltype(_impl_.ticket_){}
+    , decltype(_impl_.lots_){}
+    , decltype(_impl_.open_price_){}
+    , decltype(_impl_.close_price_){}
+    , decltype(_impl_.profit_){}
+    , decltype(_impl_.commission_){}
+    , decltype(_impl_.swap_){}
+    , decltype(_impl_.is_buy_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.symbol_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.symbol_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_symbol().empty()) {
+    _this->_impl_.symbol_.Set(from._internal_symbol(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.comment_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.comment_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_comment().empty()) {
+    _this->_impl_.comment_.Set(from._internal_comment(), 
+      _this->GetArenaForAllocation());
+  }
+  if (from._internal_has_open_time()) {
+    _this->_impl_.open_time_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.open_time_);
+  }
+  if (from._internal_has_close_time()) {
+    _this->_impl_.close_time_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.close_time_);
+  }
+  ::memcpy(&_impl_.ticket_, &from._impl_.ticket_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.is_buy_) -
+    reinterpret_cast<char*>(&_impl_.ticket_)) + sizeof(_impl_.is_buy_));
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.TradeHistoryItemData)
+}
+
+inline void TradeHistoryItemData::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.symbol_){}
+    , decltype(_impl_.comment_){}
+    , decltype(_impl_.open_time_){nullptr}
+    , decltype(_impl_.close_time_){nullptr}
+    , decltype(_impl_.ticket_){int64_t{0}}
+    , decltype(_impl_.lots_){0}
+    , decltype(_impl_.open_price_){0}
+    , decltype(_impl_.close_price_){0}
+    , decltype(_impl_.profit_){0}
+    , decltype(_impl_.commission_){0}
+    , decltype(_impl_.swap_){0}
+    , decltype(_impl_.is_buy_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.symbol_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.symbol_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.comment_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.comment_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+TradeHistoryItemData::~TradeHistoryItemData() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.TradeHistoryItemData)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void TradeHistoryItemData::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.symbol_.Destroy();
+  _impl_.comment_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.open_time_;
+  if (this != internal_default_instance()) delete _impl_.close_time_;
+}
+
+void TradeHistoryItemData::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void TradeHistoryItemData::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.TradeHistoryItemData)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.symbol_.ClearToEmpty();
+  _impl_.comment_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.open_time_ != nullptr) {
+    delete _impl_.open_time_;
+  }
+  _impl_.open_time_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.close_time_ != nullptr) {
+    delete _impl_.close_time_;
+  }
+  _impl_.close_time_ = nullptr;
+  ::memset(&_impl_.ticket_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.is_buy_) -
+      reinterpret_cast<char*>(&_impl_.ticket_)) + sizeof(_impl_.is_buy_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* TradeHistoryItemData::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int64 ticket = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.ticket_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string symbol = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_symbol();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.TradeHistoryItemData.symbol"));
+        } else
+          goto handle_unusual;
+        continue;
+      // bool is_buy = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.is_buy_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double lots = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 33)) {
+          _impl_.lots_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double open_price = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 41)) {
+          _impl_.open_price_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double close_price = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 49)) {
+          _impl_.close_price_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // .google.protobuf.Timestamp open_time = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          ptr = ctx->ParseMessage(_internal_mutable_open_time(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .google.protobuf.Timestamp close_time = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+          ptr = ctx->ParseMessage(_internal_mutable_close_time(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double profit = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 73)) {
+          _impl_.profit_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double commission = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 81)) {
+          _impl_.commission_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double swap = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 89)) {
+          _impl_.swap_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // string comment = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
+          auto str = _internal_mutable_comment();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.TradeHistoryItemData.comment"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* TradeHistoryItemData::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.TradeHistoryItemData)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 ticket = 1;
+  if (this->_internal_ticket() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(1, this->_internal_ticket(), target);
+  }
+
+  // string symbol = 2;
+  if (!this->_internal_symbol().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_symbol().data(), static_cast<int>(this->_internal_symbol().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.TradeHistoryItemData.symbol");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_symbol(), target);
+  }
+
+  // bool is_buy = 3;
+  if (this->_internal_is_buy() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_is_buy(), target);
+  }
+
+  // double lots = 4;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_lots = this->_internal_lots();
+  uint64_t raw_lots;
+  memcpy(&raw_lots, &tmp_lots, sizeof(tmp_lots));
+  if (raw_lots != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(4, this->_internal_lots(), target);
+  }
+
+  // double open_price = 5;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_open_price = this->_internal_open_price();
+  uint64_t raw_open_price;
+  memcpy(&raw_open_price, &tmp_open_price, sizeof(tmp_open_price));
+  if (raw_open_price != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(5, this->_internal_open_price(), target);
+  }
+
+  // double close_price = 6;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_close_price = this->_internal_close_price();
+  uint64_t raw_close_price;
+  memcpy(&raw_close_price, &tmp_close_price, sizeof(tmp_close_price));
+  if (raw_close_price != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(6, this->_internal_close_price(), target);
+  }
+
+  // .google.protobuf.Timestamp open_time = 7;
+  if (this->_internal_has_open_time()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(7, _Internal::open_time(this),
+        _Internal::open_time(this).GetCachedSize(), target, stream);
+  }
+
+  // .google.protobuf.Timestamp close_time = 8;
+  if (this->_internal_has_close_time()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(8, _Internal::close_time(this),
+        _Internal::close_time(this).GetCachedSize(), target, stream);
+  }
+
+  // double profit = 9;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_profit = this->_internal_profit();
+  uint64_t raw_profit;
+  memcpy(&raw_profit, &tmp_profit, sizeof(tmp_profit));
+  if (raw_profit != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(9, this->_internal_profit(), target);
+  }
+
+  // double commission = 10;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_commission = this->_internal_commission();
+  uint64_t raw_commission;
+  memcpy(&raw_commission, &tmp_commission, sizeof(tmp_commission));
+  if (raw_commission != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(10, this->_internal_commission(), target);
+  }
+
+  // double swap = 11;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_swap = this->_internal_swap();
+  uint64_t raw_swap;
+  memcpy(&raw_swap, &tmp_swap, sizeof(tmp_swap));
+  if (raw_swap != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(11, this->_internal_swap(), target);
+  }
+
+  // string comment = 12;
+  if (!this->_internal_comment().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_comment().data(), static_cast<int>(this->_internal_comment().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.TradeHistoryItemData.comment");
+    target = stream->WriteStringMaybeAliased(
+        12, this->_internal_comment(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.TradeHistoryItemData)
+  return target;
+}
+
+size_t TradeHistoryItemData::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.TradeHistoryItemData)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string symbol = 2;
+  if (!this->_internal_symbol().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_symbol());
+  }
+
+  // string comment = 12;
+  if (!this->_internal_comment().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_comment());
+  }
+
+  // .google.protobuf.Timestamp open_time = 7;
+  if (this->_internal_has_open_time()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.open_time_);
+  }
+
+  // .google.protobuf.Timestamp close_time = 8;
+  if (this->_internal_has_close_time()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.close_time_);
+  }
+
+  // int64 ticket = 1;
+  if (this->_internal_ticket() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_ticket());
+  }
+
+  // double lots = 4;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_lots = this->_internal_lots();
+  uint64_t raw_lots;
+  memcpy(&raw_lots, &tmp_lots, sizeof(tmp_lots));
+  if (raw_lots != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double open_price = 5;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_open_price = this->_internal_open_price();
+  uint64_t raw_open_price;
+  memcpy(&raw_open_price, &tmp_open_price, sizeof(tmp_open_price));
+  if (raw_open_price != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double close_price = 6;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_close_price = this->_internal_close_price();
+  uint64_t raw_close_price;
+  memcpy(&raw_close_price, &tmp_close_price, sizeof(tmp_close_price));
+  if (raw_close_price != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double profit = 9;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_profit = this->_internal_profit();
+  uint64_t raw_profit;
+  memcpy(&raw_profit, &tmp_profit, sizeof(tmp_profit));
+  if (raw_profit != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double commission = 10;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_commission = this->_internal_commission();
+  uint64_t raw_commission;
+  memcpy(&raw_commission, &tmp_commission, sizeof(tmp_commission));
+  if (raw_commission != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double swap = 11;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_swap = this->_internal_swap();
+  uint64_t raw_swap;
+  memcpy(&raw_swap, &tmp_swap, sizeof(tmp_swap));
+  if (raw_swap != 0) {
+    total_size += 1 + 8;
+  }
+
+  // bool is_buy = 3;
+  if (this->_internal_is_buy() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TradeHistoryItemData::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    TradeHistoryItemData::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TradeHistoryItemData::GetClassData() const { return &_class_data_; }
+
+
+void TradeHistoryItemData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<TradeHistoryItemData*>(&to_msg);
+  auto& from = static_cast<const TradeHistoryItemData&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.TradeHistoryItemData)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_symbol().empty()) {
+    _this->_internal_set_symbol(from._internal_symbol());
+  }
+  if (!from._internal_comment().empty()) {
+    _this->_internal_set_comment(from._internal_comment());
+  }
+  if (from._internal_has_open_time()) {
+    _this->_internal_mutable_open_time()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+        from._internal_open_time());
+  }
+  if (from._internal_has_close_time()) {
+    _this->_internal_mutable_close_time()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+        from._internal_close_time());
+  }
+  if (from._internal_ticket() != 0) {
+    _this->_internal_set_ticket(from._internal_ticket());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_lots = from._internal_lots();
+  uint64_t raw_lots;
+  memcpy(&raw_lots, &tmp_lots, sizeof(tmp_lots));
+  if (raw_lots != 0) {
+    _this->_internal_set_lots(from._internal_lots());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_open_price = from._internal_open_price();
+  uint64_t raw_open_price;
+  memcpy(&raw_open_price, &tmp_open_price, sizeof(tmp_open_price));
+  if (raw_open_price != 0) {
+    _this->_internal_set_open_price(from._internal_open_price());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_close_price = from._internal_close_price();
+  uint64_t raw_close_price;
+  memcpy(&raw_close_price, &tmp_close_price, sizeof(tmp_close_price));
+  if (raw_close_price != 0) {
+    _this->_internal_set_close_price(from._internal_close_price());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_profit = from._internal_profit();
+  uint64_t raw_profit;
+  memcpy(&raw_profit, &tmp_profit, sizeof(tmp_profit));
+  if (raw_profit != 0) {
+    _this->_internal_set_profit(from._internal_profit());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_commission = from._internal_commission();
+  uint64_t raw_commission;
+  memcpy(&raw_commission, &tmp_commission, sizeof(tmp_commission));
+  if (raw_commission != 0) {
+    _this->_internal_set_commission(from._internal_commission());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_swap = from._internal_swap();
+  uint64_t raw_swap;
+  memcpy(&raw_swap, &tmp_swap, sizeof(tmp_swap));
+  if (raw_swap != 0) {
+    _this->_internal_set_swap(from._internal_swap());
+  }
+  if (from._internal_is_buy() != 0) {
+    _this->_internal_set_is_buy(from._internal_is_buy());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void TradeHistoryItemData::CopyFrom(const TradeHistoryItemData& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.TradeHistoryItemData)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TradeHistoryItemData::IsInitialized() const {
+  return true;
+}
+
+void TradeHistoryItemData::InternalSwap(TradeHistoryItemData* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.symbol_, lhs_arena,
+      &other->_impl_.symbol_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.comment_, lhs_arena,
+      &other->_impl_.comment_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(TradeHistoryItemData, _impl_.is_buy_)
+      + sizeof(TradeHistoryItemData::_impl_.is_buy_)
+      - PROTOBUF_FIELD_OFFSET(TradeHistoryItemData, _impl_.open_time_)>(
+          reinterpret_cast<char*>(&_impl_.open_time_),
+          reinterpret_cast<char*>(&other->_impl_.open_time_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata TradeHistoryItemData::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto[18]);
 }
 
 // ===================================================================
@@ -6649,7 +7575,7 @@ void EquityHistoryData::InternalSwap(EquityHistoryData* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata EquityHistoryData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto[18]);
+      file_level_metadata_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto[19]);
 }
 
 // ===================================================================
@@ -7147,7 +8073,7 @@ void EquityPointData::InternalSwap(EquityPointData* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata EquityPointData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto[19]);
+      file_level_metadata_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto[20]);
 }
 
 // ===================================================================
@@ -7332,7 +8258,7 @@ void TradeUnrealizedPLData::InternalSwap(TradeUnrealizedPLData* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata TradeUnrealizedPLData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto[20]);
+      file_level_metadata_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto[21]);
 }
 
 // ===================================================================
@@ -7737,7 +8663,7 @@ void TradeUnrealizedExtremaData::InternalSwap(TradeUnrealizedExtremaData* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata TradeUnrealizedExtremaData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto[21]);
+      file_level_metadata_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto[22]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -7814,6 +8740,10 @@ Arena::CreateMaybeMessage< ::mt5_term_api::ExpectancyData >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::mt5_term_api::StatsWithChartsData*
 Arena::CreateMaybeMessage< ::mt5_term_api::StatsWithChartsData >(Arena* arena) {
   return Arena::CreateMessageInternal< ::mt5_term_api::StatsWithChartsData >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mt5_term_api::TradeHistoryItemData*
+Arena::CreateMaybeMessage< ::mt5_term_api::TradeHistoryItemData >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::TradeHistoryItemData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mt5_term_api::EquityHistoryData*
 Arena::CreateMaybeMessage< ::mt5_term_api::EquityHistoryData >(Arena* arena) {
