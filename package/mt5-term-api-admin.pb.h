@@ -69,6 +69,12 @@ extern CaptureSessionScreenshotReplyDefaultTypeInternal _CaptureSessionScreensho
 class CaptureSessionScreenshotRequest;
 struct CaptureSessionScreenshotRequestDefaultTypeInternal;
 extern CaptureSessionScreenshotRequestDefaultTypeInternal _CaptureSessionScreenshotRequest_default_instance_;
+class DrainReply;
+struct DrainReplyDefaultTypeInternal;
+extern DrainReplyDefaultTypeInternal _DrainReply_default_instance_;
+class DrainRequest;
+struct DrainRequestDefaultTypeInternal;
+extern DrainRequestDefaultTypeInternal _DrainRequest_default_instance_;
 class GetAllLogsReply;
 struct GetAllLogsReplyDefaultTypeInternal;
 extern GetAllLogsReplyDefaultTypeInternal _GetAllLogsReply_default_instance_;
@@ -123,6 +129,12 @@ extern SessionRestoreLogEntryDefaultTypeInternal _SessionRestoreLogEntry_default
 class SessionRestoreWatcherStatus;
 struct SessionRestoreWatcherStatusDefaultTypeInternal;
 extern SessionRestoreWatcherStatusDefaultTypeInternal _SessionRestoreWatcherStatus_default_instance_;
+class StopTerminalLocalReply;
+struct StopTerminalLocalReplyDefaultTypeInternal;
+extern StopTerminalLocalReplyDefaultTypeInternal _StopTerminalLocalReply_default_instance_;
+class StopTerminalLocalRequest;
+struct StopTerminalLocalRequestDefaultTypeInternal;
+extern StopTerminalLocalRequestDefaultTypeInternal _StopTerminalLocalRequest_default_instance_;
 class SystemUsageReply;
 struct SystemUsageReplyDefaultTypeInternal;
 extern SystemUsageReplyDefaultTypeInternal _SystemUsageReply_default_instance_;
@@ -150,6 +162,8 @@ template<> ::mrpc_admin::AllLogsEntry* Arena::CreateMaybeMessage<::mrpc_admin::A
 template<> ::mrpc_admin::CaptureSessionScreenshotOnPodRequest* Arena::CreateMaybeMessage<::mrpc_admin::CaptureSessionScreenshotOnPodRequest>(Arena*);
 template<> ::mrpc_admin::CaptureSessionScreenshotReply* Arena::CreateMaybeMessage<::mrpc_admin::CaptureSessionScreenshotReply>(Arena*);
 template<> ::mrpc_admin::CaptureSessionScreenshotRequest* Arena::CreateMaybeMessage<::mrpc_admin::CaptureSessionScreenshotRequest>(Arena*);
+template<> ::mrpc_admin::DrainReply* Arena::CreateMaybeMessage<::mrpc_admin::DrainReply>(Arena*);
+template<> ::mrpc_admin::DrainRequest* Arena::CreateMaybeMessage<::mrpc_admin::DrainRequest>(Arena*);
 template<> ::mrpc_admin::GetAllLogsReply* Arena::CreateMaybeMessage<::mrpc_admin::GetAllLogsReply>(Arena*);
 template<> ::mrpc_admin::GetAllLogsRequest* Arena::CreateMaybeMessage<::mrpc_admin::GetAllLogsRequest>(Arena*);
 template<> ::mrpc_admin::GetEventLogEntriesReply* Arena::CreateMaybeMessage<::mrpc_admin::GetEventLogEntriesReply>(Arena*);
@@ -168,6 +182,8 @@ template<> ::mrpc_admin::PodTerminals* Arena::CreateMaybeMessage<::mrpc_admin::P
 template<> ::mrpc_admin::RefreshMrpcRestReply* Arena::CreateMaybeMessage<::mrpc_admin::RefreshMrpcRestReply>(Arena*);
 template<> ::mrpc_admin::SessionRestoreLogEntry* Arena::CreateMaybeMessage<::mrpc_admin::SessionRestoreLogEntry>(Arena*);
 template<> ::mrpc_admin::SessionRestoreWatcherStatus* Arena::CreateMaybeMessage<::mrpc_admin::SessionRestoreWatcherStatus>(Arena*);
+template<> ::mrpc_admin::StopTerminalLocalReply* Arena::CreateMaybeMessage<::mrpc_admin::StopTerminalLocalReply>(Arena*);
+template<> ::mrpc_admin::StopTerminalLocalRequest* Arena::CreateMaybeMessage<::mrpc_admin::StopTerminalLocalRequest>(Arena*);
 template<> ::mrpc_admin::SystemUsageReply* Arena::CreateMaybeMessage<::mrpc_admin::SystemUsageReply>(Arena*);
 template<> ::mrpc_admin::TerminalInfo* Arena::CreateMaybeMessage<::mrpc_admin::TerminalInfo>(Arena*);
 template<> ::mrpc_admin::TerminalJournalFile* Arena::CreateMaybeMessage<::mrpc_admin::TerminalJournalFile>(Arena*);
@@ -874,6 +890,833 @@ class KillAllTrialTerminalsReply final :
 };
 // -------------------------------------------------------------------
 
+class DrainRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mrpc_admin.DrainRequest) */ {
+ public:
+  inline DrainRequest() : DrainRequest(nullptr) {}
+  ~DrainRequest() override;
+  explicit PROTOBUF_CONSTEXPR DrainRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DrainRequest(const DrainRequest& from);
+  DrainRequest(DrainRequest&& from) noexcept
+    : DrainRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline DrainRequest& operator=(const DrainRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DrainRequest& operator=(DrainRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DrainRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DrainRequest* internal_default_instance() {
+    return reinterpret_cast<const DrainRequest*>(
+               &_DrainRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(DrainRequest& a, DrainRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DrainRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DrainRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  DrainRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<DrainRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const DrainRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const DrainRequest& from) {
+    DrainRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DrainRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mrpc_admin.DrainRequest";
+  }
+  protected:
+  explicit DrainRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAdminKeyFieldNumber = 1,
+    kReasonFieldNumber = 2,
+  };
+  // string admin_key = 1;
+  void clear_admin_key();
+  const std::string& admin_key() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_admin_key(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_admin_key();
+  PROTOBUF_NODISCARD std::string* release_admin_key();
+  void set_allocated_admin_key(std::string* admin_key);
+  private:
+  const std::string& _internal_admin_key() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_admin_key(const std::string& value);
+  std::string* _internal_mutable_admin_key();
+  public:
+
+  // string reason = 2;
+  void clear_reason();
+  const std::string& reason() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_reason(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_reason();
+  PROTOBUF_NODISCARD std::string* release_reason();
+  void set_allocated_reason(std::string* reason);
+  private:
+  const std::string& _internal_reason() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_reason(const std::string& value);
+  std::string* _internal_mutable_reason();
+  public:
+
+  // @@protoc_insertion_point(class_scope:mrpc_admin.DrainRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr admin_key_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reason_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_mt5_2dterm_2dapi_2dadmin_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DrainReply final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mrpc_admin.DrainReply) */ {
+ public:
+  inline DrainReply() : DrainReply(nullptr) {}
+  ~DrainReply() override;
+  explicit PROTOBUF_CONSTEXPR DrainReply(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DrainReply(const DrainReply& from);
+  DrainReply(DrainReply&& from) noexcept
+    : DrainReply() {
+    *this = ::std::move(from);
+  }
+
+  inline DrainReply& operator=(const DrainReply& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DrainReply& operator=(DrainReply&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DrainReply& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DrainReply* internal_default_instance() {
+    return reinterpret_cast<const DrainReply*>(
+               &_DrainReply_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(DrainReply& a, DrainReply& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DrainReply* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DrainReply* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  DrainReply* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<DrainReply>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const DrainReply& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const DrainReply& from) {
+    DrainReply::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DrainReply* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mrpc_admin.DrainReply";
+  }
+  protected:
+  explicit DrainReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPodFieldNumber = 3,
+    kReasonFieldNumber = 4,
+    kStartedAtFieldNumber = 5,
+    kErrorFieldNumber = 6,
+    kDrainingFieldNumber = 1,
+    kAlreadyDrainingFieldNumber = 2,
+  };
+  // string pod = 3;
+  void clear_pod();
+  const std::string& pod() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_pod(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_pod();
+  PROTOBUF_NODISCARD std::string* release_pod();
+  void set_allocated_pod(std::string* pod);
+  private:
+  const std::string& _internal_pod() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_pod(const std::string& value);
+  std::string* _internal_mutable_pod();
+  public:
+
+  // string reason = 4;
+  void clear_reason();
+  const std::string& reason() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_reason(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_reason();
+  PROTOBUF_NODISCARD std::string* release_reason();
+  void set_allocated_reason(std::string* reason);
+  private:
+  const std::string& _internal_reason() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_reason(const std::string& value);
+  std::string* _internal_mutable_reason();
+  public:
+
+  // string started_at = 5;
+  void clear_started_at();
+  const std::string& started_at() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_started_at(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_started_at();
+  PROTOBUF_NODISCARD std::string* release_started_at();
+  void set_allocated_started_at(std::string* started_at);
+  private:
+  const std::string& _internal_started_at() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_started_at(const std::string& value);
+  std::string* _internal_mutable_started_at();
+  public:
+
+  // string error = 6;
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_NODISCARD std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // bool draining = 1;
+  void clear_draining();
+  bool draining() const;
+  void set_draining(bool value);
+  private:
+  bool _internal_draining() const;
+  void _internal_set_draining(bool value);
+  public:
+
+  // bool already_draining = 2;
+  void clear_already_draining();
+  bool already_draining() const;
+  void set_already_draining(bool value);
+  private:
+  bool _internal_already_draining() const;
+  void _internal_set_already_draining(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mrpc_admin.DrainReply)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pod_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reason_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr started_at_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+    bool draining_;
+    bool already_draining_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_mt5_2dterm_2dapi_2dadmin_2eproto;
+};
+// -------------------------------------------------------------------
+
+class StopTerminalLocalRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mrpc_admin.StopTerminalLocalRequest) */ {
+ public:
+  inline StopTerminalLocalRequest() : StopTerminalLocalRequest(nullptr) {}
+  ~StopTerminalLocalRequest() override;
+  explicit PROTOBUF_CONSTEXPR StopTerminalLocalRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  StopTerminalLocalRequest(const StopTerminalLocalRequest& from);
+  StopTerminalLocalRequest(StopTerminalLocalRequest&& from) noexcept
+    : StopTerminalLocalRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline StopTerminalLocalRequest& operator=(const StopTerminalLocalRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StopTerminalLocalRequest& operator=(StopTerminalLocalRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const StopTerminalLocalRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const StopTerminalLocalRequest* internal_default_instance() {
+    return reinterpret_cast<const StopTerminalLocalRequest*>(
+               &_StopTerminalLocalRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(StopTerminalLocalRequest& a, StopTerminalLocalRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StopTerminalLocalRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StopTerminalLocalRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  StopTerminalLocalRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<StopTerminalLocalRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const StopTerminalLocalRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const StopTerminalLocalRequest& from) {
+    StopTerminalLocalRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StopTerminalLocalRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mrpc_admin.StopTerminalLocalRequest";
+  }
+  protected:
+  explicit StopTerminalLocalRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAdminKeyFieldNumber = 1,
+    kIdFieldNumber = 2,
+    kCauseFieldNumber = 3,
+    kDetailFieldNumber = 4,
+    kIntentUtcFieldNumber = 5,
+  };
+  // string admin_key = 1;
+  void clear_admin_key();
+  const std::string& admin_key() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_admin_key(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_admin_key();
+  PROTOBUF_NODISCARD std::string* release_admin_key();
+  void set_allocated_admin_key(std::string* admin_key);
+  private:
+  const std::string& _internal_admin_key() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_admin_key(const std::string& value);
+  std::string* _internal_mutable_admin_key();
+  public:
+
+  // string id = 2;
+  void clear_id();
+  const std::string& id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_id();
+  PROTOBUF_NODISCARD std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // string cause = 3;
+  void clear_cause();
+  const std::string& cause() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_cause(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_cause();
+  PROTOBUF_NODISCARD std::string* release_cause();
+  void set_allocated_cause(std::string* cause);
+  private:
+  const std::string& _internal_cause() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_cause(const std::string& value);
+  std::string* _internal_mutable_cause();
+  public:
+
+  // string detail = 4;
+  void clear_detail();
+  const std::string& detail() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_detail(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_detail();
+  PROTOBUF_NODISCARD std::string* release_detail();
+  void set_allocated_detail(std::string* detail);
+  private:
+  const std::string& _internal_detail() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_detail(const std::string& value);
+  std::string* _internal_mutable_detail();
+  public:
+
+  // string intent_utc = 5;
+  void clear_intent_utc();
+  const std::string& intent_utc() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_intent_utc(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_intent_utc();
+  PROTOBUF_NODISCARD std::string* release_intent_utc();
+  void set_allocated_intent_utc(std::string* intent_utc);
+  private:
+  const std::string& _internal_intent_utc() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_intent_utc(const std::string& value);
+  std::string* _internal_mutable_intent_utc();
+  public:
+
+  // @@protoc_insertion_point(class_scope:mrpc_admin.StopTerminalLocalRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr admin_key_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cause_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr detail_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr intent_utc_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_mt5_2dterm_2dapi_2dadmin_2eproto;
+};
+// -------------------------------------------------------------------
+
+class StopTerminalLocalReply final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mrpc_admin.StopTerminalLocalReply) */ {
+ public:
+  inline StopTerminalLocalReply() : StopTerminalLocalReply(nullptr) {}
+  ~StopTerminalLocalReply() override;
+  explicit PROTOBUF_CONSTEXPR StopTerminalLocalReply(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  StopTerminalLocalReply(const StopTerminalLocalReply& from);
+  StopTerminalLocalReply(StopTerminalLocalReply&& from) noexcept
+    : StopTerminalLocalReply() {
+    *this = ::std::move(from);
+  }
+
+  inline StopTerminalLocalReply& operator=(const StopTerminalLocalReply& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StopTerminalLocalReply& operator=(StopTerminalLocalReply&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const StopTerminalLocalReply& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const StopTerminalLocalReply* internal_default_instance() {
+    return reinterpret_cast<const StopTerminalLocalReply*>(
+               &_StopTerminalLocalReply_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(StopTerminalLocalReply& a, StopTerminalLocalReply& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StopTerminalLocalReply* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StopTerminalLocalReply* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  StopTerminalLocalReply* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<StopTerminalLocalReply>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const StopTerminalLocalReply& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const StopTerminalLocalReply& from) {
+    StopTerminalLocalReply::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StopTerminalLocalReply* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mrpc_admin.StopTerminalLocalReply";
+  }
+  protected:
+  explicit StopTerminalLocalReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPodFieldNumber = 3,
+    kErrorFieldNumber = 4,
+    kSkippedFieldNumber = 6,
+    kFullLifeTimeSecondsFieldNumber = 5,
+    kStoppedFieldNumber = 1,
+    kPresentFieldNumber = 2,
+  };
+  // string pod = 3;
+  void clear_pod();
+  const std::string& pod() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_pod(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_pod();
+  PROTOBUF_NODISCARD std::string* release_pod();
+  void set_allocated_pod(std::string* pod);
+  private:
+  const std::string& _internal_pod() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_pod(const std::string& value);
+  std::string* _internal_mutable_pod();
+  public:
+
+  // string error = 4;
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_NODISCARD std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // string skipped = 6;
+  void clear_skipped();
+  const std::string& skipped() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_skipped(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_skipped();
+  PROTOBUF_NODISCARD std::string* release_skipped();
+  void set_allocated_skipped(std::string* skipped);
+  private:
+  const std::string& _internal_skipped() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_skipped(const std::string& value);
+  std::string* _internal_mutable_skipped();
+  public:
+
+  // int64 full_life_time_seconds = 5;
+  void clear_full_life_time_seconds();
+  int64_t full_life_time_seconds() const;
+  void set_full_life_time_seconds(int64_t value);
+  private:
+  int64_t _internal_full_life_time_seconds() const;
+  void _internal_set_full_life_time_seconds(int64_t value);
+  public:
+
+  // bool stopped = 1;
+  void clear_stopped();
+  bool stopped() const;
+  void set_stopped(bool value);
+  private:
+  bool _internal_stopped() const;
+  void _internal_set_stopped(bool value);
+  public:
+
+  // bool present = 2;
+  void clear_present();
+  bool present() const;
+  void set_present(bool value);
+  private:
+  bool _internal_present() const;
+  void _internal_set_present(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mrpc_admin.StopTerminalLocalReply)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pod_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr skipped_;
+    int64_t full_life_time_seconds_;
+    bool stopped_;
+    bool present_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_mt5_2dterm_2dapi_2dadmin_2eproto;
+};
+// -------------------------------------------------------------------
+
 class GetSessionRestoreLogsRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mrpc_admin.GetSessionRestoreLogsRequest) */ {
  public:
@@ -922,7 +1765,7 @@ class GetSessionRestoreLogsRequest final :
                &_GetSessionRestoreLogsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    7;
 
   friend void swap(GetSessionRestoreLogsRequest& a, GetSessionRestoreLogsRequest& b) {
     a.Swap(&b);
@@ -1102,7 +1945,7 @@ class SessionRestoreLogEntry final :
                &_SessionRestoreLogEntry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    8;
 
   friend void swap(SessionRestoreLogEntry& a, SessionRestoreLogEntry& b) {
     a.Swap(&b);
@@ -1389,7 +2232,7 @@ class GetSessionRestoreLogsReply final :
                &_GetSessionRestoreLogsReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    9;
 
   friend void swap(GetSessionRestoreLogsReply& a, GetSessionRestoreLogsReply& b) {
     a.Swap(&b);
@@ -1562,7 +2405,7 @@ class GetAllLogsRequest final :
                &_GetAllLogsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    10;
 
   friend void swap(GetAllLogsRequest& a, GetAllLogsRequest& b) {
     a.Swap(&b);
@@ -1737,7 +2580,7 @@ class AllLogsEntry final :
                &_AllLogsEntry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    11;
 
   friend void swap(AllLogsEntry& a, AllLogsEntry& b) {
     a.Swap(&b);
@@ -1992,7 +2835,7 @@ class GetAllLogsReply final :
                &_GetAllLogsReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    12;
 
   friend void swap(GetAllLogsReply& a, GetAllLogsReply& b) {
     a.Swap(&b);
@@ -2164,7 +3007,7 @@ class VersionRequest final :
                &_VersionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    13;
 
   friend void swap(VersionRequest& a, VersionRequest& b) {
     a.Swap(&b);
@@ -2283,7 +3126,7 @@ class VersionReply final :
                &_VersionReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    14;
 
   friend void swap(VersionReply& a, VersionReply& b) {
     a.Swap(&b);
@@ -2484,7 +3327,7 @@ class ListLogFilesReply final :
                &_ListLogFilesReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    15;
 
   friend void swap(ListLogFilesReply& a, ListLogFilesReply& b) {
     a.Swap(&b);
@@ -2657,7 +3500,7 @@ class LogFileEntry final :
                &_LogFileEntry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    16;
 
   friend void swap(LogFileEntry& a, LogFileEntry& b) {
     a.Swap(&b);
@@ -2841,7 +3684,7 @@ class GetLogFileRequest final :
                &_GetLogFileRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    17;
 
   friend void swap(GetLogFileRequest& a, GetLogFileRequest& b) {
     a.Swap(&b);
@@ -3021,7 +3864,7 @@ class GetLogFileReply final :
                &_GetLogFileReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    18;
 
   friend void swap(GetLogFileReply& a, GetLogFileReply& b) {
     a.Swap(&b);
@@ -3212,7 +4055,7 @@ class GetTerminalJournalRequest final :
                &_GetTerminalJournalRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    19;
 
   friend void swap(GetTerminalJournalRequest& a, GetTerminalJournalRequest& b) {
     a.Swap(&b);
@@ -3392,7 +4235,7 @@ class TerminalJournalFile final :
                &_TerminalJournalFile_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    20;
 
   friend void swap(TerminalJournalFile& a, TerminalJournalFile& b) {
     a.Swap(&b);
@@ -3583,7 +4426,7 @@ class GetTerminalJournalReply final :
                &_GetTerminalJournalReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    21;
 
   friend void swap(GetTerminalJournalReply& a, GetTerminalJournalReply& b) {
     a.Swap(&b);
@@ -3772,7 +4615,7 @@ class GetEventLogEntriesRequest final :
                &_GetEventLogEntriesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    22;
 
   friend void swap(GetEventLogEntriesRequest& a, GetEventLogEntriesRequest& b) {
     a.Swap(&b);
@@ -3952,7 +4795,7 @@ class GetEventLogEntriesReply final :
                &_GetEventLogEntriesReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    23;
 
   friend void swap(GetEventLogEntriesReply& a, GetEventLogEntriesReply& b) {
     a.Swap(&b);
@@ -4131,7 +4974,7 @@ class CaptureSessionScreenshotRequest final :
                &_CaptureSessionScreenshotRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    24;
 
   friend void swap(CaptureSessionScreenshotRequest& a, CaptureSessionScreenshotRequest& b) {
     a.Swap(&b);
@@ -4300,7 +5143,7 @@ class CaptureSessionScreenshotOnPodRequest final :
                &_CaptureSessionScreenshotOnPodRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    25;
 
   friend void swap(CaptureSessionScreenshotOnPodRequest& a, CaptureSessionScreenshotOnPodRequest& b) {
     a.Swap(&b);
@@ -4485,7 +5328,7 @@ class CaptureSessionScreenshotReply final :
                &_CaptureSessionScreenshotReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    26;
 
   friend void swap(CaptureSessionScreenshotReply& a, CaptureSessionScreenshotReply& b) {
     a.Swap(&b);
@@ -4654,7 +5497,7 @@ class RefreshMrpcRestReply final :
                &_RefreshMrpcRestReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    27;
 
   friend void swap(RefreshMrpcRestReply& a, RefreshMrpcRestReply& b) {
     a.Swap(&b);
@@ -4834,7 +5677,7 @@ class UsageSample final :
                &_UsageSample_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    28;
 
   friend void swap(UsageSample& a, UsageSample& b) {
     a.Swap(&b);
@@ -5024,7 +5867,7 @@ class SystemUsageReply final :
                &_SystemUsageReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    29;
 
   friend void swap(SystemUsageReply& a, SystemUsageReply& b) {
     a.Swap(&b);
@@ -5230,7 +6073,7 @@ class ActiveTerminalsRequest final :
                &_ActiveTerminalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    30;
 
   friend void swap(ActiveTerminalsRequest& a, ActiveTerminalsRequest& b) {
     a.Swap(&b);
@@ -5383,7 +6226,7 @@ class TerminalInfo final :
                &_TerminalInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    31;
 
   friend void swap(TerminalInfo& a, TerminalInfo& b) {
     a.Swap(&b);
@@ -5765,7 +6608,7 @@ class ActiveTerminalsReply final :
                &_ActiveTerminalsReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    32;
 
   friend void swap(ActiveTerminalsReply& a, ActiveTerminalsReply& b) {
     a.Swap(&b);
@@ -6059,7 +6902,7 @@ class PodTerminals final :
                &_PodTerminals_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    33;
 
   friend void swap(PodTerminals& a, PodTerminals& b) {
     a.Swap(&b);
@@ -6385,7 +7228,7 @@ class ActiveTerminalsClusterReply final :
                &_ActiveTerminalsClusterReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    34;
 
   friend void swap(ActiveTerminalsClusterReply& a, ActiveTerminalsClusterReply& b) {
     a.Swap(&b);
@@ -7274,6 +8117,822 @@ inline void KillAllTrialTerminalsReply::set_allocated_error(std::string* error) 
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:mrpc_admin.KillAllTrialTerminalsReply.error)
+}
+
+// -------------------------------------------------------------------
+
+// DrainRequest
+
+// string admin_key = 1;
+inline void DrainRequest::clear_admin_key() {
+  _impl_.admin_key_.ClearToEmpty();
+}
+inline const std::string& DrainRequest::admin_key() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.DrainRequest.admin_key)
+  return _internal_admin_key();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DrainRequest::set_admin_key(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.admin_key_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.DrainRequest.admin_key)
+}
+inline std::string* DrainRequest::mutable_admin_key() {
+  std::string* _s = _internal_mutable_admin_key();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.DrainRequest.admin_key)
+  return _s;
+}
+inline const std::string& DrainRequest::_internal_admin_key() const {
+  return _impl_.admin_key_.Get();
+}
+inline void DrainRequest::_internal_set_admin_key(const std::string& value) {
+  
+  _impl_.admin_key_.Set(value, GetArenaForAllocation());
+}
+inline std::string* DrainRequest::_internal_mutable_admin_key() {
+  
+  return _impl_.admin_key_.Mutable(GetArenaForAllocation());
+}
+inline std::string* DrainRequest::release_admin_key() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.DrainRequest.admin_key)
+  return _impl_.admin_key_.Release();
+}
+inline void DrainRequest::set_allocated_admin_key(std::string* admin_key) {
+  if (admin_key != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.admin_key_.SetAllocated(admin_key, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.admin_key_.IsDefault()) {
+    _impl_.admin_key_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.DrainRequest.admin_key)
+}
+
+// string reason = 2;
+inline void DrainRequest::clear_reason() {
+  _impl_.reason_.ClearToEmpty();
+}
+inline const std::string& DrainRequest::reason() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.DrainRequest.reason)
+  return _internal_reason();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DrainRequest::set_reason(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.reason_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.DrainRequest.reason)
+}
+inline std::string* DrainRequest::mutable_reason() {
+  std::string* _s = _internal_mutable_reason();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.DrainRequest.reason)
+  return _s;
+}
+inline const std::string& DrainRequest::_internal_reason() const {
+  return _impl_.reason_.Get();
+}
+inline void DrainRequest::_internal_set_reason(const std::string& value) {
+  
+  _impl_.reason_.Set(value, GetArenaForAllocation());
+}
+inline std::string* DrainRequest::_internal_mutable_reason() {
+  
+  return _impl_.reason_.Mutable(GetArenaForAllocation());
+}
+inline std::string* DrainRequest::release_reason() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.DrainRequest.reason)
+  return _impl_.reason_.Release();
+}
+inline void DrainRequest::set_allocated_reason(std::string* reason) {
+  if (reason != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.reason_.SetAllocated(reason, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.reason_.IsDefault()) {
+    _impl_.reason_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.DrainRequest.reason)
+}
+
+// -------------------------------------------------------------------
+
+// DrainReply
+
+// bool draining = 1;
+inline void DrainReply::clear_draining() {
+  _impl_.draining_ = false;
+}
+inline bool DrainReply::_internal_draining() const {
+  return _impl_.draining_;
+}
+inline bool DrainReply::draining() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.DrainReply.draining)
+  return _internal_draining();
+}
+inline void DrainReply::_internal_set_draining(bool value) {
+  
+  _impl_.draining_ = value;
+}
+inline void DrainReply::set_draining(bool value) {
+  _internal_set_draining(value);
+  // @@protoc_insertion_point(field_set:mrpc_admin.DrainReply.draining)
+}
+
+// bool already_draining = 2;
+inline void DrainReply::clear_already_draining() {
+  _impl_.already_draining_ = false;
+}
+inline bool DrainReply::_internal_already_draining() const {
+  return _impl_.already_draining_;
+}
+inline bool DrainReply::already_draining() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.DrainReply.already_draining)
+  return _internal_already_draining();
+}
+inline void DrainReply::_internal_set_already_draining(bool value) {
+  
+  _impl_.already_draining_ = value;
+}
+inline void DrainReply::set_already_draining(bool value) {
+  _internal_set_already_draining(value);
+  // @@protoc_insertion_point(field_set:mrpc_admin.DrainReply.already_draining)
+}
+
+// string pod = 3;
+inline void DrainReply::clear_pod() {
+  _impl_.pod_.ClearToEmpty();
+}
+inline const std::string& DrainReply::pod() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.DrainReply.pod)
+  return _internal_pod();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DrainReply::set_pod(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.pod_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.DrainReply.pod)
+}
+inline std::string* DrainReply::mutable_pod() {
+  std::string* _s = _internal_mutable_pod();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.DrainReply.pod)
+  return _s;
+}
+inline const std::string& DrainReply::_internal_pod() const {
+  return _impl_.pod_.Get();
+}
+inline void DrainReply::_internal_set_pod(const std::string& value) {
+  
+  _impl_.pod_.Set(value, GetArenaForAllocation());
+}
+inline std::string* DrainReply::_internal_mutable_pod() {
+  
+  return _impl_.pod_.Mutable(GetArenaForAllocation());
+}
+inline std::string* DrainReply::release_pod() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.DrainReply.pod)
+  return _impl_.pod_.Release();
+}
+inline void DrainReply::set_allocated_pod(std::string* pod) {
+  if (pod != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.pod_.SetAllocated(pod, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.pod_.IsDefault()) {
+    _impl_.pod_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.DrainReply.pod)
+}
+
+// string reason = 4;
+inline void DrainReply::clear_reason() {
+  _impl_.reason_.ClearToEmpty();
+}
+inline const std::string& DrainReply::reason() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.DrainReply.reason)
+  return _internal_reason();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DrainReply::set_reason(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.reason_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.DrainReply.reason)
+}
+inline std::string* DrainReply::mutable_reason() {
+  std::string* _s = _internal_mutable_reason();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.DrainReply.reason)
+  return _s;
+}
+inline const std::string& DrainReply::_internal_reason() const {
+  return _impl_.reason_.Get();
+}
+inline void DrainReply::_internal_set_reason(const std::string& value) {
+  
+  _impl_.reason_.Set(value, GetArenaForAllocation());
+}
+inline std::string* DrainReply::_internal_mutable_reason() {
+  
+  return _impl_.reason_.Mutable(GetArenaForAllocation());
+}
+inline std::string* DrainReply::release_reason() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.DrainReply.reason)
+  return _impl_.reason_.Release();
+}
+inline void DrainReply::set_allocated_reason(std::string* reason) {
+  if (reason != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.reason_.SetAllocated(reason, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.reason_.IsDefault()) {
+    _impl_.reason_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.DrainReply.reason)
+}
+
+// string started_at = 5;
+inline void DrainReply::clear_started_at() {
+  _impl_.started_at_.ClearToEmpty();
+}
+inline const std::string& DrainReply::started_at() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.DrainReply.started_at)
+  return _internal_started_at();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DrainReply::set_started_at(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.started_at_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.DrainReply.started_at)
+}
+inline std::string* DrainReply::mutable_started_at() {
+  std::string* _s = _internal_mutable_started_at();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.DrainReply.started_at)
+  return _s;
+}
+inline const std::string& DrainReply::_internal_started_at() const {
+  return _impl_.started_at_.Get();
+}
+inline void DrainReply::_internal_set_started_at(const std::string& value) {
+  
+  _impl_.started_at_.Set(value, GetArenaForAllocation());
+}
+inline std::string* DrainReply::_internal_mutable_started_at() {
+  
+  return _impl_.started_at_.Mutable(GetArenaForAllocation());
+}
+inline std::string* DrainReply::release_started_at() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.DrainReply.started_at)
+  return _impl_.started_at_.Release();
+}
+inline void DrainReply::set_allocated_started_at(std::string* started_at) {
+  if (started_at != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.started_at_.SetAllocated(started_at, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.started_at_.IsDefault()) {
+    _impl_.started_at_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.DrainReply.started_at)
+}
+
+// string error = 6;
+inline void DrainReply::clear_error() {
+  _impl_.error_.ClearToEmpty();
+}
+inline const std::string& DrainReply::error() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.DrainReply.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DrainReply::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.error_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.DrainReply.error)
+}
+inline std::string* DrainReply::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.DrainReply.error)
+  return _s;
+}
+inline const std::string& DrainReply::_internal_error() const {
+  return _impl_.error_.Get();
+}
+inline void DrainReply::_internal_set_error(const std::string& value) {
+  
+  _impl_.error_.Set(value, GetArenaForAllocation());
+}
+inline std::string* DrainReply::_internal_mutable_error() {
+  
+  return _impl_.error_.Mutable(GetArenaForAllocation());
+}
+inline std::string* DrainReply::release_error() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.DrainReply.error)
+  return _impl_.error_.Release();
+}
+inline void DrainReply::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.error_.SetAllocated(error, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.error_.IsDefault()) {
+    _impl_.error_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.DrainReply.error)
+}
+
+// -------------------------------------------------------------------
+
+// StopTerminalLocalRequest
+
+// string admin_key = 1;
+inline void StopTerminalLocalRequest::clear_admin_key() {
+  _impl_.admin_key_.ClearToEmpty();
+}
+inline const std::string& StopTerminalLocalRequest::admin_key() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.StopTerminalLocalRequest.admin_key)
+  return _internal_admin_key();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StopTerminalLocalRequest::set_admin_key(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.admin_key_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.StopTerminalLocalRequest.admin_key)
+}
+inline std::string* StopTerminalLocalRequest::mutable_admin_key() {
+  std::string* _s = _internal_mutable_admin_key();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.StopTerminalLocalRequest.admin_key)
+  return _s;
+}
+inline const std::string& StopTerminalLocalRequest::_internal_admin_key() const {
+  return _impl_.admin_key_.Get();
+}
+inline void StopTerminalLocalRequest::_internal_set_admin_key(const std::string& value) {
+  
+  _impl_.admin_key_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StopTerminalLocalRequest::_internal_mutable_admin_key() {
+  
+  return _impl_.admin_key_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StopTerminalLocalRequest::release_admin_key() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.StopTerminalLocalRequest.admin_key)
+  return _impl_.admin_key_.Release();
+}
+inline void StopTerminalLocalRequest::set_allocated_admin_key(std::string* admin_key) {
+  if (admin_key != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.admin_key_.SetAllocated(admin_key, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.admin_key_.IsDefault()) {
+    _impl_.admin_key_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.StopTerminalLocalRequest.admin_key)
+}
+
+// string id = 2;
+inline void StopTerminalLocalRequest::clear_id() {
+  _impl_.id_.ClearToEmpty();
+}
+inline const std::string& StopTerminalLocalRequest::id() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.StopTerminalLocalRequest.id)
+  return _internal_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StopTerminalLocalRequest::set_id(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.StopTerminalLocalRequest.id)
+}
+inline std::string* StopTerminalLocalRequest::mutable_id() {
+  std::string* _s = _internal_mutable_id();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.StopTerminalLocalRequest.id)
+  return _s;
+}
+inline const std::string& StopTerminalLocalRequest::_internal_id() const {
+  return _impl_.id_.Get();
+}
+inline void StopTerminalLocalRequest::_internal_set_id(const std::string& value) {
+  
+  _impl_.id_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StopTerminalLocalRequest::_internal_mutable_id() {
+  
+  return _impl_.id_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StopTerminalLocalRequest::release_id() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.StopTerminalLocalRequest.id)
+  return _impl_.id_.Release();
+}
+inline void StopTerminalLocalRequest::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.id_.SetAllocated(id, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.id_.IsDefault()) {
+    _impl_.id_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.StopTerminalLocalRequest.id)
+}
+
+// string cause = 3;
+inline void StopTerminalLocalRequest::clear_cause() {
+  _impl_.cause_.ClearToEmpty();
+}
+inline const std::string& StopTerminalLocalRequest::cause() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.StopTerminalLocalRequest.cause)
+  return _internal_cause();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StopTerminalLocalRequest::set_cause(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.cause_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.StopTerminalLocalRequest.cause)
+}
+inline std::string* StopTerminalLocalRequest::mutable_cause() {
+  std::string* _s = _internal_mutable_cause();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.StopTerminalLocalRequest.cause)
+  return _s;
+}
+inline const std::string& StopTerminalLocalRequest::_internal_cause() const {
+  return _impl_.cause_.Get();
+}
+inline void StopTerminalLocalRequest::_internal_set_cause(const std::string& value) {
+  
+  _impl_.cause_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StopTerminalLocalRequest::_internal_mutable_cause() {
+  
+  return _impl_.cause_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StopTerminalLocalRequest::release_cause() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.StopTerminalLocalRequest.cause)
+  return _impl_.cause_.Release();
+}
+inline void StopTerminalLocalRequest::set_allocated_cause(std::string* cause) {
+  if (cause != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.cause_.SetAllocated(cause, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.cause_.IsDefault()) {
+    _impl_.cause_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.StopTerminalLocalRequest.cause)
+}
+
+// string detail = 4;
+inline void StopTerminalLocalRequest::clear_detail() {
+  _impl_.detail_.ClearToEmpty();
+}
+inline const std::string& StopTerminalLocalRequest::detail() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.StopTerminalLocalRequest.detail)
+  return _internal_detail();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StopTerminalLocalRequest::set_detail(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.detail_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.StopTerminalLocalRequest.detail)
+}
+inline std::string* StopTerminalLocalRequest::mutable_detail() {
+  std::string* _s = _internal_mutable_detail();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.StopTerminalLocalRequest.detail)
+  return _s;
+}
+inline const std::string& StopTerminalLocalRequest::_internal_detail() const {
+  return _impl_.detail_.Get();
+}
+inline void StopTerminalLocalRequest::_internal_set_detail(const std::string& value) {
+  
+  _impl_.detail_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StopTerminalLocalRequest::_internal_mutable_detail() {
+  
+  return _impl_.detail_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StopTerminalLocalRequest::release_detail() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.StopTerminalLocalRequest.detail)
+  return _impl_.detail_.Release();
+}
+inline void StopTerminalLocalRequest::set_allocated_detail(std::string* detail) {
+  if (detail != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.detail_.SetAllocated(detail, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.detail_.IsDefault()) {
+    _impl_.detail_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.StopTerminalLocalRequest.detail)
+}
+
+// string intent_utc = 5;
+inline void StopTerminalLocalRequest::clear_intent_utc() {
+  _impl_.intent_utc_.ClearToEmpty();
+}
+inline const std::string& StopTerminalLocalRequest::intent_utc() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.StopTerminalLocalRequest.intent_utc)
+  return _internal_intent_utc();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StopTerminalLocalRequest::set_intent_utc(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.intent_utc_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.StopTerminalLocalRequest.intent_utc)
+}
+inline std::string* StopTerminalLocalRequest::mutable_intent_utc() {
+  std::string* _s = _internal_mutable_intent_utc();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.StopTerminalLocalRequest.intent_utc)
+  return _s;
+}
+inline const std::string& StopTerminalLocalRequest::_internal_intent_utc() const {
+  return _impl_.intent_utc_.Get();
+}
+inline void StopTerminalLocalRequest::_internal_set_intent_utc(const std::string& value) {
+  
+  _impl_.intent_utc_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StopTerminalLocalRequest::_internal_mutable_intent_utc() {
+  
+  return _impl_.intent_utc_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StopTerminalLocalRequest::release_intent_utc() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.StopTerminalLocalRequest.intent_utc)
+  return _impl_.intent_utc_.Release();
+}
+inline void StopTerminalLocalRequest::set_allocated_intent_utc(std::string* intent_utc) {
+  if (intent_utc != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.intent_utc_.SetAllocated(intent_utc, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.intent_utc_.IsDefault()) {
+    _impl_.intent_utc_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.StopTerminalLocalRequest.intent_utc)
+}
+
+// -------------------------------------------------------------------
+
+// StopTerminalLocalReply
+
+// bool stopped = 1;
+inline void StopTerminalLocalReply::clear_stopped() {
+  _impl_.stopped_ = false;
+}
+inline bool StopTerminalLocalReply::_internal_stopped() const {
+  return _impl_.stopped_;
+}
+inline bool StopTerminalLocalReply::stopped() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.StopTerminalLocalReply.stopped)
+  return _internal_stopped();
+}
+inline void StopTerminalLocalReply::_internal_set_stopped(bool value) {
+  
+  _impl_.stopped_ = value;
+}
+inline void StopTerminalLocalReply::set_stopped(bool value) {
+  _internal_set_stopped(value);
+  // @@protoc_insertion_point(field_set:mrpc_admin.StopTerminalLocalReply.stopped)
+}
+
+// bool present = 2;
+inline void StopTerminalLocalReply::clear_present() {
+  _impl_.present_ = false;
+}
+inline bool StopTerminalLocalReply::_internal_present() const {
+  return _impl_.present_;
+}
+inline bool StopTerminalLocalReply::present() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.StopTerminalLocalReply.present)
+  return _internal_present();
+}
+inline void StopTerminalLocalReply::_internal_set_present(bool value) {
+  
+  _impl_.present_ = value;
+}
+inline void StopTerminalLocalReply::set_present(bool value) {
+  _internal_set_present(value);
+  // @@protoc_insertion_point(field_set:mrpc_admin.StopTerminalLocalReply.present)
+}
+
+// string pod = 3;
+inline void StopTerminalLocalReply::clear_pod() {
+  _impl_.pod_.ClearToEmpty();
+}
+inline const std::string& StopTerminalLocalReply::pod() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.StopTerminalLocalReply.pod)
+  return _internal_pod();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StopTerminalLocalReply::set_pod(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.pod_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.StopTerminalLocalReply.pod)
+}
+inline std::string* StopTerminalLocalReply::mutable_pod() {
+  std::string* _s = _internal_mutable_pod();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.StopTerminalLocalReply.pod)
+  return _s;
+}
+inline const std::string& StopTerminalLocalReply::_internal_pod() const {
+  return _impl_.pod_.Get();
+}
+inline void StopTerminalLocalReply::_internal_set_pod(const std::string& value) {
+  
+  _impl_.pod_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StopTerminalLocalReply::_internal_mutable_pod() {
+  
+  return _impl_.pod_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StopTerminalLocalReply::release_pod() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.StopTerminalLocalReply.pod)
+  return _impl_.pod_.Release();
+}
+inline void StopTerminalLocalReply::set_allocated_pod(std::string* pod) {
+  if (pod != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.pod_.SetAllocated(pod, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.pod_.IsDefault()) {
+    _impl_.pod_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.StopTerminalLocalReply.pod)
+}
+
+// string error = 4;
+inline void StopTerminalLocalReply::clear_error() {
+  _impl_.error_.ClearToEmpty();
+}
+inline const std::string& StopTerminalLocalReply::error() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.StopTerminalLocalReply.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StopTerminalLocalReply::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.error_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.StopTerminalLocalReply.error)
+}
+inline std::string* StopTerminalLocalReply::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.StopTerminalLocalReply.error)
+  return _s;
+}
+inline const std::string& StopTerminalLocalReply::_internal_error() const {
+  return _impl_.error_.Get();
+}
+inline void StopTerminalLocalReply::_internal_set_error(const std::string& value) {
+  
+  _impl_.error_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StopTerminalLocalReply::_internal_mutable_error() {
+  
+  return _impl_.error_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StopTerminalLocalReply::release_error() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.StopTerminalLocalReply.error)
+  return _impl_.error_.Release();
+}
+inline void StopTerminalLocalReply::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.error_.SetAllocated(error, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.error_.IsDefault()) {
+    _impl_.error_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.StopTerminalLocalReply.error)
+}
+
+// int64 full_life_time_seconds = 5;
+inline void StopTerminalLocalReply::clear_full_life_time_seconds() {
+  _impl_.full_life_time_seconds_ = int64_t{0};
+}
+inline int64_t StopTerminalLocalReply::_internal_full_life_time_seconds() const {
+  return _impl_.full_life_time_seconds_;
+}
+inline int64_t StopTerminalLocalReply::full_life_time_seconds() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.StopTerminalLocalReply.full_life_time_seconds)
+  return _internal_full_life_time_seconds();
+}
+inline void StopTerminalLocalReply::_internal_set_full_life_time_seconds(int64_t value) {
+  
+  _impl_.full_life_time_seconds_ = value;
+}
+inline void StopTerminalLocalReply::set_full_life_time_seconds(int64_t value) {
+  _internal_set_full_life_time_seconds(value);
+  // @@protoc_insertion_point(field_set:mrpc_admin.StopTerminalLocalReply.full_life_time_seconds)
+}
+
+// string skipped = 6;
+inline void StopTerminalLocalReply::clear_skipped() {
+  _impl_.skipped_.ClearToEmpty();
+}
+inline const std::string& StopTerminalLocalReply::skipped() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.StopTerminalLocalReply.skipped)
+  return _internal_skipped();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StopTerminalLocalReply::set_skipped(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.skipped_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.StopTerminalLocalReply.skipped)
+}
+inline std::string* StopTerminalLocalReply::mutable_skipped() {
+  std::string* _s = _internal_mutable_skipped();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.StopTerminalLocalReply.skipped)
+  return _s;
+}
+inline const std::string& StopTerminalLocalReply::_internal_skipped() const {
+  return _impl_.skipped_.Get();
+}
+inline void StopTerminalLocalReply::_internal_set_skipped(const std::string& value) {
+  
+  _impl_.skipped_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StopTerminalLocalReply::_internal_mutable_skipped() {
+  
+  return _impl_.skipped_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StopTerminalLocalReply::release_skipped() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.StopTerminalLocalReply.skipped)
+  return _impl_.skipped_.Release();
+}
+inline void StopTerminalLocalReply::set_allocated_skipped(std::string* skipped) {
+  if (skipped != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.skipped_.SetAllocated(skipped, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.skipped_.IsDefault()) {
+    _impl_.skipped_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.StopTerminalLocalReply.skipped)
 }
 
 // -------------------------------------------------------------------
@@ -12490,6 +14149,14 @@ ActiveTerminalsClusterReply::pods() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
