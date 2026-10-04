@@ -1044,6 +1044,7 @@ class GetTerminalJournalData final :
 
   enum : int {
     kRowsFieldNumber = 1,
+    kDiagnosticsFieldNumber = 2,
   };
   // repeated .mt5_term_api.TerminalJournalRow rows = 1;
   int rows_size() const;
@@ -1063,6 +1064,20 @@ class GetTerminalJournalData final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::TerminalJournalRow >&
       rows() const;
 
+  // string diagnostics = 2;
+  void clear_diagnostics();
+  const std::string& diagnostics() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_diagnostics(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_diagnostics();
+  PROTOBUF_NODISCARD std::string* release_diagnostics();
+  void set_allocated_diagnostics(std::string* diagnostics);
+  private:
+  const std::string& _internal_diagnostics() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_diagnostics(const std::string& value);
+  std::string* _internal_mutable_diagnostics();
+  public:
+
   // @@protoc_insertion_point(class_scope:mt5_term_api.GetTerminalJournalData)
  private:
   class _Internal;
@@ -1072,6 +1087,7 @@ class GetTerminalJournalData final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::TerminalJournalRow > rows_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr diagnostics_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -9237,6 +9253,56 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::Terminal
 GetTerminalJournalData::rows() const {
   // @@protoc_insertion_point(field_list:mt5_term_api.GetTerminalJournalData.rows)
   return _impl_.rows_;
+}
+
+// string diagnostics = 2;
+inline void GetTerminalJournalData::clear_diagnostics() {
+  _impl_.diagnostics_.ClearToEmpty();
+}
+inline const std::string& GetTerminalJournalData::diagnostics() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.GetTerminalJournalData.diagnostics)
+  return _internal_diagnostics();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetTerminalJournalData::set_diagnostics(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.diagnostics_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mt5_term_api.GetTerminalJournalData.diagnostics)
+}
+inline std::string* GetTerminalJournalData::mutable_diagnostics() {
+  std::string* _s = _internal_mutable_diagnostics();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.GetTerminalJournalData.diagnostics)
+  return _s;
+}
+inline const std::string& GetTerminalJournalData::_internal_diagnostics() const {
+  return _impl_.diagnostics_.Get();
+}
+inline void GetTerminalJournalData::_internal_set_diagnostics(const std::string& value) {
+  
+  _impl_.diagnostics_.Set(value, GetArenaForAllocation());
+}
+inline std::string* GetTerminalJournalData::_internal_mutable_diagnostics() {
+  
+  return _impl_.diagnostics_.Mutable(GetArenaForAllocation());
+}
+inline std::string* GetTerminalJournalData::release_diagnostics() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.GetTerminalJournalData.diagnostics)
+  return _impl_.diagnostics_.Release();
+}
+inline void GetTerminalJournalData::set_allocated_diagnostics(std::string* diagnostics) {
+  if (diagnostics != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.diagnostics_.SetAllocated(diagnostics, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.diagnostics_.IsDefault()) {
+    _impl_.diagnostics_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.GetTerminalJournalData.diagnostics)
 }
 
 // -------------------------------------------------------------------

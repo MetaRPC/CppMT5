@@ -261,6 +261,11 @@ PROTOBUF_CONSTEXPR VersionReply::VersionReply(
   , /*decltype(_impl_.version_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.build_time_utc_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.mode_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.session_creation_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.session_creation_last_error_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.session_creation_last_success_utc_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.session_creation_unhealthy_since_utc_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.session_creation_consecutive_failures_)*/0u
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct VersionReplyDefaultTypeInternal {
   PROTOBUF_CONSTEXPR VersionReplyDefaultTypeInternal()
@@ -764,6 +769,11 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dadmin_2eproto::offsets[] PROTOBUF_
   PROTOBUF_FIELD_OFFSET(::mrpc_admin::VersionReply, _impl_.version_),
   PROTOBUF_FIELD_OFFSET(::mrpc_admin::VersionReply, _impl_.build_time_utc_),
   PROTOBUF_FIELD_OFFSET(::mrpc_admin::VersionReply, _impl_.mode_),
+  PROTOBUF_FIELD_OFFSET(::mrpc_admin::VersionReply, _impl_.session_creation_),
+  PROTOBUF_FIELD_OFFSET(::mrpc_admin::VersionReply, _impl_.session_creation_consecutive_failures_),
+  PROTOBUF_FIELD_OFFSET(::mrpc_admin::VersionReply, _impl_.session_creation_last_error_),
+  PROTOBUF_FIELD_OFFSET(::mrpc_admin::VersionReply, _impl_.session_creation_last_success_utc_),
+  PROTOBUF_FIELD_OFFSET(::mrpc_admin::VersionReply, _impl_.session_creation_unhealthy_since_utc_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mrpc_admin::ListLogFilesReply, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1001,26 +1011,26 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 137, -1, -1, sizeof(::mrpc_admin::GetAllLogsReply)},
   { 145, -1, -1, sizeof(::mrpc_admin::VersionRequest)},
   { 151, -1, -1, sizeof(::mrpc_admin::VersionReply)},
-  { 161, -1, -1, sizeof(::mrpc_admin::ListLogFilesReply)},
-  { 169, -1, -1, sizeof(::mrpc_admin::LogFileEntry)},
-  { 178, -1, -1, sizeof(::mrpc_admin::GetLogFileRequest)},
-  { 187, -1, -1, sizeof(::mrpc_admin::GetLogFileReply)},
-  { 197, -1, -1, sizeof(::mrpc_admin::GetTerminalJournalRequest)},
-  { 206, -1, -1, sizeof(::mrpc_admin::TerminalJournalFile)},
-  { 216, -1, -1, sizeof(::mrpc_admin::GetTerminalJournalReply)},
-  { 225, -1, -1, sizeof(::mrpc_admin::GetEventLogEntriesRequest)},
-  { 234, -1, -1, sizeof(::mrpc_admin::GetEventLogEntriesReply)},
-  { 242, -1, -1, sizeof(::mrpc_admin::CaptureSessionScreenshotRequest)},
-  { 250, -1, -1, sizeof(::mrpc_admin::CaptureSessionScreenshotOnPodRequest)},
-  { 259, -1, -1, sizeof(::mrpc_admin::CaptureSessionScreenshotReply)},
-  { 267, -1, -1, sizeof(::mrpc_admin::RefreshMrpcRestReply)},
-  { 276, -1, -1, sizeof(::mrpc_admin::UsageSample)},
-  { 286, -1, -1, sizeof(::mrpc_admin::SystemUsageReply)},
-  { 297, -1, -1, sizeof(::mrpc_admin::ActiveTerminalsRequest)},
-  { 304, 325, -1, sizeof(::mrpc_admin::TerminalInfo)},
-  { 340, -1, -1, sizeof(::mrpc_admin::ActiveTerminalsReply)},
-  { 356, -1, -1, sizeof(::mrpc_admin::PodTerminals)},
-  { 374, -1, -1, sizeof(::mrpc_admin::ActiveTerminalsClusterReply)},
+  { 166, -1, -1, sizeof(::mrpc_admin::ListLogFilesReply)},
+  { 174, -1, -1, sizeof(::mrpc_admin::LogFileEntry)},
+  { 183, -1, -1, sizeof(::mrpc_admin::GetLogFileRequest)},
+  { 192, -1, -1, sizeof(::mrpc_admin::GetLogFileReply)},
+  { 202, -1, -1, sizeof(::mrpc_admin::GetTerminalJournalRequest)},
+  { 211, -1, -1, sizeof(::mrpc_admin::TerminalJournalFile)},
+  { 221, -1, -1, sizeof(::mrpc_admin::GetTerminalJournalReply)},
+  { 230, -1, -1, sizeof(::mrpc_admin::GetEventLogEntriesRequest)},
+  { 239, -1, -1, sizeof(::mrpc_admin::GetEventLogEntriesReply)},
+  { 247, -1, -1, sizeof(::mrpc_admin::CaptureSessionScreenshotRequest)},
+  { 255, -1, -1, sizeof(::mrpc_admin::CaptureSessionScreenshotOnPodRequest)},
+  { 264, -1, -1, sizeof(::mrpc_admin::CaptureSessionScreenshotReply)},
+  { 272, -1, -1, sizeof(::mrpc_admin::RefreshMrpcRestReply)},
+  { 281, -1, -1, sizeof(::mrpc_admin::UsageSample)},
+  { 291, -1, -1, sizeof(::mrpc_admin::SystemUsageReply)},
+  { 302, -1, -1, sizeof(::mrpc_admin::ActiveTerminalsRequest)},
+  { 309, 330, -1, sizeof(::mrpc_admin::TerminalInfo)},
+  { 345, -1, -1, sizeof(::mrpc_admin::ActiveTerminalsReply)},
+  { 361, -1, -1, sizeof(::mrpc_admin::PodTerminals)},
+  { 379, -1, -1, sizeof(::mrpc_admin::ActiveTerminalsClusterReply)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -1107,9 +1117,14 @@ const char descriptor_table_protodef_mt5_2dterm_2dapi_2dadmin_2eproto[] PROTOBUF
   "\001(\t\022\017\n\007content\030\006 \001(\t\022\021\n\ttruncated\030\007 \001(\010\022"
   "\r\n\005error\030\010 \001(\t\"H\n\017GetAllLogsReply\022&\n\004log"
   "s\030\001 \003(\0132\030.mrpc_admin.AllLogsEntry\022\r\n\005err"
-  "or\030\002 \001(\t\"\020\n\016VersionRequest\"V\n\014VersionRep"
-  "ly\022\017\n\007service\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022\026\n\016"
-  "build_time_utc\030\003 \001(\t\022\014\n\004mode\030\004 \001(\t\"K\n\021Li"
+  "or\030\002 \001(\t\"\020\n\016VersionRequest\"\235\002\n\014VersionRe"
+  "ply\022\017\n\007service\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022\026\n"
+  "\016build_time_utc\030\003 \001(\t\022\014\n\004mode\030\004 \001(\t\022\030\n\020s"
+  "ession_creation\030\005 \001(\t\022-\n%session_creatio"
+  "n_consecutive_failures\030\006 \001(\r\022#\n\033session_"
+  "creation_last_error\030\007 \001(\t\022)\n!session_cre"
+  "ation_last_success_utc\030\010 \001(\t\022,\n$session_"
+  "creation_unhealthy_since_utc\030\t \001(\t\"K\n\021Li"
   "stLogFilesReply\022\'\n\005files\030\001 \003(\0132\030.mrpc_ad"
   "min.LogFileEntry\022\r\n\005error\030\002 \001(\t\"a\n\014LogFi"
   "leEntry\022\014\n\004name\030\001 \001(\t\022\022\n\nsize_bytes\030\002 \001("
@@ -1241,7 +1256,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2d
 };
 static ::_pbi::once_flag descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto = {
-    false, false, 6855, descriptor_table_protodef_mt5_2dterm_2dapi_2dadmin_2eproto,
+    false, false, 7055, descriptor_table_protodef_mt5_2dterm_2dapi_2dadmin_2eproto,
     "mt5-term-api-admin.proto",
     &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_deps, 2, 35,
     schemas, file_default_instances, TableStruct_mt5_2dterm_2dapi_2dadmin_2eproto::offsets,
@@ -6134,6 +6149,11 @@ VersionReply::VersionReply(const VersionReply& from)
     , decltype(_impl_.version_){}
     , decltype(_impl_.build_time_utc_){}
     , decltype(_impl_.mode_){}
+    , decltype(_impl_.session_creation_){}
+    , decltype(_impl_.session_creation_last_error_){}
+    , decltype(_impl_.session_creation_last_success_utc_){}
+    , decltype(_impl_.session_creation_unhealthy_since_utc_){}
+    , decltype(_impl_.session_creation_consecutive_failures_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -6169,6 +6189,39 @@ VersionReply::VersionReply(const VersionReply& from)
     _this->_impl_.mode_.Set(from._internal_mode(), 
       _this->GetArenaForAllocation());
   }
+  _impl_.session_creation_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.session_creation_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_session_creation().empty()) {
+    _this->_impl_.session_creation_.Set(from._internal_session_creation(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.session_creation_last_error_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.session_creation_last_error_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_session_creation_last_error().empty()) {
+    _this->_impl_.session_creation_last_error_.Set(from._internal_session_creation_last_error(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.session_creation_last_success_utc_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.session_creation_last_success_utc_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_session_creation_last_success_utc().empty()) {
+    _this->_impl_.session_creation_last_success_utc_.Set(from._internal_session_creation_last_success_utc(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.session_creation_unhealthy_since_utc_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.session_creation_unhealthy_since_utc_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_session_creation_unhealthy_since_utc().empty()) {
+    _this->_impl_.session_creation_unhealthy_since_utc_.Set(from._internal_session_creation_unhealthy_since_utc(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.session_creation_consecutive_failures_ = from._impl_.session_creation_consecutive_failures_;
   // @@protoc_insertion_point(copy_constructor:mrpc_admin.VersionReply)
 }
 
@@ -6181,6 +6234,11 @@ inline void VersionReply::SharedCtor(
     , decltype(_impl_.version_){}
     , decltype(_impl_.build_time_utc_){}
     , decltype(_impl_.mode_){}
+    , decltype(_impl_.session_creation_){}
+    , decltype(_impl_.session_creation_last_error_){}
+    , decltype(_impl_.session_creation_last_success_utc_){}
+    , decltype(_impl_.session_creation_unhealthy_since_utc_){}
+    , decltype(_impl_.session_creation_consecutive_failures_){0u}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.service_.InitDefault();
@@ -6199,6 +6257,22 @@ inline void VersionReply::SharedCtor(
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.mode_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.session_creation_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.session_creation_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.session_creation_last_error_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.session_creation_last_error_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.session_creation_last_success_utc_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.session_creation_last_success_utc_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.session_creation_unhealthy_since_utc_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.session_creation_unhealthy_since_utc_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 VersionReply::~VersionReply() {
@@ -6216,6 +6290,10 @@ inline void VersionReply::SharedDtor() {
   _impl_.version_.Destroy();
   _impl_.build_time_utc_.Destroy();
   _impl_.mode_.Destroy();
+  _impl_.session_creation_.Destroy();
+  _impl_.session_creation_last_error_.Destroy();
+  _impl_.session_creation_last_success_utc_.Destroy();
+  _impl_.session_creation_unhealthy_since_utc_.Destroy();
 }
 
 void VersionReply::SetCachedSize(int size) const {
@@ -6232,6 +6310,11 @@ void VersionReply::Clear() {
   _impl_.version_.ClearToEmpty();
   _impl_.build_time_utc_.ClearToEmpty();
   _impl_.mode_.ClearToEmpty();
+  _impl_.session_creation_.ClearToEmpty();
+  _impl_.session_creation_last_error_.ClearToEmpty();
+  _impl_.session_creation_last_success_utc_.ClearToEmpty();
+  _impl_.session_creation_unhealthy_since_utc_.ClearToEmpty();
+  _impl_.session_creation_consecutive_failures_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6278,6 +6361,54 @@ const char* VersionReply::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "mrpc_admin.VersionReply.mode"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string session_creation = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          auto str = _internal_mutable_session_creation();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mrpc_admin.VersionReply.session_creation"));
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 session_creation_consecutive_failures = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _impl_.session_creation_consecutive_failures_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string session_creation_last_error = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          auto str = _internal_mutable_session_creation_last_error();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mrpc_admin.VersionReply.session_creation_last_error"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string session_creation_last_success_utc = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+          auto str = _internal_mutable_session_creation_last_success_utc();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mrpc_admin.VersionReply.session_creation_last_success_utc"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string session_creation_unhealthy_since_utc = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
+          auto str = _internal_mutable_session_creation_unhealthy_since_utc();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mrpc_admin.VersionReply.session_creation_unhealthy_since_utc"));
         } else
           goto handle_unusual;
         continue;
@@ -6350,6 +6481,52 @@ uint8_t* VersionReply::_InternalSerialize(
         4, this->_internal_mode(), target);
   }
 
+  // string session_creation = 5;
+  if (!this->_internal_session_creation().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_session_creation().data(), static_cast<int>(this->_internal_session_creation().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mrpc_admin.VersionReply.session_creation");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_session_creation(), target);
+  }
+
+  // uint32 session_creation_consecutive_failures = 6;
+  if (this->_internal_session_creation_consecutive_failures() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(6, this->_internal_session_creation_consecutive_failures(), target);
+  }
+
+  // string session_creation_last_error = 7;
+  if (!this->_internal_session_creation_last_error().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_session_creation_last_error().data(), static_cast<int>(this->_internal_session_creation_last_error().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mrpc_admin.VersionReply.session_creation_last_error");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_session_creation_last_error(), target);
+  }
+
+  // string session_creation_last_success_utc = 8;
+  if (!this->_internal_session_creation_last_success_utc().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_session_creation_last_success_utc().data(), static_cast<int>(this->_internal_session_creation_last_success_utc().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mrpc_admin.VersionReply.session_creation_last_success_utc");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_session_creation_last_success_utc(), target);
+  }
+
+  // string session_creation_unhealthy_since_utc = 9;
+  if (!this->_internal_session_creation_unhealthy_since_utc().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_session_creation_unhealthy_since_utc().data(), static_cast<int>(this->_internal_session_creation_unhealthy_since_utc().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mrpc_admin.VersionReply.session_creation_unhealthy_since_utc");
+    target = stream->WriteStringMaybeAliased(
+        9, this->_internal_session_creation_unhealthy_since_utc(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -6394,6 +6571,39 @@ size_t VersionReply::ByteSizeLong() const {
         this->_internal_mode());
   }
 
+  // string session_creation = 5;
+  if (!this->_internal_session_creation().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_session_creation());
+  }
+
+  // string session_creation_last_error = 7;
+  if (!this->_internal_session_creation_last_error().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_session_creation_last_error());
+  }
+
+  // string session_creation_last_success_utc = 8;
+  if (!this->_internal_session_creation_last_success_utc().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_session_creation_last_success_utc());
+  }
+
+  // string session_creation_unhealthy_since_utc = 9;
+  if (!this->_internal_session_creation_unhealthy_since_utc().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_session_creation_unhealthy_since_utc());
+  }
+
+  // uint32 session_creation_consecutive_failures = 6;
+  if (this->_internal_session_creation_consecutive_failures() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_session_creation_consecutive_failures());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -6423,6 +6633,21 @@ void VersionReply::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
   }
   if (!from._internal_mode().empty()) {
     _this->_internal_set_mode(from._internal_mode());
+  }
+  if (!from._internal_session_creation().empty()) {
+    _this->_internal_set_session_creation(from._internal_session_creation());
+  }
+  if (!from._internal_session_creation_last_error().empty()) {
+    _this->_internal_set_session_creation_last_error(from._internal_session_creation_last_error());
+  }
+  if (!from._internal_session_creation_last_success_utc().empty()) {
+    _this->_internal_set_session_creation_last_success_utc(from._internal_session_creation_last_success_utc());
+  }
+  if (!from._internal_session_creation_unhealthy_since_utc().empty()) {
+    _this->_internal_set_session_creation_unhealthy_since_utc(from._internal_session_creation_unhealthy_since_utc());
+  }
+  if (from._internal_session_creation_consecutive_failures() != 0) {
+    _this->_internal_set_session_creation_consecutive_failures(from._internal_session_creation_consecutive_failures());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -6459,6 +6684,23 @@ void VersionReply::InternalSwap(VersionReply* other) {
       &_impl_.mode_, lhs_arena,
       &other->_impl_.mode_, rhs_arena
   );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.session_creation_, lhs_arena,
+      &other->_impl_.session_creation_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.session_creation_last_error_, lhs_arena,
+      &other->_impl_.session_creation_last_error_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.session_creation_last_success_utc_, lhs_arena,
+      &other->_impl_.session_creation_last_success_utc_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.session_creation_unhealthy_since_utc_, lhs_arena,
+      &other->_impl_.session_creation_unhealthy_since_utc_, rhs_arena
+  );
+  swap(_impl_.session_creation_consecutive_failures_, other->_impl_.session_creation_consecutive_failures_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata VersionReply::GetMetadata() const {

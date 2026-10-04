@@ -3203,6 +3203,11 @@ class VersionReply final :
     kVersionFieldNumber = 2,
     kBuildTimeUtcFieldNumber = 3,
     kModeFieldNumber = 4,
+    kSessionCreationFieldNumber = 5,
+    kSessionCreationLastErrorFieldNumber = 7,
+    kSessionCreationLastSuccessUtcFieldNumber = 8,
+    kSessionCreationUnhealthySinceUtcFieldNumber = 9,
+    kSessionCreationConsecutiveFailuresFieldNumber = 6,
   };
   // string service = 1;
   void clear_service();
@@ -3260,6 +3265,71 @@ class VersionReply final :
   std::string* _internal_mutable_mode();
   public:
 
+  // string session_creation = 5;
+  void clear_session_creation();
+  const std::string& session_creation() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_session_creation(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_session_creation();
+  PROTOBUF_NODISCARD std::string* release_session_creation();
+  void set_allocated_session_creation(std::string* session_creation);
+  private:
+  const std::string& _internal_session_creation() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_session_creation(const std::string& value);
+  std::string* _internal_mutable_session_creation();
+  public:
+
+  // string session_creation_last_error = 7;
+  void clear_session_creation_last_error();
+  const std::string& session_creation_last_error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_session_creation_last_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_session_creation_last_error();
+  PROTOBUF_NODISCARD std::string* release_session_creation_last_error();
+  void set_allocated_session_creation_last_error(std::string* session_creation_last_error);
+  private:
+  const std::string& _internal_session_creation_last_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_session_creation_last_error(const std::string& value);
+  std::string* _internal_mutable_session_creation_last_error();
+  public:
+
+  // string session_creation_last_success_utc = 8;
+  void clear_session_creation_last_success_utc();
+  const std::string& session_creation_last_success_utc() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_session_creation_last_success_utc(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_session_creation_last_success_utc();
+  PROTOBUF_NODISCARD std::string* release_session_creation_last_success_utc();
+  void set_allocated_session_creation_last_success_utc(std::string* session_creation_last_success_utc);
+  private:
+  const std::string& _internal_session_creation_last_success_utc() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_session_creation_last_success_utc(const std::string& value);
+  std::string* _internal_mutable_session_creation_last_success_utc();
+  public:
+
+  // string session_creation_unhealthy_since_utc = 9;
+  void clear_session_creation_unhealthy_since_utc();
+  const std::string& session_creation_unhealthy_since_utc() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_session_creation_unhealthy_since_utc(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_session_creation_unhealthy_since_utc();
+  PROTOBUF_NODISCARD std::string* release_session_creation_unhealthy_since_utc();
+  void set_allocated_session_creation_unhealthy_since_utc(std::string* session_creation_unhealthy_since_utc);
+  private:
+  const std::string& _internal_session_creation_unhealthy_since_utc() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_session_creation_unhealthy_since_utc(const std::string& value);
+  std::string* _internal_mutable_session_creation_unhealthy_since_utc();
+  public:
+
+  // uint32 session_creation_consecutive_failures = 6;
+  void clear_session_creation_consecutive_failures();
+  uint32_t session_creation_consecutive_failures() const;
+  void set_session_creation_consecutive_failures(uint32_t value);
+  private:
+  uint32_t _internal_session_creation_consecutive_failures() const;
+  void _internal_set_session_creation_consecutive_failures(uint32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mrpc_admin.VersionReply)
  private:
   class _Internal;
@@ -3272,6 +3342,11 @@ class VersionReply final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr version_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr build_time_utc_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mode_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr session_creation_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr session_creation_last_error_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr session_creation_last_success_utc_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr session_creation_unhealthy_since_utc_;
+    uint32_t session_creation_consecutive_failures_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -10335,6 +10410,226 @@ inline void VersionReply::set_allocated_mode(std::string* mode) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:mrpc_admin.VersionReply.mode)
+}
+
+// string session_creation = 5;
+inline void VersionReply::clear_session_creation() {
+  _impl_.session_creation_.ClearToEmpty();
+}
+inline const std::string& VersionReply::session_creation() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.VersionReply.session_creation)
+  return _internal_session_creation();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void VersionReply::set_session_creation(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.session_creation_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.VersionReply.session_creation)
+}
+inline std::string* VersionReply::mutable_session_creation() {
+  std::string* _s = _internal_mutable_session_creation();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.VersionReply.session_creation)
+  return _s;
+}
+inline const std::string& VersionReply::_internal_session_creation() const {
+  return _impl_.session_creation_.Get();
+}
+inline void VersionReply::_internal_set_session_creation(const std::string& value) {
+  
+  _impl_.session_creation_.Set(value, GetArenaForAllocation());
+}
+inline std::string* VersionReply::_internal_mutable_session_creation() {
+  
+  return _impl_.session_creation_.Mutable(GetArenaForAllocation());
+}
+inline std::string* VersionReply::release_session_creation() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.VersionReply.session_creation)
+  return _impl_.session_creation_.Release();
+}
+inline void VersionReply::set_allocated_session_creation(std::string* session_creation) {
+  if (session_creation != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.session_creation_.SetAllocated(session_creation, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.session_creation_.IsDefault()) {
+    _impl_.session_creation_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.VersionReply.session_creation)
+}
+
+// uint32 session_creation_consecutive_failures = 6;
+inline void VersionReply::clear_session_creation_consecutive_failures() {
+  _impl_.session_creation_consecutive_failures_ = 0u;
+}
+inline uint32_t VersionReply::_internal_session_creation_consecutive_failures() const {
+  return _impl_.session_creation_consecutive_failures_;
+}
+inline uint32_t VersionReply::session_creation_consecutive_failures() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.VersionReply.session_creation_consecutive_failures)
+  return _internal_session_creation_consecutive_failures();
+}
+inline void VersionReply::_internal_set_session_creation_consecutive_failures(uint32_t value) {
+  
+  _impl_.session_creation_consecutive_failures_ = value;
+}
+inline void VersionReply::set_session_creation_consecutive_failures(uint32_t value) {
+  _internal_set_session_creation_consecutive_failures(value);
+  // @@protoc_insertion_point(field_set:mrpc_admin.VersionReply.session_creation_consecutive_failures)
+}
+
+// string session_creation_last_error = 7;
+inline void VersionReply::clear_session_creation_last_error() {
+  _impl_.session_creation_last_error_.ClearToEmpty();
+}
+inline const std::string& VersionReply::session_creation_last_error() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.VersionReply.session_creation_last_error)
+  return _internal_session_creation_last_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void VersionReply::set_session_creation_last_error(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.session_creation_last_error_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.VersionReply.session_creation_last_error)
+}
+inline std::string* VersionReply::mutable_session_creation_last_error() {
+  std::string* _s = _internal_mutable_session_creation_last_error();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.VersionReply.session_creation_last_error)
+  return _s;
+}
+inline const std::string& VersionReply::_internal_session_creation_last_error() const {
+  return _impl_.session_creation_last_error_.Get();
+}
+inline void VersionReply::_internal_set_session_creation_last_error(const std::string& value) {
+  
+  _impl_.session_creation_last_error_.Set(value, GetArenaForAllocation());
+}
+inline std::string* VersionReply::_internal_mutable_session_creation_last_error() {
+  
+  return _impl_.session_creation_last_error_.Mutable(GetArenaForAllocation());
+}
+inline std::string* VersionReply::release_session_creation_last_error() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.VersionReply.session_creation_last_error)
+  return _impl_.session_creation_last_error_.Release();
+}
+inline void VersionReply::set_allocated_session_creation_last_error(std::string* session_creation_last_error) {
+  if (session_creation_last_error != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.session_creation_last_error_.SetAllocated(session_creation_last_error, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.session_creation_last_error_.IsDefault()) {
+    _impl_.session_creation_last_error_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.VersionReply.session_creation_last_error)
+}
+
+// string session_creation_last_success_utc = 8;
+inline void VersionReply::clear_session_creation_last_success_utc() {
+  _impl_.session_creation_last_success_utc_.ClearToEmpty();
+}
+inline const std::string& VersionReply::session_creation_last_success_utc() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.VersionReply.session_creation_last_success_utc)
+  return _internal_session_creation_last_success_utc();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void VersionReply::set_session_creation_last_success_utc(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.session_creation_last_success_utc_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.VersionReply.session_creation_last_success_utc)
+}
+inline std::string* VersionReply::mutable_session_creation_last_success_utc() {
+  std::string* _s = _internal_mutable_session_creation_last_success_utc();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.VersionReply.session_creation_last_success_utc)
+  return _s;
+}
+inline const std::string& VersionReply::_internal_session_creation_last_success_utc() const {
+  return _impl_.session_creation_last_success_utc_.Get();
+}
+inline void VersionReply::_internal_set_session_creation_last_success_utc(const std::string& value) {
+  
+  _impl_.session_creation_last_success_utc_.Set(value, GetArenaForAllocation());
+}
+inline std::string* VersionReply::_internal_mutable_session_creation_last_success_utc() {
+  
+  return _impl_.session_creation_last_success_utc_.Mutable(GetArenaForAllocation());
+}
+inline std::string* VersionReply::release_session_creation_last_success_utc() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.VersionReply.session_creation_last_success_utc)
+  return _impl_.session_creation_last_success_utc_.Release();
+}
+inline void VersionReply::set_allocated_session_creation_last_success_utc(std::string* session_creation_last_success_utc) {
+  if (session_creation_last_success_utc != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.session_creation_last_success_utc_.SetAllocated(session_creation_last_success_utc, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.session_creation_last_success_utc_.IsDefault()) {
+    _impl_.session_creation_last_success_utc_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.VersionReply.session_creation_last_success_utc)
+}
+
+// string session_creation_unhealthy_since_utc = 9;
+inline void VersionReply::clear_session_creation_unhealthy_since_utc() {
+  _impl_.session_creation_unhealthy_since_utc_.ClearToEmpty();
+}
+inline const std::string& VersionReply::session_creation_unhealthy_since_utc() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.VersionReply.session_creation_unhealthy_since_utc)
+  return _internal_session_creation_unhealthy_since_utc();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void VersionReply::set_session_creation_unhealthy_since_utc(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.session_creation_unhealthy_since_utc_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.VersionReply.session_creation_unhealthy_since_utc)
+}
+inline std::string* VersionReply::mutable_session_creation_unhealthy_since_utc() {
+  std::string* _s = _internal_mutable_session_creation_unhealthy_since_utc();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.VersionReply.session_creation_unhealthy_since_utc)
+  return _s;
+}
+inline const std::string& VersionReply::_internal_session_creation_unhealthy_since_utc() const {
+  return _impl_.session_creation_unhealthy_since_utc_.Get();
+}
+inline void VersionReply::_internal_set_session_creation_unhealthy_since_utc(const std::string& value) {
+  
+  _impl_.session_creation_unhealthy_since_utc_.Set(value, GetArenaForAllocation());
+}
+inline std::string* VersionReply::_internal_mutable_session_creation_unhealthy_since_utc() {
+  
+  return _impl_.session_creation_unhealthy_since_utc_.Mutable(GetArenaForAllocation());
+}
+inline std::string* VersionReply::release_session_creation_unhealthy_since_utc() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.VersionReply.session_creation_unhealthy_since_utc)
+  return _impl_.session_creation_unhealthy_since_utc_.Release();
+}
+inline void VersionReply::set_allocated_session_creation_unhealthy_since_utc(std::string* session_creation_unhealthy_since_utc) {
+  if (session_creation_unhealthy_since_utc != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.session_creation_unhealthy_since_utc_.SetAllocated(session_creation_unhealthy_since_utc, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.session_creation_unhealthy_since_utc_.IsDefault()) {
+    _impl_.session_creation_unhealthy_since_utc_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.VersionReply.session_creation_unhealthy_since_utc)
 }
 
 // -------------------------------------------------------------------
