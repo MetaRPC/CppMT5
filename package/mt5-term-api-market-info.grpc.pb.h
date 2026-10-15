@@ -183,6 +183,7 @@ class MarketInfo final {
     //
     // This API had no such call, so a client holding a terminal id could list symbols, read a live
     // price and trade, and still not draw a chart. Ticks are not candles.
+    // DEPRECATED: use QuoteHistory.Bars (mt5-term-api-quote-history.proto): paged, bounded, oldest first.
     virtual ::grpc::Status PriceHistory(::grpc::ClientContext* context, const ::mt5_term_api::PriceHistoryRequest& request, ::mt5_term_api::PriceHistoryReply* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::PriceHistoryReply>> AsyncPriceHistory(::grpc::ClientContext* context, const ::mt5_term_api::PriceHistoryRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::PriceHistoryReply>>(AsyncPriceHistoryRaw(context, request, cq));
@@ -260,6 +261,7 @@ class MarketInfo final {
       //
       // This API had no such call, so a client holding a terminal id could list symbols, read a live
       // price and trade, and still not draw a chart. Ticks are not candles.
+      // DEPRECATED: use QuoteHistory.Bars (mt5-term-api-quote-history.proto): paged, bounded, oldest first.
       virtual void PriceHistory(::grpc::ClientContext* context, const ::mt5_term_api::PriceHistoryRequest* request, ::mt5_term_api::PriceHistoryReply* response, std::function<void(::grpc::Status)>) = 0;
       virtual void PriceHistory(::grpc::ClientContext* context, const ::mt5_term_api::PriceHistoryRequest* request, ::mt5_term_api::PriceHistoryReply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
@@ -581,6 +583,7 @@ class MarketInfo final {
     //
     // This API had no such call, so a client holding a terminal id could list symbols, read a live
     // price and trade, and still not draw a chart. Ticks are not candles.
+    // DEPRECATED: use QuoteHistory.Bars (mt5-term-api-quote-history.proto): paged, bounded, oldest first.
     virtual ::grpc::Status PriceHistory(::grpc::ServerContext* context, const ::mt5_term_api::PriceHistoryRequest* request, ::mt5_term_api::PriceHistoryReply* response);
   };
   template <class BaseClass>

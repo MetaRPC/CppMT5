@@ -167,12 +167,13 @@ enum ChartExpertMode : int {
   ON_ORDER_PROFIT = 2,
   ON_OPENED_ORDERS_TICKETS = 3,
   ON_TRADE_TRANSACTION = 4,
+  EVENTS = 5,
   ChartExpertMode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   ChartExpertMode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool ChartExpertMode_IsValid(int value);
 constexpr ChartExpertMode ChartExpertMode_MIN = ON_TICK;
-constexpr ChartExpertMode ChartExpertMode_MAX = ON_TRADE_TRANSACTION;
+constexpr ChartExpertMode ChartExpertMode_MAX = EVENTS;
 constexpr int ChartExpertMode_ARRAYSIZE = ChartExpertMode_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ChartExpertMode_descriptor();

@@ -334,6 +334,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR SymbolInfoIntegerData::SymbolInfoIntegerData(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.value_)*/int64_t{0}
+  , /*decltype(_impl_.value_utc_)*/int64_t{0}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct SymbolInfoIntegerDataDefaultTypeInternal {
   PROTOBUF_CONSTEXPR SymbolInfoIntegerDataDefaultTypeInternal()
@@ -463,6 +464,8 @@ PROTOBUF_CONSTEXPR MrpcMqlTick::MrpcMqlTick(
   , /*decltype(_impl_.volume_)*/uint64_t{0u}
   , /*decltype(_impl_.time_msc_)*/int64_t{0}
   , /*decltype(_impl_.volume_real_)*/0
+  , /*decltype(_impl_.time_utc_)*/int64_t{0}
+  , /*decltype(_impl_.time_msc_utc_)*/int64_t{0}
   , /*decltype(_impl_.flags_)*/0u
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct MrpcMqlTickDefaultTypeInternal {
@@ -703,6 +706,8 @@ PROTOBUF_CONSTEXPR PriceHistoryRequest::PriceHistoryRequest(
   , /*decltype(_impl_.timeframe_)*/0
   , /*decltype(_impl_.max_bars_)*/0
   , /*decltype(_impl_.to_time_)*/int64_t{0}
+  , /*decltype(_impl_.from_time_utc_)*/int64_t{0}
+  , /*decltype(_impl_.to_time_utc_)*/int64_t{0}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PriceHistoryRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR PriceHistoryRequestDefaultTypeInternal()
@@ -749,6 +754,7 @@ PROTOBUF_CONSTEXPR PriceBar::PriceBar(
   , /*decltype(_impl_.close_)*/0
   , /*decltype(_impl_.tick_volume_)*/int64_t{0}
   , /*decltype(_impl_.real_volume_)*/int64_t{0}
+  , /*decltype(_impl_.time_utc_)*/int64_t{0}
   , /*decltype(_impl_.spread_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PriceBarDefaultTypeInternal {
@@ -954,6 +960,7 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dmarket_2dinfo_2eproto::offsets[] P
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::SymbolInfoIntegerData, _impl_.value_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::SymbolInfoIntegerData, _impl_.value_utc_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::SymbolInfoStringRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1026,11 +1033,13 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dmarket_2dinfo_2eproto::offsets[] P
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::MrpcMqlTick, _impl_.time_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::MrpcMqlTick, _impl_.time_utc_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::MrpcMqlTick, _impl_.bid_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::MrpcMqlTick, _impl_.ask_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::MrpcMqlTick, _impl_.last_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::MrpcMqlTick, _impl_.volume_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::MrpcMqlTick, _impl_.time_msc_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::MrpcMqlTick, _impl_.time_msc_utc_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::MrpcMqlTick, _impl_.flags_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::MrpcMqlTick, _impl_.volume_real_),
   ~0u,  // no _has_bits_
@@ -1173,7 +1182,9 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dmarket_2dinfo_2eproto::offsets[] P
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::PriceHistoryRequest, _impl_.symbol_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::PriceHistoryRequest, _impl_.timeframe_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::PriceHistoryRequest, _impl_.from_time_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::PriceHistoryRequest, _impl_.from_time_utc_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::PriceHistoryRequest, _impl_.to_time_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::PriceHistoryRequest, _impl_.to_time_utc_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::PriceHistoryRequest, _impl_.max_bars_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::PriceHistoryReply, _internal_metadata_),
@@ -1198,6 +1209,7 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dmarket_2dinfo_2eproto::offsets[] P
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::PriceBar, _impl_.time_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::PriceBar, _impl_.time_utc_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::PriceBar, _impl_.open_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::PriceBar, _impl_.high_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::PriceBar, _impl_.low_),
@@ -1231,35 +1243,35 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 164, -1, -1, sizeof(::mt5_term_api::SymbolInfoIntegerRequest)},
   { 172, -1, -1, sizeof(::mt5_term_api::SymbolInfoIntegerReply)},
   { 181, -1, -1, sizeof(::mt5_term_api::SymbolInfoIntegerData)},
-  { 188, -1, -1, sizeof(::mt5_term_api::SymbolInfoStringRequest)},
-  { 196, -1, -1, sizeof(::mt5_term_api::SymbolInfoStringReply)},
-  { 205, -1, -1, sizeof(::mt5_term_api::SymbolInfoStringData)},
-  { 212, -1, -1, sizeof(::mt5_term_api::SymbolInfoMarginRateRequest)},
-  { 220, -1, -1, sizeof(::mt5_term_api::SymbolInfoMarginRateReply)},
-  { 229, -1, -1, sizeof(::mt5_term_api::SymbolInfoMarginRateData)},
-  { 237, -1, -1, sizeof(::mt5_term_api::SymbolInfoTickRequest)},
-  { 244, -1, -1, sizeof(::mt5_term_api::SymbolInfoTickRequestReply)},
-  { 253, -1, -1, sizeof(::mt5_term_api::MrpcMqlTick)},
-  { 267, -1, -1, sizeof(::mt5_term_api::SymbolInfoSessionQuoteRequest)},
-  { 276, -1, -1, sizeof(::mt5_term_api::SymbolInfoSessionQuoteReply)},
-  { 285, -1, -1, sizeof(::mt5_term_api::SymbolInfoSessionQuoteData)},
-  { 293, -1, -1, sizeof(::mt5_term_api::SymbolInfoSessionTradeRequest)},
-  { 302, -1, -1, sizeof(::mt5_term_api::SymbolInfoSessionTradeReply)},
-  { 311, -1, -1, sizeof(::mt5_term_api::SymbolInfoSessionTradeData)},
-  { 319, -1, -1, sizeof(::mt5_term_api::MarketBookAddRequest)},
-  { 326, -1, -1, sizeof(::mt5_term_api::MarketBookAddReply)},
-  { 335, -1, -1, sizeof(::mt5_term_api::MarketBookAddData)},
-  { 342, -1, -1, sizeof(::mt5_term_api::MarketBookReleaseRequest)},
-  { 349, -1, -1, sizeof(::mt5_term_api::MarketBookReleaseReply)},
-  { 358, -1, -1, sizeof(::mt5_term_api::MarketBookReleaseData)},
-  { 365, -1, -1, sizeof(::mt5_term_api::MarketBookGetRequest)},
-  { 372, -1, -1, sizeof(::mt5_term_api::MarketBookGetReply)},
-  { 381, -1, -1, sizeof(::mt5_term_api::MarketBookGetData)},
-  { 388, -1, -1, sizeof(::mt5_term_api::MrpcMqlBookInfo)},
-  { 398, -1, -1, sizeof(::mt5_term_api::PriceHistoryRequest)},
-  { 409, -1, -1, sizeof(::mt5_term_api::PriceHistoryReply)},
-  { 418, -1, -1, sizeof(::mt5_term_api::PriceHistoryData)},
-  { 425, -1, -1, sizeof(::mt5_term_api::PriceBar)},
+  { 189, -1, -1, sizeof(::mt5_term_api::SymbolInfoStringRequest)},
+  { 197, -1, -1, sizeof(::mt5_term_api::SymbolInfoStringReply)},
+  { 206, -1, -1, sizeof(::mt5_term_api::SymbolInfoStringData)},
+  { 213, -1, -1, sizeof(::mt5_term_api::SymbolInfoMarginRateRequest)},
+  { 221, -1, -1, sizeof(::mt5_term_api::SymbolInfoMarginRateReply)},
+  { 230, -1, -1, sizeof(::mt5_term_api::SymbolInfoMarginRateData)},
+  { 238, -1, -1, sizeof(::mt5_term_api::SymbolInfoTickRequest)},
+  { 245, -1, -1, sizeof(::mt5_term_api::SymbolInfoTickRequestReply)},
+  { 254, -1, -1, sizeof(::mt5_term_api::MrpcMqlTick)},
+  { 270, -1, -1, sizeof(::mt5_term_api::SymbolInfoSessionQuoteRequest)},
+  { 279, -1, -1, sizeof(::mt5_term_api::SymbolInfoSessionQuoteReply)},
+  { 288, -1, -1, sizeof(::mt5_term_api::SymbolInfoSessionQuoteData)},
+  { 296, -1, -1, sizeof(::mt5_term_api::SymbolInfoSessionTradeRequest)},
+  { 305, -1, -1, sizeof(::mt5_term_api::SymbolInfoSessionTradeReply)},
+  { 314, -1, -1, sizeof(::mt5_term_api::SymbolInfoSessionTradeData)},
+  { 322, -1, -1, sizeof(::mt5_term_api::MarketBookAddRequest)},
+  { 329, -1, -1, sizeof(::mt5_term_api::MarketBookAddReply)},
+  { 338, -1, -1, sizeof(::mt5_term_api::MarketBookAddData)},
+  { 345, -1, -1, sizeof(::mt5_term_api::MarketBookReleaseRequest)},
+  { 352, -1, -1, sizeof(::mt5_term_api::MarketBookReleaseReply)},
+  { 361, -1, -1, sizeof(::mt5_term_api::MarketBookReleaseData)},
+  { 368, -1, -1, sizeof(::mt5_term_api::MarketBookGetRequest)},
+  { 375, -1, -1, sizeof(::mt5_term_api::MarketBookGetReply)},
+  { 384, -1, -1, sizeof(::mt5_term_api::MarketBookGetData)},
+  { 391, -1, -1, sizeof(::mt5_term_api::MrpcMqlBookInfo)},
+  { 401, -1, -1, sizeof(::mt5_term_api::PriceHistoryRequest)},
+  { 414, -1, -1, sizeof(::mt5_term_api::PriceHistoryReply)},
+  { 423, -1, -1, sizeof(::mt5_term_api::PriceHistoryData)},
+  { 430, -1, -1, sizeof(::mt5_term_api::PriceBar)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -1364,217 +1376,220 @@ const char descriptor_table_protodef_mt5_2dterm_2dapi_2dmarket_2dinfo_2eproto[] 
   "i.SymbolInfoIntegerProperty\"\177\n\026SymbolInf"
   "oIntegerReply\0223\n\004data\030\001 \001(\0132#.mt5_term_a"
   "pi.SymbolInfoIntegerDataH\000\022$\n\005error\030\002 \001("
-  "\0132\023.mt5_term_api.ErrorH\000B\n\n\010response\"&\n\025"
-  "SymbolInfoIntegerData\022\r\n\005value\030\001 \001(\003\"_\n\027"
-  "SymbolInfoStringRequest\022\016\n\006symbol\030\001 \001(\t\022"
-  "4\n\004type\030\002 \001(\0162&.mt5_term_api.SymbolInfoS"
-  "tringProperty\"}\n\025SymbolInfoStringReply\0222"
-  "\n\004data\030\001 \001(\0132\".mt5_term_api.SymbolInfoSt"
-  "ringDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api"
-  ".ErrorH\000B\n\n\010response\"%\n\024SymbolInfoString"
-  "Data\022\r\n\005value\030\001 \001(\t\"`\n\033SymbolInfoMarginR"
-  "ateRequest\022\016\n\006symbol\030\001 \001(\t\0221\n\norder_type"
-  "\030\002 \001(\0162\035.mt5_term_api.ENUM_ORDER_TYPE\"\205\001"
-  "\n\031SymbolInfoMarginRateReply\0226\n\004data\030\001 \001("
-  "\0132&.mt5_term_api.SymbolInfoMarginRateDat"
-  "aH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.ErrorH"
-  "\000B\n\n\010response\"X\n\030SymbolInfoMarginRateDat"
-  "a\022\037\n\027maintenance_margin_rate\030\001 \001(\001\022\033\n\023in"
-  "itial_margin_rate\030\002 \001(\001\"\'\n\025SymbolInfoTic"
-  "kRequest\022\016\n\006symbol\030\001 \001(\t\"y\n\032SymbolInfoTi"
-  "ckRequestReply\022)\n\004data\030\001 \001(\0132\031.mt5_term_"
-  "api.MrpcMqlTickH\000\022$\n\005error\030\002 \001(\0132\023.mt5_t"
-  "erm_api.ErrorH\000B\n\n\010response\"\211\001\n\013MrpcMqlT"
-  "ick\022\014\n\004time\030\001 \001(\003\022\013\n\003bid\030\002 \001(\001\022\013\n\003ask\030\003 "
-  "\001(\001\022\014\n\004last\030\004 \001(\001\022\016\n\006volume\030\005 \001(\004\022\020\n\010tim"
-  "e_msc\030\006 \001(\003\022\r\n\005flags\030\007 \001(\r\022\023\n\013volume_rea"
-  "l\030\010 \001(\001\"t\n\035SymbolInfoSessionQuoteRequest"
-  "\022\016\n\006symbol\030\001 \001(\t\022,\n\013day_of_week\030\002 \001(\0162\027."
-  "mt5_term_api.DayOfWeek\022\025\n\rsession_index\030"
-  "\003 \001(\r\"\211\001\n\033SymbolInfoSessionQuoteReply\0228\n"
-  "\004data\030\001 \001(\0132(.mt5_term_api.SymbolInfoSes"
-  "sionQuoteDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_ter"
-  "m_api.ErrorH\000B\n\n\010response\"n\n\032SymbolInfoS"
-  "essionQuoteData\022(\n\004from\030\001 \001(\0132\032.google.p"
-  "rotobuf.Timestamp\022&\n\002to\030\002 \001(\0132\032.google.p"
-  "rotobuf.Timestamp\"t\n\035SymbolInfoSessionTr"
-  "adeRequest\022\016\n\006symbol\030\001 \001(\t\022,\n\013day_of_wee"
-  "k\030\002 \001(\0162\027.mt5_term_api.DayOfWeek\022\025\n\rsess"
-  "ion_index\030\003 \001(\r\"\211\001\n\033SymbolInfoSessionTra"
-  "deReply\0228\n\004data\030\001 \001(\0132(.mt5_term_api.Sym"
-  "bolInfoSessionTradeDataH\000\022$\n\005error\030\002 \001(\013"
-  "2\023.mt5_term_api.ErrorH\000B\n\n\010response\"n\n\032S"
-  "ymbolInfoSessionTradeData\022(\n\004from\030\001 \001(\0132"
-  "\032.google.protobuf.Timestamp\022&\n\002to\030\002 \001(\0132"
-  "\032.google.protobuf.Timestamp\"&\n\024MarketBoo"
-  "kAddRequest\022\016\n\006symbol\030\001 \001(\t\"w\n\022MarketBoo"
-  "kAddReply\022/\n\004data\030\001 \001(\0132\037.mt5_term_api.M"
-  "arketBookAddDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_"
-  "term_api.ErrorH\000B\n\n\010response\"0\n\021MarketBo"
-  "okAddData\022\033\n\023opened_successfully\030\001 \001(\010\"*"
-  "\n\030MarketBookReleaseRequest\022\016\n\006symbol\030\001 \001"
-  "(\t\"\177\n\026MarketBookReleaseReply\0223\n\004data\030\001 \001"
-  "(\0132#.mt5_term_api.MarketBookReleaseDataH"
-  "\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.ErrorH\000B"
-  "\n\n\010response\"4\n\025MarketBookReleaseData\022\033\n\023"
-  "closed_successfully\030\001 \001(\010\"&\n\024MarketBookG"
-  "etRequest\022\016\n\006symbol\030\001 \001(\t\"w\n\022MarketBookG"
-  "etReply\022/\n\004data\030\001 \001(\0132\037.mt5_term_api.Mar"
-  "ketBookGetDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_te"
-  "rm_api.ErrorH\000B\n\n\010response\"J\n\021MarketBook"
-  "GetData\0225\n\016mql_book_infos\030\001 \003(\0132\035.mt5_te"
-  "rm_api.MrpcMqlBookInfo\"k\n\017MrpcMqlBookInf"
-  "o\022$\n\004type\030\001 \001(\0162\026.mt5_term_api.BookType\022"
-  "\r\n\005price\030\002 \001(\001\022\016\n\006volume\030\003 \001(\003\022\023\n\013volume"
-  "_real\030\004 \001(\001\"n\n\023PriceHistoryRequest\022\016\n\006sy"
-  "mbol\030\001 \001(\t\022\021\n\ttimeframe\030\002 \001(\005\022\021\n\tfrom_ti"
-  "me\030\003 \001(\003\022\017\n\007to_time\030\004 \001(\003\022\020\n\010max_bars\030\005 "
-  "\001(\005\"u\n\021PriceHistoryReply\022.\n\004data\030\001 \001(\0132\036"
-  ".mt5_term_api.PriceHistoryDataH\000\022$\n\005erro"
-  "r\030\002 \001(\0132\023.mt5_term_api.ErrorH\000B\n\n\010respon"
-  "se\"8\n\020PriceHistoryData\022$\n\004bars\030\001 \003(\0132\026.m"
-  "t5_term_api.PriceBar\"\212\001\n\010PriceBar\022\014\n\004tim"
-  "e\030\001 \001(\003\022\014\n\004open\030\002 \001(\001\022\014\n\004high\030\003 \001(\001\022\013\n\003l"
-  "ow\030\004 \001(\001\022\r\n\005close\030\005 \001(\001\022\023\n\013tick_volume\030\006"
-  " \001(\003\022\016\n\006spread\030\007 \001(\005\022\023\n\013real_volume\030\010 \001("
-  "\003*\267\014\n\030SymbolInfoDoubleProperty\022\016\n\nSYMBOL"
-  "_BID\020\000\022\022\n\016SYMBOL_BIDHIGH\020\001\022\021\n\rSYMBOL_BID"
-  "LOW\020\002\022\016\n\nSYMBOL_ASK\020\003\022\022\n\016SYMBOL_ASKHIGH\020"
-  "\004\022\021\n\rSYMBOL_ASKLOW\020\005\022\017\n\013SYMBOL_LAST\020\006\022\023\n"
-  "\017SYMBOL_LASTHIGH\020\007\022\022\n\016SYMBOL_LASTLOW\020\010\022\026"
-  "\n\022SYMBOL_VOLUME_REAL\020\t\022\032\n\026SYMBOL_VOLUMEH"
-  "IGH_REAL\020\n\022\031\n\025SYMBOL_VOLUMELOW_REAL\020\013\022\030\n"
-  "\024SYMBOL_OPTION_STRIKE\020\014\022\020\n\014SYMBOL_POINT\020"
-  "\r\022\033\n\027SYMBOL_TRADE_TICK_VALUE\020\016\022\"\n\036SYMBOL"
-  "_TRADE_TICK_VALUE_PROFIT\020\017\022 \n\034SYMBOL_TRA"
-  "DE_TICK_VALUE_LOSS\020\020\022\032\n\026SYMBOL_TRADE_TIC"
-  "K_SIZE\020\021\022\036\n\032SYMBOL_TRADE_CONTRACT_SIZE\020\022"
-  "\022!\n\035SYMBOL_TRADE_ACCRUED_INTEREST\020\023\022\033\n\027S"
-  "YMBOL_TRADE_FACE_VALUE\020\024\022\037\n\033SYMBOL_TRADE"
-  "_LIQUIDITY_RATE\020\025\022\025\n\021SYMBOL_VOLUME_MIN\020\026"
-  "\022\025\n\021SYMBOL_VOLUME_MAX\020\027\022\026\n\022SYMBOL_VOLUME"
-  "_STEP\020\030\022\027\n\023SYMBOL_VOLUME_LIMIT\020\031\022\024\n\020SYMB"
-  "OL_SWAP_LONG\020\032\022\025\n\021SYMBOL_SWAP_SHORT\020\033\022\026\n"
-  "\022SYMBOL_SWAP_SUNDAY\020\034\022\026\n\022SYMBOL_SWAP_MON"
-  "DAY\020\035\022\027\n\023SYMBOL_SWAP_TUESDAY\020\036\022\031\n\025SYMBOL"
-  "_SWAP_WEDNESDAY\020\037\022\030\n\024SYMBOL_SWAP_THURSDA"
-  "Y\020 \022\026\n\022SYMBOL_SWAP_FRIDAY\020!\022\030\n\024SYMBOL_SW"
-  "AP_SATURDAY\020\"\022\031\n\025SYMBOL_MARGIN_INITIAL\020#"
-  "\022\035\n\031SYMBOL_MARGIN_MAINTENANCE\020$\022\031\n\025SYMBO"
-  "L_SESSION_VOLUME\020%\022\033\n\027SYMBOL_SESSION_TUR"
-  "NOVER\020&\022\033\n\027SYMBOL_SESSION_INTEREST\020\'\022$\n "
-  "SYMBOL_SESSION_BUY_ORDERS_VOLUME\020(\022%\n!SY"
-  "MBOL_SESSION_SELL_ORDERS_VOLUME\020)\022\027\n\023SYM"
-  "BOL_SESSION_OPEN\020*\022\030\n\024SYMBOL_SESSION_CLO"
-  "SE\020+\022\025\n\021SYMBOL_SESSION_AW\020,\022#\n\037SYMBOL_SE"
-  "SSION_PRICE_SETTLEMENT\020-\022\"\n\036SYMBOL_SESSI"
-  "ON_PRICE_LIMIT_MIN\020.\022\"\n\036SYMBOL_SESSION_P"
-  "RICE_LIMIT_MAX\020/\022\030\n\024SYMBOL_MARGIN_HEDGED"
-  "\0200\022\027\n\023SYMBOL_PRICE_CHANGE\0201\022\033\n\027SYMBOL_PR"
-  "ICE_VOLATILITY\0202\022\034\n\030SYMBOL_PRICE_THEORET"
-  "ICAL\0203\022\026\n\022SYMBOL_PRICE_DELTA\0204\022\026\n\022SYMBOL"
-  "_PRICE_THETA\0205\022\026\n\022SYMBOL_PRICE_GAMMA\0206\022\025"
-  "\n\021SYMBOL_PRICE_VEGA\0207\022\024\n\020SYMBOL_PRICE_RH"
-  "O\0208\022\026\n\022SYMBOL_PRICE_OMEGA\0209\022\034\n\030SYMBOL_PR"
-  "ICE_SENSITIVITY\020:\022\020\n\014SYMBOL_COUNT\020;*\250\007\n\031"
-  "SymbolInfoIntegerProperty\022\035\n\031SYMBOL_SUBS"
-  "CRIPTION_DELAY\020\000\022\021\n\rSYMBOL_SECTOR\020\001\022\023\n\017S"
-  "YMBOL_INDUSTRY\020\002\022\021\n\rSYMBOL_CUSTOM\020\003\022\033\n\027S"
-  "YMBOL_BACKGROUND_COLOR\020\004\022\025\n\021SYMBOL_CHART"
-  "_MODE\020\005\022\020\n\014SYMBOL_EXIST\020\006\022\021\n\rSYMBOL_SELE"
-  "CT\020\007\022\022\n\016SYMBOL_VISIBLE\020\010\022\030\n\024SYMBOL_SESSI"
-  "ON_DEALS\020\t\022\035\n\031SYMBOL_SESSION_BUY_ORDERS\020"
-  "\n\022\036\n\032SYMBOL_SESSION_SELL_ORDERS\020\013\022\021\n\rSYM"
-  "BOL_VOLUME\020\014\022\025\n\021SYMBOL_VOLUMEHIGH\020\r\022\024\n\020S"
-  "YMBOL_VOLUMELOW\020\016\022\017\n\013SYMBOL_TIME\020\017\022\023\n\017SY"
-  "MBOL_TIME_MSC\020\020\022\021\n\rSYMBOL_DIGITS\020\021\022\027\n\023SY"
-  "MBOL_SPREAD_FLOAT\020\022\022\021\n\rSYMBOL_SPREAD\020\023\022\032"
-  "\n\026SYMBOL_TICKS_BOOKDEPTH\020\024\022\032\n\026SYMBOL_TRA"
-  "DE_CALC_MODE\020\025\022\025\n\021SYMBOL_TRADE_MODE\020\026\022\025\n"
-  "\021SYMBOL_START_TIME\020\027\022\032\n\026SYMBOL_EXPIRATIO"
-  "N_TIME\020\030\022\034\n\030SYMBOL_TRADE_STOPS_LEVEL\020\031\022\035"
-  "\n\031SYMBOL_TRADE_FREEZE_LEVEL\020\032\022\030\n\024SYMBOL_"
-  "TRADE_EXEMODE\020\033\022\024\n\020SYMBOL_SWAP_MODE\020\034\022\035\n"
-  "\031SYMBOL_SWAP_ROLLOVER3DAYS\020\035\022 \n\034SYMBOL_M"
-  "ARGIN_HEDGED_USE_LEG\020\036\022\032\n\026SYMBOL_EXPIRAT"
-  "ION_MODE\020\037\022\027\n\023SYMBOL_FILLING_MODE\020 \022\025\n\021S"
-  "YMBOL_ORDER_MODE\020!\022\031\n\025SYMBOL_ORDER_GTC_M"
-  "ODE\020\"\022\026\n\022SYMBOL_OPTION_MODE\020#\022\027\n\023SYMBOL_"
-  "OPTION_RIGHT\020$*\336\002\n\030SymbolInfoStringPrope"
-  "rty\022\020\n\014SYMBOL_BASIS\020\000\022\023\n\017SYMBOL_CATEGORY"
-  "\020\001\022\022\n\016SYMBOL_COUNTRY\020\002\022\026\n\022SYMBOL_SECTOR_"
-  "NAME\020\003\022\030\n\024SYMBOL_INDUSTRY_NAME\020\004\022\030\n\024SYMB"
-  "OL_CURRENCY_BASE\020\005\022\032\n\026SYMBOL_CURRENCY_PR"
-  "OFIT\020\006\022\032\n\026SYMBOL_CURRENCY_MARGIN\020\007\022\017\n\013SY"
-  "MBOL_BANK\020\010\022\026\n\022SYMBOL_DESCRIPTION\020\t\022\023\n\017S"
-  "YMBOL_EXCHANGE\020\n\022\022\n\016SYMBOL_FORMULA\020\013\022\017\n\013"
-  "SYMBOL_ISIN\020\014\022\017\n\013SYMBOL_PAGE\020\r\022\017\n\013SYMBOL"
-  "_PATH\020\016*\372\001\n\017ENUM_ORDER_TYPE\022\022\n\016ORDER_TYP"
-  "E_BUY\020\000\022\023\n\017ORDER_TYPE_SELL\020\001\022\030\n\024ORDER_TY"
-  "PE_BUY_LIMIT\020\002\022\031\n\025ORDER_TYPE_SELL_LIMIT\020"
-  "\003\022\027\n\023ORDER_TYPE_BUY_STOP\020\004\022\030\n\024ORDER_TYPE"
-  "_SELL_STOP\020\005\022\035\n\031ORDER_TYPE_BUY_STOP_LIMI"
-  "T\020\006\022\036\n\032ORDER_TYPE_SELL_STOP_LIMIT\020\007\022\027\n\023O"
-  "RDER_TYPE_CLOSE_BY\020\010*g\n\tDayOfWeek\022\n\n\006SUN"
-  "DAY\020\000\022\n\n\006MONDAY\020\001\022\013\n\007TUESDAY\020\002\022\r\n\tWEDNES"
-  "DAY\020\003\022\014\n\010THURSDAY\020\004\022\n\n\006FRIDAY\020\005\022\014\n\010SATUR"
-  "DAY\020\006*f\n\010BookType\022\022\n\016BOOK_TYPE_SELL\020\000\022\021\n"
-  "\rBOOK_TYPE_BUY\020\001\022\031\n\025BOOK_TYPE_SELL_MARKE"
-  "T\020\002\022\030\n\024BOOK_TYPE_BUY_MARKET\020\0032\206\020\n\nMarket"
-  "Info\022i\n\014SymbolsTotal\022!.mt5_term_api.Symb"
-  "olsTotalRequest\032\037.mt5_term_api.SymbolsTo"
-  "talReply\"\025\202\323\344\223\002\017\022\r/SymbolsTotal\022e\n\013Symbo"
-  "lExist\022 .mt5_term_api.SymbolExistRequest"
-  "\032\036.mt5_term_api.SymbolExistReply\"\024\202\323\344\223\002\016"
-  "\022\014/SymbolExist\022a\n\nSymbolName\022\037.mt5_term_"
-  "api.SymbolNameRequest\032\035.mt5_term_api.Sym"
-  "bolNameReply\"\023\202\323\344\223\002\r\022\013/SymbolName\022i\n\014Sym"
-  "bolSelect\022!.mt5_term_api.SymbolSelectReq"
-  "uest\032\037.mt5_term_api.SymbolSelectReply\"\025\202"
-  "\323\344\223\002\017\022\r/SymbolSelect\022\211\001\n\024SymbolIsSynchro"
-  "nized\022).mt5_term_api.SymbolIsSynchronize"
-  "dRequest\032\'.mt5_term_api.SymbolIsSynchron"
-  "izedReply\"\035\202\323\344\223\002\027\022\025/SymbolIsSynchronized"
-  "\022y\n\020SymbolInfoDouble\022%.mt5_term_api.Symb"
-  "olInfoDoubleRequest\032#.mt5_term_api.Symbo"
-  "lInfoDoubleReply\"\031\202\323\344\223\002\023\022\021/SymbolInfoDou"
-  "ble\022}\n\021SymbolInfoInteger\022&.mt5_term_api."
-  "SymbolInfoIntegerRequest\032$.mt5_term_api."
-  "SymbolInfoIntegerReply\"\032\202\323\344\223\002\024\022\022/SymbolI"
-  "nfoInteger\022y\n\020SymbolInfoString\022%.mt5_ter"
-  "m_api.SymbolInfoStringRequest\032#.mt5_term"
-  "_api.SymbolInfoStringReply\"\031\202\323\344\223\002\023\022\021/Sym"
-  "bolInfoString\022\211\001\n\024SymbolInfoMarginRate\022)"
-  ".mt5_term_api.SymbolInfoMarginRateReques"
-  "t\032\'.mt5_term_api.SymbolInfoMarginRateRep"
-  "ly\"\035\202\323\344\223\002\027\022\025/SymbolInfoMarginRate\022x\n\016Sym"
-  "bolInfoTick\022#.mt5_term_api.SymbolInfoTic"
-  "kRequest\032(.mt5_term_api.SymbolInfoTickRe"
-  "questReply\"\027\202\323\344\223\002\021\022\017/SymbolInfoTick\022\221\001\n\026"
-  "SymbolInfoSessionQuote\022+.mt5_term_api.Sy"
-  "mbolInfoSessionQuoteRequest\032).mt5_term_a"
-  "pi.SymbolInfoSessionQuoteReply\"\037\202\323\344\223\002\031\022\027"
-  "/SymbolInfoSessionQuote\022\221\001\n\026SymbolInfoSe"
-  "ssionTrade\022+.mt5_term_api.SymbolInfoSess"
-  "ionTradeRequest\032).mt5_term_api.SymbolInf"
-  "oSessionTradeReply\"\037\202\323\344\223\002\031\022\027/SymbolInfoS"
-  "essionTrade\022m\n\rMarketBookAdd\022\".mt5_term_"
-  "api.MarketBookAddRequest\032 .mt5_term_api."
-  "MarketBookAddReply\"\026\202\323\344\223\002\020\022\016/MarketBookA"
-  "dd\022}\n\021MarketBookRelease\022&.mt5_term_api.M"
-  "arketBookReleaseRequest\032$.mt5_term_api.M"
-  "arketBookReleaseReply\"\032\202\323\344\223\002\024\022\022/MarketBo"
-  "okRelease\022m\n\rMarketBookGet\022\".mt5_term_ap"
-  "i.MarketBookGetRequest\032 .mt5_term_api.Ma"
-  "rketBookGetReply\"\026\202\323\344\223\002\020\022\016/MarketBookGet"
-  "\022a\n\nSymbolList\022\037.mt5_term_api.SymbolList"
-  "Request\032\035.mt5_term_api.SymbolListReply\"\023"
-  "\202\323\344\223\002\r\022\013/SymbolList\022i\n\014PriceHistory\022!.mt"
-  "5_term_api.PriceHistoryRequest\032\037.mt5_ter"
-  "m_api.PriceHistoryReply\"\025\202\323\344\223\002\017\022\r/PriceH"
-  "istoryBBZ1git.mtapi.io/root/mrpc-proto.g"
-  "it/mt5/libraries/go\252\002\014mt5_term_apib\006prot"
-  "o3"
+  "\0132\023.mt5_term_api.ErrorH\000B\n\n\010response\"9\n\025"
+  "SymbolInfoIntegerData\022\r\n\005value\030\001 \001(\003\022\021\n\t"
+  "value_utc\030\002 \001(\003\"_\n\027SymbolInfoStringReque"
+  "st\022\016\n\006symbol\030\001 \001(\t\0224\n\004type\030\002 \001(\0162&.mt5_t"
+  "erm_api.SymbolInfoStringProperty\"}\n\025Symb"
+  "olInfoStringReply\0222\n\004data\030\001 \001(\0132\".mt5_te"
+  "rm_api.SymbolInfoStringDataH\000\022$\n\005error\030\002"
+  " \001(\0132\023.mt5_term_api.ErrorH\000B\n\n\010response\""
+  "%\n\024SymbolInfoStringData\022\r\n\005value\030\001 \001(\t\"`"
+  "\n\033SymbolInfoMarginRateRequest\022\016\n\006symbol\030"
+  "\001 \001(\t\0221\n\norder_type\030\002 \001(\0162\035.mt5_term_api"
+  ".ENUM_ORDER_TYPE\"\205\001\n\031SymbolInfoMarginRat"
+  "eReply\0226\n\004data\030\001 \001(\0132&.mt5_term_api.Symb"
+  "olInfoMarginRateDataH\000\022$\n\005error\030\002 \001(\0132\023."
+  "mt5_term_api.ErrorH\000B\n\n\010response\"X\n\030Symb"
+  "olInfoMarginRateData\022\037\n\027maintenance_marg"
+  "in_rate\030\001 \001(\001\022\033\n\023initial_margin_rate\030\002 \001"
+  "(\001\"\'\n\025SymbolInfoTickRequest\022\016\n\006symbol\030\001 "
+  "\001(\t\"y\n\032SymbolInfoTickRequestReply\022)\n\004dat"
+  "a\030\001 \001(\0132\031.mt5_term_api.MrpcMqlTickH\000\022$\n\005"
+  "error\030\002 \001(\0132\023.mt5_term_api.ErrorH\000B\n\n\010re"
+  "sponse\"\261\001\n\013MrpcMqlTick\022\014\n\004time\030\001 \001(\003\022\020\n\010"
+  "time_utc\030\t \001(\003\022\013\n\003bid\030\002 \001(\001\022\013\n\003ask\030\003 \001(\001"
+  "\022\014\n\004last\030\004 \001(\001\022\016\n\006volume\030\005 \001(\004\022\020\n\010time_m"
+  "sc\030\006 \001(\003\022\024\n\014time_msc_utc\030\n \001(\003\022\r\n\005flags\030"
+  "\007 \001(\r\022\023\n\013volume_real\030\010 \001(\001\"t\n\035SymbolInfo"
+  "SessionQuoteRequest\022\016\n\006symbol\030\001 \001(\t\022,\n\013d"
+  "ay_of_week\030\002 \001(\0162\027.mt5_term_api.DayOfWee"
+  "k\022\025\n\rsession_index\030\003 \001(\r\"\211\001\n\033SymbolInfoS"
+  "essionQuoteReply\0228\n\004data\030\001 \001(\0132(.mt5_ter"
+  "m_api.SymbolInfoSessionQuoteDataH\000\022$\n\005er"
+  "ror\030\002 \001(\0132\023.mt5_term_api.ErrorH\000B\n\n\010resp"
+  "onse\"n\n\032SymbolInfoSessionQuoteData\022(\n\004fr"
+  "om\030\001 \001(\0132\032.google.protobuf.Timestamp\022&\n\002"
+  "to\030\002 \001(\0132\032.google.protobuf.Timestamp\"t\n\035"
+  "SymbolInfoSessionTradeRequest\022\016\n\006symbol\030"
+  "\001 \001(\t\022,\n\013day_of_week\030\002 \001(\0162\027.mt5_term_ap"
+  "i.DayOfWeek\022\025\n\rsession_index\030\003 \001(\r\"\211\001\n\033S"
+  "ymbolInfoSessionTradeReply\0228\n\004data\030\001 \001(\013"
+  "2(.mt5_term_api.SymbolInfoSessionTradeDa"
+  "taH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.Error"
+  "H\000B\n\n\010response\"n\n\032SymbolInfoSessionTrade"
+  "Data\022(\n\004from\030\001 \001(\0132\032.google.protobuf.Tim"
+  "estamp\022&\n\002to\030\002 \001(\0132\032.google.protobuf.Tim"
+  "estamp\"&\n\024MarketBookAddRequest\022\016\n\006symbol"
+  "\030\001 \001(\t\"w\n\022MarketBookAddReply\022/\n\004data\030\001 \001"
+  "(\0132\037.mt5_term_api.MarketBookAddDataH\000\022$\n"
+  "\005error\030\002 \001(\0132\023.mt5_term_api.ErrorH\000B\n\n\010r"
+  "esponse\"0\n\021MarketBookAddData\022\033\n\023opened_s"
+  "uccessfully\030\001 \001(\010\"*\n\030MarketBookReleaseRe"
+  "quest\022\016\n\006symbol\030\001 \001(\t\"\177\n\026MarketBookRelea"
+  "seReply\0223\n\004data\030\001 \001(\0132#.mt5_term_api.Mar"
+  "ketBookReleaseDataH\000\022$\n\005error\030\002 \001(\0132\023.mt"
+  "5_term_api.ErrorH\000B\n\n\010response\"4\n\025Market"
+  "BookReleaseData\022\033\n\023closed_successfully\030\001"
+  " \001(\010\"&\n\024MarketBookGetRequest\022\016\n\006symbol\030\001"
+  " \001(\t\"w\n\022MarketBookGetReply\022/\n\004data\030\001 \001(\013"
+  "2\037.mt5_term_api.MarketBookGetDataH\000\022$\n\005e"
+  "rror\030\002 \001(\0132\023.mt5_term_api.ErrorH\000B\n\n\010res"
+  "ponse\"J\n\021MarketBookGetData\0225\n\016mql_book_i"
+  "nfos\030\001 \003(\0132\035.mt5_term_api.MrpcMqlBookInf"
+  "o\"k\n\017MrpcMqlBookInfo\022$\n\004type\030\001 \001(\0162\026.mt5"
+  "_term_api.BookType\022\r\n\005price\030\002 \001(\001\022\016\n\006vol"
+  "ume\030\003 \001(\003\022\023\n\013volume_real\030\004 \001(\001\"\232\001\n\023Price"
+  "HistoryRequest\022\016\n\006symbol\030\001 \001(\t\022\021\n\ttimefr"
+  "ame\030\002 \001(\005\022\021\n\tfrom_time\030\003 \001(\003\022\025\n\rfrom_tim"
+  "e_utc\030\006 \001(\003\022\017\n\007to_time\030\004 \001(\003\022\023\n\013to_time_"
+  "utc\030\007 \001(\003\022\020\n\010max_bars\030\005 \001(\005\"u\n\021PriceHist"
+  "oryReply\022.\n\004data\030\001 \001(\0132\036.mt5_term_api.Pr"
+  "iceHistoryDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_te"
+  "rm_api.ErrorH\000B\n\n\010response\"8\n\020PriceHisto"
+  "ryData\022$\n\004bars\030\001 \003(\0132\026.mt5_term_api.Pric"
+  "eBar\"\234\001\n\010PriceBar\022\014\n\004time\030\001 \001(\003\022\020\n\010time_"
+  "utc\030\t \001(\003\022\014\n\004open\030\002 \001(\001\022\014\n\004high\030\003 \001(\001\022\013\n"
+  "\003low\030\004 \001(\001\022\r\n\005close\030\005 \001(\001\022\023\n\013tick_volume"
+  "\030\006 \001(\003\022\016\n\006spread\030\007 \001(\005\022\023\n\013real_volume\030\010 "
+  "\001(\003*\267\014\n\030SymbolInfoDoubleProperty\022\016\n\nSYMB"
+  "OL_BID\020\000\022\022\n\016SYMBOL_BIDHIGH\020\001\022\021\n\rSYMBOL_B"
+  "IDLOW\020\002\022\016\n\nSYMBOL_ASK\020\003\022\022\n\016SYMBOL_ASKHIG"
+  "H\020\004\022\021\n\rSYMBOL_ASKLOW\020\005\022\017\n\013SYMBOL_LAST\020\006\022"
+  "\023\n\017SYMBOL_LASTHIGH\020\007\022\022\n\016SYMBOL_LASTLOW\020\010"
+  "\022\026\n\022SYMBOL_VOLUME_REAL\020\t\022\032\n\026SYMBOL_VOLUM"
+  "EHIGH_REAL\020\n\022\031\n\025SYMBOL_VOLUMELOW_REAL\020\013\022"
+  "\030\n\024SYMBOL_OPTION_STRIKE\020\014\022\020\n\014SYMBOL_POIN"
+  "T\020\r\022\033\n\027SYMBOL_TRADE_TICK_VALUE\020\016\022\"\n\036SYMB"
+  "OL_TRADE_TICK_VALUE_PROFIT\020\017\022 \n\034SYMBOL_T"
+  "RADE_TICK_VALUE_LOSS\020\020\022\032\n\026SYMBOL_TRADE_T"
+  "ICK_SIZE\020\021\022\036\n\032SYMBOL_TRADE_CONTRACT_SIZE"
+  "\020\022\022!\n\035SYMBOL_TRADE_ACCRUED_INTEREST\020\023\022\033\n"
+  "\027SYMBOL_TRADE_FACE_VALUE\020\024\022\037\n\033SYMBOL_TRA"
+  "DE_LIQUIDITY_RATE\020\025\022\025\n\021SYMBOL_VOLUME_MIN"
+  "\020\026\022\025\n\021SYMBOL_VOLUME_MAX\020\027\022\026\n\022SYMBOL_VOLU"
+  "ME_STEP\020\030\022\027\n\023SYMBOL_VOLUME_LIMIT\020\031\022\024\n\020SY"
+  "MBOL_SWAP_LONG\020\032\022\025\n\021SYMBOL_SWAP_SHORT\020\033\022"
+  "\026\n\022SYMBOL_SWAP_SUNDAY\020\034\022\026\n\022SYMBOL_SWAP_M"
+  "ONDAY\020\035\022\027\n\023SYMBOL_SWAP_TUESDAY\020\036\022\031\n\025SYMB"
+  "OL_SWAP_WEDNESDAY\020\037\022\030\n\024SYMBOL_SWAP_THURS"
+  "DAY\020 \022\026\n\022SYMBOL_SWAP_FRIDAY\020!\022\030\n\024SYMBOL_"
+  "SWAP_SATURDAY\020\"\022\031\n\025SYMBOL_MARGIN_INITIAL"
+  "\020#\022\035\n\031SYMBOL_MARGIN_MAINTENANCE\020$\022\031\n\025SYM"
+  "BOL_SESSION_VOLUME\020%\022\033\n\027SYMBOL_SESSION_T"
+  "URNOVER\020&\022\033\n\027SYMBOL_SESSION_INTEREST\020\'\022$"
+  "\n SYMBOL_SESSION_BUY_ORDERS_VOLUME\020(\022%\n!"
+  "SYMBOL_SESSION_SELL_ORDERS_VOLUME\020)\022\027\n\023S"
+  "YMBOL_SESSION_OPEN\020*\022\030\n\024SYMBOL_SESSION_C"
+  "LOSE\020+\022\025\n\021SYMBOL_SESSION_AW\020,\022#\n\037SYMBOL_"
+  "SESSION_PRICE_SETTLEMENT\020-\022\"\n\036SYMBOL_SES"
+  "SION_PRICE_LIMIT_MIN\020.\022\"\n\036SYMBOL_SESSION"
+  "_PRICE_LIMIT_MAX\020/\022\030\n\024SYMBOL_MARGIN_HEDG"
+  "ED\0200\022\027\n\023SYMBOL_PRICE_CHANGE\0201\022\033\n\027SYMBOL_"
+  "PRICE_VOLATILITY\0202\022\034\n\030SYMBOL_PRICE_THEOR"
+  "ETICAL\0203\022\026\n\022SYMBOL_PRICE_DELTA\0204\022\026\n\022SYMB"
+  "OL_PRICE_THETA\0205\022\026\n\022SYMBOL_PRICE_GAMMA\0206"
+  "\022\025\n\021SYMBOL_PRICE_VEGA\0207\022\024\n\020SYMBOL_PRICE_"
+  "RHO\0208\022\026\n\022SYMBOL_PRICE_OMEGA\0209\022\034\n\030SYMBOL_"
+  "PRICE_SENSITIVITY\020:\022\020\n\014SYMBOL_COUNT\020;*\250\007"
+  "\n\031SymbolInfoIntegerProperty\022\035\n\031SYMBOL_SU"
+  "BSCRIPTION_DELAY\020\000\022\021\n\rSYMBOL_SECTOR\020\001\022\023\n"
+  "\017SYMBOL_INDUSTRY\020\002\022\021\n\rSYMBOL_CUSTOM\020\003\022\033\n"
+  "\027SYMBOL_BACKGROUND_COLOR\020\004\022\025\n\021SYMBOL_CHA"
+  "RT_MODE\020\005\022\020\n\014SYMBOL_EXIST\020\006\022\021\n\rSYMBOL_SE"
+  "LECT\020\007\022\022\n\016SYMBOL_VISIBLE\020\010\022\030\n\024SYMBOL_SES"
+  "SION_DEALS\020\t\022\035\n\031SYMBOL_SESSION_BUY_ORDER"
+  "S\020\n\022\036\n\032SYMBOL_SESSION_SELL_ORDERS\020\013\022\021\n\rS"
+  "YMBOL_VOLUME\020\014\022\025\n\021SYMBOL_VOLUMEHIGH\020\r\022\024\n"
+  "\020SYMBOL_VOLUMELOW\020\016\022\017\n\013SYMBOL_TIME\020\017\022\023\n\017"
+  "SYMBOL_TIME_MSC\020\020\022\021\n\rSYMBOL_DIGITS\020\021\022\027\n\023"
+  "SYMBOL_SPREAD_FLOAT\020\022\022\021\n\rSYMBOL_SPREAD\020\023"
+  "\022\032\n\026SYMBOL_TICKS_BOOKDEPTH\020\024\022\032\n\026SYMBOL_T"
+  "RADE_CALC_MODE\020\025\022\025\n\021SYMBOL_TRADE_MODE\020\026\022"
+  "\025\n\021SYMBOL_START_TIME\020\027\022\032\n\026SYMBOL_EXPIRAT"
+  "ION_TIME\020\030\022\034\n\030SYMBOL_TRADE_STOPS_LEVEL\020\031"
+  "\022\035\n\031SYMBOL_TRADE_FREEZE_LEVEL\020\032\022\030\n\024SYMBO"
+  "L_TRADE_EXEMODE\020\033\022\024\n\020SYMBOL_SWAP_MODE\020\034\022"
+  "\035\n\031SYMBOL_SWAP_ROLLOVER3DAYS\020\035\022 \n\034SYMBOL"
+  "_MARGIN_HEDGED_USE_LEG\020\036\022\032\n\026SYMBOL_EXPIR"
+  "ATION_MODE\020\037\022\027\n\023SYMBOL_FILLING_MODE\020 \022\025\n"
+  "\021SYMBOL_ORDER_MODE\020!\022\031\n\025SYMBOL_ORDER_GTC"
+  "_MODE\020\"\022\026\n\022SYMBOL_OPTION_MODE\020#\022\027\n\023SYMBO"
+  "L_OPTION_RIGHT\020$*\336\002\n\030SymbolInfoStringPro"
+  "perty\022\020\n\014SYMBOL_BASIS\020\000\022\023\n\017SYMBOL_CATEGO"
+  "RY\020\001\022\022\n\016SYMBOL_COUNTRY\020\002\022\026\n\022SYMBOL_SECTO"
+  "R_NAME\020\003\022\030\n\024SYMBOL_INDUSTRY_NAME\020\004\022\030\n\024SY"
+  "MBOL_CURRENCY_BASE\020\005\022\032\n\026SYMBOL_CURRENCY_"
+  "PROFIT\020\006\022\032\n\026SYMBOL_CURRENCY_MARGIN\020\007\022\017\n\013"
+  "SYMBOL_BANK\020\010\022\026\n\022SYMBOL_DESCRIPTION\020\t\022\023\n"
+  "\017SYMBOL_EXCHANGE\020\n\022\022\n\016SYMBOL_FORMULA\020\013\022\017"
+  "\n\013SYMBOL_ISIN\020\014\022\017\n\013SYMBOL_PAGE\020\r\022\017\n\013SYMB"
+  "OL_PATH\020\016*\372\001\n\017ENUM_ORDER_TYPE\022\022\n\016ORDER_T"
+  "YPE_BUY\020\000\022\023\n\017ORDER_TYPE_SELL\020\001\022\030\n\024ORDER_"
+  "TYPE_BUY_LIMIT\020\002\022\031\n\025ORDER_TYPE_SELL_LIMI"
+  "T\020\003\022\027\n\023ORDER_TYPE_BUY_STOP\020\004\022\030\n\024ORDER_TY"
+  "PE_SELL_STOP\020\005\022\035\n\031ORDER_TYPE_BUY_STOP_LI"
+  "MIT\020\006\022\036\n\032ORDER_TYPE_SELL_STOP_LIMIT\020\007\022\027\n"
+  "\023ORDER_TYPE_CLOSE_BY\020\010*g\n\tDayOfWeek\022\n\n\006S"
+  "UNDAY\020\000\022\n\n\006MONDAY\020\001\022\013\n\007TUESDAY\020\002\022\r\n\tWEDN"
+  "ESDAY\020\003\022\014\n\010THURSDAY\020\004\022\n\n\006FRIDAY\020\005\022\014\n\010SAT"
+  "URDAY\020\006*f\n\010BookType\022\022\n\016BOOK_TYPE_SELL\020\000\022"
+  "\021\n\rBOOK_TYPE_BUY\020\001\022\031\n\025BOOK_TYPE_SELL_MAR"
+  "KET\020\002\022\030\n\024BOOK_TYPE_BUY_MARKET\020\0032\211\020\n\nMark"
+  "etInfo\022i\n\014SymbolsTotal\022!.mt5_term_api.Sy"
+  "mbolsTotalRequest\032\037.mt5_term_api.Symbols"
+  "TotalReply\"\025\202\323\344\223\002\017\022\r/SymbolsTotal\022e\n\013Sym"
+  "bolExist\022 .mt5_term_api.SymbolExistReque"
+  "st\032\036.mt5_term_api.SymbolExistReply\"\024\202\323\344\223"
+  "\002\016\022\014/SymbolExist\022a\n\nSymbolName\022\037.mt5_ter"
+  "m_api.SymbolNameRequest\032\035.mt5_term_api.S"
+  "ymbolNameReply\"\023\202\323\344\223\002\r\022\013/SymbolName\022i\n\014S"
+  "ymbolSelect\022!.mt5_term_api.SymbolSelectR"
+  "equest\032\037.mt5_term_api.SymbolSelectReply\""
+  "\025\202\323\344\223\002\017\022\r/SymbolSelect\022\211\001\n\024SymbolIsSynch"
+  "ronized\022).mt5_term_api.SymbolIsSynchroni"
+  "zedRequest\032\'.mt5_term_api.SymbolIsSynchr"
+  "onizedReply\"\035\202\323\344\223\002\027\022\025/SymbolIsSynchroniz"
+  "ed\022y\n\020SymbolInfoDouble\022%.mt5_term_api.Sy"
+  "mbolInfoDoubleRequest\032#.mt5_term_api.Sym"
+  "bolInfoDoubleReply\"\031\202\323\344\223\002\023\022\021/SymbolInfoD"
+  "ouble\022}\n\021SymbolInfoInteger\022&.mt5_term_ap"
+  "i.SymbolInfoIntegerRequest\032$.mt5_term_ap"
+  "i.SymbolInfoIntegerReply\"\032\202\323\344\223\002\024\022\022/Symbo"
+  "lInfoInteger\022y\n\020SymbolInfoString\022%.mt5_t"
+  "erm_api.SymbolInfoStringRequest\032#.mt5_te"
+  "rm_api.SymbolInfoStringReply\"\031\202\323\344\223\002\023\022\021/S"
+  "ymbolInfoString\022\211\001\n\024SymbolInfoMarginRate"
+  "\022).mt5_term_api.SymbolInfoMarginRateRequ"
+  "est\032\'.mt5_term_api.SymbolInfoMarginRateR"
+  "eply\"\035\202\323\344\223\002\027\022\025/SymbolInfoMarginRate\022x\n\016S"
+  "ymbolInfoTick\022#.mt5_term_api.SymbolInfoT"
+  "ickRequest\032(.mt5_term_api.SymbolInfoTick"
+  "RequestReply\"\027\202\323\344\223\002\021\022\017/SymbolInfoTick\022\221\001"
+  "\n\026SymbolInfoSessionQuote\022+.mt5_term_api."
+  "SymbolInfoSessionQuoteRequest\032).mt5_term"
+  "_api.SymbolInfoSessionQuoteReply\"\037\202\323\344\223\002\031"
+  "\022\027/SymbolInfoSessionQuote\022\221\001\n\026SymbolInfo"
+  "SessionTrade\022+.mt5_term_api.SymbolInfoSe"
+  "ssionTradeRequest\032).mt5_term_api.SymbolI"
+  "nfoSessionTradeReply\"\037\202\323\344\223\002\031\022\027/SymbolInf"
+  "oSessionTrade\022m\n\rMarketBookAdd\022\".mt5_ter"
+  "m_api.MarketBookAddRequest\032 .mt5_term_ap"
+  "i.MarketBookAddReply\"\026\202\323\344\223\002\020\022\016/MarketBoo"
+  "kAdd\022}\n\021MarketBookRelease\022&.mt5_term_api"
+  ".MarketBookReleaseRequest\032$.mt5_term_api"
+  ".MarketBookReleaseReply\"\032\202\323\344\223\002\024\022\022/Market"
+  "BookRelease\022m\n\rMarketBookGet\022\".mt5_term_"
+  "api.MarketBookGetRequest\032 .mt5_term_api."
+  "MarketBookGetReply\"\026\202\323\344\223\002\020\022\016/MarketBookG"
+  "et\022a\n\nSymbolList\022\037.mt5_term_api.SymbolLi"
+  "stRequest\032\035.mt5_term_api.SymbolListReply"
+  "\"\023\202\323\344\223\002\r\022\013/SymbolList\022l\n\014PriceHistory\022!."
+  "mt5_term_api.PriceHistoryRequest\032\037.mt5_t"
+  "erm_api.PriceHistoryReply\"\030\210\002\001\202\323\344\223\002\017\022\r/P"
+  "riceHistoryBBZ1git.mtapi.io/root/mrpc-pr"
+  "oto.git/mt5/libraries/go\252\002\014mt5_term_apib"
+  "\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2dmarket_2dinfo_2eproto_deps[3] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -1583,7 +1598,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2d
 };
 static ::_pbi::once_flag descriptor_table_mt5_2dterm_2dapi_2dmarket_2dinfo_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_mt5_2dterm_2dapi_2dmarket_2dinfo_2eproto = {
-    false, false, 10202, descriptor_table_protodef_mt5_2dterm_2dapi_2dmarket_2dinfo_2eproto,
+    false, false, 10327, descriptor_table_protodef_mt5_2dterm_2dapi_2dmarket_2dinfo_2eproto,
     "mt5-term-api-market-info.proto",
     &descriptor_table_mt5_2dterm_2dapi_2dmarket_2dinfo_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2dmarket_2dinfo_2eproto_deps, 3, 53,
     schemas, file_default_instances, TableStruct_mt5_2dterm_2dapi_2dmarket_2dinfo_2eproto::offsets,
@@ -7190,10 +7205,13 @@ SymbolInfoIntegerData::SymbolInfoIntegerData(const SymbolInfoIntegerData& from)
   SymbolInfoIntegerData* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.value_){}
+    , decltype(_impl_.value_utc_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.value_ = from._impl_.value_;
+  ::memcpy(&_impl_.value_, &from._impl_.value_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.value_utc_) -
+    reinterpret_cast<char*>(&_impl_.value_)) + sizeof(_impl_.value_utc_));
   // @@protoc_insertion_point(copy_constructor:mt5_term_api.SymbolInfoIntegerData)
 }
 
@@ -7203,6 +7221,7 @@ inline void SymbolInfoIntegerData::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.value_){int64_t{0}}
+    , decltype(_impl_.value_utc_){int64_t{0}}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -7230,7 +7249,9 @@ void SymbolInfoIntegerData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.value_ = int64_t{0};
+  ::memset(&_impl_.value_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.value_utc_) -
+      reinterpret_cast<char*>(&_impl_.value_)) + sizeof(_impl_.value_utc_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7244,6 +7265,14 @@ const char* SymbolInfoIntegerData::_InternalParse(const char* ptr, ::_pbi::Parse
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _impl_.value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 value_utc = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.value_utc_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -7283,6 +7312,12 @@ uint8_t* SymbolInfoIntegerData::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt64ToArray(1, this->_internal_value(), target);
   }
 
+  // int64 value_utc = 2;
+  if (this->_internal_value_utc() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(2, this->_internal_value_utc(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -7302,6 +7337,11 @@ size_t SymbolInfoIntegerData::ByteSizeLong() const {
   // int64 value = 1;
   if (this->_internal_value() != 0) {
     total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_value());
+  }
+
+  // int64 value_utc = 2;
+  if (this->_internal_value_utc() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_value_utc());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -7325,6 +7365,9 @@ void SymbolInfoIntegerData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, 
   if (from._internal_value() != 0) {
     _this->_internal_set_value(from._internal_value());
   }
+  if (from._internal_value_utc() != 0) {
+    _this->_internal_set_value_utc(from._internal_value_utc());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -7342,7 +7385,12 @@ bool SymbolInfoIntegerData::IsInitialized() const {
 void SymbolInfoIntegerData::InternalSwap(SymbolInfoIntegerData* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.value_, other->_impl_.value_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SymbolInfoIntegerData, _impl_.value_utc_)
+      + sizeof(SymbolInfoIntegerData::_impl_.value_utc_)
+      - PROTOBUF_FIELD_OFFSET(SymbolInfoIntegerData, _impl_.value_)>(
+          reinterpret_cast<char*>(&_impl_.value_),
+          reinterpret_cast<char*>(&other->_impl_.value_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SymbolInfoIntegerData::GetMetadata() const {
@@ -9423,6 +9471,8 @@ MrpcMqlTick::MrpcMqlTick(const MrpcMqlTick& from)
     , decltype(_impl_.volume_){}
     , decltype(_impl_.time_msc_){}
     , decltype(_impl_.volume_real_){}
+    , decltype(_impl_.time_utc_){}
+    , decltype(_impl_.time_msc_utc_){}
     , decltype(_impl_.flags_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
@@ -9445,6 +9495,8 @@ inline void MrpcMqlTick::SharedCtor(
     , decltype(_impl_.volume_){uint64_t{0u}}
     , decltype(_impl_.time_msc_){int64_t{0}}
     , decltype(_impl_.volume_real_){0}
+    , decltype(_impl_.time_utc_){int64_t{0}}
+    , decltype(_impl_.time_msc_utc_){int64_t{0}}
     , decltype(_impl_.flags_){0u}
     , /*decltype(_impl_._cached_size_)*/{}
   };
@@ -9549,6 +9601,22 @@ const char* MrpcMqlTick::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
         } else
           goto handle_unusual;
         continue;
+      // int64 time_utc = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+          _impl_.time_utc_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 time_msc_utc = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
+          _impl_.time_msc_utc_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -9642,6 +9710,18 @@ uint8_t* MrpcMqlTick::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteDoubleToArray(8, this->_internal_volume_real(), target);
   }
 
+  // int64 time_utc = 9;
+  if (this->_internal_time_utc() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(9, this->_internal_time_utc(), target);
+  }
+
+  // int64 time_msc_utc = 10;
+  if (this->_internal_time_msc_utc() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(10, this->_internal_time_msc_utc(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -9709,6 +9789,16 @@ size_t MrpcMqlTick::ByteSizeLong() const {
     total_size += 1 + 8;
   }
 
+  // int64 time_utc = 9;
+  if (this->_internal_time_utc() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_time_utc());
+  }
+
+  // int64 time_msc_utc = 10;
+  if (this->_internal_time_msc_utc() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_time_msc_utc());
+  }
+
   // uint32 flags = 7;
   if (this->_internal_flags() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_flags());
@@ -9768,6 +9858,12 @@ void MrpcMqlTick::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PR
   memcpy(&raw_volume_real, &tmp_volume_real, sizeof(tmp_volume_real));
   if (raw_volume_real != 0) {
     _this->_internal_set_volume_real(from._internal_volume_real());
+  }
+  if (from._internal_time_utc() != 0) {
+    _this->_internal_set_time_utc(from._internal_time_utc());
+  }
+  if (from._internal_time_msc_utc() != 0) {
+    _this->_internal_set_time_msc_utc(from._internal_time_msc_utc());
   }
   if (from._internal_flags() != 0) {
     _this->_internal_set_flags(from._internal_flags());
@@ -13864,6 +13960,8 @@ PriceHistoryRequest::PriceHistoryRequest(const PriceHistoryRequest& from)
     , decltype(_impl_.timeframe_){}
     , decltype(_impl_.max_bars_){}
     , decltype(_impl_.to_time_){}
+    , decltype(_impl_.from_time_utc_){}
+    , decltype(_impl_.to_time_utc_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -13876,8 +13974,8 @@ PriceHistoryRequest::PriceHistoryRequest(const PriceHistoryRequest& from)
       _this->GetArenaForAllocation());
   }
   ::memcpy(&_impl_.from_time_, &from._impl_.from_time_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.to_time_) -
-    reinterpret_cast<char*>(&_impl_.from_time_)) + sizeof(_impl_.to_time_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.to_time_utc_) -
+    reinterpret_cast<char*>(&_impl_.from_time_)) + sizeof(_impl_.to_time_utc_));
   // @@protoc_insertion_point(copy_constructor:mt5_term_api.PriceHistoryRequest)
 }
 
@@ -13891,6 +13989,8 @@ inline void PriceHistoryRequest::SharedCtor(
     , decltype(_impl_.timeframe_){0}
     , decltype(_impl_.max_bars_){0}
     , decltype(_impl_.to_time_){int64_t{0}}
+    , decltype(_impl_.from_time_utc_){int64_t{0}}
+    , decltype(_impl_.to_time_utc_){int64_t{0}}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.symbol_.InitDefault();
@@ -13925,8 +14025,8 @@ void PriceHistoryRequest::Clear() {
 
   _impl_.symbol_.ClearToEmpty();
   ::memset(&_impl_.from_time_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.to_time_) -
-      reinterpret_cast<char*>(&_impl_.from_time_)) + sizeof(_impl_.to_time_));
+      reinterpret_cast<char*>(&_impl_.to_time_utc_) -
+      reinterpret_cast<char*>(&_impl_.from_time_)) + sizeof(_impl_.to_time_utc_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -13974,6 +14074,22 @@ const char* PriceHistoryRequest::_InternalParse(const char* ptr, ::_pbi::ParseCo
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _impl_.max_bars_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 from_time_utc = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _impl_.from_time_utc_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 to_time_utc = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _impl_.to_time_utc_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -14041,6 +14157,18 @@ uint8_t* PriceHistoryRequest::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_max_bars(), target);
   }
 
+  // int64 from_time_utc = 6;
+  if (this->_internal_from_time_utc() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(6, this->_internal_from_time_utc(), target);
+  }
+
+  // int64 to_time_utc = 7;
+  if (this->_internal_to_time_utc() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(7, this->_internal_to_time_utc(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -14084,6 +14212,16 @@ size_t PriceHistoryRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_to_time());
   }
 
+  // int64 from_time_utc = 6;
+  if (this->_internal_from_time_utc() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_from_time_utc());
+  }
+
+  // int64 to_time_utc = 7;
+  if (this->_internal_to_time_utc() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_to_time_utc());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -14117,6 +14255,12 @@ void PriceHistoryRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, co
   if (from._internal_to_time() != 0) {
     _this->_internal_set_to_time(from._internal_to_time());
   }
+  if (from._internal_from_time_utc() != 0) {
+    _this->_internal_set_from_time_utc(from._internal_from_time_utc());
+  }
+  if (from._internal_to_time_utc() != 0) {
+    _this->_internal_set_to_time_utc(from._internal_to_time_utc());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -14141,8 +14285,8 @@ void PriceHistoryRequest::InternalSwap(PriceHistoryRequest* other) {
       &other->_impl_.symbol_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PriceHistoryRequest, _impl_.to_time_)
-      + sizeof(PriceHistoryRequest::_impl_.to_time_)
+      PROTOBUF_FIELD_OFFSET(PriceHistoryRequest, _impl_.to_time_utc_)
+      + sizeof(PriceHistoryRequest::_impl_.to_time_utc_)
       - PROTOBUF_FIELD_OFFSET(PriceHistoryRequest, _impl_.from_time_)>(
           reinterpret_cast<char*>(&_impl_.from_time_),
           reinterpret_cast<char*>(&other->_impl_.from_time_));
@@ -14676,6 +14820,7 @@ PriceBar::PriceBar(const PriceBar& from)
     , decltype(_impl_.close_){}
     , decltype(_impl_.tick_volume_){}
     , decltype(_impl_.real_volume_){}
+    , decltype(_impl_.time_utc_){}
     , decltype(_impl_.spread_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
@@ -14698,6 +14843,7 @@ inline void PriceBar::SharedCtor(
     , decltype(_impl_.close_){0}
     , decltype(_impl_.tick_volume_){int64_t{0}}
     , decltype(_impl_.real_volume_){int64_t{0}}
+    , decltype(_impl_.time_utc_){int64_t{0}}
     , decltype(_impl_.spread_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
@@ -14802,6 +14948,14 @@ const char* PriceBar::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
+      // int64 time_utc = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+          _impl_.time_utc_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -14895,6 +15049,12 @@ uint8_t* PriceBar::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt64ToArray(8, this->_internal_real_volume(), target);
   }
 
+  // int64 time_utc = 9;
+  if (this->_internal_time_utc() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(9, this->_internal_time_utc(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -14962,6 +15122,11 @@ size_t PriceBar::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_real_volume());
   }
 
+  // int64 time_utc = 9;
+  if (this->_internal_time_utc() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_time_utc());
+  }
+
   // int32 spread = 7;
   if (this->_internal_spread() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_spread());
@@ -15021,6 +15186,9 @@ void PriceBar::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTO
   }
   if (from._internal_real_volume() != 0) {
     _this->_internal_set_real_volume(from._internal_real_volume());
+  }
+  if (from._internal_time_utc() != 0) {
+    _this->_internal_set_time_utc(from._internal_time_utc());
   }
   if (from._internal_spread() != 0) {
     _this->_internal_set_spread(from._internal_spread());

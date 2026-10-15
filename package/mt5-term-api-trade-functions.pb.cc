@@ -153,6 +153,7 @@ PROTOBUF_CONSTEXPR MrpcMqlTradeRequest::MrpcMqlTradeRequest(
     /*decltype(_impl_.symbol_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.comment_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.expiration_)*/nullptr
+  , /*decltype(_impl_.expiration_utc_)*/nullptr
   , /*decltype(_impl_.expert_advisor_magic_number_)*/uint64_t{0u}
   , /*decltype(_impl_.order_)*/uint64_t{0u}
   , /*decltype(_impl_.volume_)*/0
@@ -326,6 +327,7 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dtrade_2dfunctions_2eproto::offsets
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::MrpcMqlTradeRequest, _impl_.type_filling_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::MrpcMqlTradeRequest, _impl_.type_time_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::MrpcMqlTradeRequest, _impl_.expiration_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::MrpcMqlTradeRequest, _impl_.expiration_utc_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::MrpcMqlTradeRequest, _impl_.comment_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::MrpcMqlTradeRequest, _impl_.position_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::MrpcMqlTradeRequest, _impl_.position_by_),
@@ -371,9 +373,9 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 60, -1, -1, sizeof(::mt5_term_api::OrderCheckReply)},
   { 69, -1, -1, sizeof(::mt5_term_api::OrderCheckData)},
   { 76, -1, -1, sizeof(::mt5_term_api::MrpcMqlTradeRequest)},
-  { 99, -1, -1, sizeof(::mt5_term_api::MrpcMqlTradeCheckResult)},
-  { 113, -1, -1, sizeof(::mt5_term_api::PositionsTotalReply)},
-  { 122, -1, -1, sizeof(::mt5_term_api::PositionsTotalData)},
+  { 100, -1, -1, sizeof(::mt5_term_api::MrpcMqlTradeCheckResult)},
+  { 114, -1, -1, sizeof(::mt5_term_api::PositionsTotalReply)},
+  { 123, -1, -1, sizeof(::mt5_term_api::PositionsTotalData)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -419,7 +421,7 @@ const char descriptor_table_protodef_mt5_2dterm_2dapi_2dtrade_2dfunctions_2eprot
   "kDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.Er"
   "rorH\000B\n\n\010response\"W\n\016OrderCheckData\022E\n\026m"
   "ql_trade_check_result\030\001 \001(\0132%.mt5_term_a"
-  "pi.MrpcMqlTradeCheckResult\"\242\004\n\023MrpcMqlTr"
+  "pi.MrpcMqlTradeCheckResult\"\326\004\n\023MrpcMqlTr"
   "adeRequest\022=\n\006action\030\001 \001(\0162-.mt5_term_ap"
   "i.MRPC_ENUM_TRADE_REQUEST_ACTIONS\022#\n\033exp"
   "ert_advisor_magic_number\030\002 \001(\004\022\r\n\005order\030"
@@ -432,48 +434,50 @@ const char descriptor_table_protodef_mt5_2dterm_2dapi_2dtrade_2dfunctions_2eprot
   "YPE_FILLING\022:\n\ttype_time\030\r \001(\0162\'.mt5_ter"
   "m_api.MRPC_ENUM_ORDER_TYPE_TIME\022.\n\nexpir"
   "ation\030\016 \001(\0132\032.google.protobuf.Timestamp\022"
-  "\017\n\007comment\030\017 \001(\t\022\020\n\010position\030\020 \001(\004\022\023\n\013po"
-  "sition_by\030\021 \001(\004\"\303\001\n\027MrpcMqlTradeCheckRes"
-  "ult\022\025\n\rreturned_code\030\001 \001(\r\022\032\n\022balance_af"
-  "ter_deal\030\002 \001(\001\022\031\n\021equity_after_deal\030\003 \001("
-  "\001\022\016\n\006profit\030\004 \001(\001\022\016\n\006margin\030\005 \001(\001\022\023\n\013fre"
-  "e_margin\030\006 \001(\001\022\024\n\014margin_level\030\007 \001(\001\022\017\n\007"
-  "comment\030\010 \001(\t\"y\n\023PositionsTotalReply\0220\n\004"
-  "data\030\001 \001(\0132 .mt5_term_api.PositionsTotal"
-  "DataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.Err"
-  "orH\000B\n\n\010response\"-\n\022PositionsTotalData\022\027"
-  "\n\017total_positions\030\001 \001(\005*\230\002\n\022ENUM_ORDER_T"
-  "YPE_TF\022\025\n\021ORDER_TYPE_TF_BUY\020\000\022\026\n\022ORDER_T"
-  "YPE_TF_SELL\020\001\022\033\n\027ORDER_TYPE_TF_BUY_LIMIT"
-  "\020\002\022\034\n\030ORDER_TYPE_TF_SELL_LIMIT\020\003\022\032\n\026ORDE"
-  "R_TYPE_TF_BUY_STOP\020\004\022\033\n\027ORDER_TYPE_TF_SE"
-  "LL_STOP\020\005\022 \n\034ORDER_TYPE_TF_BUY_STOP_LIMI"
-  "T\020\006\022!\n\035ORDER_TYPE_TF_SELL_STOP_LIMIT\020\007\022\032"
-  "\n\026ORDER_TYPE_TF_CLOSE_BY\020\010*\266\001\n\037MRPC_ENUM"
-  "_TRADE_REQUEST_ACTIONS\022\025\n\021TRADE_ACTION_D"
-  "EAL\020\000\022\030\n\024TRADE_ACTION_PENDING\020\001\022\025\n\021TRADE"
-  "_ACTION_SLTP\020\002\022\027\n\023TRADE_ACTION_MODIFY\020\003\022"
-  "\027\n\023TRADE_ACTION_REMOVE\020\004\022\031\n\025TRADE_ACTION"
-  "_CLOSE_BY\020\005*}\n\034MRPC_ENUM_ORDER_TYPE_FILL"
-  "ING\022\025\n\021ORDER_FILLING_FOK\020\000\022\025\n\021ORDER_FILL"
-  "ING_IOC\020\001\022\025\n\021ORDER_FILLING_BOC\020\003\022\030\n\024ORDE"
-  "R_FILLING_RETURN\020\002*{\n\031MRPC_ENUM_ORDER_TY"
-  "PE_TIME\022\022\n\016ORDER_TIME_GTC\020\000\022\022\n\016ORDER_TIM"
-  "E_DAY\020\001\022\030\n\024ORDER_TIME_SPECIFIED\020\002\022\034\n\030ORD"
-  "ER_TIME_SPECIFIED_DAY\020\0032\307\003\n\016TradeFunctio"
-  "ns\022u\n\017OrderCalcMargin\022$.mt5_term_api.Ord"
-  "erCalcMarginRequest\032\".mt5_term_api.Order"
-  "CalcMarginReply\"\030\202\323\344\223\002\022\022\020/OrderCalcMargi"
-  "n\022u\n\017OrderCalcProfit\022$.mt5_term_api.Orde"
-  "rCalcProfitRequest\032\".mt5_term_api.OrderC"
-  "alcProfitReply\"\030\202\323\344\223\002\022\022\020/OrderCalcProfit"
-  "\022a\n\nOrderCheck\022\037.mt5_term_api.OrderCheck"
-  "Request\032\035.mt5_term_api.OrderCheckReply\"\023"
-  "\202\323\344\223\002\r\022\013/OrderCheck\022d\n\016PositionsTotal\022\026."
-  "google.protobuf.Empty\032!.mt5_term_api.Pos"
-  "itionsTotalReply\"\027\202\323\344\223\002\021\022\017/PositionsTota"
-  "lBBZ1git.mtapi.io/root/mrpc-proto.git/mt"
-  "5/libraries/go\252\002\014mt5_term_apib\006proto3"
+  "2\n\016expiration_utc\030\022 \001(\0132\032.google.protobu"
+  "f.Timestamp\022\017\n\007comment\030\017 \001(\t\022\020\n\010position"
+  "\030\020 \001(\004\022\023\n\013position_by\030\021 \001(\004\"\303\001\n\027MrpcMqlT"
+  "radeCheckResult\022\025\n\rreturned_code\030\001 \001(\r\022\032"
+  "\n\022balance_after_deal\030\002 \001(\001\022\031\n\021equity_aft"
+  "er_deal\030\003 \001(\001\022\016\n\006profit\030\004 \001(\001\022\016\n\006margin\030"
+  "\005 \001(\001\022\023\n\013free_margin\030\006 \001(\001\022\024\n\014margin_lev"
+  "el\030\007 \001(\001\022\017\n\007comment\030\010 \001(\t\"y\n\023PositionsTo"
+  "talReply\0220\n\004data\030\001 \001(\0132 .mt5_term_api.Po"
+  "sitionsTotalDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_"
+  "term_api.ErrorH\000B\n\n\010response\"-\n\022Position"
+  "sTotalData\022\027\n\017total_positions\030\001 \001(\005*\230\002\n\022"
+  "ENUM_ORDER_TYPE_TF\022\025\n\021ORDER_TYPE_TF_BUY\020"
+  "\000\022\026\n\022ORDER_TYPE_TF_SELL\020\001\022\033\n\027ORDER_TYPE_"
+  "TF_BUY_LIMIT\020\002\022\034\n\030ORDER_TYPE_TF_SELL_LIM"
+  "IT\020\003\022\032\n\026ORDER_TYPE_TF_BUY_STOP\020\004\022\033\n\027ORDE"
+  "R_TYPE_TF_SELL_STOP\020\005\022 \n\034ORDER_TYPE_TF_B"
+  "UY_STOP_LIMIT\020\006\022!\n\035ORDER_TYPE_TF_SELL_ST"
+  "OP_LIMIT\020\007\022\032\n\026ORDER_TYPE_TF_CLOSE_BY\020\010*\266"
+  "\001\n\037MRPC_ENUM_TRADE_REQUEST_ACTIONS\022\025\n\021TR"
+  "ADE_ACTION_DEAL\020\000\022\030\n\024TRADE_ACTION_PENDIN"
+  "G\020\001\022\025\n\021TRADE_ACTION_SLTP\020\002\022\027\n\023TRADE_ACTI"
+  "ON_MODIFY\020\003\022\027\n\023TRADE_ACTION_REMOVE\020\004\022\031\n\025"
+  "TRADE_ACTION_CLOSE_BY\020\005*}\n\034MRPC_ENUM_ORD"
+  "ER_TYPE_FILLING\022\025\n\021ORDER_FILLING_FOK\020\000\022\025"
+  "\n\021ORDER_FILLING_IOC\020\001\022\025\n\021ORDER_FILLING_B"
+  "OC\020\003\022\030\n\024ORDER_FILLING_RETURN\020\002*{\n\031MRPC_E"
+  "NUM_ORDER_TYPE_TIME\022\022\n\016ORDER_TIME_GTC\020\000\022"
+  "\022\n\016ORDER_TIME_DAY\020\001\022\030\n\024ORDER_TIME_SPECIF"
+  "IED\020\002\022\034\n\030ORDER_TIME_SPECIFIED_DAY\020\0032\307\003\n\016"
+  "TradeFunctions\022u\n\017OrderCalcMargin\022$.mt5_"
+  "term_api.OrderCalcMarginRequest\032\".mt5_te"
+  "rm_api.OrderCalcMarginReply\"\030\202\323\344\223\002\022\022\020/Or"
+  "derCalcMargin\022u\n\017OrderCalcProfit\022$.mt5_t"
+  "erm_api.OrderCalcProfitRequest\032\".mt5_ter"
+  "m_api.OrderCalcProfitReply\"\030\202\323\344\223\002\022\022\020/Ord"
+  "erCalcProfit\022a\n\nOrderCheck\022\037.mt5_term_ap"
+  "i.OrderCheckRequest\032\035.mt5_term_api.Order"
+  "CheckReply\"\023\202\323\344\223\002\r\022\013/OrderCheck\022d\n\016Posit"
+  "ionsTotal\022\026.google.protobuf.Empty\032!.mt5_"
+  "term_api.PositionsTotalReply\"\027\202\323\344\223\002\021\022\017/P"
+  "ositionsTotalBBZ1git.mtapi.io/root/mrpc-"
+  "proto.git/mt5/libraries/go\252\002\014mt5_term_ap"
+  "ib\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2dtrade_2dfunctions_2eproto_deps[4] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -483,7 +487,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2d
 };
 static ::_pbi::once_flag descriptor_table_mt5_2dterm_2dapi_2dtrade_2dfunctions_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_mt5_2dterm_2dapi_2dtrade_2dfunctions_2eproto = {
-    false, false, 3237, descriptor_table_protodef_mt5_2dterm_2dapi_2dtrade_2dfunctions_2eproto,
+    false, false, 3289, descriptor_table_protodef_mt5_2dterm_2dapi_2dtrade_2dfunctions_2eproto,
     "mt5-term-api-trade-functions.proto",
     &descriptor_table_mt5_2dterm_2dapi_2dtrade_2dfunctions_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2dtrade_2dfunctions_2eproto_deps, 4, 13,
     schemas, file_default_instances, TableStruct_mt5_2dterm_2dapi_2dtrade_2dfunctions_2eproto::offsets,
@@ -2946,17 +2950,28 @@ void OrderCheckData::InternalSwap(OrderCheckData* other) {
 class MrpcMqlTradeRequest::_Internal {
  public:
   static const ::PROTOBUF_NAMESPACE_ID::Timestamp& expiration(const MrpcMqlTradeRequest* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& expiration_utc(const MrpcMqlTradeRequest* msg);
 };
 
 const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 MrpcMqlTradeRequest::_Internal::expiration(const MrpcMqlTradeRequest* msg) {
   return *msg->_impl_.expiration_;
 }
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+MrpcMqlTradeRequest::_Internal::expiration_utc(const MrpcMqlTradeRequest* msg) {
+  return *msg->_impl_.expiration_utc_;
+}
 void MrpcMqlTradeRequest::clear_expiration() {
   if (GetArenaForAllocation() == nullptr && _impl_.expiration_ != nullptr) {
     delete _impl_.expiration_;
   }
   _impl_.expiration_ = nullptr;
+}
+void MrpcMqlTradeRequest::clear_expiration_utc() {
+  if (GetArenaForAllocation() == nullptr && _impl_.expiration_utc_ != nullptr) {
+    delete _impl_.expiration_utc_;
+  }
+  _impl_.expiration_utc_ = nullptr;
 }
 MrpcMqlTradeRequest::MrpcMqlTradeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -2971,6 +2986,7 @@ MrpcMqlTradeRequest::MrpcMqlTradeRequest(const MrpcMqlTradeRequest& from)
       decltype(_impl_.symbol_){}
     , decltype(_impl_.comment_){}
     , decltype(_impl_.expiration_){nullptr}
+    , decltype(_impl_.expiration_utc_){nullptr}
     , decltype(_impl_.expert_advisor_magic_number_){}
     , decltype(_impl_.order_){}
     , decltype(_impl_.volume_){}
@@ -3007,6 +3023,9 @@ MrpcMqlTradeRequest::MrpcMqlTradeRequest(const MrpcMqlTradeRequest& from)
   if (from._internal_has_expiration()) {
     _this->_impl_.expiration_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.expiration_);
   }
+  if (from._internal_has_expiration_utc()) {
+    _this->_impl_.expiration_utc_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.expiration_utc_);
+  }
   ::memcpy(&_impl_.expert_advisor_magic_number_, &from._impl_.expert_advisor_magic_number_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.position_by_) -
     reinterpret_cast<char*>(&_impl_.expert_advisor_magic_number_)) + sizeof(_impl_.position_by_));
@@ -3021,6 +3040,7 @@ inline void MrpcMqlTradeRequest::SharedCtor(
       decltype(_impl_.symbol_){}
     , decltype(_impl_.comment_){}
     , decltype(_impl_.expiration_){nullptr}
+    , decltype(_impl_.expiration_utc_){nullptr}
     , decltype(_impl_.expert_advisor_magic_number_){uint64_t{0u}}
     , decltype(_impl_.order_){uint64_t{0u}}
     , decltype(_impl_.volume_){0}
@@ -3061,6 +3081,7 @@ inline void MrpcMqlTradeRequest::SharedDtor() {
   _impl_.symbol_.Destroy();
   _impl_.comment_.Destroy();
   if (this != internal_default_instance()) delete _impl_.expiration_;
+  if (this != internal_default_instance()) delete _impl_.expiration_utc_;
 }
 
 void MrpcMqlTradeRequest::SetCachedSize(int size) const {
@@ -3079,6 +3100,10 @@ void MrpcMqlTradeRequest::Clear() {
     delete _impl_.expiration_;
   }
   _impl_.expiration_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.expiration_utc_ != nullptr) {
+    delete _impl_.expiration_utc_;
+  }
+  _impl_.expiration_utc_ = nullptr;
   ::memset(&_impl_.expert_advisor_magic_number_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.position_by_) -
       reinterpret_cast<char*>(&_impl_.expert_advisor_magic_number_)) + sizeof(_impl_.position_by_));
@@ -3231,6 +3256,14 @@ const char* MrpcMqlTradeRequest::_InternalParse(const char* ptr, ::_pbi::ParseCo
       case 17:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
           _impl_.position_by_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .google.protobuf.Timestamp expiration_utc = 18;
+      case 18:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 146)) {
+          ptr = ctx->ParseMessage(_internal_mutable_expiration_utc(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3399,6 +3432,13 @@ uint8_t* MrpcMqlTradeRequest::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(17, this->_internal_position_by(), target);
   }
 
+  // .google.protobuf.Timestamp expiration_utc = 18;
+  if (this->_internal_has_expiration_utc()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(18, _Internal::expiration_utc(this),
+        _Internal::expiration_utc(this).GetCachedSize(), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -3434,6 +3474,13 @@ size_t MrpcMqlTradeRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.expiration_);
+  }
+
+  // .google.protobuf.Timestamp expiration_utc = 18;
+  if (this->_internal_has_expiration_utc()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.expiration_utc_);
   }
 
   // uint64 expert_advisor_magic_number = 2;
@@ -3561,6 +3608,10 @@ void MrpcMqlTradeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, co
   if (from._internal_has_expiration()) {
     _this->_internal_mutable_expiration()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
         from._internal_expiration());
+  }
+  if (from._internal_has_expiration_utc()) {
+    _this->_internal_mutable_expiration_utc()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+        from._internal_expiration_utc());
   }
   if (from._internal_expert_advisor_magic_number() != 0) {
     _this->_internal_set_expert_advisor_magic_number(from._internal_expert_advisor_magic_number());
