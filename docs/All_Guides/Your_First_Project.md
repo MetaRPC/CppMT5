@@ -22,10 +22,10 @@ mkdir my_cppmt5_bot
 cd my_cppmt5_bot
 ```
 
-Install the package:
+Get the SDK (it is not on a package registry):
 
 ```bash
-vcpkg install metarpc-mt5
+git clone https://github.com/MetaRPC/CppMT5.git
 ```
 
 ---

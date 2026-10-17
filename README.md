@@ -12,7 +12,7 @@
 ## 📦 Installation
 
 ```bash
-vcpkg install cppmt5
+git clone https://github.com/MetaRPC/CppMT5.git
 ```
 
 ---
