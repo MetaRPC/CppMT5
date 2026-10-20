@@ -343,6 +343,8 @@ public:
 
     // --- connection ---------------------------------------------------------------------
     // ConnectEx by broker server name (mtClusterName). Throws ApiError / TransportError.
+    // baseChartSymbol is accepted for source compatibility only: the gateway removed the
+    // base chart from ConnectExRequest (proto field 4 is reserved) and the value is ignored.
     void connect(int64_t login, const std::string& password, const std::string& server,
                  const std::string& name = "", const std::string& baseChartSymbol = "EURUSD",
                  int timeoutSeconds = 120);

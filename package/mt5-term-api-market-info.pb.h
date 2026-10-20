@@ -4519,6 +4519,7 @@ class SymbolInfoIntegerData final :
 
   enum : int {
     kValueFieldNumber = 1,
+    kValueUtcFieldNumber = 2,
   };
   // int64 value = 1;
   void clear_value();
@@ -4527,6 +4528,15 @@ class SymbolInfoIntegerData final :
   private:
   int64_t _internal_value() const;
   void _internal_set_value(int64_t value);
+  public:
+
+  // int64 value_utc = 2;
+  void clear_value_utc();
+  int64_t value_utc() const;
+  void set_value_utc(int64_t value);
+  private:
+  int64_t _internal_value_utc() const;
+  void _internal_set_value_utc(int64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:mt5_term_api.SymbolInfoIntegerData)
@@ -4538,6 +4548,7 @@ class SymbolInfoIntegerData final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     int64_t value_;
+    int64_t value_utc_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -6054,6 +6065,8 @@ class MrpcMqlTick final :
     kVolumeFieldNumber = 5,
     kTimeMscFieldNumber = 6,
     kVolumeRealFieldNumber = 8,
+    kTimeUtcFieldNumber = 9,
+    kTimeMscUtcFieldNumber = 10,
     kFlagsFieldNumber = 7,
   };
   // int64 time = 1;
@@ -6119,6 +6132,24 @@ class MrpcMqlTick final :
   void _internal_set_volume_real(double value);
   public:
 
+  // int64 time_utc = 9;
+  void clear_time_utc();
+  int64_t time_utc() const;
+  void set_time_utc(int64_t value);
+  private:
+  int64_t _internal_time_utc() const;
+  void _internal_set_time_utc(int64_t value);
+  public:
+
+  // int64 time_msc_utc = 10;
+  void clear_time_msc_utc();
+  int64_t time_msc_utc() const;
+  void set_time_msc_utc(int64_t value);
+  private:
+  int64_t _internal_time_msc_utc() const;
+  void _internal_set_time_msc_utc(int64_t value);
+  public:
+
   // uint32 flags = 7;
   void clear_flags();
   uint32_t flags() const;
@@ -6143,6 +6174,8 @@ class MrpcMqlTick final :
     uint64_t volume_;
     int64_t time_msc_;
     double volume_real_;
+    int64_t time_utc_;
+    int64_t time_msc_utc_;
     uint32_t flags_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -9054,6 +9087,8 @@ class PriceHistoryRequest final :
     kTimeframeFieldNumber = 2,
     kMaxBarsFieldNumber = 5,
     kToTimeFieldNumber = 4,
+    kFromTimeUtcFieldNumber = 6,
+    kToTimeUtcFieldNumber = 7,
   };
   // string symbol = 1;
   void clear_symbol();
@@ -9105,6 +9140,24 @@ class PriceHistoryRequest final :
   void _internal_set_to_time(int64_t value);
   public:
 
+  // int64 from_time_utc = 6;
+  void clear_from_time_utc();
+  int64_t from_time_utc() const;
+  void set_from_time_utc(int64_t value);
+  private:
+  int64_t _internal_from_time_utc() const;
+  void _internal_set_from_time_utc(int64_t value);
+  public:
+
+  // int64 to_time_utc = 7;
+  void clear_to_time_utc();
+  int64_t to_time_utc() const;
+  void set_to_time_utc(int64_t value);
+  private:
+  int64_t _internal_to_time_utc() const;
+  void _internal_set_to_time_utc(int64_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mt5_term_api.PriceHistoryRequest)
  private:
   class _Internal;
@@ -9118,6 +9171,8 @@ class PriceHistoryRequest final :
     int32_t timeframe_;
     int32_t max_bars_;
     int64_t to_time_;
+    int64_t from_time_utc_;
+    int64_t to_time_utc_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -9606,6 +9661,7 @@ class PriceBar final :
     kCloseFieldNumber = 5,
     kTickVolumeFieldNumber = 6,
     kRealVolumeFieldNumber = 8,
+    kTimeUtcFieldNumber = 9,
     kSpreadFieldNumber = 7,
   };
   // int64 time = 1;
@@ -9671,6 +9727,15 @@ class PriceBar final :
   void _internal_set_real_volume(int64_t value);
   public:
 
+  // int64 time_utc = 9;
+  void clear_time_utc();
+  int64_t time_utc() const;
+  void set_time_utc(int64_t value);
+  private:
+  int64_t _internal_time_utc() const;
+  void _internal_set_time_utc(int64_t value);
+  public:
+
   // int32 spread = 7;
   void clear_spread();
   int32_t spread() const;
@@ -9695,6 +9760,7 @@ class PriceBar final :
     double close_;
     int64_t tick_volume_;
     int64_t real_volume_;
+    int64_t time_utc_;
     int32_t spread_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -11631,6 +11697,26 @@ inline void SymbolInfoIntegerData::set_value(int64_t value) {
   // @@protoc_insertion_point(field_set:mt5_term_api.SymbolInfoIntegerData.value)
 }
 
+// int64 value_utc = 2;
+inline void SymbolInfoIntegerData::clear_value_utc() {
+  _impl_.value_utc_ = int64_t{0};
+}
+inline int64_t SymbolInfoIntegerData::_internal_value_utc() const {
+  return _impl_.value_utc_;
+}
+inline int64_t SymbolInfoIntegerData::value_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.SymbolInfoIntegerData.value_utc)
+  return _internal_value_utc();
+}
+inline void SymbolInfoIntegerData::_internal_set_value_utc(int64_t value) {
+  
+  _impl_.value_utc_ = value;
+}
+inline void SymbolInfoIntegerData::set_value_utc(int64_t value) {
+  _internal_set_value_utc(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.SymbolInfoIntegerData.value_utc)
+}
+
 // -------------------------------------------------------------------
 
 // SymbolInfoStringRequest
@@ -12414,6 +12500,26 @@ inline void MrpcMqlTick::set_time(int64_t value) {
   // @@protoc_insertion_point(field_set:mt5_term_api.MrpcMqlTick.time)
 }
 
+// int64 time_utc = 9;
+inline void MrpcMqlTick::clear_time_utc() {
+  _impl_.time_utc_ = int64_t{0};
+}
+inline int64_t MrpcMqlTick::_internal_time_utc() const {
+  return _impl_.time_utc_;
+}
+inline int64_t MrpcMqlTick::time_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.MrpcMqlTick.time_utc)
+  return _internal_time_utc();
+}
+inline void MrpcMqlTick::_internal_set_time_utc(int64_t value) {
+  
+  _impl_.time_utc_ = value;
+}
+inline void MrpcMqlTick::set_time_utc(int64_t value) {
+  _internal_set_time_utc(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.MrpcMqlTick.time_utc)
+}
+
 // double bid = 2;
 inline void MrpcMqlTick::clear_bid() {
   _impl_.bid_ = 0;
@@ -12512,6 +12618,26 @@ inline void MrpcMqlTick::_internal_set_time_msc(int64_t value) {
 inline void MrpcMqlTick::set_time_msc(int64_t value) {
   _internal_set_time_msc(value);
   // @@protoc_insertion_point(field_set:mt5_term_api.MrpcMqlTick.time_msc)
+}
+
+// int64 time_msc_utc = 10;
+inline void MrpcMqlTick::clear_time_msc_utc() {
+  _impl_.time_msc_utc_ = int64_t{0};
+}
+inline int64_t MrpcMqlTick::_internal_time_msc_utc() const {
+  return _impl_.time_msc_utc_;
+}
+inline int64_t MrpcMqlTick::time_msc_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.MrpcMqlTick.time_msc_utc)
+  return _internal_time_msc_utc();
+}
+inline void MrpcMqlTick::_internal_set_time_msc_utc(int64_t value) {
+  
+  _impl_.time_msc_utc_ = value;
+}
+inline void MrpcMqlTick::set_time_msc_utc(int64_t value) {
+  _internal_set_time_msc_utc(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.MrpcMqlTick.time_msc_utc)
 }
 
 // uint32 flags = 7;
@@ -14287,6 +14413,26 @@ inline void PriceHistoryRequest::set_from_time(int64_t value) {
   // @@protoc_insertion_point(field_set:mt5_term_api.PriceHistoryRequest.from_time)
 }
 
+// int64 from_time_utc = 6;
+inline void PriceHistoryRequest::clear_from_time_utc() {
+  _impl_.from_time_utc_ = int64_t{0};
+}
+inline int64_t PriceHistoryRequest::_internal_from_time_utc() const {
+  return _impl_.from_time_utc_;
+}
+inline int64_t PriceHistoryRequest::from_time_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.PriceHistoryRequest.from_time_utc)
+  return _internal_from_time_utc();
+}
+inline void PriceHistoryRequest::_internal_set_from_time_utc(int64_t value) {
+  
+  _impl_.from_time_utc_ = value;
+}
+inline void PriceHistoryRequest::set_from_time_utc(int64_t value) {
+  _internal_set_from_time_utc(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.PriceHistoryRequest.from_time_utc)
+}
+
 // int64 to_time = 4;
 inline void PriceHistoryRequest::clear_to_time() {
   _impl_.to_time_ = int64_t{0};
@@ -14305,6 +14451,26 @@ inline void PriceHistoryRequest::_internal_set_to_time(int64_t value) {
 inline void PriceHistoryRequest::set_to_time(int64_t value) {
   _internal_set_to_time(value);
   // @@protoc_insertion_point(field_set:mt5_term_api.PriceHistoryRequest.to_time)
+}
+
+// int64 to_time_utc = 7;
+inline void PriceHistoryRequest::clear_to_time_utc() {
+  _impl_.to_time_utc_ = int64_t{0};
+}
+inline int64_t PriceHistoryRequest::_internal_to_time_utc() const {
+  return _impl_.to_time_utc_;
+}
+inline int64_t PriceHistoryRequest::to_time_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.PriceHistoryRequest.to_time_utc)
+  return _internal_to_time_utc();
+}
+inline void PriceHistoryRequest::_internal_set_to_time_utc(int64_t value) {
+  
+  _impl_.to_time_utc_ = value;
+}
+inline void PriceHistoryRequest::set_to_time_utc(int64_t value) {
+  _internal_set_to_time_utc(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.PriceHistoryRequest.to_time_utc)
 }
 
 // int32 max_bars = 5;
@@ -14546,6 +14712,26 @@ inline void PriceBar::_internal_set_time(int64_t value) {
 inline void PriceBar::set_time(int64_t value) {
   _internal_set_time(value);
   // @@protoc_insertion_point(field_set:mt5_term_api.PriceBar.time)
+}
+
+// int64 time_utc = 9;
+inline void PriceBar::clear_time_utc() {
+  _impl_.time_utc_ = int64_t{0};
+}
+inline int64_t PriceBar::_internal_time_utc() const {
+  return _impl_.time_utc_;
+}
+inline int64_t PriceBar::time_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.PriceBar.time_utc)
+  return _internal_time_utc();
+}
+inline void PriceBar::_internal_set_time_utc(int64_t value) {
+  
+  _impl_.time_utc_ = value;
+}
+inline void PriceBar::set_time_utc(int64_t value) {
+  _internal_set_time_utc(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.PriceBar.time_utc)
 }
 
 // double open = 2;

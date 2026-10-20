@@ -1,5 +1,7 @@
 # Getting Started with CppMT5
 
+> **Preview: this SDK does not talk to the server yet.** `connect`, the account and order calls return simulated values (a fixed balance, made-up order tickets) and nothing is traded. For real MT5 accounts use the Python, Node.js, C#, Go or Java SDK, or the [REST API](https://mrpc.pro/docs-legacy/mt5-client-api).
+
 > **Quick Setup & Overview** - Start automating your trading with CppMT5 (C++ for MetaTrader 5) in minutes.
 
 ---
@@ -18,10 +20,10 @@
 
 ## 📦 Installation
 
-Install CppMT5 via your standard C++ package manager:
+CppMT5 is not published on a package registry; get it from the repository:
 
 ```bash
-vcpkg install metarpc-mt5
+git clone https://github.com/MetaRPC/CppMT5.git
 ```
 
 ---

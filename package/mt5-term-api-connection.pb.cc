@@ -74,6 +74,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR GetTerminalJournalData::GetTerminalJournalData(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.rows_)*/{}
+  , /*decltype(_impl_.diagnostics_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetTerminalJournalDataDefaultTypeInternal {
   PROTOBUF_CONSTEXPR GetTerminalJournalDataDefaultTypeInternal()
@@ -443,7 +444,8 @@ PROTOBUF_CONSTEXPR DisconnectRequest::DisconnectRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.reason_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}} {}
+  , /*decltype(_impl_.reason_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.delete__)*/false} {}
 struct DisconnectRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR DisconnectRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -744,6 +746,7 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dconnection_2eproto::offsets[] PROT
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetTerminalJournalData, _impl_.rows_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::GetTerminalJournalData, _impl_.diagnostics_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::TerminalJournalRow, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1004,7 +1007,9 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dconnection_2eproto::offsets[] PROT
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::DisconnectRequest, _impl_.reason_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DisconnectRequest, _impl_.delete__),
   0,
+  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::DisconnectReply, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1167,47 +1172,47 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 15, -1, -1, sizeof(::mt5_term_api::OnJournalRequest)},
   { 21, -1, -1, sizeof(::mt5_term_api::OnJournalReply)},
   { 30, -1, -1, sizeof(::mt5_term_api::GetTerminalJournalData)},
-  { 37, -1, -1, sizeof(::mt5_term_api::TerminalJournalRow)},
-  { 46, -1, -1, sizeof(::mt5_term_api::GetBrokerServersByBrokerNameRequest)},
-  { 53, -1, -1, sizeof(::mt5_term_api::GetBrokerServersByBrokerNameReply)},
-  { 62, -1, -1, sizeof(::mt5_term_api::GetBrokerServersByBrokerNameData_BrokerResult)},
-  { 70, 80, -1, sizeof(::mt5_term_api::GetBrokerServersByBrokerNameData_BrokerServer)},
-  { 84, -1, -1, sizeof(::mt5_term_api::GetBrokerServersByBrokerNameData)},
-  { 91, 104, -1, sizeof(::mt5_term_api::ConnectExRequest)},
-  { 111, 119, -1, sizeof(::mt5_term_api::ConnectByTokenRequest)},
-  { 121, -1, -1, sizeof(::mt5_term_api::ConnectExReply)},
-  { 130, 137, -1, sizeof(::mt5_term_api::ReconnectRequest)},
-  { 138, -1, -1, sizeof(::mt5_term_api::ReconnectReply)},
-  { 147, -1, -1, sizeof(::mt5_term_api::ReconnectData)},
-  { 158, 172, -1, sizeof(::mt5_term_api::ConnectRequest)},
-  { 180, -1, -1, sizeof(::mt5_term_api::ExpertAdviser)},
-  { 188, -1, -1, sizeof(::mt5_term_api::ConnectReply)},
-  { 197, -1, -1, sizeof(::mt5_term_api::ConnectData)},
-  { 205, 224, -1, sizeof(::mt5_term_api::ConnectProxyRequest)},
-  { 237, -1, -1, sizeof(::mt5_term_api::ConnectProxyReply)},
-  { 246, -1, -1, sizeof(::mt5_term_api::ConnectProxyData)},
-  { 254, -1, -1, sizeof(::mt5_term_api::CheckConnectRequest)},
-  { 260, -1, -1, sizeof(::mt5_term_api::CheckConnectReply)},
-  { 269, -1, -1, sizeof(::mt5_term_api::CheckConnectData)},
-  { 277, -1, -1, sizeof(::mt5_term_api::TerminalHealthCheck)},
-  { 290, 297, -1, sizeof(::mt5_term_api::DisconnectRequest)},
-  { 298, -1, -1, sizeof(::mt5_term_api::DisconnectReply)},
-  { 307, -1, -1, sizeof(::mt5_term_api::DisconnectData)},
-  { 315, -1, -1, sizeof(::mt5_term_api::ScreenshotRequest)},
-  { 321, -1, -1, sizeof(::mt5_term_api::ScreenshotReply)},
-  { 330, -1, -1, sizeof(::mt5_term_api::ScreenshotData)},
-  { 340, -1, -1, sizeof(::mt5_term_api::GetIdRequest)},
-  { 348, -1, -1, sizeof(::mt5_term_api::GetIdReply)},
-  { 357, -1, -1, sizeof(::mt5_term_api::GetIdData)},
-  { 364, -1, -1, sizeof(::mt5_term_api::ConnectStreamEvent)},
-  { 378, -1, -1, sizeof(::mt5_term_api::ConnectStateRequest)},
-  { 384, -1, -1, sizeof(::mt5_term_api::ConnectStateReply)},
-  { 393, -1, -1, sizeof(::mt5_term_api::OnConnectStateRequest)},
-  { 400, -1, -1, sizeof(::mt5_term_api::OnConnectStateReply)},
-  { 409, -1, -1, sizeof(::mt5_term_api::ConnectStateData)},
-  { 424, -1, -1, sizeof(::mt5_term_api::ConnectionStatusRequest)},
-  { 430, -1, -1, sizeof(::mt5_term_api::ConnectionStatusReply)},
-  { 439, -1, -1, sizeof(::mt5_term_api::ConnectionStatusData)},
+  { 38, -1, -1, sizeof(::mt5_term_api::TerminalJournalRow)},
+  { 47, -1, -1, sizeof(::mt5_term_api::GetBrokerServersByBrokerNameRequest)},
+  { 54, -1, -1, sizeof(::mt5_term_api::GetBrokerServersByBrokerNameReply)},
+  { 63, -1, -1, sizeof(::mt5_term_api::GetBrokerServersByBrokerNameData_BrokerResult)},
+  { 71, 81, -1, sizeof(::mt5_term_api::GetBrokerServersByBrokerNameData_BrokerServer)},
+  { 85, -1, -1, sizeof(::mt5_term_api::GetBrokerServersByBrokerNameData)},
+  { 92, 105, -1, sizeof(::mt5_term_api::ConnectExRequest)},
+  { 112, 120, -1, sizeof(::mt5_term_api::ConnectByTokenRequest)},
+  { 122, -1, -1, sizeof(::mt5_term_api::ConnectExReply)},
+  { 131, 138, -1, sizeof(::mt5_term_api::ReconnectRequest)},
+  { 139, -1, -1, sizeof(::mt5_term_api::ReconnectReply)},
+  { 148, -1, -1, sizeof(::mt5_term_api::ReconnectData)},
+  { 159, 173, -1, sizeof(::mt5_term_api::ConnectRequest)},
+  { 181, -1, -1, sizeof(::mt5_term_api::ExpertAdviser)},
+  { 189, -1, -1, sizeof(::mt5_term_api::ConnectReply)},
+  { 198, -1, -1, sizeof(::mt5_term_api::ConnectData)},
+  { 206, 225, -1, sizeof(::mt5_term_api::ConnectProxyRequest)},
+  { 238, -1, -1, sizeof(::mt5_term_api::ConnectProxyReply)},
+  { 247, -1, -1, sizeof(::mt5_term_api::ConnectProxyData)},
+  { 255, -1, -1, sizeof(::mt5_term_api::CheckConnectRequest)},
+  { 261, -1, -1, sizeof(::mt5_term_api::CheckConnectReply)},
+  { 270, -1, -1, sizeof(::mt5_term_api::CheckConnectData)},
+  { 278, -1, -1, sizeof(::mt5_term_api::TerminalHealthCheck)},
+  { 291, 299, -1, sizeof(::mt5_term_api::DisconnectRequest)},
+  { 301, -1, -1, sizeof(::mt5_term_api::DisconnectReply)},
+  { 310, -1, -1, sizeof(::mt5_term_api::DisconnectData)},
+  { 318, -1, -1, sizeof(::mt5_term_api::ScreenshotRequest)},
+  { 324, -1, -1, sizeof(::mt5_term_api::ScreenshotReply)},
+  { 333, -1, -1, sizeof(::mt5_term_api::ScreenshotData)},
+  { 343, -1, -1, sizeof(::mt5_term_api::GetIdRequest)},
+  { 351, -1, -1, sizeof(::mt5_term_api::GetIdReply)},
+  { 360, -1, -1, sizeof(::mt5_term_api::GetIdData)},
+  { 367, -1, -1, sizeof(::mt5_term_api::ConnectStreamEvent)},
+  { 381, -1, -1, sizeof(::mt5_term_api::ConnectStateRequest)},
+  { 387, -1, -1, sizeof(::mt5_term_api::ConnectStateReply)},
+  { 396, -1, -1, sizeof(::mt5_term_api::OnConnectStateRequest)},
+  { 403, -1, -1, sizeof(::mt5_term_api::OnConnectStateReply)},
+  { 412, -1, -1, sizeof(::mt5_term_api::ConnectStateData)},
+  { 427, -1, -1, sizeof(::mt5_term_api::ConnectionStatusRequest)},
+  { 433, -1, -1, sizeof(::mt5_term_api::ConnectionStatusReply)},
+  { 442, -1, -1, sizeof(::mt5_term_api::ConnectionStatusData)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -1271,188 +1276,189 @@ const char descriptor_table_protodef_mt5_2dterm_2dapi_2dconnection_2eproto[] PRO
   "\"x\n\016OnJournalReply\0224\n\004data\030\001 \001(\0132$.mt5_t"
   "erm_api.GetTerminalJournalDataH\000\022$\n\005erro"
   "r\030\002 \001(\0132\023.mt5_term_api.ErrorH\000B\n\n\010respon"
-  "se\"H\n\026GetTerminalJournalData\022.\n\004rows\030\001 \003"
-  "(\0132 .mt5_term_api.TerminalJournalRow\"_\n\022"
-  "TerminalJournalRow\022(\n\004time\030\001 \001(\0132\032.googl"
-  "e.protobuf.Timestamp\022\016\n\006source\030\002 \001(\t\022\017\n\007"
-  "message\030\003 \001(\t\"9\n#GetBrokerServersByBroke"
-  "rNameRequest\022\022\n\nBrokerName\030\001 \001(\t\"\225\001\n!Get"
-  "BrokerServersByBrokerNameReply\022>\n\004data\030\001"
-  " \001(\0132..mt5_term_api.GetBrokerServersByBr"
-  "okerNameDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term"
-  "_api.ErrorH\000B\n\n\010response\"\314\002\n GetBrokerSe"
-  "rversByBrokerNameData\022K\n\006result\030\001 \003(\0132;."
-  "mt5_term_api.GetBrokerServersByBrokerNam"
-  "eData.BrokerResult\032m\n\014BrokerResult\022\017\n\007co"
-  "mpany\030\001 \001(\t\022L\n\007results\030\002 \003(\0132;.mt5_term_"
-  "api.GetBrokerServersByBrokerNameData.Bro"
-  "kerServer\032l\n\014BrokerServer\022\014\n\004name\030\001 \001(\t\022"
-  "\025\n\010logo_url\030\002 \001(\tH\000\210\001\001\022\021\n\004site\030\003 \001(\tH\001\210\001"
-  "\001\022\016\n\006access\030\004 \003(\tB\013\n\t_logo_urlB\007\n\005_site\""
-  "\217\002\n\020ConnectExRequest\022\014\n\004user\030\001 \001(\004\022\020\n\010pa"
-  "ssword\030\002 \001(\t\022\027\n\017mt_cluster_name\030\003 \001(\t\0223\n"
-  "\016experts_to_add\030\005 \003(\0132\033.mt5_term_api.Exp"
-  "ertAdviser\022\034\n\017timeout_seconds\030\006 \001(\rH\000\210\001\001"
-  "\022\021\n\004name\030\007 \001(\tH\001\210\001\001\022\027\n\nexpiration\030\010 \001(\rH"
-  "\002\210\001\001B\022\n\020_timeout_secondsB\007\n\005_nameB\r\n\013_ex"
-  "pirationJ\004\010\004\020\005R\021base_chart_symbol\"\212\001\n\025Co"
-  "nnectByTokenRequest\022\034\n\017timeout_seconds\030\002"
-  " \001(\rH\000\210\001\001\022\027\n\nexpiration\030\003 \001(\rH\001\210\001\001B\022\n\020_t"
-  "imeout_secondsB\r\n\013_expirationJ\004\010\001\020\002R\021bas"
-  "e_chart_symbol\"m\n\016ConnectExReply\022)\n\004data"
-  "\030\001 \001(\0132\031.mt5_term_api.ConnectDataH\000\022$\n\005e"
+  "se\"]\n\026GetTerminalJournalData\022.\n\004rows\030\001 \003"
+  "(\0132 .mt5_term_api.TerminalJournalRow\022\023\n\013"
+  "diagnostics\030\002 \001(\t\"_\n\022TerminalJournalRow\022"
+  "(\n\004time\030\001 \001(\0132\032.google.protobuf.Timestam"
+  "p\022\016\n\006source\030\002 \001(\t\022\017\n\007message\030\003 \001(\t\"9\n#Ge"
+  "tBrokerServersByBrokerNameRequest\022\022\n\nBro"
+  "kerName\030\001 \001(\t\"\225\001\n!GetBrokerServersByBrok"
+  "erNameReply\022>\n\004data\030\001 \001(\0132..mt5_term_api"
+  ".GetBrokerServersByBrokerNameDataH\000\022$\n\005e"
   "rror\030\002 \001(\0132\023.mt5_term_api.ErrorH\000B\n\n\010res"
-  "ponse\"J\n\020ReconnectRequest\022\037\n\022force_recon"
-  "nection\030\001 \001(\010H\000\210\001\001B\025\n\023_force_reconnectio"
-  "n\"o\n\016ReconnectReply\022+\n\004data\030\001 \001(\0132\033.mt5_"
-  "term_api.ReconnectDataH\000\022$\n\005error\030\002 \001(\0132"
-  "\023.mt5_term_api.ErrorH\000B\n\n\010response\"\341\001\n\rR"
-  "econnectData\022\036\n\026terminal_was_recreated\030\001"
-  " \001(\010\0221\n\rterminal_type\030\002 \001(\0162\032.mt5_term_a"
-  "pi.TerminalType\022\036\n\026terminal_instance_gui"
-  "d\030\003 \001(\t\022+\n#old_terminal_full_live_time_s"
-  "econds\030\004 \001(\003\0220\n\rold_log_files\030\005 \003(\0132\031.mt"
-  "5_term_api.LogFileInfo\"\367\001\n\016ConnectReques"
-  "t\022\014\n\004user\030\001 \001(\004\022\020\n\010password\030\002 \001(\t\022\014\n\004hos"
-  "t\030\003 \001(\t\022\014\n\004port\030\004 \001(\005\0223\n\016experts_to_add\030"
-  "\005 \003(\0132\033.mt5_term_api.ExpertAdviser\022\034\n\017ti"
-  "meout_seconds\030\006 \001(\rH\000\210\001\001\022\021\n\004name\030\007 \001(\tH\001"
-  "\210\001\001\022\027\n\nexpiration\030\010 \001(\rH\002\210\001\001B\022\n\020_timeout"
-  "_secondsB\007\n\005_nameB\r\n\013_expiration\"8\n\rExpe"
-  "rtAdviser\022\021\n\tfile_name\030\001 \001(\t\022\024\n\014file_con"
-  "tent\030\002 \001(\014\"k\n\014ConnectReply\022)\n\004data\030\001 \001(\013"
-  "2\031.mt5_term_api.ConnectDataH\000\022$\n\005error\030\002"
-  " \001(\0132\023.mt5_term_api.ErrorH\000B\n\n\010response\""
-  "`\n\013ConnectData\022\036\n\026terminal_instance_guid"
-  "\030\001 \001(\t\0221\n\rterminal_type\030\003 \001(\0162\032.mt5_term"
-  "_api.TerminalType\"\371\002\n\023ConnectProxyReques"
-  "t\022\014\n\004user\030\001 \001(\004\022\020\n\010password\030\002 \001(\t\022\014\n\004hos"
-  "t\030\003 \001(\t\022\014\n\004port\030\004 \001(\005\022\021\n\tproxyUser\030\005 \001(\t"
-  "\022\025\n\rproxyPassword\030\006 \001(\t\022\021\n\tproxyHost\030\007 \001"
-  "(\t\022\021\n\tproxyPort\030\010 \001(\r\022+\n\tproxyType\030\t \001(\016"
-  "2\030.mt5_term_api.ProxyTypes\0223\n\016experts_to"
-  "_add\030\n \003(\0132\033.mt5_term_api.ExpertAdviser\022"
-  "\034\n\017timeout_seconds\030\013 \001(\rH\000\210\001\001\022\021\n\004name\030\014 "
-  "\001(\tH\001\210\001\001\022\027\n\nexpiration\030\r \001(\rH\002\210\001\001B\022\n\020_ti"
-  "meout_secondsB\007\n\005_nameB\r\n\013_expiration\"u\n"
-  "\021ConnectProxyReply\022.\n\004data\030\001 \001(\0132\036.mt5_t"
-  "erm_api.ConnectProxyDataH\000\022$\n\005error\030\002 \001("
-  "\0132\023.mt5_term_api.ErrorH\000B\n\n\010response\"`\n\020"
-  "ConnectProxyData\022\031\n\021unique_identifier\030\001 "
-  "\001(\t\0221\n\rterminal_type\030\002 \001(\0162\032.mt5_term_ap"
-  "i.TerminalType\"\025\n\023CheckConnectRequest\"u\n"
-  "\021CheckConnectReply\022.\n\004data\030\001 \001(\0132\036.mt5_t"
-  "erm_api.CheckConnectDataH\000\022$\n\005error\030\002 \001("
-  "\0132\023.mt5_term_api.ErrorH\000B\n\n\010response\"f\n\020"
-  "CheckConnectData\022\031\n\021unique_identifier\030\001 "
-  "\001(\t\0227\n\014health_check\030\002 \001(\0132!.mt5_term_api"
-  ".TerminalHealthCheck\"\241\002\n\023TerminalHealthC"
-  "heck\022\020\n\010is_alive\030\001 \001(\010\0222\n\014ErrorMessage\030\002"
-  " \001(\0132\034.google.protobuf.StringValue\022/\n\tEr"
-  "rorCode\030\003 \001(\0132\034.google.protobuf.StringVa"
-  "lue\0220\n\nStackTrace\030\004 \001(\0132\034.google.protobu"
-  "f.StringValue\022\037\n\027has_authorization_error"
-  "\030\005 \001(\010\022\024\n\014api_is_alive\030\006 \001(\010\022*\n\"terminal"
-  "_is_connected_to_mt_server\030\007 \001(\010\"3\n\021Disc"
-  "onnectRequest\022\023\n\006reason\030\001 \001(\tH\000\210\001\001B\t\n\007_r"
-  "eason\"q\n\017DisconnectReply\022,\n\004data\030\001 \001(\0132\034"
-  ".mt5_term_api.DisconnectDataH\000\022$\n\005error\030"
-  "\002 \001(\0132\023.mt5_term_api.ErrorH\000B\n\n\010response"
-  "\"K\n\016DisconnectData\022\031\n\021unique_identifier\030"
-  "\001 \001(\t\022\036\n\026full_life_time_seconds\030\002 \001(\003\"\023\n"
-  "\021ScreenshotRequest\"q\n\017ScreenshotReply\022,\n"
-  "\004data\030\001 \001(\0132\034.mt5_term_api.ScreenshotDat"
+  "ponse\"\314\002\n GetBrokerServersByBrokerNameDa"
+  "ta\022K\n\006result\030\001 \003(\0132;.mt5_term_api.GetBro"
+  "kerServersByBrokerNameData.BrokerResult\032"
+  "m\n\014BrokerResult\022\017\n\007company\030\001 \001(\t\022L\n\007resu"
+  "lts\030\002 \003(\0132;.mt5_term_api.GetBrokerServer"
+  "sByBrokerNameData.BrokerServer\032l\n\014Broker"
+  "Server\022\014\n\004name\030\001 \001(\t\022\025\n\010logo_url\030\002 \001(\tH\000"
+  "\210\001\001\022\021\n\004site\030\003 \001(\tH\001\210\001\001\022\016\n\006access\030\004 \003(\tB\013"
+  "\n\t_logo_urlB\007\n\005_site\"\217\002\n\020ConnectExReques"
+  "t\022\014\n\004user\030\001 \001(\004\022\020\n\010password\030\002 \001(\t\022\027\n\017mt_"
+  "cluster_name\030\003 \001(\t\0223\n\016experts_to_add\030\005 \003"
+  "(\0132\033.mt5_term_api.ExpertAdviser\022\034\n\017timeo"
+  "ut_seconds\030\006 \001(\rH\000\210\001\001\022\021\n\004name\030\007 \001(\tH\001\210\001\001"
+  "\022\027\n\nexpiration\030\010 \001(\rH\002\210\001\001B\022\n\020_timeout_se"
+  "condsB\007\n\005_nameB\r\n\013_expirationJ\004\010\004\020\005R\021bas"
+  "e_chart_symbol\"\212\001\n\025ConnectByTokenRequest"
+  "\022\034\n\017timeout_seconds\030\002 \001(\rH\000\210\001\001\022\027\n\nexpira"
+  "tion\030\003 \001(\rH\001\210\001\001B\022\n\020_timeout_secondsB\r\n\013_"
+  "expirationJ\004\010\001\020\002R\021base_chart_symbol\"m\n\016C"
+  "onnectExReply\022)\n\004data\030\001 \001(\0132\031.mt5_term_a"
+  "pi.ConnectDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_te"
+  "rm_api.ErrorH\000B\n\n\010response\"J\n\020ReconnectR"
+  "equest\022\037\n\022force_reconnection\030\001 \001(\010H\000\210\001\001B"
+  "\025\n\023_force_reconnection\"o\n\016ReconnectReply"
+  "\022+\n\004data\030\001 \001(\0132\033.mt5_term_api.ReconnectD"
+  "ataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.Erro"
+  "rH\000B\n\n\010response\"\341\001\n\rReconnectData\022\036\n\026ter"
+  "minal_was_recreated\030\001 \001(\010\0221\n\rterminal_ty"
+  "pe\030\002 \001(\0162\032.mt5_term_api.TerminalType\022\036\n\026"
+  "terminal_instance_guid\030\003 \001(\t\022+\n#old_term"
+  "inal_full_live_time_seconds\030\004 \001(\003\0220\n\rold"
+  "_log_files\030\005 \003(\0132\031.mt5_term_api.LogFileI"
+  "nfo\"\367\001\n\016ConnectRequest\022\014\n\004user\030\001 \001(\004\022\020\n\010"
+  "password\030\002 \001(\t\022\014\n\004host\030\003 \001(\t\022\014\n\004port\030\004 \001"
+  "(\005\0223\n\016experts_to_add\030\005 \003(\0132\033.mt5_term_ap"
+  "i.ExpertAdviser\022\034\n\017timeout_seconds\030\006 \001(\r"
+  "H\000\210\001\001\022\021\n\004name\030\007 \001(\tH\001\210\001\001\022\027\n\nexpiration\030\010"
+  " \001(\rH\002\210\001\001B\022\n\020_timeout_secondsB\007\n\005_nameB\r"
+  "\n\013_expiration\"8\n\rExpertAdviser\022\021\n\tfile_n"
+  "ame\030\001 \001(\t\022\024\n\014file_content\030\002 \001(\014\"k\n\014Conne"
+  "ctReply\022)\n\004data\030\001 \001(\0132\031.mt5_term_api.Con"
+  "nectDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api"
+  ".ErrorH\000B\n\n\010response\"`\n\013ConnectData\022\036\n\026t"
+  "erminal_instance_guid\030\001 \001(\t\0221\n\rterminal_"
+  "type\030\003 \001(\0162\032.mt5_term_api.TerminalType\"\371"
+  "\002\n\023ConnectProxyRequest\022\014\n\004user\030\001 \001(\004\022\020\n\010"
+  "password\030\002 \001(\t\022\014\n\004host\030\003 \001(\t\022\014\n\004port\030\004 \001"
+  "(\005\022\021\n\tproxyUser\030\005 \001(\t\022\025\n\rproxyPassword\030\006"
+  " \001(\t\022\021\n\tproxyHost\030\007 \001(\t\022\021\n\tproxyPort\030\010 \001"
+  "(\r\022+\n\tproxyType\030\t \001(\0162\030.mt5_term_api.Pro"
+  "xyTypes\0223\n\016experts_to_add\030\n \003(\0132\033.mt5_te"
+  "rm_api.ExpertAdviser\022\034\n\017timeout_seconds\030"
+  "\013 \001(\rH\000\210\001\001\022\021\n\004name\030\014 \001(\tH\001\210\001\001\022\027\n\nexpirat"
+  "ion\030\r \001(\rH\002\210\001\001B\022\n\020_timeout_secondsB\007\n\005_n"
+  "ameB\r\n\013_expiration\"u\n\021ConnectProxyReply\022"
+  ".\n\004data\030\001 \001(\0132\036.mt5_term_api.ConnectProx"
+  "yDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.Er"
+  "rorH\000B\n\n\010response\"`\n\020ConnectProxyData\022\031\n"
+  "\021unique_identifier\030\001 \001(\t\0221\n\rterminal_typ"
+  "e\030\002 \001(\0162\032.mt5_term_api.TerminalType\"\025\n\023C"
+  "heckConnectRequest\"u\n\021CheckConnectReply\022"
+  ".\n\004data\030\001 \001(\0132\036.mt5_term_api.CheckConnec"
+  "tDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.Er"
+  "rorH\000B\n\n\010response\"f\n\020CheckConnectData\022\031\n"
+  "\021unique_identifier\030\001 \001(\t\0227\n\014health_check"
+  "\030\002 \001(\0132!.mt5_term_api.TerminalHealthChec"
+  "k\"\241\002\n\023TerminalHealthCheck\022\020\n\010is_alive\030\001 "
+  "\001(\010\0222\n\014ErrorMessage\030\002 \001(\0132\034.google.proto"
+  "buf.StringValue\022/\n\tErrorCode\030\003 \001(\0132\034.goo"
+  "gle.protobuf.StringValue\0220\n\nStackTrace\030\004"
+  " \001(\0132\034.google.protobuf.StringValue\022\037\n\027ha"
+  "s_authorization_error\030\005 \001(\010\022\024\n\014api_is_al"
+  "ive\030\006 \001(\010\022*\n\"terminal_is_connected_to_mt"
+  "_server\030\007 \001(\010\"S\n\021DisconnectRequest\022\023\n\006re"
+  "ason\030\001 \001(\tH\000\210\001\001\022\023\n\006delete\030\002 \001(\010H\001\210\001\001B\t\n\007"
+  "_reasonB\t\n\007_delete\"q\n\017DisconnectReply\022,\n"
+  "\004data\030\001 \001(\0132\034.mt5_term_api.DisconnectDat"
   "aH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.ErrorH"
-  "\000B\n\n\010response\"g\n\016ScreenshotData\022\022\n\nimage"
-  "_data\030\001 \001(\014\022\026\n\016display_number\030\002 \001(\005\022\023\n\013t"
-  "erminal_id\030\003 \001(\t\022\024\n\014content_type\030\004 \001(\t\"."
-  "\n\014GetIdRequest\022\014\n\004user\030\001 \001(\t\022\020\n\010password"
-  "\030\002 \001(\t\"g\n\nGetIdReply\022\'\n\004data\030\001 \001(\0132\027.mt5"
-  "_term_api.GetIdDataH\000\022$\n\005error\030\002 \001(\0132\023.m"
-  "t5_term_api.ErrorH\000B\n\n\010response\"\027\n\tGetId"
-  "Data\022\n\n\002id\030\001 \001(\t\"\361\001\n\022ConnectStreamEvent\022"
-  "\014\n\004step\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\022\r\n\005level\030"
-  "\003 \001(\t\022\022\n\nelapsed_ms\030\004 \001(\003\022-\n\ttimestamp\030\005"
-  " \001(\0132\032.google.protobuf.Timestamp\022\020\n\010is_f"
-  "inal\030\006 \001(\010\022/\n\014connect_data\030\007 \001(\0132\031.mt5_t"
-  "erm_api.ConnectData\022\'\n\nerror_data\030\010 \001(\0132"
-  "\023.mt5_term_api.Error\"\025\n\023ConnectStateRequ"
-  "est\"u\n\021ConnectStateReply\022.\n\004data\030\001 \001(\0132\036"
-  ".mt5_term_api.ConnectStateDataH\000\022$\n\005erro"
-  "r\030\002 \001(\0132\023.mt5_term_api.ErrorH\000B\n\n\010respon"
-  "se\"-\n\025OnConnectStateRequest\022\024\n\014terminal_"
-  "ids\030\001 \003(\t\"w\n\023OnConnectStateReply\022.\n\004data"
-  "\030\001 \001(\0132\036.mt5_term_api.ConnectStateDataH\000"
-  "\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.ErrorH\000B\n"
-  "\n\010response\"\322\001\n\020ConnectStateData\022\n\n\002id\030\001 "
-  "\001(\t\022\r\n\005state\030\002 \001(\t\022\024\n\014is_connected\030\003 \001(\010"
-  "\022\020\n\010is_alive\030\004 \001(\010\022\024\n\014api_is_alive\030\005 \001(\010"
-  "\022\016\n\006server\030\006 \001(\t\022\017\n\007account\030\007 \001(\004\022\025\n\rerr"
-  "or_message\030\010 \001(\t\022-\n\ttimestamp\030\t \001(\0132\032.go"
-  "ogle.protobuf.Timestamp\"\031\n\027ConnectionSta"
-  "tusRequest\"}\n\025ConnectionStatusReply\0222\n\004d"
-  "ata\030\001 \001(\0132\".mt5_term_api.ConnectionStatu"
-  "sDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.Er"
-  "rorH\000B\n\n\010response\"\247\001\n\024ConnectionStatusDa"
-  "ta\022\n\n\002id\030\001 \001(\t\022\024\n\014is_connected\030\002 \001(\010\022\020\n\010"
-  "is_alive\030\003 \001(\010\022\024\n\014api_is_alive\030\004 \001(\010\022\016\n\006"
-  "server\030\005 \001(\t\022\017\n\007account\030\006 \001(\004\022\025\n\rerror_m"
-  "essage\030\007 \001(\t\022\r\n\005state\030\010 \001(\t*9\n\nProxyType"
-  "s\022\010\n\004None\020\000\022\t\n\005Https\020\001\022\n\n\006Socks4\020\002\022\n\n\006So"
-  "cks5\020\003* \n\014TerminalType\022\007\n\003MT4\020\000\022\007\n\003MT5\020\001"
-  "2\335\014\n\nConnection\022]\n\tConnectEx\022\036.mt5_term_"
-  "api.ConnectExRequest\032\034.mt5_term_api.Conn"
-  "ectExReply\"\022\202\323\344\223\002\014\022\n/ConnectEx\022U\n\007Connec"
-  "t\022\034.mt5_term_api.ConnectRequest\032\032.mt5_te"
-  "rm_api.ConnectReply\"\020\202\323\344\223\002\n\022\010/Connect\022i\n"
-  "\014ConnectProxy\022!.mt5_term_api.ConnectProx"
-  "yRequest\032\037.mt5_term_api.ConnectProxyRepl"
-  "y\"\025\202\323\344\223\002\017\022\r/ConnectProxy\022i\n\014CheckConnect"
-  "\022!.mt5_term_api.CheckConnectRequest\032\037.mt"
-  "5_term_api.CheckConnectReply\"\025\202\323\344\223\002\017\022\r/C"
-  "heckConnect\022i\n\014ConnectState\022!.mt5_term_a"
-  "pi.ConnectStateRequest\032\037.mt5_term_api.Co"
-  "nnectStateReply\"\025\202\323\344\223\002\017\022\r/ConnectState\022s"
-  "\n\016OnConnectState\022#.mt5_term_api.OnConnec"
-  "tStateRequest\032!.mt5_term_api.OnConnectSt"
-  "ateReply\"\027\202\323\344\223\002\021\022\017/OnConnectState0\001\022y\n\020C"
-  "onnectionStatus\022%.mt5_term_api.Connectio"
-  "nStatusRequest\032#.mt5_term_api.Connection"
-  "StatusReply\"\031\202\323\344\223\002\023\022\021/ConnectionStatus\022a"
-  "\n\nDisconnect\022\037.mt5_term_api.DisconnectRe"
-  "quest\032\035.mt5_term_api.DisconnectReply\"\023\202\323"
-  "\344\223\002\r\022\013/Disconnect\022]\n\tReconnect\022\036.mt5_ter"
-  "m_api.ReconnectRequest\032\034.mt5_term_api.Re"
-  "connectReply\"\022\202\323\344\223\002\014\022\n/Reconnect\022l\n\016Conn"
-  "ectByToken\022#.mt5_term_api.ConnectByToken"
-  "Request\032\034.mt5_term_api.ConnectExReply\"\027\202"
-  "\323\344\223\002\021\022\017/ConnectByToken\022\251\001\n\034GetBrokerServ"
-  "ersByBrokerName\0221.mt5_term_api.GetBroker"
-  "ServersByBrokerNameRequest\032/.mt5_term_ap"
-  "i.GetBrokerServersByBrokerNameReply\"%\202\323\344"
-  "\223\002\037\022\035/GetBrokerServersByBrokerName\022a\n\nSc"
-  "reenshot\022\037.mt5_term_api.ScreenshotReques"
-  "t\032\035.mt5_term_api.ScreenshotReply\"\023\202\323\344\223\002\r"
-  "\022\013/Screenshot\022M\n\005GetId\022\032.mt5_term_api.Ge"
-  "tIdRequest\032\030.mt5_term_api.GetIdReply\"\016\202\323"
-  "\344\223\002\010\022\006/GetId\022i\n\rConnectStream\022\034.mt5_term"
-  "_api.ConnectRequest\032 .mt5_term_api.Conne"
-  "ctStreamEvent\"\026\202\323\344\223\002\020\022\016/ConnectStream0\001\022"
-  "o\n\017ConnectExStream\022\036.mt5_term_api.Connec"
-  "tExRequest\032 .mt5_term_api.ConnectStreamE"
-  "vent\"\030\202\323\344\223\002\022\022\020/ConnectExStream0\0012\212\003\n\004Log"
-  "s\022Z\n\007Journal\022\034.mt5_term_api.JournalReque"
-  "st\032\032.mt5_term_api.JournalReply\"\025\202\323\344\223\002\017\022\r"
-  "/Logs/Journal\022d\n\tOnJournal\022\036.mt5_term_ap"
-  "i.OnJournalRequest\032\034.mt5_term_api.OnJour"
-  "nalReply\"\027\202\323\344\223\002\021\022\017/Logs/OnJournal0\001\022Z\n\007E"
-  "xperts\022\034.mt5_term_api.JournalRequest\032\032.m"
-  "t5_term_api.JournalReply\"\025\202\323\344\223\002\017\022\r/Logs/"
-  "Experts\022d\n\tOnExperts\022\036.mt5_term_api.OnJo"
-  "urnalRequest\032\034.mt5_term_api.OnJournalRep"
-  "ly\"\027\202\323\344\223\002\021\022\017/Logs/OnExperts0\001BBZ1git.mta"
-  "pi.io/root/mrpc-proto.git/mt5/libraries/"
-  "go\252\002\014mt5_term_apib\006proto3"
+  "\000B\n\n\010response\"K\n\016DisconnectData\022\031\n\021uniqu"
+  "e_identifier\030\001 \001(\t\022\036\n\026full_life_time_sec"
+  "onds\030\002 \001(\003\"\023\n\021ScreenshotRequest\"q\n\017Scree"
+  "nshotReply\022,\n\004data\030\001 \001(\0132\034.mt5_term_api."
+  "ScreenshotDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_te"
+  "rm_api.ErrorH\000B\n\n\010response\"g\n\016Screenshot"
+  "Data\022\022\n\nimage_data\030\001 \001(\014\022\026\n\016display_numb"
+  "er\030\002 \001(\005\022\023\n\013terminal_id\030\003 \001(\t\022\024\n\014content"
+  "_type\030\004 \001(\t\".\n\014GetIdRequest\022\014\n\004user\030\001 \001("
+  "\t\022\020\n\010password\030\002 \001(\t\"g\n\nGetIdReply\022\'\n\004dat"
+  "a\030\001 \001(\0132\027.mt5_term_api.GetIdDataH\000\022$\n\005er"
+  "ror\030\002 \001(\0132\023.mt5_term_api.ErrorH\000B\n\n\010resp"
+  "onse\"\027\n\tGetIdData\022\n\n\002id\030\001 \001(\t\"\361\001\n\022Connec"
+  "tStreamEvent\022\014\n\004step\030\001 \001(\t\022\017\n\007message\030\002 "
+  "\001(\t\022\r\n\005level\030\003 \001(\t\022\022\n\nelapsed_ms\030\004 \001(\003\022-"
+  "\n\ttimestamp\030\005 \001(\0132\032.google.protobuf.Time"
+  "stamp\022\020\n\010is_final\030\006 \001(\010\022/\n\014connect_data\030"
+  "\007 \001(\0132\031.mt5_term_api.ConnectData\022\'\n\nerro"
+  "r_data\030\010 \001(\0132\023.mt5_term_api.Error\"\025\n\023Con"
+  "nectStateRequest\"u\n\021ConnectStateReply\022.\n"
+  "\004data\030\001 \001(\0132\036.mt5_term_api.ConnectStateD"
+  "ataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.Erro"
+  "rH\000B\n\n\010response\"-\n\025OnConnectStateRequest"
+  "\022\024\n\014terminal_ids\030\001 \003(\t\"w\n\023OnConnectState"
+  "Reply\022.\n\004data\030\001 \001(\0132\036.mt5_term_api.Conne"
+  "ctStateDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_"
+  "api.ErrorH\000B\n\n\010response\"\322\001\n\020ConnectState"
+  "Data\022\n\n\002id\030\001 \001(\t\022\r\n\005state\030\002 \001(\t\022\024\n\014is_co"
+  "nnected\030\003 \001(\010\022\020\n\010is_alive\030\004 \001(\010\022\024\n\014api_i"
+  "s_alive\030\005 \001(\010\022\016\n\006server\030\006 \001(\t\022\017\n\007account"
+  "\030\007 \001(\004\022\025\n\rerror_message\030\010 \001(\t\022-\n\ttimesta"
+  "mp\030\t \001(\0132\032.google.protobuf.Timestamp\"\031\n\027"
+  "ConnectionStatusRequest\"}\n\025ConnectionSta"
+  "tusReply\0222\n\004data\030\001 \001(\0132\".mt5_term_api.Co"
+  "nnectionStatusDataH\000\022$\n\005error\030\002 \001(\0132\023.mt"
+  "5_term_api.ErrorH\000B\n\n\010response\"\247\001\n\024Conne"
+  "ctionStatusData\022\n\n\002id\030\001 \001(\t\022\024\n\014is_connec"
+  "ted\030\002 \001(\010\022\020\n\010is_alive\030\003 \001(\010\022\024\n\014api_is_al"
+  "ive\030\004 \001(\010\022\016\n\006server\030\005 \001(\t\022\017\n\007account\030\006 \001"
+  "(\004\022\025\n\rerror_message\030\007 \001(\t\022\r\n\005state\030\010 \001(\t"
+  "*9\n\nProxyTypes\022\010\n\004None\020\000\022\t\n\005Https\020\001\022\n\n\006S"
+  "ocks4\020\002\022\n\n\006Socks5\020\003* \n\014TerminalType\022\007\n\003M"
+  "T4\020\000\022\007\n\003MT5\020\0012\335\014\n\nConnection\022]\n\tConnectE"
+  "x\022\036.mt5_term_api.ConnectExRequest\032\034.mt5_"
+  "term_api.ConnectExReply\"\022\202\323\344\223\002\014\022\n/Connec"
+  "tEx\022U\n\007Connect\022\034.mt5_term_api.ConnectReq"
+  "uest\032\032.mt5_term_api.ConnectReply\"\020\202\323\344\223\002\n"
+  "\022\010/Connect\022i\n\014ConnectProxy\022!.mt5_term_ap"
+  "i.ConnectProxyRequest\032\037.mt5_term_api.Con"
+  "nectProxyReply\"\025\202\323\344\223\002\017\022\r/ConnectProxy\022i\n"
+  "\014CheckConnect\022!.mt5_term_api.CheckConnec"
+  "tRequest\032\037.mt5_term_api.CheckConnectRepl"
+  "y\"\025\202\323\344\223\002\017\022\r/CheckConnect\022i\n\014ConnectState"
+  "\022!.mt5_term_api.ConnectStateRequest\032\037.mt"
+  "5_term_api.ConnectStateReply\"\025\202\323\344\223\002\017\022\r/C"
+  "onnectState\022s\n\016OnConnectState\022#.mt5_term"
+  "_api.OnConnectStateRequest\032!.mt5_term_ap"
+  "i.OnConnectStateReply\"\027\202\323\344\223\002\021\022\017/OnConnec"
+  "tState0\001\022y\n\020ConnectionStatus\022%.mt5_term_"
+  "api.ConnectionStatusRequest\032#.mt5_term_a"
+  "pi.ConnectionStatusReply\"\031\202\323\344\223\002\023\022\021/Conne"
+  "ctionStatus\022a\n\nDisconnect\022\037.mt5_term_api"
+  ".DisconnectRequest\032\035.mt5_term_api.Discon"
+  "nectReply\"\023\202\323\344\223\002\r\022\013/Disconnect\022]\n\tReconn"
+  "ect\022\036.mt5_term_api.ReconnectRequest\032\034.mt"
+  "5_term_api.ReconnectReply\"\022\202\323\344\223\002\014\022\n/Reco"
+  "nnect\022l\n\016ConnectByToken\022#.mt5_term_api.C"
+  "onnectByTokenRequest\032\034.mt5_term_api.Conn"
+  "ectExReply\"\027\202\323\344\223\002\021\022\017/ConnectByToken\022\251\001\n\034"
+  "GetBrokerServersByBrokerName\0221.mt5_term_"
+  "api.GetBrokerServersByBrokerNameRequest\032"
+  "/.mt5_term_api.GetBrokerServersByBrokerN"
+  "ameReply\"%\202\323\344\223\002\037\022\035/GetBrokerServersByBro"
+  "kerName\022a\n\nScreenshot\022\037.mt5_term_api.Scr"
+  "eenshotRequest\032\035.mt5_term_api.Screenshot"
+  "Reply\"\023\202\323\344\223\002\r\022\013/Screenshot\022M\n\005GetId\022\032.mt"
+  "5_term_api.GetIdRequest\032\030.mt5_term_api.G"
+  "etIdReply\"\016\202\323\344\223\002\010\022\006/GetId\022i\n\rConnectStre"
+  "am\022\034.mt5_term_api.ConnectRequest\032 .mt5_t"
+  "erm_api.ConnectStreamEvent\"\026\202\323\344\223\002\020\022\016/Con"
+  "nectStream0\001\022o\n\017ConnectExStream\022\036.mt5_te"
+  "rm_api.ConnectExRequest\032 .mt5_term_api.C"
+  "onnectStreamEvent\"\030\202\323\344\223\002\022\022\020/ConnectExStr"
+  "eam0\0012\212\003\n\004Logs\022Z\n\007Journal\022\034.mt5_term_api"
+  ".JournalRequest\032\032.mt5_term_api.JournalRe"
+  "ply\"\025\202\323\344\223\002\017\022\r/Logs/Journal\022d\n\tOnJournal\022"
+  "\036.mt5_term_api.OnJournalRequest\032\034.mt5_te"
+  "rm_api.OnJournalReply\"\027\202\323\344\223\002\021\022\017/Logs/OnJ"
+  "ournal0\001\022Z\n\007Experts\022\034.mt5_term_api.Journ"
+  "alRequest\032\032.mt5_term_api.JournalReply\"\025\202"
+  "\323\344\223\002\017\022\r/Logs/Experts\022d\n\tOnExperts\022\036.mt5_"
+  "term_api.OnJournalRequest\032\034.mt5_term_api"
+  ".OnJournalReply\"\027\202\323\344\223\002\021\022\017/Logs/OnExperts"
+  "0\001BBZ1git.mtapi.io/root/mrpc-proto.git/m"
+  "t5/libraries/go\252\002\014mt5_term_apib\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2dconnection_2eproto_deps[4] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -1462,7 +1468,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2d
 };
 static ::_pbi::once_flag descriptor_table_mt5_2dterm_2dapi_2dconnection_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_mt5_2dterm_2dapi_2dconnection_2eproto = {
-    false, false, 7705, descriptor_table_protodef_mt5_2dterm_2dapi_2dconnection_2eproto,
+    false, false, 7758, descriptor_table_protodef_mt5_2dterm_2dapi_2dconnection_2eproto,
     "mt5-term-api-connection.proto",
     &descriptor_table_mt5_2dterm_2dapi_2dconnection_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2dconnection_2eproto_deps, 4, 46,
     schemas, file_default_instances, TableStruct_mt5_2dterm_2dapi_2dconnection_2eproto::offsets,
@@ -2232,9 +2238,18 @@ GetTerminalJournalData::GetTerminalJournalData(const GetTerminalJournalData& fro
   GetTerminalJournalData* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.rows_){from._impl_.rows_}
+    , decltype(_impl_.diagnostics_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.diagnostics_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.diagnostics_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_diagnostics().empty()) {
+    _this->_impl_.diagnostics_.Set(from._internal_diagnostics(), 
+      _this->GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:mt5_term_api.GetTerminalJournalData)
 }
 
@@ -2244,8 +2259,13 @@ inline void GetTerminalJournalData::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.rows_){arena}
+    , decltype(_impl_.diagnostics_){}
     , /*decltype(_impl_._cached_size_)*/{}
   };
+  _impl_.diagnostics_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.diagnostics_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 GetTerminalJournalData::~GetTerminalJournalData() {
@@ -2260,6 +2280,7 @@ GetTerminalJournalData::~GetTerminalJournalData() {
 inline void GetTerminalJournalData::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.rows_.~RepeatedPtrField();
+  _impl_.diagnostics_.Destroy();
 }
 
 void GetTerminalJournalData::SetCachedSize(int size) const {
@@ -2273,6 +2294,7 @@ void GetTerminalJournalData::Clear() {
   (void) cached_has_bits;
 
   _impl_.rows_.Clear();
+  _impl_.diagnostics_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2292,6 +2314,16 @@ const char* GetTerminalJournalData::_InternalParse(const char* ptr, ::_pbi::Pars
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // string diagnostics = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_diagnostics();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.GetTerminalJournalData.diagnostics"));
         } else
           goto handle_unusual;
         continue;
@@ -2332,6 +2364,16 @@ uint8_t* GetTerminalJournalData::_InternalSerialize(
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
+  // string diagnostics = 2;
+  if (!this->_internal_diagnostics().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_diagnostics().data(), static_cast<int>(this->_internal_diagnostics().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.GetTerminalJournalData.diagnostics");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_diagnostics(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2355,6 +2397,13 @@ size_t GetTerminalJournalData::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
+  // string diagnostics = 2;
+  if (!this->_internal_diagnostics().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_diagnostics());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -2374,6 +2423,9 @@ void GetTerminalJournalData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg,
   (void) cached_has_bits;
 
   _this->_impl_.rows_.MergeFrom(from._impl_.rows_);
+  if (!from._internal_diagnostics().empty()) {
+    _this->_internal_set_diagnostics(from._internal_diagnostics());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2390,8 +2442,14 @@ bool GetTerminalJournalData::IsInitialized() const {
 
 void GetTerminalJournalData::InternalSwap(GetTerminalJournalData* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.rows_.InternalSwap(&other->_impl_.rows_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.diagnostics_, lhs_arena,
+      &other->_impl_.diagnostics_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetTerminalJournalData::GetMetadata() const {
@@ -9347,6 +9405,9 @@ class DisconnectRequest::_Internal {
   static void set_has_reason(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
+  static void set_has_delete_(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
 };
 
 DisconnectRequest::DisconnectRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -9361,7 +9422,8 @@ DisconnectRequest::DisconnectRequest(const DisconnectRequest& from)
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.reason_){}};
+    , decltype(_impl_.reason_){}
+    , decltype(_impl_.delete__){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.reason_.InitDefault();
@@ -9372,6 +9434,7 @@ DisconnectRequest::DisconnectRequest(const DisconnectRequest& from)
     _this->_impl_.reason_.Set(from._internal_reason(), 
       _this->GetArenaForAllocation());
   }
+  _this->_impl_.delete__ = from._impl_.delete__;
   // @@protoc_insertion_point(copy_constructor:mt5_term_api.DisconnectRequest)
 }
 
@@ -9383,6 +9446,7 @@ inline void DisconnectRequest::SharedCtor(
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.reason_){}
+    , decltype(_impl_.delete__){false}
   };
   _impl_.reason_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -9418,6 +9482,7 @@ void DisconnectRequest::Clear() {
   if (cached_has_bits & 0x00000001u) {
     _impl_.reason_.ClearNonDefaultToEmpty();
   }
+  _impl_.delete__ = false;
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -9436,6 +9501,15 @@ const char* DisconnectRequest::_InternalParse(const char* ptr, ::_pbi::ParseCont
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.DisconnectRequest.reason"));
+        } else
+          goto handle_unusual;
+        continue;
+      // optional bool delete = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _Internal::set_has_delete_(&has_bits);
+          _impl_.delete__ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -9479,6 +9553,12 @@ uint8_t* DisconnectRequest::_InternalSerialize(
         1, this->_internal_reason(), target);
   }
 
+  // optional bool delete = 2;
+  if (_internal_has_delete_()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_delete_(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -9495,14 +9575,21 @@ size_t DisconnectRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // optional string reason = 1;
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_reason());
-  }
+  if (cached_has_bits & 0x00000003u) {
+    // optional string reason = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_reason());
+    }
 
+    // optional bool delete = 2;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 + 1;
+    }
+
+  }
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -9521,8 +9608,15 @@ void DisconnectRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, cons
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_reason()) {
-    _this->_internal_set_reason(from._internal_reason());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_reason(from._internal_reason());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.delete__ = from._impl_.delete__;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -9548,6 +9642,7 @@ void DisconnectRequest::InternalSwap(DisconnectRequest* other) {
       &_impl_.reason_, lhs_arena,
       &other->_impl_.reason_, rhs_arena
   );
+  swap(_impl_.delete__, other->_impl_.delete__);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DisconnectRequest::GetMetadata() const {

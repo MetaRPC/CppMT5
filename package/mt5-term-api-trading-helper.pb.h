@@ -856,6 +856,7 @@ class OrderModifyRequest final :
 
   enum : int {
     kExpirationTimeFieldNumber = 6,
+    kExpirationTimeUtcFieldNumber = 9,
     kTicketFieldNumber = 1,
     kStopLossFieldNumber = 2,
     kTakeProfitFieldNumber = 3,
@@ -880,6 +881,24 @@ class OrderModifyRequest final :
   void unsafe_arena_set_allocated_expiration_time(
       ::PROTOBUF_NAMESPACE_ID::Timestamp* expiration_time);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_expiration_time();
+
+  // optional .google.protobuf.Timestamp expiration_time_utc = 9;
+  bool has_expiration_time_utc() const;
+  private:
+  bool _internal_has_expiration_time_utc() const;
+  public:
+  void clear_expiration_time_utc();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& expiration_time_utc() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_expiration_time_utc();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_expiration_time_utc();
+  void set_allocated_expiration_time_utc(::PROTOBUF_NAMESPACE_ID::Timestamp* expiration_time_utc);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_expiration_time_utc() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_expiration_time_utc();
+  public:
+  void unsafe_arena_set_allocated_expiration_time_utc(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* expiration_time_utc);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_expiration_time_utc();
 
   // uint64 ticket = 1;
   void clear_ticket();
@@ -966,6 +985,7 @@ class OrderModifyRequest final :
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* expiration_time_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* expiration_time_utc_;
     uint64_t ticket_;
     double stop_loss_;
     double take_profit_;
@@ -1582,6 +1602,7 @@ class OrderSendRequest final :
     kSymbolFieldNumber = 1,
     kCommentFieldNumber = 8,
     kExpirationTimeFieldNumber = 12,
+    kExpirationTimeUtcFieldNumber = 14,
     kVolumeFieldNumber = 3,
     kPriceFieldNumber = 4,
     kSlippageFieldNumber = 5,
@@ -1642,6 +1663,24 @@ class OrderSendRequest final :
   void unsafe_arena_set_allocated_expiration_time(
       ::PROTOBUF_NAMESPACE_ID::Timestamp* expiration_time);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_expiration_time();
+
+  // optional .google.protobuf.Timestamp expiration_time_utc = 14;
+  bool has_expiration_time_utc() const;
+  private:
+  bool _internal_has_expiration_time_utc() const;
+  public:
+  void clear_expiration_time_utc();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& expiration_time_utc() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_expiration_time_utc();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_expiration_time_utc();
+  void set_allocated_expiration_time_utc(::PROTOBUF_NAMESPACE_ID::Timestamp* expiration_time_utc);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_expiration_time_utc() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_expiration_time_utc();
+  public:
+  void unsafe_arena_set_allocated_expiration_time_utc(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* expiration_time_utc);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_expiration_time_utc();
 
   // double volume = 3;
   void clear_volume();
@@ -1778,6 +1817,7 @@ class OrderSendRequest final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr symbol_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr comment_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* expiration_time_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* expiration_time_utc_;
     double volume_;
     double price_;
     uint64_t slippage_;
@@ -2666,7 +2706,7 @@ inline void OrderModifyRequest::set_ticket(uint64_t value) {
 
 // optional double stop_loss = 2;
 inline bool OrderModifyRequest::_internal_has_stop_loss() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool OrderModifyRequest::has_stop_loss() const {
@@ -2674,7 +2714,7 @@ inline bool OrderModifyRequest::has_stop_loss() const {
 }
 inline void OrderModifyRequest::clear_stop_loss() {
   _impl_.stop_loss_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline double OrderModifyRequest::_internal_stop_loss() const {
   return _impl_.stop_loss_;
@@ -2684,7 +2724,7 @@ inline double OrderModifyRequest::stop_loss() const {
   return _internal_stop_loss();
 }
 inline void OrderModifyRequest::_internal_set_stop_loss(double value) {
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.stop_loss_ = value;
 }
 inline void OrderModifyRequest::set_stop_loss(double value) {
@@ -2694,7 +2734,7 @@ inline void OrderModifyRequest::set_stop_loss(double value) {
 
 // optional double take_profit = 3;
 inline bool OrderModifyRequest::_internal_has_take_profit() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline bool OrderModifyRequest::has_take_profit() const {
@@ -2702,7 +2742,7 @@ inline bool OrderModifyRequest::has_take_profit() const {
 }
 inline void OrderModifyRequest::clear_take_profit() {
   _impl_.take_profit_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 inline double OrderModifyRequest::_internal_take_profit() const {
   return _impl_.take_profit_;
@@ -2712,7 +2752,7 @@ inline double OrderModifyRequest::take_profit() const {
   return _internal_take_profit();
 }
 inline void OrderModifyRequest::_internal_set_take_profit(double value) {
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.take_profit_ = value;
 }
 inline void OrderModifyRequest::set_take_profit(double value) {
@@ -2722,7 +2762,7 @@ inline void OrderModifyRequest::set_take_profit(double value) {
 
 // optional double price = 4;
 inline bool OrderModifyRequest::_internal_has_price() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline bool OrderModifyRequest::has_price() const {
@@ -2730,7 +2770,7 @@ inline bool OrderModifyRequest::has_price() const {
 }
 inline void OrderModifyRequest::clear_price() {
   _impl_.price_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
 }
 inline double OrderModifyRequest::_internal_price() const {
   return _impl_.price_;
@@ -2740,7 +2780,7 @@ inline double OrderModifyRequest::price() const {
   return _internal_price();
 }
 inline void OrderModifyRequest::_internal_set_price(double value) {
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   _impl_.price_ = value;
 }
 inline void OrderModifyRequest::set_price(double value) {
@@ -2750,7 +2790,7 @@ inline void OrderModifyRequest::set_price(double value) {
 
 // optional .mt5_term_api.TMT5_ENUM_ORDER_TYPE_TIME expiration_time_type = 5;
 inline bool OrderModifyRequest::_internal_has_expiration_time_type() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
   return value;
 }
 inline bool OrderModifyRequest::has_expiration_time_type() const {
@@ -2758,7 +2798,7 @@ inline bool OrderModifyRequest::has_expiration_time_type() const {
 }
 inline void OrderModifyRequest::clear_expiration_time_type() {
   _impl_.expiration_time_type_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000020u;
+  _impl_._has_bits_[0] &= ~0x00000040u;
 }
 inline ::mt5_term_api::TMT5_ENUM_ORDER_TYPE_TIME OrderModifyRequest::_internal_expiration_time_type() const {
   return static_cast< ::mt5_term_api::TMT5_ENUM_ORDER_TYPE_TIME >(_impl_.expiration_time_type_);
@@ -2768,7 +2808,7 @@ inline ::mt5_term_api::TMT5_ENUM_ORDER_TYPE_TIME OrderModifyRequest::expiration_
   return _internal_expiration_time_type();
 }
 inline void OrderModifyRequest::_internal_set_expiration_time_type(::mt5_term_api::TMT5_ENUM_ORDER_TYPE_TIME value) {
-  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_._has_bits_[0] |= 0x00000040u;
   _impl_.expiration_time_type_ = value;
 }
 inline void OrderModifyRequest::set_expiration_time_type(::mt5_term_api::TMT5_ENUM_ORDER_TYPE_TIME value) {
@@ -2863,9 +2903,96 @@ inline void OrderModifyRequest::set_allocated_expiration_time(::PROTOBUF_NAMESPA
   // @@protoc_insertion_point(field_set_allocated:mt5_term_api.OrderModifyRequest.expiration_time)
 }
 
+// optional .google.protobuf.Timestamp expiration_time_utc = 9;
+inline bool OrderModifyRequest::_internal_has_expiration_time_utc() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.expiration_time_utc_ != nullptr);
+  return value;
+}
+inline bool OrderModifyRequest::has_expiration_time_utc() const {
+  return _internal_has_expiration_time_utc();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& OrderModifyRequest::_internal_expiration_time_utc() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.expiration_time_utc_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& OrderModifyRequest::expiration_time_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.OrderModifyRequest.expiration_time_utc)
+  return _internal_expiration_time_utc();
+}
+inline void OrderModifyRequest::unsafe_arena_set_allocated_expiration_time_utc(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* expiration_time_utc) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.expiration_time_utc_);
+  }
+  _impl_.expiration_time_utc_ = expiration_time_utc;
+  if (expiration_time_utc) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.OrderModifyRequest.expiration_time_utc)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* OrderModifyRequest::release_expiration_time_utc() {
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.expiration_time_utc_;
+  _impl_.expiration_time_utc_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* OrderModifyRequest::unsafe_arena_release_expiration_time_utc() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.OrderModifyRequest.expiration_time_utc)
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.expiration_time_utc_;
+  _impl_.expiration_time_utc_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* OrderModifyRequest::_internal_mutable_expiration_time_utc() {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  if (_impl_.expiration_time_utc_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.expiration_time_utc_ = p;
+  }
+  return _impl_.expiration_time_utc_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* OrderModifyRequest::mutable_expiration_time_utc() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_expiration_time_utc();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.OrderModifyRequest.expiration_time_utc)
+  return _msg;
+}
+inline void OrderModifyRequest::set_allocated_expiration_time_utc(::PROTOBUF_NAMESPACE_ID::Timestamp* expiration_time_utc) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.expiration_time_utc_);
+  }
+  if (expiration_time_utc) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(expiration_time_utc));
+    if (message_arena != submessage_arena) {
+      expiration_time_utc = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, expiration_time_utc, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.expiration_time_utc_ = expiration_time_utc;
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.OrderModifyRequest.expiration_time_utc)
+}
+
 // optional double stop_limit = 8;
 inline bool OrderModifyRequest::_internal_has_stop_limit() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline bool OrderModifyRequest::has_stop_limit() const {
@@ -2873,7 +3000,7 @@ inline bool OrderModifyRequest::has_stop_limit() const {
 }
 inline void OrderModifyRequest::clear_stop_limit() {
   _impl_.stop_limit_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_._has_bits_[0] &= ~0x00000020u;
 }
 inline double OrderModifyRequest::_internal_stop_limit() const {
   return _impl_.stop_limit_;
@@ -2883,7 +3010,7 @@ inline double OrderModifyRequest::stop_limit() const {
   return _internal_stop_limit();
 }
 inline void OrderModifyRequest::_internal_set_stop_limit(double value) {
-  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_._has_bits_[0] |= 0x00000020u;
   _impl_.stop_limit_ = value;
 }
 inline void OrderModifyRequest::set_stop_limit(double value) {
@@ -3474,7 +3601,7 @@ inline void OrderSendRequest::set_volume(double value) {
 
 // optional double price = 4;
 inline bool OrderSendRequest::_internal_has_price() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline bool OrderSendRequest::has_price() const {
@@ -3482,7 +3609,7 @@ inline bool OrderSendRequest::has_price() const {
 }
 inline void OrderSendRequest::clear_price() {
   _impl_.price_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 inline double OrderSendRequest::_internal_price() const {
   return _impl_.price_;
@@ -3492,7 +3619,7 @@ inline double OrderSendRequest::price() const {
   return _internal_price();
 }
 inline void OrderSendRequest::_internal_set_price(double value) {
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.price_ = value;
 }
 inline void OrderSendRequest::set_price(double value) {
@@ -3502,7 +3629,7 @@ inline void OrderSendRequest::set_price(double value) {
 
 // optional uint64 slippage = 5;
 inline bool OrderSendRequest::_internal_has_slippage() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline bool OrderSendRequest::has_slippage() const {
@@ -3510,7 +3637,7 @@ inline bool OrderSendRequest::has_slippage() const {
 }
 inline void OrderSendRequest::clear_slippage() {
   _impl_.slippage_ = uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
 }
 inline uint64_t OrderSendRequest::_internal_slippage() const {
   return _impl_.slippage_;
@@ -3520,7 +3647,7 @@ inline uint64_t OrderSendRequest::slippage() const {
   return _internal_slippage();
 }
 inline void OrderSendRequest::_internal_set_slippage(uint64_t value) {
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   _impl_.slippage_ = value;
 }
 inline void OrderSendRequest::set_slippage(uint64_t value) {
@@ -3530,7 +3657,7 @@ inline void OrderSendRequest::set_slippage(uint64_t value) {
 
 // optional double stop_loss = 6;
 inline bool OrderSendRequest::_internal_has_stop_loss() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline bool OrderSendRequest::has_stop_loss() const {
@@ -3538,7 +3665,7 @@ inline bool OrderSendRequest::has_stop_loss() const {
 }
 inline void OrderSendRequest::clear_stop_loss() {
   _impl_.stop_loss_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_._has_bits_[0] &= ~0x00000020u;
 }
 inline double OrderSendRequest::_internal_stop_loss() const {
   return _impl_.stop_loss_;
@@ -3548,7 +3675,7 @@ inline double OrderSendRequest::stop_loss() const {
   return _internal_stop_loss();
 }
 inline void OrderSendRequest::_internal_set_stop_loss(double value) {
-  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_._has_bits_[0] |= 0x00000020u;
   _impl_.stop_loss_ = value;
 }
 inline void OrderSendRequest::set_stop_loss(double value) {
@@ -3558,7 +3685,7 @@ inline void OrderSendRequest::set_stop_loss(double value) {
 
 // optional double take_profit = 7;
 inline bool OrderSendRequest::_internal_has_take_profit() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
   return value;
 }
 inline bool OrderSendRequest::has_take_profit() const {
@@ -3566,7 +3693,7 @@ inline bool OrderSendRequest::has_take_profit() const {
 }
 inline void OrderSendRequest::clear_take_profit() {
   _impl_.take_profit_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000040u;
+  _impl_._has_bits_[0] &= ~0x00000080u;
 }
 inline double OrderSendRequest::_internal_take_profit() const {
   return _impl_.take_profit_;
@@ -3576,7 +3703,7 @@ inline double OrderSendRequest::take_profit() const {
   return _internal_take_profit();
 }
 inline void OrderSendRequest::_internal_set_take_profit(double value) {
-  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_._has_bits_[0] |= 0x00000080u;
   _impl_.take_profit_ = value;
 }
 inline void OrderSendRequest::set_take_profit(double value) {
@@ -3654,7 +3781,7 @@ inline void OrderSendRequest::set_allocated_comment(std::string* comment) {
 
 // optional uint64 expert_id = 9;
 inline bool OrderSendRequest::_internal_has_expert_id() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
   return value;
 }
 inline bool OrderSendRequest::has_expert_id() const {
@@ -3662,7 +3789,7 @@ inline bool OrderSendRequest::has_expert_id() const {
 }
 inline void OrderSendRequest::clear_expert_id() {
   _impl_.expert_id_ = uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000080u;
+  _impl_._has_bits_[0] &= ~0x00000100u;
 }
 inline uint64_t OrderSendRequest::_internal_expert_id() const {
   return _impl_.expert_id_;
@@ -3672,7 +3799,7 @@ inline uint64_t OrderSendRequest::expert_id() const {
   return _internal_expert_id();
 }
 inline void OrderSendRequest::_internal_set_expert_id(uint64_t value) {
-  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_._has_bits_[0] |= 0x00000100u;
   _impl_.expert_id_ = value;
 }
 inline void OrderSendRequest::set_expert_id(uint64_t value) {
@@ -3682,7 +3809,7 @@ inline void OrderSendRequest::set_expert_id(uint64_t value) {
 
 // optional double stop_limit_price = 10;
 inline bool OrderSendRequest::_internal_has_stop_limit_price() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
   return value;
 }
 inline bool OrderSendRequest::has_stop_limit_price() const {
@@ -3690,7 +3817,7 @@ inline bool OrderSendRequest::has_stop_limit_price() const {
 }
 inline void OrderSendRequest::clear_stop_limit_price() {
   _impl_.stop_limit_price_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000100u;
+  _impl_._has_bits_[0] &= ~0x00000200u;
 }
 inline double OrderSendRequest::_internal_stop_limit_price() const {
   return _impl_.stop_limit_price_;
@@ -3700,7 +3827,7 @@ inline double OrderSendRequest::stop_limit_price() const {
   return _internal_stop_limit_price();
 }
 inline void OrderSendRequest::_internal_set_stop_limit_price(double value) {
-  _impl_._has_bits_[0] |= 0x00000100u;
+  _impl_._has_bits_[0] |= 0x00000200u;
   _impl_.stop_limit_price_ = value;
 }
 inline void OrderSendRequest::set_stop_limit_price(double value) {
@@ -3710,7 +3837,7 @@ inline void OrderSendRequest::set_stop_limit_price(double value) {
 
 // optional .mt5_term_api.TMT5_ENUM_ORDER_TYPE_TIME expiration_time_type = 11;
 inline bool OrderSendRequest::_internal_has_expiration_time_type() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
   return value;
 }
 inline bool OrderSendRequest::has_expiration_time_type() const {
@@ -3718,7 +3845,7 @@ inline bool OrderSendRequest::has_expiration_time_type() const {
 }
 inline void OrderSendRequest::clear_expiration_time_type() {
   _impl_.expiration_time_type_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000020u;
+  _impl_._has_bits_[0] &= ~0x00000040u;
 }
 inline ::mt5_term_api::TMT5_ENUM_ORDER_TYPE_TIME OrderSendRequest::_internal_expiration_time_type() const {
   return static_cast< ::mt5_term_api::TMT5_ENUM_ORDER_TYPE_TIME >(_impl_.expiration_time_type_);
@@ -3728,7 +3855,7 @@ inline ::mt5_term_api::TMT5_ENUM_ORDER_TYPE_TIME OrderSendRequest::expiration_ti
   return _internal_expiration_time_type();
 }
 inline void OrderSendRequest::_internal_set_expiration_time_type(::mt5_term_api::TMT5_ENUM_ORDER_TYPE_TIME value) {
-  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_._has_bits_[0] |= 0x00000040u;
   _impl_.expiration_time_type_ = value;
 }
 inline void OrderSendRequest::set_expiration_time_type(::mt5_term_api::TMT5_ENUM_ORDER_TYPE_TIME value) {
@@ -3823,9 +3950,96 @@ inline void OrderSendRequest::set_allocated_expiration_time(::PROTOBUF_NAMESPACE
   // @@protoc_insertion_point(field_set_allocated:mt5_term_api.OrderSendRequest.expiration_time)
 }
 
+// optional .google.protobuf.Timestamp expiration_time_utc = 14;
+inline bool OrderSendRequest::_internal_has_expiration_time_utc() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.expiration_time_utc_ != nullptr);
+  return value;
+}
+inline bool OrderSendRequest::has_expiration_time_utc() const {
+  return _internal_has_expiration_time_utc();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& OrderSendRequest::_internal_expiration_time_utc() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.expiration_time_utc_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& OrderSendRequest::expiration_time_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.OrderSendRequest.expiration_time_utc)
+  return _internal_expiration_time_utc();
+}
+inline void OrderSendRequest::unsafe_arena_set_allocated_expiration_time_utc(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* expiration_time_utc) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.expiration_time_utc_);
+  }
+  _impl_.expiration_time_utc_ = expiration_time_utc;
+  if (expiration_time_utc) {
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.OrderSendRequest.expiration_time_utc)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* OrderSendRequest::release_expiration_time_utc() {
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.expiration_time_utc_;
+  _impl_.expiration_time_utc_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* OrderSendRequest::unsafe_arena_release_expiration_time_utc() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.OrderSendRequest.expiration_time_utc)
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.expiration_time_utc_;
+  _impl_.expiration_time_utc_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* OrderSendRequest::_internal_mutable_expiration_time_utc() {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  if (_impl_.expiration_time_utc_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.expiration_time_utc_ = p;
+  }
+  return _impl_.expiration_time_utc_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* OrderSendRequest::mutable_expiration_time_utc() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_expiration_time_utc();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.OrderSendRequest.expiration_time_utc)
+  return _msg;
+}
+inline void OrderSendRequest::set_allocated_expiration_time_utc(::PROTOBUF_NAMESPACE_ID::Timestamp* expiration_time_utc) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.expiration_time_utc_);
+  }
+  if (expiration_time_utc) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(expiration_time_utc));
+    if (message_arena != submessage_arena) {
+      expiration_time_utc = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, expiration_time_utc, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  _impl_.expiration_time_utc_ = expiration_time_utc;
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.OrderSendRequest.expiration_time_utc)
+}
+
 // optional int32 quotes_wait_ms = 13;
 inline bool OrderSendRequest::_internal_has_quotes_wait_ms() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
   return value;
 }
 inline bool OrderSendRequest::has_quotes_wait_ms() const {
@@ -3833,7 +4047,7 @@ inline bool OrderSendRequest::has_quotes_wait_ms() const {
 }
 inline void OrderSendRequest::clear_quotes_wait_ms() {
   _impl_.quotes_wait_ms_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000200u;
+  _impl_._has_bits_[0] &= ~0x00000400u;
 }
 inline int32_t OrderSendRequest::_internal_quotes_wait_ms() const {
   return _impl_.quotes_wait_ms_;
@@ -3843,7 +4057,7 @@ inline int32_t OrderSendRequest::quotes_wait_ms() const {
   return _internal_quotes_wait_ms();
 }
 inline void OrderSendRequest::_internal_set_quotes_wait_ms(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_._has_bits_[0] |= 0x00000400u;
   _impl_.quotes_wait_ms_ = value;
 }
 inline void OrderSendRequest::set_quotes_wait_ms(int32_t value) {

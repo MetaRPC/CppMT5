@@ -57,6 +57,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR HealthCheckReply::HealthCheckReply(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.server_time_seconds_)*/int64_t{0}
+  , /*decltype(_impl_.server_time_seconds_utc_)*/int64_t{0}
   , /*decltype(_impl_.is_connected_to_server_)*/false
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct HealthCheckReplyDefaultTypeInternal {
@@ -100,6 +101,7 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto::offsets[] 
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::HealthCheckReply, _impl_.is_connected_to_server_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::HealthCheckReply, _impl_.server_time_seconds_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::HealthCheckReply, _impl_.server_time_seconds_utc_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::mt5_term_api::StopListeningRequest)},
@@ -119,22 +121,23 @@ const char descriptor_table_protodef_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto[]
   "\n\037mt5-term-api-health-check.proto\022\014mt5_t"
   "erm_api\032\035mt5-term-api-connection.proto\"\026"
   "\n\024StopListeningRequest\"\024\n\022StopListeningR"
-  "eply\"\024\n\022HealthCheckRequest\"O\n\020HealthChec"
+  "eply\"\024\n\022HealthCheckRequest\"p\n\020HealthChec"
   "kReply\022\036\n\026is_connected_to_server\030\001 \001(\010\022\033"
-  "\n\023server_time_seconds\030\002 \001(\0032\252\001\n\006Health\022I"
-  "\n\005Check\022 .mt5_term_api.HealthCheckReques"
-  "t\032\036.mt5_term_api.HealthCheckReply\022U\n\rSto"
-  "pListening\022\".mt5_term_api.StopListeningR"
-  "equest\032 .mt5_term_api.StopListeningReply"
-  "BBZ1git.mtapi.io/root/mrpc-proto.git/mt5"
-  "/libraries/go\252\002\014mt5_term_apib\006proto3"
+  "\n\023server_time_seconds\030\002 \001(\003\022\037\n\027server_ti"
+  "me_seconds_utc\030\003 \001(\0032\252\001\n\006Health\022I\n\005Check"
+  "\022 .mt5_term_api.HealthCheckRequest\032\036.mt5"
+  "_term_api.HealthCheckReply\022U\n\rStopListen"
+  "ing\022\".mt5_term_api.StopListeningRequest\032"
+  " .mt5_term_api.StopListeningReplyBBZ1git"
+  ".mtapi.io/root/mrpc-proto.git/mt5/librar"
+  "ies/go\252\002\014mt5_term_apib\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto_deps[1] = {
   &::descriptor_table_mt5_2dterm_2dapi_2dconnection_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto = {
-    false, false, 476, descriptor_table_protodef_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto,
+    false, false, 509, descriptor_table_protodef_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto,
     "mt5-term-api-health-check.proto",
     &descriptor_table_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto_deps, 1, 4,
     schemas, file_default_instances, TableStruct_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto::offsets,
@@ -286,6 +289,7 @@ HealthCheckReply::HealthCheckReply(const HealthCheckReply& from)
   HealthCheckReply* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.server_time_seconds_){}
+    , decltype(_impl_.server_time_seconds_utc_){}
     , decltype(_impl_.is_connected_to_server_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
@@ -302,6 +306,7 @@ inline void HealthCheckReply::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.server_time_seconds_){int64_t{0}}
+    , decltype(_impl_.server_time_seconds_utc_){int64_t{0}}
     , decltype(_impl_.is_connected_to_server_){false}
     , /*decltype(_impl_._cached_size_)*/{}
   };
@@ -358,6 +363,14 @@ const char* HealthCheckReply::_InternalParse(const char* ptr, ::_pbi::ParseConte
         } else
           goto handle_unusual;
         continue;
+      // int64 server_time_seconds_utc = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.server_time_seconds_utc_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -399,6 +412,12 @@ uint8_t* HealthCheckReply::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt64ToArray(2, this->_internal_server_time_seconds(), target);
   }
 
+  // int64 server_time_seconds_utc = 3;
+  if (this->_internal_server_time_seconds_utc() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(3, this->_internal_server_time_seconds_utc(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -418,6 +437,11 @@ size_t HealthCheckReply::ByteSizeLong() const {
   // int64 server_time_seconds = 2;
   if (this->_internal_server_time_seconds() != 0) {
     total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_server_time_seconds());
+  }
+
+  // int64 server_time_seconds_utc = 3;
+  if (this->_internal_server_time_seconds_utc() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_server_time_seconds_utc());
   }
 
   // bool is_connected_to_server = 1;
@@ -445,6 +469,9 @@ void HealthCheckReply::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const
 
   if (from._internal_server_time_seconds() != 0) {
     _this->_internal_set_server_time_seconds(from._internal_server_time_seconds());
+  }
+  if (from._internal_server_time_seconds_utc() != 0) {
+    _this->_internal_set_server_time_seconds_utc(from._internal_server_time_seconds_utc());
   }
   if (from._internal_is_connected_to_server() != 0) {
     _this->_internal_set_is_connected_to_server(from._internal_is_connected_to_server());

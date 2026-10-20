@@ -449,7 +449,9 @@ struct MT5Client::Impl {
         req.set_user((uint64_t)login);
         req.set_password(password);
         req.set_mt_cluster_name(server);
-        if (!baseChartSymbol.empty()) req.set_base_chart_symbol(baseChartSymbol);
+        // base_chart_symbol (field 4) is reserved in the current proto: the gateway no longer
+        // takes a base chart, so baseChartSymbol is kept only for source compatibility.
+        (void)baseChartSymbol;
         req.set_timeout_seconds((uint32_t)connectTimeoutSeconds);
         if (!name.empty()) req.set_name(name);
         auto reply = call<pb::ConnectExReply>("ConnectEx",

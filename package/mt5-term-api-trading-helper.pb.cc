@@ -71,6 +71,7 @@ PROTOBUF_CONSTEXPR OrderModifyRequest::OrderModifyRequest(
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
   , /*decltype(_impl_.expiration_time_)*/nullptr
+  , /*decltype(_impl_.expiration_time_utc_)*/nullptr
   , /*decltype(_impl_.ticket_)*/uint64_t{0u}
   , /*decltype(_impl_.stop_loss_)*/0
   , /*decltype(_impl_.take_profit_)*/0
@@ -131,6 +132,7 @@ PROTOBUF_CONSTEXPR OrderSendRequest::OrderSendRequest(
   , /*decltype(_impl_.symbol_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.comment_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.expiration_time_)*/nullptr
+  , /*decltype(_impl_.expiration_time_utc_)*/nullptr
   , /*decltype(_impl_.volume_)*/0
   , /*decltype(_impl_.price_)*/0
   , /*decltype(_impl_.slippage_)*/uint64_t{0u}
@@ -234,14 +236,16 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dtrading_2dhelper_2eproto::offsets[
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::OrderModifyRequest, _impl_.price_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::OrderModifyRequest, _impl_.expiration_time_type_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::OrderModifyRequest, _impl_.expiration_time_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::OrderModifyRequest, _impl_.expiration_time_utc_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::OrderModifyRequest, _impl_.stop_limit_),
   ~0u,
-  1,
   2,
   3,
-  5,
-  0,
   4,
+  6,
+  0,
+  1,
+  5,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::OrderModifyReply, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -287,20 +291,22 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dtrading_2dhelper_2eproto::offsets[
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::OrderSendRequest, _impl_.stop_limit_price_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::OrderSendRequest, _impl_.expiration_time_type_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::OrderSendRequest, _impl_.expiration_time_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::OrderSendRequest, _impl_.expiration_time_utc_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::OrderSendRequest, _impl_.quotes_wait_ms_),
   ~0u,
   ~0u,
   ~0u,
-  2,
   3,
   4,
-  6,
-  0,
-  7,
-  8,
   5,
-  1,
+  7,
+  0,
+  8,
   9,
+  6,
+  1,
+  2,
+  10,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::OrderSendReply, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -333,12 +339,12 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 0, -1, -1, sizeof(::mt5_term_api::OrderCloseRequest)},
   { 9, -1, -1, sizeof(::mt5_term_api::OrderCloseReply)},
   { 18, -1, -1, sizeof(::mt5_term_api::OrderCloseData)},
-  { 28, 41, -1, sizeof(::mt5_term_api::OrderModifyRequest)},
-  { 48, -1, -1, sizeof(::mt5_term_api::OrderModifyReply)},
-  { 57, -1, -1, sizeof(::mt5_term_api::OrderModifyData)},
-  { 75, 94, -1, sizeof(::mt5_term_api::OrderSendRequest)},
-  { 107, -1, -1, sizeof(::mt5_term_api::OrderSendReply)},
-  { 116, -1, -1, sizeof(::mt5_term_api::OrderSendData)},
+  { 28, 42, -1, sizeof(::mt5_term_api::OrderModifyRequest)},
+  { 50, -1, -1, sizeof(::mt5_term_api::OrderModifyReply)},
+  { 59, -1, -1, sizeof(::mt5_term_api::OrderModifyData)},
+  { 77, 97, -1, sizeof(::mt5_term_api::OrderSendRequest)},
+  { 111, -1, -1, sizeof(::mt5_term_api::OrderSendReply)},
+  { 120, -1, -1, sizeof(::mt5_term_api::OrderSendData)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -366,77 +372,81 @@ const char descriptor_table_protodef_mt5_2dterm_2dapi_2dtrading_2dhelper_2eproto
   "(\r\022\034\n\024returned_string_code\030\002 \001(\t\022!\n\031retu"
   "rned_code_description\030\003 \001(\t\0227\n\nclose_mod"
   "e\030\004 \001(\0162#.mt5_term_api.MRPC_ORDER_CLOSE_"
-  "MODE\"\355\002\n\022OrderModifyRequest\022\016\n\006ticket\030\001 "
+  "MODE\"\303\003\n\022OrderModifyRequest\022\016\n\006ticket\030\001 "
   "\001(\004\022\026\n\tstop_loss\030\002 \001(\001H\000\210\001\001\022\030\n\013take_prof"
   "it\030\003 \001(\001H\001\210\001\001\022\022\n\005price\030\004 \001(\001H\002\210\001\001\022J\n\024exp"
   "iration_time_type\030\005 \001(\0162\'.mt5_term_api.T"
   "MT5_ENUM_ORDER_TYPE_TIMEH\003\210\001\001\0228\n\017expirat"
   "ion_time\030\006 \001(\0132\032.google.protobuf.Timesta"
-  "mpH\004\210\001\001\022\027\n\nstop_limit\030\010 \001(\001H\005\210\001\001B\014\n\n_sto"
-  "p_lossB\016\n\014_take_profitB\010\n\006_priceB\027\n\025_exp"
-  "iration_time_typeB\022\n\020_expiration_timeB\r\n"
-  "\013_stop_limit\"s\n\020OrderModifyReply\022-\n\004data"
-  "\030\001 \001(\0132\035.mt5_term_api.OrderModifyDataH\000\022"
-  "$\n\005error\030\002 \001(\0132\023.mt5_term_api.ErrorH\000B\n\n"
-  "\010response\"\377\001\n\017OrderModifyData\022\025\n\rreturne"
-  "d_code\030\001 \001(\r\022\014\n\004deal\030\002 \001(\004\022\r\n\005order\030\003 \001("
-  "\004\022\016\n\006volume\030\004 \001(\001\022\r\n\005price\030\005 \001(\001\022\013\n\003bid\030"
-  "\006 \001(\001\022\013\n\003ask\030\007 \001(\001\022\017\n\007comment\030\010 \001(\t\022\022\n\nr"
-  "equest_id\030\t \001(\r\022\031\n\021ret_code_external\030\n \001"
-  "(\005\022\034\n\024returned_string_code\030\013 \001(\t\022!\n\031retu"
-  "rned_code_description\030\014 \001(\t\"\332\004\n\020OrderSen"
-  "dRequest\022\016\n\006symbol\030\001 \001(\t\0225\n\toperation\030\002 "
-  "\001(\0162\".mt5_term_api.TMT5_ENUM_ORDER_TYPE\022"
-  "\016\n\006volume\030\003 \001(\001\022\022\n\005price\030\004 \001(\001H\000\210\001\001\022\025\n\010s"
-  "lippage\030\005 \001(\004H\001\210\001\001\022\026\n\tstop_loss\030\006 \001(\001H\002\210"
-  "\001\001\022\030\n\013take_profit\030\007 \001(\001H\003\210\001\001\022\024\n\007comment\030"
-  "\010 \001(\tH\004\210\001\001\022\026\n\texpert_id\030\t \001(\004H\005\210\001\001\022\035\n\020st"
-  "op_limit_price\030\n \001(\001H\006\210\001\001\022J\n\024expiration_"
-  "time_type\030\013 \001(\0162\'.mt5_term_api.TMT5_ENUM"
-  "_ORDER_TYPE_TIMEH\007\210\001\001\0228\n\017expiration_time"
-  "\030\014 \001(\0132\032.google.protobuf.TimestampH\010\210\001\001\022"
-  "\033\n\016quotes_wait_ms\030\r \001(\005H\t\210\001\001B\010\n\006_priceB\013"
-  "\n\t_slippageB\014\n\n_stop_lossB\016\n\014_take_profi"
-  "tB\n\n\010_commentB\014\n\n_expert_idB\023\n\021_stop_lim"
-  "it_priceB\027\n\025_expiration_time_typeB\022\n\020_ex"
-  "piration_timeB\021\n\017_quotes_wait_ms\"o\n\016Orde"
-  "rSendReply\022+\n\004data\030\001 \001(\0132\033.mt5_term_api."
-  "OrderSendDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_ter"
-  "m_api.ErrorH\000B\n\n\010response\"\375\001\n\rOrderSendD"
-  "ata\022\025\n\rreturned_code\030\001 \001(\r\022\014\n\004deal\030\002 \001(\004"
-  "\022\r\n\005order\030\003 \001(\004\022\016\n\006volume\030\004 \001(\001\022\r\n\005price"
-  "\030\005 \001(\001\022\013\n\003bid\030\006 \001(\001\022\013\n\003ask\030\007 \001(\001\022\017\n\007comm"
-  "ent\030\010 \001(\t\022\022\n\nrequest_id\030\t \001(\r\022\031\n\021ret_cod"
-  "e_external\030\n \001(\005\022\034\n\024returned_string_code"
-  "\030\013 \001(\t\022!\n\031returned_code_description\030\014 \001("
-  "\t*x\n\025MRPC_ORDER_CLOSE_MODE\022\033\n\027MRPC_MARKE"
-  "T_ORDER_CLOSE\020\000\022#\n\037MRPC_MARKET_ORDER_PAR"
-  "TIAL_CLOSE\020\001\022\035\n\031MRPC_PENDING_ORDER_REMOV"
-  "E\020\002*\254\002\n\024TMT5_ENUM_ORDER_TYPE\022\027\n\023TMT5_ORD"
-  "ER_TYPE_BUY\020\000\022\030\n\024TMT5_ORDER_TYPE_SELL\020\001\022"
-  "\035\n\031TMT5_ORDER_TYPE_BUY_LIMIT\020\002\022\036\n\032TMT5_O"
-  "RDER_TYPE_SELL_LIMIT\020\003\022\034\n\030TMT5_ORDER_TYP"
-  "E_BUY_STOP\020\004\022\035\n\031TMT5_ORDER_TYPE_SELL_STO"
-  "P\020\005\022\"\n\036TMT5_ORDER_TYPE_BUY_STOP_LIMIT\020\006\022"
-  "#\n\037TMT5_ORDER_TYPE_SELL_STOP_LIMIT\020\007\022\034\n\030"
-  "TMT5_ORDER_TYPE_CLOSE_BY\020\010*\217\001\n\031TMT5_ENUM"
-  "_ORDER_TYPE_TIME\022\027\n\023TMT5_ORDER_TIME_GTC\020"
-  "\000\022\027\n\023TMT5_ORDER_TIME_DAY\020\001\022\035\n\031TMT5_ORDER"
-  "_TIME_SPECIFIED\020\002\022!\n\035TMT5_ORDER_TIME_SPE"
-  "CIFIED_DAY\020\0032\261\003\n\rTradingHelper\022]\n\tOrderS"
-  "end\022\036.mt5_term_api.OrderSendRequest\032\034.mt"
-  "5_term_api.OrderSendReply\"\022\202\323\344\223\002\014\022\n/Orde"
-  "rSend\022w\n\026OrderSendWithoutChecks\022\036.mt5_te"
-  "rm_api.OrderSendRequest\032\034.mt5_term_api.O"
-  "rderSendReply\"\037\202\323\344\223\002\031\022\027/OrderSendWithout"
-  "Checks\022e\n\013OrderModify\022 .mt5_term_api.Ord"
-  "erModifyRequest\032\036.mt5_term_api.OrderModi"
-  "fyReply\"\024\202\323\344\223\002\016\022\014/OrderModify\022a\n\nOrderCl"
-  "ose\022\037.mt5_term_api.OrderCloseRequest\032\035.m"
-  "t5_term_api.OrderCloseReply\"\023\202\323\344\223\002\r\022\013/Or"
-  "derCloseBBZ1git.mtapi.io/root/mrpc-proto"
-  ".git/mt5/libraries/go\252\002\014mt5_term_apib\006pr"
-  "oto3"
+  "mpH\004\210\001\001\022<\n\023expiration_time_utc\030\t \001(\0132\032.g"
+  "oogle.protobuf.TimestampH\005\210\001\001\022\027\n\nstop_li"
+  "mit\030\010 \001(\001H\006\210\001\001B\014\n\n_stop_lossB\016\n\014_take_pr"
+  "ofitB\010\n\006_priceB\027\n\025_expiration_time_typeB"
+  "\022\n\020_expiration_timeB\026\n\024_expiration_time_"
+  "utcB\r\n\013_stop_limit\"s\n\020OrderModifyReply\022-"
+  "\n\004data\030\001 \001(\0132\035.mt5_term_api.OrderModifyD"
+  "ataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.Erro"
+  "rH\000B\n\n\010response\"\377\001\n\017OrderModifyData\022\025\n\rr"
+  "eturned_code\030\001 \001(\r\022\014\n\004deal\030\002 \001(\004\022\r\n\005orde"
+  "r\030\003 \001(\004\022\016\n\006volume\030\004 \001(\001\022\r\n\005price\030\005 \001(\001\022\013"
+  "\n\003bid\030\006 \001(\001\022\013\n\003ask\030\007 \001(\001\022\017\n\007comment\030\010 \001("
+  "\t\022\022\n\nrequest_id\030\t \001(\r\022\031\n\021ret_code_extern"
+  "al\030\n \001(\005\022\034\n\024returned_string_code\030\013 \001(\t\022!"
+  "\n\031returned_code_description\030\014 \001(\t\"\260\005\n\020Or"
+  "derSendRequest\022\016\n\006symbol\030\001 \001(\t\0225\n\toperat"
+  "ion\030\002 \001(\0162\".mt5_term_api.TMT5_ENUM_ORDER"
+  "_TYPE\022\016\n\006volume\030\003 \001(\001\022\022\n\005price\030\004 \001(\001H\000\210\001"
+  "\001\022\025\n\010slippage\030\005 \001(\004H\001\210\001\001\022\026\n\tstop_loss\030\006 "
+  "\001(\001H\002\210\001\001\022\030\n\013take_profit\030\007 \001(\001H\003\210\001\001\022\024\n\007co"
+  "mment\030\010 \001(\tH\004\210\001\001\022\026\n\texpert_id\030\t \001(\004H\005\210\001\001"
+  "\022\035\n\020stop_limit_price\030\n \001(\001H\006\210\001\001\022J\n\024expir"
+  "ation_time_type\030\013 \001(\0162\'.mt5_term_api.TMT"
+  "5_ENUM_ORDER_TYPE_TIMEH\007\210\001\001\0228\n\017expiratio"
+  "n_time\030\014 \001(\0132\032.google.protobuf.Timestamp"
+  "H\010\210\001\001\022<\n\023expiration_time_utc\030\016 \001(\0132\032.goo"
+  "gle.protobuf.TimestampH\t\210\001\001\022\033\n\016quotes_wa"
+  "it_ms\030\r \001(\005H\n\210\001\001B\010\n\006_priceB\013\n\t_slippageB"
+  "\014\n\n_stop_lossB\016\n\014_take_profitB\n\n\010_commen"
+  "tB\014\n\n_expert_idB\023\n\021_stop_limit_priceB\027\n\025"
+  "_expiration_time_typeB\022\n\020_expiration_tim"
+  "eB\026\n\024_expiration_time_utcB\021\n\017_quotes_wai"
+  "t_ms\"o\n\016OrderSendReply\022+\n\004data\030\001 \001(\0132\033.m"
+  "t5_term_api.OrderSendDataH\000\022$\n\005error\030\002 \001"
+  "(\0132\023.mt5_term_api.ErrorH\000B\n\n\010response\"\375\001"
+  "\n\rOrderSendData\022\025\n\rreturned_code\030\001 \001(\r\022\014"
+  "\n\004deal\030\002 \001(\004\022\r\n\005order\030\003 \001(\004\022\016\n\006volume\030\004 "
+  "\001(\001\022\r\n\005price\030\005 \001(\001\022\013\n\003bid\030\006 \001(\001\022\013\n\003ask\030\007"
+  " \001(\001\022\017\n\007comment\030\010 \001(\t\022\022\n\nrequest_id\030\t \001("
+  "\r\022\031\n\021ret_code_external\030\n \001(\005\022\034\n\024returned"
+  "_string_code\030\013 \001(\t\022!\n\031returned_code_desc"
+  "ription\030\014 \001(\t*x\n\025MRPC_ORDER_CLOSE_MODE\022\033"
+  "\n\027MRPC_MARKET_ORDER_CLOSE\020\000\022#\n\037MRPC_MARK"
+  "ET_ORDER_PARTIAL_CLOSE\020\001\022\035\n\031MRPC_PENDING"
+  "_ORDER_REMOVE\020\002*\254\002\n\024TMT5_ENUM_ORDER_TYPE"
+  "\022\027\n\023TMT5_ORDER_TYPE_BUY\020\000\022\030\n\024TMT5_ORDER_"
+  "TYPE_SELL\020\001\022\035\n\031TMT5_ORDER_TYPE_BUY_LIMIT"
+  "\020\002\022\036\n\032TMT5_ORDER_TYPE_SELL_LIMIT\020\003\022\034\n\030TM"
+  "T5_ORDER_TYPE_BUY_STOP\020\004\022\035\n\031TMT5_ORDER_T"
+  "YPE_SELL_STOP\020\005\022\"\n\036TMT5_ORDER_TYPE_BUY_S"
+  "TOP_LIMIT\020\006\022#\n\037TMT5_ORDER_TYPE_SELL_STOP"
+  "_LIMIT\020\007\022\034\n\030TMT5_ORDER_TYPE_CLOSE_BY\020\010*\217"
+  "\001\n\031TMT5_ENUM_ORDER_TYPE_TIME\022\027\n\023TMT5_ORD"
+  "ER_TIME_GTC\020\000\022\027\n\023TMT5_ORDER_TIME_DAY\020\001\022\035"
+  "\n\031TMT5_ORDER_TIME_SPECIFIED\020\002\022!\n\035TMT5_OR"
+  "DER_TIME_SPECIFIED_DAY\020\0032\261\003\n\rTradingHelp"
+  "er\022]\n\tOrderSend\022\036.mt5_term_api.OrderSend"
+  "Request\032\034.mt5_term_api.OrderSendReply\"\022\202"
+  "\323\344\223\002\014\022\n/OrderSend\022w\n\026OrderSendWithoutChe"
+  "cks\022\036.mt5_term_api.OrderSendRequest\032\034.mt"
+  "5_term_api.OrderSendReply\"\037\202\323\344\223\002\031\022\027/Orde"
+  "rSendWithoutChecks\022e\n\013OrderModify\022 .mt5_"
+  "term_api.OrderModifyRequest\032\036.mt5_term_a"
+  "pi.OrderModifyReply\"\024\202\323\344\223\002\016\022\014/OrderModif"
+  "y\022a\n\nOrderClose\022\037.mt5_term_api.OrderClos"
+  "eRequest\032\035.mt5_term_api.OrderCloseReply\""
+  "\023\202\323\344\223\002\r\022\013/OrderCloseBBZ1git.mtapi.io/roo"
+  "t/mrpc-proto.git/mt5/libraries/go\252\002\014mt5_"
+  "term_apib\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2dtrading_2dhelper_2eproto_deps[3] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -445,7 +455,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2d
 };
 static ::_pbi::once_flag descriptor_table_mt5_2dterm_2dapi_2dtrading_2dhelper_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_mt5_2dterm_2dapi_2dtrading_2dhelper_2eproto = {
-    false, false, 3284, descriptor_table_protodef_mt5_2dterm_2dapi_2dtrading_2dhelper_2eproto,
+    false, false, 3456, descriptor_table_protodef_mt5_2dterm_2dapi_2dtrading_2dhelper_2eproto,
     "mt5-term-api-trading-helper.proto",
     &descriptor_table_mt5_2dterm_2dapi_2dtrading_2dhelper_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2dtrading_2dhelper_2eproto_deps, 3, 9,
     schemas, file_default_instances, TableStruct_mt5_2dterm_2dapi_2dtrading_2dhelper_2eproto::offsets,
@@ -1395,23 +1405,27 @@ class OrderModifyRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<OrderModifyRequest>()._impl_._has_bits_);
   static void set_has_stop_loss(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_take_profit(HasBits* has_bits) {
     (*has_bits)[0] |= 4u;
   }
-  static void set_has_price(HasBits* has_bits) {
+  static void set_has_take_profit(HasBits* has_bits) {
     (*has_bits)[0] |= 8u;
   }
+  static void set_has_price(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
+  }
   static void set_has_expiration_time_type(HasBits* has_bits) {
-    (*has_bits)[0] |= 32u;
+    (*has_bits)[0] |= 64u;
   }
   static const ::PROTOBUF_NAMESPACE_ID::Timestamp& expiration_time(const OrderModifyRequest* msg);
   static void set_has_expiration_time(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& expiration_time_utc(const OrderModifyRequest* msg);
+  static void set_has_expiration_time_utc(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
   static void set_has_stop_limit(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
+    (*has_bits)[0] |= 32u;
   }
 };
 
@@ -1419,9 +1433,17 @@ const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 OrderModifyRequest::_Internal::expiration_time(const OrderModifyRequest* msg) {
   return *msg->_impl_.expiration_time_;
 }
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+OrderModifyRequest::_Internal::expiration_time_utc(const OrderModifyRequest* msg) {
+  return *msg->_impl_.expiration_time_utc_;
+}
 void OrderModifyRequest::clear_expiration_time() {
   if (_impl_.expiration_time_ != nullptr) _impl_.expiration_time_->Clear();
   _impl_._has_bits_[0] &= ~0x00000001u;
+}
+void OrderModifyRequest::clear_expiration_time_utc() {
+  if (_impl_.expiration_time_utc_ != nullptr) _impl_.expiration_time_utc_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 OrderModifyRequest::OrderModifyRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -1436,6 +1458,7 @@ OrderModifyRequest::OrderModifyRequest(const OrderModifyRequest& from)
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.expiration_time_){nullptr}
+    , decltype(_impl_.expiration_time_utc_){nullptr}
     , decltype(_impl_.ticket_){}
     , decltype(_impl_.stop_loss_){}
     , decltype(_impl_.take_profit_){}
@@ -1446,6 +1469,9 @@ OrderModifyRequest::OrderModifyRequest(const OrderModifyRequest& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_expiration_time()) {
     _this->_impl_.expiration_time_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.expiration_time_);
+  }
+  if (from._internal_has_expiration_time_utc()) {
+    _this->_impl_.expiration_time_utc_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.expiration_time_utc_);
   }
   ::memcpy(&_impl_.ticket_, &from._impl_.ticket_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.expiration_time_type_) -
@@ -1461,6 +1487,7 @@ inline void OrderModifyRequest::SharedCtor(
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.expiration_time_){nullptr}
+    , decltype(_impl_.expiration_time_utc_){nullptr}
     , decltype(_impl_.ticket_){uint64_t{0u}}
     , decltype(_impl_.stop_loss_){0}
     , decltype(_impl_.take_profit_){0}
@@ -1482,6 +1509,7 @@ OrderModifyRequest::~OrderModifyRequest() {
 inline void OrderModifyRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete _impl_.expiration_time_;
+  if (this != internal_default_instance()) delete _impl_.expiration_time_utc_;
 }
 
 void OrderModifyRequest::SetCachedSize(int size) const {
@@ -1495,12 +1523,18 @@ void OrderModifyRequest::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    GOOGLE_DCHECK(_impl_.expiration_time_ != nullptr);
-    _impl_.expiration_time_->Clear();
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      GOOGLE_DCHECK(_impl_.expiration_time_ != nullptr);
+      _impl_.expiration_time_->Clear();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      GOOGLE_DCHECK(_impl_.expiration_time_utc_ != nullptr);
+      _impl_.expiration_time_utc_->Clear();
+    }
   }
   _impl_.ticket_ = uint64_t{0u};
-  if (cached_has_bits & 0x0000003eu) {
+  if (cached_has_bits & 0x0000007cu) {
     ::memset(&_impl_.stop_loss_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&_impl_.expiration_time_type_) -
         reinterpret_cast<char*>(&_impl_.stop_loss_)) + sizeof(_impl_.expiration_time_type_));
@@ -1574,6 +1608,14 @@ const char* OrderModifyRequest::_InternalParse(const char* ptr, ::_pbi::ParseCon
           _Internal::set_has_stop_limit(&has_bits);
           _impl_.stop_limit_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional .google.protobuf.Timestamp expiration_time_utc = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
+          ptr = ctx->ParseMessage(_internal_mutable_expiration_time_utc(), ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -1651,6 +1693,13 @@ uint8_t* OrderModifyRequest::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteDoubleToArray(8, this->_internal_stop_limit(), target);
   }
 
+  // optional .google.protobuf.Timestamp expiration_time_utc = 9;
+  if (_internal_has_expiration_time_utc()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(9, _Internal::expiration_time_utc(this),
+        _Internal::expiration_time_utc(this).GetCachedSize(), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1667,42 +1716,51 @@ size_t OrderModifyRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // optional .google.protobuf.Timestamp expiration_time = 6;
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.expiration_time_);
-  }
+  if (cached_has_bits & 0x00000003u) {
+    // optional .google.protobuf.Timestamp expiration_time = 6;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.expiration_time_);
+    }
 
+    // optional .google.protobuf.Timestamp expiration_time_utc = 9;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.expiration_time_utc_);
+    }
+
+  }
   // uint64 ticket = 1;
   if (this->_internal_ticket() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_ticket());
   }
 
-  if (cached_has_bits & 0x0000003eu) {
+  if (cached_has_bits & 0x0000007cu) {
     // optional double stop_loss = 2;
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 + 8;
-    }
-
-    // optional double take_profit = 3;
     if (cached_has_bits & 0x00000004u) {
       total_size += 1 + 8;
     }
 
-    // optional double price = 4;
+    // optional double take_profit = 3;
     if (cached_has_bits & 0x00000008u) {
       total_size += 1 + 8;
     }
 
-    // optional double stop_limit = 8;
+    // optional double price = 4;
     if (cached_has_bits & 0x00000010u) {
       total_size += 1 + 8;
     }
 
-    // optional .mt5_term_api.TMT5_ENUM_ORDER_TYPE_TIME expiration_time_type = 5;
+    // optional double stop_limit = 8;
     if (cached_has_bits & 0x00000020u) {
+      total_size += 1 + 8;
+    }
+
+    // optional .mt5_term_api.TMT5_ENUM_ORDER_TYPE_TIME expiration_time_type = 5;
+    if (cached_has_bits & 0x00000040u) {
       total_size += 1 +
         ::_pbi::WireFormatLite::EnumSize(this->_internal_expiration_time_type());
     }
@@ -1726,28 +1784,34 @@ void OrderModifyRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, con
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_expiration_time()) {
-    _this->_internal_mutable_expiration_time()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
-        from._internal_expiration_time());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_mutable_expiration_time()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+          from._internal_expiration_time());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_mutable_expiration_time_utc()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+          from._internal_expiration_time_utc());
+    }
   }
   if (from._internal_ticket() != 0) {
     _this->_internal_set_ticket(from._internal_ticket());
   }
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000003eu) {
-    if (cached_has_bits & 0x00000002u) {
+  if (cached_has_bits & 0x0000007cu) {
+    if (cached_has_bits & 0x00000004u) {
       _this->_impl_.stop_loss_ = from._impl_.stop_loss_;
     }
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000008u) {
       _this->_impl_.take_profit_ = from._impl_.take_profit_;
     }
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000010u) {
       _this->_impl_.price_ = from._impl_.price_;
     }
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000020u) {
       _this->_impl_.stop_limit_ = from._impl_.stop_limit_;
     }
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000040u) {
       _this->_impl_.expiration_time_type_ = from._impl_.expiration_time_type_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -2683,35 +2747,39 @@ class OrderSendRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<OrderSendRequest>()._impl_._has_bits_);
   static void set_has_price(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static void set_has_slippage(HasBits* has_bits) {
     (*has_bits)[0] |= 8u;
   }
-  static void set_has_stop_loss(HasBits* has_bits) {
+  static void set_has_slippage(HasBits* has_bits) {
     (*has_bits)[0] |= 16u;
   }
+  static void set_has_stop_loss(HasBits* has_bits) {
+    (*has_bits)[0] |= 32u;
+  }
   static void set_has_take_profit(HasBits* has_bits) {
-    (*has_bits)[0] |= 64u;
+    (*has_bits)[0] |= 128u;
   }
   static void set_has_comment(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
   static void set_has_expert_id(HasBits* has_bits) {
-    (*has_bits)[0] |= 128u;
-  }
-  static void set_has_stop_limit_price(HasBits* has_bits) {
     (*has_bits)[0] |= 256u;
   }
+  static void set_has_stop_limit_price(HasBits* has_bits) {
+    (*has_bits)[0] |= 512u;
+  }
   static void set_has_expiration_time_type(HasBits* has_bits) {
-    (*has_bits)[0] |= 32u;
+    (*has_bits)[0] |= 64u;
   }
   static const ::PROTOBUF_NAMESPACE_ID::Timestamp& expiration_time(const OrderSendRequest* msg);
   static void set_has_expiration_time(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
   }
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& expiration_time_utc(const OrderSendRequest* msg);
+  static void set_has_expiration_time_utc(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
   static void set_has_quotes_wait_ms(HasBits* has_bits) {
-    (*has_bits)[0] |= 512u;
+    (*has_bits)[0] |= 1024u;
   }
 };
 
@@ -2719,9 +2787,17 @@ const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 OrderSendRequest::_Internal::expiration_time(const OrderSendRequest* msg) {
   return *msg->_impl_.expiration_time_;
 }
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+OrderSendRequest::_Internal::expiration_time_utc(const OrderSendRequest* msg) {
+  return *msg->_impl_.expiration_time_utc_;
+}
 void OrderSendRequest::clear_expiration_time() {
   if (_impl_.expiration_time_ != nullptr) _impl_.expiration_time_->Clear();
   _impl_._has_bits_[0] &= ~0x00000002u;
+}
+void OrderSendRequest::clear_expiration_time_utc() {
+  if (_impl_.expiration_time_utc_ != nullptr) _impl_.expiration_time_utc_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 OrderSendRequest::OrderSendRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -2738,6 +2814,7 @@ OrderSendRequest::OrderSendRequest(const OrderSendRequest& from)
     , decltype(_impl_.symbol_){}
     , decltype(_impl_.comment_){}
     , decltype(_impl_.expiration_time_){nullptr}
+    , decltype(_impl_.expiration_time_utc_){nullptr}
     , decltype(_impl_.volume_){}
     , decltype(_impl_.price_){}
     , decltype(_impl_.slippage_){}
@@ -2769,6 +2846,9 @@ OrderSendRequest::OrderSendRequest(const OrderSendRequest& from)
   if (from._internal_has_expiration_time()) {
     _this->_impl_.expiration_time_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.expiration_time_);
   }
+  if (from._internal_has_expiration_time_utc()) {
+    _this->_impl_.expiration_time_utc_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.expiration_time_utc_);
+  }
   ::memcpy(&_impl_.volume_, &from._impl_.volume_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.quotes_wait_ms_) -
     reinterpret_cast<char*>(&_impl_.volume_)) + sizeof(_impl_.quotes_wait_ms_));
@@ -2785,6 +2865,7 @@ inline void OrderSendRequest::SharedCtor(
     , decltype(_impl_.symbol_){}
     , decltype(_impl_.comment_){}
     , decltype(_impl_.expiration_time_){nullptr}
+    , decltype(_impl_.expiration_time_utc_){nullptr}
     , decltype(_impl_.volume_){0}
     , decltype(_impl_.price_){0}
     , decltype(_impl_.slippage_){uint64_t{0u}}
@@ -2820,6 +2901,7 @@ inline void OrderSendRequest::SharedDtor() {
   _impl_.symbol_.Destroy();
   _impl_.comment_.Destroy();
   if (this != internal_default_instance()) delete _impl_.expiration_time_;
+  if (this != internal_default_instance()) delete _impl_.expiration_time_utc_;
 }
 
 void OrderSendRequest::SetCachedSize(int size) const {
@@ -2834,7 +2916,7 @@ void OrderSendRequest::Clear() {
 
   _impl_.symbol_.ClearToEmpty();
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
+  if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
       _impl_.comment_.ClearNonDefaultToEmpty();
     }
@@ -2842,23 +2924,27 @@ void OrderSendRequest::Clear() {
       GOOGLE_DCHECK(_impl_.expiration_time_ != nullptr);
       _impl_.expiration_time_->Clear();
     }
+    if (cached_has_bits & 0x00000004u) {
+      GOOGLE_DCHECK(_impl_.expiration_time_utc_ != nullptr);
+      _impl_.expiration_time_utc_->Clear();
+    }
   }
   _impl_.volume_ = 0;
-  if (cached_has_bits & 0x0000001cu) {
+  if (cached_has_bits & 0x00000038u) {
     ::memset(&_impl_.price_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&_impl_.stop_loss_) -
         reinterpret_cast<char*>(&_impl_.price_)) + sizeof(_impl_.stop_loss_));
   }
   _impl_.operation_ = 0;
-  if (cached_has_bits & 0x000000e0u) {
+  if (cached_has_bits & 0x000000c0u) {
     ::memset(&_impl_.expiration_time_type_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.expert_id_) -
-        reinterpret_cast<char*>(&_impl_.expiration_time_type_)) + sizeof(_impl_.expert_id_));
+        reinterpret_cast<char*>(&_impl_.take_profit_) -
+        reinterpret_cast<char*>(&_impl_.expiration_time_type_)) + sizeof(_impl_.take_profit_));
   }
-  if (cached_has_bits & 0x00000300u) {
-    ::memset(&_impl_.stop_limit_price_, 0, static_cast<size_t>(
+  if (cached_has_bits & 0x00000700u) {
+    ::memset(&_impl_.expert_id_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&_impl_.quotes_wait_ms_) -
-        reinterpret_cast<char*>(&_impl_.stop_limit_price_)) + sizeof(_impl_.quotes_wait_ms_));
+        reinterpret_cast<char*>(&_impl_.expert_id_)) + sizeof(_impl_.quotes_wait_ms_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -2988,6 +3074,14 @@ const char* OrderSendRequest::_InternalParse(const char* ptr, ::_pbi::ParseConte
         } else
           goto handle_unusual;
         continue;
+      // optional .google.protobuf.Timestamp expiration_time_utc = 14;
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
+          ptr = ctx->ParseMessage(_internal_mutable_expiration_time_utc(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -3111,6 +3205,13 @@ uint8_t* OrderSendRequest::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(13, this->_internal_quotes_wait_ms(), target);
   }
 
+  // optional .google.protobuf.Timestamp expiration_time_utc = 14;
+  if (_internal_has_expiration_time_utc()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(14, _Internal::expiration_time_utc(this),
+        _Internal::expiration_time_utc(this).GetCachedSize(), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -3135,7 +3236,7 @@ size_t OrderSendRequest::ByteSizeLong() const {
   }
 
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
+  if (cached_has_bits & 0x00000007u) {
     // optional string comment = 8;
     if (cached_has_bits & 0x00000001u) {
       total_size += 1 +
@@ -3150,6 +3251,13 @@ size_t OrderSendRequest::ByteSizeLong() const {
           *_impl_.expiration_time_);
     }
 
+    // optional .google.protobuf.Timestamp expiration_time_utc = 14;
+    if (cached_has_bits & 0x00000004u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.expiration_time_utc_);
+    }
+
   }
   // double volume = 3;
   static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
@@ -3160,19 +3268,19 @@ size_t OrderSendRequest::ByteSizeLong() const {
     total_size += 1 + 8;
   }
 
-  if (cached_has_bits & 0x0000001cu) {
+  if (cached_has_bits & 0x00000038u) {
     // optional double price = 4;
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000008u) {
       total_size += 1 + 8;
     }
 
     // optional uint64 slippage = 5;
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000010u) {
       total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_slippage());
     }
 
     // optional double stop_loss = 6;
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000020u) {
       total_size += 1 + 8;
     }
 
@@ -3183,32 +3291,32 @@ size_t OrderSendRequest::ByteSizeLong() const {
       ::_pbi::WireFormatLite::EnumSize(this->_internal_operation());
   }
 
-  if (cached_has_bits & 0x000000e0u) {
+  if (cached_has_bits & 0x000000c0u) {
     // optional .mt5_term_api.TMT5_ENUM_ORDER_TYPE_TIME expiration_time_type = 11;
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000040u) {
       total_size += 1 +
         ::_pbi::WireFormatLite::EnumSize(this->_internal_expiration_time_type());
     }
 
     // optional double take_profit = 7;
-    if (cached_has_bits & 0x00000040u) {
+    if (cached_has_bits & 0x00000080u) {
       total_size += 1 + 8;
     }
 
+  }
+  if (cached_has_bits & 0x00000700u) {
     // optional uint64 expert_id = 9;
-    if (cached_has_bits & 0x00000080u) {
+    if (cached_has_bits & 0x00000100u) {
       total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_expert_id());
     }
 
-  }
-  if (cached_has_bits & 0x00000300u) {
     // optional double stop_limit_price = 10;
-    if (cached_has_bits & 0x00000100u) {
+    if (cached_has_bits & 0x00000200u) {
       total_size += 1 + 8;
     }
 
     // optional int32 quotes_wait_ms = 13;
-    if (cached_has_bits & 0x00000200u) {
+    if (cached_has_bits & 0x00000400u) {
       total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_quotes_wait_ms());
     }
 
@@ -3235,13 +3343,17 @@ void OrderSendRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const
     _this->_internal_set_symbol(from._internal_symbol());
   }
   cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
+  if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
       _this->_internal_set_comment(from._internal_comment());
     }
     if (cached_has_bits & 0x00000002u) {
       _this->_internal_mutable_expiration_time()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
           from._internal_expiration_time());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_internal_mutable_expiration_time_utc()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+          from._internal_expiration_time_utc());
     }
   }
   static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
@@ -3251,14 +3363,14 @@ void OrderSendRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const
   if (raw_volume != 0) {
     _this->_internal_set_volume(from._internal_volume());
   }
-  if (cached_has_bits & 0x0000001cu) {
-    if (cached_has_bits & 0x00000004u) {
+  if (cached_has_bits & 0x00000038u) {
+    if (cached_has_bits & 0x00000008u) {
       _this->_impl_.price_ = from._impl_.price_;
     }
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000010u) {
       _this->_impl_.slippage_ = from._impl_.slippage_;
     }
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000020u) {
       _this->_impl_.stop_loss_ = from._impl_.stop_loss_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -3266,23 +3378,23 @@ void OrderSendRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const
   if (from._internal_operation() != 0) {
     _this->_internal_set_operation(from._internal_operation());
   }
-  if (cached_has_bits & 0x000000e0u) {
-    if (cached_has_bits & 0x00000020u) {
+  if (cached_has_bits & 0x000000c0u) {
+    if (cached_has_bits & 0x00000040u) {
       _this->_impl_.expiration_time_type_ = from._impl_.expiration_time_type_;
     }
-    if (cached_has_bits & 0x00000040u) {
-      _this->_impl_.take_profit_ = from._impl_.take_profit_;
-    }
     if (cached_has_bits & 0x00000080u) {
-      _this->_impl_.expert_id_ = from._impl_.expert_id_;
+      _this->_impl_.take_profit_ = from._impl_.take_profit_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 0x00000300u) {
+  if (cached_has_bits & 0x00000700u) {
     if (cached_has_bits & 0x00000100u) {
-      _this->_impl_.stop_limit_price_ = from._impl_.stop_limit_price_;
+      _this->_impl_.expert_id_ = from._impl_.expert_id_;
     }
     if (cached_has_bits & 0x00000200u) {
+      _this->_impl_.stop_limit_price_ = from._impl_.stop_limit_price_;
+    }
+    if (cached_has_bits & 0x00000400u) {
       _this->_impl_.quotes_wait_ms_ = from._impl_.quotes_wait_ms_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;

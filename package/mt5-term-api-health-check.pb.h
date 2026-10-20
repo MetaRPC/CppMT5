@@ -546,6 +546,7 @@ class HealthCheckReply final :
 
   enum : int {
     kServerTimeSecondsFieldNumber = 2,
+    kServerTimeSecondsUtcFieldNumber = 3,
     kIsConnectedToServerFieldNumber = 1,
   };
   // int64 server_time_seconds = 2;
@@ -555,6 +556,15 @@ class HealthCheckReply final :
   private:
   int64_t _internal_server_time_seconds() const;
   void _internal_set_server_time_seconds(int64_t value);
+  public:
+
+  // int64 server_time_seconds_utc = 3;
+  void clear_server_time_seconds_utc();
+  int64_t server_time_seconds_utc() const;
+  void set_server_time_seconds_utc(int64_t value);
+  private:
+  int64_t _internal_server_time_seconds_utc() const;
+  void _internal_set_server_time_seconds_utc(int64_t value);
   public:
 
   // bool is_connected_to_server = 1;
@@ -575,6 +585,7 @@ class HealthCheckReply final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     int64_t server_time_seconds_;
+    int64_t server_time_seconds_utc_;
     bool is_connected_to_server_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -642,6 +653,26 @@ inline void HealthCheckReply::_internal_set_server_time_seconds(int64_t value) {
 inline void HealthCheckReply::set_server_time_seconds(int64_t value) {
   _internal_set_server_time_seconds(value);
   // @@protoc_insertion_point(field_set:mt5_term_api.HealthCheckReply.server_time_seconds)
+}
+
+// int64 server_time_seconds_utc = 3;
+inline void HealthCheckReply::clear_server_time_seconds_utc() {
+  _impl_.server_time_seconds_utc_ = int64_t{0};
+}
+inline int64_t HealthCheckReply::_internal_server_time_seconds_utc() const {
+  return _impl_.server_time_seconds_utc_;
+}
+inline int64_t HealthCheckReply::server_time_seconds_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.HealthCheckReply.server_time_seconds_utc)
+  return _internal_server_time_seconds_utc();
+}
+inline void HealthCheckReply::_internal_set_server_time_seconds_utc(int64_t value) {
+  
+  _impl_.server_time_seconds_utc_ = value;
+}
+inline void HealthCheckReply::set_server_time_seconds_utc(int64_t value) {
+  _internal_set_server_time_seconds_utc(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.HealthCheckReply.server_time_seconds_utc)
 }
 
 #ifdef __GNUC__

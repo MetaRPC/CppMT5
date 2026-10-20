@@ -81,6 +81,9 @@ extern StatsDataDefaultTypeInternal _StatsData_default_instance_;
 class StatsWithChartsData;
 struct StatsWithChartsDataDefaultTypeInternal;
 extern StatsWithChartsDataDefaultTypeInternal _StatsWithChartsData_default_instance_;
+class TradeHistoryItemData;
+struct TradeHistoryItemDataDefaultTypeInternal;
+extern TradeHistoryItemDataDefaultTypeInternal _TradeHistoryItemData_default_instance_;
 class TradeStatsEquityHistoryReply;
 struct TradeStatsEquityHistoryReplyDefaultTypeInternal;
 extern TradeStatsEquityHistoryReplyDefaultTypeInternal _TradeStatsEquityHistoryReply_default_instance_;
@@ -127,6 +130,7 @@ template<> ::mt5_term_api::ProfitData* Arena::CreateMaybeMessage<::mt5_term_api:
 template<> ::mt5_term_api::ProfitabilityData* Arena::CreateMaybeMessage<::mt5_term_api::ProfitabilityData>(Arena*);
 template<> ::mt5_term_api::StatsData* Arena::CreateMaybeMessage<::mt5_term_api::StatsData>(Arena*);
 template<> ::mt5_term_api::StatsWithChartsData* Arena::CreateMaybeMessage<::mt5_term_api::StatsWithChartsData>(Arena*);
+template<> ::mt5_term_api::TradeHistoryItemData* Arena::CreateMaybeMessage<::mt5_term_api::TradeHistoryItemData>(Arena*);
 template<> ::mt5_term_api::TradeStatsEquityHistoryReply* Arena::CreateMaybeMessage<::mt5_term_api::TradeStatsEquityHistoryReply>(Arena*);
 template<> ::mt5_term_api::TradeStatsEquityHistoryRequest* Arena::CreateMaybeMessage<::mt5_term_api::TradeStatsEquityHistoryRequest>(Arena*);
 template<> ::mt5_term_api::TradeStatsReply* Arena::CreateMaybeMessage<::mt5_term_api::TradeStatsReply>(Arena*);
@@ -265,6 +269,7 @@ class TradeStatsRequest final :
 
   enum : int {
     kFromFieldNumber = 1,
+    kFromUtcFieldNumber = 2,
   };
   // optional string from = 1;
   bool has_from() const;
@@ -284,6 +289,24 @@ class TradeStatsRequest final :
   std::string* _internal_mutable_from();
   public:
 
+  // optional string from_utc = 2;
+  bool has_from_utc() const;
+  private:
+  bool _internal_has_from_utc() const;
+  public:
+  void clear_from_utc();
+  const std::string& from_utc() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_from_utc(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_from_utc();
+  PROTOBUF_NODISCARD std::string* release_from_utc();
+  void set_allocated_from_utc(std::string* from_utc);
+  private:
+  const std::string& _internal_from_utc() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_from_utc(const std::string& value);
+  std::string* _internal_mutable_from_utc();
+  public:
+
   // @@protoc_insertion_point(class_scope:mt5_term_api.TradeStatsRequest)
  private:
   class _Internal;
@@ -295,6 +318,7 @@ class TradeStatsRequest final :
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr from_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr from_utc_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto;
@@ -619,6 +643,7 @@ class TradeStatsEquityHistoryRequest final :
 
   enum : int {
     kFromFieldNumber = 1,
+    kFromUtcFieldNumber = 3,
     kExcludeSameBarsFieldNumber = 2,
   };
   // optional string from = 1;
@@ -637,6 +662,24 @@ class TradeStatsEquityHistoryRequest final :
   const std::string& _internal_from() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_from(const std::string& value);
   std::string* _internal_mutable_from();
+  public:
+
+  // optional string from_utc = 3;
+  bool has_from_utc() const;
+  private:
+  bool _internal_has_from_utc() const;
+  public:
+  void clear_from_utc();
+  const std::string& from_utc() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_from_utc(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_from_utc();
+  PROTOBUF_NODISCARD std::string* release_from_utc();
+  void set_allocated_from_utc(std::string* from_utc);
+  private:
+  const std::string& _internal_from_utc() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_from_utc(const std::string& value);
+  std::string* _internal_mutable_from_utc();
   public:
 
   // optional bool exclude_same_bars = 2;
@@ -663,6 +706,7 @@ class TradeStatsEquityHistoryRequest final :
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr from_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr from_utc_;
     bool exclude_same_bars_;
   };
   union { Impl_ _impl_; };
@@ -988,6 +1032,7 @@ class EquityHistoryRequest final :
 
   enum : int {
     kFromFieldNumber = 1,
+    kFromUtcFieldNumber = 3,
     kExcludeSameBarsFieldNumber = 2,
   };
   // optional string from = 1;
@@ -1006,6 +1051,24 @@ class EquityHistoryRequest final :
   const std::string& _internal_from() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_from(const std::string& value);
   std::string* _internal_mutable_from();
+  public:
+
+  // optional string from_utc = 3;
+  bool has_from_utc() const;
+  private:
+  bool _internal_has_from_utc() const;
+  public:
+  void clear_from_utc();
+  const std::string& from_utc() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_from_utc(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_from_utc();
+  PROTOBUF_NODISCARD std::string* release_from_utc();
+  void set_allocated_from_utc(std::string* from_utc);
+  private:
+  const std::string& _internal_from_utc() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_from_utc(const std::string& value);
+  std::string* _internal_mutable_from_utc();
   public:
 
   // optional bool exclude_same_bars = 2;
@@ -1032,6 +1095,7 @@ class EquityHistoryRequest final :
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr from_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr from_utc_;
     bool exclude_same_bars_;
   };
   union { Impl_ _impl_; };
@@ -1357,6 +1421,7 @@ class TradeUnrealizedPLRequest final :
 
   enum : int {
     kFromFieldNumber = 1,
+    kFromUtcFieldNumber = 2,
   };
   // optional string from = 1;
   bool has_from() const;
@@ -1376,6 +1441,24 @@ class TradeUnrealizedPLRequest final :
   std::string* _internal_mutable_from();
   public:
 
+  // optional string from_utc = 2;
+  bool has_from_utc() const;
+  private:
+  bool _internal_has_from_utc() const;
+  public:
+  void clear_from_utc();
+  const std::string& from_utc() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_from_utc(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_from_utc();
+  PROTOBUF_NODISCARD std::string* release_from_utc();
+  void set_allocated_from_utc(std::string* from_utc);
+  private:
+  const std::string& _internal_from_utc() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_from_utc(const std::string& value);
+  std::string* _internal_mutable_from_utc();
+  public:
+
   // @@protoc_insertion_point(class_scope:mt5_term_api.TradeUnrealizedPLRequest)
  private:
   class _Internal;
@@ -1387,6 +1470,7 @@ class TradeUnrealizedPLRequest final :
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr from_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr from_utc_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto;
@@ -2459,7 +2543,12 @@ class MarketTradeCountData final :
 
   enum : int {
     kMarketNameFieldNumber = 1,
+    kLotsFieldNumber = 3,
+    kProfitFieldNumber = 4,
     kCountFieldNumber = 2,
+    kWonCountFieldNumber = 6,
+    kWinRateFieldNumber = 5,
+    kLostCountFieldNumber = 7,
   };
   // string market_name = 1;
   void clear_market_name();
@@ -2475,6 +2564,24 @@ class MarketTradeCountData final :
   std::string* _internal_mutable_market_name();
   public:
 
+  // double lots = 3;
+  void clear_lots();
+  double lots() const;
+  void set_lots(double value);
+  private:
+  double _internal_lots() const;
+  void _internal_set_lots(double value);
+  public:
+
+  // double profit = 4;
+  void clear_profit();
+  double profit() const;
+  void set_profit(double value);
+  private:
+  double _internal_profit() const;
+  void _internal_set_profit(double value);
+  public:
+
   // int32 count = 2;
   void clear_count();
   int32_t count() const;
@@ -2482,6 +2589,33 @@ class MarketTradeCountData final :
   private:
   int32_t _internal_count() const;
   void _internal_set_count(int32_t value);
+  public:
+
+  // int32 won_count = 6;
+  void clear_won_count();
+  int32_t won_count() const;
+  void set_won_count(int32_t value);
+  private:
+  int32_t _internal_won_count() const;
+  void _internal_set_won_count(int32_t value);
+  public:
+
+  // double win_rate = 5;
+  void clear_win_rate();
+  double win_rate() const;
+  void set_win_rate(double value);
+  private:
+  double _internal_win_rate() const;
+  void _internal_set_win_rate(double value);
+  public:
+
+  // int32 lost_count = 7;
+  void clear_lost_count();
+  int32_t lost_count() const;
+  void set_lost_count(int32_t value);
+  private:
+  int32_t _internal_lost_count() const;
+  void _internal_set_lost_count(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:mt5_term_api.MarketTradeCountData)
@@ -2493,7 +2627,12 @@ class MarketTradeCountData final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_name_;
+    double lots_;
+    double profit_;
     int32_t count_;
+    int32_t won_count_;
+    double win_rate_;
+    int32_t lost_count_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -3133,6 +3272,7 @@ class ProfitData final :
 
   enum : int {
     kDateFieldNumber = 2,
+    kDateUtcFieldNumber = 4,
     kTiketFieldNumber = 1,
     kProfitFieldNumber = 3,
   };
@@ -3153,6 +3293,24 @@ class ProfitData final :
   void unsafe_arena_set_allocated_date(
       ::PROTOBUF_NAMESPACE_ID::Timestamp* date);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_date();
+
+  // .google.protobuf.Timestamp date_utc = 4;
+  bool has_date_utc() const;
+  private:
+  bool _internal_has_date_utc() const;
+  public:
+  void clear_date_utc();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& date_utc() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_date_utc();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_date_utc();
+  void set_allocated_date_utc(::PROTOBUF_NAMESPACE_ID::Timestamp* date_utc);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_date_utc() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_date_utc();
+  public:
+  void unsafe_arena_set_allocated_date_utc(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* date_utc);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_date_utc();
 
   // int64 tiket = 1;
   void clear_tiket();
@@ -3181,6 +3339,7 @@ class ProfitData final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::Timestamp* date_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* date_utc_;
     int64_t tiket_;
     double profit_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -3630,6 +3789,8 @@ class StatsWithChartsData final :
 
   enum : int {
     kChartsFieldNumber = 2,
+    kTradesFieldNumber = 3,
+    kOpenTradesFieldNumber = 4,
     kStatsFieldNumber = 1,
   };
   // repeated .mt5_term_api.EquityPointData charts = 2;
@@ -3649,6 +3810,42 @@ class StatsWithChartsData final :
   ::mt5_term_api::EquityPointData* add_charts();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::EquityPointData >&
       charts() const;
+
+  // repeated .mt5_term_api.TradeHistoryItemData trades = 3;
+  int trades_size() const;
+  private:
+  int _internal_trades_size() const;
+  public:
+  void clear_trades();
+  ::mt5_term_api::TradeHistoryItemData* mutable_trades(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::TradeHistoryItemData >*
+      mutable_trades();
+  private:
+  const ::mt5_term_api::TradeHistoryItemData& _internal_trades(int index) const;
+  ::mt5_term_api::TradeHistoryItemData* _internal_add_trades();
+  public:
+  const ::mt5_term_api::TradeHistoryItemData& trades(int index) const;
+  ::mt5_term_api::TradeHistoryItemData* add_trades();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::TradeHistoryItemData >&
+      trades() const;
+
+  // repeated .mt5_term_api.TradeHistoryItemData open_trades = 4;
+  int open_trades_size() const;
+  private:
+  int _internal_open_trades_size() const;
+  public:
+  void clear_open_trades();
+  ::mt5_term_api::TradeHistoryItemData* mutable_open_trades(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::TradeHistoryItemData >*
+      mutable_open_trades();
+  private:
+  const ::mt5_term_api::TradeHistoryItemData& _internal_open_trades(int index) const;
+  ::mt5_term_api::TradeHistoryItemData* _internal_add_open_trades();
+  public:
+  const ::mt5_term_api::TradeHistoryItemData& open_trades(int index) const;
+  ::mt5_term_api::TradeHistoryItemData* add_open_trades();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::TradeHistoryItemData >&
+      open_trades() const;
 
   // .mt5_term_api.StatsData stats = 1;
   bool has_stats() const;
@@ -3677,7 +3874,346 @@ class StatsWithChartsData final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::EquityPointData > charts_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::TradeHistoryItemData > trades_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::TradeHistoryItemData > open_trades_;
     ::mt5_term_api::StatsData* stats_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto;
+};
+// -------------------------------------------------------------------
+
+class TradeHistoryItemData final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mt5_term_api.TradeHistoryItemData) */ {
+ public:
+  inline TradeHistoryItemData() : TradeHistoryItemData(nullptr) {}
+  ~TradeHistoryItemData() override;
+  explicit PROTOBUF_CONSTEXPR TradeHistoryItemData(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TradeHistoryItemData(const TradeHistoryItemData& from);
+  TradeHistoryItemData(TradeHistoryItemData&& from) noexcept
+    : TradeHistoryItemData() {
+    *this = ::std::move(from);
+  }
+
+  inline TradeHistoryItemData& operator=(const TradeHistoryItemData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TradeHistoryItemData& operator=(TradeHistoryItemData&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TradeHistoryItemData& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TradeHistoryItemData* internal_default_instance() {
+    return reinterpret_cast<const TradeHistoryItemData*>(
+               &_TradeHistoryItemData_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  friend void swap(TradeHistoryItemData& a, TradeHistoryItemData& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TradeHistoryItemData* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TradeHistoryItemData* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  TradeHistoryItemData* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<TradeHistoryItemData>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const TradeHistoryItemData& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const TradeHistoryItemData& from) {
+    TradeHistoryItemData::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TradeHistoryItemData* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mt5_term_api.TradeHistoryItemData";
+  }
+  protected:
+  explicit TradeHistoryItemData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSymbolFieldNumber = 2,
+    kCommentFieldNumber = 12,
+    kOpenTimeFieldNumber = 7,
+    kCloseTimeFieldNumber = 8,
+    kOpenTimeUtcFieldNumber = 13,
+    kCloseTimeUtcFieldNumber = 14,
+    kTicketFieldNumber = 1,
+    kLotsFieldNumber = 4,
+    kOpenPriceFieldNumber = 5,
+    kClosePriceFieldNumber = 6,
+    kProfitFieldNumber = 9,
+    kCommissionFieldNumber = 10,
+    kSwapFieldNumber = 11,
+    kIsBuyFieldNumber = 3,
+  };
+  // string symbol = 2;
+  void clear_symbol();
+  const std::string& symbol() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_symbol(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_symbol();
+  PROTOBUF_NODISCARD std::string* release_symbol();
+  void set_allocated_symbol(std::string* symbol);
+  private:
+  const std::string& _internal_symbol() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_symbol(const std::string& value);
+  std::string* _internal_mutable_symbol();
+  public:
+
+  // string comment = 12;
+  void clear_comment();
+  const std::string& comment() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_comment(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_comment();
+  PROTOBUF_NODISCARD std::string* release_comment();
+  void set_allocated_comment(std::string* comment);
+  private:
+  const std::string& _internal_comment() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_comment(const std::string& value);
+  std::string* _internal_mutable_comment();
+  public:
+
+  // .google.protobuf.Timestamp open_time = 7;
+  bool has_open_time() const;
+  private:
+  bool _internal_has_open_time() const;
+  public:
+  void clear_open_time();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& open_time() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_open_time();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_open_time();
+  void set_allocated_open_time(::PROTOBUF_NAMESPACE_ID::Timestamp* open_time);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_open_time() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_open_time();
+  public:
+  void unsafe_arena_set_allocated_open_time(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* open_time);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_open_time();
+
+  // .google.protobuf.Timestamp close_time = 8;
+  bool has_close_time() const;
+  private:
+  bool _internal_has_close_time() const;
+  public:
+  void clear_close_time();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& close_time() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_close_time();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_close_time();
+  void set_allocated_close_time(::PROTOBUF_NAMESPACE_ID::Timestamp* close_time);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_close_time() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_close_time();
+  public:
+  void unsafe_arena_set_allocated_close_time(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* close_time);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_close_time();
+
+  // .google.protobuf.Timestamp open_time_utc = 13;
+  bool has_open_time_utc() const;
+  private:
+  bool _internal_has_open_time_utc() const;
+  public:
+  void clear_open_time_utc();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& open_time_utc() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_open_time_utc();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_open_time_utc();
+  void set_allocated_open_time_utc(::PROTOBUF_NAMESPACE_ID::Timestamp* open_time_utc);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_open_time_utc() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_open_time_utc();
+  public:
+  void unsafe_arena_set_allocated_open_time_utc(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* open_time_utc);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_open_time_utc();
+
+  // .google.protobuf.Timestamp close_time_utc = 14;
+  bool has_close_time_utc() const;
+  private:
+  bool _internal_has_close_time_utc() const;
+  public:
+  void clear_close_time_utc();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& close_time_utc() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_close_time_utc();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_close_time_utc();
+  void set_allocated_close_time_utc(::PROTOBUF_NAMESPACE_ID::Timestamp* close_time_utc);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_close_time_utc() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_close_time_utc();
+  public:
+  void unsafe_arena_set_allocated_close_time_utc(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* close_time_utc);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_close_time_utc();
+
+  // int64 ticket = 1;
+  void clear_ticket();
+  int64_t ticket() const;
+  void set_ticket(int64_t value);
+  private:
+  int64_t _internal_ticket() const;
+  void _internal_set_ticket(int64_t value);
+  public:
+
+  // double lots = 4;
+  void clear_lots();
+  double lots() const;
+  void set_lots(double value);
+  private:
+  double _internal_lots() const;
+  void _internal_set_lots(double value);
+  public:
+
+  // double open_price = 5;
+  void clear_open_price();
+  double open_price() const;
+  void set_open_price(double value);
+  private:
+  double _internal_open_price() const;
+  void _internal_set_open_price(double value);
+  public:
+
+  // double close_price = 6;
+  void clear_close_price();
+  double close_price() const;
+  void set_close_price(double value);
+  private:
+  double _internal_close_price() const;
+  void _internal_set_close_price(double value);
+  public:
+
+  // double profit = 9;
+  void clear_profit();
+  double profit() const;
+  void set_profit(double value);
+  private:
+  double _internal_profit() const;
+  void _internal_set_profit(double value);
+  public:
+
+  // double commission = 10;
+  void clear_commission();
+  double commission() const;
+  void set_commission(double value);
+  private:
+  double _internal_commission() const;
+  void _internal_set_commission(double value);
+  public:
+
+  // double swap = 11;
+  void clear_swap();
+  double swap() const;
+  void set_swap(double value);
+  private:
+  double _internal_swap() const;
+  void _internal_set_swap(double value);
+  public:
+
+  // bool is_buy = 3;
+  void clear_is_buy();
+  bool is_buy() const;
+  void set_is_buy(bool value);
+  private:
+  bool _internal_is_buy() const;
+  void _internal_set_is_buy(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mt5_term_api.TradeHistoryItemData)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr symbol_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr comment_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* open_time_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* close_time_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* open_time_utc_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* close_time_utc_;
+    int64_t ticket_;
+    double lots_;
+    double open_price_;
+    double close_price_;
+    double profit_;
+    double commission_;
+    double swap_;
+    bool is_buy_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -3733,7 +4269,7 @@ class EquityHistoryData final :
                &_EquityHistoryData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   friend void swap(EquityHistoryData& a, EquityHistoryData& b) {
     a.Swap(&b);
@@ -3890,7 +4426,7 @@ class EquityPointData final :
                &_EquityPointData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   friend void swap(EquityPointData& a, EquityPointData& b) {
     a.Swap(&b);
@@ -3964,6 +4500,7 @@ class EquityPointData final :
 
   enum : int {
     kTimeFieldNumber = 1,
+    kTimeUtcFieldNumber = 10,
     kBalanceFieldNumber = 2,
     kEquityFieldNumber = 3,
     kBalanceDrawdownRawFieldNumber = 4,
@@ -3990,6 +4527,24 @@ class EquityPointData final :
   void unsafe_arena_set_allocated_time(
       ::PROTOBUF_NAMESPACE_ID::Timestamp* time);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_time();
+
+  // .google.protobuf.Timestamp time_utc = 10;
+  bool has_time_utc() const;
+  private:
+  bool _internal_has_time_utc() const;
+  public:
+  void clear_time_utc();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& time_utc() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_time_utc();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_time_utc();
+  void set_allocated_time_utc(::PROTOBUF_NAMESPACE_ID::Timestamp* time_utc);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_time_utc() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_time_utc();
+  public:
+  void unsafe_arena_set_allocated_time_utc(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* time_utc);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_time_utc();
 
   // double balance = 2;
   void clear_balance();
@@ -4072,6 +4627,7 @@ class EquityPointData final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::Timestamp* time_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* time_utc_;
     double balance_;
     double equity_;
     double balance_drawdown_raw_;
@@ -4135,7 +4691,7 @@ class TradeUnrealizedPLData final :
                &_TradeUnrealizedPLData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   friend void swap(TradeUnrealizedPLData& a, TradeUnrealizedPLData& b) {
     a.Swap(&b);
@@ -4292,7 +4848,7 @@ class TradeUnrealizedExtremaData final :
                &_TradeUnrealizedExtremaData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   friend void swap(TradeUnrealizedExtremaData& a, TradeUnrealizedExtremaData& b) {
     a.Swap(&b);
@@ -4368,6 +4924,8 @@ class TradeUnrealizedExtremaData final :
     kSymbolFieldNumber = 2,
     kMaxUnrealizedTimeFieldNumber = 3,
     kMinUnrealizedTimeFieldNumber = 5,
+    kMaxUnrealizedTimeUtcFieldNumber = 7,
+    kMinUnrealizedTimeUtcFieldNumber = 8,
     kTicketFieldNumber = 1,
     kMaxUnrealizedPlFieldNumber = 4,
     kMinUnrealizedPlFieldNumber = 6,
@@ -4422,6 +4980,42 @@ class TradeUnrealizedExtremaData final :
       ::PROTOBUF_NAMESPACE_ID::Timestamp* min_unrealized_time);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_min_unrealized_time();
 
+  // .google.protobuf.Timestamp max_unrealized_time_utc = 7;
+  bool has_max_unrealized_time_utc() const;
+  private:
+  bool _internal_has_max_unrealized_time_utc() const;
+  public:
+  void clear_max_unrealized_time_utc();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& max_unrealized_time_utc() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_max_unrealized_time_utc();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_max_unrealized_time_utc();
+  void set_allocated_max_unrealized_time_utc(::PROTOBUF_NAMESPACE_ID::Timestamp* max_unrealized_time_utc);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_max_unrealized_time_utc() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_max_unrealized_time_utc();
+  public:
+  void unsafe_arena_set_allocated_max_unrealized_time_utc(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* max_unrealized_time_utc);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_max_unrealized_time_utc();
+
+  // .google.protobuf.Timestamp min_unrealized_time_utc = 8;
+  bool has_min_unrealized_time_utc() const;
+  private:
+  bool _internal_has_min_unrealized_time_utc() const;
+  public:
+  void clear_min_unrealized_time_utc();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& min_unrealized_time_utc() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_min_unrealized_time_utc();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_min_unrealized_time_utc();
+  void set_allocated_min_unrealized_time_utc(::PROTOBUF_NAMESPACE_ID::Timestamp* min_unrealized_time_utc);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_min_unrealized_time_utc() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_min_unrealized_time_utc();
+  public:
+  void unsafe_arena_set_allocated_min_unrealized_time_utc(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* min_unrealized_time_utc);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_min_unrealized_time_utc();
+
   // int64 ticket = 1;
   void clear_ticket();
   int64_t ticket() const;
@@ -4460,6 +5054,8 @@ class TradeUnrealizedExtremaData final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr symbol_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* max_unrealized_time_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* min_unrealized_time_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* max_unrealized_time_utc_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* min_unrealized_time_utc_;
     int64_t ticket_;
     double max_unrealized_pl_;
     double min_unrealized_pl_;
@@ -4545,6 +5141,74 @@ inline void TradeStatsRequest::set_allocated_from(std::string* from) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:mt5_term_api.TradeStatsRequest.from)
+}
+
+// optional string from_utc = 2;
+inline bool TradeStatsRequest::_internal_has_from_utc() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool TradeStatsRequest::has_from_utc() const {
+  return _internal_has_from_utc();
+}
+inline void TradeStatsRequest::clear_from_utc() {
+  _impl_.from_utc_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const std::string& TradeStatsRequest::from_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeStatsRequest.from_utc)
+  return _internal_from_utc();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TradeStatsRequest::set_from_utc(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000002u;
+ _impl_.from_utc_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mt5_term_api.TradeStatsRequest.from_utc)
+}
+inline std::string* TradeStatsRequest::mutable_from_utc() {
+  std::string* _s = _internal_mutable_from_utc();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.TradeStatsRequest.from_utc)
+  return _s;
+}
+inline const std::string& TradeStatsRequest::_internal_from_utc() const {
+  return _impl_.from_utc_.Get();
+}
+inline void TradeStatsRequest::_internal_set_from_utc(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.from_utc_.Set(value, GetArenaForAllocation());
+}
+inline std::string* TradeStatsRequest::_internal_mutable_from_utc() {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.from_utc_.Mutable(GetArenaForAllocation());
+}
+inline std::string* TradeStatsRequest::release_from_utc() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.TradeStatsRequest.from_utc)
+  if (!_internal_has_from_utc()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* p = _impl_.from_utc_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.from_utc_.IsDefault()) {
+    _impl_.from_utc_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void TradeStatsRequest::set_allocated_from_utc(std::string* from_utc) {
+  if (from_utc != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.from_utc_.SetAllocated(from_utc, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.from_utc_.IsDefault()) {
+    _impl_.from_utc_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.TradeStatsRequest.from_utc)
 }
 
 // -------------------------------------------------------------------
@@ -4772,9 +5436,77 @@ inline void TradeStatsEquityHistoryRequest::set_allocated_from(std::string* from
   // @@protoc_insertion_point(field_set_allocated:mt5_term_api.TradeStatsEquityHistoryRequest.from)
 }
 
+// optional string from_utc = 3;
+inline bool TradeStatsEquityHistoryRequest::_internal_has_from_utc() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool TradeStatsEquityHistoryRequest::has_from_utc() const {
+  return _internal_has_from_utc();
+}
+inline void TradeStatsEquityHistoryRequest::clear_from_utc() {
+  _impl_.from_utc_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const std::string& TradeStatsEquityHistoryRequest::from_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeStatsEquityHistoryRequest.from_utc)
+  return _internal_from_utc();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TradeStatsEquityHistoryRequest::set_from_utc(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000002u;
+ _impl_.from_utc_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mt5_term_api.TradeStatsEquityHistoryRequest.from_utc)
+}
+inline std::string* TradeStatsEquityHistoryRequest::mutable_from_utc() {
+  std::string* _s = _internal_mutable_from_utc();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.TradeStatsEquityHistoryRequest.from_utc)
+  return _s;
+}
+inline const std::string& TradeStatsEquityHistoryRequest::_internal_from_utc() const {
+  return _impl_.from_utc_.Get();
+}
+inline void TradeStatsEquityHistoryRequest::_internal_set_from_utc(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.from_utc_.Set(value, GetArenaForAllocation());
+}
+inline std::string* TradeStatsEquityHistoryRequest::_internal_mutable_from_utc() {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.from_utc_.Mutable(GetArenaForAllocation());
+}
+inline std::string* TradeStatsEquityHistoryRequest::release_from_utc() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.TradeStatsEquityHistoryRequest.from_utc)
+  if (!_internal_has_from_utc()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* p = _impl_.from_utc_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.from_utc_.IsDefault()) {
+    _impl_.from_utc_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void TradeStatsEquityHistoryRequest::set_allocated_from_utc(std::string* from_utc) {
+  if (from_utc != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.from_utc_.SetAllocated(from_utc, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.from_utc_.IsDefault()) {
+    _impl_.from_utc_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.TradeStatsEquityHistoryRequest.from_utc)
+}
+
 // optional bool exclude_same_bars = 2;
 inline bool TradeStatsEquityHistoryRequest::_internal_has_exclude_same_bars() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool TradeStatsEquityHistoryRequest::has_exclude_same_bars() const {
@@ -4782,7 +5514,7 @@ inline bool TradeStatsEquityHistoryRequest::has_exclude_same_bars() const {
 }
 inline void TradeStatsEquityHistoryRequest::clear_exclude_same_bars() {
   _impl_.exclude_same_bars_ = false;
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline bool TradeStatsEquityHistoryRequest::_internal_exclude_same_bars() const {
   return _impl_.exclude_same_bars_;
@@ -4792,7 +5524,7 @@ inline bool TradeStatsEquityHistoryRequest::exclude_same_bars() const {
   return _internal_exclude_same_bars();
 }
 inline void TradeStatsEquityHistoryRequest::_internal_set_exclude_same_bars(bool value) {
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.exclude_same_bars_ = value;
 }
 inline void TradeStatsEquityHistoryRequest::set_exclude_same_bars(bool value) {
@@ -5025,9 +5757,77 @@ inline void EquityHistoryRequest::set_allocated_from(std::string* from) {
   // @@protoc_insertion_point(field_set_allocated:mt5_term_api.EquityHistoryRequest.from)
 }
 
+// optional string from_utc = 3;
+inline bool EquityHistoryRequest::_internal_has_from_utc() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool EquityHistoryRequest::has_from_utc() const {
+  return _internal_has_from_utc();
+}
+inline void EquityHistoryRequest::clear_from_utc() {
+  _impl_.from_utc_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const std::string& EquityHistoryRequest::from_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.EquityHistoryRequest.from_utc)
+  return _internal_from_utc();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void EquityHistoryRequest::set_from_utc(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000002u;
+ _impl_.from_utc_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mt5_term_api.EquityHistoryRequest.from_utc)
+}
+inline std::string* EquityHistoryRequest::mutable_from_utc() {
+  std::string* _s = _internal_mutable_from_utc();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.EquityHistoryRequest.from_utc)
+  return _s;
+}
+inline const std::string& EquityHistoryRequest::_internal_from_utc() const {
+  return _impl_.from_utc_.Get();
+}
+inline void EquityHistoryRequest::_internal_set_from_utc(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.from_utc_.Set(value, GetArenaForAllocation());
+}
+inline std::string* EquityHistoryRequest::_internal_mutable_from_utc() {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.from_utc_.Mutable(GetArenaForAllocation());
+}
+inline std::string* EquityHistoryRequest::release_from_utc() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.EquityHistoryRequest.from_utc)
+  if (!_internal_has_from_utc()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* p = _impl_.from_utc_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.from_utc_.IsDefault()) {
+    _impl_.from_utc_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void EquityHistoryRequest::set_allocated_from_utc(std::string* from_utc) {
+  if (from_utc != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.from_utc_.SetAllocated(from_utc, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.from_utc_.IsDefault()) {
+    _impl_.from_utc_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.EquityHistoryRequest.from_utc)
+}
+
 // optional bool exclude_same_bars = 2;
 inline bool EquityHistoryRequest::_internal_has_exclude_same_bars() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool EquityHistoryRequest::has_exclude_same_bars() const {
@@ -5035,7 +5835,7 @@ inline bool EquityHistoryRequest::has_exclude_same_bars() const {
 }
 inline void EquityHistoryRequest::clear_exclude_same_bars() {
   _impl_.exclude_same_bars_ = false;
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline bool EquityHistoryRequest::_internal_exclude_same_bars() const {
   return _impl_.exclude_same_bars_;
@@ -5045,7 +5845,7 @@ inline bool EquityHistoryRequest::exclude_same_bars() const {
   return _internal_exclude_same_bars();
 }
 inline void EquityHistoryRequest::_internal_set_exclude_same_bars(bool value) {
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.exclude_same_bars_ = value;
 }
 inline void EquityHistoryRequest::set_exclude_same_bars(bool value) {
@@ -5276,6 +6076,74 @@ inline void TradeUnrealizedPLRequest::set_allocated_from(std::string* from) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:mt5_term_api.TradeUnrealizedPLRequest.from)
+}
+
+// optional string from_utc = 2;
+inline bool TradeUnrealizedPLRequest::_internal_has_from_utc() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool TradeUnrealizedPLRequest::has_from_utc() const {
+  return _internal_has_from_utc();
+}
+inline void TradeUnrealizedPLRequest::clear_from_utc() {
+  _impl_.from_utc_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const std::string& TradeUnrealizedPLRequest::from_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeUnrealizedPLRequest.from_utc)
+  return _internal_from_utc();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TradeUnrealizedPLRequest::set_from_utc(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000002u;
+ _impl_.from_utc_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mt5_term_api.TradeUnrealizedPLRequest.from_utc)
+}
+inline std::string* TradeUnrealizedPLRequest::mutable_from_utc() {
+  std::string* _s = _internal_mutable_from_utc();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.TradeUnrealizedPLRequest.from_utc)
+  return _s;
+}
+inline const std::string& TradeUnrealizedPLRequest::_internal_from_utc() const {
+  return _impl_.from_utc_.Get();
+}
+inline void TradeUnrealizedPLRequest::_internal_set_from_utc(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.from_utc_.Set(value, GetArenaForAllocation());
+}
+inline std::string* TradeUnrealizedPLRequest::_internal_mutable_from_utc() {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.from_utc_.Mutable(GetArenaForAllocation());
+}
+inline std::string* TradeUnrealizedPLRequest::release_from_utc() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.TradeUnrealizedPLRequest.from_utc)
+  if (!_internal_has_from_utc()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* p = _impl_.from_utc_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.from_utc_.IsDefault()) {
+    _impl_.from_utc_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void TradeUnrealizedPLRequest::set_allocated_from_utc(std::string* from_utc) {
+  if (from_utc != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.from_utc_.SetAllocated(from_utc, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.from_utc_.IsDefault()) {
+    _impl_.from_utc_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.TradeUnrealizedPLRequest.from_utc)
 }
 
 // -------------------------------------------------------------------
@@ -7043,6 +7911,106 @@ inline void MarketTradeCountData::set_count(int32_t value) {
   // @@protoc_insertion_point(field_set:mt5_term_api.MarketTradeCountData.count)
 }
 
+// double lots = 3;
+inline void MarketTradeCountData::clear_lots() {
+  _impl_.lots_ = 0;
+}
+inline double MarketTradeCountData::_internal_lots() const {
+  return _impl_.lots_;
+}
+inline double MarketTradeCountData::lots() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.MarketTradeCountData.lots)
+  return _internal_lots();
+}
+inline void MarketTradeCountData::_internal_set_lots(double value) {
+  
+  _impl_.lots_ = value;
+}
+inline void MarketTradeCountData::set_lots(double value) {
+  _internal_set_lots(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.MarketTradeCountData.lots)
+}
+
+// double profit = 4;
+inline void MarketTradeCountData::clear_profit() {
+  _impl_.profit_ = 0;
+}
+inline double MarketTradeCountData::_internal_profit() const {
+  return _impl_.profit_;
+}
+inline double MarketTradeCountData::profit() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.MarketTradeCountData.profit)
+  return _internal_profit();
+}
+inline void MarketTradeCountData::_internal_set_profit(double value) {
+  
+  _impl_.profit_ = value;
+}
+inline void MarketTradeCountData::set_profit(double value) {
+  _internal_set_profit(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.MarketTradeCountData.profit)
+}
+
+// double win_rate = 5;
+inline void MarketTradeCountData::clear_win_rate() {
+  _impl_.win_rate_ = 0;
+}
+inline double MarketTradeCountData::_internal_win_rate() const {
+  return _impl_.win_rate_;
+}
+inline double MarketTradeCountData::win_rate() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.MarketTradeCountData.win_rate)
+  return _internal_win_rate();
+}
+inline void MarketTradeCountData::_internal_set_win_rate(double value) {
+  
+  _impl_.win_rate_ = value;
+}
+inline void MarketTradeCountData::set_win_rate(double value) {
+  _internal_set_win_rate(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.MarketTradeCountData.win_rate)
+}
+
+// int32 won_count = 6;
+inline void MarketTradeCountData::clear_won_count() {
+  _impl_.won_count_ = 0;
+}
+inline int32_t MarketTradeCountData::_internal_won_count() const {
+  return _impl_.won_count_;
+}
+inline int32_t MarketTradeCountData::won_count() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.MarketTradeCountData.won_count)
+  return _internal_won_count();
+}
+inline void MarketTradeCountData::_internal_set_won_count(int32_t value) {
+  
+  _impl_.won_count_ = value;
+}
+inline void MarketTradeCountData::set_won_count(int32_t value) {
+  _internal_set_won_count(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.MarketTradeCountData.won_count)
+}
+
+// int32 lost_count = 7;
+inline void MarketTradeCountData::clear_lost_count() {
+  _impl_.lost_count_ = 0;
+}
+inline int32_t MarketTradeCountData::_internal_lost_count() const {
+  return _impl_.lost_count_;
+}
+inline int32_t MarketTradeCountData::lost_count() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.MarketTradeCountData.lost_count)
+  return _internal_lost_count();
+}
+inline void MarketTradeCountData::_internal_set_lost_count(int32_t value) {
+  
+  _impl_.lost_count_ = value;
+}
+inline void MarketTradeCountData::set_lost_count(int32_t value) {
+  _internal_set_lost_count(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.MarketTradeCountData.lost_count)
+}
+
 // -------------------------------------------------------------------
 
 // ProfitabilityData
@@ -7344,6 +8312,91 @@ inline void ProfitData::set_allocated_date(::PROTOBUF_NAMESPACE_ID::Timestamp* d
   // @@protoc_insertion_point(field_set_allocated:mt5_term_api.ProfitData.date)
 }
 
+// .google.protobuf.Timestamp date_utc = 4;
+inline bool ProfitData::_internal_has_date_utc() const {
+  return this != internal_default_instance() && _impl_.date_utc_ != nullptr;
+}
+inline bool ProfitData::has_date_utc() const {
+  return _internal_has_date_utc();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& ProfitData::_internal_date_utc() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.date_utc_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& ProfitData::date_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.ProfitData.date_utc)
+  return _internal_date_utc();
+}
+inline void ProfitData::unsafe_arena_set_allocated_date_utc(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* date_utc) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.date_utc_);
+  }
+  _impl_.date_utc_ = date_utc;
+  if (date_utc) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.ProfitData.date_utc)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ProfitData::release_date_utc() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.date_utc_;
+  _impl_.date_utc_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ProfitData::unsafe_arena_release_date_utc() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.ProfitData.date_utc)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.date_utc_;
+  _impl_.date_utc_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ProfitData::_internal_mutable_date_utc() {
+  
+  if (_impl_.date_utc_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.date_utc_ = p;
+  }
+  return _impl_.date_utc_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ProfitData::mutable_date_utc() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_date_utc();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.ProfitData.date_utc)
+  return _msg;
+}
+inline void ProfitData::set_allocated_date_utc(::PROTOBUF_NAMESPACE_ID::Timestamp* date_utc) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.date_utc_);
+  }
+  if (date_utc) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(date_utc));
+    if (message_arena != submessage_arena) {
+      date_utc = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, date_utc, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.date_utc_ = date_utc;
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.ProfitData.date_utc)
+}
+
 // double profit = 3;
 inline void ProfitData::clear_profit() {
   _impl_.profit_ = 0;
@@ -7586,6 +8639,690 @@ StatsWithChartsData::charts() const {
   return _impl_.charts_;
 }
 
+// repeated .mt5_term_api.TradeHistoryItemData trades = 3;
+inline int StatsWithChartsData::_internal_trades_size() const {
+  return _impl_.trades_.size();
+}
+inline int StatsWithChartsData::trades_size() const {
+  return _internal_trades_size();
+}
+inline void StatsWithChartsData::clear_trades() {
+  _impl_.trades_.Clear();
+}
+inline ::mt5_term_api::TradeHistoryItemData* StatsWithChartsData::mutable_trades(int index) {
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.StatsWithChartsData.trades)
+  return _impl_.trades_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::TradeHistoryItemData >*
+StatsWithChartsData::mutable_trades() {
+  // @@protoc_insertion_point(field_mutable_list:mt5_term_api.StatsWithChartsData.trades)
+  return &_impl_.trades_;
+}
+inline const ::mt5_term_api::TradeHistoryItemData& StatsWithChartsData::_internal_trades(int index) const {
+  return _impl_.trades_.Get(index);
+}
+inline const ::mt5_term_api::TradeHistoryItemData& StatsWithChartsData::trades(int index) const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.StatsWithChartsData.trades)
+  return _internal_trades(index);
+}
+inline ::mt5_term_api::TradeHistoryItemData* StatsWithChartsData::_internal_add_trades() {
+  return _impl_.trades_.Add();
+}
+inline ::mt5_term_api::TradeHistoryItemData* StatsWithChartsData::add_trades() {
+  ::mt5_term_api::TradeHistoryItemData* _add = _internal_add_trades();
+  // @@protoc_insertion_point(field_add:mt5_term_api.StatsWithChartsData.trades)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::TradeHistoryItemData >&
+StatsWithChartsData::trades() const {
+  // @@protoc_insertion_point(field_list:mt5_term_api.StatsWithChartsData.trades)
+  return _impl_.trades_;
+}
+
+// repeated .mt5_term_api.TradeHistoryItemData open_trades = 4;
+inline int StatsWithChartsData::_internal_open_trades_size() const {
+  return _impl_.open_trades_.size();
+}
+inline int StatsWithChartsData::open_trades_size() const {
+  return _internal_open_trades_size();
+}
+inline void StatsWithChartsData::clear_open_trades() {
+  _impl_.open_trades_.Clear();
+}
+inline ::mt5_term_api::TradeHistoryItemData* StatsWithChartsData::mutable_open_trades(int index) {
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.StatsWithChartsData.open_trades)
+  return _impl_.open_trades_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::TradeHistoryItemData >*
+StatsWithChartsData::mutable_open_trades() {
+  // @@protoc_insertion_point(field_mutable_list:mt5_term_api.StatsWithChartsData.open_trades)
+  return &_impl_.open_trades_;
+}
+inline const ::mt5_term_api::TradeHistoryItemData& StatsWithChartsData::_internal_open_trades(int index) const {
+  return _impl_.open_trades_.Get(index);
+}
+inline const ::mt5_term_api::TradeHistoryItemData& StatsWithChartsData::open_trades(int index) const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.StatsWithChartsData.open_trades)
+  return _internal_open_trades(index);
+}
+inline ::mt5_term_api::TradeHistoryItemData* StatsWithChartsData::_internal_add_open_trades() {
+  return _impl_.open_trades_.Add();
+}
+inline ::mt5_term_api::TradeHistoryItemData* StatsWithChartsData::add_open_trades() {
+  ::mt5_term_api::TradeHistoryItemData* _add = _internal_add_open_trades();
+  // @@protoc_insertion_point(field_add:mt5_term_api.StatsWithChartsData.open_trades)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::TradeHistoryItemData >&
+StatsWithChartsData::open_trades() const {
+  // @@protoc_insertion_point(field_list:mt5_term_api.StatsWithChartsData.open_trades)
+  return _impl_.open_trades_;
+}
+
+// -------------------------------------------------------------------
+
+// TradeHistoryItemData
+
+// int64 ticket = 1;
+inline void TradeHistoryItemData::clear_ticket() {
+  _impl_.ticket_ = int64_t{0};
+}
+inline int64_t TradeHistoryItemData::_internal_ticket() const {
+  return _impl_.ticket_;
+}
+inline int64_t TradeHistoryItemData::ticket() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeHistoryItemData.ticket)
+  return _internal_ticket();
+}
+inline void TradeHistoryItemData::_internal_set_ticket(int64_t value) {
+  
+  _impl_.ticket_ = value;
+}
+inline void TradeHistoryItemData::set_ticket(int64_t value) {
+  _internal_set_ticket(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.TradeHistoryItemData.ticket)
+}
+
+// string symbol = 2;
+inline void TradeHistoryItemData::clear_symbol() {
+  _impl_.symbol_.ClearToEmpty();
+}
+inline const std::string& TradeHistoryItemData::symbol() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeHistoryItemData.symbol)
+  return _internal_symbol();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TradeHistoryItemData::set_symbol(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.symbol_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mt5_term_api.TradeHistoryItemData.symbol)
+}
+inline std::string* TradeHistoryItemData::mutable_symbol() {
+  std::string* _s = _internal_mutable_symbol();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.TradeHistoryItemData.symbol)
+  return _s;
+}
+inline const std::string& TradeHistoryItemData::_internal_symbol() const {
+  return _impl_.symbol_.Get();
+}
+inline void TradeHistoryItemData::_internal_set_symbol(const std::string& value) {
+  
+  _impl_.symbol_.Set(value, GetArenaForAllocation());
+}
+inline std::string* TradeHistoryItemData::_internal_mutable_symbol() {
+  
+  return _impl_.symbol_.Mutable(GetArenaForAllocation());
+}
+inline std::string* TradeHistoryItemData::release_symbol() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.TradeHistoryItemData.symbol)
+  return _impl_.symbol_.Release();
+}
+inline void TradeHistoryItemData::set_allocated_symbol(std::string* symbol) {
+  if (symbol != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.symbol_.SetAllocated(symbol, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.symbol_.IsDefault()) {
+    _impl_.symbol_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.TradeHistoryItemData.symbol)
+}
+
+// bool is_buy = 3;
+inline void TradeHistoryItemData::clear_is_buy() {
+  _impl_.is_buy_ = false;
+}
+inline bool TradeHistoryItemData::_internal_is_buy() const {
+  return _impl_.is_buy_;
+}
+inline bool TradeHistoryItemData::is_buy() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeHistoryItemData.is_buy)
+  return _internal_is_buy();
+}
+inline void TradeHistoryItemData::_internal_set_is_buy(bool value) {
+  
+  _impl_.is_buy_ = value;
+}
+inline void TradeHistoryItemData::set_is_buy(bool value) {
+  _internal_set_is_buy(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.TradeHistoryItemData.is_buy)
+}
+
+// double lots = 4;
+inline void TradeHistoryItemData::clear_lots() {
+  _impl_.lots_ = 0;
+}
+inline double TradeHistoryItemData::_internal_lots() const {
+  return _impl_.lots_;
+}
+inline double TradeHistoryItemData::lots() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeHistoryItemData.lots)
+  return _internal_lots();
+}
+inline void TradeHistoryItemData::_internal_set_lots(double value) {
+  
+  _impl_.lots_ = value;
+}
+inline void TradeHistoryItemData::set_lots(double value) {
+  _internal_set_lots(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.TradeHistoryItemData.lots)
+}
+
+// double open_price = 5;
+inline void TradeHistoryItemData::clear_open_price() {
+  _impl_.open_price_ = 0;
+}
+inline double TradeHistoryItemData::_internal_open_price() const {
+  return _impl_.open_price_;
+}
+inline double TradeHistoryItemData::open_price() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeHistoryItemData.open_price)
+  return _internal_open_price();
+}
+inline void TradeHistoryItemData::_internal_set_open_price(double value) {
+  
+  _impl_.open_price_ = value;
+}
+inline void TradeHistoryItemData::set_open_price(double value) {
+  _internal_set_open_price(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.TradeHistoryItemData.open_price)
+}
+
+// double close_price = 6;
+inline void TradeHistoryItemData::clear_close_price() {
+  _impl_.close_price_ = 0;
+}
+inline double TradeHistoryItemData::_internal_close_price() const {
+  return _impl_.close_price_;
+}
+inline double TradeHistoryItemData::close_price() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeHistoryItemData.close_price)
+  return _internal_close_price();
+}
+inline void TradeHistoryItemData::_internal_set_close_price(double value) {
+  
+  _impl_.close_price_ = value;
+}
+inline void TradeHistoryItemData::set_close_price(double value) {
+  _internal_set_close_price(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.TradeHistoryItemData.close_price)
+}
+
+// .google.protobuf.Timestamp open_time = 7;
+inline bool TradeHistoryItemData::_internal_has_open_time() const {
+  return this != internal_default_instance() && _impl_.open_time_ != nullptr;
+}
+inline bool TradeHistoryItemData::has_open_time() const {
+  return _internal_has_open_time();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& TradeHistoryItemData::_internal_open_time() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.open_time_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& TradeHistoryItemData::open_time() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeHistoryItemData.open_time)
+  return _internal_open_time();
+}
+inline void TradeHistoryItemData::unsafe_arena_set_allocated_open_time(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* open_time) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.open_time_);
+  }
+  _impl_.open_time_ = open_time;
+  if (open_time) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.TradeHistoryItemData.open_time)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeHistoryItemData::release_open_time() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.open_time_;
+  _impl_.open_time_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeHistoryItemData::unsafe_arena_release_open_time() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.TradeHistoryItemData.open_time)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.open_time_;
+  _impl_.open_time_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeHistoryItemData::_internal_mutable_open_time() {
+  
+  if (_impl_.open_time_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.open_time_ = p;
+  }
+  return _impl_.open_time_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeHistoryItemData::mutable_open_time() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_open_time();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.TradeHistoryItemData.open_time)
+  return _msg;
+}
+inline void TradeHistoryItemData::set_allocated_open_time(::PROTOBUF_NAMESPACE_ID::Timestamp* open_time) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.open_time_);
+  }
+  if (open_time) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(open_time));
+    if (message_arena != submessage_arena) {
+      open_time = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, open_time, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.open_time_ = open_time;
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.TradeHistoryItemData.open_time)
+}
+
+// .google.protobuf.Timestamp open_time_utc = 13;
+inline bool TradeHistoryItemData::_internal_has_open_time_utc() const {
+  return this != internal_default_instance() && _impl_.open_time_utc_ != nullptr;
+}
+inline bool TradeHistoryItemData::has_open_time_utc() const {
+  return _internal_has_open_time_utc();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& TradeHistoryItemData::_internal_open_time_utc() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.open_time_utc_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& TradeHistoryItemData::open_time_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeHistoryItemData.open_time_utc)
+  return _internal_open_time_utc();
+}
+inline void TradeHistoryItemData::unsafe_arena_set_allocated_open_time_utc(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* open_time_utc) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.open_time_utc_);
+  }
+  _impl_.open_time_utc_ = open_time_utc;
+  if (open_time_utc) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.TradeHistoryItemData.open_time_utc)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeHistoryItemData::release_open_time_utc() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.open_time_utc_;
+  _impl_.open_time_utc_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeHistoryItemData::unsafe_arena_release_open_time_utc() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.TradeHistoryItemData.open_time_utc)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.open_time_utc_;
+  _impl_.open_time_utc_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeHistoryItemData::_internal_mutable_open_time_utc() {
+  
+  if (_impl_.open_time_utc_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.open_time_utc_ = p;
+  }
+  return _impl_.open_time_utc_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeHistoryItemData::mutable_open_time_utc() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_open_time_utc();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.TradeHistoryItemData.open_time_utc)
+  return _msg;
+}
+inline void TradeHistoryItemData::set_allocated_open_time_utc(::PROTOBUF_NAMESPACE_ID::Timestamp* open_time_utc) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.open_time_utc_);
+  }
+  if (open_time_utc) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(open_time_utc));
+    if (message_arena != submessage_arena) {
+      open_time_utc = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, open_time_utc, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.open_time_utc_ = open_time_utc;
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.TradeHistoryItemData.open_time_utc)
+}
+
+// .google.protobuf.Timestamp close_time = 8;
+inline bool TradeHistoryItemData::_internal_has_close_time() const {
+  return this != internal_default_instance() && _impl_.close_time_ != nullptr;
+}
+inline bool TradeHistoryItemData::has_close_time() const {
+  return _internal_has_close_time();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& TradeHistoryItemData::_internal_close_time() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.close_time_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& TradeHistoryItemData::close_time() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeHistoryItemData.close_time)
+  return _internal_close_time();
+}
+inline void TradeHistoryItemData::unsafe_arena_set_allocated_close_time(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* close_time) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.close_time_);
+  }
+  _impl_.close_time_ = close_time;
+  if (close_time) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.TradeHistoryItemData.close_time)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeHistoryItemData::release_close_time() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.close_time_;
+  _impl_.close_time_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeHistoryItemData::unsafe_arena_release_close_time() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.TradeHistoryItemData.close_time)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.close_time_;
+  _impl_.close_time_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeHistoryItemData::_internal_mutable_close_time() {
+  
+  if (_impl_.close_time_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.close_time_ = p;
+  }
+  return _impl_.close_time_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeHistoryItemData::mutable_close_time() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_close_time();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.TradeHistoryItemData.close_time)
+  return _msg;
+}
+inline void TradeHistoryItemData::set_allocated_close_time(::PROTOBUF_NAMESPACE_ID::Timestamp* close_time) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.close_time_);
+  }
+  if (close_time) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(close_time));
+    if (message_arena != submessage_arena) {
+      close_time = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, close_time, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.close_time_ = close_time;
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.TradeHistoryItemData.close_time)
+}
+
+// .google.protobuf.Timestamp close_time_utc = 14;
+inline bool TradeHistoryItemData::_internal_has_close_time_utc() const {
+  return this != internal_default_instance() && _impl_.close_time_utc_ != nullptr;
+}
+inline bool TradeHistoryItemData::has_close_time_utc() const {
+  return _internal_has_close_time_utc();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& TradeHistoryItemData::_internal_close_time_utc() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.close_time_utc_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& TradeHistoryItemData::close_time_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeHistoryItemData.close_time_utc)
+  return _internal_close_time_utc();
+}
+inline void TradeHistoryItemData::unsafe_arena_set_allocated_close_time_utc(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* close_time_utc) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.close_time_utc_);
+  }
+  _impl_.close_time_utc_ = close_time_utc;
+  if (close_time_utc) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.TradeHistoryItemData.close_time_utc)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeHistoryItemData::release_close_time_utc() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.close_time_utc_;
+  _impl_.close_time_utc_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeHistoryItemData::unsafe_arena_release_close_time_utc() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.TradeHistoryItemData.close_time_utc)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.close_time_utc_;
+  _impl_.close_time_utc_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeHistoryItemData::_internal_mutable_close_time_utc() {
+  
+  if (_impl_.close_time_utc_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.close_time_utc_ = p;
+  }
+  return _impl_.close_time_utc_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeHistoryItemData::mutable_close_time_utc() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_close_time_utc();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.TradeHistoryItemData.close_time_utc)
+  return _msg;
+}
+inline void TradeHistoryItemData::set_allocated_close_time_utc(::PROTOBUF_NAMESPACE_ID::Timestamp* close_time_utc) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.close_time_utc_);
+  }
+  if (close_time_utc) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(close_time_utc));
+    if (message_arena != submessage_arena) {
+      close_time_utc = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, close_time_utc, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.close_time_utc_ = close_time_utc;
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.TradeHistoryItemData.close_time_utc)
+}
+
+// double profit = 9;
+inline void TradeHistoryItemData::clear_profit() {
+  _impl_.profit_ = 0;
+}
+inline double TradeHistoryItemData::_internal_profit() const {
+  return _impl_.profit_;
+}
+inline double TradeHistoryItemData::profit() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeHistoryItemData.profit)
+  return _internal_profit();
+}
+inline void TradeHistoryItemData::_internal_set_profit(double value) {
+  
+  _impl_.profit_ = value;
+}
+inline void TradeHistoryItemData::set_profit(double value) {
+  _internal_set_profit(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.TradeHistoryItemData.profit)
+}
+
+// double commission = 10;
+inline void TradeHistoryItemData::clear_commission() {
+  _impl_.commission_ = 0;
+}
+inline double TradeHistoryItemData::_internal_commission() const {
+  return _impl_.commission_;
+}
+inline double TradeHistoryItemData::commission() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeHistoryItemData.commission)
+  return _internal_commission();
+}
+inline void TradeHistoryItemData::_internal_set_commission(double value) {
+  
+  _impl_.commission_ = value;
+}
+inline void TradeHistoryItemData::set_commission(double value) {
+  _internal_set_commission(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.TradeHistoryItemData.commission)
+}
+
+// double swap = 11;
+inline void TradeHistoryItemData::clear_swap() {
+  _impl_.swap_ = 0;
+}
+inline double TradeHistoryItemData::_internal_swap() const {
+  return _impl_.swap_;
+}
+inline double TradeHistoryItemData::swap() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeHistoryItemData.swap)
+  return _internal_swap();
+}
+inline void TradeHistoryItemData::_internal_set_swap(double value) {
+  
+  _impl_.swap_ = value;
+}
+inline void TradeHistoryItemData::set_swap(double value) {
+  _internal_set_swap(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.TradeHistoryItemData.swap)
+}
+
+// string comment = 12;
+inline void TradeHistoryItemData::clear_comment() {
+  _impl_.comment_.ClearToEmpty();
+}
+inline const std::string& TradeHistoryItemData::comment() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeHistoryItemData.comment)
+  return _internal_comment();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TradeHistoryItemData::set_comment(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.comment_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mt5_term_api.TradeHistoryItemData.comment)
+}
+inline std::string* TradeHistoryItemData::mutable_comment() {
+  std::string* _s = _internal_mutable_comment();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.TradeHistoryItemData.comment)
+  return _s;
+}
+inline const std::string& TradeHistoryItemData::_internal_comment() const {
+  return _impl_.comment_.Get();
+}
+inline void TradeHistoryItemData::_internal_set_comment(const std::string& value) {
+  
+  _impl_.comment_.Set(value, GetArenaForAllocation());
+}
+inline std::string* TradeHistoryItemData::_internal_mutable_comment() {
+  
+  return _impl_.comment_.Mutable(GetArenaForAllocation());
+}
+inline std::string* TradeHistoryItemData::release_comment() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.TradeHistoryItemData.comment)
+  return _impl_.comment_.Release();
+}
+inline void TradeHistoryItemData::set_allocated_comment(std::string* comment) {
+  if (comment != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.comment_.SetAllocated(comment, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.comment_.IsDefault()) {
+    _impl_.comment_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.TradeHistoryItemData.comment)
+}
+
 // -------------------------------------------------------------------
 
 // EquityHistoryData
@@ -7717,6 +9454,91 @@ inline void EquityPointData::set_allocated_time(::PROTOBUF_NAMESPACE_ID::Timesta
   }
   _impl_.time_ = time;
   // @@protoc_insertion_point(field_set_allocated:mt5_term_api.EquityPointData.time)
+}
+
+// .google.protobuf.Timestamp time_utc = 10;
+inline bool EquityPointData::_internal_has_time_utc() const {
+  return this != internal_default_instance() && _impl_.time_utc_ != nullptr;
+}
+inline bool EquityPointData::has_time_utc() const {
+  return _internal_has_time_utc();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& EquityPointData::_internal_time_utc() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.time_utc_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& EquityPointData::time_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.EquityPointData.time_utc)
+  return _internal_time_utc();
+}
+inline void EquityPointData::unsafe_arena_set_allocated_time_utc(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* time_utc) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.time_utc_);
+  }
+  _impl_.time_utc_ = time_utc;
+  if (time_utc) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.EquityPointData.time_utc)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* EquityPointData::release_time_utc() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.time_utc_;
+  _impl_.time_utc_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* EquityPointData::unsafe_arena_release_time_utc() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.EquityPointData.time_utc)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.time_utc_;
+  _impl_.time_utc_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* EquityPointData::_internal_mutable_time_utc() {
+  
+  if (_impl_.time_utc_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.time_utc_ = p;
+  }
+  return _impl_.time_utc_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* EquityPointData::mutable_time_utc() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_time_utc();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.EquityPointData.time_utc)
+  return _msg;
+}
+inline void EquityPointData::set_allocated_time_utc(::PROTOBUF_NAMESPACE_ID::Timestamp* time_utc) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.time_utc_);
+  }
+  if (time_utc) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(time_utc));
+    if (message_arena != submessage_arena) {
+      time_utc = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, time_utc, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.time_utc_ = time_utc;
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.EquityPointData.time_utc)
 }
 
 // double balance = 2;
@@ -8082,6 +9904,91 @@ inline void TradeUnrealizedExtremaData::set_allocated_max_unrealized_time(::PROT
   // @@protoc_insertion_point(field_set_allocated:mt5_term_api.TradeUnrealizedExtremaData.max_unrealized_time)
 }
 
+// .google.protobuf.Timestamp max_unrealized_time_utc = 7;
+inline bool TradeUnrealizedExtremaData::_internal_has_max_unrealized_time_utc() const {
+  return this != internal_default_instance() && _impl_.max_unrealized_time_utc_ != nullptr;
+}
+inline bool TradeUnrealizedExtremaData::has_max_unrealized_time_utc() const {
+  return _internal_has_max_unrealized_time_utc();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& TradeUnrealizedExtremaData::_internal_max_unrealized_time_utc() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.max_unrealized_time_utc_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& TradeUnrealizedExtremaData::max_unrealized_time_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeUnrealizedExtremaData.max_unrealized_time_utc)
+  return _internal_max_unrealized_time_utc();
+}
+inline void TradeUnrealizedExtremaData::unsafe_arena_set_allocated_max_unrealized_time_utc(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* max_unrealized_time_utc) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.max_unrealized_time_utc_);
+  }
+  _impl_.max_unrealized_time_utc_ = max_unrealized_time_utc;
+  if (max_unrealized_time_utc) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.TradeUnrealizedExtremaData.max_unrealized_time_utc)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeUnrealizedExtremaData::release_max_unrealized_time_utc() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.max_unrealized_time_utc_;
+  _impl_.max_unrealized_time_utc_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeUnrealizedExtremaData::unsafe_arena_release_max_unrealized_time_utc() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.TradeUnrealizedExtremaData.max_unrealized_time_utc)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.max_unrealized_time_utc_;
+  _impl_.max_unrealized_time_utc_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeUnrealizedExtremaData::_internal_mutable_max_unrealized_time_utc() {
+  
+  if (_impl_.max_unrealized_time_utc_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.max_unrealized_time_utc_ = p;
+  }
+  return _impl_.max_unrealized_time_utc_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeUnrealizedExtremaData::mutable_max_unrealized_time_utc() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_max_unrealized_time_utc();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.TradeUnrealizedExtremaData.max_unrealized_time_utc)
+  return _msg;
+}
+inline void TradeUnrealizedExtremaData::set_allocated_max_unrealized_time_utc(::PROTOBUF_NAMESPACE_ID::Timestamp* max_unrealized_time_utc) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.max_unrealized_time_utc_);
+  }
+  if (max_unrealized_time_utc) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(max_unrealized_time_utc));
+    if (message_arena != submessage_arena) {
+      max_unrealized_time_utc = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, max_unrealized_time_utc, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.max_unrealized_time_utc_ = max_unrealized_time_utc;
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.TradeUnrealizedExtremaData.max_unrealized_time_utc)
+}
+
 // double max_unrealized_pl = 4;
 inline void TradeUnrealizedExtremaData::clear_max_unrealized_pl() {
   _impl_.max_unrealized_pl_ = 0;
@@ -8187,6 +10094,91 @@ inline void TradeUnrealizedExtremaData::set_allocated_min_unrealized_time(::PROT
   // @@protoc_insertion_point(field_set_allocated:mt5_term_api.TradeUnrealizedExtremaData.min_unrealized_time)
 }
 
+// .google.protobuf.Timestamp min_unrealized_time_utc = 8;
+inline bool TradeUnrealizedExtremaData::_internal_has_min_unrealized_time_utc() const {
+  return this != internal_default_instance() && _impl_.min_unrealized_time_utc_ != nullptr;
+}
+inline bool TradeUnrealizedExtremaData::has_min_unrealized_time_utc() const {
+  return _internal_has_min_unrealized_time_utc();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& TradeUnrealizedExtremaData::_internal_min_unrealized_time_utc() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.min_unrealized_time_utc_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& TradeUnrealizedExtremaData::min_unrealized_time_utc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.TradeUnrealizedExtremaData.min_unrealized_time_utc)
+  return _internal_min_unrealized_time_utc();
+}
+inline void TradeUnrealizedExtremaData::unsafe_arena_set_allocated_min_unrealized_time_utc(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* min_unrealized_time_utc) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.min_unrealized_time_utc_);
+  }
+  _impl_.min_unrealized_time_utc_ = min_unrealized_time_utc;
+  if (min_unrealized_time_utc) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.TradeUnrealizedExtremaData.min_unrealized_time_utc)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeUnrealizedExtremaData::release_min_unrealized_time_utc() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.min_unrealized_time_utc_;
+  _impl_.min_unrealized_time_utc_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeUnrealizedExtremaData::unsafe_arena_release_min_unrealized_time_utc() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.TradeUnrealizedExtremaData.min_unrealized_time_utc)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.min_unrealized_time_utc_;
+  _impl_.min_unrealized_time_utc_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeUnrealizedExtremaData::_internal_mutable_min_unrealized_time_utc() {
+  
+  if (_impl_.min_unrealized_time_utc_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.min_unrealized_time_utc_ = p;
+  }
+  return _impl_.min_unrealized_time_utc_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TradeUnrealizedExtremaData::mutable_min_unrealized_time_utc() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_min_unrealized_time_utc();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.TradeUnrealizedExtremaData.min_unrealized_time_utc)
+  return _msg;
+}
+inline void TradeUnrealizedExtremaData::set_allocated_min_unrealized_time_utc(::PROTOBUF_NAMESPACE_ID::Timestamp* min_unrealized_time_utc) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.min_unrealized_time_utc_);
+  }
+  if (min_unrealized_time_utc) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(min_unrealized_time_utc));
+    if (message_arena != submessage_arena) {
+      min_unrealized_time_utc = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, min_unrealized_time_utc, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.min_unrealized_time_utc_ = min_unrealized_time_utc;
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.TradeUnrealizedExtremaData.min_unrealized_time_utc)
+}
+
 // double min_unrealized_pl = 6;
 inline void TradeUnrealizedExtremaData::clear_min_unrealized_pl() {
   _impl_.min_unrealized_pl_ = 0;
@@ -8210,6 +10202,8 @@ inline void TradeUnrealizedExtremaData::set_min_unrealized_pl(double value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
