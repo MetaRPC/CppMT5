@@ -1,41 +1,63 @@
+// Quickstart: connect by broker server name, read the account, quote a symbol, place and
+// close a tiny market order on a DEMO account.
+//
+//   export MRPC_API_KEY=mrpc_live_...
+//   export MT5_LOGIN=12345678 MT5_PASSWORD=... MT5_SERVER=MetaQuotes-Demo
+//   ./quickstart
 #include "metarpc/mt5.hpp"
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
 
-int main(int argc, char* argv[]) {
-    const char* envApiKey = std::getenv("MRPC_API_KEY");
-    std::string apiKey = (argc > 1) ? argv[1] : (envApiKey ? envApiKey : "TRIAL");
-
-    metarpc::MT5Client client("mt5.mrpc.pro", 443, apiKey);
-
-    int64_t login = 5036292718;
-    std::string password = "_0AeXaFk";
-
-    try {
-        std::cout << "Connecting to MetaTrader 5 (mt5.mrpc.pro:443)..." << std::endl;
-        if (client.connect(login, password)) {
-            std::cout << "Connected successfully to MT5! Account ID: " << client.getId() << std::endl;
-
-            std::cout << "\nStep 1: Querying Account Balance..." << std::endl;
-            auto acc = client.getAccountInfo();
-            std::cout << "Account: " << acc.login << " (" << acc.name << ")" << std::endl;
-            std::cout << "Balance: " << acc.balance << " " << acc.currency << std::endl;
-
-            std::cout << "\nStep 2: Executing Market Order..." << std::endl;
-            metarpc::OrderRequest req;
-            req.symbol = "EURUSD";
-            req.action = metarpc::TradeAction::Buy;
-            req.volume = 0.1;
-            req.comment = "Cpp MT5 Bot";
-
-            auto res = client.orderSend(req);
-            std::cout << "Order placed! Deal: #" << res.deal << " Ticket: #" << res.ticket << std::endl;
-        }
-    } catch (const std::exception& ex) {
-        std::cerr << "Error: " << ex.what() << std::endl;
+int main() {
+    const char* login = std::getenv("MT5_LOGIN");
+    const char* password = std::getenv("MT5_PASSWORD");
+    const char* server = std::getenv("MT5_SERVER");
+    if (!login || !password || !server) {
+        std::cerr << "set MT5_LOGIN, MT5_PASSWORD, MT5_SERVER (and MRPC_API_KEY)" << std::endl;
+        return 2;
     }
 
-    client.disconnect(true);
-    std::cout << "\nDisconnected successfully." << std::endl;
+    metarpc::MT5Client client("mt5.mrpc.pro", 443 /*, apiKey: defaults to $MRPC_API_KEY */);
+    // Stable terminal id: the gateway keeps ONE terminal per id. Never use a random id per run.
+    client.setId(metarpc::MT5Client::uuid5(metarpc::MT5Client::NAMESPACE_FLEET, "quickstart-" + std::string(login)));
+
+    try {
+        client.connect(std::atoll(login), password, server, "cppmt5-quickstart");
+        auto acc = client.accountSummary();
+        std::cout << "Account " << acc.login << " (" << acc.name << ") " << acc.balance << " " << acc.currency
+                  << " leverage 1:" << acc.leverage << " mode=" << (int)acc.tradeMode << std::endl;
+        if (acc.tradeMode != metarpc::TradeMode::Demo) {
+            std::cerr << "refusing to trade on a non-DEMO account" << std::endl;
+            return 3;
+        }
+
+        const std::string symbol = "EURUSD";
+        client.symbolSelect(symbol, true);
+        auto info = client.symbolParams(symbol);
+        auto tick = client.symbolInfoTick(symbol);
+        std::cout << symbol << " bid=" << tick.bid << " ask=" << tick.ask << " digits=" << info.digits
+                  << " volMin=" << info.volumeMin << std::endl;
+
+        metarpc::OrderRequest req;
+        req.symbol = symbol;
+        req.action = metarpc::TradeAction::Buy;
+        req.volume = info.volumeMin;
+        req.magic = 123456;
+        req.comment = "cppmt5-quickstart";
+        auto res = client.orderSend(req);
+        std::cout << "OrderSend retcode=" << res.retcode << " (" << res.retcodeName << ") order=" << res.order
+                  << " deal=" << res.deal << " price=" << res.price << std::endl;
+        if (res.ok()) {
+            auto closeRes = client.orderClose(res.order);
+            std::cout << "OrderClose retcode=" << closeRes.retcode << " (" << closeRes.retcodeName << ")" << std::endl;
+        }
+    } catch (const metarpc::ApiError& e) {
+        std::cerr << "API error: " << e.what() << std::endl;
+        return 1;
+    } catch (const metarpc::TransportError& e) {
+        std::cerr << "transport error: " << e.what() << std::endl;
+        return 1;
+    }
+    // No client.disconnect(): the terminal stays alive on the gateway for the next run.
     return 0;
 }
