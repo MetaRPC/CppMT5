@@ -38,7 +38,46 @@ class DemoAccount final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    // Open a demo account. Full wizard flow: search → select → fill form → register.
+    // Search for broker companies by name.
+    // Returns a list of matching companies from the wizard's ListView.
+    // [DefaultValues]
+    // {
+    //   "searchText": "MetaQuotes"
+    // }
+    virtual ::grpc::Status FindCompanies(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoFindCompaniesRequest& request, ::mt5_term_api::GuiDemoFindCompaniesReply* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoFindCompaniesReply>> AsyncFindCompanies(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoFindCompaniesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoFindCompaniesReply>>(AsyncFindCompaniesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoFindCompaniesReply>> PrepareAsyncFindCompanies(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoFindCompaniesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoFindCompaniesReply>>(PrepareAsyncFindCompaniesRaw(context, request, cq));
+    }
+    // Get available servers and account types for a company.
+    // Navigates: company selection → demo account → reads dropdown options.
+    // [DefaultValues]
+    // {
+    //   "companyName": "MetaQuotes Ltd."
+    // }
+    virtual ::grpc::Status ServersAndAccountTypes(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoServersAndTypesRequest& request, ::mt5_term_api::GuiDemoServersAndTypesReply* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoServersAndTypesReply>> AsyncServersAndAccountTypes(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoServersAndTypesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoServersAndTypesReply>>(AsyncServersAndAccountTypesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoServersAndTypesReply>> PrepareAsyncServersAndAccountTypes(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoServersAndTypesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoServersAndTypesReply>>(PrepareAsyncServersAndAccountTypesRaw(context, request, cq));
+    }
+    // Debug: enumerate the controls of the wizard dialog currently open in the terminal.
+    // controlCount is -1 and the dump empty when no wizard dialog is open.
+    virtual ::grpc::Status EnumControls(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoEnumControlsRequest& request, ::mt5_term_api::GuiDemoEnumControlsReply* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoEnumControlsReply>> AsyncEnumControls(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoEnumControlsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoEnumControlsReply>>(AsyncEnumControlsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoEnumControlsReply>> PrepareAsyncEnumControls(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoEnumControlsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoEnumControlsReply>>(PrepareAsyncEnumControlsRaw(context, request, cq));
+    }
+    // Open a demo account. The wire protocol is tried first (a direct request to the trade
+    // server, about a second); when the trade server does not accept it (TeleTrade answers
+    // 1001 INVALID_ACCOUNT, for example) the terminal's "Open an Account" wizard is driven
+    // instead, bounded by timeoutSeconds (default 90). debugLog says which path produced the
+    // account ("Wire protocol" or "Wire protocol failed: ...; GUI wizard used").
     // Returns login, password, and investor password for the new demo account.
     // [DefaultValues]
     // {
@@ -70,7 +109,31 @@ class DemoAccount final {
     class async_interface {
      public:
       virtual ~async_interface() {}
-      // Open a demo account. Full wizard flow: search → select → fill form → register.
+      // Search for broker companies by name.
+      // Returns a list of matching companies from the wizard's ListView.
+      // [DefaultValues]
+      // {
+      //   "searchText": "MetaQuotes"
+      // }
+      virtual void FindCompanies(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoFindCompaniesRequest* request, ::mt5_term_api::GuiDemoFindCompaniesReply* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void FindCompanies(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoFindCompaniesRequest* request, ::mt5_term_api::GuiDemoFindCompaniesReply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Get available servers and account types for a company.
+      // Navigates: company selection → demo account → reads dropdown options.
+      // [DefaultValues]
+      // {
+      //   "companyName": "MetaQuotes Ltd."
+      // }
+      virtual void ServersAndAccountTypes(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoServersAndTypesRequest* request, ::mt5_term_api::GuiDemoServersAndTypesReply* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ServersAndAccountTypes(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoServersAndTypesRequest* request, ::mt5_term_api::GuiDemoServersAndTypesReply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Debug: enumerate the controls of the wizard dialog currently open in the terminal.
+      // controlCount is -1 and the dump empty when no wizard dialog is open.
+      virtual void EnumControls(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoEnumControlsRequest* request, ::mt5_term_api::GuiDemoEnumControlsReply* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void EnumControls(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoEnumControlsRequest* request, ::mt5_term_api::GuiDemoEnumControlsReply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Open a demo account. The wire protocol is tried first (a direct request to the trade
+      // server, about a second); when the trade server does not accept it (TeleTrade answers
+      // 1001 INVALID_ACCOUNT, for example) the terminal's "Open an Account" wizard is driven
+      // instead, bounded by timeoutSeconds (default 90). debugLog says which path produced the
+      // account ("Wire protocol" or "Wire protocol failed: ...; GUI wizard used").
       // Returns login, password, and investor password for the new demo account.
       // [DefaultValues]
       // {
@@ -91,6 +154,12 @@ class DemoAccount final {
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
    private:
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoFindCompaniesReply>* AsyncFindCompaniesRaw(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoFindCompaniesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoFindCompaniesReply>* PrepareAsyncFindCompaniesRaw(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoFindCompaniesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoServersAndTypesReply>* AsyncServersAndAccountTypesRaw(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoServersAndTypesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoServersAndTypesReply>* PrepareAsyncServersAndAccountTypesRaw(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoServersAndTypesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoEnumControlsReply>* AsyncEnumControlsRaw(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoEnumControlsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoEnumControlsReply>* PrepareAsyncEnumControlsRaw(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoEnumControlsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoOpenAccountReply>* AsyncOpenDemoAccountRaw(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoOpenAccountRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::GuiDemoOpenAccountReply>* PrepareAsyncOpenDemoAccountRaw(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoOpenAccountRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientReaderWriterInterface< ::mt5_term_api::GuiDemoInteractiveClientMessage, ::mt5_term_api::GuiDemoInteractiveServerMessage>* DemoOpenAccountInteractiveRaw(::grpc::ClientContext* context) = 0;
@@ -100,6 +169,27 @@ class DemoAccount final {
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    ::grpc::Status FindCompanies(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoFindCompaniesRequest& request, ::mt5_term_api::GuiDemoFindCompaniesReply* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoFindCompaniesReply>> AsyncFindCompanies(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoFindCompaniesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoFindCompaniesReply>>(AsyncFindCompaniesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoFindCompaniesReply>> PrepareAsyncFindCompanies(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoFindCompaniesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoFindCompaniesReply>>(PrepareAsyncFindCompaniesRaw(context, request, cq));
+    }
+    ::grpc::Status ServersAndAccountTypes(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoServersAndTypesRequest& request, ::mt5_term_api::GuiDemoServersAndTypesReply* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoServersAndTypesReply>> AsyncServersAndAccountTypes(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoServersAndTypesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoServersAndTypesReply>>(AsyncServersAndAccountTypesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoServersAndTypesReply>> PrepareAsyncServersAndAccountTypes(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoServersAndTypesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoServersAndTypesReply>>(PrepareAsyncServersAndAccountTypesRaw(context, request, cq));
+    }
+    ::grpc::Status EnumControls(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoEnumControlsRequest& request, ::mt5_term_api::GuiDemoEnumControlsReply* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoEnumControlsReply>> AsyncEnumControls(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoEnumControlsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoEnumControlsReply>>(AsyncEnumControlsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoEnumControlsReply>> PrepareAsyncEnumControls(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoEnumControlsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoEnumControlsReply>>(PrepareAsyncEnumControlsRaw(context, request, cq));
+    }
     ::grpc::Status OpenDemoAccount(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoOpenAccountRequest& request, ::mt5_term_api::GuiDemoOpenAccountReply* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoOpenAccountReply>> AsyncOpenDemoAccount(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoOpenAccountRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoOpenAccountReply>>(AsyncOpenDemoAccountRaw(context, request, cq));
@@ -119,6 +209,12 @@ class DemoAccount final {
     class async final :
       public StubInterface::async_interface {
      public:
+      void FindCompanies(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoFindCompaniesRequest* request, ::mt5_term_api::GuiDemoFindCompaniesReply* response, std::function<void(::grpc::Status)>) override;
+      void FindCompanies(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoFindCompaniesRequest* request, ::mt5_term_api::GuiDemoFindCompaniesReply* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void ServersAndAccountTypes(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoServersAndTypesRequest* request, ::mt5_term_api::GuiDemoServersAndTypesReply* response, std::function<void(::grpc::Status)>) override;
+      void ServersAndAccountTypes(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoServersAndTypesRequest* request, ::mt5_term_api::GuiDemoServersAndTypesReply* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void EnumControls(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoEnumControlsRequest* request, ::mt5_term_api::GuiDemoEnumControlsReply* response, std::function<void(::grpc::Status)>) override;
+      void EnumControls(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoEnumControlsRequest* request, ::mt5_term_api::GuiDemoEnumControlsReply* response, ::grpc::ClientUnaryReactor* reactor) override;
       void OpenDemoAccount(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoOpenAccountRequest* request, ::mt5_term_api::GuiDemoOpenAccountReply* response, std::function<void(::grpc::Status)>) override;
       void OpenDemoAccount(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoOpenAccountRequest* request, ::mt5_term_api::GuiDemoOpenAccountReply* response, ::grpc::ClientUnaryReactor* reactor) override;
       void DemoOpenAccountInteractive(::grpc::ClientContext* context, ::grpc::ClientBidiReactor< ::mt5_term_api::GuiDemoInteractiveClientMessage,::mt5_term_api::GuiDemoInteractiveServerMessage>* reactor) override;
@@ -133,11 +229,20 @@ class DemoAccount final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class async async_stub_{this};
+    ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoFindCompaniesReply>* AsyncFindCompaniesRaw(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoFindCompaniesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoFindCompaniesReply>* PrepareAsyncFindCompaniesRaw(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoFindCompaniesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoServersAndTypesReply>* AsyncServersAndAccountTypesRaw(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoServersAndTypesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoServersAndTypesReply>* PrepareAsyncServersAndAccountTypesRaw(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoServersAndTypesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoEnumControlsReply>* AsyncEnumControlsRaw(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoEnumControlsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoEnumControlsReply>* PrepareAsyncEnumControlsRaw(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoEnumControlsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoOpenAccountReply>* AsyncOpenDemoAccountRaw(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoOpenAccountRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mt5_term_api::GuiDemoOpenAccountReply>* PrepareAsyncOpenDemoAccountRaw(::grpc::ClientContext* context, const ::mt5_term_api::GuiDemoOpenAccountRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientReaderWriter< ::mt5_term_api::GuiDemoInteractiveClientMessage, ::mt5_term_api::GuiDemoInteractiveServerMessage>* DemoOpenAccountInteractiveRaw(::grpc::ClientContext* context) override;
     ::grpc::ClientAsyncReaderWriter< ::mt5_term_api::GuiDemoInteractiveClientMessage, ::mt5_term_api::GuiDemoInteractiveServerMessage>* AsyncDemoOpenAccountInteractiveRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) override;
     ::grpc::ClientAsyncReaderWriter< ::mt5_term_api::GuiDemoInteractiveClientMessage, ::mt5_term_api::GuiDemoInteractiveServerMessage>* PrepareAsyncDemoOpenAccountInteractiveRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) override;
+    const ::grpc::internal::RpcMethod rpcmethod_FindCompanies_;
+    const ::grpc::internal::RpcMethod rpcmethod_ServersAndAccountTypes_;
+    const ::grpc::internal::RpcMethod rpcmethod_EnumControls_;
     const ::grpc::internal::RpcMethod rpcmethod_OpenDemoAccount_;
     const ::grpc::internal::RpcMethod rpcmethod_DemoOpenAccountInteractive_;
   };
@@ -147,7 +252,28 @@ class DemoAccount final {
    public:
     Service();
     virtual ~Service();
-    // Open a demo account. Full wizard flow: search → select → fill form → register.
+    // Search for broker companies by name.
+    // Returns a list of matching companies from the wizard's ListView.
+    // [DefaultValues]
+    // {
+    //   "searchText": "MetaQuotes"
+    // }
+    virtual ::grpc::Status FindCompanies(::grpc::ServerContext* context, const ::mt5_term_api::GuiDemoFindCompaniesRequest* request, ::mt5_term_api::GuiDemoFindCompaniesReply* response);
+    // Get available servers and account types for a company.
+    // Navigates: company selection → demo account → reads dropdown options.
+    // [DefaultValues]
+    // {
+    //   "companyName": "MetaQuotes Ltd."
+    // }
+    virtual ::grpc::Status ServersAndAccountTypes(::grpc::ServerContext* context, const ::mt5_term_api::GuiDemoServersAndTypesRequest* request, ::mt5_term_api::GuiDemoServersAndTypesReply* response);
+    // Debug: enumerate the controls of the wizard dialog currently open in the terminal.
+    // controlCount is -1 and the dump empty when no wizard dialog is open.
+    virtual ::grpc::Status EnumControls(::grpc::ServerContext* context, const ::mt5_term_api::GuiDemoEnumControlsRequest* request, ::mt5_term_api::GuiDemoEnumControlsReply* response);
+    // Open a demo account. The wire protocol is tried first (a direct request to the trade
+    // server, about a second); when the trade server does not accept it (TeleTrade answers
+    // 1001 INVALID_ACCOUNT, for example) the terminal's "Open an Account" wizard is driven
+    // instead, bounded by timeoutSeconds (default 90). debugLog says which path produced the
+    // account ("Wire protocol" or "Wire protocol failed: ...; GUI wizard used").
     // Returns login, password, and investor password for the new demo account.
     // [DefaultValues]
     // {
@@ -164,12 +290,72 @@ class DemoAccount final {
     virtual ::grpc::Status DemoOpenAccountInteractive(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::mt5_term_api::GuiDemoInteractiveServerMessage, ::mt5_term_api::GuiDemoInteractiveClientMessage>* stream);
   };
   template <class BaseClass>
+  class WithAsyncMethod_FindCompanies : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_FindCompanies() {
+      ::grpc::Service::MarkMethodAsync(0);
+    }
+    ~WithAsyncMethod_FindCompanies() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FindCompanies(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GuiDemoFindCompaniesRequest* /*request*/, ::mt5_term_api::GuiDemoFindCompaniesReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestFindCompanies(::grpc::ServerContext* context, ::mt5_term_api::GuiDemoFindCompaniesRequest* request, ::grpc::ServerAsyncResponseWriter< ::mt5_term_api::GuiDemoFindCompaniesReply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_ServersAndAccountTypes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_ServersAndAccountTypes() {
+      ::grpc::Service::MarkMethodAsync(1);
+    }
+    ~WithAsyncMethod_ServersAndAccountTypes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ServersAndAccountTypes(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GuiDemoServersAndTypesRequest* /*request*/, ::mt5_term_api::GuiDemoServersAndTypesReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestServersAndAccountTypes(::grpc::ServerContext* context, ::mt5_term_api::GuiDemoServersAndTypesRequest* request, ::grpc::ServerAsyncResponseWriter< ::mt5_term_api::GuiDemoServersAndTypesReply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_EnumControls : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_EnumControls() {
+      ::grpc::Service::MarkMethodAsync(2);
+    }
+    ~WithAsyncMethod_EnumControls() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status EnumControls(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GuiDemoEnumControlsRequest* /*request*/, ::mt5_term_api::GuiDemoEnumControlsReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestEnumControls(::grpc::ServerContext* context, ::mt5_term_api::GuiDemoEnumControlsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mt5_term_api::GuiDemoEnumControlsReply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_OpenDemoAccount : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_OpenDemoAccount() {
-      ::grpc::Service::MarkMethodAsync(0);
+      ::grpc::Service::MarkMethodAsync(3);
     }
     ~WithAsyncMethod_OpenDemoAccount() override {
       BaseClassMustBeDerivedFromService(this);
@@ -180,7 +366,7 @@ class DemoAccount final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestOpenDemoAccount(::grpc::ServerContext* context, ::mt5_term_api::GuiDemoOpenAccountRequest* request, ::grpc::ServerAsyncResponseWriter< ::mt5_term_api::GuiDemoOpenAccountReply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -189,7 +375,7 @@ class DemoAccount final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_DemoOpenAccountInteractive() {
-      ::grpc::Service::MarkMethodAsync(1);
+      ::grpc::Service::MarkMethodAsync(4);
     }
     ~WithAsyncMethod_DemoOpenAccountInteractive() override {
       BaseClassMustBeDerivedFromService(this);
@@ -200,23 +386,104 @@ class DemoAccount final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDemoOpenAccountInteractive(::grpc::ServerContext* context, ::grpc::ServerAsyncReaderWriter< ::mt5_term_api::GuiDemoInteractiveServerMessage, ::mt5_term_api::GuiDemoInteractiveClientMessage>* stream, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncBidiStreaming(1, context, stream, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncBidiStreaming(4, context, stream, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_OpenDemoAccount<WithAsyncMethod_DemoOpenAccountInteractive<Service > > AsyncService;
+  typedef WithAsyncMethod_FindCompanies<WithAsyncMethod_ServersAndAccountTypes<WithAsyncMethod_EnumControls<WithAsyncMethod_OpenDemoAccount<WithAsyncMethod_DemoOpenAccountInteractive<Service > > > > > AsyncService;
+  template <class BaseClass>
+  class WithCallbackMethod_FindCompanies : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_FindCompanies() {
+      ::grpc::Service::MarkMethodCallback(0,
+          new ::grpc::internal::CallbackUnaryHandler< ::mt5_term_api::GuiDemoFindCompaniesRequest, ::mt5_term_api::GuiDemoFindCompaniesReply>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::mt5_term_api::GuiDemoFindCompaniesRequest* request, ::mt5_term_api::GuiDemoFindCompaniesReply* response) { return this->FindCompanies(context, request, response); }));}
+    void SetMessageAllocatorFor_FindCompanies(
+        ::grpc::MessageAllocator< ::mt5_term_api::GuiDemoFindCompaniesRequest, ::mt5_term_api::GuiDemoFindCompaniesReply>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mt5_term_api::GuiDemoFindCompaniesRequest, ::mt5_term_api::GuiDemoFindCompaniesReply>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_FindCompanies() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FindCompanies(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GuiDemoFindCompaniesRequest* /*request*/, ::mt5_term_api::GuiDemoFindCompaniesReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* FindCompanies(
+      ::grpc::CallbackServerContext* /*context*/, const ::mt5_term_api::GuiDemoFindCompaniesRequest* /*request*/, ::mt5_term_api::GuiDemoFindCompaniesReply* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_ServersAndAccountTypes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_ServersAndAccountTypes() {
+      ::grpc::Service::MarkMethodCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::mt5_term_api::GuiDemoServersAndTypesRequest, ::mt5_term_api::GuiDemoServersAndTypesReply>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::mt5_term_api::GuiDemoServersAndTypesRequest* request, ::mt5_term_api::GuiDemoServersAndTypesReply* response) { return this->ServersAndAccountTypes(context, request, response); }));}
+    void SetMessageAllocatorFor_ServersAndAccountTypes(
+        ::grpc::MessageAllocator< ::mt5_term_api::GuiDemoServersAndTypesRequest, ::mt5_term_api::GuiDemoServersAndTypesReply>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mt5_term_api::GuiDemoServersAndTypesRequest, ::mt5_term_api::GuiDemoServersAndTypesReply>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_ServersAndAccountTypes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ServersAndAccountTypes(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GuiDemoServersAndTypesRequest* /*request*/, ::mt5_term_api::GuiDemoServersAndTypesReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* ServersAndAccountTypes(
+      ::grpc::CallbackServerContext* /*context*/, const ::mt5_term_api::GuiDemoServersAndTypesRequest* /*request*/, ::mt5_term_api::GuiDemoServersAndTypesReply* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_EnumControls : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_EnumControls() {
+      ::grpc::Service::MarkMethodCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::mt5_term_api::GuiDemoEnumControlsRequest, ::mt5_term_api::GuiDemoEnumControlsReply>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::mt5_term_api::GuiDemoEnumControlsRequest* request, ::mt5_term_api::GuiDemoEnumControlsReply* response) { return this->EnumControls(context, request, response); }));}
+    void SetMessageAllocatorFor_EnumControls(
+        ::grpc::MessageAllocator< ::mt5_term_api::GuiDemoEnumControlsRequest, ::mt5_term_api::GuiDemoEnumControlsReply>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mt5_term_api::GuiDemoEnumControlsRequest, ::mt5_term_api::GuiDemoEnumControlsReply>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_EnumControls() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status EnumControls(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GuiDemoEnumControlsRequest* /*request*/, ::mt5_term_api::GuiDemoEnumControlsReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* EnumControls(
+      ::grpc::CallbackServerContext* /*context*/, const ::mt5_term_api::GuiDemoEnumControlsRequest* /*request*/, ::mt5_term_api::GuiDemoEnumControlsReply* /*response*/)  { return nullptr; }
+  };
   template <class BaseClass>
   class WithCallbackMethod_OpenDemoAccount : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_OpenDemoAccount() {
-      ::grpc::Service::MarkMethodCallback(0,
+      ::grpc::Service::MarkMethodCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::mt5_term_api::GuiDemoOpenAccountRequest, ::mt5_term_api::GuiDemoOpenAccountReply>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::mt5_term_api::GuiDemoOpenAccountRequest* request, ::mt5_term_api::GuiDemoOpenAccountReply* response) { return this->OpenDemoAccount(context, request, response); }));}
     void SetMessageAllocatorFor_OpenDemoAccount(
         ::grpc::MessageAllocator< ::mt5_term_api::GuiDemoOpenAccountRequest, ::mt5_term_api::GuiDemoOpenAccountReply>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::mt5_term_api::GuiDemoOpenAccountRequest, ::mt5_term_api::GuiDemoOpenAccountReply>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -237,7 +504,7 @@ class DemoAccount final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_DemoOpenAccountInteractive() {
-      ::grpc::Service::MarkMethodCallback(1,
+      ::grpc::Service::MarkMethodCallback(4,
           new ::grpc::internal::CallbackBidiHandler< ::mt5_term_api::GuiDemoInteractiveClientMessage, ::mt5_term_api::GuiDemoInteractiveServerMessage>(
             [this](
                    ::grpc::CallbackServerContext* context) { return this->DemoOpenAccountInteractive(context); }));
@@ -254,15 +521,66 @@ class DemoAccount final {
       ::grpc::CallbackServerContext* /*context*/)
       { return nullptr; }
   };
-  typedef WithCallbackMethod_OpenDemoAccount<WithCallbackMethod_DemoOpenAccountInteractive<Service > > CallbackService;
+  typedef WithCallbackMethod_FindCompanies<WithCallbackMethod_ServersAndAccountTypes<WithCallbackMethod_EnumControls<WithCallbackMethod_OpenDemoAccount<WithCallbackMethod_DemoOpenAccountInteractive<Service > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
+  template <class BaseClass>
+  class WithGenericMethod_FindCompanies : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_FindCompanies() {
+      ::grpc::Service::MarkMethodGeneric(0);
+    }
+    ~WithGenericMethod_FindCompanies() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FindCompanies(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GuiDemoFindCompaniesRequest* /*request*/, ::mt5_term_api::GuiDemoFindCompaniesReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_ServersAndAccountTypes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_ServersAndAccountTypes() {
+      ::grpc::Service::MarkMethodGeneric(1);
+    }
+    ~WithGenericMethod_ServersAndAccountTypes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ServersAndAccountTypes(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GuiDemoServersAndTypesRequest* /*request*/, ::mt5_term_api::GuiDemoServersAndTypesReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_EnumControls : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_EnumControls() {
+      ::grpc::Service::MarkMethodGeneric(2);
+    }
+    ~WithGenericMethod_EnumControls() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status EnumControls(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GuiDemoEnumControlsRequest* /*request*/, ::mt5_term_api::GuiDemoEnumControlsReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
   template <class BaseClass>
   class WithGenericMethod_OpenDemoAccount : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_OpenDemoAccount() {
-      ::grpc::Service::MarkMethodGeneric(0);
+      ::grpc::Service::MarkMethodGeneric(3);
     }
     ~WithGenericMethod_OpenDemoAccount() override {
       BaseClassMustBeDerivedFromService(this);
@@ -279,7 +597,7 @@ class DemoAccount final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_DemoOpenAccountInteractive() {
-      ::grpc::Service::MarkMethodGeneric(1);
+      ::grpc::Service::MarkMethodGeneric(4);
     }
     ~WithGenericMethod_DemoOpenAccountInteractive() override {
       BaseClassMustBeDerivedFromService(this);
@@ -291,12 +609,72 @@ class DemoAccount final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_FindCompanies : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_FindCompanies() {
+      ::grpc::Service::MarkMethodRaw(0);
+    }
+    ~WithRawMethod_FindCompanies() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FindCompanies(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GuiDemoFindCompaniesRequest* /*request*/, ::mt5_term_api::GuiDemoFindCompaniesReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestFindCompanies(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_ServersAndAccountTypes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_ServersAndAccountTypes() {
+      ::grpc::Service::MarkMethodRaw(1);
+    }
+    ~WithRawMethod_ServersAndAccountTypes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ServersAndAccountTypes(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GuiDemoServersAndTypesRequest* /*request*/, ::mt5_term_api::GuiDemoServersAndTypesReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestServersAndAccountTypes(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_EnumControls : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_EnumControls() {
+      ::grpc::Service::MarkMethodRaw(2);
+    }
+    ~WithRawMethod_EnumControls() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status EnumControls(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GuiDemoEnumControlsRequest* /*request*/, ::mt5_term_api::GuiDemoEnumControlsReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestEnumControls(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_OpenDemoAccount : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_OpenDemoAccount() {
-      ::grpc::Service::MarkMethodRaw(0);
+      ::grpc::Service::MarkMethodRaw(3);
     }
     ~WithRawMethod_OpenDemoAccount() override {
       BaseClassMustBeDerivedFromService(this);
@@ -307,7 +685,7 @@ class DemoAccount final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestOpenDemoAccount(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -316,7 +694,7 @@ class DemoAccount final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_DemoOpenAccountInteractive() {
-      ::grpc::Service::MarkMethodRaw(1);
+      ::grpc::Service::MarkMethodRaw(4);
     }
     ~WithRawMethod_DemoOpenAccountInteractive() override {
       BaseClassMustBeDerivedFromService(this);
@@ -327,8 +705,74 @@ class DemoAccount final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDemoOpenAccountInteractive(::grpc::ServerContext* context, ::grpc::ServerAsyncReaderWriter< ::grpc::ByteBuffer, ::grpc::ByteBuffer>* stream, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncBidiStreaming(1, context, stream, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncBidiStreaming(4, context, stream, new_call_cq, notification_cq, tag);
     }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_FindCompanies : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_FindCompanies() {
+      ::grpc::Service::MarkMethodRawCallback(0,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->FindCompanies(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_FindCompanies() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FindCompanies(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GuiDemoFindCompaniesRequest* /*request*/, ::mt5_term_api::GuiDemoFindCompaniesReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* FindCompanies(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_ServersAndAccountTypes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_ServersAndAccountTypes() {
+      ::grpc::Service::MarkMethodRawCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ServersAndAccountTypes(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_ServersAndAccountTypes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ServersAndAccountTypes(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GuiDemoServersAndTypesRequest* /*request*/, ::mt5_term_api::GuiDemoServersAndTypesReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* ServersAndAccountTypes(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_EnumControls : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_EnumControls() {
+      ::grpc::Service::MarkMethodRawCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->EnumControls(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_EnumControls() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status EnumControls(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GuiDemoEnumControlsRequest* /*request*/, ::mt5_term_api::GuiDemoEnumControlsReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* EnumControls(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithRawCallbackMethod_OpenDemoAccount : public BaseClass {
@@ -336,7 +780,7 @@ class DemoAccount final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_OpenDemoAccount() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+      ::grpc::Service::MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->OpenDemoAccount(context, request, response); }));
@@ -358,7 +802,7 @@ class DemoAccount final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_DemoOpenAccountInteractive() {
-      ::grpc::Service::MarkMethodRawCallback(1,
+      ::grpc::Service::MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackBidiHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context) { return this->DemoOpenAccountInteractive(context); }));
@@ -376,12 +820,93 @@ class DemoAccount final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_FindCompanies : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_FindCompanies() {
+      ::grpc::Service::MarkMethodStreamed(0,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mt5_term_api::GuiDemoFindCompaniesRequest, ::mt5_term_api::GuiDemoFindCompaniesReply>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::mt5_term_api::GuiDemoFindCompaniesRequest, ::mt5_term_api::GuiDemoFindCompaniesReply>* streamer) {
+                       return this->StreamedFindCompanies(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_FindCompanies() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status FindCompanies(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GuiDemoFindCompaniesRequest* /*request*/, ::mt5_term_api::GuiDemoFindCompaniesReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedFindCompanies(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mt5_term_api::GuiDemoFindCompaniesRequest,::mt5_term_api::GuiDemoFindCompaniesReply>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_ServersAndAccountTypes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_ServersAndAccountTypes() {
+      ::grpc::Service::MarkMethodStreamed(1,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mt5_term_api::GuiDemoServersAndTypesRequest, ::mt5_term_api::GuiDemoServersAndTypesReply>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::mt5_term_api::GuiDemoServersAndTypesRequest, ::mt5_term_api::GuiDemoServersAndTypesReply>* streamer) {
+                       return this->StreamedServersAndAccountTypes(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_ServersAndAccountTypes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ServersAndAccountTypes(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GuiDemoServersAndTypesRequest* /*request*/, ::mt5_term_api::GuiDemoServersAndTypesReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedServersAndAccountTypes(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mt5_term_api::GuiDemoServersAndTypesRequest,::mt5_term_api::GuiDemoServersAndTypesReply>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_EnumControls : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_EnumControls() {
+      ::grpc::Service::MarkMethodStreamed(2,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mt5_term_api::GuiDemoEnumControlsRequest, ::mt5_term_api::GuiDemoEnumControlsReply>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::mt5_term_api::GuiDemoEnumControlsRequest, ::mt5_term_api::GuiDemoEnumControlsReply>* streamer) {
+                       return this->StreamedEnumControls(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_EnumControls() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status EnumControls(::grpc::ServerContext* /*context*/, const ::mt5_term_api::GuiDemoEnumControlsRequest* /*request*/, ::mt5_term_api::GuiDemoEnumControlsReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedEnumControls(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mt5_term_api::GuiDemoEnumControlsRequest,::mt5_term_api::GuiDemoEnumControlsReply>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_OpenDemoAccount : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_OpenDemoAccount() {
-      ::grpc::Service::MarkMethodStreamed(0,
+      ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mt5_term_api::GuiDemoOpenAccountRequest, ::mt5_term_api::GuiDemoOpenAccountReply>(
             [this](::grpc::ServerContext* context,
@@ -402,9 +927,9 @@ class DemoAccount final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedOpenDemoAccount(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mt5_term_api::GuiDemoOpenAccountRequest,::mt5_term_api::GuiDemoOpenAccountReply>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_OpenDemoAccount<Service > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_FindCompanies<WithStreamedUnaryMethod_ServersAndAccountTypes<WithStreamedUnaryMethod_EnumControls<WithStreamedUnaryMethod_OpenDemoAccount<Service > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_OpenDemoAccount<Service > StreamedService;
+  typedef WithStreamedUnaryMethod_FindCompanies<WithStreamedUnaryMethod_ServersAndAccountTypes<WithStreamedUnaryMethod_EnumControls<WithStreamedUnaryMethod_OpenDemoAccount<Service > > > > StreamedService;
 };
 
 }  // namespace mt5_term_api

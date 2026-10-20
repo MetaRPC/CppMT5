@@ -71,6 +71,15 @@ extern AllHistoryOrdersRequestDefaultTypeInternal _AllHistoryOrdersRequest_defau
 class DealHistoryData;
 struct DealHistoryDataDefaultTypeInternal;
 extern DealHistoryDataDefaultTypeInternal _DealHistoryData_default_instance_;
+class DealsHistoryData;
+struct DealsHistoryDataDefaultTypeInternal;
+extern DealsHistoryDataDefaultTypeInternal _DealsHistoryData_default_instance_;
+class DealsHistoryReply;
+struct DealsHistoryReplyDefaultTypeInternal;
+extern DealsHistoryReplyDefaultTypeInternal _DealsHistoryReply_default_instance_;
+class DealsHistoryRequest;
+struct DealsHistoryRequestDefaultTypeInternal;
+extern DealsHistoryRequestDefaultTypeInternal _DealsHistoryRequest_default_instance_;
 class HistoryData;
 struct HistoryDataDefaultTypeInternal;
 extern HistoryDataDefaultTypeInternal _HistoryData_default_instance_;
@@ -158,6 +167,9 @@ template<> ::mt5_term_api::AllHistoryOrdersData* Arena::CreateMaybeMessage<::mt5
 template<> ::mt5_term_api::AllHistoryOrdersReply* Arena::CreateMaybeMessage<::mt5_term_api::AllHistoryOrdersReply>(Arena*);
 template<> ::mt5_term_api::AllHistoryOrdersRequest* Arena::CreateMaybeMessage<::mt5_term_api::AllHistoryOrdersRequest>(Arena*);
 template<> ::mt5_term_api::DealHistoryData* Arena::CreateMaybeMessage<::mt5_term_api::DealHistoryData>(Arena*);
+template<> ::mt5_term_api::DealsHistoryData* Arena::CreateMaybeMessage<::mt5_term_api::DealsHistoryData>(Arena*);
+template<> ::mt5_term_api::DealsHistoryReply* Arena::CreateMaybeMessage<::mt5_term_api::DealsHistoryReply>(Arena*);
+template<> ::mt5_term_api::DealsHistoryRequest* Arena::CreateMaybeMessage<::mt5_term_api::DealsHistoryRequest>(Arena*);
 template<> ::mt5_term_api::HistoryData* Arena::CreateMaybeMessage<::mt5_term_api::HistoryData>(Arena*);
 template<> ::mt5_term_api::HistoryOrderInfo* Arena::CreateMaybeMessage<::mt5_term_api::HistoryOrderInfo>(Arena*);
 template<> ::mt5_term_api::OpenedOrderInfo* Arena::CreateMaybeMessage<::mt5_term_api::OpenedOrderInfo>(Arena*);
@@ -187,6 +199,33 @@ template<> ::mt5_term_api::TickValueWithSizeRequest* Arena::CreateMaybeMessage<:
 PROTOBUF_NAMESPACE_CLOSE
 namespace mt5_term_api {
 
+enum BMT5_ENUM_DEALS_HISTORY_SORT_TYPE : int {
+  BMT5_SORT_BY_DEAL_TIME_ASC = 0,
+  BMT5_SORT_BY_DEAL_TIME_DESC = 1,
+  BMT5_SORT_BY_DEAL_TICKET_ASC = 2,
+  BMT5_SORT_BY_DEAL_TICKET_DESC = 3,
+  BMT5_ENUM_DEALS_HISTORY_SORT_TYPE_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  BMT5_ENUM_DEALS_HISTORY_SORT_TYPE_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool BMT5_ENUM_DEALS_HISTORY_SORT_TYPE_IsValid(int value);
+constexpr BMT5_ENUM_DEALS_HISTORY_SORT_TYPE BMT5_ENUM_DEALS_HISTORY_SORT_TYPE_MIN = BMT5_SORT_BY_DEAL_TIME_ASC;
+constexpr BMT5_ENUM_DEALS_HISTORY_SORT_TYPE BMT5_ENUM_DEALS_HISTORY_SORT_TYPE_MAX = BMT5_SORT_BY_DEAL_TICKET_DESC;
+constexpr int BMT5_ENUM_DEALS_HISTORY_SORT_TYPE_ARRAYSIZE = BMT5_ENUM_DEALS_HISTORY_SORT_TYPE_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_DEALS_HISTORY_SORT_TYPE_descriptor();
+template<typename T>
+inline const std::string& BMT5_ENUM_DEALS_HISTORY_SORT_TYPE_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, BMT5_ENUM_DEALS_HISTORY_SORT_TYPE>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function BMT5_ENUM_DEALS_HISTORY_SORT_TYPE_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    BMT5_ENUM_DEALS_HISTORY_SORT_TYPE_descriptor(), enum_t_value);
+}
+inline bool BMT5_ENUM_DEALS_HISTORY_SORT_TYPE_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, BMT5_ENUM_DEALS_HISTORY_SORT_TYPE* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<BMT5_ENUM_DEALS_HISTORY_SORT_TYPE>(
+    BMT5_ENUM_DEALS_HISTORY_SORT_TYPE_descriptor(), name, value);
+}
 enum AH_ENUM_POSITIONS_HISTORY_SORT_TYPE : int {
   AH_POSITION_OPEN_TIME_ASC = 0,
   AH_POSITION_OPEN_TIME_DESC = 1,
@@ -603,6 +642,32 @@ inline bool MrpcEnumAccountTradeMode_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, MrpcEnumAccountTradeMode* value) {
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<MrpcEnumAccountTradeMode>(
     MrpcEnumAccountTradeMode_descriptor(), name, value);
+}
+enum MrpcEnumAccountMarginMode : int {
+  MRPC_ACCOUNT_MARGIN_MODE_RETAIL_NETTING = 0,
+  MRPC_ACCOUNT_MARGIN_MODE_EXCHANGE = 1,
+  MRPC_ACCOUNT_MARGIN_MODE_RETAIL_HEDGING = 2,
+  MrpcEnumAccountMarginMode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  MrpcEnumAccountMarginMode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool MrpcEnumAccountMarginMode_IsValid(int value);
+constexpr MrpcEnumAccountMarginMode MrpcEnumAccountMarginMode_MIN = MRPC_ACCOUNT_MARGIN_MODE_RETAIL_NETTING;
+constexpr MrpcEnumAccountMarginMode MrpcEnumAccountMarginMode_MAX = MRPC_ACCOUNT_MARGIN_MODE_RETAIL_HEDGING;
+constexpr int MrpcEnumAccountMarginMode_ARRAYSIZE = MrpcEnumAccountMarginMode_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* MrpcEnumAccountMarginMode_descriptor();
+template<typename T>
+inline const std::string& MrpcEnumAccountMarginMode_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, MrpcEnumAccountMarginMode>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function MrpcEnumAccountMarginMode_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    MrpcEnumAccountMarginMode_descriptor(), enum_t_value);
+}
+inline bool MrpcEnumAccountMarginMode_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, MrpcEnumAccountMarginMode* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<MrpcEnumAccountMarginMode>(
+    MrpcEnumAccountMarginMode_descriptor(), name, value);
 }
 enum AH_SYMBOL_PARAMS_MANY_SORT_TYPE : int {
   AH_PARAMS_MANY_SORT_TYPE_SYMBOL_NAME_ASC = 0,
@@ -1100,6 +1165,652 @@ inline bool BMT5_ENUM_SYMBOL_INDUSTRY_Parse(
 }
 // ===================================================================
 
+class DealsHistoryRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mt5_term_api.DealsHistoryRequest) */ {
+ public:
+  inline DealsHistoryRequest() : DealsHistoryRequest(nullptr) {}
+  ~DealsHistoryRequest() override;
+  explicit PROTOBUF_CONSTEXPR DealsHistoryRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DealsHistoryRequest(const DealsHistoryRequest& from);
+  DealsHistoryRequest(DealsHistoryRequest&& from) noexcept
+    : DealsHistoryRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline DealsHistoryRequest& operator=(const DealsHistoryRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DealsHistoryRequest& operator=(DealsHistoryRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DealsHistoryRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DealsHistoryRequest* internal_default_instance() {
+    return reinterpret_cast<const DealsHistoryRequest*>(
+               &_DealsHistoryRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(DealsHistoryRequest& a, DealsHistoryRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DealsHistoryRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DealsHistoryRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  DealsHistoryRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<DealsHistoryRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const DealsHistoryRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const DealsHistoryRequest& from) {
+    DealsHistoryRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DealsHistoryRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mt5_term_api.DealsHistoryRequest";
+  }
+  protected:
+  explicit DealsHistoryRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPageTokenFieldNumber = 4,
+    kInputFromFieldNumber = 1,
+    kInputToFieldNumber = 2,
+    kInputFromUtcFieldNumber = 8,
+    kInputToUtcFieldNumber = 9,
+    kInputSortModeFieldNumber = 3,
+    kPageSizeFieldNumber = 5,
+  };
+  // string page_token = 4;
+  void clear_page_token();
+  const std::string& page_token() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_page_token(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_page_token();
+  PROTOBUF_NODISCARD std::string* release_page_token();
+  void set_allocated_page_token(std::string* page_token);
+  private:
+  const std::string& _internal_page_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_page_token(const std::string& value);
+  std::string* _internal_mutable_page_token();
+  public:
+
+  // .google.protobuf.Timestamp inputFrom = 1;
+  bool has_inputfrom() const;
+  private:
+  bool _internal_has_inputfrom() const;
+  public:
+  void clear_inputfrom();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& inputfrom() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_inputfrom();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_inputfrom();
+  void set_allocated_inputfrom(::PROTOBUF_NAMESPACE_ID::Timestamp* inputfrom);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_inputfrom() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_inputfrom();
+  public:
+  void unsafe_arena_set_allocated_inputfrom(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* inputfrom);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_inputfrom();
+
+  // .google.protobuf.Timestamp inputTo = 2;
+  bool has_inputto() const;
+  private:
+  bool _internal_has_inputto() const;
+  public:
+  void clear_inputto();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& inputto() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_inputto();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_inputto();
+  void set_allocated_inputto(::PROTOBUF_NAMESPACE_ID::Timestamp* inputto);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_inputto() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_inputto();
+  public:
+  void unsafe_arena_set_allocated_inputto(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* inputto);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_inputto();
+
+  // .google.protobuf.Timestamp inputFromUtc = 8;
+  bool has_inputfromutc() const;
+  private:
+  bool _internal_has_inputfromutc() const;
+  public:
+  void clear_inputfromutc();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& inputfromutc() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_inputfromutc();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_inputfromutc();
+  void set_allocated_inputfromutc(::PROTOBUF_NAMESPACE_ID::Timestamp* inputfromutc);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_inputfromutc() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_inputfromutc();
+  public:
+  void unsafe_arena_set_allocated_inputfromutc(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* inputfromutc);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_inputfromutc();
+
+  // .google.protobuf.Timestamp inputToUtc = 9;
+  bool has_inputtoutc() const;
+  private:
+  bool _internal_has_inputtoutc() const;
+  public:
+  void clear_inputtoutc();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& inputtoutc() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_inputtoutc();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_inputtoutc();
+  void set_allocated_inputtoutc(::PROTOBUF_NAMESPACE_ID::Timestamp* inputtoutc);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_inputtoutc() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_inputtoutc();
+  public:
+  void unsafe_arena_set_allocated_inputtoutc(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* inputtoutc);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_inputtoutc();
+
+  // .mt5_term_api.BMT5_ENUM_DEALS_HISTORY_SORT_TYPE inputSortMode = 3;
+  void clear_inputsortmode();
+  ::mt5_term_api::BMT5_ENUM_DEALS_HISTORY_SORT_TYPE inputsortmode() const;
+  void set_inputsortmode(::mt5_term_api::BMT5_ENUM_DEALS_HISTORY_SORT_TYPE value);
+  private:
+  ::mt5_term_api::BMT5_ENUM_DEALS_HISTORY_SORT_TYPE _internal_inputsortmode() const;
+  void _internal_set_inputsortmode(::mt5_term_api::BMT5_ENUM_DEALS_HISTORY_SORT_TYPE value);
+  public:
+
+  // int32 page_size = 5;
+  void clear_page_size();
+  int32_t page_size() const;
+  void set_page_size(int32_t value);
+  private:
+  int32_t _internal_page_size() const;
+  void _internal_set_page_size(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mt5_term_api.DealsHistoryRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr page_token_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* inputfrom_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* inputto_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* inputfromutc_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* inputtoutc_;
+    int inputsortmode_;
+    int32_t page_size_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DealsHistoryReply final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mt5_term_api.DealsHistoryReply) */ {
+ public:
+  inline DealsHistoryReply() : DealsHistoryReply(nullptr) {}
+  ~DealsHistoryReply() override;
+  explicit PROTOBUF_CONSTEXPR DealsHistoryReply(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DealsHistoryReply(const DealsHistoryReply& from);
+  DealsHistoryReply(DealsHistoryReply&& from) noexcept
+    : DealsHistoryReply() {
+    *this = ::std::move(from);
+  }
+
+  inline DealsHistoryReply& operator=(const DealsHistoryReply& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DealsHistoryReply& operator=(DealsHistoryReply&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DealsHistoryReply& default_instance() {
+    return *internal_default_instance();
+  }
+  enum ResponseCase {
+    kData = 1,
+    kError = 2,
+    RESPONSE_NOT_SET = 0,
+  };
+
+  static inline const DealsHistoryReply* internal_default_instance() {
+    return reinterpret_cast<const DealsHistoryReply*>(
+               &_DealsHistoryReply_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(DealsHistoryReply& a, DealsHistoryReply& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DealsHistoryReply* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DealsHistoryReply* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  DealsHistoryReply* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<DealsHistoryReply>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const DealsHistoryReply& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const DealsHistoryReply& from) {
+    DealsHistoryReply::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DealsHistoryReply* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mt5_term_api.DealsHistoryReply";
+  }
+  protected:
+  explicit DealsHistoryReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDataFieldNumber = 1,
+    kErrorFieldNumber = 2,
+  };
+  // .mt5_term_api.DealsHistoryData data = 1;
+  bool has_data() const;
+  private:
+  bool _internal_has_data() const;
+  public:
+  void clear_data();
+  const ::mt5_term_api::DealsHistoryData& data() const;
+  PROTOBUF_NODISCARD ::mt5_term_api::DealsHistoryData* release_data();
+  ::mt5_term_api::DealsHistoryData* mutable_data();
+  void set_allocated_data(::mt5_term_api::DealsHistoryData* data);
+  private:
+  const ::mt5_term_api::DealsHistoryData& _internal_data() const;
+  ::mt5_term_api::DealsHistoryData* _internal_mutable_data();
+  public:
+  void unsafe_arena_set_allocated_data(
+      ::mt5_term_api::DealsHistoryData* data);
+  ::mt5_term_api::DealsHistoryData* unsafe_arena_release_data();
+
+  // .mt5_term_api.Error error = 2;
+  bool has_error() const;
+  private:
+  bool _internal_has_error() const;
+  public:
+  void clear_error();
+  const ::mt5_term_api::Error& error() const;
+  PROTOBUF_NODISCARD ::mt5_term_api::Error* release_error();
+  ::mt5_term_api::Error* mutable_error();
+  void set_allocated_error(::mt5_term_api::Error* error);
+  private:
+  const ::mt5_term_api::Error& _internal_error() const;
+  ::mt5_term_api::Error* _internal_mutable_error();
+  public:
+  void unsafe_arena_set_allocated_error(
+      ::mt5_term_api::Error* error);
+  ::mt5_term_api::Error* unsafe_arena_release_error();
+
+  void clear_response();
+  ResponseCase response_case() const;
+  // @@protoc_insertion_point(class_scope:mt5_term_api.DealsHistoryReply)
+ private:
+  class _Internal;
+  void set_has_data();
+  void set_has_error();
+
+  inline bool has_response() const;
+  inline void clear_has_response();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    union ResponseUnion {
+      constexpr ResponseUnion() : _constinit_{} {}
+        ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+      ::mt5_term_api::DealsHistoryData* data_;
+      ::mt5_term_api::Error* error_;
+    } response_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    uint32_t _oneof_case_[1];
+
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DealsHistoryData final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mt5_term_api.DealsHistoryData) */ {
+ public:
+  inline DealsHistoryData() : DealsHistoryData(nullptr) {}
+  ~DealsHistoryData() override;
+  explicit PROTOBUF_CONSTEXPR DealsHistoryData(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DealsHistoryData(const DealsHistoryData& from);
+  DealsHistoryData(DealsHistoryData&& from) noexcept
+    : DealsHistoryData() {
+    *this = ::std::move(from);
+  }
+
+  inline DealsHistoryData& operator=(const DealsHistoryData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DealsHistoryData& operator=(DealsHistoryData&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DealsHistoryData& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DealsHistoryData* internal_default_instance() {
+    return reinterpret_cast<const DealsHistoryData*>(
+               &_DealsHistoryData_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(DealsHistoryData& a, DealsHistoryData& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DealsHistoryData* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DealsHistoryData* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  DealsHistoryData* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<DealsHistoryData>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const DealsHistoryData& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const DealsHistoryData& from) {
+    DealsHistoryData::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DealsHistoryData* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mt5_term_api.DealsHistoryData";
+  }
+  protected:
+  explicit DealsHistoryData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDealsFieldNumber = 2,
+    kNextPageTokenFieldNumber = 3,
+    kAccountLoginFieldNumber = 4,
+    kArrayTotalFieldNumber = 1,
+  };
+  // repeated .mt5_term_api.DealHistoryData deals = 2;
+  int deals_size() const;
+  private:
+  int _internal_deals_size() const;
+  public:
+  void clear_deals();
+  ::mt5_term_api::DealHistoryData* mutable_deals(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::DealHistoryData >*
+      mutable_deals();
+  private:
+  const ::mt5_term_api::DealHistoryData& _internal_deals(int index) const;
+  ::mt5_term_api::DealHistoryData* _internal_add_deals();
+  public:
+  const ::mt5_term_api::DealHistoryData& deals(int index) const;
+  ::mt5_term_api::DealHistoryData* add_deals();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::DealHistoryData >&
+      deals() const;
+
+  // string next_page_token = 3;
+  void clear_next_page_token();
+  const std::string& next_page_token() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_next_page_token(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_next_page_token();
+  PROTOBUF_NODISCARD std::string* release_next_page_token();
+  void set_allocated_next_page_token(std::string* next_page_token);
+  private:
+  const std::string& _internal_next_page_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_next_page_token(const std::string& value);
+  std::string* _internal_mutable_next_page_token();
+  public:
+
+  // int64 account_login = 4;
+  void clear_account_login();
+  int64_t account_login() const;
+  void set_account_login(int64_t value);
+  private:
+  int64_t _internal_account_login() const;
+  void _internal_set_account_login(int64_t value);
+  public:
+
+  // int32 arrayTotal = 1;
+  void clear_arraytotal();
+  int32_t arraytotal() const;
+  void set_arraytotal(int32_t value);
+  private:
+  int32_t _internal_arraytotal() const;
+  void _internal_set_arraytotal(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mt5_term_api.DealsHistoryData)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::DealHistoryData > deals_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr next_page_token_;
+    int64_t account_login_;
+    int32_t arraytotal_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto;
+};
+// -------------------------------------------------------------------
+
 class AllHistoryOrdersRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mt5_term_api.AllHistoryOrdersRequest) */ {
  public:
@@ -1148,7 +1859,7 @@ class AllHistoryOrdersRequest final :
                &_AllHistoryOrdersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    3;
 
   friend void swap(AllHistoryOrdersRequest& a, AllHistoryOrdersRequest& b) {
     a.Swap(&b);
@@ -1440,7 +2151,7 @@ class AllHistoryOrdersReply final :
                &_AllHistoryOrdersReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    4;
 
   friend void swap(AllHistoryOrdersReply& a, AllHistoryOrdersReply& b) {
     a.Swap(&b);
@@ -1630,7 +2341,7 @@ class AllHistoryOrdersData final :
                &_AllHistoryOrdersData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    5;
 
   friend void swap(AllHistoryOrdersData& a, AllHistoryOrdersData& b) {
     a.Swap(&b);
@@ -1836,7 +2547,7 @@ class HistoryOrderInfo final :
                &_HistoryOrderInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    6;
 
   friend void swap(HistoryOrderInfo& a, HistoryOrderInfo& b) {
     a.Swap(&b);
@@ -2317,7 +3028,7 @@ class PositionsHistoryRequest final :
                &_PositionsHistoryRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    7;
 
   friend void swap(PositionsHistoryRequest& a, PositionsHistoryRequest& b) {
     a.Swap(&b);
@@ -2609,7 +3320,7 @@ class PositionsHistoryReply final :
                &_PositionsHistoryReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    8;
 
   friend void swap(PositionsHistoryReply& a, PositionsHistoryReply& b) {
     a.Swap(&b);
@@ -2799,7 +3510,7 @@ class PositionsHistoryData final :
                &_PositionsHistoryData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    9;
 
   friend void swap(PositionsHistoryData& a, PositionsHistoryData& b) {
     a.Swap(&b);
@@ -2983,7 +3694,7 @@ class PositionHistoryInfo final :
                &_PositionHistoryInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    10;
 
   friend void swap(PositionHistoryInfo& a, PositionHistoryInfo& b) {
     a.Swap(&b);
@@ -3386,7 +4097,7 @@ class TickValueWithSizeRequest final :
                &_TickValueWithSizeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    11;
 
   friend void swap(TickValueWithSizeRequest& a, TickValueWithSizeRequest& b) {
     a.Swap(&b);
@@ -3549,7 +4260,7 @@ class TickValueWithSizeReply final :
                &_TickValueWithSizeReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    12;
 
   friend void swap(TickValueWithSizeReply& a, TickValueWithSizeReply& b) {
     a.Swap(&b);
@@ -3726,7 +4437,7 @@ class TickValueWithSizeData final :
                &_TickValueWithSizeData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    13;
 
   friend void swap(TickValueWithSizeData& a, TickValueWithSizeData& b) {
     a.Swap(&b);
@@ -3883,7 +4594,7 @@ class TickSizeSymbol final :
                &_TickSizeSymbol_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    14;
 
   friend void swap(TickSizeSymbol& a, TickSizeSymbol& b) {
     a.Swap(&b);
@@ -4101,7 +4812,7 @@ class OpenedOrdersTicketsRequest final :
                &_OpenedOrdersTicketsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    15;
 
   friend void swap(OpenedOrdersTicketsRequest& a, OpenedOrdersTicketsRequest& b) {
     a.Swap(&b);
@@ -4226,7 +4937,7 @@ class OpenedOrdersTicketsReply final :
                &_OpenedOrdersTicketsReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    16;
 
   friend void swap(OpenedOrdersTicketsReply& a, OpenedOrdersTicketsReply& b) {
     a.Swap(&b);
@@ -4416,7 +5127,7 @@ class OpenedOrdersTicketsData final :
                &_OpenedOrdersTicketsData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    17;
 
   friend void swap(OpenedOrdersTicketsData& a, OpenedOrdersTicketsData& b) {
     a.Swap(&b);
@@ -4603,7 +5314,7 @@ class OpenedOrdersRequest final :
                &_OpenedOrdersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    18;
 
   friend void swap(OpenedOrdersRequest& a, OpenedOrdersRequest& b) {
     a.Swap(&b);
@@ -4757,7 +5468,7 @@ class OpenedOrdersReply final :
                &_OpenedOrdersReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    19;
 
   friend void swap(OpenedOrdersReply& a, OpenedOrdersReply& b) {
     a.Swap(&b);
@@ -4947,7 +5658,7 @@ class OpenedOrdersData final :
                &_OpenedOrdersData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    20;
 
   friend void swap(OpenedOrdersData& a, OpenedOrdersData& b) {
     a.Swap(&b);
@@ -5124,7 +5835,7 @@ class PositionInfo final :
                &_PositionInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    21;
 
   friend void swap(PositionInfo& a, PositionInfo& b) {
     a.Swap(&b);
@@ -5554,7 +6265,7 @@ class OpenedOrderInfo final :
                &_OpenedOrderInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    22;
 
   friend void swap(OpenedOrderInfo& a, OpenedOrderInfo& b) {
     a.Swap(&b);
@@ -6057,7 +6768,7 @@ class OrderHistoryRequest final :
                &_OrderHistoryRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    23;
 
   friend void swap(OrderHistoryRequest& a, OrderHistoryRequest& b) {
     a.Swap(&b);
@@ -6340,7 +7051,7 @@ class OrderHistoryReply final :
                &_OrderHistoryReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    24;
 
   friend void swap(OrderHistoryReply& a, OrderHistoryReply& b) {
     a.Swap(&b);
@@ -6530,7 +7241,7 @@ class OrdersHistoryData final :
                &_OrdersHistoryData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    25;
 
   friend void swap(OrdersHistoryData& a, OrdersHistoryData& b) {
     a.Swap(&b);
@@ -6736,7 +7447,7 @@ class HistoryData final :
                &_HistoryData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    26;
 
   friend void swap(HistoryData& a, HistoryData& b) {
     a.Swap(&b);
@@ -6924,7 +7635,7 @@ class DealHistoryData final :
                &_DealHistoryData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    27;
 
   friend void swap(DealHistoryData& a, DealHistoryData& b) {
     a.Swap(&b);
@@ -7015,6 +7726,8 @@ class DealHistoryData final :
     kTypeFieldNumber = 12,
     kPositionIdFieldNumber = 14,
     kAccountLoginFieldNumber = 18,
+    kOrderFieldNumber = 20,
+    kMagicFieldNumber = 21,
     kReasonFieldNumber = 13,
   };
   // string comment = 15;
@@ -7212,6 +7925,24 @@ class DealHistoryData final :
   void _internal_set_account_login(int64_t value);
   public:
 
+  // uint64 order = 20;
+  void clear_order();
+  uint64_t order() const;
+  void set_order(uint64_t value);
+  private:
+  uint64_t _internal_order() const;
+  void _internal_set_order(uint64_t value);
+  public:
+
+  // int64 magic = 21;
+  void clear_magic();
+  int64_t magic() const;
+  void set_magic(int64_t value);
+  private:
+  int64_t _internal_magic() const;
+  void _internal_set_magic(int64_t value);
+  public:
+
   // .mt5_term_api.BMT5_ENUM_DEAL_REASON reason = 13;
   void clear_reason();
   ::mt5_term_api::BMT5_ENUM_DEAL_REASON reason() const;
@@ -7247,6 +7978,8 @@ class DealHistoryData final :
     int type_;
     uint64_t position_id_;
     int64_t account_login_;
+    uint64_t order_;
+    int64_t magic_;
     int reason_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -7303,7 +8036,7 @@ class OrderHistoryData final :
                &_OrderHistoryData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    28;
 
   friend void swap(OrderHistoryData& a, OrderHistoryData& b) {
     a.Swap(&b);
@@ -7772,7 +8505,7 @@ class AccountSummaryRequest final :
                &_AccountSummaryRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    29;
 
   friend void swap(AccountSummaryRequest& a, AccountSummaryRequest& b) {
     a.Swap(&b);
@@ -7897,7 +8630,7 @@ class AccountSummaryReply final :
                &_AccountSummaryReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    30;
 
   friend void swap(AccountSummaryReply& a, AccountSummaryReply& b) {
     a.Swap(&b);
@@ -8087,7 +8820,7 @@ class AccountSummaryData final :
                &_AccountSummaryData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    31;
 
   friend void swap(AccountSummaryData& a, AccountSummaryData& b) {
     a.Swap(&b);
@@ -8173,6 +8906,12 @@ class AccountSummaryData final :
     kServerUtcOffsetSecondsFieldNumber = 13,
     kUtcTimezoneServerTimeShiftMinutesFieldNumber = 10,
     kAccountCreditFieldNumber = 11,
+    kAccountMarginFieldNumber = 12,
+    kAccountMarginFreeFieldNumber = 15,
+    kAccountMarginLevelFieldNumber = 16,
+    kAccountMarginModeFieldNumber = 17,
+    kAccountTradeAllowedFieldNumber = 18,
+    kAccountTradeExpertFieldNumber = 19,
   };
   // string account_user_name = 4;
   void clear_account_user_name();
@@ -8324,6 +9063,60 @@ class AccountSummaryData final :
   void _internal_set_account_credit(double value);
   public:
 
+  // double account_margin = 12;
+  void clear_account_margin();
+  double account_margin() const;
+  void set_account_margin(double value);
+  private:
+  double _internal_account_margin() const;
+  void _internal_set_account_margin(double value);
+  public:
+
+  // double account_margin_free = 15;
+  void clear_account_margin_free();
+  double account_margin_free() const;
+  void set_account_margin_free(double value);
+  private:
+  double _internal_account_margin_free() const;
+  void _internal_set_account_margin_free(double value);
+  public:
+
+  // double account_margin_level = 16;
+  void clear_account_margin_level();
+  double account_margin_level() const;
+  void set_account_margin_level(double value);
+  private:
+  double _internal_account_margin_level() const;
+  void _internal_set_account_margin_level(double value);
+  public:
+
+  // .mt5_term_api.MrpcEnumAccountMarginMode account_margin_mode = 17;
+  void clear_account_margin_mode();
+  ::mt5_term_api::MrpcEnumAccountMarginMode account_margin_mode() const;
+  void set_account_margin_mode(::mt5_term_api::MrpcEnumAccountMarginMode value);
+  private:
+  ::mt5_term_api::MrpcEnumAccountMarginMode _internal_account_margin_mode() const;
+  void _internal_set_account_margin_mode(::mt5_term_api::MrpcEnumAccountMarginMode value);
+  public:
+
+  // bool account_trade_allowed = 18;
+  void clear_account_trade_allowed();
+  bool account_trade_allowed() const;
+  void set_account_trade_allowed(bool value);
+  private:
+  bool _internal_account_trade_allowed() const;
+  void _internal_set_account_trade_allowed(bool value);
+  public:
+
+  // bool account_trade_expert = 19;
+  void clear_account_trade_expert();
+  bool account_trade_expert() const;
+  void set_account_trade_expert(bool value);
+  private:
+  bool _internal_account_trade_expert() const;
+  void _internal_set_account_trade_expert(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mt5_term_api.AccountSummaryData)
  private:
   class _Internal;
@@ -8345,6 +9138,12 @@ class AccountSummaryData final :
     int32_t server_utc_offset_seconds_;
     int64_t utc_timezone_server_time_shift_minutes_;
     double account_credit_;
+    double account_margin_;
+    double account_margin_free_;
+    double account_margin_level_;
+    int account_margin_mode_;
+    bool account_trade_allowed_;
+    bool account_trade_expert_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -8400,7 +9199,7 @@ class SymbolParamsManyRequest final :
                &_SymbolParamsManyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    32;
 
   friend void swap(SymbolParamsManyRequest& a, SymbolParamsManyRequest& b) {
     a.Swap(&b);
@@ -8609,7 +9408,7 @@ class SymbolParamsManyReply final :
                &_SymbolParamsManyReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    33;
 
   friend void swap(SymbolParamsManyReply& a, SymbolParamsManyReply& b) {
     a.Swap(&b);
@@ -8799,7 +9598,7 @@ class SymbolParamsManyData final :
                &_SymbolParamsManyData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    34;
 
   friend void swap(SymbolParamsManyData& a, SymbolParamsManyData& b) {
     a.Swap(&b);
@@ -8998,7 +9797,7 @@ class SymbolParameters final :
                &_SymbolParameters_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    35;
 
   friend void swap(SymbolParameters& a, SymbolParameters& b) {
     a.Swap(&b);
@@ -10518,6 +11317,727 @@ class SymbolParameters final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// DealsHistoryRequest
+
+// .google.protobuf.Timestamp inputFrom = 1;
+inline bool DealsHistoryRequest::_internal_has_inputfrom() const {
+  return this != internal_default_instance() && _impl_.inputfrom_ != nullptr;
+}
+inline bool DealsHistoryRequest::has_inputfrom() const {
+  return _internal_has_inputfrom();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& DealsHistoryRequest::_internal_inputfrom() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.inputfrom_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& DealsHistoryRequest::inputfrom() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.DealsHistoryRequest.inputFrom)
+  return _internal_inputfrom();
+}
+inline void DealsHistoryRequest::unsafe_arena_set_allocated_inputfrom(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* inputfrom) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.inputfrom_);
+  }
+  _impl_.inputfrom_ = inputfrom;
+  if (inputfrom) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.DealsHistoryRequest.inputFrom)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DealsHistoryRequest::release_inputfrom() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.inputfrom_;
+  _impl_.inputfrom_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DealsHistoryRequest::unsafe_arena_release_inputfrom() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.DealsHistoryRequest.inputFrom)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.inputfrom_;
+  _impl_.inputfrom_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DealsHistoryRequest::_internal_mutable_inputfrom() {
+  
+  if (_impl_.inputfrom_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.inputfrom_ = p;
+  }
+  return _impl_.inputfrom_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DealsHistoryRequest::mutable_inputfrom() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_inputfrom();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.DealsHistoryRequest.inputFrom)
+  return _msg;
+}
+inline void DealsHistoryRequest::set_allocated_inputfrom(::PROTOBUF_NAMESPACE_ID::Timestamp* inputfrom) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.inputfrom_);
+  }
+  if (inputfrom) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(inputfrom));
+    if (message_arena != submessage_arena) {
+      inputfrom = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, inputfrom, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.inputfrom_ = inputfrom;
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.DealsHistoryRequest.inputFrom)
+}
+
+// .google.protobuf.Timestamp inputFromUtc = 8;
+inline bool DealsHistoryRequest::_internal_has_inputfromutc() const {
+  return this != internal_default_instance() && _impl_.inputfromutc_ != nullptr;
+}
+inline bool DealsHistoryRequest::has_inputfromutc() const {
+  return _internal_has_inputfromutc();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& DealsHistoryRequest::_internal_inputfromutc() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.inputfromutc_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& DealsHistoryRequest::inputfromutc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.DealsHistoryRequest.inputFromUtc)
+  return _internal_inputfromutc();
+}
+inline void DealsHistoryRequest::unsafe_arena_set_allocated_inputfromutc(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* inputfromutc) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.inputfromutc_);
+  }
+  _impl_.inputfromutc_ = inputfromutc;
+  if (inputfromutc) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.DealsHistoryRequest.inputFromUtc)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DealsHistoryRequest::release_inputfromutc() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.inputfromutc_;
+  _impl_.inputfromutc_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DealsHistoryRequest::unsafe_arena_release_inputfromutc() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.DealsHistoryRequest.inputFromUtc)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.inputfromutc_;
+  _impl_.inputfromutc_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DealsHistoryRequest::_internal_mutable_inputfromutc() {
+  
+  if (_impl_.inputfromutc_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.inputfromutc_ = p;
+  }
+  return _impl_.inputfromutc_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DealsHistoryRequest::mutable_inputfromutc() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_inputfromutc();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.DealsHistoryRequest.inputFromUtc)
+  return _msg;
+}
+inline void DealsHistoryRequest::set_allocated_inputfromutc(::PROTOBUF_NAMESPACE_ID::Timestamp* inputfromutc) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.inputfromutc_);
+  }
+  if (inputfromutc) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(inputfromutc));
+    if (message_arena != submessage_arena) {
+      inputfromutc = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, inputfromutc, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.inputfromutc_ = inputfromutc;
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.DealsHistoryRequest.inputFromUtc)
+}
+
+// .google.protobuf.Timestamp inputTo = 2;
+inline bool DealsHistoryRequest::_internal_has_inputto() const {
+  return this != internal_default_instance() && _impl_.inputto_ != nullptr;
+}
+inline bool DealsHistoryRequest::has_inputto() const {
+  return _internal_has_inputto();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& DealsHistoryRequest::_internal_inputto() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.inputto_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& DealsHistoryRequest::inputto() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.DealsHistoryRequest.inputTo)
+  return _internal_inputto();
+}
+inline void DealsHistoryRequest::unsafe_arena_set_allocated_inputto(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* inputto) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.inputto_);
+  }
+  _impl_.inputto_ = inputto;
+  if (inputto) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.DealsHistoryRequest.inputTo)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DealsHistoryRequest::release_inputto() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.inputto_;
+  _impl_.inputto_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DealsHistoryRequest::unsafe_arena_release_inputto() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.DealsHistoryRequest.inputTo)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.inputto_;
+  _impl_.inputto_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DealsHistoryRequest::_internal_mutable_inputto() {
+  
+  if (_impl_.inputto_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.inputto_ = p;
+  }
+  return _impl_.inputto_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DealsHistoryRequest::mutable_inputto() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_inputto();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.DealsHistoryRequest.inputTo)
+  return _msg;
+}
+inline void DealsHistoryRequest::set_allocated_inputto(::PROTOBUF_NAMESPACE_ID::Timestamp* inputto) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.inputto_);
+  }
+  if (inputto) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(inputto));
+    if (message_arena != submessage_arena) {
+      inputto = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, inputto, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.inputto_ = inputto;
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.DealsHistoryRequest.inputTo)
+}
+
+// .google.protobuf.Timestamp inputToUtc = 9;
+inline bool DealsHistoryRequest::_internal_has_inputtoutc() const {
+  return this != internal_default_instance() && _impl_.inputtoutc_ != nullptr;
+}
+inline bool DealsHistoryRequest::has_inputtoutc() const {
+  return _internal_has_inputtoutc();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& DealsHistoryRequest::_internal_inputtoutc() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.inputtoutc_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& DealsHistoryRequest::inputtoutc() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.DealsHistoryRequest.inputToUtc)
+  return _internal_inputtoutc();
+}
+inline void DealsHistoryRequest::unsafe_arena_set_allocated_inputtoutc(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* inputtoutc) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.inputtoutc_);
+  }
+  _impl_.inputtoutc_ = inputtoutc;
+  if (inputtoutc) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.DealsHistoryRequest.inputToUtc)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DealsHistoryRequest::release_inputtoutc() {
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.inputtoutc_;
+  _impl_.inputtoutc_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DealsHistoryRequest::unsafe_arena_release_inputtoutc() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.DealsHistoryRequest.inputToUtc)
+  
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.inputtoutc_;
+  _impl_.inputtoutc_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DealsHistoryRequest::_internal_mutable_inputtoutc() {
+  
+  if (_impl_.inputtoutc_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.inputtoutc_ = p;
+  }
+  return _impl_.inputtoutc_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DealsHistoryRequest::mutable_inputtoutc() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_inputtoutc();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.DealsHistoryRequest.inputToUtc)
+  return _msg;
+}
+inline void DealsHistoryRequest::set_allocated_inputtoutc(::PROTOBUF_NAMESPACE_ID::Timestamp* inputtoutc) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.inputtoutc_);
+  }
+  if (inputtoutc) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(inputtoutc));
+    if (message_arena != submessage_arena) {
+      inputtoutc = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, inputtoutc, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.inputtoutc_ = inputtoutc;
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.DealsHistoryRequest.inputToUtc)
+}
+
+// .mt5_term_api.BMT5_ENUM_DEALS_HISTORY_SORT_TYPE inputSortMode = 3;
+inline void DealsHistoryRequest::clear_inputsortmode() {
+  _impl_.inputsortmode_ = 0;
+}
+inline ::mt5_term_api::BMT5_ENUM_DEALS_HISTORY_SORT_TYPE DealsHistoryRequest::_internal_inputsortmode() const {
+  return static_cast< ::mt5_term_api::BMT5_ENUM_DEALS_HISTORY_SORT_TYPE >(_impl_.inputsortmode_);
+}
+inline ::mt5_term_api::BMT5_ENUM_DEALS_HISTORY_SORT_TYPE DealsHistoryRequest::inputsortmode() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.DealsHistoryRequest.inputSortMode)
+  return _internal_inputsortmode();
+}
+inline void DealsHistoryRequest::_internal_set_inputsortmode(::mt5_term_api::BMT5_ENUM_DEALS_HISTORY_SORT_TYPE value) {
+  
+  _impl_.inputsortmode_ = value;
+}
+inline void DealsHistoryRequest::set_inputsortmode(::mt5_term_api::BMT5_ENUM_DEALS_HISTORY_SORT_TYPE value) {
+  _internal_set_inputsortmode(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.DealsHistoryRequest.inputSortMode)
+}
+
+// string page_token = 4;
+inline void DealsHistoryRequest::clear_page_token() {
+  _impl_.page_token_.ClearToEmpty();
+}
+inline const std::string& DealsHistoryRequest::page_token() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.DealsHistoryRequest.page_token)
+  return _internal_page_token();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DealsHistoryRequest::set_page_token(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.page_token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mt5_term_api.DealsHistoryRequest.page_token)
+}
+inline std::string* DealsHistoryRequest::mutable_page_token() {
+  std::string* _s = _internal_mutable_page_token();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.DealsHistoryRequest.page_token)
+  return _s;
+}
+inline const std::string& DealsHistoryRequest::_internal_page_token() const {
+  return _impl_.page_token_.Get();
+}
+inline void DealsHistoryRequest::_internal_set_page_token(const std::string& value) {
+  
+  _impl_.page_token_.Set(value, GetArenaForAllocation());
+}
+inline std::string* DealsHistoryRequest::_internal_mutable_page_token() {
+  
+  return _impl_.page_token_.Mutable(GetArenaForAllocation());
+}
+inline std::string* DealsHistoryRequest::release_page_token() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.DealsHistoryRequest.page_token)
+  return _impl_.page_token_.Release();
+}
+inline void DealsHistoryRequest::set_allocated_page_token(std::string* page_token) {
+  if (page_token != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.page_token_.SetAllocated(page_token, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.page_token_.IsDefault()) {
+    _impl_.page_token_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.DealsHistoryRequest.page_token)
+}
+
+// int32 page_size = 5;
+inline void DealsHistoryRequest::clear_page_size() {
+  _impl_.page_size_ = 0;
+}
+inline int32_t DealsHistoryRequest::_internal_page_size() const {
+  return _impl_.page_size_;
+}
+inline int32_t DealsHistoryRequest::page_size() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.DealsHistoryRequest.page_size)
+  return _internal_page_size();
+}
+inline void DealsHistoryRequest::_internal_set_page_size(int32_t value) {
+  
+  _impl_.page_size_ = value;
+}
+inline void DealsHistoryRequest::set_page_size(int32_t value) {
+  _internal_set_page_size(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.DealsHistoryRequest.page_size)
+}
+
+// -------------------------------------------------------------------
+
+// DealsHistoryReply
+
+// .mt5_term_api.DealsHistoryData data = 1;
+inline bool DealsHistoryReply::_internal_has_data() const {
+  return response_case() == kData;
+}
+inline bool DealsHistoryReply::has_data() const {
+  return _internal_has_data();
+}
+inline void DealsHistoryReply::set_has_data() {
+  _impl_._oneof_case_[0] = kData;
+}
+inline void DealsHistoryReply::clear_data() {
+  if (_internal_has_data()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.response_.data_;
+    }
+    clear_has_response();
+  }
+}
+inline ::mt5_term_api::DealsHistoryData* DealsHistoryReply::release_data() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.DealsHistoryReply.data)
+  if (_internal_has_data()) {
+    clear_has_response();
+    ::mt5_term_api::DealsHistoryData* temp = _impl_.response_.data_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.response_.data_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::mt5_term_api::DealsHistoryData& DealsHistoryReply::_internal_data() const {
+  return _internal_has_data()
+      ? *_impl_.response_.data_
+      : reinterpret_cast< ::mt5_term_api::DealsHistoryData&>(::mt5_term_api::_DealsHistoryData_default_instance_);
+}
+inline const ::mt5_term_api::DealsHistoryData& DealsHistoryReply::data() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.DealsHistoryReply.data)
+  return _internal_data();
+}
+inline ::mt5_term_api::DealsHistoryData* DealsHistoryReply::unsafe_arena_release_data() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:mt5_term_api.DealsHistoryReply.data)
+  if (_internal_has_data()) {
+    clear_has_response();
+    ::mt5_term_api::DealsHistoryData* temp = _impl_.response_.data_;
+    _impl_.response_.data_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void DealsHistoryReply::unsafe_arena_set_allocated_data(::mt5_term_api::DealsHistoryData* data) {
+  clear_response();
+  if (data) {
+    set_has_data();
+    _impl_.response_.data_ = data;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.DealsHistoryReply.data)
+}
+inline ::mt5_term_api::DealsHistoryData* DealsHistoryReply::_internal_mutable_data() {
+  if (!_internal_has_data()) {
+    clear_response();
+    set_has_data();
+    _impl_.response_.data_ = CreateMaybeMessage< ::mt5_term_api::DealsHistoryData >(GetArenaForAllocation());
+  }
+  return _impl_.response_.data_;
+}
+inline ::mt5_term_api::DealsHistoryData* DealsHistoryReply::mutable_data() {
+  ::mt5_term_api::DealsHistoryData* _msg = _internal_mutable_data();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.DealsHistoryReply.data)
+  return _msg;
+}
+
+// .mt5_term_api.Error error = 2;
+inline bool DealsHistoryReply::_internal_has_error() const {
+  return response_case() == kError;
+}
+inline bool DealsHistoryReply::has_error() const {
+  return _internal_has_error();
+}
+inline void DealsHistoryReply::set_has_error() {
+  _impl_._oneof_case_[0] = kError;
+}
+inline ::mt5_term_api::Error* DealsHistoryReply::release_error() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.DealsHistoryReply.error)
+  if (_internal_has_error()) {
+    clear_has_response();
+    ::mt5_term_api::Error* temp = _impl_.response_.error_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.response_.error_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::mt5_term_api::Error& DealsHistoryReply::_internal_error() const {
+  return _internal_has_error()
+      ? *_impl_.response_.error_
+      : reinterpret_cast< ::mt5_term_api::Error&>(::mt5_term_api::_Error_default_instance_);
+}
+inline const ::mt5_term_api::Error& DealsHistoryReply::error() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.DealsHistoryReply.error)
+  return _internal_error();
+}
+inline ::mt5_term_api::Error* DealsHistoryReply::unsafe_arena_release_error() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:mt5_term_api.DealsHistoryReply.error)
+  if (_internal_has_error()) {
+    clear_has_response();
+    ::mt5_term_api::Error* temp = _impl_.response_.error_;
+    _impl_.response_.error_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void DealsHistoryReply::unsafe_arena_set_allocated_error(::mt5_term_api::Error* error) {
+  clear_response();
+  if (error) {
+    set_has_error();
+    _impl_.response_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mt5_term_api.DealsHistoryReply.error)
+}
+inline ::mt5_term_api::Error* DealsHistoryReply::_internal_mutable_error() {
+  if (!_internal_has_error()) {
+    clear_response();
+    set_has_error();
+    _impl_.response_.error_ = CreateMaybeMessage< ::mt5_term_api::Error >(GetArenaForAllocation());
+  }
+  return _impl_.response_.error_;
+}
+inline ::mt5_term_api::Error* DealsHistoryReply::mutable_error() {
+  ::mt5_term_api::Error* _msg = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.DealsHistoryReply.error)
+  return _msg;
+}
+
+inline bool DealsHistoryReply::has_response() const {
+  return response_case() != RESPONSE_NOT_SET;
+}
+inline void DealsHistoryReply::clear_has_response() {
+  _impl_._oneof_case_[0] = RESPONSE_NOT_SET;
+}
+inline DealsHistoryReply::ResponseCase DealsHistoryReply::response_case() const {
+  return DealsHistoryReply::ResponseCase(_impl_._oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// DealsHistoryData
+
+// int32 arrayTotal = 1;
+inline void DealsHistoryData::clear_arraytotal() {
+  _impl_.arraytotal_ = 0;
+}
+inline int32_t DealsHistoryData::_internal_arraytotal() const {
+  return _impl_.arraytotal_;
+}
+inline int32_t DealsHistoryData::arraytotal() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.DealsHistoryData.arrayTotal)
+  return _internal_arraytotal();
+}
+inline void DealsHistoryData::_internal_set_arraytotal(int32_t value) {
+  
+  _impl_.arraytotal_ = value;
+}
+inline void DealsHistoryData::set_arraytotal(int32_t value) {
+  _internal_set_arraytotal(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.DealsHistoryData.arrayTotal)
+}
+
+// repeated .mt5_term_api.DealHistoryData deals = 2;
+inline int DealsHistoryData::_internal_deals_size() const {
+  return _impl_.deals_.size();
+}
+inline int DealsHistoryData::deals_size() const {
+  return _internal_deals_size();
+}
+inline void DealsHistoryData::clear_deals() {
+  _impl_.deals_.Clear();
+}
+inline ::mt5_term_api::DealHistoryData* DealsHistoryData::mutable_deals(int index) {
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.DealsHistoryData.deals)
+  return _impl_.deals_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::DealHistoryData >*
+DealsHistoryData::mutable_deals() {
+  // @@protoc_insertion_point(field_mutable_list:mt5_term_api.DealsHistoryData.deals)
+  return &_impl_.deals_;
+}
+inline const ::mt5_term_api::DealHistoryData& DealsHistoryData::_internal_deals(int index) const {
+  return _impl_.deals_.Get(index);
+}
+inline const ::mt5_term_api::DealHistoryData& DealsHistoryData::deals(int index) const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.DealsHistoryData.deals)
+  return _internal_deals(index);
+}
+inline ::mt5_term_api::DealHistoryData* DealsHistoryData::_internal_add_deals() {
+  return _impl_.deals_.Add();
+}
+inline ::mt5_term_api::DealHistoryData* DealsHistoryData::add_deals() {
+  ::mt5_term_api::DealHistoryData* _add = _internal_add_deals();
+  // @@protoc_insertion_point(field_add:mt5_term_api.DealsHistoryData.deals)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::DealHistoryData >&
+DealsHistoryData::deals() const {
+  // @@protoc_insertion_point(field_list:mt5_term_api.DealsHistoryData.deals)
+  return _impl_.deals_;
+}
+
+// string next_page_token = 3;
+inline void DealsHistoryData::clear_next_page_token() {
+  _impl_.next_page_token_.ClearToEmpty();
+}
+inline const std::string& DealsHistoryData::next_page_token() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.DealsHistoryData.next_page_token)
+  return _internal_next_page_token();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DealsHistoryData::set_next_page_token(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.next_page_token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mt5_term_api.DealsHistoryData.next_page_token)
+}
+inline std::string* DealsHistoryData::mutable_next_page_token() {
+  std::string* _s = _internal_mutable_next_page_token();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.DealsHistoryData.next_page_token)
+  return _s;
+}
+inline const std::string& DealsHistoryData::_internal_next_page_token() const {
+  return _impl_.next_page_token_.Get();
+}
+inline void DealsHistoryData::_internal_set_next_page_token(const std::string& value) {
+  
+  _impl_.next_page_token_.Set(value, GetArenaForAllocation());
+}
+inline std::string* DealsHistoryData::_internal_mutable_next_page_token() {
+  
+  return _impl_.next_page_token_.Mutable(GetArenaForAllocation());
+}
+inline std::string* DealsHistoryData::release_next_page_token() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.DealsHistoryData.next_page_token)
+  return _impl_.next_page_token_.Release();
+}
+inline void DealsHistoryData::set_allocated_next_page_token(std::string* next_page_token) {
+  if (next_page_token != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.next_page_token_.SetAllocated(next_page_token, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.next_page_token_.IsDefault()) {
+    _impl_.next_page_token_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.DealsHistoryData.next_page_token)
+}
+
+// int64 account_login = 4;
+inline void DealsHistoryData::clear_account_login() {
+  _impl_.account_login_ = int64_t{0};
+}
+inline int64_t DealsHistoryData::_internal_account_login() const {
+  return _impl_.account_login_;
+}
+inline int64_t DealsHistoryData::account_login() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.DealsHistoryData.account_login)
+  return _internal_account_login();
+}
+inline void DealsHistoryData::_internal_set_account_login(int64_t value) {
+  
+  _impl_.account_login_ = value;
+}
+inline void DealsHistoryData::set_account_login(int64_t value) {
+  _internal_set_account_login(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.DealsHistoryData.account_login)
+}
+
+// -------------------------------------------------------------------
+
 // AllHistoryOrdersRequest
 
 // .mt5_term_api.BMT5_ENUM_ORDER_HISTORY_SORT_TYPE inputSortMode = 1;
@@ -18193,6 +19713,46 @@ inline void DealHistoryData::set_account_login(int64_t value) {
   // @@protoc_insertion_point(field_set:mt5_term_api.DealHistoryData.account_login)
 }
 
+// uint64 order = 20;
+inline void DealHistoryData::clear_order() {
+  _impl_.order_ = uint64_t{0u};
+}
+inline uint64_t DealHistoryData::_internal_order() const {
+  return _impl_.order_;
+}
+inline uint64_t DealHistoryData::order() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.DealHistoryData.order)
+  return _internal_order();
+}
+inline void DealHistoryData::_internal_set_order(uint64_t value) {
+  
+  _impl_.order_ = value;
+}
+inline void DealHistoryData::set_order(uint64_t value) {
+  _internal_set_order(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.DealHistoryData.order)
+}
+
+// int64 magic = 21;
+inline void DealHistoryData::clear_magic() {
+  _impl_.magic_ = int64_t{0};
+}
+inline int64_t DealHistoryData::_internal_magic() const {
+  return _impl_.magic_;
+}
+inline int64_t DealHistoryData::magic() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.DealHistoryData.magic)
+  return _internal_magic();
+}
+inline void DealHistoryData::_internal_set_magic(int64_t value) {
+  
+  _impl_.magic_ = value;
+}
+inline void DealHistoryData::set_magic(int64_t value) {
+  _internal_set_magic(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.DealHistoryData.magic)
+}
+
 // -------------------------------------------------------------------
 
 // OrderHistoryData
@@ -19796,6 +21356,126 @@ inline void AccountSummaryData::_internal_set_server_utc_offset_seconds(int32_t 
 inline void AccountSummaryData::set_server_utc_offset_seconds(int32_t value) {
   _internal_set_server_utc_offset_seconds(value);
   // @@protoc_insertion_point(field_set:mt5_term_api.AccountSummaryData.server_utc_offset_seconds)
+}
+
+// double account_margin = 12;
+inline void AccountSummaryData::clear_account_margin() {
+  _impl_.account_margin_ = 0;
+}
+inline double AccountSummaryData::_internal_account_margin() const {
+  return _impl_.account_margin_;
+}
+inline double AccountSummaryData::account_margin() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.AccountSummaryData.account_margin)
+  return _internal_account_margin();
+}
+inline void AccountSummaryData::_internal_set_account_margin(double value) {
+  
+  _impl_.account_margin_ = value;
+}
+inline void AccountSummaryData::set_account_margin(double value) {
+  _internal_set_account_margin(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.AccountSummaryData.account_margin)
+}
+
+// double account_margin_free = 15;
+inline void AccountSummaryData::clear_account_margin_free() {
+  _impl_.account_margin_free_ = 0;
+}
+inline double AccountSummaryData::_internal_account_margin_free() const {
+  return _impl_.account_margin_free_;
+}
+inline double AccountSummaryData::account_margin_free() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.AccountSummaryData.account_margin_free)
+  return _internal_account_margin_free();
+}
+inline void AccountSummaryData::_internal_set_account_margin_free(double value) {
+  
+  _impl_.account_margin_free_ = value;
+}
+inline void AccountSummaryData::set_account_margin_free(double value) {
+  _internal_set_account_margin_free(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.AccountSummaryData.account_margin_free)
+}
+
+// double account_margin_level = 16;
+inline void AccountSummaryData::clear_account_margin_level() {
+  _impl_.account_margin_level_ = 0;
+}
+inline double AccountSummaryData::_internal_account_margin_level() const {
+  return _impl_.account_margin_level_;
+}
+inline double AccountSummaryData::account_margin_level() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.AccountSummaryData.account_margin_level)
+  return _internal_account_margin_level();
+}
+inline void AccountSummaryData::_internal_set_account_margin_level(double value) {
+  
+  _impl_.account_margin_level_ = value;
+}
+inline void AccountSummaryData::set_account_margin_level(double value) {
+  _internal_set_account_margin_level(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.AccountSummaryData.account_margin_level)
+}
+
+// .mt5_term_api.MrpcEnumAccountMarginMode account_margin_mode = 17;
+inline void AccountSummaryData::clear_account_margin_mode() {
+  _impl_.account_margin_mode_ = 0;
+}
+inline ::mt5_term_api::MrpcEnumAccountMarginMode AccountSummaryData::_internal_account_margin_mode() const {
+  return static_cast< ::mt5_term_api::MrpcEnumAccountMarginMode >(_impl_.account_margin_mode_);
+}
+inline ::mt5_term_api::MrpcEnumAccountMarginMode AccountSummaryData::account_margin_mode() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.AccountSummaryData.account_margin_mode)
+  return _internal_account_margin_mode();
+}
+inline void AccountSummaryData::_internal_set_account_margin_mode(::mt5_term_api::MrpcEnumAccountMarginMode value) {
+  
+  _impl_.account_margin_mode_ = value;
+}
+inline void AccountSummaryData::set_account_margin_mode(::mt5_term_api::MrpcEnumAccountMarginMode value) {
+  _internal_set_account_margin_mode(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.AccountSummaryData.account_margin_mode)
+}
+
+// bool account_trade_allowed = 18;
+inline void AccountSummaryData::clear_account_trade_allowed() {
+  _impl_.account_trade_allowed_ = false;
+}
+inline bool AccountSummaryData::_internal_account_trade_allowed() const {
+  return _impl_.account_trade_allowed_;
+}
+inline bool AccountSummaryData::account_trade_allowed() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.AccountSummaryData.account_trade_allowed)
+  return _internal_account_trade_allowed();
+}
+inline void AccountSummaryData::_internal_set_account_trade_allowed(bool value) {
+  
+  _impl_.account_trade_allowed_ = value;
+}
+inline void AccountSummaryData::set_account_trade_allowed(bool value) {
+  _internal_set_account_trade_allowed(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.AccountSummaryData.account_trade_allowed)
+}
+
+// bool account_trade_expert = 19;
+inline void AccountSummaryData::clear_account_trade_expert() {
+  _impl_.account_trade_expert_ = false;
+}
+inline bool AccountSummaryData::_internal_account_trade_expert() const {
+  return _impl_.account_trade_expert_;
+}
+inline bool AccountSummaryData::account_trade_expert() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.AccountSummaryData.account_trade_expert)
+  return _internal_account_trade_expert();
+}
+inline void AccountSummaryData::_internal_set_account_trade_expert(bool value) {
+  
+  _impl_.account_trade_expert_ = value;
+}
+inline void AccountSummaryData::set_account_trade_expert(bool value) {
+  _internal_set_account_trade_expert(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.AccountSummaryData.account_trade_expert)
 }
 
 // -------------------------------------------------------------------
@@ -23541,6 +25221,12 @@ inline void SymbolParameters::set_allocated_path(std::string* path) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -23548,6 +25234,11 @@ inline void SymbolParameters::set_allocated_path(std::string* path) {
 
 PROTOBUF_NAMESPACE_OPEN
 
+template <> struct is_proto_enum< ::mt5_term_api::BMT5_ENUM_DEALS_HISTORY_SORT_TYPE> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::mt5_term_api::BMT5_ENUM_DEALS_HISTORY_SORT_TYPE>() {
+  return ::mt5_term_api::BMT5_ENUM_DEALS_HISTORY_SORT_TYPE_descriptor();
+}
 template <> struct is_proto_enum< ::mt5_term_api::AH_ENUM_POSITIONS_HISTORY_SORT_TYPE> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::mt5_term_api::AH_ENUM_POSITIONS_HISTORY_SORT_TYPE>() {
@@ -23617,6 +25308,11 @@ template <> struct is_proto_enum< ::mt5_term_api::MrpcEnumAccountTradeMode> : ::
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::mt5_term_api::MrpcEnumAccountTradeMode>() {
   return ::mt5_term_api::MrpcEnumAccountTradeMode_descriptor();
+}
+template <> struct is_proto_enum< ::mt5_term_api::MrpcEnumAccountMarginMode> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::mt5_term_api::MrpcEnumAccountMarginMode>() {
+  return ::mt5_term_api::MrpcEnumAccountMarginMode_descriptor();
 }
 template <> struct is_proto_enum< ::mt5_term_api::AH_SYMBOL_PARAMS_MANY_SORT_TYPE> : ::std::true_type {};
 template <>

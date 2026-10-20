@@ -30,6 +30,7 @@ static const char* AccountHelper_method_names[] = {
   "/mt5_term_api.AccountHelper/TickValueWithSize",
   "/mt5_term_api.AccountHelper/PositionsHistory",
   "/mt5_term_api.AccountHelper/AllHistoryOrders",
+  "/mt5_term_api.AccountHelper/DealsHistory",
 };
 
 std::unique_ptr< AccountHelper::Stub> AccountHelper::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -47,6 +48,7 @@ AccountHelper::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chan
   , rpcmethod_TickValueWithSize_(AccountHelper_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_PositionsHistory_(AccountHelper_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_AllHistoryOrders_(AccountHelper_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DealsHistory_(AccountHelper_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status AccountHelper::Stub::AccountSummary(::grpc::ClientContext* context, const ::mt5_term_api::AccountSummaryRequest& request, ::mt5_term_api::AccountSummaryReply* response) {
@@ -233,6 +235,29 @@ void AccountHelper::Stub::async::AllHistoryOrders(::grpc::ClientContext* context
   return result;
 }
 
+::grpc::Status AccountHelper::Stub::DealsHistory(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest& request, ::mt5_term_api::DealsHistoryReply* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::mt5_term_api::DealsHistoryRequest, ::mt5_term_api::DealsHistoryReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_DealsHistory_, context, request, response);
+}
+
+void AccountHelper::Stub::async::DealsHistory(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest* request, ::mt5_term_api::DealsHistoryReply* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::mt5_term_api::DealsHistoryRequest, ::mt5_term_api::DealsHistoryReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DealsHistory_, context, request, response, std::move(f));
+}
+
+void AccountHelper::Stub::async::DealsHistory(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest* request, ::mt5_term_api::DealsHistoryReply* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DealsHistory_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mt5_term_api::DealsHistoryReply>* AccountHelper::Stub::PrepareAsyncDealsHistoryRaw(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::mt5_term_api::DealsHistoryReply, ::mt5_term_api::DealsHistoryRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_DealsHistory_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::mt5_term_api::DealsHistoryReply>* AccountHelper::Stub::AsyncDealsHistoryRaw(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDealsHistoryRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 AccountHelper::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AccountHelper_method_names[0],
@@ -314,6 +339,16 @@ AccountHelper::Service::Service() {
              ::mt5_term_api::AllHistoryOrdersReply* resp) {
                return service->AllHistoryOrders(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AccountHelper_method_names[8],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AccountHelper::Service, ::mt5_term_api::DealsHistoryRequest, ::mt5_term_api::DealsHistoryReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](AccountHelper::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::mt5_term_api::DealsHistoryRequest* req,
+             ::mt5_term_api::DealsHistoryReply* resp) {
+               return service->DealsHistory(ctx, req, resp);
+             }, this)));
 }
 
 AccountHelper::Service::~Service() {
@@ -369,6 +404,13 @@ AccountHelper::Service::~Service() {
 }
 
 ::grpc::Status AccountHelper::Service::AllHistoryOrders(::grpc::ServerContext* context, const ::mt5_term_api::AllHistoryOrdersRequest* request, ::mt5_term_api::AllHistoryOrdersReply* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AccountHelper::Service::DealsHistory(::grpc::ServerContext* context, const ::mt5_term_api::DealsHistoryRequest* request, ::mt5_term_api::DealsHistoryReply* response) {
   (void) context;
   (void) request;
   (void) response;

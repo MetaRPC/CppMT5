@@ -103,6 +103,22 @@ class AccountHelper final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::AllHistoryOrdersReply>> PrepareAsyncAllHistoryOrders(::grpc::ClientContext* context, const ::mt5_term_api::AllHistoryOrdersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::AllHistoryOrdersReply>>(PrepareAsyncAllHistoryOrdersRaw(context, request, cq));
     }
+    // Every deal of the account in a time range: trades and also the deals without an order - deposits, withdrawals, credit,
+    // charges, corrections, bonuses, commissions, interest, dividends, taxes - which OrderHistory and PositionsHistory leave out.
+    // A balance operation has type BMT5_DEAL_TYPE_BALANCE (CREDIT, BONUS...), order 0 and position_id 0; profit is its amount.
+    // [DefaultValues]
+    // {
+    //   "inputFromUtc": "2026-10-01T00:00:00Z",
+    //   "inputToUtc": "2026-10-31T00:00:00Z",
+    //   "pageSize": 1000
+    // }
+    virtual ::grpc::Status DealsHistory(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest& request, ::mt5_term_api::DealsHistoryReply* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::DealsHistoryReply>> AsyncDealsHistory(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::DealsHistoryReply>>(AsyncDealsHistoryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::DealsHistoryReply>> PrepareAsyncDealsHistory(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::DealsHistoryReply>>(PrepareAsyncDealsHistoryRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
@@ -134,6 +150,17 @@ class AccountHelper final {
       virtual void PositionsHistory(::grpc::ClientContext* context, const ::mt5_term_api::PositionsHistoryRequest* request, ::mt5_term_api::PositionsHistoryReply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void AllHistoryOrders(::grpc::ClientContext* context, const ::mt5_term_api::AllHistoryOrdersRequest* request, ::mt5_term_api::AllHistoryOrdersReply* response, std::function<void(::grpc::Status)>) = 0;
       virtual void AllHistoryOrders(::grpc::ClientContext* context, const ::mt5_term_api::AllHistoryOrdersRequest* request, ::mt5_term_api::AllHistoryOrdersReply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Every deal of the account in a time range: trades and also the deals without an order - deposits, withdrawals, credit,
+      // charges, corrections, bonuses, commissions, interest, dividends, taxes - which OrderHistory and PositionsHistory leave out.
+      // A balance operation has type BMT5_DEAL_TYPE_BALANCE (CREDIT, BONUS...), order 0 and position_id 0; profit is its amount.
+      // [DefaultValues]
+      // {
+      //   "inputFromUtc": "2026-10-01T00:00:00Z",
+      //   "inputToUtc": "2026-10-31T00:00:00Z",
+      //   "pageSize": 1000
+      // }
+      virtual void DealsHistory(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest* request, ::mt5_term_api::DealsHistoryReply* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DealsHistory(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest* request, ::mt5_term_api::DealsHistoryReply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -155,6 +182,8 @@ class AccountHelper final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::PositionsHistoryReply>* PrepareAsyncPositionsHistoryRaw(::grpc::ClientContext* context, const ::mt5_term_api::PositionsHistoryRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::AllHistoryOrdersReply>* AsyncAllHistoryOrdersRaw(::grpc::ClientContext* context, const ::mt5_term_api::AllHistoryOrdersRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::AllHistoryOrdersReply>* PrepareAsyncAllHistoryOrdersRaw(::grpc::ClientContext* context, const ::mt5_term_api::AllHistoryOrdersRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::DealsHistoryReply>* AsyncDealsHistoryRaw(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mt5_term_api::DealsHistoryReply>* PrepareAsyncDealsHistoryRaw(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -215,6 +244,13 @@ class AccountHelper final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::AllHistoryOrdersReply>> PrepareAsyncAllHistoryOrders(::grpc::ClientContext* context, const ::mt5_term_api::AllHistoryOrdersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::AllHistoryOrdersReply>>(PrepareAsyncAllHistoryOrdersRaw(context, request, cq));
     }
+    ::grpc::Status DealsHistory(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest& request, ::mt5_term_api::DealsHistoryReply* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::DealsHistoryReply>> AsyncDealsHistory(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::DealsHistoryReply>>(AsyncDealsHistoryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::DealsHistoryReply>> PrepareAsyncDealsHistory(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mt5_term_api::DealsHistoryReply>>(PrepareAsyncDealsHistoryRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
@@ -234,6 +270,8 @@ class AccountHelper final {
       void PositionsHistory(::grpc::ClientContext* context, const ::mt5_term_api::PositionsHistoryRequest* request, ::mt5_term_api::PositionsHistoryReply* response, ::grpc::ClientUnaryReactor* reactor) override;
       void AllHistoryOrders(::grpc::ClientContext* context, const ::mt5_term_api::AllHistoryOrdersRequest* request, ::mt5_term_api::AllHistoryOrdersReply* response, std::function<void(::grpc::Status)>) override;
       void AllHistoryOrders(::grpc::ClientContext* context, const ::mt5_term_api::AllHistoryOrdersRequest* request, ::mt5_term_api::AllHistoryOrdersReply* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void DealsHistory(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest* request, ::mt5_term_api::DealsHistoryReply* response, std::function<void(::grpc::Status)>) override;
+      void DealsHistory(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest* request, ::mt5_term_api::DealsHistoryReply* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -261,6 +299,8 @@ class AccountHelper final {
     ::grpc::ClientAsyncResponseReader< ::mt5_term_api::PositionsHistoryReply>* PrepareAsyncPositionsHistoryRaw(::grpc::ClientContext* context, const ::mt5_term_api::PositionsHistoryRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mt5_term_api::AllHistoryOrdersReply>* AsyncAllHistoryOrdersRaw(::grpc::ClientContext* context, const ::mt5_term_api::AllHistoryOrdersRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mt5_term_api::AllHistoryOrdersReply>* PrepareAsyncAllHistoryOrdersRaw(::grpc::ClientContext* context, const ::mt5_term_api::AllHistoryOrdersRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mt5_term_api::DealsHistoryReply>* AsyncDealsHistoryRaw(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mt5_term_api::DealsHistoryReply>* PrepareAsyncDealsHistoryRaw(::grpc::ClientContext* context, const ::mt5_term_api::DealsHistoryRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_AccountSummary_;
     const ::grpc::internal::RpcMethod rpcmethod_OrderHistory_;
     const ::grpc::internal::RpcMethod rpcmethod_OpenedOrders_;
@@ -269,6 +309,7 @@ class AccountHelper final {
     const ::grpc::internal::RpcMethod rpcmethod_TickValueWithSize_;
     const ::grpc::internal::RpcMethod rpcmethod_PositionsHistory_;
     const ::grpc::internal::RpcMethod rpcmethod_AllHistoryOrders_;
+    const ::grpc::internal::RpcMethod rpcmethod_DealsHistory_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -296,6 +337,16 @@ class AccountHelper final {
     // History positions
     virtual ::grpc::Status PositionsHistory(::grpc::ServerContext* context, const ::mt5_term_api::PositionsHistoryRequest* request, ::mt5_term_api::PositionsHistoryReply* response);
     virtual ::grpc::Status AllHistoryOrders(::grpc::ServerContext* context, const ::mt5_term_api::AllHistoryOrdersRequest* request, ::mt5_term_api::AllHistoryOrdersReply* response);
+    // Every deal of the account in a time range: trades and also the deals without an order - deposits, withdrawals, credit,
+    // charges, corrections, bonuses, commissions, interest, dividends, taxes - which OrderHistory and PositionsHistory leave out.
+    // A balance operation has type BMT5_DEAL_TYPE_BALANCE (CREDIT, BONUS...), order 0 and position_id 0; profit is its amount.
+    // [DefaultValues]
+    // {
+    //   "inputFromUtc": "2026-10-01T00:00:00Z",
+    //   "inputToUtc": "2026-10-31T00:00:00Z",
+    //   "pageSize": 1000
+    // }
+    virtual ::grpc::Status DealsHistory(::grpc::ServerContext* context, const ::mt5_term_api::DealsHistoryRequest* request, ::mt5_term_api::DealsHistoryReply* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_AccountSummary : public BaseClass {
@@ -457,7 +508,27 @@ class AccountHelper final {
       ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_AccountSummary<WithAsyncMethod_OrderHistory<WithAsyncMethod_OpenedOrders<WithAsyncMethod_OpenedOrdersTickets<WithAsyncMethod_SymbolParamsMany<WithAsyncMethod_TickValueWithSize<WithAsyncMethod_PositionsHistory<WithAsyncMethod_AllHistoryOrders<Service > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_DealsHistory : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_DealsHistory() {
+      ::grpc::Service::MarkMethodAsync(8);
+    }
+    ~WithAsyncMethod_DealsHistory() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DealsHistory(::grpc::ServerContext* /*context*/, const ::mt5_term_api::DealsHistoryRequest* /*request*/, ::mt5_term_api::DealsHistoryReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDealsHistory(::grpc::ServerContext* context, ::mt5_term_api::DealsHistoryRequest* request, ::grpc::ServerAsyncResponseWriter< ::mt5_term_api::DealsHistoryReply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_AccountSummary<WithAsyncMethod_OrderHistory<WithAsyncMethod_OpenedOrders<WithAsyncMethod_OpenedOrdersTickets<WithAsyncMethod_SymbolParamsMany<WithAsyncMethod_TickValueWithSize<WithAsyncMethod_PositionsHistory<WithAsyncMethod_AllHistoryOrders<WithAsyncMethod_DealsHistory<Service > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_AccountSummary : public BaseClass {
    private:
@@ -674,7 +745,34 @@ class AccountHelper final {
     virtual ::grpc::ServerUnaryReactor* AllHistoryOrders(
       ::grpc::CallbackServerContext* /*context*/, const ::mt5_term_api::AllHistoryOrdersRequest* /*request*/, ::mt5_term_api::AllHistoryOrdersReply* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_AccountSummary<WithCallbackMethod_OrderHistory<WithCallbackMethod_OpenedOrders<WithCallbackMethod_OpenedOrdersTickets<WithCallbackMethod_SymbolParamsMany<WithCallbackMethod_TickValueWithSize<WithCallbackMethod_PositionsHistory<WithCallbackMethod_AllHistoryOrders<Service > > > > > > > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_DealsHistory : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_DealsHistory() {
+      ::grpc::Service::MarkMethodCallback(8,
+          new ::grpc::internal::CallbackUnaryHandler< ::mt5_term_api::DealsHistoryRequest, ::mt5_term_api::DealsHistoryReply>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::mt5_term_api::DealsHistoryRequest* request, ::mt5_term_api::DealsHistoryReply* response) { return this->DealsHistory(context, request, response); }));}
+    void SetMessageAllocatorFor_DealsHistory(
+        ::grpc::MessageAllocator< ::mt5_term_api::DealsHistoryRequest, ::mt5_term_api::DealsHistoryReply>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mt5_term_api::DealsHistoryRequest, ::mt5_term_api::DealsHistoryReply>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_DealsHistory() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DealsHistory(::grpc::ServerContext* /*context*/, const ::mt5_term_api::DealsHistoryRequest* /*request*/, ::mt5_term_api::DealsHistoryReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* DealsHistory(
+      ::grpc::CallbackServerContext* /*context*/, const ::mt5_term_api::DealsHistoryRequest* /*request*/, ::mt5_term_api::DealsHistoryReply* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_AccountSummary<WithCallbackMethod_OrderHistory<WithCallbackMethod_OpenedOrders<WithCallbackMethod_OpenedOrdersTickets<WithCallbackMethod_SymbolParamsMany<WithCallbackMethod_TickValueWithSize<WithCallbackMethod_PositionsHistory<WithCallbackMethod_AllHistoryOrders<WithCallbackMethod_DealsHistory<Service > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_AccountSummary : public BaseClass {
@@ -808,6 +906,23 @@ class AccountHelper final {
     }
     // disable synchronous version of this method
     ::grpc::Status AllHistoryOrders(::grpc::ServerContext* /*context*/, const ::mt5_term_api::AllHistoryOrdersRequest* /*request*/, ::mt5_term_api::AllHistoryOrdersReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DealsHistory : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_DealsHistory() {
+      ::grpc::Service::MarkMethodGeneric(8);
+    }
+    ~WithGenericMethod_DealsHistory() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DealsHistory(::grpc::ServerContext* /*context*/, const ::mt5_term_api::DealsHistoryRequest* /*request*/, ::mt5_term_api::DealsHistoryReply* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -970,6 +1085,26 @@ class AccountHelper final {
     }
     void RequestAllHistoryOrders(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DealsHistory : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_DealsHistory() {
+      ::grpc::Service::MarkMethodRaw(8);
+    }
+    ~WithRawMethod_DealsHistory() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DealsHistory(::grpc::ServerContext* /*context*/, const ::mt5_term_api::DealsHistoryRequest* /*request*/, ::mt5_term_api::DealsHistoryReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDealsHistory(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1146,6 +1281,28 @@ class AccountHelper final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* AllHistoryOrders(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_DealsHistory : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_DealsHistory() {
+      ::grpc::Service::MarkMethodRawCallback(8,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DealsHistory(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_DealsHistory() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DealsHistory(::grpc::ServerContext* /*context*/, const ::mt5_term_api::DealsHistoryRequest* /*request*/, ::mt5_term_api::DealsHistoryReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* DealsHistory(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -1364,9 +1521,36 @@ class AccountHelper final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedAllHistoryOrders(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mt5_term_api::AllHistoryOrdersRequest,::mt5_term_api::AllHistoryOrdersReply>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_AccountSummary<WithStreamedUnaryMethod_OrderHistory<WithStreamedUnaryMethod_OpenedOrders<WithStreamedUnaryMethod_OpenedOrdersTickets<WithStreamedUnaryMethod_SymbolParamsMany<WithStreamedUnaryMethod_TickValueWithSize<WithStreamedUnaryMethod_PositionsHistory<WithStreamedUnaryMethod_AllHistoryOrders<Service > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DealsHistory : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_DealsHistory() {
+      ::grpc::Service::MarkMethodStreamed(8,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mt5_term_api::DealsHistoryRequest, ::mt5_term_api::DealsHistoryReply>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::mt5_term_api::DealsHistoryRequest, ::mt5_term_api::DealsHistoryReply>* streamer) {
+                       return this->StreamedDealsHistory(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_DealsHistory() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DealsHistory(::grpc::ServerContext* /*context*/, const ::mt5_term_api::DealsHistoryRequest* /*request*/, ::mt5_term_api::DealsHistoryReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDealsHistory(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mt5_term_api::DealsHistoryRequest,::mt5_term_api::DealsHistoryReply>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_AccountSummary<WithStreamedUnaryMethod_OrderHistory<WithStreamedUnaryMethod_OpenedOrders<WithStreamedUnaryMethod_OpenedOrdersTickets<WithStreamedUnaryMethod_SymbolParamsMany<WithStreamedUnaryMethod_TickValueWithSize<WithStreamedUnaryMethod_PositionsHistory<WithStreamedUnaryMethod_AllHistoryOrders<WithStreamedUnaryMethod_DealsHistory<Service > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_AccountSummary<WithStreamedUnaryMethod_OrderHistory<WithStreamedUnaryMethod_OpenedOrders<WithStreamedUnaryMethod_OpenedOrdersTickets<WithStreamedUnaryMethod_SymbolParamsMany<WithStreamedUnaryMethod_TickValueWithSize<WithStreamedUnaryMethod_PositionsHistory<WithStreamedUnaryMethod_AllHistoryOrders<Service > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_AccountSummary<WithStreamedUnaryMethod_OrderHistory<WithStreamedUnaryMethod_OpenedOrders<WithStreamedUnaryMethod_OpenedOrdersTickets<WithStreamedUnaryMethod_SymbolParamsMany<WithStreamedUnaryMethod_TickValueWithSize<WithStreamedUnaryMethod_PositionsHistory<WithStreamedUnaryMethod_AllHistoryOrders<WithStreamedUnaryMethod_DealsHistory<Service > > > > > > > > > StreamedService;
 };
 
 }  // namespace mt5_term_api

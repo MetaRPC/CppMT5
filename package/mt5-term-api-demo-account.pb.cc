@@ -31,16 +31,26 @@ static constexpr ::_pb::Message* const* file_default_instances = nullptr;
 const char descriptor_table_protodef_mt5_2dterm_2dapi_2ddemo_2daccount_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\037mt5-term-api-demo-account.proto\022\014mt5_t"
   "erm_api\032\034google/api/annotations.proto\032\026m"
-  "t5-term-api-gui.proto2\213\002\n\013DemoAccount\022|\n"
-  "\017OpenDemoAccount\022\'.mt5_term_api.GuiDemoO"
-  "penAccountRequest\032%.mt5_term_api.GuiDemo"
-  "OpenAccountReply\"\031\202\323\344\223\002\023\022\021/DemoAccount/O"
-  "pen\022~\n\032DemoOpenAccountInteractive\022-.mt5_"
-  "term_api.GuiDemoInteractiveClientMessage"
-  "\032-.mt5_term_api.GuiDemoInteractiveServer"
-  "Message(\0010\001BBZ1git.mtapi.io/root/mrpc-pr"
-  "oto.git/mt5/libraries/go\252\002\014mt5_term_apib"
-  "\006proto3"
+  "t5-term-api-gui.proto2\273\005\n\013DemoAccount\022\207\001"
+  "\n\rFindCompanies\022).mt5_term_api.GuiDemoFi"
+  "ndCompaniesRequest\032\'.mt5_term_api.GuiDem"
+  "oFindCompaniesReply\"\"\202\323\344\223\002\034\022\032/DemoAccoun"
+  "t/FindCompanies\022\235\001\n\026ServersAndAccountTyp"
+  "es\022+.mt5_term_api.GuiDemoServersAndTypes"
+  "Request\032).mt5_term_api.GuiDemoServersAnd"
+  "TypesReply\"+\202\323\344\223\002%\022#/DemoAccount/Servers"
+  "AndAccountTypes\022\203\001\n\014EnumControls\022(.mt5_t"
+  "erm_api.GuiDemoEnumControlsRequest\032&.mt5"
+  "_term_api.GuiDemoEnumControlsReply\"!\202\323\344\223"
+  "\002\033\022\031/DemoAccount/EnumControls\022|\n\017OpenDem"
+  "oAccount\022\'.mt5_term_api.GuiDemoOpenAccou"
+  "ntRequest\032%.mt5_term_api.GuiDemoOpenAcco"
+  "untReply\"\031\202\323\344\223\002\023\022\021/DemoAccount/Open\022~\n\032D"
+  "emoOpenAccountInteractive\022-.mt5_term_api"
+  ".GuiDemoInteractiveClientMessage\032-.mt5_t"
+  "erm_api.GuiDemoInteractiveServerMessage("
+  "\0010\001BBZ1git.mtapi.io/root/mrpc-proto.git/"
+  "mt5/libraries/go\252\002\014mt5_term_apib\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2ddemo_2daccount_2eproto_deps[2] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -48,7 +58,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2d
 };
 static ::_pbi::once_flag descriptor_table_mt5_2dterm_2dapi_2ddemo_2daccount_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_mt5_2dterm_2dapi_2ddemo_2daccount_2eproto = {
-    false, false, 447, descriptor_table_protodef_mt5_2dterm_2dapi_2ddemo_2daccount_2eproto,
+    false, false, 879, descriptor_table_protodef_mt5_2dterm_2dapi_2ddemo_2daccount_2eproto,
     "mt5-term-api-demo-account.proto",
     &descriptor_table_mt5_2dterm_2dapi_2ddemo_2daccount_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2ddemo_2daccount_2eproto_deps, 2, 0,
     schemas, file_default_instances, TableStruct_mt5_2dterm_2dapi_2ddemo_2daccount_2eproto::offsets,

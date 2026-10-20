@@ -21,6 +21,55 @@ namespace _pb = ::PROTOBUF_NAMESPACE_ID;
 namespace _pbi = _pb::internal;
 
 namespace mt5_term_api {
+PROTOBUF_CONSTEXPR DealsHistoryRequest::DealsHistoryRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.page_token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.inputfrom_)*/nullptr
+  , /*decltype(_impl_.inputto_)*/nullptr
+  , /*decltype(_impl_.inputfromutc_)*/nullptr
+  , /*decltype(_impl_.inputtoutc_)*/nullptr
+  , /*decltype(_impl_.inputsortmode_)*/0
+  , /*decltype(_impl_.page_size_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct DealsHistoryRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR DealsHistoryRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~DealsHistoryRequestDefaultTypeInternal() {}
+  union {
+    DealsHistoryRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DealsHistoryRequestDefaultTypeInternal _DealsHistoryRequest_default_instance_;
+PROTOBUF_CONSTEXPR DealsHistoryReply::DealsHistoryReply(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.response_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_._oneof_case_)*/{}} {}
+struct DealsHistoryReplyDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR DealsHistoryReplyDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~DealsHistoryReplyDefaultTypeInternal() {}
+  union {
+    DealsHistoryReply _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DealsHistoryReplyDefaultTypeInternal _DealsHistoryReply_default_instance_;
+PROTOBUF_CONSTEXPR DealsHistoryData::DealsHistoryData(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.deals_)*/{}
+  , /*decltype(_impl_.next_page_token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.account_login_)*/int64_t{0}
+  , /*decltype(_impl_.arraytotal_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct DealsHistoryDataDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR DealsHistoryDataDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~DealsHistoryDataDefaultTypeInternal() {}
+  union {
+    DealsHistoryData _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DealsHistoryDataDefaultTypeInternal _DealsHistoryData_default_instance_;
 PROTOBUF_CONSTEXPR AllHistoryOrdersRequest::AllHistoryOrdersRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
@@ -495,6 +544,8 @@ PROTOBUF_CONSTEXPR DealHistoryData::DealHistoryData(
   , /*decltype(_impl_.type_)*/0
   , /*decltype(_impl_.position_id_)*/uint64_t{0u}
   , /*decltype(_impl_.account_login_)*/int64_t{0}
+  , /*decltype(_impl_.order_)*/uint64_t{0u}
+  , /*decltype(_impl_.magic_)*/int64_t{0}
   , /*decltype(_impl_.reason_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct DealHistoryDataDefaultTypeInternal {
@@ -582,6 +633,12 @@ PROTOBUF_CONSTEXPR AccountSummaryData::AccountSummaryData(
   , /*decltype(_impl_.server_utc_offset_seconds_)*/0
   , /*decltype(_impl_.utc_timezone_server_time_shift_minutes_)*/int64_t{0}
   , /*decltype(_impl_.account_credit_)*/0
+  , /*decltype(_impl_.account_margin_)*/0
+  , /*decltype(_impl_.account_margin_free_)*/0
+  , /*decltype(_impl_.account_margin_level_)*/0
+  , /*decltype(_impl_.account_margin_mode_)*/0
+  , /*decltype(_impl_.account_trade_allowed_)*/false
+  , /*decltype(_impl_.account_trade_expert_)*/false
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct AccountSummaryDataDefaultTypeInternal {
   PROTOBUF_CONSTEXPR AccountSummaryDataDefaultTypeInternal()
@@ -770,11 +827,43 @@ struct SymbolParametersDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SymbolParametersDefaultTypeInternal _SymbolParameters_default_instance_;
 }  // namespace mt5_term_api
-static ::_pb::Metadata file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[33];
-static const ::_pb::EnumDescriptor* file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[26];
+static ::_pb::Metadata file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[36];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[28];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto = nullptr;
 
 const uint32_t TableStruct_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealsHistoryRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealsHistoryRequest, _impl_.inputfrom_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealsHistoryRequest, _impl_.inputfromutc_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealsHistoryRequest, _impl_.inputto_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealsHistoryRequest, _impl_.inputtoutc_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealsHistoryRequest, _impl_.inputsortmode_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealsHistoryRequest, _impl_.page_token_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealsHistoryRequest, _impl_.page_size_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealsHistoryReply, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealsHistoryReply, _impl_._oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealsHistoryReply, _impl_.response_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealsHistoryData, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealsHistoryData, _impl_.arraytotal_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealsHistoryData, _impl_.deals_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealsHistoryData, _impl_.next_page_token_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealsHistoryData, _impl_.account_login_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::AllHistoryOrdersRequest, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::AllHistoryOrdersRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1130,6 +1219,8 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto::offsets[
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealHistoryData, _impl_.symbol_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealHistoryData, _impl_.external_id_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealHistoryData, _impl_.account_login_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealHistoryData, _impl_.order_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::DealHistoryData, _impl_.magic_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::OrderHistoryData, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1194,6 +1285,12 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto::offsets[
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountSummaryData, _impl_.utc_timezone_server_time_shift_minutes_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountSummaryData, _impl_.account_credit_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountSummaryData, _impl_.server_utc_offset_seconds_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountSummaryData, _impl_.account_margin_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountSummaryData, _impl_.account_margin_free_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountSummaryData, _impl_.account_margin_level_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountSummaryData, _impl_.account_margin_mode_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountSummaryData, _impl_.account_trade_allowed_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountSummaryData, _impl_.account_trade_expert_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::SymbolParamsManyRequest, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::SymbolParamsManyRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1355,42 +1452,48 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto::offsets[
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::SymbolParameters, _impl_.path_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 15, -1, sizeof(::mt5_term_api::AllHistoryOrdersRequest)},
-  { 24, -1, -1, sizeof(::mt5_term_api::AllHistoryOrdersReply)},
-  { 33, -1, -1, sizeof(::mt5_term_api::AllHistoryOrdersData)},
-  { 44, -1, -1, sizeof(::mt5_term_api::HistoryOrderInfo)},
-  { 75, 90, -1, sizeof(::mt5_term_api::PositionsHistoryRequest)},
-  { 99, -1, -1, sizeof(::mt5_term_api::PositionsHistoryReply)},
-  { 108, -1, -1, sizeof(::mt5_term_api::PositionsHistoryData)},
-  { 117, -1, -1, sizeof(::mt5_term_api::PositionHistoryInfo)},
-  { 143, -1, -1, sizeof(::mt5_term_api::TickValueWithSizeRequest)},
-  { 150, -1, -1, sizeof(::mt5_term_api::TickValueWithSizeReply)},
-  { 158, -1, -1, sizeof(::mt5_term_api::TickValueWithSizeData)},
-  { 165, -1, -1, sizeof(::mt5_term_api::TickSizeSymbol)},
-  { 178, -1, -1, sizeof(::mt5_term_api::OpenedOrdersTicketsRequest)},
-  { 184, -1, -1, sizeof(::mt5_term_api::OpenedOrdersTicketsReply)},
-  { 193, -1, -1, sizeof(::mt5_term_api::OpenedOrdersTicketsData)},
-  { 201, -1, -1, sizeof(::mt5_term_api::OpenedOrdersRequest)},
-  { 208, -1, -1, sizeof(::mt5_term_api::OpenedOrdersReply)},
-  { 217, -1, -1, sizeof(::mt5_term_api::OpenedOrdersData)},
-  { 225, -1, -1, sizeof(::mt5_term_api::PositionInfo)},
-  { 253, -1, -1, sizeof(::mt5_term_api::OpenedOrderInfo)},
-  { 286, -1, -1, sizeof(::mt5_term_api::OrderHistoryRequest)},
-  { 301, -1, -1, sizeof(::mt5_term_api::OrderHistoryReply)},
-  { 310, -1, -1, sizeof(::mt5_term_api::OrdersHistoryData)},
-  { 321, -1, -1, sizeof(::mt5_term_api::HistoryData)},
-  { 330, -1, -1, sizeof(::mt5_term_api::DealHistoryData)},
-  { 355, -1, -1, sizeof(::mt5_term_api::OrderHistoryData)},
-  { 385, -1, -1, sizeof(::mt5_term_api::AccountSummaryRequest)},
-  { 391, -1, -1, sizeof(::mt5_term_api::AccountSummaryReply)},
-  { 400, -1, -1, sizeof(::mt5_term_api::AccountSummaryData)},
-  { 419, 429, -1, sizeof(::mt5_term_api::SymbolParamsManyRequest)},
-  { 433, -1, -1, sizeof(::mt5_term_api::SymbolParamsManyReply)},
-  { 442, 452, -1, sizeof(::mt5_term_api::SymbolParamsManyData)},
-  { 456, -1, -1, sizeof(::mt5_term_api::SymbolParameters)},
+  { 0, -1, -1, sizeof(::mt5_term_api::DealsHistoryRequest)},
+  { 13, -1, -1, sizeof(::mt5_term_api::DealsHistoryReply)},
+  { 22, -1, -1, sizeof(::mt5_term_api::DealsHistoryData)},
+  { 32, 47, -1, sizeof(::mt5_term_api::AllHistoryOrdersRequest)},
+  { 56, -1, -1, sizeof(::mt5_term_api::AllHistoryOrdersReply)},
+  { 65, -1, -1, sizeof(::mt5_term_api::AllHistoryOrdersData)},
+  { 76, -1, -1, sizeof(::mt5_term_api::HistoryOrderInfo)},
+  { 107, 122, -1, sizeof(::mt5_term_api::PositionsHistoryRequest)},
+  { 131, -1, -1, sizeof(::mt5_term_api::PositionsHistoryReply)},
+  { 140, -1, -1, sizeof(::mt5_term_api::PositionsHistoryData)},
+  { 149, -1, -1, sizeof(::mt5_term_api::PositionHistoryInfo)},
+  { 175, -1, -1, sizeof(::mt5_term_api::TickValueWithSizeRequest)},
+  { 182, -1, -1, sizeof(::mt5_term_api::TickValueWithSizeReply)},
+  { 190, -1, -1, sizeof(::mt5_term_api::TickValueWithSizeData)},
+  { 197, -1, -1, sizeof(::mt5_term_api::TickSizeSymbol)},
+  { 210, -1, -1, sizeof(::mt5_term_api::OpenedOrdersTicketsRequest)},
+  { 216, -1, -1, sizeof(::mt5_term_api::OpenedOrdersTicketsReply)},
+  { 225, -1, -1, sizeof(::mt5_term_api::OpenedOrdersTicketsData)},
+  { 233, -1, -1, sizeof(::mt5_term_api::OpenedOrdersRequest)},
+  { 240, -1, -1, sizeof(::mt5_term_api::OpenedOrdersReply)},
+  { 249, -1, -1, sizeof(::mt5_term_api::OpenedOrdersData)},
+  { 257, -1, -1, sizeof(::mt5_term_api::PositionInfo)},
+  { 285, -1, -1, sizeof(::mt5_term_api::OpenedOrderInfo)},
+  { 318, -1, -1, sizeof(::mt5_term_api::OrderHistoryRequest)},
+  { 333, -1, -1, sizeof(::mt5_term_api::OrderHistoryReply)},
+  { 342, -1, -1, sizeof(::mt5_term_api::OrdersHistoryData)},
+  { 353, -1, -1, sizeof(::mt5_term_api::HistoryData)},
+  { 362, -1, -1, sizeof(::mt5_term_api::DealHistoryData)},
+  { 389, -1, -1, sizeof(::mt5_term_api::OrderHistoryData)},
+  { 419, -1, -1, sizeof(::mt5_term_api::AccountSummaryRequest)},
+  { 425, -1, -1, sizeof(::mt5_term_api::AccountSummaryReply)},
+  { 434, -1, -1, sizeof(::mt5_term_api::AccountSummaryData)},
+  { 459, 469, -1, sizeof(::mt5_term_api::SymbolParamsManyRequest)},
+  { 473, -1, -1, sizeof(::mt5_term_api::SymbolParamsManyReply)},
+  { 482, 492, -1, sizeof(::mt5_term_api::SymbolParamsManyData)},
+  { 496, -1, -1, sizeof(::mt5_term_api::SymbolParameters)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
+  &::mt5_term_api::_DealsHistoryRequest_default_instance_._instance,
+  &::mt5_term_api::_DealsHistoryReply_default_instance_._instance,
+  &::mt5_term_api::_DealsHistoryData_default_instance_._instance,
   &::mt5_term_api::_AllHistoryOrdersRequest_default_instance_._instance,
   &::mt5_term_api::_AllHistoryOrdersReply_default_instance_._instance,
   &::mt5_term_api::_AllHistoryOrdersData_default_instance_._instance,
@@ -1430,630 +1533,662 @@ const char descriptor_table_protodef_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto
   "\n!mt5-term-api-account-helper.proto\022\014mt5"
   "_term_api\032\037google/protobuf/timestamp.pro"
   "to\032\034google/api/annotations.proto\032\024mrpc-m"
-  "t5-error.proto\"\350\003\n\027AllHistoryOrdersReque"
-  "st\022F\n\rinputSortMode\030\001 \001(\0162/.mt5_term_api"
-  ".BMT5_ENUM_ORDER_HISTORY_SORT_TYPE\0222\n\tin"
-  "putFrom\030\002 \001(\0132\032.google.protobuf.Timestam"
-  "pH\000\210\001\001\0225\n\014inputFromUtc\030\010 \001(\0132\032.google.pr"
-  "otobuf.TimestampH\001\210\001\001\0220\n\007inputTo\030\003 \001(\0132\032"
-  ".google.protobuf.TimestampH\002\210\001\001\0223\n\ninput"
-  "ToUtc\030\t \001(\0132\032.google.protobuf.TimestampH"
-  "\003\210\001\001\022\027\n\npageNumber\030\004 \001(\005H\004\210\001\001\022\031\n\014itemsPe"
-  "rPage\030\005 \001(\005H\005\210\001\001\022\022\n\npage_token\030\006 \001(\t\022\021\n\t"
-  "page_size\030\007 \001(\005B\014\n\n_inputFromB\017\n\r_inputF"
-  "romUtcB\n\n\010_inputToB\r\n\013_inputToUtcB\r\n\013_pa"
-  "geNumberB\017\n\r_itemsPerPage\"}\n\025AllHistoryO"
-  "rdersReply\0222\n\004data\030\001 \001(\0132\".mt5_term_api."
-  "AllHistoryOrdersDataH\000\022$\n\005error\030\002 \001(\0132\023."
-  "mt5_term_api.ErrorH\000B\n\n\010response\"\245\001\n\024All"
-  "HistoryOrdersData\022\022\n\narrayTotal\030\001 \001(\005\022\022\n"
-  "\npageNumber\030\002 \001(\005\022\024\n\014itemsPerPage\030\003 \001(\005\022"
-  "6\n\016history_orders\030\004 \003(\0132\036.mt5_term_api.H"
-  "istoryOrderInfo\022\027\n\017next_page_token\030\005 \001(\t"
-  "\"\337\006\n\020HistoryOrderInfo\022\024\n\014record_index\030\001 "
-  "\001(\005\022\016\n\006ticket\030\002 \001(\004\022.\n\ntime_setup\030\003 \001(\0132"
-  "\032.google.protobuf.Timestamp\0222\n\016time_setu"
-  "p_utc\030\027 \001(\0132\032.google.protobuf.Timestamp\022"
-  "0\n\004type\030\004 \001(\0162\".mt5_term_api.BMT5_ENUM_O"
-  "RDER_TYPE\0222\n\005state\030\005 \001(\0162#.mt5_term_api."
-  "BMT5_ENUM_ORDER_STATE\022-\n\ttime_done\030\006 \001(\013"
+  "t5-error.proto\"\302\002\n\023DealsHistoryRequest\022-"
+  "\n\tinputFrom\030\001 \001(\0132\032.google.protobuf.Time"
+  "stamp\0220\n\014inputFromUtc\030\010 \001(\0132\032.google.pro"
+  "tobuf.Timestamp\022+\n\007inputTo\030\002 \001(\0132\032.googl"
+  "e.protobuf.Timestamp\022.\n\ninputToUtc\030\t \001(\013"
+  "2\032.google.protobuf.Timestamp\022F\n\rinputSor"
+  "tMode\030\003 \001(\0162/.mt5_term_api.BMT5_ENUM_DEA"
+  "LS_HISTORY_SORT_TYPE\022\022\n\npage_token\030\004 \001(\t"
+  "\022\021\n\tpage_size\030\005 \001(\005\"u\n\021DealsHistoryReply"
+  "\022.\n\004data\030\001 \001(\0132\036.mt5_term_api.DealsHisto"
+  "ryDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.E"
+  "rrorH\000B\n\n\010response\"\204\001\n\020DealsHistoryData\022"
+  "\022\n\narrayTotal\030\001 \001(\005\022,\n\005deals\030\002 \003(\0132\035.mt5"
+  "_term_api.DealHistoryData\022\027\n\017next_page_t"
+  "oken\030\003 \001(\t\022\025\n\raccount_login\030\004 \001(\003\"\350\003\n\027Al"
+  "lHistoryOrdersRequest\022F\n\rinputSortMode\030\001"
+  " \001(\0162/.mt5_term_api.BMT5_ENUM_ORDER_HIST"
+  "ORY_SORT_TYPE\0222\n\tinputFrom\030\002 \001(\0132\032.googl"
+  "e.protobuf.TimestampH\000\210\001\001\0225\n\014inputFromUt"
+  "c\030\010 \001(\0132\032.google.protobuf.TimestampH\001\210\001\001"
+  "\0220\n\007inputTo\030\003 \001(\0132\032.google.protobuf.Time"
+  "stampH\002\210\001\001\0223\n\ninputToUtc\030\t \001(\0132\032.google."
+  "protobuf.TimestampH\003\210\001\001\022\027\n\npageNumber\030\004 "
+  "\001(\005H\004\210\001\001\022\031\n\014itemsPerPage\030\005 \001(\005H\005\210\001\001\022\022\n\np"
+  "age_token\030\006 \001(\t\022\021\n\tpage_size\030\007 \001(\005B\014\n\n_i"
+  "nputFromB\017\n\r_inputFromUtcB\n\n\010_inputToB\r\n"
+  "\013_inputToUtcB\r\n\013_pageNumberB\017\n\r_itemsPer"
+  "Page\"}\n\025AllHistoryOrdersReply\0222\n\004data\030\001 "
+  "\001(\0132\".mt5_term_api.AllHistoryOrdersDataH"
+  "\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.ErrorH\000B"
+  "\n\n\010response\"\245\001\n\024AllHistoryOrdersData\022\022\n\n"
+  "arrayTotal\030\001 \001(\005\022\022\n\npageNumber\030\002 \001(\005\022\024\n\014"
+  "itemsPerPage\030\003 \001(\005\0226\n\016history_orders\030\004 \003"
+  "(\0132\036.mt5_term_api.HistoryOrderInfo\022\027\n\017ne"
+  "xt_page_token\030\005 \001(\t\"\337\006\n\020HistoryOrderInfo"
+  "\022\024\n\014record_index\030\001 \001(\005\022\016\n\006ticket\030\002 \001(\004\022."
+  "\n\ntime_setup\030\003 \001(\0132\032.google.protobuf.Tim"
+  "estamp\0222\n\016time_setup_utc\030\027 \001(\0132\032.google."
+  "protobuf.Timestamp\0220\n\004type\030\004 \001(\0162\".mt5_t"
+  "erm_api.BMT5_ENUM_ORDER_TYPE\0222\n\005state\030\005 "
+  "\001(\0162#.mt5_term_api.BMT5_ENUM_ORDER_STATE"
+  "\022-\n\ttime_done\030\006 \001(\0132\032.google.protobuf.Ti"
+  "mestamp\0221\n\rtime_done_utc\030\030 \001(\0132\032.google."
+  "protobuf.Timestamp\022E\n\024expiration_time_ty"
+  "pe\030\007 \001(\0162\'.mt5_term_api.BMT5_ENUM_ORDER_"
+  "TYPE_TIME\0223\n\017expiration_time\030\010 \001(\0132\032.goo"
+  "gle.protobuf.Timestamp\0227\n\023expiration_tim"
+  "e_utc\030\031 \001(\0132\032.google.protobuf.Timestamp\022"
+  "@\n\014filling_type\030\t \001(\0162*.mt5_term_api.BMT"
+  "5_ENUM_ORDER_TYPE_FILLING\022\r\n\005magic\030\n \001(\003"
+  "\022\023\n\013position_id\030\013 \001(\003\022\026\n\016position_by_id\030"
+  "\014 \001(\003\022\026\n\016volume_initial\030\r \001(\001\022\026\n\016volume_"
+  "current\030\016 \001(\001\022\022\n\nprice_open\030\017 \001(\001\022\n\n\002sl\030"
+  "\020 \001(\001\022\n\n\002tp\030\021 \001(\001\022\025\n\rprice_current\030\022 \001(\001"
+  "\022\022\n\nstop_limit\030\023 \001(\001\022\016\n\006symbol\030\024 \001(\t\022\017\n\007"
+  "comment\030\025 \001(\t\022\036\n\026order_external_id_name\030"
+  "\026 \001(\t\"\340\004\n\027PositionsHistoryRequest\022D\n\tsor"
+  "t_type\030\001 \001(\01621.mt5_term_api.AH_ENUM_POSI"
+  "TIONS_HISTORY_SORT_TYPE\022@\n\027position_open"
+  "_time_from\030\002 \001(\0132\032.google.protobuf.Times"
+  "tampH\000\210\001\001\022D\n\033position_open_time_from_utc"
+  "\030\010 \001(\0132\032.google.protobuf.TimestampH\001\210\001\001\022"
+  ">\n\025position_open_time_to\030\003 \001(\0132\032.google."
+  "protobuf.TimestampH\002\210\001\001\022B\n\031position_open"
+  "_time_to_utc\030\t \001(\0132\032.google.protobuf.Tim"
+  "estampH\003\210\001\001\022\030\n\013page_number\030\004 \001(\005H\004\210\001\001\022\033\n"
+  "\016items_per_page\030\005 \001(\005H\005\210\001\001\022\022\n\npage_token"
+  "\030\006 \001(\t\022\021\n\tpage_size\030\007 \001(\005B\032\n\030_position_o"
+  "pen_time_fromB\036\n\034_position_open_time_fro"
+  "m_utcB\030\n\026_position_open_time_toB\034\n\032_posi"
+  "tion_open_time_to_utcB\016\n\014_page_numberB\021\n"
+  "\017_items_per_page\"}\n\025PositionsHistoryRepl"
+  "y\0222\n\004data\030\001 \001(\0132\".mt5_term_api.Positions"
+  "HistoryDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_"
+  "api.ErrorH\000B\n\n\010response\"\202\001\n\024PositionsHis"
+  "toryData\022<\n\021history_positions\030\001 \003(\0132!.mt"
+  "5_term_api.PositionHistoryInfo\022\023\n\013total_"
+  "count\030\002 \001(\005\022\027\n\017next_page_token\030\003 \001(\t\"\261\004\n"
+  "\023PositionHistoryInfo\022\r\n\005index\030\001 \001(\005\022\027\n\017p"
+  "osition_ticket\030\002 \001(\004\022F\n\norder_type\030\003 \001(\016"
+  "22.mt5_term_api.AH_ENUM_POSITIONS_HISTOR"
+  "Y_ORDER_TYPE\022-\n\topen_time\030\004 \001(\0132\032.google"
+  ".protobuf.Timestamp\0221\n\ropen_time_utc\030\023 \001"
+  "(\0132\032.google.protobuf.Timestamp\022.\n\nclose_"
+  "time\030\005 \001(\0132\032.google.protobuf.Timestamp\0222"
+  "\n\016close_time_utc\030\024 \001(\0132\032.google.protobuf"
+  ".Timestamp\022\016\n\006volume\030\006 \001(\001\022\022\n\nopen_price"
+  "\030\007 \001(\001\022\023\n\013close_price\030\010 \001(\001\022\021\n\tstop_loss"
+  "\030\t \001(\001\022\023\n\013take_profit\030\n \001(\001\022\024\n\014market_va"
+  "lue\030\013 \001(\001\022\022\n\ncommission\030\014 \001(\001\022\013\n\003fee\030\r \001"
+  "(\001\022\016\n\006profit\030\016 \001(\001\022\014\n\004swap\030\017 \001(\001\022\017\n\007comm"
+  "ent\030\020 \001(\t\022\016\n\006symbol\030\021 \001(\t\022\r\n\005magic\030\022 \001(\003"
+  "\"0\n\030TickValueWithSizeRequest\022\024\n\014symbol_n"
+  "ames\030\001 \003(\t\"o\n\026TickValueWithSizeReply\0221\n\004"
+  "data\030\001 \001(\0132#.mt5_term_api.TickValueWithS"
+  "izeData\022\"\n\005error\030\002 \001(\0132\023.mt5_term_api.Er"
+  "ror\"U\n\025TickValueWithSizeData\022<\n\026symbol_t"
+  "ick_size_infos\030\001 \003(\0132\034.mt5_term_api.Tick"
+  "SizeSymbol\"\261\001\n\016TickSizeSymbol\022\r\n\005Index\030\001"
+  " \001(\005\022\014\n\004Name\030\002 \001(\t\022\026\n\016TradeTickValue\030\003 \001"
+  "(\001\022\034\n\024TradeTickValueProfit\030\004 \001(\001\022\032\n\022Trad"
+  "eTickValueLoss\030\005 \001(\001\022\025\n\rTradeTickSize\030\006 "
+  "\001(\001\022\031\n\021TradeContractSize\030\007 \001(\001\"\034\n\032Opened"
+  "OrdersTicketsRequest\"\203\001\n\030OpenedOrdersTic"
+  "ketsReply\0225\n\004data\030\001 \001(\0132%.mt5_term_api.O"
+  "penedOrdersTicketsDataH\000\022$\n\005error\030\002 \001(\0132"
+  "\023.mt5_term_api.ErrorH\000B\n\n\010response\"Y\n\027Op"
+  "enedOrdersTicketsData\022\035\n\025opened_orders_t"
+  "ickets\030\001 \003(\003\022\037\n\027opened_position_tickets\030"
+  "\002 \003(\003\"\\\n\023OpenedOrdersRequest\022E\n\rinputSor"
+  "tMode\030\001 \001(\0162..mt5_term_api.BMT5_ENUM_OPE"
+  "NED_ORDER_SORT_TYPE\"u\n\021OpenedOrdersReply"
+  "\022.\n\004data\030\001 \001(\0132\036.mt5_term_api.OpenedOrde"
+  "rsDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.E"
+  "rrorH\000B\n\n\010response\"|\n\020OpenedOrdersData\0224"
+  "\n\ropened_orders\030\001 \003(\0132\035.mt5_term_api.Ope"
+  "nedOrderInfo\0222\n\016position_infos\030\002 \003(\0132\032.m"
+  "t5_term_api.PositionInfo\"\202\005\n\014PositionInf"
+  "o\022\r\n\005index\030\001 \001(\r\022\016\n\006ticket\030\002 \001(\004\022-\n\topen"
+  "_time\030\003 \001(\0132\032.google.protobuf.Timestamp\022"
+  "1\n\ropen_time_utc\030\025 \001(\0132\032.google.protobuf"
+  ".Timestamp\022\016\n\006volume\030\004 \001(\001\022\022\n\nprice_open"
+  "\030\005 \001(\001\022\021\n\tstop_loss\030\006 \001(\001\022\023\n\013take_profit"
+  "\030\007 \001(\001\022\025\n\rprice_current\030\010 \001(\001\022\014\n\004swap\030\t "
+  "\001(\001\022\016\n\006profit\030\n \001(\001\0224\n\020last_update_time\030"
+  "\013 \001(\0132\032.google.protobuf.Timestamp\0228\n\024las"
+  "t_update_time_utc\030\026 \001(\0132\032.google.protobu"
+  "f.Timestamp\0223\n\004type\030\014 \001(\0162%.mt5_term_api"
+  ".BMT5_ENUM_POSITION_TYPE\022\024\n\014magic_number"
+  "\030\r \001(\003\022\022\n\nidentifier\030\016 \001(\003\0227\n\006reason\030\017 \001"
+  "(\0162\'.mt5_term_api.BMT5_ENUM_POSITION_REA"
+  "SON\022\016\n\006symbol\030\020 \001(\t\022\017\n\007comment\030\021 \001(\t\022\023\n\013"
+  "external_id\030\022 \001(\t\022\033\n\023position_commission"
+  "\030\023 \001(\001\022\025\n\raccount_login\030\024 \001(\003\"\377\006\n\017Opened"
+  "OrderInfo\022\r\n\005index\030\001 \001(\r\022\016\n\006ticket\030\002 \001(\004"
+  "\022\025\n\rprice_current\030\003 \001(\001\022\022\n\nprice_open\030\004 "
+  "\001(\001\022\022\n\nstop_limit\030\005 \001(\001\022\021\n\tstop_loss\030\006 \001"
+  "(\001\022\023\n\013take_profit\030\007 \001(\001\022\026\n\016volume_curren"
+  "t\030\010 \001(\001\022\026\n\016volume_initial\030\t \001(\001\022\024\n\014magic"
+  "_number\030\n \001(\003\022\016\n\006reason\030\013 \001(\005\0220\n\004type\030\014 "
+  "\001(\0162\".mt5_term_api.BMT5_ENUM_ORDER_TYPE\022"
+  "2\n\005state\030\r \001(\0162#.mt5_term_api.BMT5_ENUM_"
+  "ORDER_STATE\0223\n\017time_expiration\030\016 \001(\0132\032.g"
+  "oogle.protobuf.Timestamp\0227\n\023time_expirat"
+  "ion_utc\030\031 \001(\0132\032.google.protobuf.Timestam"
+  "p\022.\n\ntime_setup\030\017 \001(\0132\032.google.protobuf."
+  "Timestamp\0222\n\016time_setup_utc\030\032 \001(\0132\032.goog"
+  "le.protobuf.Timestamp\022-\n\ttime_done\030\020 \001(\013"
   "2\032.google.protobuf.Timestamp\0221\n\rtime_don"
-  "e_utc\030\030 \001(\0132\032.google.protobuf.Timestamp\022"
-  "E\n\024expiration_time_type\030\007 \001(\0162\'.mt5_term"
-  "_api.BMT5_ENUM_ORDER_TYPE_TIME\0223\n\017expira"
-  "tion_time\030\010 \001(\0132\032.google.protobuf.Timest"
-  "amp\0227\n\023expiration_time_utc\030\031 \001(\0132\032.googl"
-  "e.protobuf.Timestamp\022@\n\014filling_type\030\t \001"
-  "(\0162*.mt5_term_api.BMT5_ENUM_ORDER_TYPE_F"
-  "ILLING\022\r\n\005magic\030\n \001(\003\022\023\n\013position_id\030\013 \001"
-  "(\003\022\026\n\016position_by_id\030\014 \001(\003\022\026\n\016volume_ini"
-  "tial\030\r \001(\001\022\026\n\016volume_current\030\016 \001(\001\022\022\n\npr"
-  "ice_open\030\017 \001(\001\022\n\n\002sl\030\020 \001(\001\022\n\n\002tp\030\021 \001(\001\022\025"
-  "\n\rprice_current\030\022 \001(\001\022\022\n\nstop_limit\030\023 \001("
-  "\001\022\016\n\006symbol\030\024 \001(\t\022\017\n\007comment\030\025 \001(\t\022\036\n\026or"
-  "der_external_id_name\030\026 \001(\t\"\340\004\n\027Positions"
-  "HistoryRequest\022D\n\tsort_type\030\001 \001(\01621.mt5_"
-  "term_api.AH_ENUM_POSITIONS_HISTORY_SORT_"
-  "TYPE\022@\n\027position_open_time_from\030\002 \001(\0132\032."
-  "google.protobuf.TimestampH\000\210\001\001\022D\n\033positi"
-  "on_open_time_from_utc\030\010 \001(\0132\032.google.pro"
-  "tobuf.TimestampH\001\210\001\001\022>\n\025position_open_ti"
-  "me_to\030\003 \001(\0132\032.google.protobuf.TimestampH"
-  "\002\210\001\001\022B\n\031position_open_time_to_utc\030\t \001(\0132"
-  "\032.google.protobuf.TimestampH\003\210\001\001\022\030\n\013page"
-  "_number\030\004 \001(\005H\004\210\001\001\022\033\n\016items_per_page\030\005 \001"
-  "(\005H\005\210\001\001\022\022\n\npage_token\030\006 \001(\t\022\021\n\tpage_size"
-  "\030\007 \001(\005B\032\n\030_position_open_time_fromB\036\n\034_p"
-  "osition_open_time_from_utcB\030\n\026_position_"
-  "open_time_toB\034\n\032_position_open_time_to_u"
-  "tcB\016\n\014_page_numberB\021\n\017_items_per_page\"}\n"
-  "\025PositionsHistoryReply\0222\n\004data\030\001 \001(\0132\".m"
-  "t5_term_api.PositionsHistoryDataH\000\022$\n\005er"
-  "ror\030\002 \001(\0132\023.mt5_term_api.ErrorH\000B\n\n\010resp"
-  "onse\"\202\001\n\024PositionsHistoryData\022<\n\021history"
-  "_positions\030\001 \003(\0132!.mt5_term_api.Position"
-  "HistoryInfo\022\023\n\013total_count\030\002 \001(\005\022\027\n\017next"
-  "_page_token\030\003 \001(\t\"\261\004\n\023PositionHistoryInf"
-  "o\022\r\n\005index\030\001 \001(\005\022\027\n\017position_ticket\030\002 \001("
-  "\004\022F\n\norder_type\030\003 \001(\01622.mt5_term_api.AH_"
-  "ENUM_POSITIONS_HISTORY_ORDER_TYPE\022-\n\tope"
-  "n_time\030\004 \001(\0132\032.google.protobuf.Timestamp"
-  "\0221\n\ropen_time_utc\030\023 \001(\0132\032.google.protobu"
-  "f.Timestamp\022.\n\nclose_time\030\005 \001(\0132\032.google"
-  ".protobuf.Timestamp\0222\n\016close_time_utc\030\024 "
-  "\001(\0132\032.google.protobuf.Timestamp\022\016\n\006volum"
-  "e\030\006 \001(\001\022\022\n\nopen_price\030\007 \001(\001\022\023\n\013close_pri"
-  "ce\030\010 \001(\001\022\021\n\tstop_loss\030\t \001(\001\022\023\n\013take_prof"
-  "it\030\n \001(\001\022\024\n\014market_value\030\013 \001(\001\022\022\n\ncommis"
-  "sion\030\014 \001(\001\022\013\n\003fee\030\r \001(\001\022\016\n\006profit\030\016 \001(\001\022"
-  "\014\n\004swap\030\017 \001(\001\022\017\n\007comment\030\020 \001(\t\022\016\n\006symbol"
-  "\030\021 \001(\t\022\r\n\005magic\030\022 \001(\003\"0\n\030TickValueWithSi"
-  "zeRequest\022\024\n\014symbol_names\030\001 \003(\t\"o\n\026TickV"
-  "alueWithSizeReply\0221\n\004data\030\001 \001(\0132#.mt5_te"
-  "rm_api.TickValueWithSizeData\022\"\n\005error\030\002 "
-  "\001(\0132\023.mt5_term_api.Error\"U\n\025TickValueWit"
-  "hSizeData\022<\n\026symbol_tick_size_infos\030\001 \003("
-  "\0132\034.mt5_term_api.TickSizeSymbol\"\261\001\n\016Tick"
-  "SizeSymbol\022\r\n\005Index\030\001 \001(\005\022\014\n\004Name\030\002 \001(\t\022"
-  "\026\n\016TradeTickValue\030\003 \001(\001\022\034\n\024TradeTickValu"
-  "eProfit\030\004 \001(\001\022\032\n\022TradeTickValueLoss\030\005 \001("
-  "\001\022\025\n\rTradeTickSize\030\006 \001(\001\022\031\n\021TradeContrac"
-  "tSize\030\007 \001(\001\"\034\n\032OpenedOrdersTicketsReques"
-  "t\"\203\001\n\030OpenedOrdersTicketsReply\0225\n\004data\030\001"
-  " \001(\0132%.mt5_term_api.OpenedOrdersTicketsD"
-  "ataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.Erro"
-  "rH\000B\n\n\010response\"Y\n\027OpenedOrdersTicketsDa"
-  "ta\022\035\n\025opened_orders_tickets\030\001 \003(\003\022\037\n\027ope"
-  "ned_position_tickets\030\002 \003(\003\"\\\n\023OpenedOrde"
-  "rsRequest\022E\n\rinputSortMode\030\001 \001(\0162..mt5_t"
-  "erm_api.BMT5_ENUM_OPENED_ORDER_SORT_TYPE"
-  "\"u\n\021OpenedOrdersReply\022.\n\004data\030\001 \001(\0132\036.mt"
-  "5_term_api.OpenedOrdersDataH\000\022$\n\005error\030\002"
+  "e_utc\030\033 \001(\0132\032.google.protobuf.Timestamp\022"
+  "@\n\014type_filling\030\021 \001(\0162*.mt5_term_api.BMT"
+  "5_ENUM_ORDER_TYPE_FILLING\022:\n\ttype_time\030\022"
+  " \001(\0162\'.mt5_term_api.BMT5_ENUM_ORDER_TYPE"
+  "_TIME\022\023\n\013position_id\030\023 \001(\003\022\026\n\016position_b"
+  "y_id\030\024 \001(\003\022\016\n\006symbol\030\025 \001(\t\022\023\n\013external_i"
+  "d\030\026 \001(\t\022\017\n\007comment\030\027 \001(\t\022\025\n\raccount_logi"
+  "n\030\030 \001(\003\"\354\002\n\023OrderHistoryRequest\022-\n\tinput"
+  "From\030\001 \001(\0132\032.google.protobuf.Timestamp\0220"
+  "\n\014inputFromUtc\030\010 \001(\0132\032.google.protobuf.T"
+  "imestamp\022+\n\007inputTo\030\002 \001(\0132\032.google.proto"
+  "buf.Timestamp\022.\n\ninputToUtc\030\t \001(\0132\032.goog"
+  "le.protobuf.Timestamp\022F\n\rinputSortMode\030\003"
+  " \001(\0162/.mt5_term_api.BMT5_ENUM_ORDER_HIST"
+  "ORY_SORT_TYPE\022\022\n\npageNumber\030\004 \001(\005\022\024\n\014ite"
+  "msPerPage\030\005 \001(\005\022\022\n\npage_token\030\006 \001(\t\022\021\n\tp"
+  "age_size\030\007 \001(\005\"v\n\021OrderHistoryReply\022/\n\004d"
+  "ata\030\001 \001(\0132\037.mt5_term_api.OrdersHistoryDa"
+  "taH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.Error"
+  "H\000B\n\n\010response\"\233\001\n\021OrdersHistoryData\022\022\n\n"
+  "arrayTotal\030\001 \001(\005\022\022\n\npageNumber\030\002 \001(\005\022\024\n\014"
+  "itemsPerPage\030\003 \001(\005\022/\n\014history_data\030\004 \003(\013"
+  "2\031.mt5_term_api.HistoryData\022\027\n\017next_page"
+  "_token\030\005 \001(\t\"\210\001\n\013HistoryData\022\r\n\005index\030\001 "
+  "\001(\r\0225\n\rhistory_order\030\002 \001(\0132\036.mt5_term_ap"
+  "i.OrderHistoryData\0223\n\014history_deal\030\003 \001(\013"
+  "2\035.mt5_term_api.DealHistoryData\"\242\004\n\017Deal"
+  "HistoryData\022\016\n\006ticket\030\001 \001(\004\022\016\n\006profit\030\002 "
+  "\001(\001\022\022\n\ncommission\030\003 \001(\001\022\013\n\003fee\030\004 \001(\001\022\r\n\005"
+  "price\030\005 \001(\001\022\021\n\tstop_loss\030\006 \001(\001\022\023\n\013take_p"
+  "rofit\030\007 \001(\001\022\014\n\004swap\030\010 \001(\001\022\016\n\006volume\030\t \001("
+  "\001\022;\n\nentry_type\030\n \001(\0162\'.mt5_term_api.BMT"
+  "5_ENUM_DEAL_ENTRY_TYPE\022(\n\004time\030\013 \001(\0132\032.g"
+  "oogle.protobuf.Timestamp\022,\n\010time_utc\030\023 \001"
+  "(\0132\032.google.protobuf.Timestamp\022/\n\004type\030\014"
+  " \001(\0162!.mt5_term_api.BMT5_ENUM_DEAL_TYPE\022"
+  "3\n\006reason\030\r \001(\0162#.mt5_term_api.BMT5_ENUM"
+  "_DEAL_REASON\022\023\n\013position_id\030\016 \001(\004\022\017\n\007com"
+  "ment\030\017 \001(\t\022\016\n\006symbol\030\020 \001(\t\022\023\n\013external_i"
+  "d\030\021 \001(\t\022\025\n\raccount_login\030\022 \001(\003\022\r\n\005order\030"
+  "\024 \001(\004\022\r\n\005magic\030\025 \001(\003\"\311\006\n\020OrderHistoryDat"
+  "a\022\016\n\006ticket\030\001 \001(\004\022.\n\nsetup_time\030\002 \001(\0132\032."
+  "google.protobuf.Timestamp\0222\n\016setup_time_"
+  "utc\030\026 \001(\0132\032.google.protobuf.Timestamp\022-\n"
+  "\tdone_time\030\003 \001(\0132\032.google.protobuf.Times"
+  "tamp\0221\n\rdone_time_utc\030\027 \001(\0132\032.google.pro"
+  "tobuf.Timestamp\0222\n\005state\030\004 \001(\0162#.mt5_ter"
+  "m_api.BMT5_ENUM_ORDER_STATE\022\025\n\rprice_cur"
+  "rent\030\005 \001(\001\022\022\n\nprice_open\030\006 \001(\001\022\022\n\nstop_l"
+  "imit\030\007 \001(\001\022\021\n\tstop_loss\030\010 \001(\001\022\023\n\013take_pr"
+  "ofit\030\t \001(\001\022\026\n\016volume_current\030\n \001(\001\022\026\n\016vo"
+  "lume_initial\030\013 \001(\001\022\024\n\014magic_number\030\014 \001(\003"
+  "\0220\n\004type\030\r \001(\0162\".mt5_term_api.BMT5_ENUM_"
+  "ORDER_TYPE\0223\n\017time_expiration\030\016 \001(\0132\032.go"
+  "ogle.protobuf.Timestamp\0227\n\023time_expirati"
+  "on_utc\030\030 \001(\0132\032.google.protobuf.Timestamp"
+  "\022@\n\014type_filling\030\017 \001(\0162*.mt5_term_api.BM"
+  "T5_ENUM_ORDER_TYPE_FILLING\022:\n\ttype_time\030"
+  "\020 \001(\0162\'.mt5_term_api.BMT5_ENUM_ORDER_TYP"
+  "E_TIME\022\023\n\013position_id\030\021 \001(\004\022\016\n\006symbol\030\022 "
+  "\001(\t\022\023\n\013external_id\030\023 \001(\t\022\017\n\007comment\030\024 \001("
+  "\t\022\025\n\raccount_login\030\025 \001(\003\"\027\n\025AccountSumma"
+  "ryRequest\"y\n\023AccountSummaryReply\0220\n\004data"
+  "\030\001 \001(\0132 .mt5_term_api.AccountSummaryData"
+  "H\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.ErrorH\000"
+  "B\n\n\010response\"\264\005\n\022AccountSummaryData\022\025\n\ra"
+  "ccount_login\030\001 \001(\003\022\027\n\017account_balance\030\002 "
+  "\001(\001\022\026\n\016account_equity\030\003 \001(\001\022\031\n\021account_u"
+  "ser_name\030\004 \001(\t\022\030\n\020account_leverage\030\005 \001(\003"
+  "\022B\n\022account_trade_mode\030\006 \001(\0162&.mt5_term_"
+  "api.MrpcEnumAccountTradeMode\022\034\n\024account_"
+  "company_name\030\007 \001(\t\022\030\n\020account_currency\030\010"
+  " \001(\t\022/\n\013server_time\030\t \001(\0132\032.google.proto"
+  "buf.Timestamp\0223\n\017server_time_utc\030\016 \001(\0132\032"
+  ".google.protobuf.Timestamp\022.\n&utc_timezo"
+  "ne_server_time_shift_minutes\030\n \001(\003\022\026\n\016ac"
+  "count_credit\030\013 \001(\001\022!\n\031server_utc_offset_"
+  "seconds\030\r \001(\005\022\026\n\016account_margin\030\014 \001(\001\022\033\n"
+  "\023account_margin_free\030\017 \001(\001\022\034\n\024account_ma"
+  "rgin_level\030\020 \001(\001\022D\n\023account_margin_mode\030"
+  "\021 \001(\0162\'.mt5_term_api.MrpcEnumAccountMarg"
+  "inMode\022\035\n\025account_trade_allowed\030\022 \001(\010\022\034\n"
+  "\024account_trade_expert\030\023 \001(\010\"\362\001\n\027SymbolPa"
+  "ramsManyRequest\022\030\n\013symbol_name\030\001 \001(\tH\000\210\001"
+  "\001\022E\n\tsort_type\030\002 \001(\0162-.mt5_term_api.AH_S"
+  "YMBOL_PARAMS_MANY_SORT_TYPEH\001\210\001\001\022\030\n\013page"
+  "_number\030\003 \001(\005H\002\210\001\001\022\033\n\016items_per_page\030\004 \001"
+  "(\005H\003\210\001\001B\016\n\014_symbol_nameB\014\n\n_sort_typeB\016\n"
+  "\014_page_numberB\021\n\017_items_per_page\"}\n\025Symb"
+  "olParamsManyReply\0222\n\004data\030\001 \001(\0132\".mt5_te"
+  "rm_api.SymbolParamsManyDataH\000\022$\n\005error\030\002"
   " \001(\0132\023.mt5_term_api.ErrorH\000B\n\n\010response\""
-  "|\n\020OpenedOrdersData\0224\n\ropened_orders\030\001 \003"
-  "(\0132\035.mt5_term_api.OpenedOrderInfo\0222\n\016pos"
-  "ition_infos\030\002 \003(\0132\032.mt5_term_api.Positio"
-  "nInfo\"\202\005\n\014PositionInfo\022\r\n\005index\030\001 \001(\r\022\016\n"
-  "\006ticket\030\002 \001(\004\022-\n\topen_time\030\003 \001(\0132\032.googl"
-  "e.protobuf.Timestamp\0221\n\ropen_time_utc\030\025 "
-  "\001(\0132\032.google.protobuf.Timestamp\022\016\n\006volum"
-  "e\030\004 \001(\001\022\022\n\nprice_open\030\005 \001(\001\022\021\n\tstop_loss"
-  "\030\006 \001(\001\022\023\n\013take_profit\030\007 \001(\001\022\025\n\rprice_cur"
-  "rent\030\010 \001(\001\022\014\n\004swap\030\t \001(\001\022\016\n\006profit\030\n \001(\001"
-  "\0224\n\020last_update_time\030\013 \001(\0132\032.google.prot"
-  "obuf.Timestamp\0228\n\024last_update_time_utc\030\026"
-  " \001(\0132\032.google.protobuf.Timestamp\0223\n\004type"
-  "\030\014 \001(\0162%.mt5_term_api.BMT5_ENUM_POSITION"
-  "_TYPE\022\024\n\014magic_number\030\r \001(\003\022\022\n\nidentifie"
-  "r\030\016 \001(\003\0227\n\006reason\030\017 \001(\0162\'.mt5_term_api.B"
-  "MT5_ENUM_POSITION_REASON\022\016\n\006symbol\030\020 \001(\t"
-  "\022\017\n\007comment\030\021 \001(\t\022\023\n\013external_id\030\022 \001(\t\022\033"
-  "\n\023position_commission\030\023 \001(\001\022\025\n\raccount_l"
-  "ogin\030\024 \001(\003\"\377\006\n\017OpenedOrderInfo\022\r\n\005index\030"
-  "\001 \001(\r\022\016\n\006ticket\030\002 \001(\004\022\025\n\rprice_current\030\003"
-  " \001(\001\022\022\n\nprice_open\030\004 \001(\001\022\022\n\nstop_limit\030\005"
-  " \001(\001\022\021\n\tstop_loss\030\006 \001(\001\022\023\n\013take_profit\030\007"
-  " \001(\001\022\026\n\016volume_current\030\010 \001(\001\022\026\n\016volume_i"
-  "nitial\030\t \001(\001\022\024\n\014magic_number\030\n \001(\003\022\016\n\006re"
-  "ason\030\013 \001(\005\0220\n\004type\030\014 \001(\0162\".mt5_term_api."
-  "BMT5_ENUM_ORDER_TYPE\0222\n\005state\030\r \001(\0162#.mt"
-  "5_term_api.BMT5_ENUM_ORDER_STATE\0223\n\017time"
-  "_expiration\030\016 \001(\0132\032.google.protobuf.Time"
-  "stamp\0227\n\023time_expiration_utc\030\031 \001(\0132\032.goo"
-  "gle.protobuf.Timestamp\022.\n\ntime_setup\030\017 \001"
-  "(\0132\032.google.protobuf.Timestamp\0222\n\016time_s"
-  "etup_utc\030\032 \001(\0132\032.google.protobuf.Timesta"
-  "mp\022-\n\ttime_done\030\020 \001(\0132\032.google.protobuf."
-  "Timestamp\0221\n\rtime_done_utc\030\033 \001(\0132\032.googl"
-  "e.protobuf.Timestamp\022@\n\014type_filling\030\021 \001"
-  "(\0162*.mt5_term_api.BMT5_ENUM_ORDER_TYPE_F"
-  "ILLING\022:\n\ttype_time\030\022 \001(\0162\'.mt5_term_api"
-  ".BMT5_ENUM_ORDER_TYPE_TIME\022\023\n\013position_i"
-  "d\030\023 \001(\003\022\026\n\016position_by_id\030\024 \001(\003\022\016\n\006symbo"
-  "l\030\025 \001(\t\022\023\n\013external_id\030\026 \001(\t\022\017\n\007comment\030"
-  "\027 \001(\t\022\025\n\raccount_login\030\030 \001(\003\"\354\002\n\023OrderHi"
-  "storyRequest\022-\n\tinputFrom\030\001 \001(\0132\032.google"
-  ".protobuf.Timestamp\0220\n\014inputFromUtc\030\010 \001("
-  "\0132\032.google.protobuf.Timestamp\022+\n\007inputTo"
-  "\030\002 \001(\0132\032.google.protobuf.Timestamp\022.\n\nin"
-  "putToUtc\030\t \001(\0132\032.google.protobuf.Timesta"
-  "mp\022F\n\rinputSortMode\030\003 \001(\0162/.mt5_term_api"
-  ".BMT5_ENUM_ORDER_HISTORY_SORT_TYPE\022\022\n\npa"
-  "geNumber\030\004 \001(\005\022\024\n\014itemsPerPage\030\005 \001(\005\022\022\n\n"
-  "page_token\030\006 \001(\t\022\021\n\tpage_size\030\007 \001(\005\"v\n\021O"
-  "rderHistoryReply\022/\n\004data\030\001 \001(\0132\037.mt5_ter"
-  "m_api.OrdersHistoryDataH\000\022$\n\005error\030\002 \001(\013"
-  "2\023.mt5_term_api.ErrorH\000B\n\n\010response\"\233\001\n\021"
-  "OrdersHistoryData\022\022\n\narrayTotal\030\001 \001(\005\022\022\n"
-  "\npageNumber\030\002 \001(\005\022\024\n\014itemsPerPage\030\003 \001(\005\022"
-  "/\n\014history_data\030\004 \003(\0132\031.mt5_term_api.His"
-  "toryData\022\027\n\017next_page_token\030\005 \001(\t\"\210\001\n\013Hi"
-  "storyData\022\r\n\005index\030\001 \001(\r\0225\n\rhistory_orde"
-  "r\030\002 \001(\0132\036.mt5_term_api.OrderHistoryData\022"
-  "3\n\014history_deal\030\003 \001(\0132\035.mt5_term_api.Dea"
-  "lHistoryData\"\204\004\n\017DealHistoryData\022\016\n\006tick"
-  "et\030\001 \001(\004\022\016\n\006profit\030\002 \001(\001\022\022\n\ncommission\030\003"
-  " \001(\001\022\013\n\003fee\030\004 \001(\001\022\r\n\005price\030\005 \001(\001\022\021\n\tstop"
-  "_loss\030\006 \001(\001\022\023\n\013take_profit\030\007 \001(\001\022\014\n\004swap"
-  "\030\010 \001(\001\022\016\n\006volume\030\t \001(\001\022;\n\nentry_type\030\n \001"
-  "(\0162\'.mt5_term_api.BMT5_ENUM_DEAL_ENTRY_T"
-  "YPE\022(\n\004time\030\013 \001(\0132\032.google.protobuf.Time"
-  "stamp\022,\n\010time_utc\030\023 \001(\0132\032.google.protobu"
-  "f.Timestamp\022/\n\004type\030\014 \001(\0162!.mt5_term_api"
-  ".BMT5_ENUM_DEAL_TYPE\0223\n\006reason\030\r \001(\0162#.m"
-  "t5_term_api.BMT5_ENUM_DEAL_REASON\022\023\n\013pos"
-  "ition_id\030\016 \001(\004\022\017\n\007comment\030\017 \001(\t\022\016\n\006symbo"
-  "l\030\020 \001(\t\022\023\n\013external_id\030\021 \001(\t\022\025\n\raccount_"
-  "login\030\022 \001(\003\"\311\006\n\020OrderHistoryData\022\016\n\006tick"
-  "et\030\001 \001(\004\022.\n\nsetup_time\030\002 \001(\0132\032.google.pr"
-  "otobuf.Timestamp\0222\n\016setup_time_utc\030\026 \001(\013"
-  "2\032.google.protobuf.Timestamp\022-\n\tdone_tim"
-  "e\030\003 \001(\0132\032.google.protobuf.Timestamp\0221\n\rd"
-  "one_time_utc\030\027 \001(\0132\032.google.protobuf.Tim"
-  "estamp\0222\n\005state\030\004 \001(\0162#.mt5_term_api.BMT"
-  "5_ENUM_ORDER_STATE\022\025\n\rprice_current\030\005 \001("
-  "\001\022\022\n\nprice_open\030\006 \001(\001\022\022\n\nstop_limit\030\007 \001("
-  "\001\022\021\n\tstop_loss\030\010 \001(\001\022\023\n\013take_profit\030\t \001("
-  "\001\022\026\n\016volume_current\030\n \001(\001\022\026\n\016volume_init"
-  "ial\030\013 \001(\001\022\024\n\014magic_number\030\014 \001(\003\0220\n\004type\030"
-  "\r \001(\0162\".mt5_term_api.BMT5_ENUM_ORDER_TYP"
-  "E\0223\n\017time_expiration\030\016 \001(\0132\032.google.prot"
-  "obuf.Timestamp\0227\n\023time_expiration_utc\030\030 "
-  "\001(\0132\032.google.protobuf.Timestamp\022@\n\014type_"
-  "filling\030\017 \001(\0162*.mt5_term_api.BMT5_ENUM_O"
-  "RDER_TYPE_FILLING\022:\n\ttype_time\030\020 \001(\0162\'.m"
-  "t5_term_api.BMT5_ENUM_ORDER_TYPE_TIME\022\023\n"
-  "\013position_id\030\021 \001(\004\022\016\n\006symbol\030\022 \001(\t\022\023\n\013ex"
-  "ternal_id\030\023 \001(\t\022\017\n\007comment\030\024 \001(\t\022\025\n\racco"
-  "unt_login\030\025 \001(\003\"\027\n\025AccountSummaryRequest"
-  "\"y\n\023AccountSummaryReply\0220\n\004data\030\001 \001(\0132 ."
-  "mt5_term_api.AccountSummaryDataH\000\022$\n\005err"
-  "or\030\002 \001(\0132\023.mt5_term_api.ErrorH\000B\n\n\010respo"
-  "nse\"\336\003\n\022AccountSummaryData\022\025\n\raccount_lo"
-  "gin\030\001 \001(\003\022\027\n\017account_balance\030\002 \001(\001\022\026\n\016ac"
-  "count_equity\030\003 \001(\001\022\031\n\021account_user_name\030"
-  "\004 \001(\t\022\030\n\020account_leverage\030\005 \001(\003\022B\n\022accou"
-  "nt_trade_mode\030\006 \001(\0162&.mt5_term_api.MrpcE"
-  "numAccountTradeMode\022\034\n\024account_company_n"
-  "ame\030\007 \001(\t\022\030\n\020account_currency\030\010 \001(\t\022/\n\013s"
-  "erver_time\030\t \001(\0132\032.google.protobuf.Times"
-  "tamp\0223\n\017server_time_utc\030\016 \001(\0132\032.google.p"
-  "rotobuf.Timestamp\022.\n&utc_timezone_server"
-  "_time_shift_minutes\030\n \001(\003\022\026\n\016account_cre"
-  "dit\030\013 \001(\001\022!\n\031server_utc_offset_seconds\030\r"
-  " \001(\005\"\362\001\n\027SymbolParamsManyRequest\022\030\n\013symb"
-  "ol_name\030\001 \001(\tH\000\210\001\001\022E\n\tsort_type\030\002 \001(\0162-."
-  "mt5_term_api.AH_SYMBOL_PARAMS_MANY_SORT_"
-  "TYPEH\001\210\001\001\022\030\n\013page_number\030\003 \001(\005H\002\210\001\001\022\033\n\016i"
-  "tems_per_page\030\004 \001(\005H\003\210\001\001B\016\n\014_symbol_name"
-  "B\014\n\n_sort_typeB\016\n\014_page_numberB\021\n\017_items"
-  "_per_page\"}\n\025SymbolParamsManyReply\0222\n\004da"
-  "ta\030\001 \001(\0132\".mt5_term_api.SymbolParamsMany"
-  "DataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.Err"
-  "orH\000B\n\n\010response\"\275\001\n\024SymbolParamsManyDat"
-  "a\0224\n\014symbol_infos\030\001 \003(\0132\036.mt5_term_api.S"
-  "ymbolParameters\022\025\n\rsymbols_total\030\002 \001(\005\022\030"
-  "\n\013page_number\030\003 \001(\005H\000\210\001\001\022\033\n\016items_per_pa"
-  "ge\030\004 \001(\005H\001\210\001\001B\016\n\014_page_numberB\021\n\017_items_"
-  "per_page\"\354\031\n\020SymbolParameters\022\014\n\004name\030\001 "
-  "\001(\t\022\013\n\003bid\030\002 \001(\001\022\020\n\010bid_high\030\003 \001(\001\022\017\n\007bi"
-  "d_low\030\004 \001(\001\022\013\n\003ask\030\005 \001(\001\022\020\n\010ask_high\030\006 \001"
-  "(\001\022\017\n\007ask_low\030\007 \001(\001\022\014\n\004last\030\010 \001(\001\022\021\n\tlas"
-  "t_high\030\t \001(\001\022\020\n\010last_low\030\n \001(\001\022\023\n\013volume"
-  "_real\030\013 \001(\001\022\030\n\020volume_high_real\030\014 \001(\001\022\027\n"
-  "\017volume_low_real\030\r \001(\001\022\025\n\roption_strike\030"
-  "\016 \001(\001\022\r\n\005point\030\017 \001(\001\022\030\n\020trade_tick_value"
-  "\030\020 \001(\001\022\037\n\027trade_tick_value_profit\030\021 \001(\001\022"
-  "\035\n\025trade_tick_value_loss\030\022 \001(\001\022\027\n\017trade_"
-  "tick_size\030\023 \001(\001\022\033\n\023trade_contract_size\030\024"
-  " \001(\001\022\036\n\026trade_accrued_interest\030\025 \001(\001\022\030\n\020"
-  "trade_face_value\030\026 \001(\001\022\034\n\024trade_liquidit"
-  "y_rate\030\027 \001(\001\022\022\n\nvolume_min\030\030 \001(\001\022\022\n\nvolu"
-  "me_max\030\031 \001(\001\022\023\n\013volume_step\030\032 \001(\001\022\024\n\014vol"
-  "ume_limit\030\033 \001(\001\022\021\n\tswap_long\030\034 \001(\001\022\022\n\nsw"
-  "ap_short\030\035 \001(\001\022\023\n\013swap_sunday\030\036 \001(\001\022\023\n\013s"
-  "wap_monday\030\037 \001(\001\022\024\n\014swap_tuesday\030  \001(\001\022\026"
-  "\n\016swap_wednesday\030! \001(\001\022\025\n\rswap_thursday\030"
-  "\" \001(\001\022\023\n\013swap_friday\030# \001(\001\022\025\n\rswap_satur"
-  "day\030$ \001(\001\022\026\n\016margin_initial\030% \001(\001\022\032\n\022mar"
-  "gin_maintenance\030& \001(\001\022\026\n\016session_volume\030"
-  "\' \001(\001\022\030\n\020session_turnover\030( \001(\001\022\030\n\020sessi"
-  "on_interest\030) \001(\001\022!\n\031session_buy_orders_"
-  "volume\030* \001(\001\022\"\n\032session_sell_orders_volu"
-  "me\030+ \001(\001\022\024\n\014session_open\030, \001(\001\022\025\n\rsessio"
-  "n_close\030- \001(\001\022\022\n\nsession_aw\030. \001(\001\022 \n\030ses"
-  "sion_price_settlement\030/ \001(\001\022\037\n\027session_p"
-  "rice_limit_min\0300 \001(\001\022\037\n\027session_price_li"
-  "mit_max\0301 \001(\001\022\025\n\rmargin_hedged\0302 \001(\001\022\024\n\014"
-  "price_change\0303 \001(\001\022\030\n\020price_volatility\0304"
-  " \001(\001\022\031\n\021price_theoretical\0305 \001(\001\022\023\n\013price"
-  "_delta\0306 \001(\001\022\023\n\013price_theta\0307 \001(\001\022\023\n\013pri"
-  "ce_gamma\0308 \001(\001\022\022\n\nprice_vega\0309 \001(\001\022\021\n\tpr"
-  "ice_rho\030: \001(\001\022\023\n\013price_omega\030; \001(\001\022\031\n\021pr"
-  "ice_sensitivity\030< \001(\001\0225\n\006sector\030= \001(\0162%."
-  "mt5_term_api.BMT5_ENUM_SYMBOL_SECTOR\0229\n\010"
-  "industry\030> \001(\0162\'.mt5_term_api.BMT5_ENUM_"
-  "SYMBOL_INDUSTRY\022\016\n\006custom\030\? \001(\010\022\030\n\020backg"
-  "round_color\030@ \001(\t\022=\n\nchart_mode\030A \001(\0162)."
-  "mt5_term_api.BMT5_ENUM_SYMBOL_CHART_MODE"
-  "\022\r\n\005exist\030B \001(\010\022\016\n\006select\030C \001(\010\022\032\n\022subsc"
-  "ription_delay\030D \001(\005\022\017\n\007visible\030E \001(\010\022\025\n\r"
-  "session_deals\030F \001(\003\022\032\n\022session_buy_order"
-  "s\030G \001(\003\022\033\n\023session_sell_orders\030H \001(\003\022\016\n\006"
-  "volume\030I \001(\003\022\023\n\013volume_high\030J \001(\003\022\022\n\nvol"
-  "ume_low\030K \001(\003\022(\n\004time\030L \001(\0132\032.google.pro"
-  "tobuf.Timestamp\022,\n\010time_utc\030q \001(\0132\032.goog"
-  "le.protobuf.Timestamp\022\020\n\010time_msc\030M \001(\003\022"
-  "\024\n\014time_msc_utc\030r \001(\003\022\016\n\006digits\030N \001(\005\022\024\n"
-  "\014spread_float\030O \001(\010\022\016\n\006spread\030P \001(\005\022\030\n\020t"
-  "icks_book_depth\030Q \001(\005\022A\n\017trade_calc_mode"
-  "\030R \001(\0162(.mt5_term_api.BMT5_ENUM_SYMBOL_C"
-  "ALC_MODE\022=\n\ntrade_mode\030S \001(\0162).mt5_term_"
-  "api.BMT5_ENUM_SYMBOL_TRADE_MODE\022.\n\nstart"
-  "_time\030T \001(\0132\032.google.protobuf.Timestamp\022"
-  "2\n\016start_time_utc\030s \001(\0132\032.google.protobu"
-  "f.Timestamp\0223\n\017expiration_time\030U \001(\0132\032.g"
-  "oogle.protobuf.Timestamp\0227\n\023expiration_t"
-  "ime_utc\030t \001(\0132\032.google.protobuf.Timestam"
-  "p\022\031\n\021trade_stops_level\030V \001(\005\022\032\n\022trade_fr"
-  "eeze_level\030W \001(\005\022F\n\016trade_exe_mode\030X \001(\016"
-  "2..mt5_term_api.BMT5_ENUM_SYMBOL_TRADE_E"
-  "XECUTION\022;\n\tswap_mode\030Y \001(\0162(.mt5_term_a"
-  "pi.BMT5_ENUM_SYMBOL_SWAP_MODE\022@\n\023swap_ro"
-  "llover_3days\030Z \001(\0162#.mt5_term_api.BMT5_E"
-  "NUM_DAY_OF_WEEK\022\035\n\025margin_hedged_use_leg"
-  "\030[ \001(\010\022\027\n\017expiration_mode\030\\ \001(\005\022@\n\014filli"
-  "ng_mode\030] \003(\0162*.mt5_term_api.BMT5_ENUM_O"
-  "RDER_TYPE_FILLING\0226\n\norder_mode\030^ \001(\0162\"."
-  "mt5_term_api.BMT5_ENUM_ORDER_TYPE\022E\n\016ord"
-  "er_gtc_mode\030_ \001(\0162-.mt5_term_api.BMT5_EN"
-  "UM_SYMBOL_ORDER_GTC_MODE\022\?\n\013option_mode\030"
-  "` \001(\0162*.mt5_term_api.BMT5_ENUM_SYMBOL_OP"
-  "TION_MODE\022A\n\014option_right\030a \001(\0162+.mt5_te"
-  "rm_api.BMT5_ENUM_SYMBOL_OPTION_RIGHT\022\r\n\005"
-  "basis\030b \001(\t\022\020\n\010category\030c \001(\t\022\017\n\007country"
-  "\030d \001(\t\022\023\n\013sector_name\030e \001(\t\022\025\n\rindustry_"
-  "name\030f \001(\t\022\025\n\rcurrency_base\030g \001(\t\022\027\n\017cur"
-  "rency_profit\030h \001(\t\022\027\n\017currency_margin\030i "
-  "\001(\t\022\014\n\004bank\030j \001(\t\022\027\n\017sym_description\030k \001"
-  "(\t\022\020\n\010exchange\030l \001(\t\022\017\n\007formula\030m \001(\t\022\014\n"
-  "\004isin\030n \001(\t\022\014\n\004page\030o \001(\t\022\014\n\004path\030p \001(\t*"
-  "\235\001\n#AH_ENUM_POSITIONS_HISTORY_SORT_TYPE\022"
-  "\035\n\031AH_POSITION_OPEN_TIME_ASC\020\000\022\036\n\032AH_POS"
-  "ITION_OPEN_TIME_DESC\020\001\022\032\n\026AH_POSITION_TI"
-  "CKET_ASC\020\002\022\033\n\027AH_POSITION_TICKET_DESC\020\003*"
-  "\252\002\n$AH_ENUM_POSITIONS_HISTORY_ORDER_TYPE"
-  "\022\025\n\021AH_ORDER_TYPE_BUY\020\000\022\026\n\022AH_ORDER_TYPE"
-  "_SELL\020\001\022\033\n\027AH_ORDER_TYPE_BUY_LIMIT\020\002\022\034\n\030"
-  "AH_ORDER_TYPE_SELL_LIMIT\020\003\022\032\n\026AH_ORDER_T"
-  "YPE_BUY_STOP\020\004\022\033\n\027AH_ORDER_TYPE_SELL_STO"
-  "P\020\005\022 \n\034AH_ORDER_TYPE_BUY_STOP_LIMIT\020\006\022!\n"
-  "\035AH_ORDER_TYPE_SELL_STOP_LIMIT\020\007\022\032\n\026AH_O"
-  "RDER_TYPE_CLOSE_BY\020\010*\344\001\n BMT5_ENUM_OPENE"
-  "D_ORDER_SORT_TYPE\022+\n\'BMT5_OPENED_ORDER_S"
-  "ORT_BY_OPEN_TIME_ASC\020\000\022,\n(BMT5_OPENED_OR"
-  "DER_SORT_BY_OPEN_TIME_DESC\020\001\0221\n-BMT5_OPE"
-  "NED_ORDER_SORT_BY_ORDER_TICKET_ID_ASC\020\002\022"
-  "2\n.BMT5_OPENED_ORDER_SORT_BY_ORDER_TICKE"
-  "T_ID_DESC\020\003*R\n\027BMT5_ENUM_POSITION_TYPE\022\032"
-  "\n\026BMT5_POSITION_TYPE_BUY\020\000\022\033\n\027BMT5_POSIT"
-  "ION_TYPE_SELL\020\001*\333\001\n\031BMT5_ENUM_POSITION_R"
-  "EASON\022\037\n\033BMT5_POSITION_REASON_CLIENT\020\000\022\037"
-  "\n\033BMT5_POSITION_REASON_MOBILE\020\001\022\034\n\030BMT5_"
-  "POSITION_REASON_WEB\020\002\022\037\n\033BMT5_POSITION_R"
-  "EASON_EXPERT\020\003\022\023\n\017ORDER_REASON_SL\020\004\022\023\n\017O"
-  "RDER_REASON_TP\020\005\022\023\n\017ORDER_REASON_SO\020\006*\217\001"
-  "\n\031BMT5_ENUM_ORDER_TYPE_TIME\022\027\n\023BMT5_ORDE"
-  "R_TIME_GTC\020\000\022\027\n\023BMT5_ORDER_TIME_DAY\020\001\022\035\n"
-  "\031BMT5_ORDER_TIME_SPECIFIED\020\002\022!\n\035BMT5_ORD"
-  "ER_TIME_SPECIFIED_DAY\020\003*\221\001\n\034BMT5_ENUM_OR"
-  "DER_TYPE_FILLING\022\032\n\026BMT5_ORDER_FILLING_F"
-  "OK\020\000\022\032\n\026BMT5_ORDER_FILLING_IOC\020\001\022\032\n\026BMT5"
-  "_ORDER_FILLING_BOC\020\003\022\035\n\031BMT5_ORDER_FILLI"
-  "NG_RETURN\020\002*\254\002\n\024BMT5_ENUM_ORDER_TYPE\022\027\n\023"
-  "BMT5_ORDER_TYPE_BUY\020\000\022\030\n\024BMT5_ORDER_TYPE"
-  "_SELL\020\001\022\035\n\031BMT5_ORDER_TYPE_BUY_LIMIT\020\002\022\036"
-  "\n\032BMT5_ORDER_TYPE_SELL_LIMIT\020\003\022\034\n\030BMT5_O"
-  "RDER_TYPE_BUY_STOP\020\004\022\035\n\031BMT5_ORDER_TYPE_"
-  "SELL_STOP\020\005\022\"\n\036BMT5_ORDER_TYPE_BUY_STOP_"
-  "LIMIT\020\006\022#\n\037BMT5_ORDER_TYPE_SELL_STOP_LIM"
-  "IT\020\007\022\034\n\030BMT5_ORDER_TYPE_CLOSE_BY\020\010*\323\002\n\025B"
-  "MT5_ENUM_DEAL_REASON\022\033\n\027BMT5_DEAL_REASON"
-  "_CLIENT\020\000\022\033\n\027BMT5_DEAL_REASON_MOBILE\020\001\022\030"
-  "\n\024BMT5_DEAL_REASON_WEB\020\002\022\033\n\027BMT5_DEAL_RE"
-  "ASON_EXPERT\020\003\022\027\n\023BMT5_DEAL_REASON_SL\020\004\022\027"
-  "\n\023BMT5_DEAL_REASON_TP\020\005\022\027\n\023BMT5_DEAL_REA"
-  "SON_SO\020\006\022\035\n\031BMT5_DEAL_REASON_ROLLOVER\020\007\022"
-  "\034\n\030BMT5_DEAL_REASON_VMARGIN\020\010\022\032\n\026BMT5_DE"
-  "AL_REASON_SPLIT\020\t\022%\n!BMT5_DEAL_REASON_CO"
-  "RPORATE_ACTION\020\n*\277\004\n\023BMT5_ENUM_DEAL_TYPE"
-  "\022\026\n\022BMT5_DEAL_TYPE_BUY\020\000\022\027\n\023BMT5_DEAL_TY"
-  "PE_SELL\020\001\022\032\n\026BMT5_DEAL_TYPE_BALANCE\020\002\022\031\n"
-  "\025BMT5_DEAL_TYPE_CREDIT\020\003\022\031\n\025BMT5_DEAL_TY"
-  "PE_CHARGE\020\004\022\035\n\031BMT5_DEAL_TYPE_CORRECTION"
-  "\020\005\022\030\n\024BMT5_DEAL_TYPE_BONUS\020\006\022\035\n\031BMT5_DEA"
-  "L_TYPE_COMMISSION\020\007\022#\n\037BMT5_DEAL_TYPE_CO"
-  "MMISSION_DAILY\020\010\022%\n!BMT5_DEAL_TYPE_COMMI"
-  "SSION_MONTHLY\020\t\022)\n%BMT5_DEAL_TYPE_COMMIS"
-  "SION_AGENT_DAILY\020\n\022+\n\'BMT5_DEAL_TYPE_COM"
-  "MISSION_AGENT_MONTHLY\020\013\022\033\n\027BMT5_DEAL_TYP"
-  "E_INTEREST\020\014\022\037\n\033BMT5_DEAL_TYPE_BUY_CANCE"
-  "LED\020\r\022 \n\034BMT5_DEAL_TYPE_SELL_CANCELED\020\016\022"
-  "\026\n\022BMT5_DEAL_DIVIDEND\020\017\022\036\n\032BMT5_DEAL_DIV"
-  "IDEND_FRANKED\020\020\022\021\n\rBMT5_DEAL_TAX\020\021*\203\001\n\031B"
-  "MT5_ENUM_DEAL_ENTRY_TYPE\022\026\n\022BMT5_DEAL_EN"
-  "TRY_IN\020\000\022\027\n\023BMT5_DEAL_ENTRY_OUT\020\001\022\031\n\025BMT"
-  "5_DEAL_ENTRY_INOUT\020\002\022\032\n\026BMT5_DEAL_ENTRY_"
-  "OUT_BY\020\003*\364\001\n!BMT5_ENUM_ORDER_HISTORY_SOR"
-  "T_TYPE\022\036\n\032BMT5_SORT_BY_OPEN_TIME_ASC\020\000\022\037"
-  "\n\033BMT5_SORT_BY_OPEN_TIME_DESC\020\001\022\037\n\033BMT5_"
-  "SORT_BY_CLOSE_TIME_ASC\020\002\022 \n\034BMT5_SORT_BY"
-  "_CLOSE_TIME_DESC\020\003\022$\n BMT5_SORT_BY_ORDER"
-  "_TICKET_ID_ASC\020\004\022%\n!BMT5_SORT_BY_ORDER_T"
-  "ICKET_ID_DESC\020\005*\325\002\n\025BMT5_ENUM_ORDER_STAT"
-  "E\022\034\n\030BMT5_ORDER_STATE_STARTED\020\000\022\033\n\027BMT5_"
-  "ORDER_STATE_PLACED\020\001\022\035\n\031BMT5_ORDER_STATE"
-  "_CANCELED\020\002\022\034\n\030BMT5_ORDER_STATE_PARTIAL\020"
-  "\003\022\033\n\027BMT5_ORDER_STATE_FILLED\020\004\022\035\n\031BMT5_O"
-  "RDER_STATE_REJECTED\020\005\022\034\n\030BMT5_ORDER_STAT"
-  "E_EXPIRED\020\006\022 \n\034BMT5_ORDER_STATE_REQUEST_"
-  "ADD\020\007\022#\n\037BMT5_ORDER_STATE_REQUEST_MODIFY"
-  "\020\010\022#\n\037BMT5_ORDER_STATE_REQUEST_CANCEL\020\t*"
-  "\203\001\n\030MrpcEnumAccountTradeMode\022 \n\034MRPC_ACC"
-  "OUNT_TRADE_MODE_DEMO\020\000\022#\n\037MRPC_ACCOUNT_T"
-  "RADE_MODE_CONTEST\020\001\022 \n\034MRPC_ACCOUNT_TRAD"
-  "E_MODE_REAL\020\002*\327\001\n\037AH_SYMBOL_PARAMS_MANY_"
-  "SORT_TYPE\022,\n(AH_PARAMS_MANY_SORT_TYPE_SY"
-  "MBOL_NAME_ASC\020\000\022-\n)AH_PARAMS_MANY_SORT_T"
-  "YPE_SYMBOL_NAME_DESC\020\001\022*\n&AH_PARAMS_MANY"
-  "_SORT_TYPE_MQL_INDEX_ASC\020\002\022+\n\'AH_PARAMS_"
-  "MANY_SORT_TYPE_MQL_INDEX_DESC\020\003*d\n\035BMT5_"
-  "ENUM_SYMBOL_OPTION_RIGHT\022!\n\035BMT5_SYMBOL_"
-  "OPTION_RIGHT_CALL\020\000\022 \n\034BMT5_SYMBOL_OPTIO"
-  "N_RIGHT_PUT\020\001*j\n\034BMT5_ENUM_SYMBOL_OPTION"
-  "_MODE\022$\n BMT5_SYMBOL_OPTION_MODE_EUROPEA"
-  "N\020\000\022$\n BMT5_SYMBOL_OPTION_MODE_AMERICAN\020"
-  "\001*\211\001\n\037BMT5_ENUM_SYMBOL_ORDER_GTC_MODE\022\032\n"
-  "\026BMT5_SYMBOL_ORDERS_GTC\020\000\022\034\n\030BMT5_SYMBOL"
-  "_ORDERS_DAILY\020\001\022,\n(BMT5_SYMBOL_ORDERS_DA"
-  "ILY_EXCLUDING_STOPS\020\002*\226\001\n\025BMT5_ENUM_DAY_"
-  "OF_WEEK\022\017\n\013BMT5_SUNDAY\020\000\022\017\n\013BMT5_MONDAY\020"
-  "\001\022\020\n\014BMT5_TUESDAY\020\002\022\022\n\016BMT5_WEDNESDAY\020\003\022"
-  "\021\n\rBMT5_THURSDAY\020\004\022\017\n\013BMT5_FRIDAY\020\005\022\021\n\rB"
-  "MT5_SATURDAY\020\006*\264\003\n\032BMT5_ENUM_SYMBOL_SWAP"
-  "_MODE\022\"\n\036BMT5_SYMBOL_SWAP_MODE_DISABLED\020"
-  "\000\022 \n\034BMT5_SYMBOL_SWAP_MODE_POINTS\020\001\022)\n%B"
-  "MT5_SYMBOL_SWAP_MODE_CURRENCY_SYMBOL\020\002\022)"
-  "\n%BMT5_SYMBOL_SWAP_MODE_CURRENCY_MARGIN\020"
-  "\003\022*\n&BMT5_SYMBOL_SWAP_MODE_CURRENCY_DEPO"
-  "SIT\020\004\022)\n%BMT5_SYMBOL_SWAP_MODE_CURRENCY_"
-  "PROFIT\020\005\022*\n&BMT5_SYMBOL_SWAP_MODE_INTERE"
-  "ST_CURRENT\020\006\022\'\n#BMT5_SYMBOL_SWAP_MODE_IN"
-  "TEREST_OPEN\020\007\022(\n$BMT5_SYMBOL_SWAP_MODE_R"
-  "EOPEN_CURRENT\020\010\022$\n BMT5_SYMBOL_SWAP_MODE"
-  "_REOPEN_BID\020\t*\306\001\n BMT5_ENUM_SYMBOL_TRADE"
-  "_EXECUTION\022\'\n#BMT5_SYMBOL_TRADE_EXECUTIO"
-  "N_REQUEST\020\000\022\'\n#BMT5_SYMBOL_TRADE_EXECUTI"
-  "ON_INSTANT\020\001\022&\n\"BMT5_SYMBOL_TRADE_EXECUT"
-  "ION_MARKET\020\002\022(\n$BMT5_SYMBOL_TRADE_EXECUT"
-  "ION_EXCHANGE\020\003*\324\001\n\033BMT5_ENUM_SYMBOL_TRAD"
-  "E_MODE\022#\n\037BMT5_SYMBOL_TRADE_MODE_DISABLE"
-  "D\020\000\022#\n\037BMT5_SYMBOL_TRADE_MODE_LONGONLY\020\001"
-  "\022$\n BMT5_SYMBOL_TRADE_MODE_SHORTONLY\020\002\022$"
-  "\n BMT5_SYMBOL_TRADE_MODE_CLOSEONLY\020\003\022\037\n\033"
-  "BMT5_SYMBOL_TRADE_MODE_FULL\020\004*\234\004\n\032BMT5_E"
-  "NUM_SYMBOL_CALC_MODE\022\037\n\033BMT5_SYMBOL_CALC"
-  "_MODE_FOREX\020\000\022+\n\'BMT5_SYMBOL_CALC_MODE_F"
-  "OREX_NO_LEVERAGE\020\001\022!\n\035BMT5_SYMBOL_CALC_M"
-  "ODE_FUTURES\020\002\022\035\n\031BMT5_SYMBOL_CALC_MODE_C"
-  "FD\020\003\022\"\n\036BMT5_SYMBOL_CALC_MODE_CFDINDEX\020\004"
-  "\022%\n!BMT5_SYMBOL_CALC_MODE_CFDLEVERAGE\020\005\022"
-  "%\n!BMT5_SYMBOL_CALC_MODE_EXCH_STOCKS\020\006\022&"
-  "\n\"BMT5_SYMBOL_CALC_MODE_EXCH_FUTURES\020\007\022,"
-  "\n(BMT5_SYMBOL_CALC_MODE_EXCH_FUTURES_FOR"
-  "TS\020\010\022$\n BMT5_SYMBOL_CALC_MODE_EXCH_BONDS"
-  "\020\t\022*\n&BMT5_SYMBOL_CALC_MODE_EXCH_STOCKS_"
-  "MOEX\020\n\022)\n%BMT5_SYMBOL_CALC_MODE_EXCH_BON"
-  "DS_MOEX\020\013\022)\n%BMT5_SYMBOL_CALC_MODE_SERV_"
-  "COLLATERAL\020\014*\277\003\n\027BMT5_ENUM_SYMBOL_SECTOR"
-  "\022\031\n\025BMT5_SECTOR_UNDEFINED\020\000\022\037\n\033BMT5_SECT"
-  "OR_BASIC_MATERIALS\020\001\022&\n\"BMT5_SECTOR_COMM"
-  "UNICATION_SERVICES\020\002\022!\n\035BMT5_SECTOR_CONS"
-  "UMER_CYCLICAL\020\003\022\"\n\036BMT5_SECTOR_CONSUMER_"
-  "DEFENSIVE\020\004\022\030\n\024BMT5_SECTOR_CURRENCY\020\005\022\037\n"
-  "\033BMT5_SECTOR_CURRENCY_CRYPTO\020\006\022\026\n\022BMT5_S"
-  "ECTOR_ENERGY\020\007\022\031\n\025BMT5_SECTOR_FINANCIAL\020"
-  "\010\022\032\n\026BMT5_SECTOR_HEALTHCARE\020\t\022\033\n\027BMT5_SE"
-  "CTOR_INDUSTRIALS\020\n\022\033\n\027BMT5_SECTOR_REAL_E"
-  "STATE\020\013\022\032\n\026BMT5_SECTOR_TECHNOLOGY\020\014\022\031\n\025B"
-  "MT5_SECTOR_UTILITIES\020\r*^\n\033BMT5_ENUM_SYMB"
-  "OL_CHART_MODE\022\036\n\032BMT5_SYMBOL_CHART_MODE_"
-  "BID\020\000\022\037\n\033BMT5_SYMBOL_CHART_MODE_LAST\020\001*\246"
-  "+\n\031BMT5_ENUM_SYMBOL_INDUSTRY\022\033\n\027BMT5_IND"
-  "USTRY_UNDEFINED\020\000\022%\n!BMT5_INDUSTRY_AGRIC"
-  "ULTURAL_INPUTS\020\001\022\033\n\027BMT5_INDUSTRY_ALUMIN"
-  "IUM\020\002\022$\n BMT5_INDUSTRY_BUILDING_MATERIAL"
-  "S\020\003\022\033\n\027BMT5_INDUSTRY_CHEMICALS\020\004\022\035\n\031BMT5"
-  "_INDUSTRY_COKING_COAL\020\005\022\030\n\024BMT5_INDUSTRY"
-  "_COPPER\020\006\022\026\n\022BMT5_INDUSTRY_GOLD\020\007\022\035\n\031BMT"
-  "5_INDUSTRY_LUMBER_WOOD\020\010\022#\n\037BMT5_INDUSTR"
-  "Y_INDUSTRIAL_METALS\020\t\022!\n\035BMT5_INDUSTRY_P"
-  "RECIOUS_METALS\020\n\022\027\n\023BMT5_INDUSTRY_PAPER\020"
-  "\013\022\030\n\024BMT5_INDUSTRY_SILVER\020\014\022%\n!BMT5_INDU"
-  "STRY_SPECIALTY_CHEMICALS\020\r\022\027\n\023BMT5_INDUS"
-  "TRY_STEEL\020\016\022\035\n\031BMT5_INDUSTRY_ADVERTISING"
-  "\020\017\022\036\n\032BMT5_INDUSTRY_BROADCASTING\020\020\022#\n\037BM"
-  "T5_INDUSTRY_GAMING_MULTIMEDIA\020\021\022\037\n\033BMT5_"
-  "INDUSTRY_ENTERTAINMENT\020\022\022\"\n\036BMT5_INDUSTR"
-  "Y_INTERNET_CONTENT\020\023\022\034\n\030BMT5_INDUSTRY_PU"
-  "BLISHING\020\024\022\031\n\025BMT5_INDUSTRY_TELECOM\020\025\022\'\n"
-  "#BMT5_INDUSTRY_APPAREL_MANUFACTURING\020\026\022 "
-  "\n\034BMT5_INDUSTRY_APPAREL_RETAIL\020\027\022$\n BMT5"
-  "_INDUSTRY_AUTO_MANUFACTURERS\020\030\022\034\n\030BMT5_I"
-  "NDUSTRY_AUTO_PARTS\020\031\022!\n\035BMT5_INDUSTRY_AU"
-  "TO_DEALERSHIP\020\032\022#\n\037BMT5_INDUSTRY_DEPARTM"
-  "ENT_STORES\020\033\022&\n\"BMT5_INDUSTRY_FOOTWEAR_A"
-  "CCESSORIES\020\034\022\035\n\031BMT5_INDUSTRY_FURNISHING"
-  "S\020\035\022\032\n\026BMT5_INDUSTRY_GAMBLING\020\036\022$\n BMT5_"
-  "INDUSTRY_HOME_IMPROV_RETAIL\020\037\022!\n\035BMT5_IN"
-  "DUSTRY_INTERNET_RETAIL\020 \022\031\n\025BMT5_INDUSTR"
-  "Y_LEISURE\020!\022\031\n\025BMT5_INDUSTRY_LODGING\020\"\022\036"
-  "\n\032BMT5_INDUSTRY_LUXURY_GOODS\020#\022&\n\"BMT5_I"
-  "NDUSTRY_PACKAGING_CONTAINERS\020$\022#\n\037BMT5_I"
-  "NDUSTRY_PERSONAL_SERVICES\020%\022\'\n#BMT5_INDU"
-  "STRY_RECREATIONAL_VEHICLES\020&\022\'\n#BMT5_IND"
-  "USTRY_RESIDENT_CONSTRUCTION\020\'\022!\n\035BMT5_IN"
-  "DUSTRY_RESORTS_CASINOS\020(\022\035\n\031BMT5_INDUSTR"
-  "Y_RESTAURANTS\020)\022\"\n\036BMT5_INDUSTRY_SPECIAL"
-  "TY_RETAIL\020*\022\'\n#BMT5_INDUSTRY_TEXTILE_MAN"
-  "UFACTURING\020+\022!\n\035BMT5_INDUSTRY_TRAVEL_SER"
-  "VICES\020,\022#\n\037BMT5_INDUSTRY_BEVERAGES_BREWE"
-  "RS\020-\022$\n BMT5_INDUSTRY_BEVERAGES_NON_ALCO"
-  "\020.\022$\n BMT5_INDUSTRY_BEVERAGES_WINERIES\020/"
-  "\022\037\n\033BMT5_INDUSTRY_CONFECTIONERS\0200\022!\n\035BMT"
-  "5_INDUSTRY_DISCOUNT_STORES\0201\022#\n\037BMT5_IND"
-  "USTRY_EDUCATION_TRAINIG\0202\022\037\n\033BMT5_INDUST"
-  "RY_FARM_PRODUCTS\0203\022#\n\037BMT5_INDUSTRY_FOOD"
-  "_DISTRIBUTION\0204\022 \n\034BMT5_INDUSTRY_GROCERY"
-  "_STORES\0205\022$\n BMT5_INDUSTRY_HOUSEHOLD_PRO"
-  "DUCTS\0206\022 \n\034BMT5_INDUSTRY_PACKAGED_FOODS\020"
-  "7\022\031\n\025BMT5_INDUSTRY_TOBACCO\0208\022\"\n\036BMT5_IND"
-  "USTRY_OIL_GAS_DRILLING\0209\022\034\n\030BMT5_INDUSTR"
-  "Y_OIL_GAS_EP\020:\022#\n\037BMT5_INDUSTRY_OIL_GAS_"
-  "EQUIPMENT\020;\022$\n BMT5_INDUSTRY_OIL_GAS_INT"
-  "EGRATED\020<\022#\n\037BMT5_INDUSTRY_OIL_GAS_MIDST"
-  "REAM\020=\022\"\n\036BMT5_INDUSTRY_OIL_GAS_REFINING"
-  "\020>\022\036\n\032BMT5_INDUSTRY_THERMAL_COAL\020\?\022\031\n\025BM"
-  "T5_INDUSTRY_URANIUM\020@\022&\n\"BMT5_INDUSTRY_E"
-  "XCHANGE_TRADED_FUND\020A\022#\n\037BMT5_INDUSTRY_A"
-  "SSETS_MANAGEMENT\020B\022#\n\037BMT5_INDUSTRY_BANK"
-  "S_DIVERSIFIED\020C\022 \n\034BMT5_INDUSTRY_BANKS_R"
-  "EGIONAL\020D\022!\n\035BMT5_INDUSTRY_CAPITAL_MARKE"
-  "TS\020E\022%\n!BMT5_INDUSTRY_CLOSE_END_FUND_DEB"
-  "T\020F\022\'\n#BMT5_INDUSTRY_CLOSE_END_FUND_EQUI"
-  "TY\020G\022(\n$BMT5_INDUSTRY_CLOSE_END_FUND_FOR"
-  "EIGN\020H\022!\n\035BMT5_INDUSTRY_CREDIT_SERVICES\020"
-  "I\022(\n$BMT5_INDUSTRY_FINANCIAL_CONGLOMERAT"
-  "E\020J\022)\n%BMT5_INDUSTRY_FINANCIAL_DATA_EXCH"
-  "ANGE\020K\022#\n\037BMT5_INDUSTRY_INSURANCE_BROKER"
-  "S\020L\022\'\n#BMT5_INDUSTRY_INSURANCE_DIVERSIFI"
-  "ED\020M\022 \n\034BMT5_INDUSTRY_INSURANCE_LIFE\020N\022$"
-  "\n BMT5_INDUSTRY_INSURANCE_PROPERTY\020O\022\'\n#"
-  "BMT5_INDUSTRY_INSURANCE_REINSURANCE\020P\022%\n"
-  "!BMT5_INDUSTRY_INSURANCE_SPECIALTY\020Q\022\"\n\036"
-  "BMT5_INDUSTRY_MORTGAGE_FINANCE\020R\022!\n\035BMT5"
-  "_INDUSTRY_SHELL_COMPANIES\020S\022\037\n\033BMT5_INDU"
-  "STRY_BIOTECHNOLOGY\020T\022&\n\"BMT5_INDUSTRY_DI"
-  "AGNOSTICS_RESEARCH\020U\022%\n!BMT5_INDUSTRY_DR"
-  "UGS_MANUFACTURERS\020V\022*\n&BMT5_INDUSTRY_DRU"
-  "GS_MANUFACTURERS_SPEC\020W\022\"\n\036BMT5_INDUSTRY"
-  "_HEALTHCARE_PLANS\020X\022$\n BMT5_INDUSTRY_HEA"
-  "LTH_INFORMATION\020Y\022$\n BMT5_INDUSTRY_MEDIC"
-  "AL_FACILITIES\020Z\022!\n\035BMT5_INDUSTRY_MEDICAL"
-  "_DEVICES\020[\022&\n\"BMT5_INDUSTRY_MEDICAL_DIST"
-  "RIBUTION\020\\\022%\n!BMT5_INDUSTRY_MEDICAL_INST"
-  "RUMENTS\020]\022!\n\035BMT5_INDUSTRY_PHARM_RETAILE"
-  "RS\020^\022#\n\037BMT5_INDUSTRY_AEROSPACE_DEFENSE\020"
-  "_\022\032\n\026BMT5_INDUSTRY_AIRLINES\020`\022#\n\037BMT5_IN"
-  "DUSTRY_AIRPORTS_SERVICES\020a\022#\n\037BMT5_INDUS"
-  "TRY_BUILDING_PRODUCTS\020b\022$\n BMT5_INDUSTRY"
-  "_BUSINESS_EQUIPMENT\020c\022\037\n\033BMT5_INDUSTRY_C"
-  "ONGLOMERATES\020d\022%\n!BMT5_INDUSTRY_CONSULTI"
-  "NG_SERVICES\020e\022&\n\"BMT5_INDUSTRY_ELECTRICA"
-  "L_EQUIPMENT\020f\022*\n&BMT5_INDUSTRY_ENGINEERI"
-  "NG_CONSTRUCTION\020g\022&\n\"BMT5_INDUSTRY_FARM_"
-  "HEAVY_MACHINERY\020h\022)\n%BMT5_INDUSTRY_INDUS"
-  "TRIAL_DISTRIBUTION\020i\022+\n\'BMT5_INDUSTRY_IN"
-  "FRASTRUCTURE_OPERATIONS\020j\022#\n\037BMT5_INDUST"
-  "RY_FREIGHT_LOGISTICS\020k\022!\n\035BMT5_INDUSTRY_"
-  "MARINE_SHIPPING\020l\022#\n\037BMT5_INDUSTRY_METAL"
-  "_FABRICATION\020m\022#\n\037BMT5_INDUSTRY_POLLUTIO"
-  "N_CONTROL\020n\022\033\n\027BMT5_INDUSTRY_RAILROADS\020o"
-  "\022 \n\034BMT5_INDUSTRY_RENTAL_LEASING\020p\022%\n!BM"
-  "T5_INDUSTRY_SECURITY_PROTECTION\020q\022,\n(BMT"
-  "5_INDUSTRY_SPEALITY_BUSINESS_SERVICES\020r\022"
-  "$\n BMT5_INDUSTRY_SPEALITY_MACHINERY\020s\022%\n"
-  "!BMT5_INDUSTRY_STUFFING_EMPLOYMENT\020t\022#\n\037"
-  "BMT5_INDUSTRY_TOOLS_ACCESSORIES\020u\022\032\n\026BMT"
-  "5_INDUSTRY_TRUCKING\020v\022\"\n\036BMT5_INDUSTRY_W"
-  "ASTE_MANAGEMENT\020w\022)\n%BMT5_INDUSTRY_REAL_"
-  "ESTATE_DEVELOPMENT\020x\022)\n%BMT5_INDUSTRY_RE"
-  "AL_ESTATE_DIVERSIFIED\020y\022&\n\"BMT5_INDUSTRY"
-  "_REAL_ESTATE_SERVICES\020z\022\"\n\036BMT5_INDUSTRY"
-  "_REIT_DIVERSIFIED\020{\022 \n\034BMT5_INDUSTRY_REI"
-  "T_HEALTCARE\020|\022\"\n\036BMT5_INDUSTRY_REIT_HOTE"
-  "L_MOTEL\020}\022!\n\035BMT5_INDUSTRY_REIT_INDUSTRI"
-  "AL\020~\022\036\n\032BMT5_INDUSTRY_REIT_MORTAGE\020\177\022\036\n\031"
-  "BMT5_INDUSTRY_REIT_OFFICE\020\200\001\022\"\n\035BMT5_IND"
-  "USTRY_REIT_RESIDENTAL\020\201\001\022\036\n\031BMT5_INDUSTR"
-  "Y_REIT_RETAIL\020\202\001\022\"\n\035BMT5_INDUSTRY_REIT_S"
-  "PECIALITY\020\203\001\022*\n%BMT5_INDUSTRY_COMMUNICAT"
-  "ION_EQUIPMENT\020\204\001\022$\n\037BMT5_INDUSTRY_COMPUT"
-  "ER_HARDWARE\020\205\001\022\'\n\"BMT5_INDUSTRY_CONSUMER"
-  "_ELECTRONICS\020\206\001\022(\n#BMT5_INDUSTRY_ELECTRO"
-  "NIC_COMPONENTS\020\207\001\022*\n%BMT5_INDUSTRY_ELECT"
-  "RONIC_DISTRIBUTION\020\210\001\022\036\n\031BMT5_INDUSTRY_I"
-  "T_SERVICES\020\211\001\022)\n$BMT5_INDUSTRY_SCIENTIFI"
-  "C_INSTRUMENTS\020\212\001\022*\n%BMT5_INDUSTRY_SEMICO"
-  "NDUCTOR_EQUIPMENT\020\213\001\022!\n\034BMT5_INDUSTRY_SE"
-  "MICONDUCTORS\020\214\001\022\'\n\"BMT5_INDUSTRY_SOFTWAR"
-  "E_APPLICATION\020\215\001\022*\n%BMT5_INDUSTRY_SOFTWA"
-  "RE_INFRASTRUCTURE\020\216\001\022\030\n\023BMT5_INDUSTRY_SO"
-  "LAR\020\217\001\022(\n#BMT5_INDUSTRY_UTILITIES_DIVERS"
-  "IFIED\020\220\001\022+\n&BMT5_INDUSTRY_UTILITIES_POWE"
-  "RPRODUCERS\020\221\001\022&\n!BMT5_INDUSTRY_UTILITIES"
-  "_RENEWABLE\020\222\001\022/\n*BMT5_INDUSTRY_UTILITIES"
-  "_REGULATED_ELECTRIC\020\223\001\022*\n%BMT5_INDUSTRY_"
-  "UTILITIES_REGULATED_GAS\020\224\001\022,\n\'BMT5_INDUS"
-  "TRY_UTILITIES_REGULATED_WATER\020\225\001\022\"\n\035BMT5"
-  "_INDUSTRY_UTILITIES_FIRST\020\226\001\022!\n\034BMT5_IND"
-  "USTRY_UTILITIES_LAST\020\227\0012\320\007\n\rAccountHelpe"
-  "r\022q\n\016AccountSummary\022#.mt5_term_api.Accou"
-  "ntSummaryRequest\032!.mt5_term_api.AccountS"
-  "ummaryReply\"\027\202\323\344\223\002\021\022\017/AccountSummary\022i\n\014"
-  "OrderHistory\022!.mt5_term_api.OrderHistory"
-  "Request\032\037.mt5_term_api.OrderHistoryReply"
-  "\"\025\202\323\344\223\002\017\022\r/OrderHistory\022i\n\014OpenedOrders\022"
-  "!.mt5_term_api.OpenedOrdersRequest\032\037.mt5"
-  "_term_api.OpenedOrdersReply\"\025\202\323\344\223\002\017\022\r/Op"
-  "enedOrders\022\205\001\n\023OpenedOrdersTickets\022(.mt5"
-  "_term_api.OpenedOrdersTicketsRequest\032&.m"
-  "t5_term_api.OpenedOrdersTicketsReply\"\034\202\323"
-  "\344\223\002\026\022\024/OpenedOrdersTickets\022y\n\020SymbolPara"
-  "msMany\022%.mt5_term_api.SymbolParamsManyRe"
-  "quest\032#.mt5_term_api.SymbolParamsManyRep"
-  "ly\"\031\202\323\344\223\002\023\022\021/SymbolParamsMany\022}\n\021TickVal"
-  "ueWithSize\022&.mt5_term_api.TickValueWithS"
-  "izeRequest\032$.mt5_term_api.TickValueWithS"
-  "izeReply\"\032\202\323\344\223\002\024\022\022/TickValueWithSize\022y\n\020"
-  "PositionsHistory\022%.mt5_term_api.Position"
-  "sHistoryRequest\032#.mt5_term_api.Positions"
-  "HistoryReply\"\031\202\323\344\223\002\023\022\021/PositionsHistory\022"
-  "y\n\020AllHistoryOrders\022%.mt5_term_api.AllHi"
-  "storyOrdersRequest\032#.mt5_term_api.AllHis"
-  "toryOrdersReply\"\031\202\323\344\223\002\023\022\021/AllHistoryOrde"
-  "rsBBZ1git.mtapi.io/root/mrpc-proto.git/m"
-  "t5/libraries/go\252\002\014mt5_term_apib\006proto3"
+  "\275\001\n\024SymbolParamsManyData\0224\n\014symbol_infos"
+  "\030\001 \003(\0132\036.mt5_term_api.SymbolParameters\022\025"
+  "\n\rsymbols_total\030\002 \001(\005\022\030\n\013page_number\030\003 \001"
+  "(\005H\000\210\001\001\022\033\n\016items_per_page\030\004 \001(\005H\001\210\001\001B\016\n\014"
+  "_page_numberB\021\n\017_items_per_page\"\354\031\n\020Symb"
+  "olParameters\022\014\n\004name\030\001 \001(\t\022\013\n\003bid\030\002 \001(\001\022"
+  "\020\n\010bid_high\030\003 \001(\001\022\017\n\007bid_low\030\004 \001(\001\022\013\n\003as"
+  "k\030\005 \001(\001\022\020\n\010ask_high\030\006 \001(\001\022\017\n\007ask_low\030\007 \001"
+  "(\001\022\014\n\004last\030\010 \001(\001\022\021\n\tlast_high\030\t \001(\001\022\020\n\010l"
+  "ast_low\030\n \001(\001\022\023\n\013volume_real\030\013 \001(\001\022\030\n\020vo"
+  "lume_high_real\030\014 \001(\001\022\027\n\017volume_low_real\030"
+  "\r \001(\001\022\025\n\roption_strike\030\016 \001(\001\022\r\n\005point\030\017 "
+  "\001(\001\022\030\n\020trade_tick_value\030\020 \001(\001\022\037\n\027trade_t"
+  "ick_value_profit\030\021 \001(\001\022\035\n\025trade_tick_val"
+  "ue_loss\030\022 \001(\001\022\027\n\017trade_tick_size\030\023 \001(\001\022\033"
+  "\n\023trade_contract_size\030\024 \001(\001\022\036\n\026trade_acc"
+  "rued_interest\030\025 \001(\001\022\030\n\020trade_face_value\030"
+  "\026 \001(\001\022\034\n\024trade_liquidity_rate\030\027 \001(\001\022\022\n\nv"
+  "olume_min\030\030 \001(\001\022\022\n\nvolume_max\030\031 \001(\001\022\023\n\013v"
+  "olume_step\030\032 \001(\001\022\024\n\014volume_limit\030\033 \001(\001\022\021"
+  "\n\tswap_long\030\034 \001(\001\022\022\n\nswap_short\030\035 \001(\001\022\023\n"
+  "\013swap_sunday\030\036 \001(\001\022\023\n\013swap_monday\030\037 \001(\001\022"
+  "\024\n\014swap_tuesday\030  \001(\001\022\026\n\016swap_wednesday\030"
+  "! \001(\001\022\025\n\rswap_thursday\030\" \001(\001\022\023\n\013swap_fri"
+  "day\030# \001(\001\022\025\n\rswap_saturday\030$ \001(\001\022\026\n\016marg"
+  "in_initial\030% \001(\001\022\032\n\022margin_maintenance\030&"
+  " \001(\001\022\026\n\016session_volume\030\' \001(\001\022\030\n\020session_"
+  "turnover\030( \001(\001\022\030\n\020session_interest\030) \001(\001"
+  "\022!\n\031session_buy_orders_volume\030* \001(\001\022\"\n\032s"
+  "ession_sell_orders_volume\030+ \001(\001\022\024\n\014sessi"
+  "on_open\030, \001(\001\022\025\n\rsession_close\030- \001(\001\022\022\n\n"
+  "session_aw\030. \001(\001\022 \n\030session_price_settle"
+  "ment\030/ \001(\001\022\037\n\027session_price_limit_min\0300 "
+  "\001(\001\022\037\n\027session_price_limit_max\0301 \001(\001\022\025\n\r"
+  "margin_hedged\0302 \001(\001\022\024\n\014price_change\0303 \001("
+  "\001\022\030\n\020price_volatility\0304 \001(\001\022\031\n\021price_the"
+  "oretical\0305 \001(\001\022\023\n\013price_delta\0306 \001(\001\022\023\n\013p"
+  "rice_theta\0307 \001(\001\022\023\n\013price_gamma\0308 \001(\001\022\022\n"
+  "\nprice_vega\0309 \001(\001\022\021\n\tprice_rho\030: \001(\001\022\023\n\013"
+  "price_omega\030; \001(\001\022\031\n\021price_sensitivity\030<"
+  " \001(\001\0225\n\006sector\030= \001(\0162%.mt5_term_api.BMT5"
+  "_ENUM_SYMBOL_SECTOR\0229\n\010industry\030> \001(\0162\'."
+  "mt5_term_api.BMT5_ENUM_SYMBOL_INDUSTRY\022\016"
+  "\n\006custom\030\? \001(\010\022\030\n\020background_color\030@ \001(\t"
+  "\022=\n\nchart_mode\030A \001(\0162).mt5_term_api.BMT5"
+  "_ENUM_SYMBOL_CHART_MODE\022\r\n\005exist\030B \001(\010\022\016"
+  "\n\006select\030C \001(\010\022\032\n\022subscription_delay\030D \001"
+  "(\005\022\017\n\007visible\030E \001(\010\022\025\n\rsession_deals\030F \001"
+  "(\003\022\032\n\022session_buy_orders\030G \001(\003\022\033\n\023sessio"
+  "n_sell_orders\030H \001(\003\022\016\n\006volume\030I \001(\003\022\023\n\013v"
+  "olume_high\030J \001(\003\022\022\n\nvolume_low\030K \001(\003\022(\n\004"
+  "time\030L \001(\0132\032.google.protobuf.Timestamp\022,"
+  "\n\010time_utc\030q \001(\0132\032.google.protobuf.Times"
+  "tamp\022\020\n\010time_msc\030M \001(\003\022\024\n\014time_msc_utc\030r"
+  " \001(\003\022\016\n\006digits\030N \001(\005\022\024\n\014spread_float\030O \001"
+  "(\010\022\016\n\006spread\030P \001(\005\022\030\n\020ticks_book_depth\030Q"
+  " \001(\005\022A\n\017trade_calc_mode\030R \001(\0162(.mt5_term"
+  "_api.BMT5_ENUM_SYMBOL_CALC_MODE\022=\n\ntrade"
+  "_mode\030S \001(\0162).mt5_term_api.BMT5_ENUM_SYM"
+  "BOL_TRADE_MODE\022.\n\nstart_time\030T \001(\0132\032.goo"
+  "gle.protobuf.Timestamp\0222\n\016start_time_utc"
+  "\030s \001(\0132\032.google.protobuf.Timestamp\0223\n\017ex"
+  "piration_time\030U \001(\0132\032.google.protobuf.Ti"
+  "mestamp\0227\n\023expiration_time_utc\030t \001(\0132\032.g"
+  "oogle.protobuf.Timestamp\022\031\n\021trade_stops_"
+  "level\030V \001(\005\022\032\n\022trade_freeze_level\030W \001(\005\022"
+  "F\n\016trade_exe_mode\030X \001(\0162..mt5_term_api.B"
+  "MT5_ENUM_SYMBOL_TRADE_EXECUTION\022;\n\tswap_"
+  "mode\030Y \001(\0162(.mt5_term_api.BMT5_ENUM_SYMB"
+  "OL_SWAP_MODE\022@\n\023swap_rollover_3days\030Z \001("
+  "\0162#.mt5_term_api.BMT5_ENUM_DAY_OF_WEEK\022\035"
+  "\n\025margin_hedged_use_leg\030[ \001(\010\022\027\n\017expirat"
+  "ion_mode\030\\ \001(\005\022@\n\014filling_mode\030] \003(\0162*.m"
+  "t5_term_api.BMT5_ENUM_ORDER_TYPE_FILLING"
+  "\0226\n\norder_mode\030^ \001(\0162\".mt5_term_api.BMT5"
+  "_ENUM_ORDER_TYPE\022E\n\016order_gtc_mode\030_ \001(\016"
+  "2-.mt5_term_api.BMT5_ENUM_SYMBOL_ORDER_G"
+  "TC_MODE\022\?\n\013option_mode\030` \001(\0162*.mt5_term_"
+  "api.BMT5_ENUM_SYMBOL_OPTION_MODE\022A\n\014opti"
+  "on_right\030a \001(\0162+.mt5_term_api.BMT5_ENUM_"
+  "SYMBOL_OPTION_RIGHT\022\r\n\005basis\030b \001(\t\022\020\n\010ca"
+  "tegory\030c \001(\t\022\017\n\007country\030d \001(\t\022\023\n\013sector_"
+  "name\030e \001(\t\022\025\n\rindustry_name\030f \001(\t\022\025\n\rcur"
+  "rency_base\030g \001(\t\022\027\n\017currency_profit\030h \001("
+  "\t\022\027\n\017currency_margin\030i \001(\t\022\014\n\004bank\030j \001(\t"
+  "\022\027\n\017sym_description\030k \001(\t\022\020\n\010exchange\030l "
+  "\001(\t\022\017\n\007formula\030m \001(\t\022\014\n\004isin\030n \001(\t\022\014\n\004pa"
+  "ge\030o \001(\t\022\014\n\004path\030p \001(\t*\251\001\n!BMT5_ENUM_DEA"
+  "LS_HISTORY_SORT_TYPE\022\036\n\032BMT5_SORT_BY_DEA"
+  "L_TIME_ASC\020\000\022\037\n\033BMT5_SORT_BY_DEAL_TIME_D"
+  "ESC\020\001\022 \n\034BMT5_SORT_BY_DEAL_TICKET_ASC\020\002\022"
+  "!\n\035BMT5_SORT_BY_DEAL_TICKET_DESC\020\003*\235\001\n#A"
+  "H_ENUM_POSITIONS_HISTORY_SORT_TYPE\022\035\n\031AH"
+  "_POSITION_OPEN_TIME_ASC\020\000\022\036\n\032AH_POSITION"
+  "_OPEN_TIME_DESC\020\001\022\032\n\026AH_POSITION_TICKET_"
+  "ASC\020\002\022\033\n\027AH_POSITION_TICKET_DESC\020\003*\252\002\n$A"
+  "H_ENUM_POSITIONS_HISTORY_ORDER_TYPE\022\025\n\021A"
+  "H_ORDER_TYPE_BUY\020\000\022\026\n\022AH_ORDER_TYPE_SELL"
+  "\020\001\022\033\n\027AH_ORDER_TYPE_BUY_LIMIT\020\002\022\034\n\030AH_OR"
+  "DER_TYPE_SELL_LIMIT\020\003\022\032\n\026AH_ORDER_TYPE_B"
+  "UY_STOP\020\004\022\033\n\027AH_ORDER_TYPE_SELL_STOP\020\005\022 "
+  "\n\034AH_ORDER_TYPE_BUY_STOP_LIMIT\020\006\022!\n\035AH_O"
+  "RDER_TYPE_SELL_STOP_LIMIT\020\007\022\032\n\026AH_ORDER_"
+  "TYPE_CLOSE_BY\020\010*\344\001\n BMT5_ENUM_OPENED_ORD"
+  "ER_SORT_TYPE\022+\n\'BMT5_OPENED_ORDER_SORT_B"
+  "Y_OPEN_TIME_ASC\020\000\022,\n(BMT5_OPENED_ORDER_S"
+  "ORT_BY_OPEN_TIME_DESC\020\001\0221\n-BMT5_OPENED_O"
+  "RDER_SORT_BY_ORDER_TICKET_ID_ASC\020\002\0222\n.BM"
+  "T5_OPENED_ORDER_SORT_BY_ORDER_TICKET_ID_"
+  "DESC\020\003*R\n\027BMT5_ENUM_POSITION_TYPE\022\032\n\026BMT"
+  "5_POSITION_TYPE_BUY\020\000\022\033\n\027BMT5_POSITION_T"
+  "YPE_SELL\020\001*\333\001\n\031BMT5_ENUM_POSITION_REASON"
+  "\022\037\n\033BMT5_POSITION_REASON_CLIENT\020\000\022\037\n\033BMT"
+  "5_POSITION_REASON_MOBILE\020\001\022\034\n\030BMT5_POSIT"
+  "ION_REASON_WEB\020\002\022\037\n\033BMT5_POSITION_REASON"
+  "_EXPERT\020\003\022\023\n\017ORDER_REASON_SL\020\004\022\023\n\017ORDER_"
+  "REASON_TP\020\005\022\023\n\017ORDER_REASON_SO\020\006*\217\001\n\031BMT"
+  "5_ENUM_ORDER_TYPE_TIME\022\027\n\023BMT5_ORDER_TIM"
+  "E_GTC\020\000\022\027\n\023BMT5_ORDER_TIME_DAY\020\001\022\035\n\031BMT5"
+  "_ORDER_TIME_SPECIFIED\020\002\022!\n\035BMT5_ORDER_TI"
+  "ME_SPECIFIED_DAY\020\003*\221\001\n\034BMT5_ENUM_ORDER_T"
+  "YPE_FILLING\022\032\n\026BMT5_ORDER_FILLING_FOK\020\000\022"
+  "\032\n\026BMT5_ORDER_FILLING_IOC\020\001\022\032\n\026BMT5_ORDE"
+  "R_FILLING_BOC\020\003\022\035\n\031BMT5_ORDER_FILLING_RE"
+  "TURN\020\002*\254\002\n\024BMT5_ENUM_ORDER_TYPE\022\027\n\023BMT5_"
+  "ORDER_TYPE_BUY\020\000\022\030\n\024BMT5_ORDER_TYPE_SELL"
+  "\020\001\022\035\n\031BMT5_ORDER_TYPE_BUY_LIMIT\020\002\022\036\n\032BMT"
+  "5_ORDER_TYPE_SELL_LIMIT\020\003\022\034\n\030BMT5_ORDER_"
+  "TYPE_BUY_STOP\020\004\022\035\n\031BMT5_ORDER_TYPE_SELL_"
+  "STOP\020\005\022\"\n\036BMT5_ORDER_TYPE_BUY_STOP_LIMIT"
+  "\020\006\022#\n\037BMT5_ORDER_TYPE_SELL_STOP_LIMIT\020\007\022"
+  "\034\n\030BMT5_ORDER_TYPE_CLOSE_BY\020\010*\323\002\n\025BMT5_E"
+  "NUM_DEAL_REASON\022\033\n\027BMT5_DEAL_REASON_CLIE"
+  "NT\020\000\022\033\n\027BMT5_DEAL_REASON_MOBILE\020\001\022\030\n\024BMT"
+  "5_DEAL_REASON_WEB\020\002\022\033\n\027BMT5_DEAL_REASON_"
+  "EXPERT\020\003\022\027\n\023BMT5_DEAL_REASON_SL\020\004\022\027\n\023BMT"
+  "5_DEAL_REASON_TP\020\005\022\027\n\023BMT5_DEAL_REASON_S"
+  "O\020\006\022\035\n\031BMT5_DEAL_REASON_ROLLOVER\020\007\022\034\n\030BM"
+  "T5_DEAL_REASON_VMARGIN\020\010\022\032\n\026BMT5_DEAL_RE"
+  "ASON_SPLIT\020\t\022%\n!BMT5_DEAL_REASON_CORPORA"
+  "TE_ACTION\020\n*\277\004\n\023BMT5_ENUM_DEAL_TYPE\022\026\n\022B"
+  "MT5_DEAL_TYPE_BUY\020\000\022\027\n\023BMT5_DEAL_TYPE_SE"
+  "LL\020\001\022\032\n\026BMT5_DEAL_TYPE_BALANCE\020\002\022\031\n\025BMT5"
+  "_DEAL_TYPE_CREDIT\020\003\022\031\n\025BMT5_DEAL_TYPE_CH"
+  "ARGE\020\004\022\035\n\031BMT5_DEAL_TYPE_CORRECTION\020\005\022\030\n"
+  "\024BMT5_DEAL_TYPE_BONUS\020\006\022\035\n\031BMT5_DEAL_TYP"
+  "E_COMMISSION\020\007\022#\n\037BMT5_DEAL_TYPE_COMMISS"
+  "ION_DAILY\020\010\022%\n!BMT5_DEAL_TYPE_COMMISSION"
+  "_MONTHLY\020\t\022)\n%BMT5_DEAL_TYPE_COMMISSION_"
+  "AGENT_DAILY\020\n\022+\n\'BMT5_DEAL_TYPE_COMMISSI"
+  "ON_AGENT_MONTHLY\020\013\022\033\n\027BMT5_DEAL_TYPE_INT"
+  "EREST\020\014\022\037\n\033BMT5_DEAL_TYPE_BUY_CANCELED\020\r"
+  "\022 \n\034BMT5_DEAL_TYPE_SELL_CANCELED\020\016\022\026\n\022BM"
+  "T5_DEAL_DIVIDEND\020\017\022\036\n\032BMT5_DEAL_DIVIDEND"
+  "_FRANKED\020\020\022\021\n\rBMT5_DEAL_TAX\020\021*\203\001\n\031BMT5_E"
+  "NUM_DEAL_ENTRY_TYPE\022\026\n\022BMT5_DEAL_ENTRY_I"
+  "N\020\000\022\027\n\023BMT5_DEAL_ENTRY_OUT\020\001\022\031\n\025BMT5_DEA"
+  "L_ENTRY_INOUT\020\002\022\032\n\026BMT5_DEAL_ENTRY_OUT_B"
+  "Y\020\003*\364\001\n!BMT5_ENUM_ORDER_HISTORY_SORT_TYP"
+  "E\022\036\n\032BMT5_SORT_BY_OPEN_TIME_ASC\020\000\022\037\n\033BMT"
+  "5_SORT_BY_OPEN_TIME_DESC\020\001\022\037\n\033BMT5_SORT_"
+  "BY_CLOSE_TIME_ASC\020\002\022 \n\034BMT5_SORT_BY_CLOS"
+  "E_TIME_DESC\020\003\022$\n BMT5_SORT_BY_ORDER_TICK"
+  "ET_ID_ASC\020\004\022%\n!BMT5_SORT_BY_ORDER_TICKET"
+  "_ID_DESC\020\005*\325\002\n\025BMT5_ENUM_ORDER_STATE\022\034\n\030"
+  "BMT5_ORDER_STATE_STARTED\020\000\022\033\n\027BMT5_ORDER"
+  "_STATE_PLACED\020\001\022\035\n\031BMT5_ORDER_STATE_CANC"
+  "ELED\020\002\022\034\n\030BMT5_ORDER_STATE_PARTIAL\020\003\022\033\n\027"
+  "BMT5_ORDER_STATE_FILLED\020\004\022\035\n\031BMT5_ORDER_"
+  "STATE_REJECTED\020\005\022\034\n\030BMT5_ORDER_STATE_EXP"
+  "IRED\020\006\022 \n\034BMT5_ORDER_STATE_REQUEST_ADD\020\007"
+  "\022#\n\037BMT5_ORDER_STATE_REQUEST_MODIFY\020\010\022#\n"
+  "\037BMT5_ORDER_STATE_REQUEST_CANCEL\020\t*\203\001\n\030M"
+  "rpcEnumAccountTradeMode\022 \n\034MRPC_ACCOUNT_"
+  "TRADE_MODE_DEMO\020\000\022#\n\037MRPC_ACCOUNT_TRADE_"
+  "MODE_CONTEST\020\001\022 \n\034MRPC_ACCOUNT_TRADE_MOD"
+  "E_REAL\020\002*\234\001\n\031MrpcEnumAccountMarginMode\022+"
+  "\n\'MRPC_ACCOUNT_MARGIN_MODE_RETAIL_NETTIN"
+  "G\020\000\022%\n!MRPC_ACCOUNT_MARGIN_MODE_EXCHANGE"
+  "\020\001\022+\n\'MRPC_ACCOUNT_MARGIN_MODE_RETAIL_HE"
+  "DGING\020\002*\327\001\n\037AH_SYMBOL_PARAMS_MANY_SORT_T"
+  "YPE\022,\n(AH_PARAMS_MANY_SORT_TYPE_SYMBOL_N"
+  "AME_ASC\020\000\022-\n)AH_PARAMS_MANY_SORT_TYPE_SY"
+  "MBOL_NAME_DESC\020\001\022*\n&AH_PARAMS_MANY_SORT_"
+  "TYPE_MQL_INDEX_ASC\020\002\022+\n\'AH_PARAMS_MANY_S"
+  "ORT_TYPE_MQL_INDEX_DESC\020\003*d\n\035BMT5_ENUM_S"
+  "YMBOL_OPTION_RIGHT\022!\n\035BMT5_SYMBOL_OPTION"
+  "_RIGHT_CALL\020\000\022 \n\034BMT5_SYMBOL_OPTION_RIGH"
+  "T_PUT\020\001*j\n\034BMT5_ENUM_SYMBOL_OPTION_MODE\022"
+  "$\n BMT5_SYMBOL_OPTION_MODE_EUROPEAN\020\000\022$\n"
+  " BMT5_SYMBOL_OPTION_MODE_AMERICAN\020\001*\211\001\n\037"
+  "BMT5_ENUM_SYMBOL_ORDER_GTC_MODE\022\032\n\026BMT5_"
+  "SYMBOL_ORDERS_GTC\020\000\022\034\n\030BMT5_SYMBOL_ORDER"
+  "S_DAILY\020\001\022,\n(BMT5_SYMBOL_ORDERS_DAILY_EX"
+  "CLUDING_STOPS\020\002*\226\001\n\025BMT5_ENUM_DAY_OF_WEE"
+  "K\022\017\n\013BMT5_SUNDAY\020\000\022\017\n\013BMT5_MONDAY\020\001\022\020\n\014B"
+  "MT5_TUESDAY\020\002\022\022\n\016BMT5_WEDNESDAY\020\003\022\021\n\rBMT"
+  "5_THURSDAY\020\004\022\017\n\013BMT5_FRIDAY\020\005\022\021\n\rBMT5_SA"
+  "TURDAY\020\006*\264\003\n\032BMT5_ENUM_SYMBOL_SWAP_MODE\022"
+  "\"\n\036BMT5_SYMBOL_SWAP_MODE_DISABLED\020\000\022 \n\034B"
+  "MT5_SYMBOL_SWAP_MODE_POINTS\020\001\022)\n%BMT5_SY"
+  "MBOL_SWAP_MODE_CURRENCY_SYMBOL\020\002\022)\n%BMT5"
+  "_SYMBOL_SWAP_MODE_CURRENCY_MARGIN\020\003\022*\n&B"
+  "MT5_SYMBOL_SWAP_MODE_CURRENCY_DEPOSIT\020\004\022"
+  ")\n%BMT5_SYMBOL_SWAP_MODE_CURRENCY_PROFIT"
+  "\020\005\022*\n&BMT5_SYMBOL_SWAP_MODE_INTEREST_CUR"
+  "RENT\020\006\022\'\n#BMT5_SYMBOL_SWAP_MODE_INTEREST"
+  "_OPEN\020\007\022(\n$BMT5_SYMBOL_SWAP_MODE_REOPEN_"
+  "CURRENT\020\010\022$\n BMT5_SYMBOL_SWAP_MODE_REOPE"
+  "N_BID\020\t*\306\001\n BMT5_ENUM_SYMBOL_TRADE_EXECU"
+  "TION\022\'\n#BMT5_SYMBOL_TRADE_EXECUTION_REQU"
+  "EST\020\000\022\'\n#BMT5_SYMBOL_TRADE_EXECUTION_INS"
+  "TANT\020\001\022&\n\"BMT5_SYMBOL_TRADE_EXECUTION_MA"
+  "RKET\020\002\022(\n$BMT5_SYMBOL_TRADE_EXECUTION_EX"
+  "CHANGE\020\003*\324\001\n\033BMT5_ENUM_SYMBOL_TRADE_MODE"
+  "\022#\n\037BMT5_SYMBOL_TRADE_MODE_DISABLED\020\000\022#\n"
+  "\037BMT5_SYMBOL_TRADE_MODE_LONGONLY\020\001\022$\n BM"
+  "T5_SYMBOL_TRADE_MODE_SHORTONLY\020\002\022$\n BMT5"
+  "_SYMBOL_TRADE_MODE_CLOSEONLY\020\003\022\037\n\033BMT5_S"
+  "YMBOL_TRADE_MODE_FULL\020\004*\234\004\n\032BMT5_ENUM_SY"
+  "MBOL_CALC_MODE\022\037\n\033BMT5_SYMBOL_CALC_MODE_"
+  "FOREX\020\000\022+\n\'BMT5_SYMBOL_CALC_MODE_FOREX_N"
+  "O_LEVERAGE\020\001\022!\n\035BMT5_SYMBOL_CALC_MODE_FU"
+  "TURES\020\002\022\035\n\031BMT5_SYMBOL_CALC_MODE_CFD\020\003\022\""
+  "\n\036BMT5_SYMBOL_CALC_MODE_CFDINDEX\020\004\022%\n!BM"
+  "T5_SYMBOL_CALC_MODE_CFDLEVERAGE\020\005\022%\n!BMT"
+  "5_SYMBOL_CALC_MODE_EXCH_STOCKS\020\006\022&\n\"BMT5"
+  "_SYMBOL_CALC_MODE_EXCH_FUTURES\020\007\022,\n(BMT5"
+  "_SYMBOL_CALC_MODE_EXCH_FUTURES_FORTS\020\010\022$"
+  "\n BMT5_SYMBOL_CALC_MODE_EXCH_BONDS\020\t\022*\n&"
+  "BMT5_SYMBOL_CALC_MODE_EXCH_STOCKS_MOEX\020\n"
+  "\022)\n%BMT5_SYMBOL_CALC_MODE_EXCH_BONDS_MOE"
+  "X\020\013\022)\n%BMT5_SYMBOL_CALC_MODE_SERV_COLLAT"
+  "ERAL\020\014*\277\003\n\027BMT5_ENUM_SYMBOL_SECTOR\022\031\n\025BM"
+  "T5_SECTOR_UNDEFINED\020\000\022\037\n\033BMT5_SECTOR_BAS"
+  "IC_MATERIALS\020\001\022&\n\"BMT5_SECTOR_COMMUNICAT"
+  "ION_SERVICES\020\002\022!\n\035BMT5_SECTOR_CONSUMER_C"
+  "YCLICAL\020\003\022\"\n\036BMT5_SECTOR_CONSUMER_DEFENS"
+  "IVE\020\004\022\030\n\024BMT5_SECTOR_CURRENCY\020\005\022\037\n\033BMT5_"
+  "SECTOR_CURRENCY_CRYPTO\020\006\022\026\n\022BMT5_SECTOR_"
+  "ENERGY\020\007\022\031\n\025BMT5_SECTOR_FINANCIAL\020\010\022\032\n\026B"
+  "MT5_SECTOR_HEALTHCARE\020\t\022\033\n\027BMT5_SECTOR_I"
+  "NDUSTRIALS\020\n\022\033\n\027BMT5_SECTOR_REAL_ESTATE\020"
+  "\013\022\032\n\026BMT5_SECTOR_TECHNOLOGY\020\014\022\031\n\025BMT5_SE"
+  "CTOR_UTILITIES\020\r*^\n\033BMT5_ENUM_SYMBOL_CHA"
+  "RT_MODE\022\036\n\032BMT5_SYMBOL_CHART_MODE_BID\020\000\022"
+  "\037\n\033BMT5_SYMBOL_CHART_MODE_LAST\020\001*\246+\n\031BMT"
+  "5_ENUM_SYMBOL_INDUSTRY\022\033\n\027BMT5_INDUSTRY_"
+  "UNDEFINED\020\000\022%\n!BMT5_INDUSTRY_AGRICULTURA"
+  "L_INPUTS\020\001\022\033\n\027BMT5_INDUSTRY_ALUMINIUM\020\002\022"
+  "$\n BMT5_INDUSTRY_BUILDING_MATERIALS\020\003\022\033\n"
+  "\027BMT5_INDUSTRY_CHEMICALS\020\004\022\035\n\031BMT5_INDUS"
+  "TRY_COKING_COAL\020\005\022\030\n\024BMT5_INDUSTRY_COPPE"
+  "R\020\006\022\026\n\022BMT5_INDUSTRY_GOLD\020\007\022\035\n\031BMT5_INDU"
+  "STRY_LUMBER_WOOD\020\010\022#\n\037BMT5_INDUSTRY_INDU"
+  "STRIAL_METALS\020\t\022!\n\035BMT5_INDUSTRY_PRECIOU"
+  "S_METALS\020\n\022\027\n\023BMT5_INDUSTRY_PAPER\020\013\022\030\n\024B"
+  "MT5_INDUSTRY_SILVER\020\014\022%\n!BMT5_INDUSTRY_S"
+  "PECIALTY_CHEMICALS\020\r\022\027\n\023BMT5_INDUSTRY_ST"
+  "EEL\020\016\022\035\n\031BMT5_INDUSTRY_ADVERTISING\020\017\022\036\n\032"
+  "BMT5_INDUSTRY_BROADCASTING\020\020\022#\n\037BMT5_IND"
+  "USTRY_GAMING_MULTIMEDIA\020\021\022\037\n\033BMT5_INDUST"
+  "RY_ENTERTAINMENT\020\022\022\"\n\036BMT5_INDUSTRY_INTE"
+  "RNET_CONTENT\020\023\022\034\n\030BMT5_INDUSTRY_PUBLISHI"
+  "NG\020\024\022\031\n\025BMT5_INDUSTRY_TELECOM\020\025\022\'\n#BMT5_"
+  "INDUSTRY_APPAREL_MANUFACTURING\020\026\022 \n\034BMT5"
+  "_INDUSTRY_APPAREL_RETAIL\020\027\022$\n BMT5_INDUS"
+  "TRY_AUTO_MANUFACTURERS\020\030\022\034\n\030BMT5_INDUSTR"
+  "Y_AUTO_PARTS\020\031\022!\n\035BMT5_INDUSTRY_AUTO_DEA"
+  "LERSHIP\020\032\022#\n\037BMT5_INDUSTRY_DEPARTMENT_ST"
+  "ORES\020\033\022&\n\"BMT5_INDUSTRY_FOOTWEAR_ACCESSO"
+  "RIES\020\034\022\035\n\031BMT5_INDUSTRY_FURNISHINGS\020\035\022\032\n"
+  "\026BMT5_INDUSTRY_GAMBLING\020\036\022$\n BMT5_INDUST"
+  "RY_HOME_IMPROV_RETAIL\020\037\022!\n\035BMT5_INDUSTRY"
+  "_INTERNET_RETAIL\020 \022\031\n\025BMT5_INDUSTRY_LEIS"
+  "URE\020!\022\031\n\025BMT5_INDUSTRY_LODGING\020\"\022\036\n\032BMT5"
+  "_INDUSTRY_LUXURY_GOODS\020#\022&\n\"BMT5_INDUSTR"
+  "Y_PACKAGING_CONTAINERS\020$\022#\n\037BMT5_INDUSTR"
+  "Y_PERSONAL_SERVICES\020%\022\'\n#BMT5_INDUSTRY_R"
+  "ECREATIONAL_VEHICLES\020&\022\'\n#BMT5_INDUSTRY_"
+  "RESIDENT_CONSTRUCTION\020\'\022!\n\035BMT5_INDUSTRY"
+  "_RESORTS_CASINOS\020(\022\035\n\031BMT5_INDUSTRY_REST"
+  "AURANTS\020)\022\"\n\036BMT5_INDUSTRY_SPECIALTY_RET"
+  "AIL\020*\022\'\n#BMT5_INDUSTRY_TEXTILE_MANUFACTU"
+  "RING\020+\022!\n\035BMT5_INDUSTRY_TRAVEL_SERVICES\020"
+  ",\022#\n\037BMT5_INDUSTRY_BEVERAGES_BREWERS\020-\022$"
+  "\n BMT5_INDUSTRY_BEVERAGES_NON_ALCO\020.\022$\n "
+  "BMT5_INDUSTRY_BEVERAGES_WINERIES\020/\022\037\n\033BM"
+  "T5_INDUSTRY_CONFECTIONERS\0200\022!\n\035BMT5_INDU"
+  "STRY_DISCOUNT_STORES\0201\022#\n\037BMT5_INDUSTRY_"
+  "EDUCATION_TRAINIG\0202\022\037\n\033BMT5_INDUSTRY_FAR"
+  "M_PRODUCTS\0203\022#\n\037BMT5_INDUSTRY_FOOD_DISTR"
+  "IBUTION\0204\022 \n\034BMT5_INDUSTRY_GROCERY_STORE"
+  "S\0205\022$\n BMT5_INDUSTRY_HOUSEHOLD_PRODUCTS\020"
+  "6\022 \n\034BMT5_INDUSTRY_PACKAGED_FOODS\0207\022\031\n\025B"
+  "MT5_INDUSTRY_TOBACCO\0208\022\"\n\036BMT5_INDUSTRY_"
+  "OIL_GAS_DRILLING\0209\022\034\n\030BMT5_INDUSTRY_OIL_"
+  "GAS_EP\020:\022#\n\037BMT5_INDUSTRY_OIL_GAS_EQUIPM"
+  "ENT\020;\022$\n BMT5_INDUSTRY_OIL_GAS_INTEGRATE"
+  "D\020<\022#\n\037BMT5_INDUSTRY_OIL_GAS_MIDSTREAM\020="
+  "\022\"\n\036BMT5_INDUSTRY_OIL_GAS_REFINING\020>\022\036\n\032"
+  "BMT5_INDUSTRY_THERMAL_COAL\020\?\022\031\n\025BMT5_IND"
+  "USTRY_URANIUM\020@\022&\n\"BMT5_INDUSTRY_EXCHANG"
+  "E_TRADED_FUND\020A\022#\n\037BMT5_INDUSTRY_ASSETS_"
+  "MANAGEMENT\020B\022#\n\037BMT5_INDUSTRY_BANKS_DIVE"
+  "RSIFIED\020C\022 \n\034BMT5_INDUSTRY_BANKS_REGIONA"
+  "L\020D\022!\n\035BMT5_INDUSTRY_CAPITAL_MARKETS\020E\022%"
+  "\n!BMT5_INDUSTRY_CLOSE_END_FUND_DEBT\020F\022\'\n"
+  "#BMT5_INDUSTRY_CLOSE_END_FUND_EQUITY\020G\022("
+  "\n$BMT5_INDUSTRY_CLOSE_END_FUND_FOREIGN\020H"
+  "\022!\n\035BMT5_INDUSTRY_CREDIT_SERVICES\020I\022(\n$B"
+  "MT5_INDUSTRY_FINANCIAL_CONGLOMERATE\020J\022)\n"
+  "%BMT5_INDUSTRY_FINANCIAL_DATA_EXCHANGE\020K"
+  "\022#\n\037BMT5_INDUSTRY_INSURANCE_BROKERS\020L\022\'\n"
+  "#BMT5_INDUSTRY_INSURANCE_DIVERSIFIED\020M\022 "
+  "\n\034BMT5_INDUSTRY_INSURANCE_LIFE\020N\022$\n BMT5"
+  "_INDUSTRY_INSURANCE_PROPERTY\020O\022\'\n#BMT5_I"
+  "NDUSTRY_INSURANCE_REINSURANCE\020P\022%\n!BMT5_"
+  "INDUSTRY_INSURANCE_SPECIALTY\020Q\022\"\n\036BMT5_I"
+  "NDUSTRY_MORTGAGE_FINANCE\020R\022!\n\035BMT5_INDUS"
+  "TRY_SHELL_COMPANIES\020S\022\037\n\033BMT5_INDUSTRY_B"
+  "IOTECHNOLOGY\020T\022&\n\"BMT5_INDUSTRY_DIAGNOST"
+  "ICS_RESEARCH\020U\022%\n!BMT5_INDUSTRY_DRUGS_MA"
+  "NUFACTURERS\020V\022*\n&BMT5_INDUSTRY_DRUGS_MAN"
+  "UFACTURERS_SPEC\020W\022\"\n\036BMT5_INDUSTRY_HEALT"
+  "HCARE_PLANS\020X\022$\n BMT5_INDUSTRY_HEALTH_IN"
+  "FORMATION\020Y\022$\n BMT5_INDUSTRY_MEDICAL_FAC"
+  "ILITIES\020Z\022!\n\035BMT5_INDUSTRY_MEDICAL_DEVIC"
+  "ES\020[\022&\n\"BMT5_INDUSTRY_MEDICAL_DISTRIBUTI"
+  "ON\020\\\022%\n!BMT5_INDUSTRY_MEDICAL_INSTRUMENT"
+  "S\020]\022!\n\035BMT5_INDUSTRY_PHARM_RETAILERS\020^\022#"
+  "\n\037BMT5_INDUSTRY_AEROSPACE_DEFENSE\020_\022\032\n\026B"
+  "MT5_INDUSTRY_AIRLINES\020`\022#\n\037BMT5_INDUSTRY"
+  "_AIRPORTS_SERVICES\020a\022#\n\037BMT5_INDUSTRY_BU"
+  "ILDING_PRODUCTS\020b\022$\n BMT5_INDUSTRY_BUSIN"
+  "ESS_EQUIPMENT\020c\022\037\n\033BMT5_INDUSTRY_CONGLOM"
+  "ERATES\020d\022%\n!BMT5_INDUSTRY_CONSULTING_SER"
+  "VICES\020e\022&\n\"BMT5_INDUSTRY_ELECTRICAL_EQUI"
+  "PMENT\020f\022*\n&BMT5_INDUSTRY_ENGINEERING_CON"
+  "STRUCTION\020g\022&\n\"BMT5_INDUSTRY_FARM_HEAVY_"
+  "MACHINERY\020h\022)\n%BMT5_INDUSTRY_INDUSTRIAL_"
+  "DISTRIBUTION\020i\022+\n\'BMT5_INDUSTRY_INFRASTR"
+  "UCTURE_OPERATIONS\020j\022#\n\037BMT5_INDUSTRY_FRE"
+  "IGHT_LOGISTICS\020k\022!\n\035BMT5_INDUSTRY_MARINE"
+  "_SHIPPING\020l\022#\n\037BMT5_INDUSTRY_METAL_FABRI"
+  "CATION\020m\022#\n\037BMT5_INDUSTRY_POLLUTION_CONT"
+  "ROL\020n\022\033\n\027BMT5_INDUSTRY_RAILROADS\020o\022 \n\034BM"
+  "T5_INDUSTRY_RENTAL_LEASING\020p\022%\n!BMT5_IND"
+  "USTRY_SECURITY_PROTECTION\020q\022,\n(BMT5_INDU"
+  "STRY_SPEALITY_BUSINESS_SERVICES\020r\022$\n BMT"
+  "5_INDUSTRY_SPEALITY_MACHINERY\020s\022%\n!BMT5_"
+  "INDUSTRY_STUFFING_EMPLOYMENT\020t\022#\n\037BMT5_I"
+  "NDUSTRY_TOOLS_ACCESSORIES\020u\022\032\n\026BMT5_INDU"
+  "STRY_TRUCKING\020v\022\"\n\036BMT5_INDUSTRY_WASTE_M"
+  "ANAGEMENT\020w\022)\n%BMT5_INDUSTRY_REAL_ESTATE"
+  "_DEVELOPMENT\020x\022)\n%BMT5_INDUSTRY_REAL_EST"
+  "ATE_DIVERSIFIED\020y\022&\n\"BMT5_INDUSTRY_REAL_"
+  "ESTATE_SERVICES\020z\022\"\n\036BMT5_INDUSTRY_REIT_"
+  "DIVERSIFIED\020{\022 \n\034BMT5_INDUSTRY_REIT_HEAL"
+  "TCARE\020|\022\"\n\036BMT5_INDUSTRY_REIT_HOTEL_MOTE"
+  "L\020}\022!\n\035BMT5_INDUSTRY_REIT_INDUSTRIAL\020~\022\036"
+  "\n\032BMT5_INDUSTRY_REIT_MORTAGE\020\177\022\036\n\031BMT5_I"
+  "NDUSTRY_REIT_OFFICE\020\200\001\022\"\n\035BMT5_INDUSTRY_"
+  "REIT_RESIDENTAL\020\201\001\022\036\n\031BMT5_INDUSTRY_REIT"
+  "_RETAIL\020\202\001\022\"\n\035BMT5_INDUSTRY_REIT_SPECIAL"
+  "ITY\020\203\001\022*\n%BMT5_INDUSTRY_COMMUNICATION_EQ"
+  "UIPMENT\020\204\001\022$\n\037BMT5_INDUSTRY_COMPUTER_HAR"
+  "DWARE\020\205\001\022\'\n\"BMT5_INDUSTRY_CONSUMER_ELECT"
+  "RONICS\020\206\001\022(\n#BMT5_INDUSTRY_ELECTRONIC_CO"
+  "MPONENTS\020\207\001\022*\n%BMT5_INDUSTRY_ELECTRONIC_"
+  "DISTRIBUTION\020\210\001\022\036\n\031BMT5_INDUSTRY_IT_SERV"
+  "ICES\020\211\001\022)\n$BMT5_INDUSTRY_SCIENTIFIC_INST"
+  "RUMENTS\020\212\001\022*\n%BMT5_INDUSTRY_SEMICONDUCTO"
+  "R_EQUIPMENT\020\213\001\022!\n\034BMT5_INDUSTRY_SEMICOND"
+  "UCTORS\020\214\001\022\'\n\"BMT5_INDUSTRY_SOFTWARE_APPL"
+  "ICATION\020\215\001\022*\n%BMT5_INDUSTRY_SOFTWARE_INF"
+  "RASTRUCTURE\020\216\001\022\030\n\023BMT5_INDUSTRY_SOLAR\020\217\001"
+  "\022(\n#BMT5_INDUSTRY_UTILITIES_DIVERSIFIED\020"
+  "\220\001\022+\n&BMT5_INDUSTRY_UTILITIES_POWERPRODU"
+  "CERS\020\221\001\022&\n!BMT5_INDUSTRY_UTILITIES_RENEW"
+  "ABLE\020\222\001\022/\n*BMT5_INDUSTRY_UTILITIES_REGUL"
+  "ATED_ELECTRIC\020\223\001\022*\n%BMT5_INDUSTRY_UTILIT"
+  "IES_REGULATED_GAS\020\224\001\022,\n\'BMT5_INDUSTRY_UT"
+  "ILITIES_REGULATED_WATER\020\225\001\022\"\n\035BMT5_INDUS"
+  "TRY_UTILITIES_FIRST\020\226\001\022!\n\034BMT5_INDUSTRY_"
+  "UTILITIES_LAST\020\227\0012\273\010\n\rAccountHelper\022q\n\016A"
+  "ccountSummary\022#.mt5_term_api.AccountSumm"
+  "aryRequest\032!.mt5_term_api.AccountSummary"
+  "Reply\"\027\202\323\344\223\002\021\022\017/AccountSummary\022i\n\014OrderH"
+  "istory\022!.mt5_term_api.OrderHistoryReques"
+  "t\032\037.mt5_term_api.OrderHistoryReply\"\025\202\323\344\223"
+  "\002\017\022\r/OrderHistory\022i\n\014OpenedOrders\022!.mt5_"
+  "term_api.OpenedOrdersRequest\032\037.mt5_term_"
+  "api.OpenedOrdersReply\"\025\202\323\344\223\002\017\022\r/OpenedOr"
+  "ders\022\205\001\n\023OpenedOrdersTickets\022(.mt5_term_"
+  "api.OpenedOrdersTicketsRequest\032&.mt5_ter"
+  "m_api.OpenedOrdersTicketsReply\"\034\202\323\344\223\002\026\022\024"
+  "/OpenedOrdersTickets\022y\n\020SymbolParamsMany"
+  "\022%.mt5_term_api.SymbolParamsManyRequest\032"
+  "#.mt5_term_api.SymbolParamsManyReply\"\031\202\323"
+  "\344\223\002\023\022\021/SymbolParamsMany\022}\n\021TickValueWith"
+  "Size\022&.mt5_term_api.TickValueWithSizeReq"
+  "uest\032$.mt5_term_api.TickValueWithSizeRep"
+  "ly\"\032\202\323\344\223\002\024\022\022/TickValueWithSize\022y\n\020Positi"
+  "onsHistory\022%.mt5_term_api.PositionsHisto"
+  "ryRequest\032#.mt5_term_api.PositionsHistor"
+  "yReply\"\031\202\323\344\223\002\023\022\021/PositionsHistory\022y\n\020All"
+  "HistoryOrders\022%.mt5_term_api.AllHistoryO"
+  "rdersRequest\032#.mt5_term_api.AllHistoryOr"
+  "dersReply\"\031\202\323\344\223\002\023\022\021/AllHistoryOrders\022i\n\014"
+  "DealsHistory\022!.mt5_term_api.DealsHistory"
+  "Request\032\037.mt5_term_api.DealsHistoryReply"
+  "\"\025\202\323\344\223\002\017\022\r/DealsHistoryBBZ1git.mtapi.io/"
+  "root/mrpc-proto.git/mt5/libraries/go\252\002\014m"
+  "t5_term_apib\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_deps[3] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -2062,9 +2197,9 @@ static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2d
 };
 static ::_pbi::once_flag descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto = {
-    false, false, 25078, descriptor_table_protodef_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto,
+    false, false, 26339, descriptor_table_protodef_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto,
     "mt5-term-api-account-helper.proto",
-    &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_deps, 3, 33,
+    &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_deps, 3, 36,
     schemas, file_default_instances, TableStruct_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto::offsets,
     file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto, file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto,
     file_level_service_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto,
@@ -2076,9 +2211,25 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_mt5_2dte
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
 namespace mt5_term_api {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* AH_ENUM_POSITIONS_HISTORY_SORT_TYPE_descriptor() {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_DEALS_HISTORY_SORT_TYPE_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
   return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[0];
+}
+bool BMT5_ENUM_DEALS_HISTORY_SORT_TYPE_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* AH_ENUM_POSITIONS_HISTORY_SORT_TYPE_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[1];
 }
 bool AH_ENUM_POSITIONS_HISTORY_SORT_TYPE_IsValid(int value) {
   switch (value) {
@@ -2094,7 +2245,7 @@ bool AH_ENUM_POSITIONS_HISTORY_SORT_TYPE_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* AH_ENUM_POSITIONS_HISTORY_ORDER_TYPE_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[1];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[2];
 }
 bool AH_ENUM_POSITIONS_HISTORY_ORDER_TYPE_IsValid(int value) {
   switch (value) {
@@ -2115,7 +2266,7 @@ bool AH_ENUM_POSITIONS_HISTORY_ORDER_TYPE_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_OPENED_ORDER_SORT_TYPE_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[2];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[3];
 }
 bool BMT5_ENUM_OPENED_ORDER_SORT_TYPE_IsValid(int value) {
   switch (value) {
@@ -2131,7 +2282,7 @@ bool BMT5_ENUM_OPENED_ORDER_SORT_TYPE_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_POSITION_TYPE_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[3];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[4];
 }
 bool BMT5_ENUM_POSITION_TYPE_IsValid(int value) {
   switch (value) {
@@ -2145,7 +2296,7 @@ bool BMT5_ENUM_POSITION_TYPE_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_POSITION_REASON_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[4];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[5];
 }
 bool BMT5_ENUM_POSITION_REASON_IsValid(int value) {
   switch (value) {
@@ -2164,7 +2315,7 @@ bool BMT5_ENUM_POSITION_REASON_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_ORDER_TYPE_TIME_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[5];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[6];
 }
 bool BMT5_ENUM_ORDER_TYPE_TIME_IsValid(int value) {
   switch (value) {
@@ -2180,7 +2331,7 @@ bool BMT5_ENUM_ORDER_TYPE_TIME_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_ORDER_TYPE_FILLING_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[6];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[7];
 }
 bool BMT5_ENUM_ORDER_TYPE_FILLING_IsValid(int value) {
   switch (value) {
@@ -2196,7 +2347,7 @@ bool BMT5_ENUM_ORDER_TYPE_FILLING_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_ORDER_TYPE_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[7];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[8];
 }
 bool BMT5_ENUM_ORDER_TYPE_IsValid(int value) {
   switch (value) {
@@ -2217,7 +2368,7 @@ bool BMT5_ENUM_ORDER_TYPE_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_DEAL_REASON_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[8];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[9];
 }
 bool BMT5_ENUM_DEAL_REASON_IsValid(int value) {
   switch (value) {
@@ -2240,7 +2391,7 @@ bool BMT5_ENUM_DEAL_REASON_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_DEAL_TYPE_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[9];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[10];
 }
 bool BMT5_ENUM_DEAL_TYPE_IsValid(int value) {
   switch (value) {
@@ -2270,7 +2421,7 @@ bool BMT5_ENUM_DEAL_TYPE_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_DEAL_ENTRY_TYPE_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[10];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[11];
 }
 bool BMT5_ENUM_DEAL_ENTRY_TYPE_IsValid(int value) {
   switch (value) {
@@ -2286,7 +2437,7 @@ bool BMT5_ENUM_DEAL_ENTRY_TYPE_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_ORDER_HISTORY_SORT_TYPE_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[11];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[12];
 }
 bool BMT5_ENUM_ORDER_HISTORY_SORT_TYPE_IsValid(int value) {
   switch (value) {
@@ -2304,7 +2455,7 @@ bool BMT5_ENUM_ORDER_HISTORY_SORT_TYPE_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_ORDER_STATE_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[12];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[13];
 }
 bool BMT5_ENUM_ORDER_STATE_IsValid(int value) {
   switch (value) {
@@ -2326,7 +2477,7 @@ bool BMT5_ENUM_ORDER_STATE_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* MrpcEnumAccountTradeMode_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[13];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[14];
 }
 bool MrpcEnumAccountTradeMode_IsValid(int value) {
   switch (value) {
@@ -2339,9 +2490,24 @@ bool MrpcEnumAccountTradeMode_IsValid(int value) {
   }
 }
 
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* MrpcEnumAccountMarginMode_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[15];
+}
+bool MrpcEnumAccountMarginMode_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* AH_SYMBOL_PARAMS_MANY_SORT_TYPE_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[14];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[16];
 }
 bool AH_SYMBOL_PARAMS_MANY_SORT_TYPE_IsValid(int value) {
   switch (value) {
@@ -2357,7 +2523,7 @@ bool AH_SYMBOL_PARAMS_MANY_SORT_TYPE_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_SYMBOL_OPTION_RIGHT_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[15];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[17];
 }
 bool BMT5_ENUM_SYMBOL_OPTION_RIGHT_IsValid(int value) {
   switch (value) {
@@ -2371,7 +2537,7 @@ bool BMT5_ENUM_SYMBOL_OPTION_RIGHT_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_SYMBOL_OPTION_MODE_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[16];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[18];
 }
 bool BMT5_ENUM_SYMBOL_OPTION_MODE_IsValid(int value) {
   switch (value) {
@@ -2385,7 +2551,7 @@ bool BMT5_ENUM_SYMBOL_OPTION_MODE_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_SYMBOL_ORDER_GTC_MODE_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[17];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[19];
 }
 bool BMT5_ENUM_SYMBOL_ORDER_GTC_MODE_IsValid(int value) {
   switch (value) {
@@ -2400,7 +2566,7 @@ bool BMT5_ENUM_SYMBOL_ORDER_GTC_MODE_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_DAY_OF_WEEK_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[18];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[20];
 }
 bool BMT5_ENUM_DAY_OF_WEEK_IsValid(int value) {
   switch (value) {
@@ -2419,7 +2585,7 @@ bool BMT5_ENUM_DAY_OF_WEEK_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_SYMBOL_SWAP_MODE_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[19];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[21];
 }
 bool BMT5_ENUM_SYMBOL_SWAP_MODE_IsValid(int value) {
   switch (value) {
@@ -2441,7 +2607,7 @@ bool BMT5_ENUM_SYMBOL_SWAP_MODE_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_SYMBOL_TRADE_EXECUTION_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[20];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[22];
 }
 bool BMT5_ENUM_SYMBOL_TRADE_EXECUTION_IsValid(int value) {
   switch (value) {
@@ -2457,7 +2623,7 @@ bool BMT5_ENUM_SYMBOL_TRADE_EXECUTION_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_SYMBOL_TRADE_MODE_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[21];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[23];
 }
 bool BMT5_ENUM_SYMBOL_TRADE_MODE_IsValid(int value) {
   switch (value) {
@@ -2474,7 +2640,7 @@ bool BMT5_ENUM_SYMBOL_TRADE_MODE_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_SYMBOL_CALC_MODE_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[22];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[24];
 }
 bool BMT5_ENUM_SYMBOL_CALC_MODE_IsValid(int value) {
   switch (value) {
@@ -2499,7 +2665,7 @@ bool BMT5_ENUM_SYMBOL_CALC_MODE_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_SYMBOL_SECTOR_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[23];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[25];
 }
 bool BMT5_ENUM_SYMBOL_SECTOR_IsValid(int value) {
   switch (value) {
@@ -2525,7 +2691,7 @@ bool BMT5_ENUM_SYMBOL_SECTOR_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_SYMBOL_CHART_MODE_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[24];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[26];
 }
 bool BMT5_ENUM_SYMBOL_CHART_MODE_IsValid(int value) {
   switch (value) {
@@ -2539,7 +2705,7 @@ bool BMT5_ENUM_SYMBOL_CHART_MODE_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BMT5_ENUM_SYMBOL_INDUSTRY_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto);
-  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[25];
+  return file_level_enum_descriptors_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[27];
 }
 bool BMT5_ENUM_SYMBOL_INDUSTRY_IsValid(int value) {
   switch (value) {
@@ -2701,6 +2867,1071 @@ bool BMT5_ENUM_SYMBOL_INDUSTRY_IsValid(int value) {
   }
 }
 
+
+// ===================================================================
+
+class DealsHistoryRequest::_Internal {
+ public:
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& inputfrom(const DealsHistoryRequest* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& inputfromutc(const DealsHistoryRequest* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& inputto(const DealsHistoryRequest* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& inputtoutc(const DealsHistoryRequest* msg);
+};
+
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+DealsHistoryRequest::_Internal::inputfrom(const DealsHistoryRequest* msg) {
+  return *msg->_impl_.inputfrom_;
+}
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+DealsHistoryRequest::_Internal::inputfromutc(const DealsHistoryRequest* msg) {
+  return *msg->_impl_.inputfromutc_;
+}
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+DealsHistoryRequest::_Internal::inputto(const DealsHistoryRequest* msg) {
+  return *msg->_impl_.inputto_;
+}
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+DealsHistoryRequest::_Internal::inputtoutc(const DealsHistoryRequest* msg) {
+  return *msg->_impl_.inputtoutc_;
+}
+void DealsHistoryRequest::clear_inputfrom() {
+  if (GetArenaForAllocation() == nullptr && _impl_.inputfrom_ != nullptr) {
+    delete _impl_.inputfrom_;
+  }
+  _impl_.inputfrom_ = nullptr;
+}
+void DealsHistoryRequest::clear_inputfromutc() {
+  if (GetArenaForAllocation() == nullptr && _impl_.inputfromutc_ != nullptr) {
+    delete _impl_.inputfromutc_;
+  }
+  _impl_.inputfromutc_ = nullptr;
+}
+void DealsHistoryRequest::clear_inputto() {
+  if (GetArenaForAllocation() == nullptr && _impl_.inputto_ != nullptr) {
+    delete _impl_.inputto_;
+  }
+  _impl_.inputto_ = nullptr;
+}
+void DealsHistoryRequest::clear_inputtoutc() {
+  if (GetArenaForAllocation() == nullptr && _impl_.inputtoutc_ != nullptr) {
+    delete _impl_.inputtoutc_;
+  }
+  _impl_.inputtoutc_ = nullptr;
+}
+DealsHistoryRequest::DealsHistoryRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.DealsHistoryRequest)
+}
+DealsHistoryRequest::DealsHistoryRequest(const DealsHistoryRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  DealsHistoryRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.page_token_){}
+    , decltype(_impl_.inputfrom_){nullptr}
+    , decltype(_impl_.inputto_){nullptr}
+    , decltype(_impl_.inputfromutc_){nullptr}
+    , decltype(_impl_.inputtoutc_){nullptr}
+    , decltype(_impl_.inputsortmode_){}
+    , decltype(_impl_.page_size_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.page_token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.page_token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_page_token().empty()) {
+    _this->_impl_.page_token_.Set(from._internal_page_token(), 
+      _this->GetArenaForAllocation());
+  }
+  if (from._internal_has_inputfrom()) {
+    _this->_impl_.inputfrom_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.inputfrom_);
+  }
+  if (from._internal_has_inputto()) {
+    _this->_impl_.inputto_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.inputto_);
+  }
+  if (from._internal_has_inputfromutc()) {
+    _this->_impl_.inputfromutc_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.inputfromutc_);
+  }
+  if (from._internal_has_inputtoutc()) {
+    _this->_impl_.inputtoutc_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.inputtoutc_);
+  }
+  ::memcpy(&_impl_.inputsortmode_, &from._impl_.inputsortmode_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.page_size_) -
+    reinterpret_cast<char*>(&_impl_.inputsortmode_)) + sizeof(_impl_.page_size_));
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.DealsHistoryRequest)
+}
+
+inline void DealsHistoryRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.page_token_){}
+    , decltype(_impl_.inputfrom_){nullptr}
+    , decltype(_impl_.inputto_){nullptr}
+    , decltype(_impl_.inputfromutc_){nullptr}
+    , decltype(_impl_.inputtoutc_){nullptr}
+    , decltype(_impl_.inputsortmode_){0}
+    , decltype(_impl_.page_size_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.page_token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.page_token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+DealsHistoryRequest::~DealsHistoryRequest() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.DealsHistoryRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void DealsHistoryRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.page_token_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.inputfrom_;
+  if (this != internal_default_instance()) delete _impl_.inputto_;
+  if (this != internal_default_instance()) delete _impl_.inputfromutc_;
+  if (this != internal_default_instance()) delete _impl_.inputtoutc_;
+}
+
+void DealsHistoryRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void DealsHistoryRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.DealsHistoryRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.page_token_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.inputfrom_ != nullptr) {
+    delete _impl_.inputfrom_;
+  }
+  _impl_.inputfrom_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.inputto_ != nullptr) {
+    delete _impl_.inputto_;
+  }
+  _impl_.inputto_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.inputfromutc_ != nullptr) {
+    delete _impl_.inputfromutc_;
+  }
+  _impl_.inputfromutc_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.inputtoutc_ != nullptr) {
+    delete _impl_.inputtoutc_;
+  }
+  _impl_.inputtoutc_ = nullptr;
+  ::memset(&_impl_.inputsortmode_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.page_size_) -
+      reinterpret_cast<char*>(&_impl_.inputsortmode_)) + sizeof(_impl_.page_size_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* DealsHistoryRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .google.protobuf.Timestamp inputFrom = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_inputfrom(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .google.protobuf.Timestamp inputTo = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_inputto(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .mt5_term_api.BMT5_ENUM_DEALS_HISTORY_SORT_TYPE inputSortMode = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_inputsortmode(static_cast<::mt5_term_api::BMT5_ENUM_DEALS_HISTORY_SORT_TYPE>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // string page_token = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          auto str = _internal_mutable_page_token();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.DealsHistoryRequest.page_token"));
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 page_size = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _impl_.page_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .google.protobuf.Timestamp inputFromUtc = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+          ptr = ctx->ParseMessage(_internal_mutable_inputfromutc(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .google.protobuf.Timestamp inputToUtc = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
+          ptr = ctx->ParseMessage(_internal_mutable_inputtoutc(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* DealsHistoryRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.DealsHistoryRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .google.protobuf.Timestamp inputFrom = 1;
+  if (this->_internal_has_inputfrom()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, _Internal::inputfrom(this),
+        _Internal::inputfrom(this).GetCachedSize(), target, stream);
+  }
+
+  // .google.protobuf.Timestamp inputTo = 2;
+  if (this->_internal_has_inputto()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::inputto(this),
+        _Internal::inputto(this).GetCachedSize(), target, stream);
+  }
+
+  // .mt5_term_api.BMT5_ENUM_DEALS_HISTORY_SORT_TYPE inputSortMode = 3;
+  if (this->_internal_inputsortmode() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      3, this->_internal_inputsortmode(), target);
+  }
+
+  // string page_token = 4;
+  if (!this->_internal_page_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_page_token().data(), static_cast<int>(this->_internal_page_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.DealsHistoryRequest.page_token");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_page_token(), target);
+  }
+
+  // int32 page_size = 5;
+  if (this->_internal_page_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_page_size(), target);
+  }
+
+  // .google.protobuf.Timestamp inputFromUtc = 8;
+  if (this->_internal_has_inputfromutc()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(8, _Internal::inputfromutc(this),
+        _Internal::inputfromutc(this).GetCachedSize(), target, stream);
+  }
+
+  // .google.protobuf.Timestamp inputToUtc = 9;
+  if (this->_internal_has_inputtoutc()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(9, _Internal::inputtoutc(this),
+        _Internal::inputtoutc(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.DealsHistoryRequest)
+  return target;
+}
+
+size_t DealsHistoryRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.DealsHistoryRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string page_token = 4;
+  if (!this->_internal_page_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_page_token());
+  }
+
+  // .google.protobuf.Timestamp inputFrom = 1;
+  if (this->_internal_has_inputfrom()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.inputfrom_);
+  }
+
+  // .google.protobuf.Timestamp inputTo = 2;
+  if (this->_internal_has_inputto()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.inputto_);
+  }
+
+  // .google.protobuf.Timestamp inputFromUtc = 8;
+  if (this->_internal_has_inputfromutc()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.inputfromutc_);
+  }
+
+  // .google.protobuf.Timestamp inputToUtc = 9;
+  if (this->_internal_has_inputtoutc()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.inputtoutc_);
+  }
+
+  // .mt5_term_api.BMT5_ENUM_DEALS_HISTORY_SORT_TYPE inputSortMode = 3;
+  if (this->_internal_inputsortmode() != 0) {
+    total_size += 1 +
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_inputsortmode());
+  }
+
+  // int32 page_size = 5;
+  if (this->_internal_page_size() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_page_size());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DealsHistoryRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    DealsHistoryRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DealsHistoryRequest::GetClassData() const { return &_class_data_; }
+
+
+void DealsHistoryRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<DealsHistoryRequest*>(&to_msg);
+  auto& from = static_cast<const DealsHistoryRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.DealsHistoryRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_page_token().empty()) {
+    _this->_internal_set_page_token(from._internal_page_token());
+  }
+  if (from._internal_has_inputfrom()) {
+    _this->_internal_mutable_inputfrom()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+        from._internal_inputfrom());
+  }
+  if (from._internal_has_inputto()) {
+    _this->_internal_mutable_inputto()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+        from._internal_inputto());
+  }
+  if (from._internal_has_inputfromutc()) {
+    _this->_internal_mutable_inputfromutc()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+        from._internal_inputfromutc());
+  }
+  if (from._internal_has_inputtoutc()) {
+    _this->_internal_mutable_inputtoutc()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+        from._internal_inputtoutc());
+  }
+  if (from._internal_inputsortmode() != 0) {
+    _this->_internal_set_inputsortmode(from._internal_inputsortmode());
+  }
+  if (from._internal_page_size() != 0) {
+    _this->_internal_set_page_size(from._internal_page_size());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void DealsHistoryRequest::CopyFrom(const DealsHistoryRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.DealsHistoryRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DealsHistoryRequest::IsInitialized() const {
+  return true;
+}
+
+void DealsHistoryRequest::InternalSwap(DealsHistoryRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.page_token_, lhs_arena,
+      &other->_impl_.page_token_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(DealsHistoryRequest, _impl_.page_size_)
+      + sizeof(DealsHistoryRequest::_impl_.page_size_)
+      - PROTOBUF_FIELD_OFFSET(DealsHistoryRequest, _impl_.inputfrom_)>(
+          reinterpret_cast<char*>(&_impl_.inputfrom_),
+          reinterpret_cast<char*>(&other->_impl_.inputfrom_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DealsHistoryRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[0]);
+}
+
+// ===================================================================
+
+class DealsHistoryReply::_Internal {
+ public:
+  static const ::mt5_term_api::DealsHistoryData& data(const DealsHistoryReply* msg);
+  static const ::mt5_term_api::Error& error(const DealsHistoryReply* msg);
+};
+
+const ::mt5_term_api::DealsHistoryData&
+DealsHistoryReply::_Internal::data(const DealsHistoryReply* msg) {
+  return *msg->_impl_.response_.data_;
+}
+const ::mt5_term_api::Error&
+DealsHistoryReply::_Internal::error(const DealsHistoryReply* msg) {
+  return *msg->_impl_.response_.error_;
+}
+void DealsHistoryReply::set_allocated_data(::mt5_term_api::DealsHistoryData* data) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (data) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(data);
+    if (message_arena != submessage_arena) {
+      data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, data, submessage_arena);
+    }
+    set_has_data();
+    _impl_.response_.data_ = data;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.DealsHistoryReply.data)
+}
+void DealsHistoryReply::set_allocated_error(::mt5_term_api::Error* error) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (error) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(error));
+    if (message_arena != submessage_arena) {
+      error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, error, submessage_arena);
+    }
+    set_has_error();
+    _impl_.response_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.DealsHistoryReply.error)
+}
+void DealsHistoryReply::clear_error() {
+  if (_internal_has_error()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.response_.error_;
+    }
+    clear_has_response();
+  }
+}
+DealsHistoryReply::DealsHistoryReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.DealsHistoryReply)
+}
+DealsHistoryReply::DealsHistoryReply(const DealsHistoryReply& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  DealsHistoryReply* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.response_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  clear_has_response();
+  switch (from.response_case()) {
+    case kData: {
+      _this->_internal_mutable_data()->::mt5_term_api::DealsHistoryData::MergeFrom(
+          from._internal_data());
+      break;
+    }
+    case kError: {
+      _this->_internal_mutable_error()->::mt5_term_api::Error::MergeFrom(
+          from._internal_error());
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.DealsHistoryReply)
+}
+
+inline void DealsHistoryReply::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.response_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , /*decltype(_impl_._oneof_case_)*/{}
+  };
+  clear_has_response();
+}
+
+DealsHistoryReply::~DealsHistoryReply() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.DealsHistoryReply)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void DealsHistoryReply::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (has_response()) {
+    clear_response();
+  }
+}
+
+void DealsHistoryReply::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void DealsHistoryReply::clear_response() {
+// @@protoc_insertion_point(one_of_clear_start:mt5_term_api.DealsHistoryReply)
+  switch (response_case()) {
+    case kData: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete _impl_.response_.data_;
+      }
+      break;
+    }
+    case kError: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete _impl_.response_.error_;
+      }
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _impl_._oneof_case_[0] = RESPONSE_NOT_SET;
+}
+
+
+void DealsHistoryReply::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.DealsHistoryReply)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_response();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* DealsHistoryReply::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .mt5_term_api.DealsHistoryData data = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_data(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .mt5_term_api.Error error = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* DealsHistoryReply::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.DealsHistoryReply)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .mt5_term_api.DealsHistoryData data = 1;
+  if (_internal_has_data()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, _Internal::data(this),
+        _Internal::data(this).GetCachedSize(), target, stream);
+  }
+
+  // .mt5_term_api.Error error = 2;
+  if (_internal_has_error()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::error(this),
+        _Internal::error(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.DealsHistoryReply)
+  return target;
+}
+
+size_t DealsHistoryReply::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.DealsHistoryReply)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  switch (response_case()) {
+    // .mt5_term_api.DealsHistoryData data = 1;
+    case kData: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.response_.data_);
+      break;
+    }
+    // .mt5_term_api.Error error = 2;
+    case kError: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.response_.error_);
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DealsHistoryReply::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    DealsHistoryReply::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DealsHistoryReply::GetClassData() const { return &_class_data_; }
+
+
+void DealsHistoryReply::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<DealsHistoryReply*>(&to_msg);
+  auto& from = static_cast<const DealsHistoryReply&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.DealsHistoryReply)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  switch (from.response_case()) {
+    case kData: {
+      _this->_internal_mutable_data()->::mt5_term_api::DealsHistoryData::MergeFrom(
+          from._internal_data());
+      break;
+    }
+    case kError: {
+      _this->_internal_mutable_error()->::mt5_term_api::Error::MergeFrom(
+          from._internal_error());
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void DealsHistoryReply::CopyFrom(const DealsHistoryReply& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.DealsHistoryReply)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DealsHistoryReply::IsInitialized() const {
+  return true;
+}
+
+void DealsHistoryReply::InternalSwap(DealsHistoryReply* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.response_, other->_impl_.response_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DealsHistoryReply::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[1]);
+}
+
+// ===================================================================
+
+class DealsHistoryData::_Internal {
+ public:
+};
+
+DealsHistoryData::DealsHistoryData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.DealsHistoryData)
+}
+DealsHistoryData::DealsHistoryData(const DealsHistoryData& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  DealsHistoryData* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.deals_){from._impl_.deals_}
+    , decltype(_impl_.next_page_token_){}
+    , decltype(_impl_.account_login_){}
+    , decltype(_impl_.arraytotal_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.next_page_token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.next_page_token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_next_page_token().empty()) {
+    _this->_impl_.next_page_token_.Set(from._internal_next_page_token(), 
+      _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.account_login_, &from._impl_.account_login_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.arraytotal_) -
+    reinterpret_cast<char*>(&_impl_.account_login_)) + sizeof(_impl_.arraytotal_));
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.DealsHistoryData)
+}
+
+inline void DealsHistoryData::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.deals_){arena}
+    , decltype(_impl_.next_page_token_){}
+    , decltype(_impl_.account_login_){int64_t{0}}
+    , decltype(_impl_.arraytotal_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.next_page_token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.next_page_token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+DealsHistoryData::~DealsHistoryData() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.DealsHistoryData)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void DealsHistoryData::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.deals_.~RepeatedPtrField();
+  _impl_.next_page_token_.Destroy();
+}
+
+void DealsHistoryData::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void DealsHistoryData::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.DealsHistoryData)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.deals_.Clear();
+  _impl_.next_page_token_.ClearToEmpty();
+  ::memset(&_impl_.account_login_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.arraytotal_) -
+      reinterpret_cast<char*>(&_impl_.account_login_)) + sizeof(_impl_.arraytotal_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* DealsHistoryData::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 arrayTotal = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.arraytotal_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .mt5_term_api.DealHistoryData deals = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_deals(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // string next_page_token = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_next_page_token();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.DealsHistoryData.next_page_token"));
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 account_login = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _impl_.account_login_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* DealsHistoryData::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.DealsHistoryData)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 arrayTotal = 1;
+  if (this->_internal_arraytotal() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_arraytotal(), target);
+  }
+
+  // repeated .mt5_term_api.DealHistoryData deals = 2;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_deals_size()); i < n; i++) {
+    const auto& repfield = this->_internal_deals(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // string next_page_token = 3;
+  if (!this->_internal_next_page_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_next_page_token().data(), static_cast<int>(this->_internal_next_page_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.DealsHistoryData.next_page_token");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_next_page_token(), target);
+  }
+
+  // int64 account_login = 4;
+  if (this->_internal_account_login() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(4, this->_internal_account_login(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.DealsHistoryData)
+  return target;
+}
+
+size_t DealsHistoryData::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.DealsHistoryData)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .mt5_term_api.DealHistoryData deals = 2;
+  total_size += 1UL * this->_internal_deals_size();
+  for (const auto& msg : this->_impl_.deals_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string next_page_token = 3;
+  if (!this->_internal_next_page_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_next_page_token());
+  }
+
+  // int64 account_login = 4;
+  if (this->_internal_account_login() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_account_login());
+  }
+
+  // int32 arrayTotal = 1;
+  if (this->_internal_arraytotal() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_arraytotal());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DealsHistoryData::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    DealsHistoryData::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DealsHistoryData::GetClassData() const { return &_class_data_; }
+
+
+void DealsHistoryData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<DealsHistoryData*>(&to_msg);
+  auto& from = static_cast<const DealsHistoryData&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.DealsHistoryData)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.deals_.MergeFrom(from._impl_.deals_);
+  if (!from._internal_next_page_token().empty()) {
+    _this->_internal_set_next_page_token(from._internal_next_page_token());
+  }
+  if (from._internal_account_login() != 0) {
+    _this->_internal_set_account_login(from._internal_account_login());
+  }
+  if (from._internal_arraytotal() != 0) {
+    _this->_internal_set_arraytotal(from._internal_arraytotal());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void DealsHistoryData::CopyFrom(const DealsHistoryData& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.DealsHistoryData)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DealsHistoryData::IsInitialized() const {
+  return true;
+}
+
+void DealsHistoryData::InternalSwap(DealsHistoryData* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.deals_.InternalSwap(&other->_impl_.deals_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.next_page_token_, lhs_arena,
+      &other->_impl_.next_page_token_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(DealsHistoryData, _impl_.arraytotal_)
+      + sizeof(DealsHistoryData::_impl_.arraytotal_)
+      - PROTOBUF_FIELD_OFFSET(DealsHistoryData, _impl_.account_login_)>(
+          reinterpret_cast<char*>(&_impl_.account_login_),
+          reinterpret_cast<char*>(&other->_impl_.account_login_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DealsHistoryData::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[2]);
+}
 
 // ===================================================================
 
@@ -3238,7 +4469,7 @@ void AllHistoryOrdersRequest::InternalSwap(AllHistoryOrdersRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AllHistoryOrdersRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[0]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[3]);
 }
 
 // ===================================================================
@@ -3552,7 +4783,7 @@ void AllHistoryOrdersReply::InternalSwap(AllHistoryOrdersReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AllHistoryOrdersReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[1]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[4]);
 }
 
 // ===================================================================
@@ -3873,7 +5104,7 @@ void AllHistoryOrdersData::InternalSwap(AllHistoryOrdersData* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AllHistoryOrdersData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[2]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[5]);
 }
 
 // ===================================================================
@@ -4950,7 +6181,7 @@ void HistoryOrderInfo::InternalSwap(HistoryOrderInfo* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata HistoryOrderInfo::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[3]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[6]);
 }
 
 // ===================================================================
@@ -5489,7 +6720,7 @@ void PositionsHistoryRequest::InternalSwap(PositionsHistoryRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata PositionsHistoryRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[4]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[7]);
 }
 
 // ===================================================================
@@ -5803,7 +7034,7 @@ void PositionsHistoryReply::InternalSwap(PositionsHistoryReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata PositionsHistoryReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[5]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[8]);
 }
 
 // ===================================================================
@@ -6067,7 +7298,7 @@ void PositionsHistoryData::InternalSwap(PositionsHistoryData* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata PositionsHistoryData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[6]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[9]);
 }
 
 // ===================================================================
@@ -6981,7 +8212,7 @@ void PositionHistoryInfo::InternalSwap(PositionHistoryInfo* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata PositionHistoryInfo::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[7]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[10]);
 }
 
 // ===================================================================
@@ -7171,7 +8402,7 @@ void TickValueWithSizeRequest::InternalSwap(TickValueWithSizeRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata TickValueWithSizeRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[8]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[11]);
 }
 
 // ===================================================================
@@ -7416,7 +8647,7 @@ void TickValueWithSizeReply::InternalSwap(TickValueWithSizeReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata TickValueWithSizeReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[9]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[12]);
 }
 
 // ===================================================================
@@ -7601,7 +8832,7 @@ void TickValueWithSizeData::InternalSwap(TickValueWithSizeData* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata TickValueWithSizeData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[10]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[13]);
 }
 
 // ===================================================================
@@ -8020,7 +9251,7 @@ void TickSizeSymbol::InternalSwap(TickSizeSymbol* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata TickSizeSymbol::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[11]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[14]);
 }
 
 // ===================================================================
@@ -8060,7 +9291,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*OpenedOrdersTicketsRequest::Ge
 ::PROTOBUF_NAMESPACE_ID::Metadata OpenedOrdersTicketsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[12]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[15]);
 }
 
 // ===================================================================
@@ -8374,7 +9605,7 @@ void OpenedOrdersTicketsReply::InternalSwap(OpenedOrdersTicketsReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata OpenedOrdersTicketsReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[13]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[16]);
 }
 
 // ===================================================================
@@ -8609,7 +9840,7 @@ void OpenedOrdersTicketsData::InternalSwap(OpenedOrdersTicketsData* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata OpenedOrdersTicketsData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[14]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[17]);
 }
 
 // ===================================================================
@@ -8790,7 +10021,7 @@ void OpenedOrdersRequest::InternalSwap(OpenedOrdersRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata OpenedOrdersRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[15]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[18]);
 }
 
 // ===================================================================
@@ -9104,7 +10335,7 @@ void OpenedOrdersReply::InternalSwap(OpenedOrdersReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata OpenedOrdersReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[16]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[19]);
 }
 
 // ===================================================================
@@ -9323,7 +10554,7 @@ void OpenedOrdersData::InternalSwap(OpenedOrdersData* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata OpenedOrdersData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[17]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[20]);
 }
 
 // ===================================================================
@@ -10290,7 +11521,7 @@ void PositionInfo::InternalSwap(PositionInfo* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata PositionInfo::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[18]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[21]);
 }
 
 // ===================================================================
@@ -11421,7 +12652,7 @@ void OpenedOrderInfo::InternalSwap(OpenedOrderInfo* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata OpenedOrderInfo::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[19]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[22]);
 }
 
 // ===================================================================
@@ -11923,7 +13154,7 @@ void OrderHistoryRequest::InternalSwap(OrderHistoryRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata OrderHistoryRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[20]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[23]);
 }
 
 // ===================================================================
@@ -12237,7 +13468,7 @@ void OrderHistoryReply::InternalSwap(OrderHistoryReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata OrderHistoryReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[21]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[24]);
 }
 
 // ===================================================================
@@ -12558,7 +13789,7 @@ void OrdersHistoryData::InternalSwap(OrdersHistoryData* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata OrdersHistoryData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[22]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[25]);
 }
 
 // ===================================================================
@@ -12823,7 +14054,7 @@ void HistoryData::InternalSwap(HistoryData* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata HistoryData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[23]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[26]);
 }
 
 // ===================================================================
@@ -12882,6 +14113,8 @@ DealHistoryData::DealHistoryData(const DealHistoryData& from)
     , decltype(_impl_.type_){}
     , decltype(_impl_.position_id_){}
     , decltype(_impl_.account_login_){}
+    , decltype(_impl_.order_){}
+    , decltype(_impl_.magic_){}
     , decltype(_impl_.reason_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
@@ -12945,6 +14178,8 @@ inline void DealHistoryData::SharedCtor(
     , decltype(_impl_.type_){0}
     , decltype(_impl_.position_id_){uint64_t{0u}}
     , decltype(_impl_.account_login_){int64_t{0}}
+    , decltype(_impl_.order_){uint64_t{0u}}
+    , decltype(_impl_.magic_){int64_t{0}}
     , decltype(_impl_.reason_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
@@ -13174,6 +14409,22 @@ const char* DealHistoryData::_InternalParse(const char* ptr, ::_pbi::ParseContex
         } else
           goto handle_unusual;
         continue;
+      // uint64 order = 20;
+      case 20:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 160)) {
+          _impl_.order_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 magic = 21;
+      case 21:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 168)) {
+          _impl_.magic_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -13366,6 +14617,18 @@ uint8_t* DealHistoryData::_InternalSerialize(
         _Internal::time_utc(this).GetCachedSize(), target, stream);
   }
 
+  // uint64 order = 20;
+  if (this->_internal_order() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(20, this->_internal_order(), target);
+  }
+
+  // int64 magic = 21;
+  if (this->_internal_magic() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(21, this->_internal_magic(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -13518,6 +14781,20 @@ size_t DealHistoryData::ByteSizeLong() const {
         this->_internal_account_login());
   }
 
+  // uint64 order = 20;
+  if (this->_internal_order() != 0) {
+    total_size += 2 +
+      ::_pbi::WireFormatLite::UInt64Size(
+        this->_internal_order());
+  }
+
+  // int64 magic = 21;
+  if (this->_internal_magic() != 0) {
+    total_size += 2 +
+      ::_pbi::WireFormatLite::Int64Size(
+        this->_internal_magic());
+  }
+
   // .mt5_term_api.BMT5_ENUM_DEAL_REASON reason = 13;
   if (this->_internal_reason() != 0) {
     total_size += 1 +
@@ -13630,6 +14907,12 @@ void DealHistoryData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const 
   if (from._internal_account_login() != 0) {
     _this->_internal_set_account_login(from._internal_account_login());
   }
+  if (from._internal_order() != 0) {
+    _this->_internal_set_order(from._internal_order());
+  }
+  if (from._internal_magic() != 0) {
+    _this->_internal_set_magic(from._internal_magic());
+  }
   if (from._internal_reason() != 0) {
     _this->_internal_set_reason(from._internal_reason());
   }
@@ -13675,7 +14958,7 @@ void DealHistoryData::InternalSwap(DealHistoryData* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DealHistoryData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[24]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[27]);
 }
 
 // ===================================================================
@@ -14732,7 +16015,7 @@ void OrderHistoryData::InternalSwap(OrderHistoryData* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata OrderHistoryData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[25]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[28]);
 }
 
 // ===================================================================
@@ -14772,7 +16055,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AccountSummaryRequest::GetClas
 ::PROTOBUF_NAMESPACE_ID::Metadata AccountSummaryRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[26]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[29]);
 }
 
 // ===================================================================
@@ -15086,7 +16369,7 @@ void AccountSummaryReply::InternalSwap(AccountSummaryReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AccountSummaryReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[27]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[30]);
 }
 
 // ===================================================================
@@ -15140,6 +16423,12 @@ AccountSummaryData::AccountSummaryData(const AccountSummaryData& from)
     , decltype(_impl_.server_utc_offset_seconds_){}
     , decltype(_impl_.utc_timezone_server_time_shift_minutes_){}
     , decltype(_impl_.account_credit_){}
+    , decltype(_impl_.account_margin_){}
+    , decltype(_impl_.account_margin_free_){}
+    , decltype(_impl_.account_margin_level_){}
+    , decltype(_impl_.account_margin_mode_){}
+    , decltype(_impl_.account_trade_allowed_){}
+    , decltype(_impl_.account_trade_expert_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -15174,8 +16463,8 @@ AccountSummaryData::AccountSummaryData(const AccountSummaryData& from)
     _this->_impl_.server_time_utc_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.server_time_utc_);
   }
   ::memcpy(&_impl_.account_login_, &from._impl_.account_login_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.account_credit_) -
-    reinterpret_cast<char*>(&_impl_.account_login_)) + sizeof(_impl_.account_credit_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.account_trade_expert_) -
+    reinterpret_cast<char*>(&_impl_.account_login_)) + sizeof(_impl_.account_trade_expert_));
   // @@protoc_insertion_point(copy_constructor:mt5_term_api.AccountSummaryData)
 }
 
@@ -15197,6 +16486,12 @@ inline void AccountSummaryData::SharedCtor(
     , decltype(_impl_.server_utc_offset_seconds_){0}
     , decltype(_impl_.utc_timezone_server_time_shift_minutes_){int64_t{0}}
     , decltype(_impl_.account_credit_){0}
+    , decltype(_impl_.account_margin_){0}
+    , decltype(_impl_.account_margin_free_){0}
+    , decltype(_impl_.account_margin_level_){0}
+    , decltype(_impl_.account_margin_mode_){0}
+    , decltype(_impl_.account_trade_allowed_){false}
+    , decltype(_impl_.account_trade_expert_){false}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.account_user_name_.InitDefault();
@@ -15253,8 +16548,8 @@ void AccountSummaryData::Clear() {
   }
   _impl_.server_time_utc_ = nullptr;
   ::memset(&_impl_.account_login_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.account_credit_) -
-      reinterpret_cast<char*>(&_impl_.account_login_)) + sizeof(_impl_.account_credit_));
+      reinterpret_cast<char*>(&_impl_.account_trade_expert_) -
+      reinterpret_cast<char*>(&_impl_.account_login_)) + sizeof(_impl_.account_trade_expert_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -15359,6 +16654,14 @@ const char* AccountSummaryData::_InternalParse(const char* ptr, ::_pbi::ParseCon
         } else
           goto handle_unusual;
         continue;
+      // double account_margin = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 97)) {
+          _impl_.account_margin_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
       // int32 server_utc_offset_seconds = 13;
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
@@ -15371,6 +16674,47 @@ const char* AccountSummaryData::_InternalParse(const char* ptr, ::_pbi::ParseCon
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
           ptr = ctx->ParseMessage(_internal_mutable_server_time_utc(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double account_margin_free = 15;
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 121)) {
+          _impl_.account_margin_free_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double account_margin_level = 16;
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 129)) {
+          _impl_.account_margin_level_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // .mt5_term_api.MrpcEnumAccountMarginMode account_margin_mode = 17;
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_account_margin_mode(static_cast<::mt5_term_api::MrpcEnumAccountMarginMode>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // bool account_trade_allowed = 18;
+      case 18:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 144)) {
+          _impl_.account_trade_allowed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool account_trade_expert = 19;
+      case 19:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 152)) {
+          _impl_.account_trade_expert_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -15496,6 +16840,16 @@ uint8_t* AccountSummaryData::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteDoubleToArray(11, this->_internal_account_credit(), target);
   }
 
+  // double account_margin = 12;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_account_margin = this->_internal_account_margin();
+  uint64_t raw_account_margin;
+  memcpy(&raw_account_margin, &tmp_account_margin, sizeof(tmp_account_margin));
+  if (raw_account_margin != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(12, this->_internal_account_margin(), target);
+  }
+
   // int32 server_utc_offset_seconds = 13;
   if (this->_internal_server_utc_offset_seconds() != 0) {
     target = stream->EnsureSpace(target);
@@ -15507,6 +16861,45 @@ uint8_t* AccountSummaryData::_InternalSerialize(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(14, _Internal::server_time_utc(this),
         _Internal::server_time_utc(this).GetCachedSize(), target, stream);
+  }
+
+  // double account_margin_free = 15;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_account_margin_free = this->_internal_account_margin_free();
+  uint64_t raw_account_margin_free;
+  memcpy(&raw_account_margin_free, &tmp_account_margin_free, sizeof(tmp_account_margin_free));
+  if (raw_account_margin_free != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(15, this->_internal_account_margin_free(), target);
+  }
+
+  // double account_margin_level = 16;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_account_margin_level = this->_internal_account_margin_level();
+  uint64_t raw_account_margin_level;
+  memcpy(&raw_account_margin_level, &tmp_account_margin_level, sizeof(tmp_account_margin_level));
+  if (raw_account_margin_level != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(16, this->_internal_account_margin_level(), target);
+  }
+
+  // .mt5_term_api.MrpcEnumAccountMarginMode account_margin_mode = 17;
+  if (this->_internal_account_margin_mode() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      17, this->_internal_account_margin_mode(), target);
+  }
+
+  // bool account_trade_allowed = 18;
+  if (this->_internal_account_trade_allowed() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(18, this->_internal_account_trade_allowed(), target);
+  }
+
+  // bool account_trade_expert = 19;
+  if (this->_internal_account_trade_expert() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(19, this->_internal_account_trade_expert(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -15613,6 +17006,49 @@ size_t AccountSummaryData::ByteSizeLong() const {
     total_size += 1 + 8;
   }
 
+  // double account_margin = 12;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_account_margin = this->_internal_account_margin();
+  uint64_t raw_account_margin;
+  memcpy(&raw_account_margin, &tmp_account_margin, sizeof(tmp_account_margin));
+  if (raw_account_margin != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double account_margin_free = 15;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_account_margin_free = this->_internal_account_margin_free();
+  uint64_t raw_account_margin_free;
+  memcpy(&raw_account_margin_free, &tmp_account_margin_free, sizeof(tmp_account_margin_free));
+  if (raw_account_margin_free != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double account_margin_level = 16;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_account_margin_level = this->_internal_account_margin_level();
+  uint64_t raw_account_margin_level;
+  memcpy(&raw_account_margin_level, &tmp_account_margin_level, sizeof(tmp_account_margin_level));
+  if (raw_account_margin_level != 0) {
+    total_size += 2 + 8;
+  }
+
+  // .mt5_term_api.MrpcEnumAccountMarginMode account_margin_mode = 17;
+  if (this->_internal_account_margin_mode() != 0) {
+    total_size += 2 +
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_account_margin_mode());
+  }
+
+  // bool account_trade_allowed = 18;
+  if (this->_internal_account_trade_allowed() != 0) {
+    total_size += 2 + 1;
+  }
+
+  // bool account_trade_expert = 19;
+  if (this->_internal_account_trade_expert() != 0) {
+    total_size += 2 + 1;
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -15684,6 +17120,36 @@ void AccountSummaryData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, con
   if (raw_account_credit != 0) {
     _this->_internal_set_account_credit(from._internal_account_credit());
   }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_account_margin = from._internal_account_margin();
+  uint64_t raw_account_margin;
+  memcpy(&raw_account_margin, &tmp_account_margin, sizeof(tmp_account_margin));
+  if (raw_account_margin != 0) {
+    _this->_internal_set_account_margin(from._internal_account_margin());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_account_margin_free = from._internal_account_margin_free();
+  uint64_t raw_account_margin_free;
+  memcpy(&raw_account_margin_free, &tmp_account_margin_free, sizeof(tmp_account_margin_free));
+  if (raw_account_margin_free != 0) {
+    _this->_internal_set_account_margin_free(from._internal_account_margin_free());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_account_margin_level = from._internal_account_margin_level();
+  uint64_t raw_account_margin_level;
+  memcpy(&raw_account_margin_level, &tmp_account_margin_level, sizeof(tmp_account_margin_level));
+  if (raw_account_margin_level != 0) {
+    _this->_internal_set_account_margin_level(from._internal_account_margin_level());
+  }
+  if (from._internal_account_margin_mode() != 0) {
+    _this->_internal_set_account_margin_mode(from._internal_account_margin_mode());
+  }
+  if (from._internal_account_trade_allowed() != 0) {
+    _this->_internal_set_account_trade_allowed(from._internal_account_trade_allowed());
+  }
+  if (from._internal_account_trade_expert() != 0) {
+    _this->_internal_set_account_trade_expert(from._internal_account_trade_expert());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -15716,8 +17182,8 @@ void AccountSummaryData::InternalSwap(AccountSummaryData* other) {
       &other->_impl_.account_currency_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(AccountSummaryData, _impl_.account_credit_)
-      + sizeof(AccountSummaryData::_impl_.account_credit_)
+      PROTOBUF_FIELD_OFFSET(AccountSummaryData, _impl_.account_trade_expert_)
+      + sizeof(AccountSummaryData::_impl_.account_trade_expert_)
       - PROTOBUF_FIELD_OFFSET(AccountSummaryData, _impl_.server_time_)>(
           reinterpret_cast<char*>(&_impl_.server_time_),
           reinterpret_cast<char*>(&other->_impl_.server_time_));
@@ -15726,7 +17192,7 @@ void AccountSummaryData::InternalSwap(AccountSummaryData* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AccountSummaryData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[28]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[31]);
 }
 
 // ===================================================================
@@ -16049,7 +17515,7 @@ void SymbolParamsManyRequest::InternalSwap(SymbolParamsManyRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SymbolParamsManyRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[29]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[32]);
 }
 
 // ===================================================================
@@ -16363,7 +17829,7 @@ void SymbolParamsManyReply::InternalSwap(SymbolParamsManyReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SymbolParamsManyReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[30]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[33]);
 }
 
 // ===================================================================
@@ -16658,7 +18124,7 @@ void SymbolParamsManyData::InternalSwap(SymbolParamsManyData* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SymbolParamsManyData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[31]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[34]);
 }
 
 // ===================================================================
@@ -20983,12 +22449,24 @@ void SymbolParameters::InternalSwap(SymbolParameters* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SymbolParameters::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[32]);
+      file_level_metadata_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto[35]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace mt5_term_api
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::mt5_term_api::DealsHistoryRequest*
+Arena::CreateMaybeMessage< ::mt5_term_api::DealsHistoryRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::DealsHistoryRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mt5_term_api::DealsHistoryReply*
+Arena::CreateMaybeMessage< ::mt5_term_api::DealsHistoryReply >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::DealsHistoryReply >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mt5_term_api::DealsHistoryData*
+Arena::CreateMaybeMessage< ::mt5_term_api::DealsHistoryData >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::DealsHistoryData >(arena);
+}
 template<> PROTOBUF_NOINLINE ::mt5_term_api::AllHistoryOrdersRequest*
 Arena::CreateMaybeMessage< ::mt5_term_api::AllHistoryOrdersRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::mt5_term_api::AllHistoryOrdersRequest >(arena);
