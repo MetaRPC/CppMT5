@@ -1820,6 +1820,9 @@ class StatsData final :
     kSharpeRatioFieldNumber = 22,
     kGhprFieldNumber = 25,
     kTradesFieldNumber = 26,
+    kGrowthPercentFieldNumber = 27,
+    kDepositsFieldNumber = 28,
+    kWithdrawalsFieldNumber = 29,
   };
   // repeated .mt5_term_api.MarketTradeCountData markets = 6;
   int markets_size() const;
@@ -2177,6 +2180,33 @@ class StatsData final :
   void _internal_set_trades(int64_t value);
   public:
 
+  // double growth_percent = 27;
+  void clear_growth_percent();
+  double growth_percent() const;
+  void set_growth_percent(double value);
+  private:
+  double _internal_growth_percent() const;
+  void _internal_set_growth_percent(double value);
+  public:
+
+  // double deposits = 28;
+  void clear_deposits();
+  double deposits() const;
+  void set_deposits(double value);
+  private:
+  double _internal_deposits() const;
+  void _internal_set_deposits(double value);
+  public:
+
+  // double withdrawals = 29;
+  void clear_withdrawals();
+  double withdrawals() const;
+  void set_withdrawals(double value);
+  private:
+  double _internal_withdrawals() const;
+  void _internal_set_withdrawals(double value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mt5_term_api.StatsData)
  private:
   class _Internal;
@@ -2211,6 +2241,9 @@ class StatsData final :
     double sharpe_ratio_;
     double ghpr_;
     int64_t trades_;
+    double growth_percent_;
+    double deposits_;
+    double withdrawals_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -4509,6 +4542,7 @@ class EquityPointData final :
     kEquityDrawdownRelativeFieldNumber = 7,
     kRealizedPlFieldNumber = 8,
     kUnrealizedPlFieldNumber = 9,
+    kCashFlowFieldNumber = 11,
   };
   // .google.protobuf.Timestamp time = 1;
   bool has_time() const;
@@ -4618,6 +4652,15 @@ class EquityPointData final :
   void _internal_set_unrealized_pl(double value);
   public:
 
+  // double cash_flow = 11;
+  void clear_cash_flow();
+  double cash_flow() const;
+  void set_cash_flow(double value);
+  private:
+  double _internal_cash_flow() const;
+  void _internal_set_cash_flow(double value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mt5_term_api.EquityPointData)
  private:
   class _Internal;
@@ -4636,6 +4679,7 @@ class EquityPointData final :
     double equity_drawdown_relative_;
     double realized_pl_;
     double unrealized_pl_;
+    double cash_flow_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -7713,6 +7757,66 @@ inline void StatsData::set_trades(int64_t value) {
   // @@protoc_insertion_point(field_set:mt5_term_api.StatsData.trades)
 }
 
+// double growth_percent = 27;
+inline void StatsData::clear_growth_percent() {
+  _impl_.growth_percent_ = 0;
+}
+inline double StatsData::_internal_growth_percent() const {
+  return _impl_.growth_percent_;
+}
+inline double StatsData::growth_percent() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.StatsData.growth_percent)
+  return _internal_growth_percent();
+}
+inline void StatsData::_internal_set_growth_percent(double value) {
+  
+  _impl_.growth_percent_ = value;
+}
+inline void StatsData::set_growth_percent(double value) {
+  _internal_set_growth_percent(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.StatsData.growth_percent)
+}
+
+// double deposits = 28;
+inline void StatsData::clear_deposits() {
+  _impl_.deposits_ = 0;
+}
+inline double StatsData::_internal_deposits() const {
+  return _impl_.deposits_;
+}
+inline double StatsData::deposits() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.StatsData.deposits)
+  return _internal_deposits();
+}
+inline void StatsData::_internal_set_deposits(double value) {
+  
+  _impl_.deposits_ = value;
+}
+inline void StatsData::set_deposits(double value) {
+  _internal_set_deposits(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.StatsData.deposits)
+}
+
+// double withdrawals = 29;
+inline void StatsData::clear_withdrawals() {
+  _impl_.withdrawals_ = 0;
+}
+inline double StatsData::_internal_withdrawals() const {
+  return _impl_.withdrawals_;
+}
+inline double StatsData::withdrawals() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.StatsData.withdrawals)
+  return _internal_withdrawals();
+}
+inline void StatsData::_internal_set_withdrawals(double value) {
+  
+  _impl_.withdrawals_ = value;
+}
+inline void StatsData::set_withdrawals(double value) {
+  _internal_set_withdrawals(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.StatsData.withdrawals)
+}
+
 // -------------------------------------------------------------------
 
 // TradeSummaryData
@@ -9699,6 +9803,26 @@ inline void EquityPointData::_internal_set_unrealized_pl(double value) {
 inline void EquityPointData::set_unrealized_pl(double value) {
   _internal_set_unrealized_pl(value);
   // @@protoc_insertion_point(field_set:mt5_term_api.EquityPointData.unrealized_pl)
+}
+
+// double cash_flow = 11;
+inline void EquityPointData::clear_cash_flow() {
+  _impl_.cash_flow_ = 0;
+}
+inline double EquityPointData::_internal_cash_flow() const {
+  return _impl_.cash_flow_;
+}
+inline double EquityPointData::cash_flow() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.EquityPointData.cash_flow)
+  return _internal_cash_flow();
+}
+inline void EquityPointData::_internal_set_cash_flow(double value) {
+  
+  _impl_.cash_flow_ = value;
+}
+inline void EquityPointData::set_cash_flow(double value) {
+  _internal_set_cash_flow(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.EquityPointData.cash_flow)
 }
 
 // -------------------------------------------------------------------

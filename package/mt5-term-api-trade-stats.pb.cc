@@ -167,6 +167,9 @@ PROTOBUF_CONSTEXPR StatsData::StatsData(
   , /*decltype(_impl_.sharpe_ratio_)*/0
   , /*decltype(_impl_.ghpr_)*/0
   , /*decltype(_impl_.trades_)*/int64_t{0}
+  , /*decltype(_impl_.growth_percent_)*/0
+  , /*decltype(_impl_.deposits_)*/0
+  , /*decltype(_impl_.withdrawals_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct StatsDataDefaultTypeInternal {
   PROTOBUF_CONSTEXPR StatsDataDefaultTypeInternal()
@@ -370,6 +373,7 @@ PROTOBUF_CONSTEXPR EquityPointData::EquityPointData(
   , /*decltype(_impl_.equity_drawdown_relative_)*/0
   , /*decltype(_impl_.realized_pl_)*/0
   , /*decltype(_impl_.unrealized_pl_)*/0
+  , /*decltype(_impl_.cash_flow_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct EquityPointDataDefaultTypeInternal {
   PROTOBUF_CONSTEXPR EquityPointDataDefaultTypeInternal()
@@ -531,6 +535,9 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto::offsets[] P
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::StatsData, _impl_.expectancy_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::StatsData, _impl_.ghpr_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::StatsData, _impl_.trades_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::StatsData, _impl_.growth_percent_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::StatsData, _impl_.deposits_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::StatsData, _impl_.withdrawals_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::TradeSummaryData, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -662,6 +669,7 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto::offsets[] P
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::EquityPointData, _impl_.equity_drawdown_relative_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::EquityPointData, _impl_.realized_pl_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::EquityPointData, _impl_.unrealized_pl_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::EquityPointData, _impl_.cash_flow_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::TradeUnrealizedPLData, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -694,20 +702,20 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 61, 69, -1, sizeof(::mt5_term_api::TradeUnrealizedPLRequest)},
   { 71, -1, -1, sizeof(::mt5_term_api::TradeUnrealizedPLReply)},
   { 80, -1, -1, sizeof(::mt5_term_api::StatsData)},
-  { 112, -1, -1, sizeof(::mt5_term_api::TradeSummaryData)},
-  { 124, -1, -1, sizeof(::mt5_term_api::MarketTradeCountData)},
-  { 137, -1, -1, sizeof(::mt5_term_api::ProfitabilityData)},
-  { 147, -1, -1, sizeof(::mt5_term_api::AveragePipsUsdData)},
-  { 155, -1, -1, sizeof(::mt5_term_api::WonData)},
-  { 164, -1, -1, sizeof(::mt5_term_api::ProfitData)},
-  { 174, -1, -1, sizeof(::mt5_term_api::ZScoreData)},
-  { 182, -1, -1, sizeof(::mt5_term_api::ExpectancyData)},
-  { 190, -1, -1, sizeof(::mt5_term_api::StatsWithChartsData)},
-  { 200, -1, -1, sizeof(::mt5_term_api::TradeHistoryItemData)},
-  { 220, -1, -1, sizeof(::mt5_term_api::EquityHistoryData)},
-  { 227, -1, -1, sizeof(::mt5_term_api::EquityPointData)},
-  { 243, -1, -1, sizeof(::mt5_term_api::TradeUnrealizedPLData)},
-  { 250, -1, -1, sizeof(::mt5_term_api::TradeUnrealizedExtremaData)},
+  { 115, -1, -1, sizeof(::mt5_term_api::TradeSummaryData)},
+  { 127, -1, -1, sizeof(::mt5_term_api::MarketTradeCountData)},
+  { 140, -1, -1, sizeof(::mt5_term_api::ProfitabilityData)},
+  { 150, -1, -1, sizeof(::mt5_term_api::AveragePipsUsdData)},
+  { 158, -1, -1, sizeof(::mt5_term_api::WonData)},
+  { 167, -1, -1, sizeof(::mt5_term_api::ProfitData)},
+  { 177, -1, -1, sizeof(::mt5_term_api::ZScoreData)},
+  { 185, -1, -1, sizeof(::mt5_term_api::ExpectancyData)},
+  { 193, -1, -1, sizeof(::mt5_term_api::StatsWithChartsData)},
+  { 203, -1, -1, sizeof(::mt5_term_api::TradeHistoryItemData)},
+  { 223, -1, -1, sizeof(::mt5_term_api::EquityHistoryData)},
+  { 230, -1, -1, sizeof(::mt5_term_api::EquityPointData)},
+  { 247, -1, -1, sizeof(::mt5_term_api::TradeUnrealizedPLData)},
+  { 254, -1, -1, sizeof(::mt5_term_api::TradeUnrealizedExtremaData)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -764,7 +772,7 @@ const char descriptor_table_protodef_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto[] 
   "_from_utc\"\177\n\026TradeUnrealizedPLReply\0223\n\004d"
   "ata\030\001 \001(\0132#.mt5_term_api.TradeUnrealized"
   "PLDataH\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.E"
-  "rrorH\000B\n\n\010response\"\323\007\n\tStatsData\022/\n\007summ"
+  "rrorH\000B\n\n\010response\"\222\010\n\tStatsData\022/\n\007summ"
   "ary\030\001 \001(\0132\036.mt5_term_api.TradeSummaryDat"
   "a\022 \n\030max_balance_drawdown_raw\030\002 \001(\001\022%\n\035m"
   "ax_balance_drawdown_relative\030\003 \001(\001\022\037\n\027ma"
@@ -789,77 +797,79 @@ const char descriptor_table_protodef_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto[] 
   "\007z_score\030\027 \001(\0132\030.mt5_term_api.ZScoreData"
   "\0220\n\nexpectancy\030\030 \001(\0132\034.mt5_term_api.Expe"
   "ctancyData\022\014\n\004ghpr\030\031 \001(\001\022\016\n\006trades\030\032 \001(\003"
-  "\"\221\001\n\020TradeSummaryData\022\023\n\013open_trades\030\001 \001"
-  "(\005\022\023\n\013open_profit\030\002 \001(\001\022\022\n\nday_profit\030\003 "
-  "\001(\001\022\023\n\013week_profit\030\004 \001(\001\022\024\n\014month_profit"
-  "\030\005 \001(\001\022\024\n\014total_profit\030\006 \001(\001\"\221\001\n\024MarketT"
-  "radeCountData\022\023\n\013market_name\030\001 \001(\t\022\r\n\005co"
-  "unt\030\002 \001(\005\022\014\n\004lots\030\003 \001(\001\022\016\n\006profit\030\004 \001(\001\022"
-  "\020\n\010win_rate\030\005 \001(\001\022\021\n\twon_count\030\006 \001(\005\022\022\n\n"
-  "lost_count\030\007 \001(\005\"u\n\021ProfitabilityData\022\022\n"
-  "\nwon_trades\030\001 \001(\003\022\032\n\022won_trades_percent\030"
-  "\002 \001(\001\022\023\n\013lost_trades\030\003 \001(\003\022\033\n\023lost_trade"
-  "s_percent\030\004 \001(\001\"\?\n\022AveragePipsUsdData\022\024\n"
-  "\014average_pips\030\001 \001(\001\022\023\n\013average_usd\030\002 \001(\001"
-  "\">\n\007WonData\022\021\n\twon_count\030\001 \001(\005\022\013\n\003all\030\002 "
-  "\001(\005\022\023\n\013won_persent\030\003 \001(\001\"\203\001\n\nProfitData\022"
-  "\r\n\005tiket\030\001 \001(\003\022(\n\004date\030\002 \001(\0132\032.google.pr"
-  "otobuf.Timestamp\022,\n\010date_utc\030\004 \001(\0132\032.goo"
-  "gle.protobuf.Timestamp\022\016\n\006profit\030\003 \001(\001\"B"
-  "\n\nZScoreData\022\027\n\017z_score_decimal\030\001 \001(\001\022\033\n"
-  "\023z_score_probability\030\002 \001(\001\".\n\016Expectancy"
-  "Data\022\014\n\004pips\030\001 \001(\001\022\016\n\006dollar\030\002 \001(\001\"\331\001\n\023S"
-  "tatsWithChartsData\022&\n\005stats\030\001 \001(\0132\027.mt5_"
-  "term_api.StatsData\022-\n\006charts\030\002 \003(\0132\035.mt5"
-  "_term_api.EquityPointData\0222\n\006trades\030\003 \003("
-  "\0132\".mt5_term_api.TradeHistoryItemData\0227\n"
-  "\013open_trades\030\004 \003(\0132\".mt5_term_api.TradeH"
-  "istoryItemData\"\206\003\n\024TradeHistoryItemData\022"
-  "\016\n\006ticket\030\001 \001(\003\022\016\n\006symbol\030\002 \001(\t\022\016\n\006is_bu"
-  "y\030\003 \001(\010\022\014\n\004lots\030\004 \001(\001\022\022\n\nopen_price\030\005 \001("
-  "\001\022\023\n\013close_price\030\006 \001(\001\022-\n\topen_time\030\007 \001("
-  "\0132\032.google.protobuf.Timestamp\0221\n\ropen_ti"
-  "me_utc\030\r \001(\0132\032.google.protobuf.Timestamp"
-  "\022.\n\nclose_time\030\010 \001(\0132\032.google.protobuf.T"
-  "imestamp\0222\n\016close_time_utc\030\016 \001(\0132\032.googl"
-  "e.protobuf.Timestamp\022\016\n\006profit\030\t \001(\001\022\022\n\n"
-  "commission\030\n \001(\001\022\014\n\004swap\030\013 \001(\001\022\017\n\007commen"
-  "t\030\014 \001(\t\"B\n\021EquityHistoryData\022-\n\006points\030\001"
-  " \003(\0132\035.mt5_term_api.EquityPointData\"\266\002\n\017"
-  "EquityPointData\022(\n\004time\030\001 \001(\0132\032.google.p"
-  "rotobuf.Timestamp\022,\n\010time_utc\030\n \001(\0132\032.go"
-  "ogle.protobuf.Timestamp\022\017\n\007balance\030\002 \001(\001"
-  "\022\016\n\006equity\030\003 \001(\001\022\034\n\024balance_drawdown_raw"
-  "\030\004 \001(\001\022!\n\031balance_drawdown_relative\030\005 \001("
-  "\001\022\033\n\023equity_drawdown_raw\030\006 \001(\001\022 \n\030equity"
-  "_drawdown_relative\030\007 \001(\001\022\023\n\013realized_pl\030"
-  "\010 \001(\001\022\025\n\runrealized_pl\030\t \001(\001\"R\n\025TradeUnr"
-  "ealizedPLData\0229\n\007extrema\030\001 \003(\0132(.mt5_ter"
-  "m_api.TradeUnrealizedExtremaData\"\336\002\n\032Tra"
-  "deUnrealizedExtremaData\022\016\n\006ticket\030\001 \001(\003\022"
-  "\016\n\006symbol\030\002 \001(\t\0227\n\023max_unrealized_time\030\003"
-  " \001(\0132\032.google.protobuf.Timestamp\022;\n\027max_"
-  "unrealized_time_utc\030\007 \001(\0132\032.google.proto"
-  "buf.Timestamp\022\031\n\021max_unrealized_pl\030\004 \001(\001"
-  "\0227\n\023min_unrealized_time\030\005 \001(\0132\032.google.p"
-  "rotobuf.Timestamp\022;\n\027min_unrealized_time"
-  "_utc\030\010 \001(\0132\032.google.protobuf.Timestamp\022\031"
-  "\n\021min_unrealized_pl\030\006 \001(\0012\365\003\n\nTradeStats"
-  "\022a\n\nTradeStats\022\037.mt5_term_api.TradeStats"
-  "Request\032\035.mt5_term_api.TradeStatsReply\"\023"
-  "\202\323\344\223\002\r\022\013/TradeStats\022\225\001\n\027TradeStatsEquity"
-  "History\022,.mt5_term_api.TradeStatsEquityH"
-  "istoryRequest\032*.mt5_term_api.TradeStatsE"
-  "quityHistoryReply\" \202\323\344\223\002\032\022\030/TradeStatsEq"
-  "uityHistory\022m\n\rEquityHistory\022\".mt5_term_"
-  "api.EquityHistoryRequest\032 .mt5_term_api."
-  "EquityHistoryReply\"\026\202\323\344\223\002\020\022\016/EquityHisto"
-  "ry\022}\n\021TradeUnrealizedPL\022&.mt5_term_api.T"
-  "radeUnrealizedPLRequest\032$.mt5_term_api.T"
-  "radeUnrealizedPLReply\"\032\202\323\344\223\002\024\022\022/TradeUnr"
-  "ealizedPLBBZ1git.mtapi.io/root/mrpc-prot"
-  "o.git/mt5/libraries/go\252\002\014mt5_term_apib\006p"
-  "roto3"
+  "\022\026\n\016growth_percent\030\033 \001(\001\022\020\n\010deposits\030\034 \001"
+  "(\001\022\023\n\013withdrawals\030\035 \001(\001\"\221\001\n\020TradeSummary"
+  "Data\022\023\n\013open_trades\030\001 \001(\005\022\023\n\013open_profit"
+  "\030\002 \001(\001\022\022\n\nday_profit\030\003 \001(\001\022\023\n\013week_profi"
+  "t\030\004 \001(\001\022\024\n\014month_profit\030\005 \001(\001\022\024\n\014total_p"
+  "rofit\030\006 \001(\001\"\221\001\n\024MarketTradeCountData\022\023\n\013"
+  "market_name\030\001 \001(\t\022\r\n\005count\030\002 \001(\005\022\014\n\004lots"
+  "\030\003 \001(\001\022\016\n\006profit\030\004 \001(\001\022\020\n\010win_rate\030\005 \001(\001"
+  "\022\021\n\twon_count\030\006 \001(\005\022\022\n\nlost_count\030\007 \001(\005\""
+  "u\n\021ProfitabilityData\022\022\n\nwon_trades\030\001 \001(\003"
+  "\022\032\n\022won_trades_percent\030\002 \001(\001\022\023\n\013lost_tra"
+  "des\030\003 \001(\003\022\033\n\023lost_trades_percent\030\004 \001(\001\"\?"
+  "\n\022AveragePipsUsdData\022\024\n\014average_pips\030\001 \001"
+  "(\001\022\023\n\013average_usd\030\002 \001(\001\">\n\007WonData\022\021\n\two"
+  "n_count\030\001 \001(\005\022\013\n\003all\030\002 \001(\005\022\023\n\013won_persen"
+  "t\030\003 \001(\001\"\203\001\n\nProfitData\022\r\n\005tiket\030\001 \001(\003\022(\n"
+  "\004date\030\002 \001(\0132\032.google.protobuf.Timestamp\022"
+  ",\n\010date_utc\030\004 \001(\0132\032.google.protobuf.Time"
+  "stamp\022\016\n\006profit\030\003 \001(\001\"B\n\nZScoreData\022\027\n\017z"
+  "_score_decimal\030\001 \001(\001\022\033\n\023z_score_probabil"
+  "ity\030\002 \001(\001\".\n\016ExpectancyData\022\014\n\004pips\030\001 \001("
+  "\001\022\016\n\006dollar\030\002 \001(\001\"\331\001\n\023StatsWithChartsDat"
+  "a\022&\n\005stats\030\001 \001(\0132\027.mt5_term_api.StatsDat"
+  "a\022-\n\006charts\030\002 \003(\0132\035.mt5_term_api.EquityP"
+  "ointData\0222\n\006trades\030\003 \003(\0132\".mt5_term_api."
+  "TradeHistoryItemData\0227\n\013open_trades\030\004 \003("
+  "\0132\".mt5_term_api.TradeHistoryItemData\"\206\003"
+  "\n\024TradeHistoryItemData\022\016\n\006ticket\030\001 \001(\003\022\016"
+  "\n\006symbol\030\002 \001(\t\022\016\n\006is_buy\030\003 \001(\010\022\014\n\004lots\030\004"
+  " \001(\001\022\022\n\nopen_price\030\005 \001(\001\022\023\n\013close_price\030"
+  "\006 \001(\001\022-\n\topen_time\030\007 \001(\0132\032.google.protob"
+  "uf.Timestamp\0221\n\ropen_time_utc\030\r \001(\0132\032.go"
+  "ogle.protobuf.Timestamp\022.\n\nclose_time\030\010 "
+  "\001(\0132\032.google.protobuf.Timestamp\0222\n\016close"
+  "_time_utc\030\016 \001(\0132\032.google.protobuf.Timest"
+  "amp\022\016\n\006profit\030\t \001(\001\022\022\n\ncommission\030\n \001(\001\022"
+  "\014\n\004swap\030\013 \001(\001\022\017\n\007comment\030\014 \001(\t\"B\n\021Equity"
+  "HistoryData\022-\n\006points\030\001 \003(\0132\035.mt5_term_a"
+  "pi.EquityPointData\"\311\002\n\017EquityPointData\022("
+  "\n\004time\030\001 \001(\0132\032.google.protobuf.Timestamp"
+  "\022,\n\010time_utc\030\n \001(\0132\032.google.protobuf.Tim"
+  "estamp\022\017\n\007balance\030\002 \001(\001\022\016\n\006equity\030\003 \001(\001\022"
+  "\034\n\024balance_drawdown_raw\030\004 \001(\001\022!\n\031balance"
+  "_drawdown_relative\030\005 \001(\001\022\033\n\023equity_drawd"
+  "own_raw\030\006 \001(\001\022 \n\030equity_drawdown_relativ"
+  "e\030\007 \001(\001\022\023\n\013realized_pl\030\010 \001(\001\022\025\n\runrealiz"
+  "ed_pl\030\t \001(\001\022\021\n\tcash_flow\030\013 \001(\001\"R\n\025TradeU"
+  "nrealizedPLData\0229\n\007extrema\030\001 \003(\0132(.mt5_t"
+  "erm_api.TradeUnrealizedExtremaData\"\336\002\n\032T"
+  "radeUnrealizedExtremaData\022\016\n\006ticket\030\001 \001("
+  "\003\022\016\n\006symbol\030\002 \001(\t\0227\n\023max_unrealized_time"
+  "\030\003 \001(\0132\032.google.protobuf.Timestamp\022;\n\027ma"
+  "x_unrealized_time_utc\030\007 \001(\0132\032.google.pro"
+  "tobuf.Timestamp\022\031\n\021max_unrealized_pl\030\004 \001"
+  "(\001\0227\n\023min_unrealized_time\030\005 \001(\0132\032.google"
+  ".protobuf.Timestamp\022;\n\027min_unrealized_ti"
+  "me_utc\030\010 \001(\0132\032.google.protobuf.Timestamp"
+  "\022\031\n\021min_unrealized_pl\030\006 \001(\0012\365\003\n\nTradeSta"
+  "ts\022a\n\nTradeStats\022\037.mt5_term_api.TradeSta"
+  "tsRequest\032\035.mt5_term_api.TradeStatsReply"
+  "\"\023\202\323\344\223\002\r\022\013/TradeStats\022\225\001\n\027TradeStatsEqui"
+  "tyHistory\022,.mt5_term_api.TradeStatsEquit"
+  "yHistoryRequest\032*.mt5_term_api.TradeStat"
+  "sEquityHistoryReply\" \202\323\344\223\002\032\022\030/TradeStats"
+  "EquityHistory\022m\n\rEquityHistory\022\".mt5_ter"
+  "m_api.EquityHistoryRequest\032 .mt5_term_ap"
+  "i.EquityHistoryReply\"\026\202\323\344\223\002\020\022\016/EquityHis"
+  "tory\022}\n\021TradeUnrealizedPL\022&.mt5_term_api"
+  ".TradeUnrealizedPLRequest\032$.mt5_term_api"
+  ".TradeUnrealizedPLReply\"\032\202\323\344\223\002\024\022\022/TradeU"
+  "nrealizedPLBBZ1git.mtapi.io/root/mrpc-pr"
+  "oto.git/mt5/libraries/go\252\002\014mt5_term_apib"
+  "\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_deps[3] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -868,7 +878,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2d
 };
 static ::_pbi::once_flag descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto = {
-    false, false, 4885, descriptor_table_protodef_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto,
+    false, false, 4967, descriptor_table_protodef_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto,
     "mt5-term-api-trade-stats.proto",
     &descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto_deps, 3, 23,
     schemas, file_default_instances, TableStruct_mt5_2dterm_2dapi_2dtrade_2dstats_2eproto::offsets,
@@ -3421,6 +3431,9 @@ StatsData::StatsData(const StatsData& from)
     , decltype(_impl_.sharpe_ratio_){}
     , decltype(_impl_.ghpr_){}
     , decltype(_impl_.trades_){}
+    , decltype(_impl_.growth_percent_){}
+    , decltype(_impl_.deposits_){}
+    , decltype(_impl_.withdrawals_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -3469,8 +3482,8 @@ StatsData::StatsData(const StatsData& from)
     _this->_impl_.expectancy_ = new ::mt5_term_api::ExpectancyData(*from._impl_.expectancy_);
   }
   ::memcpy(&_impl_.max_balance_drawdown_raw_, &from._impl_.max_balance_drawdown_raw_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.trades_) -
-    reinterpret_cast<char*>(&_impl_.max_balance_drawdown_raw_)) + sizeof(_impl_.trades_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.withdrawals_) -
+    reinterpret_cast<char*>(&_impl_.max_balance_drawdown_raw_)) + sizeof(_impl_.withdrawals_));
   // @@protoc_insertion_point(copy_constructor:mt5_term_api.StatsData)
 }
 
@@ -3505,6 +3518,9 @@ inline void StatsData::SharedCtor(
     , decltype(_impl_.sharpe_ratio_){0}
     , decltype(_impl_.ghpr_){0}
     , decltype(_impl_.trades_){int64_t{0}}
+    , decltype(_impl_.growth_percent_){0}
+    , decltype(_impl_.deposits_){0}
+    , decltype(_impl_.withdrawals_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.average_trade_length_.InitDefault();
@@ -3601,8 +3617,8 @@ void StatsData::Clear() {
   }
   _impl_.expectancy_ = nullptr;
   ::memset(&_impl_.max_balance_drawdown_raw_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.trades_) -
-      reinterpret_cast<char*>(&_impl_.max_balance_drawdown_raw_)) + sizeof(_impl_.trades_));
+      reinterpret_cast<char*>(&_impl_.withdrawals_) -
+      reinterpret_cast<char*>(&_impl_.max_balance_drawdown_raw_)) + sizeof(_impl_.withdrawals_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3824,6 +3840,30 @@ const char* StatsData::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 208)) {
           _impl_.trades_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double growth_percent = 27;
+      case 27:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 217)) {
+          _impl_.growth_percent_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double deposits = 28;
+      case 28:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 225)) {
+          _impl_.deposits_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double withdrawals = 29;
+      case 29:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 233)) {
+          _impl_.withdrawals_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
         } else
           goto handle_unusual;
         continue;
@@ -4074,6 +4114,36 @@ uint8_t* StatsData::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt64ToArray(26, this->_internal_trades(), target);
   }
 
+  // double growth_percent = 27;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_growth_percent = this->_internal_growth_percent();
+  uint64_t raw_growth_percent;
+  memcpy(&raw_growth_percent, &tmp_growth_percent, sizeof(tmp_growth_percent));
+  if (raw_growth_percent != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(27, this->_internal_growth_percent(), target);
+  }
+
+  // double deposits = 28;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_deposits = this->_internal_deposits();
+  uint64_t raw_deposits;
+  memcpy(&raw_deposits, &tmp_deposits, sizeof(tmp_deposits));
+  if (raw_deposits != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(28, this->_internal_deposits(), target);
+  }
+
+  // double withdrawals = 29;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_withdrawals = this->_internal_withdrawals();
+  uint64_t raw_withdrawals;
+  memcpy(&raw_withdrawals, &tmp_withdrawals, sizeof(tmp_withdrawals));
+  if (raw_withdrawals != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(29, this->_internal_withdrawals(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -4294,6 +4364,33 @@ size_t StatsData::ByteSizeLong() const {
         this->_internal_trades());
   }
 
+  // double growth_percent = 27;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_growth_percent = this->_internal_growth_percent();
+  uint64_t raw_growth_percent;
+  memcpy(&raw_growth_percent, &tmp_growth_percent, sizeof(tmp_growth_percent));
+  if (raw_growth_percent != 0) {
+    total_size += 2 + 8;
+  }
+
+  // double deposits = 28;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_deposits = this->_internal_deposits();
+  uint64_t raw_deposits;
+  memcpy(&raw_deposits, &tmp_deposits, sizeof(tmp_deposits));
+  if (raw_deposits != 0) {
+    total_size += 2 + 8;
+  }
+
+  // double withdrawals = 29;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_withdrawals = this->_internal_withdrawals();
+  uint64_t raw_withdrawals;
+  memcpy(&raw_withdrawals, &tmp_withdrawals, sizeof(tmp_withdrawals));
+  if (raw_withdrawals != 0) {
+    total_size += 2 + 8;
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -4444,6 +4541,27 @@ void StatsData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROT
   if (from._internal_trades() != 0) {
     _this->_internal_set_trades(from._internal_trades());
   }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_growth_percent = from._internal_growth_percent();
+  uint64_t raw_growth_percent;
+  memcpy(&raw_growth_percent, &tmp_growth_percent, sizeof(tmp_growth_percent));
+  if (raw_growth_percent != 0) {
+    _this->_internal_set_growth_percent(from._internal_growth_percent());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_deposits = from._internal_deposits();
+  uint64_t raw_deposits;
+  memcpy(&raw_deposits, &tmp_deposits, sizeof(tmp_deposits));
+  if (raw_deposits != 0) {
+    _this->_internal_set_deposits(from._internal_deposits());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_withdrawals = from._internal_withdrawals();
+  uint64_t raw_withdrawals;
+  memcpy(&raw_withdrawals, &tmp_withdrawals, sizeof(tmp_withdrawals));
+  if (raw_withdrawals != 0) {
+    _this->_internal_set_withdrawals(from._internal_withdrawals());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -4469,8 +4587,8 @@ void StatsData::InternalSwap(StatsData* other) {
       &other->_impl_.average_trade_length_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(StatsData, _impl_.trades_)
-      + sizeof(StatsData::_impl_.trades_)
+      PROTOBUF_FIELD_OFFSET(StatsData, _impl_.withdrawals_)
+      + sizeof(StatsData::_impl_.withdrawals_)
       - PROTOBUF_FIELD_OFFSET(StatsData, _impl_.summary_)>(
           reinterpret_cast<char*>(&_impl_.summary_),
           reinterpret_cast<char*>(&other->_impl_.summary_));
@@ -8041,6 +8159,7 @@ EquityPointData::EquityPointData(const EquityPointData& from)
     , decltype(_impl_.equity_drawdown_relative_){}
     , decltype(_impl_.realized_pl_){}
     , decltype(_impl_.unrealized_pl_){}
+    , decltype(_impl_.cash_flow_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -8051,8 +8170,8 @@ EquityPointData::EquityPointData(const EquityPointData& from)
     _this->_impl_.time_utc_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.time_utc_);
   }
   ::memcpy(&_impl_.balance_, &from._impl_.balance_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.unrealized_pl_) -
-    reinterpret_cast<char*>(&_impl_.balance_)) + sizeof(_impl_.unrealized_pl_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.cash_flow_) -
+    reinterpret_cast<char*>(&_impl_.balance_)) + sizeof(_impl_.cash_flow_));
   // @@protoc_insertion_point(copy_constructor:mt5_term_api.EquityPointData)
 }
 
@@ -8071,6 +8190,7 @@ inline void EquityPointData::SharedCtor(
     , decltype(_impl_.equity_drawdown_relative_){0}
     , decltype(_impl_.realized_pl_){0}
     , decltype(_impl_.unrealized_pl_){0}
+    , decltype(_impl_.cash_flow_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -8109,8 +8229,8 @@ void EquityPointData::Clear() {
   }
   _impl_.time_utc_ = nullptr;
   ::memset(&_impl_.balance_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.unrealized_pl_) -
-      reinterpret_cast<char*>(&_impl_.balance_)) + sizeof(_impl_.unrealized_pl_));
+      reinterpret_cast<char*>(&_impl_.cash_flow_) -
+      reinterpret_cast<char*>(&_impl_.balance_)) + sizeof(_impl_.cash_flow_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -8197,6 +8317,14 @@ const char* EquityPointData::_InternalParse(const char* ptr, ::_pbi::ParseContex
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
           ptr = ctx->ParseMessage(_internal_mutable_time_utc(), ptr);
           CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double cash_flow = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 89)) {
+          _impl_.cash_flow_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
         } else
           goto handle_unusual;
         continue;
@@ -8323,6 +8451,16 @@ uint8_t* EquityPointData::_InternalSerialize(
         _Internal::time_utc(this).GetCachedSize(), target, stream);
   }
 
+  // double cash_flow = 11;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_cash_flow = this->_internal_cash_flow();
+  uint64_t raw_cash_flow;
+  memcpy(&raw_cash_flow, &tmp_cash_flow, sizeof(tmp_cash_flow));
+  if (raw_cash_flow != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(11, this->_internal_cash_flow(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -8425,6 +8563,15 @@ size_t EquityPointData::ByteSizeLong() const {
     total_size += 1 + 8;
   }
 
+  // double cash_flow = 11;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_cash_flow = this->_internal_cash_flow();
+  uint64_t raw_cash_flow;
+  memcpy(&raw_cash_flow, &tmp_cash_flow, sizeof(tmp_cash_flow));
+  if (raw_cash_flow != 0) {
+    total_size += 1 + 8;
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -8507,6 +8654,13 @@ void EquityPointData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const 
   if (raw_unrealized_pl != 0) {
     _this->_internal_set_unrealized_pl(from._internal_unrealized_pl());
   }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_cash_flow = from._internal_cash_flow();
+  uint64_t raw_cash_flow;
+  memcpy(&raw_cash_flow, &tmp_cash_flow, sizeof(tmp_cash_flow));
+  if (raw_cash_flow != 0) {
+    _this->_internal_set_cash_flow(from._internal_cash_flow());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -8525,8 +8679,8 @@ void EquityPointData::InternalSwap(EquityPointData* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(EquityPointData, _impl_.unrealized_pl_)
-      + sizeof(EquityPointData::_impl_.unrealized_pl_)
+      PROTOBUF_FIELD_OFFSET(EquityPointData, _impl_.cash_flow_)
+      + sizeof(EquityPointData::_impl_.cash_flow_)
       - PROTOBUF_FIELD_OFFSET(EquityPointData, _impl_.time_)>(
           reinterpret_cast<char*>(&_impl_.time_),
           reinterpret_cast<char*>(&other->_impl_.time_));
