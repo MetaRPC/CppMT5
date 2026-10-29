@@ -53,6 +53,9 @@ extern HealthCheckReplyDefaultTypeInternal _HealthCheckReply_default_instance_;
 class HealthCheckRequest;
 struct HealthCheckRequestDefaultTypeInternal;
 extern HealthCheckRequestDefaultTypeInternal _HealthCheckRequest_default_instance_;
+class MqlWorkerState;
+struct MqlWorkerStateDefaultTypeInternal;
+extern MqlWorkerStateDefaultTypeInternal _MqlWorkerState_default_instance_;
 class StopListeningReply;
 struct StopListeningReplyDefaultTypeInternal;
 extern StopListeningReplyDefaultTypeInternal _StopListeningReply_default_instance_;
@@ -63,6 +66,7 @@ extern StopListeningRequestDefaultTypeInternal _StopListeningRequest_default_ins
 PROTOBUF_NAMESPACE_OPEN
 template<> ::mt5_term_api::HealthCheckReply* Arena::CreateMaybeMessage<::mt5_term_api::HealthCheckReply>(Arena*);
 template<> ::mt5_term_api::HealthCheckRequest* Arena::CreateMaybeMessage<::mt5_term_api::HealthCheckRequest>(Arena*);
+template<> ::mt5_term_api::MqlWorkerState* Arena::CreateMaybeMessage<::mt5_term_api::MqlWorkerState>(Arena*);
 template<> ::mt5_term_api::StopListeningReply* Arena::CreateMaybeMessage<::mt5_term_api::StopListeningReply>(Arena*);
 template<> ::mt5_term_api::StopListeningRequest* Arena::CreateMaybeMessage<::mt5_term_api::StopListeningRequest>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -545,10 +549,29 @@ class HealthCheckReply final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kWorkersFieldNumber = 4,
     kServerTimeSecondsFieldNumber = 2,
     kServerTimeSecondsUtcFieldNumber = 3,
     kIsConnectedToServerFieldNumber = 1,
   };
+  // repeated .mt5_term_api.MqlWorkerState workers = 4;
+  int workers_size() const;
+  private:
+  int _internal_workers_size() const;
+  public:
+  void clear_workers();
+  ::mt5_term_api::MqlWorkerState* mutable_workers(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::MqlWorkerState >*
+      mutable_workers();
+  private:
+  const ::mt5_term_api::MqlWorkerState& _internal_workers(int index) const;
+  ::mt5_term_api::MqlWorkerState* _internal_add_workers();
+  public:
+  const ::mt5_term_api::MqlWorkerState& workers(int index) const;
+  ::mt5_term_api::MqlWorkerState* add_workers();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::MqlWorkerState >&
+      workers() const;
+
   // int64 server_time_seconds = 2;
   void clear_server_time_seconds();
   int64_t server_time_seconds() const;
@@ -584,9 +607,229 @@ class HealthCheckReply final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::MqlWorkerState > workers_;
     int64_t server_time_seconds_;
     int64_t server_time_seconds_utc_;
     bool is_connected_to_server_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto;
+};
+// -------------------------------------------------------------------
+
+class MqlWorkerState final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mt5_term_api.MqlWorkerState) */ {
+ public:
+  inline MqlWorkerState() : MqlWorkerState(nullptr) {}
+  ~MqlWorkerState() override;
+  explicit PROTOBUF_CONSTEXPR MqlWorkerState(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  MqlWorkerState(const MqlWorkerState& from);
+  MqlWorkerState(MqlWorkerState&& from) noexcept
+    : MqlWorkerState() {
+    *this = ::std::move(from);
+  }
+
+  inline MqlWorkerState& operator=(const MqlWorkerState& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline MqlWorkerState& operator=(MqlWorkerState&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const MqlWorkerState& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const MqlWorkerState* internal_default_instance() {
+    return reinterpret_cast<const MqlWorkerState*>(
+               &_MqlWorkerState_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(MqlWorkerState& a, MqlWorkerState& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(MqlWorkerState* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(MqlWorkerState* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  MqlWorkerState* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<MqlWorkerState>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const MqlWorkerState& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const MqlWorkerState& from) {
+    MqlWorkerState::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(MqlWorkerState* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mt5_term_api.MqlWorkerState";
+  }
+  protected:
+  explicit MqlWorkerState(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRunningCommandFieldNumber = 5,
+    kWorkerFieldNumber = 1,
+    kCanTradeFieldNumber = 2,
+    kWaitingFieldNumber = 3,
+    kMsSinceLastPollFieldNumber = 4,
+    kRunningCommandIdFieldNumber = 6,
+    kRunningMsFieldNumber = 7,
+  };
+  // string running_command = 5;
+  void clear_running_command();
+  const std::string& running_command() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_running_command(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_running_command();
+  PROTOBUF_NODISCARD std::string* release_running_command();
+  void set_allocated_running_command(std::string* running_command);
+  private:
+  const std::string& _internal_running_command() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_running_command(const std::string& value);
+  std::string* _internal_mutable_running_command();
+  public:
+
+  // int32 worker = 1;
+  void clear_worker();
+  int32_t worker() const;
+  void set_worker(int32_t value);
+  private:
+  int32_t _internal_worker() const;
+  void _internal_set_worker(int32_t value);
+  public:
+
+  // bool can_trade = 2;
+  void clear_can_trade();
+  bool can_trade() const;
+  void set_can_trade(bool value);
+  private:
+  bool _internal_can_trade() const;
+  void _internal_set_can_trade(bool value);
+  public:
+
+  // bool waiting = 3;
+  void clear_waiting();
+  bool waiting() const;
+  void set_waiting(bool value);
+  private:
+  bool _internal_waiting() const;
+  void _internal_set_waiting(bool value);
+  public:
+
+  // int64 ms_since_last_poll = 4;
+  void clear_ms_since_last_poll();
+  int64_t ms_since_last_poll() const;
+  void set_ms_since_last_poll(int64_t value);
+  private:
+  int64_t _internal_ms_since_last_poll() const;
+  void _internal_set_ms_since_last_poll(int64_t value);
+  public:
+
+  // int64 running_command_id = 6;
+  void clear_running_command_id();
+  int64_t running_command_id() const;
+  void set_running_command_id(int64_t value);
+  private:
+  int64_t _internal_running_command_id() const;
+  void _internal_set_running_command_id(int64_t value);
+  public:
+
+  // int64 running_ms = 7;
+  void clear_running_ms();
+  int64_t running_ms() const;
+  void set_running_ms(int64_t value);
+  private:
+  int64_t _internal_running_ms() const;
+  void _internal_set_running_ms(int64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mt5_term_api.MqlWorkerState)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr running_command_;
+    int32_t worker_;
+    bool can_trade_;
+    bool waiting_;
+    int64_t ms_since_last_poll_;
+    int64_t running_command_id_;
+    int64_t running_ms_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -675,9 +918,225 @@ inline void HealthCheckReply::set_server_time_seconds_utc(int64_t value) {
   // @@protoc_insertion_point(field_set:mt5_term_api.HealthCheckReply.server_time_seconds_utc)
 }
 
+// repeated .mt5_term_api.MqlWorkerState workers = 4;
+inline int HealthCheckReply::_internal_workers_size() const {
+  return _impl_.workers_.size();
+}
+inline int HealthCheckReply::workers_size() const {
+  return _internal_workers_size();
+}
+inline void HealthCheckReply::clear_workers() {
+  _impl_.workers_.Clear();
+}
+inline ::mt5_term_api::MqlWorkerState* HealthCheckReply::mutable_workers(int index) {
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.HealthCheckReply.workers)
+  return _impl_.workers_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::MqlWorkerState >*
+HealthCheckReply::mutable_workers() {
+  // @@protoc_insertion_point(field_mutable_list:mt5_term_api.HealthCheckReply.workers)
+  return &_impl_.workers_;
+}
+inline const ::mt5_term_api::MqlWorkerState& HealthCheckReply::_internal_workers(int index) const {
+  return _impl_.workers_.Get(index);
+}
+inline const ::mt5_term_api::MqlWorkerState& HealthCheckReply::workers(int index) const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.HealthCheckReply.workers)
+  return _internal_workers(index);
+}
+inline ::mt5_term_api::MqlWorkerState* HealthCheckReply::_internal_add_workers() {
+  return _impl_.workers_.Add();
+}
+inline ::mt5_term_api::MqlWorkerState* HealthCheckReply::add_workers() {
+  ::mt5_term_api::MqlWorkerState* _add = _internal_add_workers();
+  // @@protoc_insertion_point(field_add:mt5_term_api.HealthCheckReply.workers)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mt5_term_api::MqlWorkerState >&
+HealthCheckReply::workers() const {
+  // @@protoc_insertion_point(field_list:mt5_term_api.HealthCheckReply.workers)
+  return _impl_.workers_;
+}
+
+// -------------------------------------------------------------------
+
+// MqlWorkerState
+
+// int32 worker = 1;
+inline void MqlWorkerState::clear_worker() {
+  _impl_.worker_ = 0;
+}
+inline int32_t MqlWorkerState::_internal_worker() const {
+  return _impl_.worker_;
+}
+inline int32_t MqlWorkerState::worker() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.MqlWorkerState.worker)
+  return _internal_worker();
+}
+inline void MqlWorkerState::_internal_set_worker(int32_t value) {
+  
+  _impl_.worker_ = value;
+}
+inline void MqlWorkerState::set_worker(int32_t value) {
+  _internal_set_worker(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.MqlWorkerState.worker)
+}
+
+// bool can_trade = 2;
+inline void MqlWorkerState::clear_can_trade() {
+  _impl_.can_trade_ = false;
+}
+inline bool MqlWorkerState::_internal_can_trade() const {
+  return _impl_.can_trade_;
+}
+inline bool MqlWorkerState::can_trade() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.MqlWorkerState.can_trade)
+  return _internal_can_trade();
+}
+inline void MqlWorkerState::_internal_set_can_trade(bool value) {
+  
+  _impl_.can_trade_ = value;
+}
+inline void MqlWorkerState::set_can_trade(bool value) {
+  _internal_set_can_trade(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.MqlWorkerState.can_trade)
+}
+
+// bool waiting = 3;
+inline void MqlWorkerState::clear_waiting() {
+  _impl_.waiting_ = false;
+}
+inline bool MqlWorkerState::_internal_waiting() const {
+  return _impl_.waiting_;
+}
+inline bool MqlWorkerState::waiting() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.MqlWorkerState.waiting)
+  return _internal_waiting();
+}
+inline void MqlWorkerState::_internal_set_waiting(bool value) {
+  
+  _impl_.waiting_ = value;
+}
+inline void MqlWorkerState::set_waiting(bool value) {
+  _internal_set_waiting(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.MqlWorkerState.waiting)
+}
+
+// int64 ms_since_last_poll = 4;
+inline void MqlWorkerState::clear_ms_since_last_poll() {
+  _impl_.ms_since_last_poll_ = int64_t{0};
+}
+inline int64_t MqlWorkerState::_internal_ms_since_last_poll() const {
+  return _impl_.ms_since_last_poll_;
+}
+inline int64_t MqlWorkerState::ms_since_last_poll() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.MqlWorkerState.ms_since_last_poll)
+  return _internal_ms_since_last_poll();
+}
+inline void MqlWorkerState::_internal_set_ms_since_last_poll(int64_t value) {
+  
+  _impl_.ms_since_last_poll_ = value;
+}
+inline void MqlWorkerState::set_ms_since_last_poll(int64_t value) {
+  _internal_set_ms_since_last_poll(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.MqlWorkerState.ms_since_last_poll)
+}
+
+// string running_command = 5;
+inline void MqlWorkerState::clear_running_command() {
+  _impl_.running_command_.ClearToEmpty();
+}
+inline const std::string& MqlWorkerState::running_command() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.MqlWorkerState.running_command)
+  return _internal_running_command();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MqlWorkerState::set_running_command(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.running_command_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mt5_term_api.MqlWorkerState.running_command)
+}
+inline std::string* MqlWorkerState::mutable_running_command() {
+  std::string* _s = _internal_mutable_running_command();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.MqlWorkerState.running_command)
+  return _s;
+}
+inline const std::string& MqlWorkerState::_internal_running_command() const {
+  return _impl_.running_command_.Get();
+}
+inline void MqlWorkerState::_internal_set_running_command(const std::string& value) {
+  
+  _impl_.running_command_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MqlWorkerState::_internal_mutable_running_command() {
+  
+  return _impl_.running_command_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MqlWorkerState::release_running_command() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.MqlWorkerState.running_command)
+  return _impl_.running_command_.Release();
+}
+inline void MqlWorkerState::set_allocated_running_command(std::string* running_command) {
+  if (running_command != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.running_command_.SetAllocated(running_command, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.running_command_.IsDefault()) {
+    _impl_.running_command_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.MqlWorkerState.running_command)
+}
+
+// int64 running_command_id = 6;
+inline void MqlWorkerState::clear_running_command_id() {
+  _impl_.running_command_id_ = int64_t{0};
+}
+inline int64_t MqlWorkerState::_internal_running_command_id() const {
+  return _impl_.running_command_id_;
+}
+inline int64_t MqlWorkerState::running_command_id() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.MqlWorkerState.running_command_id)
+  return _internal_running_command_id();
+}
+inline void MqlWorkerState::_internal_set_running_command_id(int64_t value) {
+  
+  _impl_.running_command_id_ = value;
+}
+inline void MqlWorkerState::set_running_command_id(int64_t value) {
+  _internal_set_running_command_id(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.MqlWorkerState.running_command_id)
+}
+
+// int64 running_ms = 7;
+inline void MqlWorkerState::clear_running_ms() {
+  _impl_.running_ms_ = int64_t{0};
+}
+inline int64_t MqlWorkerState::_internal_running_ms() const {
+  return _impl_.running_ms_;
+}
+inline int64_t MqlWorkerState::running_ms() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.MqlWorkerState.running_ms)
+  return _internal_running_ms();
+}
+inline void MqlWorkerState::_internal_set_running_ms(int64_t value) {
+  
+  _impl_.running_ms_ = value;
+}
+inline void MqlWorkerState::set_running_ms(int64_t value) {
+  _internal_set_running_ms(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.MqlWorkerState.running_ms)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

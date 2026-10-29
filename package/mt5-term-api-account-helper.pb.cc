@@ -620,7 +620,9 @@ struct AccountSummaryReplyDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AccountSummaryReplyDefaultTypeInternal _AccountSummaryReply_default_instance_;
 PROTOBUF_CONSTEXPR AccountSummaryData::AccountSummaryData(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.account_user_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.account_user_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.account_company_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.account_currency_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.server_time_)*/nullptr
@@ -639,7 +641,8 @@ PROTOBUF_CONSTEXPR AccountSummaryData::AccountSummaryData(
   , /*decltype(_impl_.account_margin_mode_)*/0
   , /*decltype(_impl_.account_trade_allowed_)*/false
   , /*decltype(_impl_.account_trade_expert_)*/false
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+  , /*decltype(_impl_.terminal_connected_)*/false
+  , /*decltype(_impl_.terminal_trade_allowed_)*/false} {}
 struct AccountSummaryDataDefaultTypeInternal {
   PROTOBUF_CONSTEXPR AccountSummaryDataDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -1266,7 +1269,7 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto::offsets[
   ::_pbi::kInvalidFieldOffsetTag,
   ::_pbi::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountSummaryReply, _impl_.response_),
-  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountSummaryData, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountSummaryData, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -1291,6 +1294,29 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto::offsets[
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountSummaryData, _impl_.account_margin_mode_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountSummaryData, _impl_.account_trade_allowed_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountSummaryData, _impl_.account_trade_expert_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountSummaryData, _impl_.terminal_connected_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountSummaryData, _impl_.terminal_trade_allowed_),
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  0,
+  1,
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::SymbolParamsManyRequest, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::SymbolParamsManyRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1483,11 +1509,11 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 389, -1, -1, sizeof(::mt5_term_api::OrderHistoryData)},
   { 419, -1, -1, sizeof(::mt5_term_api::AccountSummaryRequest)},
   { 425, -1, -1, sizeof(::mt5_term_api::AccountSummaryReply)},
-  { 434, -1, -1, sizeof(::mt5_term_api::AccountSummaryData)},
-  { 459, 469, -1, sizeof(::mt5_term_api::SymbolParamsManyRequest)},
-  { 473, -1, -1, sizeof(::mt5_term_api::SymbolParamsManyReply)},
-  { 482, 492, -1, sizeof(::mt5_term_api::SymbolParamsManyData)},
-  { 496, -1, -1, sizeof(::mt5_term_api::SymbolParameters)},
+  { 434, 461, -1, sizeof(::mt5_term_api::AccountSummaryData)},
+  { 482, 492, -1, sizeof(::mt5_term_api::SymbolParamsManyRequest)},
+  { 496, -1, -1, sizeof(::mt5_term_api::SymbolParamsManyReply)},
+  { 505, 515, -1, sizeof(::mt5_term_api::SymbolParamsManyData)},
+  { 519, -1, -1, sizeof(::mt5_term_api::SymbolParameters)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -1747,7 +1773,7 @@ const char descriptor_table_protodef_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto
   "ryRequest\"y\n\023AccountSummaryReply\0220\n\004data"
   "\030\001 \001(\0132 .mt5_term_api.AccountSummaryData"
   "H\000\022$\n\005error\030\002 \001(\0132\023.mt5_term_api.ErrorH\000"
-  "B\n\n\010response\"\264\005\n\022AccountSummaryData\022\025\n\ra"
+  "B\n\n\010response\"\254\006\n\022AccountSummaryData\022\025\n\ra"
   "ccount_login\030\001 \001(\003\022\027\n\017account_balance\030\002 "
   "\001(\001\022\026\n\016account_equity\030\003 \001(\001\022\031\n\021account_u"
   "ser_name\030\004 \001(\t\022\030\n\020account_leverage\030\005 \001(\003"
@@ -1764,7 +1790,10 @@ const char descriptor_table_protodef_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto
   "rgin_level\030\020 \001(\001\022D\n\023account_margin_mode\030"
   "\021 \001(\0162\'.mt5_term_api.MrpcEnumAccountMarg"
   "inMode\022\035\n\025account_trade_allowed\030\022 \001(\010\022\034\n"
-  "\024account_trade_expert\030\023 \001(\010\"\362\001\n\027SymbolPa"
+  "\024account_trade_expert\030\023 \001(\010\022\037\n\022terminal_"
+  "connected\030\024 \001(\010H\000\210\001\001\022#\n\026terminal_trade_a"
+  "llowed\030\025 \001(\010H\001\210\001\001B\025\n\023_terminal_connected"
+  "B\031\n\027_terminal_trade_allowed\"\362\001\n\027SymbolPa"
   "ramsManyRequest\022\030\n\013symbol_name\030\001 \001(\tH\000\210\001"
   "\001\022E\n\tsort_type\030\002 \001(\0162-.mt5_term_api.AH_S"
   "YMBOL_PARAMS_MANY_SORT_TYPEH\001\210\001\001\022\030\n\013page"
@@ -2197,7 +2226,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2d
 };
 static ::_pbi::once_flag descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto = {
-    false, false, 26339, descriptor_table_protodef_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto,
+    false, false, 26459, descriptor_table_protodef_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto,
     "mt5-term-api-account-helper.proto",
     &descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto_deps, 3, 36,
     schemas, file_default_instances, TableStruct_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto::offsets,
@@ -16376,8 +16405,15 @@ void AccountSummaryReply::InternalSwap(AccountSummaryReply* other) {
 
 class AccountSummaryData::_Internal {
  public:
+  using HasBits = decltype(std::declval<AccountSummaryData>()._impl_._has_bits_);
   static const ::PROTOBUF_NAMESPACE_ID::Timestamp& server_time(const AccountSummaryData* msg);
   static const ::PROTOBUF_NAMESPACE_ID::Timestamp& server_time_utc(const AccountSummaryData* msg);
+  static void set_has_terminal_connected(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_terminal_trade_allowed(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
 };
 
 const ::PROTOBUF_NAMESPACE_ID::Timestamp&
@@ -16410,7 +16446,9 @@ AccountSummaryData::AccountSummaryData(const AccountSummaryData& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   AccountSummaryData* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.account_user_name_){}
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.account_user_name_){}
     , decltype(_impl_.account_company_name_){}
     , decltype(_impl_.account_currency_){}
     , decltype(_impl_.server_time_){nullptr}
@@ -16429,7 +16467,8 @@ AccountSummaryData::AccountSummaryData(const AccountSummaryData& from)
     , decltype(_impl_.account_margin_mode_){}
     , decltype(_impl_.account_trade_allowed_){}
     , decltype(_impl_.account_trade_expert_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
+    , decltype(_impl_.terminal_connected_){}
+    , decltype(_impl_.terminal_trade_allowed_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.account_user_name_.InitDefault();
@@ -16463,8 +16502,8 @@ AccountSummaryData::AccountSummaryData(const AccountSummaryData& from)
     _this->_impl_.server_time_utc_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.server_time_utc_);
   }
   ::memcpy(&_impl_.account_login_, &from._impl_.account_login_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.account_trade_expert_) -
-    reinterpret_cast<char*>(&_impl_.account_login_)) + sizeof(_impl_.account_trade_expert_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.terminal_trade_allowed_) -
+    reinterpret_cast<char*>(&_impl_.account_login_)) + sizeof(_impl_.terminal_trade_allowed_));
   // @@protoc_insertion_point(copy_constructor:mt5_term_api.AccountSummaryData)
 }
 
@@ -16473,7 +16512,9 @@ inline void AccountSummaryData::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.account_user_name_){}
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.account_user_name_){}
     , decltype(_impl_.account_company_name_){}
     , decltype(_impl_.account_currency_){}
     , decltype(_impl_.server_time_){nullptr}
@@ -16492,7 +16533,8 @@ inline void AccountSummaryData::SharedCtor(
     , decltype(_impl_.account_margin_mode_){0}
     , decltype(_impl_.account_trade_allowed_){false}
     , decltype(_impl_.account_trade_expert_){false}
-    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.terminal_connected_){false}
+    , decltype(_impl_.terminal_trade_allowed_){false}
   };
   _impl_.account_user_name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -16550,11 +16592,19 @@ void AccountSummaryData::Clear() {
   ::memset(&_impl_.account_login_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.account_trade_expert_) -
       reinterpret_cast<char*>(&_impl_.account_login_)) + sizeof(_impl_.account_trade_expert_));
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    ::memset(&_impl_.terminal_connected_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.terminal_trade_allowed_) -
+        reinterpret_cast<char*>(&_impl_.terminal_connected_)) + sizeof(_impl_.terminal_trade_allowed_));
+  }
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* AccountSummaryData::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
@@ -16719,6 +16769,24 @@ const char* AccountSummaryData::_InternalParse(const char* ptr, ::_pbi::ParseCon
         } else
           goto handle_unusual;
         continue;
+      // optional bool terminal_connected = 20;
+      case 20:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 160)) {
+          _Internal::set_has_terminal_connected(&has_bits);
+          _impl_.terminal_connected_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional bool terminal_trade_allowed = 21;
+      case 21:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 168)) {
+          _Internal::set_has_terminal_trade_allowed(&has_bits);
+          _impl_.terminal_trade_allowed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -16735,6 +16803,7 @@ const char* AccountSummaryData::_InternalParse(const char* ptr, ::_pbi::ParseCon
     CHK_(ptr != nullptr);
   }  // while
 message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -16902,6 +16971,18 @@ uint8_t* AccountSummaryData::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteBoolToArray(19, this->_internal_account_trade_expert(), target);
   }
 
+  // optional bool terminal_connected = 20;
+  if (_internal_has_terminal_connected()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(20, this->_internal_terminal_connected(), target);
+  }
+
+  // optional bool terminal_trade_allowed = 21;
+  if (_internal_has_terminal_trade_allowed()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(21, this->_internal_terminal_trade_allowed(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -17049,6 +17130,19 @@ size_t AccountSummaryData::ByteSizeLong() const {
     total_size += 2 + 1;
   }
 
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // optional bool terminal_connected = 20;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 2 + 1;
+    }
+
+    // optional bool terminal_trade_allowed = 21;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 2 + 1;
+    }
+
+  }
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -17150,6 +17244,16 @@ void AccountSummaryData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, con
   if (from._internal_account_trade_expert() != 0) {
     _this->_internal_set_account_trade_expert(from._internal_account_trade_expert());
   }
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.terminal_connected_ = from._impl_.terminal_connected_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.terminal_trade_allowed_ = from._impl_.terminal_trade_allowed_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -17169,6 +17273,7 @@ void AccountSummaryData::InternalSwap(AccountSummaryData* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.account_user_name_, lhs_arena,
       &other->_impl_.account_user_name_, rhs_arena
@@ -17182,8 +17287,8 @@ void AccountSummaryData::InternalSwap(AccountSummaryData* other) {
       &other->_impl_.account_currency_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(AccountSummaryData, _impl_.account_trade_expert_)
-      + sizeof(AccountSummaryData::_impl_.account_trade_expert_)
+      PROTOBUF_FIELD_OFFSET(AccountSummaryData, _impl_.terminal_trade_allowed_)
+      + sizeof(AccountSummaryData::_impl_.terminal_trade_allowed_)
       - PROTOBUF_FIELD_OFFSET(AccountSummaryData, _impl_.server_time_)>(
           reinterpret_cast<char*>(&_impl_.server_time_),
           reinterpret_cast<char*>(&other->_impl_.server_time_));

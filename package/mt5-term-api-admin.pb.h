@@ -6383,12 +6383,16 @@ class TerminalInfo final :
     kErrorMessageFieldNumber = 11,
     kUserEmailFieldNumber = 12,
     kStartupTimeFieldNumber = 15,
+    kLastTradeFailureFieldNumber = 19,
     kCreatedAtFieldNumber = 7,
     kConnectedAtFieldNumber = 14,
+    kBrokerDisconnectedSinceUtcFieldNumber = 16,
     kAccountFieldNumber = 4,
     kUserNumberFieldNumber = 2,
     kPortFieldNumber = 6,
     kStartupDurationSecondsFieldNumber = 13,
+    kTradeFailuresTotalFieldNumber = 18,
+    kTradeFailuresRecentFieldNumber = 17,
   };
   // string id = 1;
   void clear_id();
@@ -6528,6 +6532,20 @@ class TerminalInfo final :
   std::string* _internal_mutable_startup_time();
   public:
 
+  // string last_trade_failure = 19;
+  void clear_last_trade_failure();
+  const std::string& last_trade_failure() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_last_trade_failure(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_last_trade_failure();
+  PROTOBUF_NODISCARD std::string* release_last_trade_failure();
+  void set_allocated_last_trade_failure(std::string* last_trade_failure);
+  private:
+  const std::string& _internal_last_trade_failure() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_last_trade_failure(const std::string& value);
+  std::string* _internal_mutable_last_trade_failure();
+  public:
+
   // .google.protobuf.Timestamp created_at = 7;
   bool has_created_at() const;
   private:
@@ -6563,6 +6581,24 @@ class TerminalInfo final :
   void unsafe_arena_set_allocated_connected_at(
       ::PROTOBUF_NAMESPACE_ID::Timestamp* connected_at);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_connected_at();
+
+  // optional .google.protobuf.Timestamp broker_disconnected_since_utc = 16;
+  bool has_broker_disconnected_since_utc() const;
+  private:
+  bool _internal_has_broker_disconnected_since_utc() const;
+  public:
+  void clear_broker_disconnected_since_utc();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& broker_disconnected_since_utc() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Timestamp* release_broker_disconnected_since_utc();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_broker_disconnected_since_utc();
+  void set_allocated_broker_disconnected_since_utc(::PROTOBUF_NAMESPACE_ID::Timestamp* broker_disconnected_since_utc);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_broker_disconnected_since_utc() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_broker_disconnected_since_utc();
+  public:
+  void unsafe_arena_set_allocated_broker_disconnected_since_utc(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* broker_disconnected_since_utc);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_broker_disconnected_since_utc();
 
   // uint64 account = 4;
   void clear_account();
@@ -6604,6 +6640,24 @@ class TerminalInfo final :
   void _internal_set_startup_duration_seconds(double value);
   public:
 
+  // uint64 trade_failures_total = 18;
+  void clear_trade_failures_total();
+  uint64_t trade_failures_total() const;
+  void set_trade_failures_total(uint64_t value);
+  private:
+  uint64_t _internal_trade_failures_total() const;
+  void _internal_set_trade_failures_total(uint64_t value);
+  public:
+
+  // uint32 trade_failures_recent = 17;
+  void clear_trade_failures_recent();
+  uint32_t trade_failures_recent() const;
+  void set_trade_failures_recent(uint32_t value);
+  private:
+  uint32_t _internal_trade_failures_recent() const;
+  void _internal_set_trade_failures_recent(uint32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mrpc_admin.TerminalInfo)
  private:
   class _Internal;
@@ -6623,12 +6677,16 @@ class TerminalInfo final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_message_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_email_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr startup_time_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_trade_failure_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* created_at_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* connected_at_;
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* broker_disconnected_since_utc_;
     uint64_t account_;
     uint32_t user_number_;
     uint32_t port_;
     double startup_duration_seconds_;
+    uint64_t trade_failures_total_;
+    uint32_t trade_failures_recent_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_mt5_2dterm_2dapi_2dadmin_2eproto;
@@ -13248,7 +13306,7 @@ inline void TerminalInfo::set_allocated_user_email(std::string* user_email) {
 
 // optional double startup_duration_seconds = 13;
 inline bool TerminalInfo::_internal_has_startup_duration_seconds() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline bool TerminalInfo::has_startup_duration_seconds() const {
@@ -13256,7 +13314,7 @@ inline bool TerminalInfo::has_startup_duration_seconds() const {
 }
 inline void TerminalInfo::clear_startup_duration_seconds() {
   _impl_.startup_duration_seconds_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_._has_bits_[0] &= ~0x00000020u;
 }
 inline double TerminalInfo::_internal_startup_duration_seconds() const {
   return _impl_.startup_duration_seconds_;
@@ -13266,7 +13324,7 @@ inline double TerminalInfo::startup_duration_seconds() const {
   return _internal_startup_duration_seconds();
 }
 inline void TerminalInfo::_internal_set_startup_duration_seconds(double value) {
-  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_._has_bits_[0] |= 0x00000020u;
   _impl_.startup_duration_seconds_ = value;
 }
 inline void TerminalInfo::set_startup_duration_seconds(double value) {
@@ -13427,6 +13485,183 @@ inline void TerminalInfo::set_allocated_startup_time(std::string* startup_time) 
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:mrpc_admin.TerminalInfo.startup_time)
+}
+
+// optional .google.protobuf.Timestamp broker_disconnected_since_utc = 16;
+inline bool TerminalInfo::_internal_has_broker_disconnected_since_utc() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.broker_disconnected_since_utc_ != nullptr);
+  return value;
+}
+inline bool TerminalInfo::has_broker_disconnected_since_utc() const {
+  return _internal_has_broker_disconnected_since_utc();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& TerminalInfo::_internal_broker_disconnected_since_utc() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = _impl_.broker_disconnected_since_utc_;
+  return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
+      ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& TerminalInfo::broker_disconnected_since_utc() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.TerminalInfo.broker_disconnected_since_utc)
+  return _internal_broker_disconnected_since_utc();
+}
+inline void TerminalInfo::unsafe_arena_set_allocated_broker_disconnected_since_utc(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* broker_disconnected_since_utc) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.broker_disconnected_since_utc_);
+  }
+  _impl_.broker_disconnected_since_utc_ = broker_disconnected_since_utc;
+  if (broker_disconnected_since_utc) {
+    _impl_._has_bits_[0] |= 0x00000010u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000010u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mrpc_admin.TerminalInfo.broker_disconnected_since_utc)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TerminalInfo::release_broker_disconnected_since_utc() {
+  _impl_._has_bits_[0] &= ~0x00000010u;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.broker_disconnected_since_utc_;
+  _impl_.broker_disconnected_since_utc_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TerminalInfo::unsafe_arena_release_broker_disconnected_since_utc() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.TerminalInfo.broker_disconnected_since_utc)
+  _impl_._has_bits_[0] &= ~0x00000010u;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = _impl_.broker_disconnected_since_utc_;
+  _impl_.broker_disconnected_since_utc_ = nullptr;
+  return temp;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TerminalInfo::_internal_mutable_broker_disconnected_since_utc() {
+  _impl_._has_bits_[0] |= 0x00000010u;
+  if (_impl_.broker_disconnected_since_utc_ == nullptr) {
+    auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
+    _impl_.broker_disconnected_since_utc_ = p;
+  }
+  return _impl_.broker_disconnected_since_utc_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* TerminalInfo::mutable_broker_disconnected_since_utc() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_broker_disconnected_since_utc();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.TerminalInfo.broker_disconnected_since_utc)
+  return _msg;
+}
+inline void TerminalInfo::set_allocated_broker_disconnected_since_utc(::PROTOBUF_NAMESPACE_ID::Timestamp* broker_disconnected_since_utc) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.broker_disconnected_since_utc_);
+  }
+  if (broker_disconnected_since_utc) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(broker_disconnected_since_utc));
+    if (message_arena != submessage_arena) {
+      broker_disconnected_since_utc = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, broker_disconnected_since_utc, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000010u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000010u;
+  }
+  _impl_.broker_disconnected_since_utc_ = broker_disconnected_since_utc;
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.TerminalInfo.broker_disconnected_since_utc)
+}
+
+// uint32 trade_failures_recent = 17;
+inline void TerminalInfo::clear_trade_failures_recent() {
+  _impl_.trade_failures_recent_ = 0u;
+}
+inline uint32_t TerminalInfo::_internal_trade_failures_recent() const {
+  return _impl_.trade_failures_recent_;
+}
+inline uint32_t TerminalInfo::trade_failures_recent() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.TerminalInfo.trade_failures_recent)
+  return _internal_trade_failures_recent();
+}
+inline void TerminalInfo::_internal_set_trade_failures_recent(uint32_t value) {
+  
+  _impl_.trade_failures_recent_ = value;
+}
+inline void TerminalInfo::set_trade_failures_recent(uint32_t value) {
+  _internal_set_trade_failures_recent(value);
+  // @@protoc_insertion_point(field_set:mrpc_admin.TerminalInfo.trade_failures_recent)
+}
+
+// uint64 trade_failures_total = 18;
+inline void TerminalInfo::clear_trade_failures_total() {
+  _impl_.trade_failures_total_ = uint64_t{0u};
+}
+inline uint64_t TerminalInfo::_internal_trade_failures_total() const {
+  return _impl_.trade_failures_total_;
+}
+inline uint64_t TerminalInfo::trade_failures_total() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.TerminalInfo.trade_failures_total)
+  return _internal_trade_failures_total();
+}
+inline void TerminalInfo::_internal_set_trade_failures_total(uint64_t value) {
+  
+  _impl_.trade_failures_total_ = value;
+}
+inline void TerminalInfo::set_trade_failures_total(uint64_t value) {
+  _internal_set_trade_failures_total(value);
+  // @@protoc_insertion_point(field_set:mrpc_admin.TerminalInfo.trade_failures_total)
+}
+
+// string last_trade_failure = 19;
+inline void TerminalInfo::clear_last_trade_failure() {
+  _impl_.last_trade_failure_.ClearToEmpty();
+}
+inline const std::string& TerminalInfo::last_trade_failure() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.TerminalInfo.last_trade_failure)
+  return _internal_last_trade_failure();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TerminalInfo::set_last_trade_failure(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.last_trade_failure_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.TerminalInfo.last_trade_failure)
+}
+inline std::string* TerminalInfo::mutable_last_trade_failure() {
+  std::string* _s = _internal_mutable_last_trade_failure();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.TerminalInfo.last_trade_failure)
+  return _s;
+}
+inline const std::string& TerminalInfo::_internal_last_trade_failure() const {
+  return _impl_.last_trade_failure_.Get();
+}
+inline void TerminalInfo::_internal_set_last_trade_failure(const std::string& value) {
+  
+  _impl_.last_trade_failure_.Set(value, GetArenaForAllocation());
+}
+inline std::string* TerminalInfo::_internal_mutable_last_trade_failure() {
+  
+  return _impl_.last_trade_failure_.Mutable(GetArenaForAllocation());
+}
+inline std::string* TerminalInfo::release_last_trade_failure() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.TerminalInfo.last_trade_failure)
+  return _impl_.last_trade_failure_.Release();
+}
+inline void TerminalInfo::set_allocated_last_trade_failure(std::string* last_trade_failure) {
+  if (last_trade_failure != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.last_trade_failure_.SetAllocated(last_trade_failure, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.last_trade_failure_.IsDefault()) {
+    _impl_.last_trade_failure_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.TerminalInfo.last_trade_failure)
 }
 
 // -------------------------------------------------------------------

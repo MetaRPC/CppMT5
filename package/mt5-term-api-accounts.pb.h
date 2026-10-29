@@ -782,6 +782,7 @@ class AccountsListItem final :
     kStateFieldNumber = 7,
     kStopReasonFieldNumber = 11,
     kErrorMessageFieldNumber = 12,
+    kDedicatedIpFieldNumber = 14,
     kStartedUtcFieldNumber = 9,
     kStoppedUtcFieldNumber = 10,
     kExpiresUtcFieldNumber = 13,
@@ -900,6 +901,20 @@ class AccountsListItem final :
   std::string* _internal_mutable_error_message();
   public:
 
+  // string dedicated_ip = 14;
+  void clear_dedicated_ip();
+  const std::string& dedicated_ip() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_dedicated_ip(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_dedicated_ip();
+  PROTOBUF_NODISCARD std::string* release_dedicated_ip();
+  void set_allocated_dedicated_ip(std::string* dedicated_ip);
+  private:
+  const std::string& _internal_dedicated_ip() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_dedicated_ip(const std::string& value);
+  std::string* _internal_mutable_dedicated_ip();
+  public:
+
   // .google.protobuf.Timestamp started_utc = 9;
   bool has_started_utc() const;
   private:
@@ -988,6 +1003,7 @@ class AccountsListItem final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr state_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr stop_reason_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_message_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr dedicated_ip_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* started_utc_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* stopped_utc_;
     ::PROTOBUF_NAMESPACE_ID::Timestamp* expires_utc_;
@@ -2133,6 +2149,56 @@ inline void AccountsListItem::set_allocated_expires_utc(::PROTOBUF_NAMESPACE_ID:
   }
   _impl_.expires_utc_ = expires_utc;
   // @@protoc_insertion_point(field_set_allocated:mt5_term_api.AccountsListItem.expires_utc)
+}
+
+// string dedicated_ip = 14;
+inline void AccountsListItem::clear_dedicated_ip() {
+  _impl_.dedicated_ip_.ClearToEmpty();
+}
+inline const std::string& AccountsListItem::dedicated_ip() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.AccountsListItem.dedicated_ip)
+  return _internal_dedicated_ip();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AccountsListItem::set_dedicated_ip(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.dedicated_ip_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mt5_term_api.AccountsListItem.dedicated_ip)
+}
+inline std::string* AccountsListItem::mutable_dedicated_ip() {
+  std::string* _s = _internal_mutable_dedicated_ip();
+  // @@protoc_insertion_point(field_mutable:mt5_term_api.AccountsListItem.dedicated_ip)
+  return _s;
+}
+inline const std::string& AccountsListItem::_internal_dedicated_ip() const {
+  return _impl_.dedicated_ip_.Get();
+}
+inline void AccountsListItem::_internal_set_dedicated_ip(const std::string& value) {
+  
+  _impl_.dedicated_ip_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AccountsListItem::_internal_mutable_dedicated_ip() {
+  
+  return _impl_.dedicated_ip_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AccountsListItem::release_dedicated_ip() {
+  // @@protoc_insertion_point(field_release:mt5_term_api.AccountsListItem.dedicated_ip)
+  return _impl_.dedicated_ip_.Release();
+}
+inline void AccountsListItem::set_allocated_dedicated_ip(std::string* dedicated_ip) {
+  if (dedicated_ip != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.dedicated_ip_.SetAllocated(dedicated_ip, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.dedicated_ip_.IsDefault()) {
+    _impl_.dedicated_ip_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mt5_term_api.AccountsListItem.dedicated_ip)
 }
 
 #ifdef __GNUC__

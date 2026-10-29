@@ -8912,6 +8912,8 @@ class AccountSummaryData final :
     kAccountMarginModeFieldNumber = 17,
     kAccountTradeAllowedFieldNumber = 18,
     kAccountTradeExpertFieldNumber = 19,
+    kTerminalConnectedFieldNumber = 20,
+    kTerminalTradeAllowedFieldNumber = 21,
   };
   // string account_user_name = 4;
   void clear_account_user_name();
@@ -9117,6 +9119,32 @@ class AccountSummaryData final :
   void _internal_set_account_trade_expert(bool value);
   public:
 
+  // optional bool terminal_connected = 20;
+  bool has_terminal_connected() const;
+  private:
+  bool _internal_has_terminal_connected() const;
+  public:
+  void clear_terminal_connected();
+  bool terminal_connected() const;
+  void set_terminal_connected(bool value);
+  private:
+  bool _internal_terminal_connected() const;
+  void _internal_set_terminal_connected(bool value);
+  public:
+
+  // optional bool terminal_trade_allowed = 21;
+  bool has_terminal_trade_allowed() const;
+  private:
+  bool _internal_has_terminal_trade_allowed() const;
+  public:
+  void clear_terminal_trade_allowed();
+  bool terminal_trade_allowed() const;
+  void set_terminal_trade_allowed(bool value);
+  private:
+  bool _internal_terminal_trade_allowed() const;
+  void _internal_set_terminal_trade_allowed(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mt5_term_api.AccountSummaryData)
  private:
   class _Internal;
@@ -9125,6 +9153,8 @@ class AccountSummaryData final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr account_user_name_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr account_company_name_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr account_currency_;
@@ -9144,7 +9174,8 @@ class AccountSummaryData final :
     int account_margin_mode_;
     bool account_trade_allowed_;
     bool account_trade_expert_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    bool terminal_connected_;
+    bool terminal_trade_allowed_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_mt5_2dterm_2dapi_2daccount_2dhelper_2eproto;
@@ -21476,6 +21507,62 @@ inline void AccountSummaryData::_internal_set_account_trade_expert(bool value) {
 inline void AccountSummaryData::set_account_trade_expert(bool value) {
   _internal_set_account_trade_expert(value);
   // @@protoc_insertion_point(field_set:mt5_term_api.AccountSummaryData.account_trade_expert)
+}
+
+// optional bool terminal_connected = 20;
+inline bool AccountSummaryData::_internal_has_terminal_connected() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool AccountSummaryData::has_terminal_connected() const {
+  return _internal_has_terminal_connected();
+}
+inline void AccountSummaryData::clear_terminal_connected() {
+  _impl_.terminal_connected_ = false;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline bool AccountSummaryData::_internal_terminal_connected() const {
+  return _impl_.terminal_connected_;
+}
+inline bool AccountSummaryData::terminal_connected() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.AccountSummaryData.terminal_connected)
+  return _internal_terminal_connected();
+}
+inline void AccountSummaryData::_internal_set_terminal_connected(bool value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.terminal_connected_ = value;
+}
+inline void AccountSummaryData::set_terminal_connected(bool value) {
+  _internal_set_terminal_connected(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.AccountSummaryData.terminal_connected)
+}
+
+// optional bool terminal_trade_allowed = 21;
+inline bool AccountSummaryData::_internal_has_terminal_trade_allowed() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool AccountSummaryData::has_terminal_trade_allowed() const {
+  return _internal_has_terminal_trade_allowed();
+}
+inline void AccountSummaryData::clear_terminal_trade_allowed() {
+  _impl_.terminal_trade_allowed_ = false;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline bool AccountSummaryData::_internal_terminal_trade_allowed() const {
+  return _impl_.terminal_trade_allowed_;
+}
+inline bool AccountSummaryData::terminal_trade_allowed() const {
+  // @@protoc_insertion_point(field_get:mt5_term_api.AccountSummaryData.terminal_trade_allowed)
+  return _internal_terminal_trade_allowed();
+}
+inline void AccountSummaryData::_internal_set_terminal_trade_allowed(bool value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.terminal_trade_allowed_ = value;
+}
+inline void AccountSummaryData::set_terminal_trade_allowed(bool value) {
+  _internal_set_terminal_trade_allowed(value);
+  // @@protoc_insertion_point(field_set:mt5_term_api.AccountSummaryData.terminal_trade_allowed)
 }
 
 // -------------------------------------------------------------------

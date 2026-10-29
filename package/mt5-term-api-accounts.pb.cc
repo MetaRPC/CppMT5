@@ -77,6 +77,7 @@ PROTOBUF_CONSTEXPR AccountsListItem::AccountsListItem(
   , /*decltype(_impl_.state_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.stop_reason_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.error_message_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.dedicated_ip_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.started_utc_)*/nullptr
   , /*decltype(_impl_.stopped_utc_)*/nullptr
   , /*decltype(_impl_.expires_utc_)*/nullptr
@@ -146,6 +147,7 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2daccounts_2eproto::offsets[] PROTOB
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountsListItem, _impl_.stop_reason_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountsListItem, _impl_.error_message_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountsListItem, _impl_.expires_utc_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::AccountsListItem, _impl_.dedicated_ip_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::mt5_term_api::AccountsListRequest)},
@@ -174,7 +176,7 @@ const char descriptor_table_protodef_mt5_2dterm_2dapi_2daccounts_2eproto[] PROTO
   "onse\"r\n\020AccountsListData\0220\n\010accounts\030\001 \003"
   "(\0132\036.mt5_term_api.AccountsListItem\022\027\n\017ne"
   "xt_page_token\030\002 \001(\t\022\023\n\013total_count\030\003 \001(\005"
-  "\"\341\002\n\020AccountsListItem\022\023\n\013terminal_id\030\001 \001"
+  "\"\367\002\n\020AccountsListItem\022\023\n\013terminal_id\030\001 \001"
   "(\t\022\025\n\rterminal_guid\030\002 \001(\t\022\020\n\010platform\030\003 "
   "\001(\t\022\r\n\005login\030\004 \001(\004\022\016\n\006server\030\005 \001(\t\022\014\n\004na"
   "me\030\006 \001(\t\022\r\n\005state\030\007 \001(\t\022\024\n\014is_connected\030"
@@ -182,12 +184,13 @@ const char descriptor_table_protodef_mt5_2dterm_2dapi_2daccounts_2eproto[] PROTO
   "obuf.Timestamp\022/\n\013stopped_utc\030\n \001(\0132\032.go"
   "ogle.protobuf.Timestamp\022\023\n\013stop_reason\030\013"
   " \001(\t\022\025\n\rerror_message\030\014 \001(\t\022/\n\013expires_u"
-  "tc\030\r \001(\0132\032.google.protobuf.Timestamp2i\n\010"
-  "Accounts\022]\n\004List\022!.mt5_term_api.Accounts"
-  "ListRequest\032\037.mt5_term_api.AccountsListR"
-  "eply\"\021\202\323\344\223\002\013\022\t/AccountsBBZ1git.mtapi.io/"
-  "root/mrpc-proto.git/mt5/libraries/go\252\002\014m"
-  "t5_term_apib\006proto3"
+  "tc\030\r \001(\0132\032.google.protobuf.Timestamp\022\024\n\014"
+  "dedicated_ip\030\016 \001(\t2i\n\010Accounts\022]\n\004List\022!"
+  ".mt5_term_api.AccountsListRequest\032\037.mt5_"
+  "term_api.AccountsListReply\"\021\202\323\344\223\002\013\022\t/Acc"
+  "ountsBBZ1git.mtapi.io/root/mrpc-proto.gi"
+  "t/mt5/libraries/go\252\002\014mt5_term_apib\006proto"
+  "3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2daccounts_2eproto_deps[3] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -196,7 +199,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2d
 };
 static ::_pbi::once_flag descriptor_table_mt5_2dterm_2dapi_2daccounts_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_mt5_2dterm_2dapi_2daccounts_2eproto = {
-    false, false, 1019, descriptor_table_protodef_mt5_2dterm_2dapi_2daccounts_2eproto,
+    false, false, 1041, descriptor_table_protodef_mt5_2dterm_2dapi_2daccounts_2eproto,
     "mt5-term-api-accounts.proto",
     &descriptor_table_mt5_2dterm_2dapi_2daccounts_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2daccounts_2eproto_deps, 3, 4,
     schemas, file_default_instances, TableStruct_mt5_2dterm_2dapi_2daccounts_2eproto::offsets,
@@ -1183,6 +1186,7 @@ AccountsListItem::AccountsListItem(const AccountsListItem& from)
     , decltype(_impl_.state_){}
     , decltype(_impl_.stop_reason_){}
     , decltype(_impl_.error_message_){}
+    , decltype(_impl_.dedicated_ip_){}
     , decltype(_impl_.started_utc_){nullptr}
     , decltype(_impl_.stopped_utc_){nullptr}
     , decltype(_impl_.expires_utc_){nullptr}
@@ -1255,6 +1259,14 @@ AccountsListItem::AccountsListItem(const AccountsListItem& from)
     _this->_impl_.error_message_.Set(from._internal_error_message(), 
       _this->GetArenaForAllocation());
   }
+  _impl_.dedicated_ip_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.dedicated_ip_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_dedicated_ip().empty()) {
+    _this->_impl_.dedicated_ip_.Set(from._internal_dedicated_ip(), 
+      _this->GetArenaForAllocation());
+  }
   if (from._internal_has_started_utc()) {
     _this->_impl_.started_utc_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.started_utc_);
   }
@@ -1283,6 +1295,7 @@ inline void AccountsListItem::SharedCtor(
     , decltype(_impl_.state_){}
     , decltype(_impl_.stop_reason_){}
     , decltype(_impl_.error_message_){}
+    , decltype(_impl_.dedicated_ip_){}
     , decltype(_impl_.started_utc_){nullptr}
     , decltype(_impl_.stopped_utc_){nullptr}
     , decltype(_impl_.expires_utc_){nullptr}
@@ -1322,6 +1335,10 @@ inline void AccountsListItem::SharedCtor(
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.error_message_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.dedicated_ip_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.dedicated_ip_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 AccountsListItem::~AccountsListItem() {
@@ -1343,6 +1360,7 @@ inline void AccountsListItem::SharedDtor() {
   _impl_.state_.Destroy();
   _impl_.stop_reason_.Destroy();
   _impl_.error_message_.Destroy();
+  _impl_.dedicated_ip_.Destroy();
   if (this != internal_default_instance()) delete _impl_.started_utc_;
   if (this != internal_default_instance()) delete _impl_.stopped_utc_;
   if (this != internal_default_instance()) delete _impl_.expires_utc_;
@@ -1366,6 +1384,7 @@ void AccountsListItem::Clear() {
   _impl_.state_.ClearToEmpty();
   _impl_.stop_reason_.ClearToEmpty();
   _impl_.error_message_.ClearToEmpty();
+  _impl_.dedicated_ip_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && _impl_.started_utc_ != nullptr) {
     delete _impl_.started_utc_;
   }
@@ -1507,6 +1526,16 @@ const char* AccountsListItem::_InternalParse(const char* ptr, ::_pbi::ParseConte
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
           ptr = ctx->ParseMessage(_internal_mutable_expires_utc(), ptr);
           CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string dedicated_ip = 14;
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
+          auto str = _internal_mutable_dedicated_ip();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.AccountsListItem.dedicated_ip"));
         } else
           goto handle_unusual;
         continue;
@@ -1652,6 +1681,16 @@ uint8_t* AccountsListItem::_InternalSerialize(
         _Internal::expires_utc(this).GetCachedSize(), target, stream);
   }
 
+  // string dedicated_ip = 14;
+  if (!this->_internal_dedicated_ip().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_dedicated_ip().data(), static_cast<int>(this->_internal_dedicated_ip().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.AccountsListItem.dedicated_ip");
+    target = stream->WriteStringMaybeAliased(
+        14, this->_internal_dedicated_ip(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1722,6 +1761,13 @@ size_t AccountsListItem::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_error_message());
+  }
+
+  // string dedicated_ip = 14;
+  if (!this->_internal_dedicated_ip().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_dedicated_ip());
   }
 
   // .google.protobuf.Timestamp started_utc = 9;
@@ -1797,6 +1843,9 @@ void AccountsListItem::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const
   if (!from._internal_error_message().empty()) {
     _this->_internal_set_error_message(from._internal_error_message());
   }
+  if (!from._internal_dedicated_ip().empty()) {
+    _this->_internal_set_dedicated_ip(from._internal_dedicated_ip());
+  }
   if (from._internal_has_started_utc()) {
     _this->_internal_mutable_started_utc()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
         from._internal_started_utc());
@@ -1865,6 +1914,10 @@ void AccountsListItem::InternalSwap(AccountsListItem* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.error_message_, lhs_arena,
       &other->_impl_.error_message_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.dedicated_ip_, lhs_arena,
+      &other->_impl_.dedicated_ip_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(AccountsListItem, _impl_.is_connected_)

@@ -56,7 +56,8 @@ struct HealthCheckRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HealthCheckRequestDefaultTypeInternal _HealthCheckRequest_default_instance_;
 PROTOBUF_CONSTEXPR HealthCheckReply::HealthCheckReply(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.server_time_seconds_)*/int64_t{0}
+    /*decltype(_impl_.workers_)*/{}
+  , /*decltype(_impl_.server_time_seconds_)*/int64_t{0}
   , /*decltype(_impl_.server_time_seconds_utc_)*/int64_t{0}
   , /*decltype(_impl_.is_connected_to_server_)*/false
   , /*decltype(_impl_._cached_size_)*/{}} {}
@@ -69,8 +70,27 @@ struct HealthCheckReplyDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HealthCheckReplyDefaultTypeInternal _HealthCheckReply_default_instance_;
+PROTOBUF_CONSTEXPR MqlWorkerState::MqlWorkerState(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.running_command_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.worker_)*/0
+  , /*decltype(_impl_.can_trade_)*/false
+  , /*decltype(_impl_.waiting_)*/false
+  , /*decltype(_impl_.ms_since_last_poll_)*/int64_t{0}
+  , /*decltype(_impl_.running_command_id_)*/int64_t{0}
+  , /*decltype(_impl_.running_ms_)*/int64_t{0}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct MqlWorkerStateDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR MqlWorkerStateDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~MqlWorkerStateDefaultTypeInternal() {}
+  union {
+    MqlWorkerState _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 MqlWorkerStateDefaultTypeInternal _MqlWorkerState_default_instance_;
 }  // namespace mt5_term_api
-static ::_pb::Metadata file_level_metadata_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto[4];
+static ::_pb::Metadata file_level_metadata_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto[5];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto = nullptr;
 
@@ -102,12 +122,27 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto::offsets[] 
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::HealthCheckReply, _impl_.is_connected_to_server_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::HealthCheckReply, _impl_.server_time_seconds_),
   PROTOBUF_FIELD_OFFSET(::mt5_term_api::HealthCheckReply, _impl_.server_time_seconds_utc_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::HealthCheckReply, _impl_.workers_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::MqlWorkerState, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::MqlWorkerState, _impl_.worker_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::MqlWorkerState, _impl_.can_trade_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::MqlWorkerState, _impl_.waiting_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::MqlWorkerState, _impl_.ms_since_last_poll_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::MqlWorkerState, _impl_.running_command_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::MqlWorkerState, _impl_.running_command_id_),
+  PROTOBUF_FIELD_OFFSET(::mt5_term_api::MqlWorkerState, _impl_.running_ms_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::mt5_term_api::StopListeningRequest)},
   { 6, -1, -1, sizeof(::mt5_term_api::StopListeningReply)},
   { 12, -1, -1, sizeof(::mt5_term_api::HealthCheckRequest)},
   { 18, -1, -1, sizeof(::mt5_term_api::HealthCheckReply)},
+  { 28, -1, -1, sizeof(::mt5_term_api::MqlWorkerState)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -115,31 +150,38 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::mt5_term_api::_StopListeningReply_default_instance_._instance,
   &::mt5_term_api::_HealthCheckRequest_default_instance_._instance,
   &::mt5_term_api::_HealthCheckReply_default_instance_._instance,
+  &::mt5_term_api::_MqlWorkerState_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\037mt5-term-api-health-check.proto\022\014mt5_t"
   "erm_api\032\035mt5-term-api-connection.proto\"\026"
   "\n\024StopListeningRequest\"\024\n\022StopListeningR"
-  "eply\"\024\n\022HealthCheckRequest\"p\n\020HealthChec"
-  "kReply\022\036\n\026is_connected_to_server\030\001 \001(\010\022\033"
-  "\n\023server_time_seconds\030\002 \001(\003\022\037\n\027server_ti"
-  "me_seconds_utc\030\003 \001(\0032\252\001\n\006Health\022I\n\005Check"
-  "\022 .mt5_term_api.HealthCheckRequest\032\036.mt5"
-  "_term_api.HealthCheckReply\022U\n\rStopListen"
-  "ing\022\".mt5_term_api.StopListeningRequest\032"
-  " .mt5_term_api.StopListeningReplyBBZ1git"
-  ".mtapi.io/root/mrpc-proto.git/mt5/librar"
-  "ies/go\252\002\014mt5_term_apib\006proto3"
+  "eply\"\024\n\022HealthCheckRequest\"\237\001\n\020HealthChe"
+  "ckReply\022\036\n\026is_connected_to_server\030\001 \001(\010\022"
+  "\033\n\023server_time_seconds\030\002 \001(\003\022\037\n\027server_t"
+  "ime_seconds_utc\030\003 \001(\003\022-\n\007workers\030\004 \003(\0132\034"
+  ".mt5_term_api.MqlWorkerState\"\251\001\n\016MqlWork"
+  "erState\022\016\n\006worker\030\001 \001(\005\022\021\n\tcan_trade\030\002 \001"
+  "(\010\022\017\n\007waiting\030\003 \001(\010\022\032\n\022ms_since_last_pol"
+  "l\030\004 \001(\003\022\027\n\017running_command\030\005 \001(\t\022\032\n\022runn"
+  "ing_command_id\030\006 \001(\003\022\022\n\nrunning_ms\030\007 \001(\003"
+  "2\252\001\n\006Health\022I\n\005Check\022 .mt5_term_api.Heal"
+  "thCheckRequest\032\036.mt5_term_api.HealthChec"
+  "kReply\022U\n\rStopListening\022\".mt5_term_api.S"
+  "topListeningRequest\032 .mt5_term_api.StopL"
+  "isteningReplyBBZ1git.mtapi.io/root/mrpc-"
+  "proto.git/mt5/libraries/go\252\002\014mt5_term_ap"
+  "ib\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto_deps[1] = {
   &::descriptor_table_mt5_2dterm_2dapi_2dconnection_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto = {
-    false, false, 509, descriptor_table_protodef_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto,
+    false, false, 729, descriptor_table_protodef_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto,
     "mt5-term-api-health-check.proto",
-    &descriptor_table_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto_deps, 1, 4,
+    &descriptor_table_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto_deps, 1, 5,
     schemas, file_default_instances, TableStruct_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto::offsets,
     file_level_metadata_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto, file_level_enum_descriptors_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto,
     file_level_service_descriptors_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto,
@@ -288,7 +330,8 @@ HealthCheckReply::HealthCheckReply(const HealthCheckReply& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   HealthCheckReply* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.server_time_seconds_){}
+      decltype(_impl_.workers_){from._impl_.workers_}
+    , decltype(_impl_.server_time_seconds_){}
     , decltype(_impl_.server_time_seconds_utc_){}
     , decltype(_impl_.is_connected_to_server_){}
     , /*decltype(_impl_._cached_size_)*/{}};
@@ -305,7 +348,8 @@ inline void HealthCheckReply::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.server_time_seconds_){int64_t{0}}
+      decltype(_impl_.workers_){arena}
+    , decltype(_impl_.server_time_seconds_){int64_t{0}}
     , decltype(_impl_.server_time_seconds_utc_){int64_t{0}}
     , decltype(_impl_.is_connected_to_server_){false}
     , /*decltype(_impl_._cached_size_)*/{}
@@ -323,6 +367,7 @@ HealthCheckReply::~HealthCheckReply() {
 
 inline void HealthCheckReply::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.workers_.~RepeatedPtrField();
 }
 
 void HealthCheckReply::SetCachedSize(int size) const {
@@ -335,6 +380,7 @@ void HealthCheckReply::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  _impl_.workers_.Clear();
   ::memset(&_impl_.server_time_seconds_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.is_connected_to_server_) -
       reinterpret_cast<char*>(&_impl_.server_time_seconds_)) + sizeof(_impl_.is_connected_to_server_));
@@ -368,6 +414,19 @@ const char* HealthCheckReply::_InternalParse(const char* ptr, ::_pbi::ParseConte
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _impl_.server_time_seconds_utc_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .mt5_term_api.MqlWorkerState workers = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_workers(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -418,6 +477,14 @@ uint8_t* HealthCheckReply::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt64ToArray(3, this->_internal_server_time_seconds_utc(), target);
   }
 
+  // repeated .mt5_term_api.MqlWorkerState workers = 4;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_workers_size()); i < n; i++) {
+    const auto& repfield = this->_internal_workers(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(4, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -433,6 +500,13 @@ size_t HealthCheckReply::ByteSizeLong() const {
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated .mt5_term_api.MqlWorkerState workers = 4;
+  total_size += 1UL * this->_internal_workers_size();
+  for (const auto& msg : this->_impl_.workers_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
 
   // int64 server_time_seconds = 2;
   if (this->_internal_server_time_seconds() != 0) {
@@ -467,6 +541,7 @@ void HealthCheckReply::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _this->_impl_.workers_.MergeFrom(from._impl_.workers_);
   if (from._internal_server_time_seconds() != 0) {
     _this->_internal_set_server_time_seconds(from._internal_server_time_seconds());
   }
@@ -493,6 +568,7 @@ bool HealthCheckReply::IsInitialized() const {
 void HealthCheckReply::InternalSwap(HealthCheckReply* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.workers_.InternalSwap(&other->_impl_.workers_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(HealthCheckReply, _impl_.is_connected_to_server_)
       + sizeof(HealthCheckReply::_impl_.is_connected_to_server_)
@@ -505,6 +581,365 @@ void HealthCheckReply::InternalSwap(HealthCheckReply* other) {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto_once,
       file_level_metadata_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto[3]);
+}
+
+// ===================================================================
+
+class MqlWorkerState::_Internal {
+ public:
+};
+
+MqlWorkerState::MqlWorkerState(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mt5_term_api.MqlWorkerState)
+}
+MqlWorkerState::MqlWorkerState(const MqlWorkerState& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  MqlWorkerState* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.running_command_){}
+    , decltype(_impl_.worker_){}
+    , decltype(_impl_.can_trade_){}
+    , decltype(_impl_.waiting_){}
+    , decltype(_impl_.ms_since_last_poll_){}
+    , decltype(_impl_.running_command_id_){}
+    , decltype(_impl_.running_ms_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.running_command_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.running_command_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_running_command().empty()) {
+    _this->_impl_.running_command_.Set(from._internal_running_command(), 
+      _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.worker_, &from._impl_.worker_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.running_ms_) -
+    reinterpret_cast<char*>(&_impl_.worker_)) + sizeof(_impl_.running_ms_));
+  // @@protoc_insertion_point(copy_constructor:mt5_term_api.MqlWorkerState)
+}
+
+inline void MqlWorkerState::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.running_command_){}
+    , decltype(_impl_.worker_){0}
+    , decltype(_impl_.can_trade_){false}
+    , decltype(_impl_.waiting_){false}
+    , decltype(_impl_.ms_since_last_poll_){int64_t{0}}
+    , decltype(_impl_.running_command_id_){int64_t{0}}
+    , decltype(_impl_.running_ms_){int64_t{0}}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.running_command_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.running_command_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+MqlWorkerState::~MqlWorkerState() {
+  // @@protoc_insertion_point(destructor:mt5_term_api.MqlWorkerState)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void MqlWorkerState::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.running_command_.Destroy();
+}
+
+void MqlWorkerState::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void MqlWorkerState::Clear() {
+// @@protoc_insertion_point(message_clear_start:mt5_term_api.MqlWorkerState)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.running_command_.ClearToEmpty();
+  ::memset(&_impl_.worker_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.running_ms_) -
+      reinterpret_cast<char*>(&_impl_.worker_)) + sizeof(_impl_.running_ms_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* MqlWorkerState::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 worker = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.worker_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool can_trade = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.can_trade_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool waiting = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.waiting_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 ms_since_last_poll = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _impl_.ms_since_last_poll_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string running_command = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          auto str = _internal_mutable_running_command();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mt5_term_api.MqlWorkerState.running_command"));
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 running_command_id = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _impl_.running_command_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 running_ms = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _impl_.running_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* MqlWorkerState::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mt5_term_api.MqlWorkerState)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 worker = 1;
+  if (this->_internal_worker() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_worker(), target);
+  }
+
+  // bool can_trade = 2;
+  if (this->_internal_can_trade() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_can_trade(), target);
+  }
+
+  // bool waiting = 3;
+  if (this->_internal_waiting() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_waiting(), target);
+  }
+
+  // int64 ms_since_last_poll = 4;
+  if (this->_internal_ms_since_last_poll() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(4, this->_internal_ms_since_last_poll(), target);
+  }
+
+  // string running_command = 5;
+  if (!this->_internal_running_command().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_running_command().data(), static_cast<int>(this->_internal_running_command().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mt5_term_api.MqlWorkerState.running_command");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_running_command(), target);
+  }
+
+  // int64 running_command_id = 6;
+  if (this->_internal_running_command_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(6, this->_internal_running_command_id(), target);
+  }
+
+  // int64 running_ms = 7;
+  if (this->_internal_running_ms() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(7, this->_internal_running_ms(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mt5_term_api.MqlWorkerState)
+  return target;
+}
+
+size_t MqlWorkerState::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mt5_term_api.MqlWorkerState)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string running_command = 5;
+  if (!this->_internal_running_command().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_running_command());
+  }
+
+  // int32 worker = 1;
+  if (this->_internal_worker() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_worker());
+  }
+
+  // bool can_trade = 2;
+  if (this->_internal_can_trade() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // bool waiting = 3;
+  if (this->_internal_waiting() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // int64 ms_since_last_poll = 4;
+  if (this->_internal_ms_since_last_poll() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_ms_since_last_poll());
+  }
+
+  // int64 running_command_id = 6;
+  if (this->_internal_running_command_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_running_command_id());
+  }
+
+  // int64 running_ms = 7;
+  if (this->_internal_running_ms() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_running_ms());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData MqlWorkerState::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    MqlWorkerState::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*MqlWorkerState::GetClassData() const { return &_class_data_; }
+
+
+void MqlWorkerState::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<MqlWorkerState*>(&to_msg);
+  auto& from = static_cast<const MqlWorkerState&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mt5_term_api.MqlWorkerState)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_running_command().empty()) {
+    _this->_internal_set_running_command(from._internal_running_command());
+  }
+  if (from._internal_worker() != 0) {
+    _this->_internal_set_worker(from._internal_worker());
+  }
+  if (from._internal_can_trade() != 0) {
+    _this->_internal_set_can_trade(from._internal_can_trade());
+  }
+  if (from._internal_waiting() != 0) {
+    _this->_internal_set_waiting(from._internal_waiting());
+  }
+  if (from._internal_ms_since_last_poll() != 0) {
+    _this->_internal_set_ms_since_last_poll(from._internal_ms_since_last_poll());
+  }
+  if (from._internal_running_command_id() != 0) {
+    _this->_internal_set_running_command_id(from._internal_running_command_id());
+  }
+  if (from._internal_running_ms() != 0) {
+    _this->_internal_set_running_ms(from._internal_running_ms());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void MqlWorkerState::CopyFrom(const MqlWorkerState& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mt5_term_api.MqlWorkerState)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool MqlWorkerState::IsInitialized() const {
+  return true;
+}
+
+void MqlWorkerState::InternalSwap(MqlWorkerState* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.running_command_, lhs_arena,
+      &other->_impl_.running_command_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(MqlWorkerState, _impl_.running_ms_)
+      + sizeof(MqlWorkerState::_impl_.running_ms_)
+      - PROTOBUF_FIELD_OFFSET(MqlWorkerState, _impl_.worker_)>(
+          reinterpret_cast<char*>(&_impl_.worker_),
+          reinterpret_cast<char*>(&other->_impl_.worker_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata MqlWorkerState::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2dhealth_2dcheck_2eproto[4]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -525,6 +960,10 @@ Arena::CreateMaybeMessage< ::mt5_term_api::HealthCheckRequest >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::mt5_term_api::HealthCheckReply*
 Arena::CreateMaybeMessage< ::mt5_term_api::HealthCheckReply >(Arena* arena) {
   return Arena::CreateMessageInternal< ::mt5_term_api::HealthCheckReply >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mt5_term_api::MqlWorkerState*
+Arena::CreateMaybeMessage< ::mt5_term_api::MqlWorkerState >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mt5_term_api::MqlWorkerState >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

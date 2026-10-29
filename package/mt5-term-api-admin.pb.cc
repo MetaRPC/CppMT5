@@ -528,12 +528,16 @@ PROTOBUF_CONSTEXPR TerminalInfo::TerminalInfo(
   , /*decltype(_impl_.error_message_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.user_email_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.startup_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.last_trade_failure_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.created_at_)*/nullptr
   , /*decltype(_impl_.connected_at_)*/nullptr
+  , /*decltype(_impl_.broker_disconnected_since_utc_)*/nullptr
   , /*decltype(_impl_.account_)*/uint64_t{0u}
   , /*decltype(_impl_.user_number_)*/0u
   , /*decltype(_impl_.port_)*/0u
-  , /*decltype(_impl_.startup_duration_seconds_)*/0} {}
+  , /*decltype(_impl_.startup_duration_seconds_)*/0
+  , /*decltype(_impl_.trade_failures_total_)*/uint64_t{0u}
+  , /*decltype(_impl_.trade_failures_recent_)*/0u} {}
 struct TerminalInfoDefaultTypeInternal {
   PROTOBUF_CONSTEXPR TerminalInfoDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -938,6 +942,10 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dadmin_2eproto::offsets[] PROTOBUF_
   PROTOBUF_FIELD_OFFSET(::mrpc_admin::TerminalInfo, _impl_.startup_duration_seconds_),
   PROTOBUF_FIELD_OFFSET(::mrpc_admin::TerminalInfo, _impl_.connected_at_),
   PROTOBUF_FIELD_OFFSET(::mrpc_admin::TerminalInfo, _impl_.startup_time_),
+  PROTOBUF_FIELD_OFFSET(::mrpc_admin::TerminalInfo, _impl_.broker_disconnected_since_utc_),
+  PROTOBUF_FIELD_OFFSET(::mrpc_admin::TerminalInfo, _impl_.trade_failures_recent_),
+  PROTOBUF_FIELD_OFFSET(::mrpc_admin::TerminalInfo, _impl_.trade_failures_total_),
+  PROTOBUF_FIELD_OFFSET(::mrpc_admin::TerminalInfo, _impl_.last_trade_failure_),
   ~0u,
   ~0u,
   ~0u,
@@ -950,9 +958,13 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dadmin_2eproto::offsets[] PROTOBUF_
   ~0u,
   ~0u,
   1,
-  4,
+  5,
   3,
   2,
+  4,
+  ~0u,
+  ~0u,
+  ~0u,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mrpc_admin::ActiveTerminalsReply, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1027,10 +1039,10 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 281, -1, -1, sizeof(::mrpc_admin::UsageSample)},
   { 291, -1, -1, sizeof(::mrpc_admin::SystemUsageReply)},
   { 302, -1, -1, sizeof(::mrpc_admin::ActiveTerminalsRequest)},
-  { 309, 330, -1, sizeof(::mrpc_admin::TerminalInfo)},
-  { 345, -1, -1, sizeof(::mrpc_admin::ActiveTerminalsReply)},
-  { 361, -1, -1, sizeof(::mrpc_admin::PodTerminals)},
-  { 379, -1, -1, sizeof(::mrpc_admin::ActiveTerminalsClusterReply)},
+  { 309, 334, -1, sizeof(::mrpc_admin::TerminalInfo)},
+  { 353, -1, -1, sizeof(::mrpc_admin::ActiveTerminalsReply)},
+  { 369, -1, -1, sizeof(::mrpc_admin::PodTerminals)},
+  { 387, -1, -1, sizeof(::mrpc_admin::ActiveTerminalsClusterReply)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -1160,7 +1172,7 @@ const char descriptor_table_protodef_mt5_2dterm_2dapi_2dadmin_2eproto[] PROTOBUF
   "\002 \001(\004\022\024\n\014ram_total_mb\030\003 \001(\004\022(\n\007history\030\004"
   " \003(\0132\027.mrpc_admin.UsageSample\022\r\n\005error\030\005"
   " \001(\t\"+\n\026ActiveTerminalsRequest\022\021\n\tadmin_"
-  "key\030\001 \001(\t\"\340\003\n\014TerminalInfo\022\n\n\002id\030\001 \001(\t\022\023"
+  "key\030\001 \001(\t\"\243\005\n\014TerminalInfo\022\n\n\002id\030\001 \001(\t\022\023"
   "\n\013user_number\030\002 \001(\r\022\024\n\014windows_user\030\003 \001("
   "\t\022\017\n\007account\030\004 \001(\004\022\016\n\006server\030\005 \001(\t\022\014\n\004po"
   "rt\030\006 \001(\r\022.\n\ncreated_at\030\007 \001(\0132\032.google.pr"
@@ -1170,85 +1182,90 @@ const char descriptor_table_protodef_mt5_2dterm_2dapi_2dadmin_2eproto[] PROTOBUF
   "\001\210\001\001\022%\n\030startup_duration_seconds\030\r \001(\001H\002"
   "\210\001\001\0225\n\014connected_at\030\016 \001(\0132\032.google.proto"
   "buf.TimestampH\003\210\001\001\022\031\n\014startup_time\030\017 \001(\t"
-  "H\004\210\001\001B\007\n\005_nameB\r\n\013_user_emailB\033\n\031_startu"
-  "p_duration_secondsB\017\n\r_connected_atB\017\n\r_"
-  "startup_time\"\256\002\n\024ActiveTerminalsReply\022\013\n"
-  "\003pod\030\001 \001(\t\022\014\n\004node\030\002 \001(\t\022\016\n\006pod_ip\030\003 \001(\t"
-  "\022+\n\tterminals\030\004 \003(\0132\030.mrpc_admin.Termina"
-  "lInfo\022\r\n\005error\030\005 \001(\t\022\023\n\013cpu_percent\030\006 \001("
-  "\001\022\023\n\013ram_used_mb\030\007 \001(\004\022\024\n\014ram_total_mb\030\010"
-  " \001(\004\022.\n\rusage_history\030\t \003(\0132\027.mrpc_admin"
-  ".UsageSample\022\?\n\016restore_status\030\n \001(\0132\'.m"
-  "rpc_admin.SessionRestoreWatcherStatus\"\312\002"
-  "\n\014PodTerminals\022\013\n\003pod\030\001 \001(\t\022\014\n\004node\030\002 \001("
-  "\t\022\016\n\006pod_ip\030\003 \001(\t\022\021\n\tnovnc_url\030\004 \001(\t\022+\n\t"
-  "terminals\030\005 \003(\0132\030.mrpc_admin.TerminalInf"
-  "o\022\r\n\005error\030\006 \001(\t\022\017\n\007host_ip\030\007 \001(\t\022\023\n\013cpu"
-  "_percent\030\010 \001(\001\022\023\n\013ram_used_mb\030\t \001(\004\022\024\n\014r"
-  "am_total_mb\030\n \001(\004\022.\n\rusage_history\030\013 \003(\013"
-  "2\027.mrpc_admin.UsageSample\022\?\n\016restore_sta"
-  "tus\030\014 \001(\0132\'.mrpc_admin.SessionRestoreWat"
-  "cherStatus\"E\n\033ActiveTerminalsClusterRepl"
-  "y\022&\n\004pods\030\001 \003(\0132\030.mrpc_admin.PodTerminal"
-  "s2\321\021\n\010AdminApi\022q\n\017ActiveTerminals\022\".mrpc"
-  "_admin.ActiveTerminalsRequest\032 .mrpc_adm"
-  "in.ActiveTerminalsReply\"\030\202\323\344\223\002\022\022\020/Active"
-  "Terminals\022\206\001\n\026ActiveTerminalsCluster\022\".m"
-  "rpc_admin.ActiveTerminalsRequest\032\'.mrpc_"
-  "admin.ActiveTerminalsClusterReply\"\037\202\323\344\223\002"
-  "\031\022\027/ActiveTerminalsCluster\022e\n\013SystemUsag"
-  "e\022\".mrpc_admin.ActiveTerminalsRequest\032\034."
-  "mrpc_admin.SystemUsageReply\"\024\202\323\344\223\002\016\022\014/Sy"
-  "stemUsage\022h\n\014ListLogFiles\022\".mrpc_admin.A"
-  "ctiveTerminalsRequest\032\035.mrpc_admin.ListL"
-  "ogFilesReply\"\025\202\323\344\223\002\017\022\r/ListLogFiles\022]\n\nG"
-  "etLogFile\022\035.mrpc_admin.GetLogFileRequest"
-  "\032\033.mrpc_admin.GetLogFileReply\"\023\202\323\344\223\002\r\022\013/"
-  "GetLogFile\022}\n\022GetEventLogEntries\022%.mrpc_"
-  "admin.GetEventLogEntriesRequest\032#.mrpc_a"
-  "dmin.GetEventLogEntriesReply\"\033\202\323\344\223\002\025\022\023/G"
-  "etEventLogEntries\022\225\001\n\030CaptureSessionScre"
-  "enshot\022+.mrpc_admin.CaptureSessionScreen"
-  "shotRequest\032).mrpc_admin.CaptureSessionS"
-  "creenshotReply\"!\202\323\344\223\002\033\022\031/CaptureSessionS"
-  "creenshot\022\244\001\n\035CaptureSessionScreenshotOn"
-  "Pod\0220.mrpc_admin.CaptureSessionScreensho"
-  "tOnPodRequest\032).mrpc_admin.CaptureSessio"
-  "nScreenshotReply\"&\202\323\344\223\002 \022\036/CaptureSessio"
-  "nScreenshotOnPod\022q\n\017RefreshMrpcRest\022\".mr"
-  "pc_admin.ActiveTerminalsRequest\032 .mrpc_a"
-  "dmin.RefreshMrpcRestReply\"\030\202\323\344\223\002\022\022\020/Refr"
-  "eshMrpcRest\022W\n\nGetVersion\022\032.mrpc_admin.V"
-  "ersionRequest\032\030.mrpc_admin.VersionReply\""
-  "\023\202\323\344\223\002\r\022\013/version-tm\022}\n\022GetTerminalJourn"
-  "al\022%.mrpc_admin.GetTerminalJournalReques"
-  "t\032#.mrpc_admin.GetTerminalJournalReply\"\033"
-  "\202\323\344\223\002\025\022\023/GetTerminalJournal\022]\n\nGetAllLog"
-  "s\022\035.mrpc_admin.GetAllLogsRequest\032\033.mrpc_"
-  "admin.GetAllLogsReply\"\023\202\323\344\223\002\r\022\013/GetAllLo"
-  "gs\022\211\001\n\025GetSessionRestoreLogs\022(.mrpc_admi"
-  "n.GetSessionRestoreLogsRequest\032&.mrpc_ad"
-  "min.GetSessionRestoreLogsReply\"\036\202\323\344\223\002\030\022\026"
-  "/GetSessionRestoreLogs\022\211\001\n\027GetSessionRes"
-  "toreStatus\022\".mrpc_admin.ActiveTerminalsR"
-  "equest\032(.mrpc_admin.GetSessionRestoreSta"
-  "tusReply\" \202\323\344\223\002\032\022\030/GetSessionRestoreStat"
-  "us\022\235\001\n\025KillAllTrialTerminals\022\".mrpc_admi"
+  "H\004\210\001\001\022F\n\035broker_disconnected_since_utc\030\020"
+  " \001(\0132\032.google.protobuf.TimestampH\005\210\001\001\022\035\n"
+  "\025trade_failures_recent\030\021 \001(\r\022\034\n\024trade_fa"
+  "ilures_total\030\022 \001(\004\022\032\n\022last_trade_failure"
+  "\030\023 \001(\tB\007\n\005_nameB\r\n\013_user_emailB\033\n\031_start"
+  "up_duration_secondsB\017\n\r_connected_atB\017\n\r"
+  "_startup_timeB \n\036_broker_disconnected_si"
+  "nce_utc\"\256\002\n\024ActiveTerminalsReply\022\013\n\003pod\030"
+  "\001 \001(\t\022\014\n\004node\030\002 \001(\t\022\016\n\006pod_ip\030\003 \001(\t\022+\n\tt"
+  "erminals\030\004 \003(\0132\030.mrpc_admin.TerminalInfo"
+  "\022\r\n\005error\030\005 \001(\t\022\023\n\013cpu_percent\030\006 \001(\001\022\023\n\013"
+  "ram_used_mb\030\007 \001(\004\022\024\n\014ram_total_mb\030\010 \001(\004\022"
+  ".\n\rusage_history\030\t \003(\0132\027.mrpc_admin.Usag"
+  "eSample\022\?\n\016restore_status\030\n \001(\0132\'.mrpc_a"
+  "dmin.SessionRestoreWatcherStatus\"\312\002\n\014Pod"
+  "Terminals\022\013\n\003pod\030\001 \001(\t\022\014\n\004node\030\002 \001(\t\022\016\n\006"
+  "pod_ip\030\003 \001(\t\022\021\n\tnovnc_url\030\004 \001(\t\022+\n\ttermi"
+  "nals\030\005 \003(\0132\030.mrpc_admin.TerminalInfo\022\r\n\005"
+  "error\030\006 \001(\t\022\017\n\007host_ip\030\007 \001(\t\022\023\n\013cpu_perc"
+  "ent\030\010 \001(\001\022\023\n\013ram_used_mb\030\t \001(\004\022\024\n\014ram_to"
+  "tal_mb\030\n \001(\004\022.\n\rusage_history\030\013 \003(\0132\027.mr"
+  "pc_admin.UsageSample\022\?\n\016restore_status\030\014"
+  " \001(\0132\'.mrpc_admin.SessionRestoreWatcherS"
+  "tatus\"E\n\033ActiveTerminalsClusterReply\022&\n\004"
+  "pods\030\001 \003(\0132\030.mrpc_admin.PodTerminals2\321\021\n"
+  "\010AdminApi\022q\n\017ActiveTerminals\022\".mrpc_admi"
+  "n.ActiveTerminalsRequest\032 .mrpc_admin.Ac"
+  "tiveTerminalsReply\"\030\202\323\344\223\002\022\022\020/ActiveTermi"
+  "nals\022\206\001\n\026ActiveTerminalsCluster\022\".mrpc_a"
+  "dmin.ActiveTerminalsRequest\032\'.mrpc_admin"
+  ".ActiveTerminalsClusterReply\"\037\202\323\344\223\002\031\022\027/A"
+  "ctiveTerminalsCluster\022e\n\013SystemUsage\022\".m"
+  "rpc_admin.ActiveTerminalsRequest\032\034.mrpc_"
+  "admin.SystemUsageReply\"\024\202\323\344\223\002\016\022\014/SystemU"
+  "sage\022h\n\014ListLogFiles\022\".mrpc_admin.Active"
+  "TerminalsRequest\032\035.mrpc_admin.ListLogFil"
+  "esReply\"\025\202\323\344\223\002\017\022\r/ListLogFiles\022]\n\nGetLog"
+  "File\022\035.mrpc_admin.GetLogFileRequest\032\033.mr"
+  "pc_admin.GetLogFileReply\"\023\202\323\344\223\002\r\022\013/GetLo"
+  "gFile\022}\n\022GetEventLogEntries\022%.mrpc_admin"
+  ".GetEventLogEntriesRequest\032#.mrpc_admin."
+  "GetEventLogEntriesReply\"\033\202\323\344\223\002\025\022\023/GetEve"
+  "ntLogEntries\022\225\001\n\030CaptureSessionScreensho"
+  "t\022+.mrpc_admin.CaptureSessionScreenshotR"
+  "equest\032).mrpc_admin.CaptureSessionScreen"
+  "shotReply\"!\202\323\344\223\002\033\022\031/CaptureSessionScreen"
+  "shot\022\244\001\n\035CaptureSessionScreenshotOnPod\0220"
+  ".mrpc_admin.CaptureSessionScreenshotOnPo"
+  "dRequest\032).mrpc_admin.CaptureSessionScre"
+  "enshotReply\"&\202\323\344\223\002 \022\036/CaptureSessionScre"
+  "enshotOnPod\022q\n\017RefreshMrpcRest\022\".mrpc_ad"
+  "min.ActiveTerminalsRequest\032 .mrpc_admin."
+  "RefreshMrpcRestReply\"\030\202\323\344\223\002\022\022\020/RefreshMr"
+  "pcRest\022W\n\nGetVersion\022\032.mrpc_admin.Versio"
+  "nRequest\032\030.mrpc_admin.VersionReply\"\023\202\323\344\223"
+  "\002\r\022\013/version-tm\022}\n\022GetTerminalJournal\022%."
+  "mrpc_admin.GetTerminalJournalRequest\032#.m"
+  "rpc_admin.GetTerminalJournalReply\"\033\202\323\344\223\002"
+  "\025\022\023/GetTerminalJournal\022]\n\nGetAllLogs\022\035.m"
+  "rpc_admin.GetAllLogsRequest\032\033.mrpc_admin"
+  ".GetAllLogsReply\"\023\202\323\344\223\002\r\022\013/GetAllLogs\022\211\001"
+  "\n\025GetSessionRestoreLogs\022(.mrpc_admin.Get"
+  "SessionRestoreLogsRequest\032&.mrpc_admin.G"
+  "etSessionRestoreLogsReply\"\036\202\323\344\223\002\030\022\026/GetS"
+  "essionRestoreLogs\022\211\001\n\027GetSessionRestoreS"
+  "tatus\022\".mrpc_admin.ActiveTerminalsReques"
+  "t\032(.mrpc_admin.GetSessionRestoreStatusRe"
+  "ply\" \202\323\344\223\002\032\022\030/GetSessionRestoreStatus\022\235\001"
+  "\n\025KillAllTrialTerminals\022\".mrpc_admin.Act"
+  "iveTerminalsRequest\032&.mrpc_admin.KillAll"
+  "TrialTerminalsReply\"8\202\323\344\223\0022\022\026/KillAllTri"
+  "alTerminalsZ\030\"\026/KillAllTrialTerminals\022\254\001"
+  "\n\032KillAllTrialTerminalsLocal\022\".mrpc_admi"
   "n.ActiveTerminalsRequest\032&.mrpc_admin.Ki"
-  "llAllTrialTerminalsReply\"8\202\323\344\223\0022\022\026/KillA"
-  "llTrialTerminalsZ\030\"\026/KillAllTrialTermina"
-  "ls\022\254\001\n\032KillAllTrialTerminalsLocal\022\".mrpc"
-  "_admin.ActiveTerminalsRequest\032&.mrpc_adm"
-  "in.KillAllTrialTerminalsReply\"B\202\323\344\223\002<\022\033/"
-  "KillAllTrialTerminalsLocalZ\035\"\033/KillAllTr"
-  "ialTerminalsLocal\022L\n\005Drain\022\030.mrpc_admin."
-  "DrainRequest\032\026.mrpc_admin.DrainReply\"\021\202\323"
-  "\344\223\002\013\"\006/Drain:\001*\022|\n\021StopTerminalLocal\022$.m"
-  "rpc_admin.StopTerminalLocalRequest\032\".mrp"
-  "c_admin.StopTerminalLocalReply\"\035\202\323\344\223\002\027\"\022"
-  "/StopTerminalLocal:\001*B@Z1git.mtapi.io/ro"
-  "ot/mrpc-proto.git/mt5/libraries/go\252\002\nmrp"
-  "c_adminb\006proto3"
+  "llAllTrialTerminalsReply\"B\202\323\344\223\002<\022\033/KillA"
+  "llTrialTerminalsLocalZ\035\"\033/KillAllTrialTe"
+  "rminalsLocal\022L\n\005Drain\022\030.mrpc_admin.Drain"
+  "Request\032\026.mrpc_admin.DrainReply\"\021\202\323\344\223\002\013\""
+  "\006/Drain:\001*\022|\n\021StopTerminalLocal\022$.mrpc_a"
+  "dmin.StopTerminalLocalRequest\032\".mrpc_adm"
+  "in.StopTerminalLocalReply\"\035\202\323\344\223\002\027\"\022/Stop"
+  "TerminalLocal:\001*B@Z1git.mtapi.io/root/mr"
+  "pc-proto.git/mt5/libraries/go\252\002\nmrpc_adm"
+  "inb\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_deps[2] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -1256,7 +1273,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2d
 };
 static ::_pbi::once_flag descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto = {
-    false, false, 7055, descriptor_table_protodef_mt5_2dterm_2dapi_2dadmin_2eproto,
+    false, false, 7250, descriptor_table_protodef_mt5_2dterm_2dapi_2dadmin_2eproto,
     "mt5-term-api-admin.proto",
     &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_deps, 2, 35,
     schemas, file_default_instances, TableStruct_mt5_2dterm_2dapi_2dadmin_2eproto::offsets,
@@ -11150,7 +11167,7 @@ class TerminalInfo::_Internal {
     (*has_bits)[0] |= 2u;
   }
   static void set_has_startup_duration_seconds(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
+    (*has_bits)[0] |= 32u;
   }
   static const ::PROTOBUF_NAMESPACE_ID::Timestamp& connected_at(const TerminalInfo* msg);
   static void set_has_connected_at(HasBits* has_bits) {
@@ -11158,6 +11175,10 @@ class TerminalInfo::_Internal {
   }
   static void set_has_startup_time(HasBits* has_bits) {
     (*has_bits)[0] |= 4u;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& broker_disconnected_since_utc(const TerminalInfo* msg);
+  static void set_has_broker_disconnected_since_utc(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
   }
 };
 
@@ -11169,6 +11190,10 @@ const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 TerminalInfo::_Internal::connected_at(const TerminalInfo* msg) {
   return *msg->_impl_.connected_at_;
 }
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+TerminalInfo::_Internal::broker_disconnected_since_utc(const TerminalInfo* msg) {
+  return *msg->_impl_.broker_disconnected_since_utc_;
+}
 void TerminalInfo::clear_created_at() {
   if (GetArenaForAllocation() == nullptr && _impl_.created_at_ != nullptr) {
     delete _impl_.created_at_;
@@ -11178,6 +11203,10 @@ void TerminalInfo::clear_created_at() {
 void TerminalInfo::clear_connected_at() {
   if (_impl_.connected_at_ != nullptr) _impl_.connected_at_->Clear();
   _impl_._has_bits_[0] &= ~0x00000008u;
+}
+void TerminalInfo::clear_broker_disconnected_since_utc() {
+  if (_impl_.broker_disconnected_since_utc_ != nullptr) _impl_.broker_disconnected_since_utc_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000010u;
 }
 TerminalInfo::TerminalInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -11200,12 +11229,16 @@ TerminalInfo::TerminalInfo(const TerminalInfo& from)
     , decltype(_impl_.error_message_){}
     , decltype(_impl_.user_email_){}
     , decltype(_impl_.startup_time_){}
+    , decltype(_impl_.last_trade_failure_){}
     , decltype(_impl_.created_at_){nullptr}
     , decltype(_impl_.connected_at_){nullptr}
+    , decltype(_impl_.broker_disconnected_since_utc_){nullptr}
     , decltype(_impl_.account_){}
     , decltype(_impl_.user_number_){}
     , decltype(_impl_.port_){}
-    , decltype(_impl_.startup_duration_seconds_){}};
+    , decltype(_impl_.startup_duration_seconds_){}
+    , decltype(_impl_.trade_failures_total_){}
+    , decltype(_impl_.trade_failures_recent_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.id_.InitDefault();
@@ -11280,15 +11313,26 @@ TerminalInfo::TerminalInfo(const TerminalInfo& from)
     _this->_impl_.startup_time_.Set(from._internal_startup_time(), 
       _this->GetArenaForAllocation());
   }
+  _impl_.last_trade_failure_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.last_trade_failure_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_last_trade_failure().empty()) {
+    _this->_impl_.last_trade_failure_.Set(from._internal_last_trade_failure(), 
+      _this->GetArenaForAllocation());
+  }
   if (from._internal_has_created_at()) {
     _this->_impl_.created_at_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.created_at_);
   }
   if (from._internal_has_connected_at()) {
     _this->_impl_.connected_at_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.connected_at_);
   }
+  if (from._internal_has_broker_disconnected_since_utc()) {
+    _this->_impl_.broker_disconnected_since_utc_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from._impl_.broker_disconnected_since_utc_);
+  }
   ::memcpy(&_impl_.account_, &from._impl_.account_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.startup_duration_seconds_) -
-    reinterpret_cast<char*>(&_impl_.account_)) + sizeof(_impl_.startup_duration_seconds_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.trade_failures_recent_) -
+    reinterpret_cast<char*>(&_impl_.account_)) + sizeof(_impl_.trade_failures_recent_));
   // @@protoc_insertion_point(copy_constructor:mrpc_admin.TerminalInfo)
 }
 
@@ -11308,12 +11352,16 @@ inline void TerminalInfo::SharedCtor(
     , decltype(_impl_.error_message_){}
     , decltype(_impl_.user_email_){}
     , decltype(_impl_.startup_time_){}
+    , decltype(_impl_.last_trade_failure_){}
     , decltype(_impl_.created_at_){nullptr}
     , decltype(_impl_.connected_at_){nullptr}
+    , decltype(_impl_.broker_disconnected_since_utc_){nullptr}
     , decltype(_impl_.account_){uint64_t{0u}}
     , decltype(_impl_.user_number_){0u}
     , decltype(_impl_.port_){0u}
     , decltype(_impl_.startup_duration_seconds_){0}
+    , decltype(_impl_.trade_failures_total_){uint64_t{0u}}
+    , decltype(_impl_.trade_failures_recent_){0u}
   };
   _impl_.id_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -11351,6 +11399,10 @@ inline void TerminalInfo::SharedCtor(
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.startup_time_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.last_trade_failure_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.last_trade_failure_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 TerminalInfo::~TerminalInfo() {
@@ -11373,8 +11425,10 @@ inline void TerminalInfo::SharedDtor() {
   _impl_.error_message_.Destroy();
   _impl_.user_email_.Destroy();
   _impl_.startup_time_.Destroy();
+  _impl_.last_trade_failure_.Destroy();
   if (this != internal_default_instance()) delete _impl_.created_at_;
   if (this != internal_default_instance()) delete _impl_.connected_at_;
+  if (this != internal_default_instance()) delete _impl_.broker_disconnected_since_utc_;
 }
 
 void TerminalInfo::SetCachedSize(int size) const {
@@ -11405,18 +11459,28 @@ void TerminalInfo::Clear() {
       _impl_.startup_time_.ClearNonDefaultToEmpty();
     }
   }
+  _impl_.last_trade_failure_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && _impl_.created_at_ != nullptr) {
     delete _impl_.created_at_;
   }
   _impl_.created_at_ = nullptr;
-  if (cached_has_bits & 0x00000008u) {
-    GOOGLE_DCHECK(_impl_.connected_at_ != nullptr);
-    _impl_.connected_at_->Clear();
+  if (cached_has_bits & 0x00000018u) {
+    if (cached_has_bits & 0x00000008u) {
+      GOOGLE_DCHECK(_impl_.connected_at_ != nullptr);
+      _impl_.connected_at_->Clear();
+    }
+    if (cached_has_bits & 0x00000010u) {
+      GOOGLE_DCHECK(_impl_.broker_disconnected_since_utc_ != nullptr);
+      _impl_.broker_disconnected_since_utc_->Clear();
+    }
   }
   ::memset(&_impl_.account_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.port_) -
       reinterpret_cast<char*>(&_impl_.account_)) + sizeof(_impl_.port_));
   _impl_.startup_duration_seconds_ = 0;
+  ::memset(&_impl_.trade_failures_total_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.trade_failures_recent_) -
+      reinterpret_cast<char*>(&_impl_.trade_failures_total_)) + sizeof(_impl_.trade_failures_recent_));
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -11564,6 +11628,40 @@ const char* TerminalInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "mrpc_admin.TerminalInfo.startup_time"));
+        } else
+          goto handle_unusual;
+        continue;
+      // optional .google.protobuf.Timestamp broker_disconnected_since_utc = 16;
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 130)) {
+          ptr = ctx->ParseMessage(_internal_mutable_broker_disconnected_since_utc(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 trade_failures_recent = 17;
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
+          _impl_.trade_failures_recent_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint64 trade_failures_total = 18;
+      case 18:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 144)) {
+          _impl_.trade_failures_total_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string last_trade_failure = 19;
+      case 19:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 154)) {
+          auto str = _internal_mutable_last_trade_failure();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mrpc_admin.TerminalInfo.last_trade_failure"));
         } else
           goto handle_unusual;
         continue;
@@ -11725,6 +11823,35 @@ uint8_t* TerminalInfo::_InternalSerialize(
         15, this->_internal_startup_time(), target);
   }
 
+  // optional .google.protobuf.Timestamp broker_disconnected_since_utc = 16;
+  if (_internal_has_broker_disconnected_since_utc()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(16, _Internal::broker_disconnected_since_utc(this),
+        _Internal::broker_disconnected_since_utc(this).GetCachedSize(), target, stream);
+  }
+
+  // uint32 trade_failures_recent = 17;
+  if (this->_internal_trade_failures_recent() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(17, this->_internal_trade_failures_recent(), target);
+  }
+
+  // uint64 trade_failures_total = 18;
+  if (this->_internal_trade_failures_total() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(18, this->_internal_trade_failures_total(), target);
+  }
+
+  // string last_trade_failure = 19;
+  if (!this->_internal_last_trade_failure().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_last_trade_failure().data(), static_cast<int>(this->_internal_last_trade_failure().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mrpc_admin.TerminalInfo.last_trade_failure");
+    target = stream->WriteStringMaybeAliased(
+        19, this->_internal_last_trade_failure(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -11807,6 +11934,13 @@ size_t TerminalInfo::ByteSizeLong() const {
     }
 
   }
+  // string last_trade_failure = 19;
+  if (!this->_internal_last_trade_failure().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_last_trade_failure());
+  }
+
   // .google.protobuf.Timestamp created_at = 7;
   if (this->_internal_has_created_at()) {
     total_size += 1 +
@@ -11814,13 +11948,22 @@ size_t TerminalInfo::ByteSizeLong() const {
         *_impl_.created_at_);
   }
 
-  // optional .google.protobuf.Timestamp connected_at = 14;
-  if (cached_has_bits & 0x00000008u) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.connected_at_);
-  }
+  if (cached_has_bits & 0x00000018u) {
+    // optional .google.protobuf.Timestamp connected_at = 14;
+    if (cached_has_bits & 0x00000008u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.connected_at_);
+    }
 
+    // optional .google.protobuf.Timestamp broker_disconnected_since_utc = 16;
+    if (cached_has_bits & 0x00000010u) {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.broker_disconnected_since_utc_);
+    }
+
+  }
   // uint64 account = 4;
   if (this->_internal_account() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_account());
@@ -11837,8 +11980,22 @@ size_t TerminalInfo::ByteSizeLong() const {
   }
 
   // optional double startup_duration_seconds = 13;
-  if (cached_has_bits & 0x00000010u) {
+  if (cached_has_bits & 0x00000020u) {
     total_size += 1 + 8;
+  }
+
+  // uint64 trade_failures_total = 18;
+  if (this->_internal_trade_failures_total() != 0) {
+    total_size += 2 +
+      ::_pbi::WireFormatLite::UInt64Size(
+        this->_internal_trade_failures_total());
+  }
+
+  // uint32 trade_failures_recent = 17;
+  if (this->_internal_trade_failures_recent() != 0) {
+    total_size += 2 +
+      ::_pbi::WireFormatLite::UInt32Size(
+        this->_internal_trade_failures_recent());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -11889,13 +12046,22 @@ void TerminalInfo::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
       _this->_internal_set_startup_time(from._internal_startup_time());
     }
   }
+  if (!from._internal_last_trade_failure().empty()) {
+    _this->_internal_set_last_trade_failure(from._internal_last_trade_failure());
+  }
   if (from._internal_has_created_at()) {
     _this->_internal_mutable_created_at()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
         from._internal_created_at());
   }
-  if (cached_has_bits & 0x00000008u) {
-    _this->_internal_mutable_connected_at()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
-        from._internal_connected_at());
+  if (cached_has_bits & 0x00000018u) {
+    if (cached_has_bits & 0x00000008u) {
+      _this->_internal_mutable_connected_at()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+          from._internal_connected_at());
+    }
+    if (cached_has_bits & 0x00000010u) {
+      _this->_internal_mutable_broker_disconnected_since_utc()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(
+          from._internal_broker_disconnected_since_utc());
+    }
   }
   if (from._internal_account() != 0) {
     _this->_internal_set_account(from._internal_account());
@@ -11906,8 +12072,14 @@ void TerminalInfo::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
   if (from._internal_port() != 0) {
     _this->_internal_set_port(from._internal_port());
   }
-  if (cached_has_bits & 0x00000010u) {
+  if (cached_has_bits & 0x00000020u) {
     _this->_internal_set_startup_duration_seconds(from._internal_startup_duration_seconds());
+  }
+  if (from._internal_trade_failures_total() != 0) {
+    _this->_internal_set_trade_failures_total(from._internal_trade_failures_total());
+  }
+  if (from._internal_trade_failures_recent() != 0) {
+    _this->_internal_set_trade_failures_recent(from._internal_trade_failures_recent());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -11965,9 +12137,13 @@ void TerminalInfo::InternalSwap(TerminalInfo* other) {
       &_impl_.startup_time_, lhs_arena,
       &other->_impl_.startup_time_, rhs_arena
   );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.last_trade_failure_, lhs_arena,
+      &other->_impl_.last_trade_failure_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TerminalInfo, _impl_.startup_duration_seconds_)
-      + sizeof(TerminalInfo::_impl_.startup_duration_seconds_)
+      PROTOBUF_FIELD_OFFSET(TerminalInfo, _impl_.trade_failures_recent_)
+      + sizeof(TerminalInfo::_impl_.trade_failures_recent_)
       - PROTOBUF_FIELD_OFFSET(TerminalInfo, _impl_.created_at_)>(
           reinterpret_cast<char*>(&_impl_.created_at_),
           reinterpret_cast<char*>(&other->_impl_.created_at_));
