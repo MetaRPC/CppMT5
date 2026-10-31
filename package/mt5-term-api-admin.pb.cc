@@ -21,6 +21,36 @@ namespace _pb = ::PROTOBUF_NAMESPACE_ID;
 namespace _pbi = _pb::internal;
 
 namespace mrpc_admin {
+PROTOBUF_CONSTEXPR SetDedicatedIpEntitlementRequest::SetDedicatedIpEntitlementRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.admin_key_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.entitled_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct SetDedicatedIpEntitlementRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetDedicatedIpEntitlementRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetDedicatedIpEntitlementRequestDefaultTypeInternal() {}
+  union {
+    SetDedicatedIpEntitlementRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetDedicatedIpEntitlementRequestDefaultTypeInternal _SetDedicatedIpEntitlementRequest_default_instance_;
+PROTOBUF_CONSTEXPR SetDedicatedIpEntitlementReply::SetDedicatedIpEntitlementReply(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.error_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.changed_)*/false
+  , /*decltype(_impl_.entitled_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct SetDedicatedIpEntitlementReplyDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetDedicatedIpEntitlementReplyDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetDedicatedIpEntitlementReplyDefaultTypeInternal() {}
+  union {
+    SetDedicatedIpEntitlementReply _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetDedicatedIpEntitlementReplyDefaultTypeInternal _SetDedicatedIpEntitlementReply_default_instance_;
 PROTOBUF_CONSTEXPR SessionRestoreWatcherStatus::SessionRestoreWatcherStatus(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.state_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
@@ -607,11 +637,29 @@ struct ActiveTerminalsClusterReplyDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ActiveTerminalsClusterReplyDefaultTypeInternal _ActiveTerminalsClusterReply_default_instance_;
 }  // namespace mrpc_admin
-static ::_pb::Metadata file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[35];
+static ::_pb::Metadata file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[37];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_mt5_2dterm_2dapi_2dadmin_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_mt5_2dterm_2dapi_2dadmin_2eproto = nullptr;
 
 const uint32_t TableStruct_mt5_2dterm_2dapi_2dadmin_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mrpc_admin::SetDedicatedIpEntitlementRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::mrpc_admin::SetDedicatedIpEntitlementRequest, _impl_.admin_key_),
+  PROTOBUF_FIELD_OFFSET(::mrpc_admin::SetDedicatedIpEntitlementRequest, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::mrpc_admin::SetDedicatedIpEntitlementRequest, _impl_.entitled_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mrpc_admin::SetDedicatedIpEntitlementReply, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::mrpc_admin::SetDedicatedIpEntitlementReply, _impl_.changed_),
+  PROTOBUF_FIELD_OFFSET(::mrpc_admin::SetDedicatedIpEntitlementReply, _impl_.entitled_),
+  PROTOBUF_FIELD_OFFSET(::mrpc_admin::SetDedicatedIpEntitlementReply, _impl_.error_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mrpc_admin::SessionRestoreWatcherStatus, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1008,44 +1056,48 @@ const uint32_t TableStruct_mt5_2dterm_2dapi_2dadmin_2eproto::offsets[] PROTOBUF_
   PROTOBUF_FIELD_OFFSET(::mrpc_admin::ActiveTerminalsClusterReply, _impl_.pods_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::mrpc_admin::SessionRestoreWatcherStatus)},
-  { 20, -1, -1, sizeof(::mrpc_admin::GetSessionRestoreStatusReply)},
-  { 28, -1, -1, sizeof(::mrpc_admin::KillAllTrialTerminalsReply)},
-  { 38, -1, -1, sizeof(::mrpc_admin::DrainRequest)},
-  { 46, -1, -1, sizeof(::mrpc_admin::DrainReply)},
-  { 58, -1, -1, sizeof(::mrpc_admin::StopTerminalLocalRequest)},
-  { 69, -1, -1, sizeof(::mrpc_admin::StopTerminalLocalReply)},
-  { 81, -1, -1, sizeof(::mrpc_admin::GetSessionRestoreLogsRequest)},
-  { 90, -1, -1, sizeof(::mrpc_admin::SessionRestoreLogEntry)},
-  { 106, -1, -1, sizeof(::mrpc_admin::GetSessionRestoreLogsReply)},
-  { 114, -1, -1, sizeof(::mrpc_admin::GetAllLogsRequest)},
-  { 123, -1, -1, sizeof(::mrpc_admin::AllLogsEntry)},
-  { 137, -1, -1, sizeof(::mrpc_admin::GetAllLogsReply)},
-  { 145, -1, -1, sizeof(::mrpc_admin::VersionRequest)},
-  { 151, -1, -1, sizeof(::mrpc_admin::VersionReply)},
-  { 166, -1, -1, sizeof(::mrpc_admin::ListLogFilesReply)},
-  { 174, -1, -1, sizeof(::mrpc_admin::LogFileEntry)},
-  { 183, -1, -1, sizeof(::mrpc_admin::GetLogFileRequest)},
-  { 192, -1, -1, sizeof(::mrpc_admin::GetLogFileReply)},
-  { 202, -1, -1, sizeof(::mrpc_admin::GetTerminalJournalRequest)},
-  { 211, -1, -1, sizeof(::mrpc_admin::TerminalJournalFile)},
-  { 221, -1, -1, sizeof(::mrpc_admin::GetTerminalJournalReply)},
-  { 230, -1, -1, sizeof(::mrpc_admin::GetEventLogEntriesRequest)},
-  { 239, -1, -1, sizeof(::mrpc_admin::GetEventLogEntriesReply)},
-  { 247, -1, -1, sizeof(::mrpc_admin::CaptureSessionScreenshotRequest)},
-  { 255, -1, -1, sizeof(::mrpc_admin::CaptureSessionScreenshotOnPodRequest)},
-  { 264, -1, -1, sizeof(::mrpc_admin::CaptureSessionScreenshotReply)},
-  { 272, -1, -1, sizeof(::mrpc_admin::RefreshMrpcRestReply)},
-  { 281, -1, -1, sizeof(::mrpc_admin::UsageSample)},
-  { 291, -1, -1, sizeof(::mrpc_admin::SystemUsageReply)},
-  { 302, -1, -1, sizeof(::mrpc_admin::ActiveTerminalsRequest)},
-  { 309, 334, -1, sizeof(::mrpc_admin::TerminalInfo)},
-  { 353, -1, -1, sizeof(::mrpc_admin::ActiveTerminalsReply)},
-  { 369, -1, -1, sizeof(::mrpc_admin::PodTerminals)},
-  { 387, -1, -1, sizeof(::mrpc_admin::ActiveTerminalsClusterReply)},
+  { 0, -1, -1, sizeof(::mrpc_admin::SetDedicatedIpEntitlementRequest)},
+  { 9, -1, -1, sizeof(::mrpc_admin::SetDedicatedIpEntitlementReply)},
+  { 18, -1, -1, sizeof(::mrpc_admin::SessionRestoreWatcherStatus)},
+  { 38, -1, -1, sizeof(::mrpc_admin::GetSessionRestoreStatusReply)},
+  { 46, -1, -1, sizeof(::mrpc_admin::KillAllTrialTerminalsReply)},
+  { 56, -1, -1, sizeof(::mrpc_admin::DrainRequest)},
+  { 64, -1, -1, sizeof(::mrpc_admin::DrainReply)},
+  { 76, -1, -1, sizeof(::mrpc_admin::StopTerminalLocalRequest)},
+  { 87, -1, -1, sizeof(::mrpc_admin::StopTerminalLocalReply)},
+  { 99, -1, -1, sizeof(::mrpc_admin::GetSessionRestoreLogsRequest)},
+  { 108, -1, -1, sizeof(::mrpc_admin::SessionRestoreLogEntry)},
+  { 124, -1, -1, sizeof(::mrpc_admin::GetSessionRestoreLogsReply)},
+  { 132, -1, -1, sizeof(::mrpc_admin::GetAllLogsRequest)},
+  { 141, -1, -1, sizeof(::mrpc_admin::AllLogsEntry)},
+  { 155, -1, -1, sizeof(::mrpc_admin::GetAllLogsReply)},
+  { 163, -1, -1, sizeof(::mrpc_admin::VersionRequest)},
+  { 169, -1, -1, sizeof(::mrpc_admin::VersionReply)},
+  { 184, -1, -1, sizeof(::mrpc_admin::ListLogFilesReply)},
+  { 192, -1, -1, sizeof(::mrpc_admin::LogFileEntry)},
+  { 201, -1, -1, sizeof(::mrpc_admin::GetLogFileRequest)},
+  { 210, -1, -1, sizeof(::mrpc_admin::GetLogFileReply)},
+  { 220, -1, -1, sizeof(::mrpc_admin::GetTerminalJournalRequest)},
+  { 229, -1, -1, sizeof(::mrpc_admin::TerminalJournalFile)},
+  { 239, -1, -1, sizeof(::mrpc_admin::GetTerminalJournalReply)},
+  { 248, -1, -1, sizeof(::mrpc_admin::GetEventLogEntriesRequest)},
+  { 257, -1, -1, sizeof(::mrpc_admin::GetEventLogEntriesReply)},
+  { 265, -1, -1, sizeof(::mrpc_admin::CaptureSessionScreenshotRequest)},
+  { 273, -1, -1, sizeof(::mrpc_admin::CaptureSessionScreenshotOnPodRequest)},
+  { 282, -1, -1, sizeof(::mrpc_admin::CaptureSessionScreenshotReply)},
+  { 290, -1, -1, sizeof(::mrpc_admin::RefreshMrpcRestReply)},
+  { 299, -1, -1, sizeof(::mrpc_admin::UsageSample)},
+  { 309, -1, -1, sizeof(::mrpc_admin::SystemUsageReply)},
+  { 320, -1, -1, sizeof(::mrpc_admin::ActiveTerminalsRequest)},
+  { 327, 352, -1, sizeof(::mrpc_admin::TerminalInfo)},
+  { 371, -1, -1, sizeof(::mrpc_admin::ActiveTerminalsReply)},
+  { 387, -1, -1, sizeof(::mrpc_admin::PodTerminals)},
+  { 405, -1, -1, sizeof(::mrpc_admin::ActiveTerminalsClusterReply)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
+  &::mrpc_admin::_SetDedicatedIpEntitlementRequest_default_instance_._instance,
+  &::mrpc_admin::_SetDedicatedIpEntitlementReply_default_instance_._instance,
   &::mrpc_admin::_SessionRestoreWatcherStatus_default_instance_._instance,
   &::mrpc_admin::_GetSessionRestoreStatusReply_default_instance_._instance,
   &::mrpc_admin::_KillAllTrialTerminalsReply_default_instance_._instance,
@@ -1086,186 +1138,194 @@ static const ::_pb::Message* const file_default_instances[] = {
 const char descriptor_table_protodef_mt5_2dterm_2dapi_2dadmin_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\030mt5-term-api-admin.proto\022\nmrpc_admin\032\034"
   "google/api/annotations.proto\032\037google/pro"
-  "tobuf/timestamp.proto\"\354\002\n\033SessionRestore"
-  "WatcherStatus\022\017\n\007enabled\030\001 \001(\010\022\r\n\005state\030"
-  "\002 \001(\t\022\016\n\006reason\030\003 \001(\t\022\030\n\020total_candidate"
-  "s\030\004 \001(\005\022\027\n\017distinct_tokens\030\005 \001(\005\022\026\n\016alre"
-  "ady_loaded\030\006 \001(\005\022\020\n\010in_queue\030\007 \001(\005\022\023\n\013in"
-  "_progress\030\010 \001(\005\022\030\n\020restored_success\030\t \001("
-  "\005\022\027\n\017restored_failed\030\n \001(\005\022 \n\030last_recon"
-  "cile_start_utc\030\013 \001(\t\022\036\n\026last_reconcile_e"
-  "nd_utc\030\014 \001(\t\022\"\n\032last_reconcile_duration_"
-  "ms\030\r \001(\001\022\022\n\nlast_error\030\016 \001(\t\"f\n\034GetSessi"
-  "onRestoreStatusReply\0227\n\006status\030\001 \001(\0132\'.m"
-  "rpc_admin.SessionRestoreWatcherStatus\022\r\n"
-  "\005error\030\002 \001(\t\"o\n\032KillAllTrialTerminalsRep"
-  "ly\022\024\n\014killed_count\030\001 \001(\005\022\033\n\023killed_termi"
-  "nal_ids\030\002 \003(\t\022\017\n\007message\030\003 \001(\t\022\r\n\005error\030"
-  "\004 \001(\t\"1\n\014DrainRequest\022\021\n\tadmin_key\030\001 \001(\t"
-  "\022\016\n\006reason\030\002 \001(\t\"x\n\nDrainReply\022\020\n\010draini"
-  "ng\030\001 \001(\010\022\030\n\020already_draining\030\002 \001(\010\022\013\n\003po"
-  "d\030\003 \001(\t\022\016\n\006reason\030\004 \001(\t\022\022\n\nstarted_at\030\005 "
-  "\001(\t\022\r\n\005error\030\006 \001(\t\"l\n\030StopTerminalLocalR"
-  "equest\022\021\n\tadmin_key\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\r\n"
-  "\005cause\030\003 \001(\t\022\016\n\006detail\030\004 \001(\t\022\022\n\nintent_u"
-  "tc\030\005 \001(\t\"\207\001\n\026StopTerminalLocalReply\022\017\n\007s"
-  "topped\030\001 \001(\010\022\017\n\007present\030\002 \001(\010\022\013\n\003pod\030\003 \001"
-  "(\t\022\r\n\005error\030\004 \001(\t\022\036\n\026full_life_time_seco"
-  "nds\030\005 \001(\003\022\017\n\007skipped\030\006 \001(\t\"S\n\034GetSession"
-  "RestoreLogsRequest\022\021\n\tadmin_key\030\001 \001(\t\022\013\n"
-  "\003pod\030\002 \001(\t\022\023\n\013latest_only\030\003 \001(\010\"\302\001\n\026Sess"
-  "ionRestoreLogEntry\022\020\n\010token_id\030\001 \001(\t\022\020\n\010"
-  "platform\030\002 \001(\t\022\016\n\006reason\030\003 \001(\t\022\r\n\005owner\030"
-  "\004 \001(\t\022\014\n\004user\030\005 \001(\t\022\016\n\006target\030\006 \001(\t\022\017\n\007s"
-  "uccess\030\007 \001(\010\022\r\n\005error\030\010 \001(\t\022\022\n\nelapsed_m"
-  "s\030\t \001(\001\022\023\n\013created_utc\030\n \001(\t\"`\n\032GetSessi"
-  "onRestoreLogsReply\0223\n\007entries\030\001 \003(\0132\".mr"
-  "pc_admin.SessionRestoreLogEntry\022\r\n\005error"
-  "\030\002 \001(\t\"]\n\021GetAllLogsRequest\022\021\n\tadmin_key"
-  "\030\001 \001(\t\022\031\n\021max_bytes_per_log\030\002 \001(\003\022\032\n\022exc"
-  "lude_event_logs\030\003 \001(\010\"\226\001\n\014AllLogsEntry\022\016"
-  "\n\006source\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\014\n\004path\030\003 \001"
-  "(\t\022\022\n\nsize_bytes\030\004 \001(\003\022\023\n\013modified_at\030\005 "
-  "\001(\t\022\017\n\007content\030\006 \001(\t\022\021\n\ttruncated\030\007 \001(\010\022"
-  "\r\n\005error\030\010 \001(\t\"H\n\017GetAllLogsReply\022&\n\004log"
-  "s\030\001 \003(\0132\030.mrpc_admin.AllLogsEntry\022\r\n\005err"
-  "or\030\002 \001(\t\"\020\n\016VersionRequest\"\235\002\n\014VersionRe"
-  "ply\022\017\n\007service\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022\026\n"
-  "\016build_time_utc\030\003 \001(\t\022\014\n\004mode\030\004 \001(\t\022\030\n\020s"
-  "ession_creation\030\005 \001(\t\022-\n%session_creatio"
-  "n_consecutive_failures\030\006 \001(\r\022#\n\033session_"
-  "creation_last_error\030\007 \001(\t\022)\n!session_cre"
-  "ation_last_success_utc\030\010 \001(\t\022,\n$session_"
-  "creation_unhealthy_since_utc\030\t \001(\t\"K\n\021Li"
-  "stLogFilesReply\022\'\n\005files\030\001 \003(\0132\030.mrpc_ad"
-  "min.LogFileEntry\022\r\n\005error\030\002 \001(\t\"a\n\014LogFi"
-  "leEntry\022\014\n\004name\030\001 \001(\t\022\022\n\nsize_bytes\030\002 \001("
-  "\003\022/\n\013modified_at\030\003 \001(\0132\032.google.protobuf"
-  ".Timestamp\"L\n\021GetLogFileRequest\022\021\n\tadmin"
-  "_key\030\001 \001(\t\022\021\n\tfile_name\030\002 \001(\t\022\021\n\tmax_byt"
-  "es\030\003 \001(\003\"^\n\017GetLogFileReply\022\017\n\007content\030\001"
-  " \001(\t\022\021\n\ttruncated\030\002 \001(\010\022\030\n\020total_size_by"
-  "tes\030\003 \001(\003\022\r\n\005error\030\004 \001(\t\"M\n\031GetTerminalJ"
-  "ournalRequest\022\021\n\tadmin_key\030\001 \001(\t\022\n\n\002id\030\002"
-  " \001(\t\022\021\n\tmax_bytes\030\003 \001(\003\"a\n\023TerminalJourn"
-  "alFile\022\014\n\004name\030\001 \001(\t\022\017\n\007content\030\002 \001(\t\022\021\n"
-  "\ttruncated\030\003 \001(\010\022\030\n\020total_size_bytes\030\004 \001"
-  "(\003\"n\n\027GetTerminalJournalReply\022\024\n\014termina"
-  "l_dir\030\001 \001(\t\022.\n\005files\030\002 \003(\0132\037.mrpc_admin."
-  "TerminalJournalFile\022\r\n\005error\030\003 \001(\t\"S\n\031Ge"
-  "tEventLogEntriesRequest\022\021\n\tadmin_key\030\001 \001"
-  "(\t\022\020\n\010log_name\030\002 \001(\t\022\021\n\tmax_count\030\003 \001(\005\""
-  "9\n\027GetEventLogEntriesReply\022\017\n\007entries\030\001 "
-  "\003(\t\022\r\n\005error\030\002 \001(\t\"O\n\037CaptureSessionScre"
-  "enshotRequest\022\021\n\tadmin_key\030\001 \001(\t\022\031\n\021sess"
-  "ion_user_name\030\002 \001(\t\"d\n$CaptureSessionScr"
-  "eenshotOnPodRequest\022\021\n\tadmin_key\030\001 \001(\t\022\016"
-  "\n\006pod_ip\030\002 \001(\t\022\031\n\021session_user_name\030\003 \001("
-  "\t\"A\n\035CaptureSessionScreenshotReply\022\021\n\tim"
-  "age_png\030\001 \001(\014\022\r\n\005error\030\002 \001(\t\"G\n\024RefreshM"
-  "rpcRestReply\022\017\n\007success\030\001 \001(\010\022\017\n\007message"
-  "\030\002 \001(\t\022\r\n\005error\030\003 \001(\t\"w\n\013UsageSample\022(\n\004"
-  "time\030\001 \001(\0132\032.google.protobuf.Timestamp\022\023"
-  "\n\013cpu_percent\030\002 \001(\001\022\023\n\013ram_used_mb\030\003 \001(\004"
-  "\022\024\n\014ram_total_mb\030\004 \001(\004\"\213\001\n\020SystemUsageRe"
-  "ply\022\023\n\013cpu_percent\030\001 \001(\001\022\023\n\013ram_used_mb\030"
-  "\002 \001(\004\022\024\n\014ram_total_mb\030\003 \001(\004\022(\n\007history\030\004"
-  " \003(\0132\027.mrpc_admin.UsageSample\022\r\n\005error\030\005"
-  " \001(\t\"+\n\026ActiveTerminalsRequest\022\021\n\tadmin_"
-  "key\030\001 \001(\t\"\243\005\n\014TerminalInfo\022\n\n\002id\030\001 \001(\t\022\023"
-  "\n\013user_number\030\002 \001(\r\022\024\n\014windows_user\030\003 \001("
-  "\t\022\017\n\007account\030\004 \001(\004\022\016\n\006server\030\005 \001(\t\022\014\n\004po"
-  "rt\030\006 \001(\r\022.\n\ncreated_at\030\007 \001(\0132\032.google.pr"
-  "otobuf.Timestamp\022\030\n\020windows_password\030\010 \001"
-  "(\t\022\021\n\004name\030\t \001(\tH\000\210\001\001\022\r\n\005state\030\n \001(\t\022\025\n\r"
-  "error_message\030\013 \001(\t\022\027\n\nuser_email\030\014 \001(\tH"
-  "\001\210\001\001\022%\n\030startup_duration_seconds\030\r \001(\001H\002"
-  "\210\001\001\0225\n\014connected_at\030\016 \001(\0132\032.google.proto"
-  "buf.TimestampH\003\210\001\001\022\031\n\014startup_time\030\017 \001(\t"
-  "H\004\210\001\001\022F\n\035broker_disconnected_since_utc\030\020"
-  " \001(\0132\032.google.protobuf.TimestampH\005\210\001\001\022\035\n"
-  "\025trade_failures_recent\030\021 \001(\r\022\034\n\024trade_fa"
-  "ilures_total\030\022 \001(\004\022\032\n\022last_trade_failure"
-  "\030\023 \001(\tB\007\n\005_nameB\r\n\013_user_emailB\033\n\031_start"
-  "up_duration_secondsB\017\n\r_connected_atB\017\n\r"
-  "_startup_timeB \n\036_broker_disconnected_si"
-  "nce_utc\"\256\002\n\024ActiveTerminalsReply\022\013\n\003pod\030"
-  "\001 \001(\t\022\014\n\004node\030\002 \001(\t\022\016\n\006pod_ip\030\003 \001(\t\022+\n\tt"
-  "erminals\030\004 \003(\0132\030.mrpc_admin.TerminalInfo"
-  "\022\r\n\005error\030\005 \001(\t\022\023\n\013cpu_percent\030\006 \001(\001\022\023\n\013"
-  "ram_used_mb\030\007 \001(\004\022\024\n\014ram_total_mb\030\010 \001(\004\022"
-  ".\n\rusage_history\030\t \003(\0132\027.mrpc_admin.Usag"
-  "eSample\022\?\n\016restore_status\030\n \001(\0132\'.mrpc_a"
-  "dmin.SessionRestoreWatcherStatus\"\312\002\n\014Pod"
-  "Terminals\022\013\n\003pod\030\001 \001(\t\022\014\n\004node\030\002 \001(\t\022\016\n\006"
-  "pod_ip\030\003 \001(\t\022\021\n\tnovnc_url\030\004 \001(\t\022+\n\ttermi"
-  "nals\030\005 \003(\0132\030.mrpc_admin.TerminalInfo\022\r\n\005"
-  "error\030\006 \001(\t\022\017\n\007host_ip\030\007 \001(\t\022\023\n\013cpu_perc"
-  "ent\030\010 \001(\001\022\023\n\013ram_used_mb\030\t \001(\004\022\024\n\014ram_to"
-  "tal_mb\030\n \001(\004\022.\n\rusage_history\030\013 \003(\0132\027.mr"
-  "pc_admin.UsageSample\022\?\n\016restore_status\030\014"
-  " \001(\0132\'.mrpc_admin.SessionRestoreWatcherS"
-  "tatus\"E\n\033ActiveTerminalsClusterReply\022&\n\004"
-  "pods\030\001 \003(\0132\030.mrpc_admin.PodTerminals2\321\021\n"
-  "\010AdminApi\022q\n\017ActiveTerminals\022\".mrpc_admi"
-  "n.ActiveTerminalsRequest\032 .mrpc_admin.Ac"
-  "tiveTerminalsReply\"\030\202\323\344\223\002\022\022\020/ActiveTermi"
-  "nals\022\206\001\n\026ActiveTerminalsCluster\022\".mrpc_a"
-  "dmin.ActiveTerminalsRequest\032\'.mrpc_admin"
-  ".ActiveTerminalsClusterReply\"\037\202\323\344\223\002\031\022\027/A"
-  "ctiveTerminalsCluster\022e\n\013SystemUsage\022\".m"
-  "rpc_admin.ActiveTerminalsRequest\032\034.mrpc_"
-  "admin.SystemUsageReply\"\024\202\323\344\223\002\016\022\014/SystemU"
-  "sage\022h\n\014ListLogFiles\022\".mrpc_admin.Active"
-  "TerminalsRequest\032\035.mrpc_admin.ListLogFil"
-  "esReply\"\025\202\323\344\223\002\017\022\r/ListLogFiles\022]\n\nGetLog"
-  "File\022\035.mrpc_admin.GetLogFileRequest\032\033.mr"
-  "pc_admin.GetLogFileReply\"\023\202\323\344\223\002\r\022\013/GetLo"
-  "gFile\022}\n\022GetEventLogEntries\022%.mrpc_admin"
-  ".GetEventLogEntriesRequest\032#.mrpc_admin."
-  "GetEventLogEntriesReply\"\033\202\323\344\223\002\025\022\023/GetEve"
-  "ntLogEntries\022\225\001\n\030CaptureSessionScreensho"
-  "t\022+.mrpc_admin.CaptureSessionScreenshotR"
-  "equest\032).mrpc_admin.CaptureSessionScreen"
-  "shotReply\"!\202\323\344\223\002\033\022\031/CaptureSessionScreen"
-  "shot\022\244\001\n\035CaptureSessionScreenshotOnPod\0220"
-  ".mrpc_admin.CaptureSessionScreenshotOnPo"
-  "dRequest\032).mrpc_admin.CaptureSessionScre"
-  "enshotReply\"&\202\323\344\223\002 \022\036/CaptureSessionScre"
-  "enshotOnPod\022q\n\017RefreshMrpcRest\022\".mrpc_ad"
-  "min.ActiveTerminalsRequest\032 .mrpc_admin."
-  "RefreshMrpcRestReply\"\030\202\323\344\223\002\022\022\020/RefreshMr"
-  "pcRest\022W\n\nGetVersion\022\032.mrpc_admin.Versio"
-  "nRequest\032\030.mrpc_admin.VersionReply\"\023\202\323\344\223"
-  "\002\r\022\013/version-tm\022}\n\022GetTerminalJournal\022%."
-  "mrpc_admin.GetTerminalJournalRequest\032#.m"
-  "rpc_admin.GetTerminalJournalReply\"\033\202\323\344\223\002"
-  "\025\022\023/GetTerminalJournal\022]\n\nGetAllLogs\022\035.m"
-  "rpc_admin.GetAllLogsRequest\032\033.mrpc_admin"
-  ".GetAllLogsReply\"\023\202\323\344\223\002\r\022\013/GetAllLogs\022\211\001"
-  "\n\025GetSessionRestoreLogs\022(.mrpc_admin.Get"
-  "SessionRestoreLogsRequest\032&.mrpc_admin.G"
-  "etSessionRestoreLogsReply\"\036\202\323\344\223\002\030\022\026/GetS"
-  "essionRestoreLogs\022\211\001\n\027GetSessionRestoreS"
-  "tatus\022\".mrpc_admin.ActiveTerminalsReques"
-  "t\032(.mrpc_admin.GetSessionRestoreStatusRe"
-  "ply\" \202\323\344\223\002\032\022\030/GetSessionRestoreStatus\022\235\001"
-  "\n\025KillAllTrialTerminals\022\".mrpc_admin.Act"
-  "iveTerminalsRequest\032&.mrpc_admin.KillAll"
-  "TrialTerminalsReply\"8\202\323\344\223\0022\022\026/KillAllTri"
-  "alTerminalsZ\030\"\026/KillAllTrialTerminals\022\254\001"
-  "\n\032KillAllTrialTerminalsLocal\022\".mrpc_admi"
-  "n.ActiveTerminalsRequest\032&.mrpc_admin.Ki"
-  "llAllTrialTerminalsReply\"B\202\323\344\223\002<\022\033/KillA"
-  "llTrialTerminalsLocalZ\035\"\033/KillAllTrialTe"
-  "rminalsLocal\022L\n\005Drain\022\030.mrpc_admin.Drain"
-  "Request\032\026.mrpc_admin.DrainReply\"\021\202\323\344\223\002\013\""
-  "\006/Drain:\001*\022|\n\021StopTerminalLocal\022$.mrpc_a"
-  "dmin.StopTerminalLocalRequest\032\".mrpc_adm"
-  "in.StopTerminalLocalReply\"\035\202\323\344\223\002\027\"\022/Stop"
-  "TerminalLocal:\001*B@Z1git.mtapi.io/root/mr"
-  "pc-proto.git/mt5/libraries/go\252\002\nmrpc_adm"
-  "inb\006proto3"
+  "tobuf/timestamp.proto\"S\n SetDedicatedIpE"
+  "ntitlementRequest\022\021\n\tadmin_key\030\001 \001(\t\022\n\n\002"
+  "id\030\002 \001(\t\022\020\n\010entitled\030\003 \001(\010\"R\n\036SetDedicat"
+  "edIpEntitlementReply\022\017\n\007changed\030\001 \001(\010\022\020\n"
+  "\010entitled\030\002 \001(\010\022\r\n\005error\030\003 \001(\t\"\354\002\n\033Sessi"
+  "onRestoreWatcherStatus\022\017\n\007enabled\030\001 \001(\010\022"
+  "\r\n\005state\030\002 \001(\t\022\016\n\006reason\030\003 \001(\t\022\030\n\020total_"
+  "candidates\030\004 \001(\005\022\027\n\017distinct_tokens\030\005 \001("
+  "\005\022\026\n\016already_loaded\030\006 \001(\005\022\020\n\010in_queue\030\007 "
+  "\001(\005\022\023\n\013in_progress\030\010 \001(\005\022\030\n\020restored_suc"
+  "cess\030\t \001(\005\022\027\n\017restored_failed\030\n \001(\005\022 \n\030l"
+  "ast_reconcile_start_utc\030\013 \001(\t\022\036\n\026last_re"
+  "concile_end_utc\030\014 \001(\t\022\"\n\032last_reconcile_"
+  "duration_ms\030\r \001(\001\022\022\n\nlast_error\030\016 \001(\t\"f\n"
+  "\034GetSessionRestoreStatusReply\0227\n\006status\030"
+  "\001 \001(\0132\'.mrpc_admin.SessionRestoreWatcher"
+  "Status\022\r\n\005error\030\002 \001(\t\"o\n\032KillAllTrialTer"
+  "minalsReply\022\024\n\014killed_count\030\001 \001(\005\022\033\n\023kil"
+  "led_terminal_ids\030\002 \003(\t\022\017\n\007message\030\003 \001(\t\022"
+  "\r\n\005error\030\004 \001(\t\"1\n\014DrainRequest\022\021\n\tadmin_"
+  "key\030\001 \001(\t\022\016\n\006reason\030\002 \001(\t\"x\n\nDrainReply\022"
+  "\020\n\010draining\030\001 \001(\010\022\030\n\020already_draining\030\002 "
+  "\001(\010\022\013\n\003pod\030\003 \001(\t\022\016\n\006reason\030\004 \001(\t\022\022\n\nstar"
+  "ted_at\030\005 \001(\t\022\r\n\005error\030\006 \001(\t\"l\n\030StopTermi"
+  "nalLocalRequest\022\021\n\tadmin_key\030\001 \001(\t\022\n\n\002id"
+  "\030\002 \001(\t\022\r\n\005cause\030\003 \001(\t\022\016\n\006detail\030\004 \001(\t\022\022\n"
+  "\nintent_utc\030\005 \001(\t\"\207\001\n\026StopTerminalLocalR"
+  "eply\022\017\n\007stopped\030\001 \001(\010\022\017\n\007present\030\002 \001(\010\022\013"
+  "\n\003pod\030\003 \001(\t\022\r\n\005error\030\004 \001(\t\022\036\n\026full_life_"
+  "time_seconds\030\005 \001(\003\022\017\n\007skipped\030\006 \001(\t\"S\n\034G"
+  "etSessionRestoreLogsRequest\022\021\n\tadmin_key"
+  "\030\001 \001(\t\022\013\n\003pod\030\002 \001(\t\022\023\n\013latest_only\030\003 \001(\010"
+  "\"\302\001\n\026SessionRestoreLogEntry\022\020\n\010token_id\030"
+  "\001 \001(\t\022\020\n\010platform\030\002 \001(\t\022\016\n\006reason\030\003 \001(\t\022"
+  "\r\n\005owner\030\004 \001(\t\022\014\n\004user\030\005 \001(\t\022\016\n\006target\030\006"
+  " \001(\t\022\017\n\007success\030\007 \001(\010\022\r\n\005error\030\010 \001(\t\022\022\n\n"
+  "elapsed_ms\030\t \001(\001\022\023\n\013created_utc\030\n \001(\t\"`\n"
+  "\032GetSessionRestoreLogsReply\0223\n\007entries\030\001"
+  " \003(\0132\".mrpc_admin.SessionRestoreLogEntry"
+  "\022\r\n\005error\030\002 \001(\t\"]\n\021GetAllLogsRequest\022\021\n\t"
+  "admin_key\030\001 \001(\t\022\031\n\021max_bytes_per_log\030\002 \001"
+  "(\003\022\032\n\022exclude_event_logs\030\003 \001(\010\"\226\001\n\014AllLo"
+  "gsEntry\022\016\n\006source\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\014\n"
+  "\004path\030\003 \001(\t\022\022\n\nsize_bytes\030\004 \001(\003\022\023\n\013modif"
+  "ied_at\030\005 \001(\t\022\017\n\007content\030\006 \001(\t\022\021\n\ttruncat"
+  "ed\030\007 \001(\010\022\r\n\005error\030\010 \001(\t\"H\n\017GetAllLogsRep"
+  "ly\022&\n\004logs\030\001 \003(\0132\030.mrpc_admin.AllLogsEnt"
+  "ry\022\r\n\005error\030\002 \001(\t\"\020\n\016VersionRequest\"\235\002\n\014"
+  "VersionReply\022\017\n\007service\030\001 \001(\t\022\017\n\007version"
+  "\030\002 \001(\t\022\026\n\016build_time_utc\030\003 \001(\t\022\014\n\004mode\030\004"
+  " \001(\t\022\030\n\020session_creation\030\005 \001(\t\022-\n%sessio"
+  "n_creation_consecutive_failures\030\006 \001(\r\022#\n"
+  "\033session_creation_last_error\030\007 \001(\t\022)\n!se"
+  "ssion_creation_last_success_utc\030\010 \001(\t\022,\n"
+  "$session_creation_unhealthy_since_utc\030\t "
+  "\001(\t\"K\n\021ListLogFilesReply\022\'\n\005files\030\001 \003(\0132"
+  "\030.mrpc_admin.LogFileEntry\022\r\n\005error\030\002 \001(\t"
+  "\"a\n\014LogFileEntry\022\014\n\004name\030\001 \001(\t\022\022\n\nsize_b"
+  "ytes\030\002 \001(\003\022/\n\013modified_at\030\003 \001(\0132\032.google"
+  ".protobuf.Timestamp\"L\n\021GetLogFileRequest"
+  "\022\021\n\tadmin_key\030\001 \001(\t\022\021\n\tfile_name\030\002 \001(\t\022\021"
+  "\n\tmax_bytes\030\003 \001(\003\"^\n\017GetLogFileReply\022\017\n\007"
+  "content\030\001 \001(\t\022\021\n\ttruncated\030\002 \001(\010\022\030\n\020tota"
+  "l_size_bytes\030\003 \001(\003\022\r\n\005error\030\004 \001(\t\"M\n\031Get"
+  "TerminalJournalRequest\022\021\n\tadmin_key\030\001 \001("
+  "\t\022\n\n\002id\030\002 \001(\t\022\021\n\tmax_bytes\030\003 \001(\003\"a\n\023Term"
+  "inalJournalFile\022\014\n\004name\030\001 \001(\t\022\017\n\007content"
+  "\030\002 \001(\t\022\021\n\ttruncated\030\003 \001(\010\022\030\n\020total_size_"
+  "bytes\030\004 \001(\003\"n\n\027GetTerminalJournalReply\022\024"
+  "\n\014terminal_dir\030\001 \001(\t\022.\n\005files\030\002 \003(\0132\037.mr"
+  "pc_admin.TerminalJournalFile\022\r\n\005error\030\003 "
+  "\001(\t\"S\n\031GetEventLogEntriesRequest\022\021\n\tadmi"
+  "n_key\030\001 \001(\t\022\020\n\010log_name\030\002 \001(\t\022\021\n\tmax_cou"
+  "nt\030\003 \001(\005\"9\n\027GetEventLogEntriesReply\022\017\n\007e"
+  "ntries\030\001 \003(\t\022\r\n\005error\030\002 \001(\t\"O\n\037CaptureSe"
+  "ssionScreenshotRequest\022\021\n\tadmin_key\030\001 \001("
+  "\t\022\031\n\021session_user_name\030\002 \001(\t\"d\n$CaptureS"
+  "essionScreenshotOnPodRequest\022\021\n\tadmin_ke"
+  "y\030\001 \001(\t\022\016\n\006pod_ip\030\002 \001(\t\022\031\n\021session_user_"
+  "name\030\003 \001(\t\"A\n\035CaptureSessionScreenshotRe"
+  "ply\022\021\n\timage_png\030\001 \001(\014\022\r\n\005error\030\002 \001(\t\"G\n"
+  "\024RefreshMrpcRestReply\022\017\n\007success\030\001 \001(\010\022\017"
+  "\n\007message\030\002 \001(\t\022\r\n\005error\030\003 \001(\t\"w\n\013UsageS"
+  "ample\022(\n\004time\030\001 \001(\0132\032.google.protobuf.Ti"
+  "mestamp\022\023\n\013cpu_percent\030\002 \001(\001\022\023\n\013ram_used"
+  "_mb\030\003 \001(\004\022\024\n\014ram_total_mb\030\004 \001(\004\"\213\001\n\020Syst"
+  "emUsageReply\022\023\n\013cpu_percent\030\001 \001(\001\022\023\n\013ram"
+  "_used_mb\030\002 \001(\004\022\024\n\014ram_total_mb\030\003 \001(\004\022(\n\007"
+  "history\030\004 \003(\0132\027.mrpc_admin.UsageSample\022\r"
+  "\n\005error\030\005 \001(\t\"+\n\026ActiveTerminalsRequest\022"
+  "\021\n\tadmin_key\030\001 \001(\t\"\243\005\n\014TerminalInfo\022\n\n\002i"
+  "d\030\001 \001(\t\022\023\n\013user_number\030\002 \001(\r\022\024\n\014windows_"
+  "user\030\003 \001(\t\022\017\n\007account\030\004 \001(\004\022\016\n\006server\030\005 "
+  "\001(\t\022\014\n\004port\030\006 \001(\r\022.\n\ncreated_at\030\007 \001(\0132\032."
+  "google.protobuf.Timestamp\022\030\n\020windows_pas"
+  "sword\030\010 \001(\t\022\021\n\004name\030\t \001(\tH\000\210\001\001\022\r\n\005state\030"
+  "\n \001(\t\022\025\n\rerror_message\030\013 \001(\t\022\027\n\nuser_ema"
+  "il\030\014 \001(\tH\001\210\001\001\022%\n\030startup_duration_second"
+  "s\030\r \001(\001H\002\210\001\001\0225\n\014connected_at\030\016 \001(\0132\032.goo"
+  "gle.protobuf.TimestampH\003\210\001\001\022\031\n\014startup_t"
+  "ime\030\017 \001(\tH\004\210\001\001\022F\n\035broker_disconnected_si"
+  "nce_utc\030\020 \001(\0132\032.google.protobuf.Timestam"
+  "pH\005\210\001\001\022\035\n\025trade_failures_recent\030\021 \001(\r\022\034\n"
+  "\024trade_failures_total\030\022 \001(\004\022\032\n\022last_trad"
+  "e_failure\030\023 \001(\tB\007\n\005_nameB\r\n\013_user_emailB"
+  "\033\n\031_startup_duration_secondsB\017\n\r_connect"
+  "ed_atB\017\n\r_startup_timeB \n\036_broker_discon"
+  "nected_since_utc\"\256\002\n\024ActiveTerminalsRepl"
+  "y\022\013\n\003pod\030\001 \001(\t\022\014\n\004node\030\002 \001(\t\022\016\n\006pod_ip\030\003"
+  " \001(\t\022+\n\tterminals\030\004 \003(\0132\030.mrpc_admin.Ter"
+  "minalInfo\022\r\n\005error\030\005 \001(\t\022\023\n\013cpu_percent\030"
+  "\006 \001(\001\022\023\n\013ram_used_mb\030\007 \001(\004\022\024\n\014ram_total_"
+  "mb\030\010 \001(\004\022.\n\rusage_history\030\t \003(\0132\027.mrpc_a"
+  "dmin.UsageSample\022\?\n\016restore_status\030\n \001(\013"
+  "2\'.mrpc_admin.SessionRestoreWatcherStatu"
+  "s\"\312\002\n\014PodTerminals\022\013\n\003pod\030\001 \001(\t\022\014\n\004node\030"
+  "\002 \001(\t\022\016\n\006pod_ip\030\003 \001(\t\022\021\n\tnovnc_url\030\004 \001(\t"
+  "\022+\n\tterminals\030\005 \003(\0132\030.mrpc_admin.Termina"
+  "lInfo\022\r\n\005error\030\006 \001(\t\022\017\n\007host_ip\030\007 \001(\t\022\023\n"
+  "\013cpu_percent\030\010 \001(\001\022\023\n\013ram_used_mb\030\t \001(\004\022"
+  "\024\n\014ram_total_mb\030\n \001(\004\022.\n\rusage_history\030\013"
+  " \003(\0132\027.mrpc_admin.UsageSample\022\?\n\016restore"
+  "_status\030\014 \001(\0132\'.mrpc_admin.SessionRestor"
+  "eWatcherStatus\"E\n\033ActiveTerminalsCluster"
+  "Reply\022&\n\004pods\030\001 \003(\0132\030.mrpc_admin.PodTerm"
+  "inals2\360\022\n\010AdminApi\022q\n\017ActiveTerminals\022\"."
+  "mrpc_admin.ActiveTerminalsRequest\032 .mrpc"
+  "_admin.ActiveTerminalsReply\"\030\202\323\344\223\002\022\022\020/Ac"
+  "tiveTerminals\022\206\001\n\026ActiveTerminalsCluster"
+  "\022\".mrpc_admin.ActiveTerminalsRequest\032\'.m"
+  "rpc_admin.ActiveTerminalsClusterReply\"\037\202"
+  "\323\344\223\002\031\022\027/ActiveTerminalsCluster\022e\n\013System"
+  "Usage\022\".mrpc_admin.ActiveTerminalsReques"
+  "t\032\034.mrpc_admin.SystemUsageReply\"\024\202\323\344\223\002\016\022"
+  "\014/SystemUsage\022h\n\014ListLogFiles\022\".mrpc_adm"
+  "in.ActiveTerminalsRequest\032\035.mrpc_admin.L"
+  "istLogFilesReply\"\025\202\323\344\223\002\017\022\r/ListLogFiles\022"
+  "]\n\nGetLogFile\022\035.mrpc_admin.GetLogFileReq"
+  "uest\032\033.mrpc_admin.GetLogFileReply\"\023\202\323\344\223\002"
+  "\r\022\013/GetLogFile\022}\n\022GetEventLogEntries\022%.m"
+  "rpc_admin.GetEventLogEntriesRequest\032#.mr"
+  "pc_admin.GetEventLogEntriesReply\"\033\202\323\344\223\002\025"
+  "\022\023/GetEventLogEntries\022\225\001\n\030CaptureSession"
+  "Screenshot\022+.mrpc_admin.CaptureSessionSc"
+  "reenshotRequest\032).mrpc_admin.CaptureSess"
+  "ionScreenshotReply\"!\202\323\344\223\002\033\022\031/CaptureSess"
+  "ionScreenshot\022\244\001\n\035CaptureSessionScreensh"
+  "otOnPod\0220.mrpc_admin.CaptureSessionScree"
+  "nshotOnPodRequest\032).mrpc_admin.CaptureSe"
+  "ssionScreenshotReply\"&\202\323\344\223\002 \022\036/CaptureSe"
+  "ssionScreenshotOnPod\022q\n\017RefreshMrpcRest\022"
+  "\".mrpc_admin.ActiveTerminalsRequest\032 .mr"
+  "pc_admin.RefreshMrpcRestReply\"\030\202\323\344\223\002\022\022\020/"
+  "RefreshMrpcRest\022W\n\nGetVersion\022\032.mrpc_adm"
+  "in.VersionRequest\032\030.mrpc_admin.VersionRe"
+  "ply\"\023\202\323\344\223\002\r\022\013/version-tm\022}\n\022GetTerminalJ"
+  "ournal\022%.mrpc_admin.GetTerminalJournalRe"
+  "quest\032#.mrpc_admin.GetTerminalJournalRep"
+  "ly\"\033\202\323\344\223\002\025\022\023/GetTerminalJournal\022]\n\nGetAl"
+  "lLogs\022\035.mrpc_admin.GetAllLogsRequest\032\033.m"
+  "rpc_admin.GetAllLogsReply\"\023\202\323\344\223\002\r\022\013/GetA"
+  "llLogs\022\211\001\n\025GetSessionRestoreLogs\022(.mrpc_"
+  "admin.GetSessionRestoreLogsRequest\032&.mrp"
+  "c_admin.GetSessionRestoreLogsReply\"\036\202\323\344\223"
+  "\002\030\022\026/GetSessionRestoreLogs\022\211\001\n\027GetSessio"
+  "nRestoreStatus\022\".mrpc_admin.ActiveTermin"
+  "alsRequest\032(.mrpc_admin.GetSessionRestor"
+  "eStatusReply\" \202\323\344\223\002\032\022\030/GetSessionRestore"
+  "Status\022\235\001\n\025KillAllTrialTerminals\022\".mrpc_"
+  "admin.ActiveTerminalsRequest\032&.mrpc_admi"
+  "n.KillAllTrialTerminalsReply\"8\202\323\344\223\0022\022\026/K"
+  "illAllTrialTerminalsZ\030\"\026/KillAllTrialTer"
+  "minals\022\254\001\n\032KillAllTrialTerminalsLocal\022\"."
+  "mrpc_admin.ActiveTerminalsRequest\032&.mrpc"
+  "_admin.KillAllTrialTerminalsReply\"B\202\323\344\223\002"
+  "<\022\033/KillAllTrialTerminalsLocalZ\035\"\033/KillA"
+  "llTrialTerminalsLocal\022L\n\005Drain\022\030.mrpc_ad"
+  "min.DrainRequest\032\026.mrpc_admin.DrainReply"
+  "\"\021\202\323\344\223\002\013\"\006/Drain:\001*\022|\n\021StopTerminalLocal"
+  "\022$.mrpc_admin.StopTerminalLocalRequest\032\""
+  ".mrpc_admin.StopTerminalLocalReply\"\035\202\323\344\223"
+  "\002\027\"\022/StopTerminalLocal:\001*\022\234\001\n\031SetDedicat"
+  "edIpEntitlement\022,.mrpc_admin.SetDedicate"
+  "dIpEntitlementRequest\032*.mrpc_admin.SetDe"
+  "dicatedIpEntitlementReply\"%\202\323\344\223\002\037\"\032/SetD"
+  "edicatedIpEntitlement:\001*B@Z1git.mtapi.io"
+  "/root/mrpc-proto.git/mt5/libraries/go\252\002\n"
+  "mrpc_adminb\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_deps[2] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -1273,9 +1333,9 @@ static const ::_pbi::DescriptorTable* const descriptor_table_mt5_2dterm_2dapi_2d
 };
 static ::_pbi::once_flag descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto = {
-    false, false, 7250, descriptor_table_protodef_mt5_2dterm_2dapi_2dadmin_2eproto,
+    false, false, 7578, descriptor_table_protodef_mt5_2dterm_2dapi_2dadmin_2eproto,
     "mt5-term-api-admin.proto",
-    &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_deps, 2, 35,
+    &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once, descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_deps, 2, 37,
     schemas, file_default_instances, TableStruct_mt5_2dterm_2dapi_2dadmin_2eproto::offsets,
     file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto, file_level_enum_descriptors_mt5_2dterm_2dapi_2dadmin_2eproto,
     file_level_service_descriptors_mt5_2dterm_2dapi_2dadmin_2eproto,
@@ -1287,6 +1347,549 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_mt5_2dte
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_mt5_2dterm_2dapi_2dadmin_2eproto(&descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto);
 namespace mrpc_admin {
+
+// ===================================================================
+
+class SetDedicatedIpEntitlementRequest::_Internal {
+ public:
+};
+
+SetDedicatedIpEntitlementRequest::SetDedicatedIpEntitlementRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mrpc_admin.SetDedicatedIpEntitlementRequest)
+}
+SetDedicatedIpEntitlementRequest::SetDedicatedIpEntitlementRequest(const SetDedicatedIpEntitlementRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SetDedicatedIpEntitlementRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.admin_key_){}
+    , decltype(_impl_.id_){}
+    , decltype(_impl_.entitled_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.admin_key_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.admin_key_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_admin_key().empty()) {
+    _this->_impl_.admin_key_.Set(from._internal_admin_key(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_id().empty()) {
+    _this->_impl_.id_.Set(from._internal_id(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.entitled_ = from._impl_.entitled_;
+  // @@protoc_insertion_point(copy_constructor:mrpc_admin.SetDedicatedIpEntitlementRequest)
+}
+
+inline void SetDedicatedIpEntitlementRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.admin_key_){}
+    , decltype(_impl_.id_){}
+    , decltype(_impl_.entitled_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.admin_key_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.admin_key_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+SetDedicatedIpEntitlementRequest::~SetDedicatedIpEntitlementRequest() {
+  // @@protoc_insertion_point(destructor:mrpc_admin.SetDedicatedIpEntitlementRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void SetDedicatedIpEntitlementRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.admin_key_.Destroy();
+  _impl_.id_.Destroy();
+}
+
+void SetDedicatedIpEntitlementRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void SetDedicatedIpEntitlementRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mrpc_admin.SetDedicatedIpEntitlementRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.admin_key_.ClearToEmpty();
+  _impl_.id_.ClearToEmpty();
+  _impl_.entitled_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SetDedicatedIpEntitlementRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string admin_key = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_admin_key();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mrpc_admin.SetDedicatedIpEntitlementRequest.admin_key"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_id();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mrpc_admin.SetDedicatedIpEntitlementRequest.id"));
+        } else
+          goto handle_unusual;
+        continue;
+      // bool entitled = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.entitled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SetDedicatedIpEntitlementRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mrpc_admin.SetDedicatedIpEntitlementRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string admin_key = 1;
+  if (!this->_internal_admin_key().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_admin_key().data(), static_cast<int>(this->_internal_admin_key().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mrpc_admin.SetDedicatedIpEntitlementRequest.admin_key");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_admin_key(), target);
+  }
+
+  // string id = 2;
+  if (!this->_internal_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mrpc_admin.SetDedicatedIpEntitlementRequest.id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_id(), target);
+  }
+
+  // bool entitled = 3;
+  if (this->_internal_entitled() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_entitled(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mrpc_admin.SetDedicatedIpEntitlementRequest)
+  return target;
+}
+
+size_t SetDedicatedIpEntitlementRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mrpc_admin.SetDedicatedIpEntitlementRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string admin_key = 1;
+  if (!this->_internal_admin_key().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_admin_key());
+  }
+
+  // string id = 2;
+  if (!this->_internal_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_id());
+  }
+
+  // bool entitled = 3;
+  if (this->_internal_entitled() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetDedicatedIpEntitlementRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    SetDedicatedIpEntitlementRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetDedicatedIpEntitlementRequest::GetClassData() const { return &_class_data_; }
+
+
+void SetDedicatedIpEntitlementRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<SetDedicatedIpEntitlementRequest*>(&to_msg);
+  auto& from = static_cast<const SetDedicatedIpEntitlementRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mrpc_admin.SetDedicatedIpEntitlementRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_admin_key().empty()) {
+    _this->_internal_set_admin_key(from._internal_admin_key());
+  }
+  if (!from._internal_id().empty()) {
+    _this->_internal_set_id(from._internal_id());
+  }
+  if (from._internal_entitled() != 0) {
+    _this->_internal_set_entitled(from._internal_entitled());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SetDedicatedIpEntitlementRequest::CopyFrom(const SetDedicatedIpEntitlementRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mrpc_admin.SetDedicatedIpEntitlementRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SetDedicatedIpEntitlementRequest::IsInitialized() const {
+  return true;
+}
+
+void SetDedicatedIpEntitlementRequest::InternalSwap(SetDedicatedIpEntitlementRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.admin_key_, lhs_arena,
+      &other->_impl_.admin_key_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.id_, lhs_arena,
+      &other->_impl_.id_, rhs_arena
+  );
+  swap(_impl_.entitled_, other->_impl_.entitled_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata SetDedicatedIpEntitlementRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[0]);
+}
+
+// ===================================================================
+
+class SetDedicatedIpEntitlementReply::_Internal {
+ public:
+};
+
+SetDedicatedIpEntitlementReply::SetDedicatedIpEntitlementReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:mrpc_admin.SetDedicatedIpEntitlementReply)
+}
+SetDedicatedIpEntitlementReply::SetDedicatedIpEntitlementReply(const SetDedicatedIpEntitlementReply& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SetDedicatedIpEntitlementReply* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.error_){}
+    , decltype(_impl_.changed_){}
+    , decltype(_impl_.entitled_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.error_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.error_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_error().empty()) {
+    _this->_impl_.error_.Set(from._internal_error(), 
+      _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.changed_, &from._impl_.changed_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.entitled_) -
+    reinterpret_cast<char*>(&_impl_.changed_)) + sizeof(_impl_.entitled_));
+  // @@protoc_insertion_point(copy_constructor:mrpc_admin.SetDedicatedIpEntitlementReply)
+}
+
+inline void SetDedicatedIpEntitlementReply::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.error_){}
+    , decltype(_impl_.changed_){false}
+    , decltype(_impl_.entitled_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.error_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.error_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+SetDedicatedIpEntitlementReply::~SetDedicatedIpEntitlementReply() {
+  // @@protoc_insertion_point(destructor:mrpc_admin.SetDedicatedIpEntitlementReply)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void SetDedicatedIpEntitlementReply::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.error_.Destroy();
+}
+
+void SetDedicatedIpEntitlementReply::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void SetDedicatedIpEntitlementReply::Clear() {
+// @@protoc_insertion_point(message_clear_start:mrpc_admin.SetDedicatedIpEntitlementReply)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.error_.ClearToEmpty();
+  ::memset(&_impl_.changed_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.entitled_) -
+      reinterpret_cast<char*>(&_impl_.changed_)) + sizeof(_impl_.entitled_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SetDedicatedIpEntitlementReply::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool changed = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.changed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool entitled = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.entitled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string error = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_error();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "mrpc_admin.SetDedicatedIpEntitlementReply.error"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SetDedicatedIpEntitlementReply::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mrpc_admin.SetDedicatedIpEntitlementReply)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool changed = 1;
+  if (this->_internal_changed() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_changed(), target);
+  }
+
+  // bool entitled = 2;
+  if (this->_internal_entitled() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_entitled(), target);
+  }
+
+  // string error = 3;
+  if (!this->_internal_error().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mrpc_admin.SetDedicatedIpEntitlementReply.error");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_error(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mrpc_admin.SetDedicatedIpEntitlementReply)
+  return target;
+}
+
+size_t SetDedicatedIpEntitlementReply::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mrpc_admin.SetDedicatedIpEntitlementReply)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string error = 3;
+  if (!this->_internal_error().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_error());
+  }
+
+  // bool changed = 1;
+  if (this->_internal_changed() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // bool entitled = 2;
+  if (this->_internal_entitled() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetDedicatedIpEntitlementReply::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    SetDedicatedIpEntitlementReply::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetDedicatedIpEntitlementReply::GetClassData() const { return &_class_data_; }
+
+
+void SetDedicatedIpEntitlementReply::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<SetDedicatedIpEntitlementReply*>(&to_msg);
+  auto& from = static_cast<const SetDedicatedIpEntitlementReply&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:mrpc_admin.SetDedicatedIpEntitlementReply)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_error().empty()) {
+    _this->_internal_set_error(from._internal_error());
+  }
+  if (from._internal_changed() != 0) {
+    _this->_internal_set_changed(from._internal_changed());
+  }
+  if (from._internal_entitled() != 0) {
+    _this->_internal_set_entitled(from._internal_entitled());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SetDedicatedIpEntitlementReply::CopyFrom(const SetDedicatedIpEntitlementReply& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mrpc_admin.SetDedicatedIpEntitlementReply)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SetDedicatedIpEntitlementReply::IsInitialized() const {
+  return true;
+}
+
+void SetDedicatedIpEntitlementReply::InternalSwap(SetDedicatedIpEntitlementReply* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.error_, lhs_arena,
+      &other->_impl_.error_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetDedicatedIpEntitlementReply, _impl_.entitled_)
+      + sizeof(SetDedicatedIpEntitlementReply::_impl_.entitled_)
+      - PROTOBUF_FIELD_OFFSET(SetDedicatedIpEntitlementReply, _impl_.changed_)>(
+          reinterpret_cast<char*>(&_impl_.changed_),
+          reinterpret_cast<char*>(&other->_impl_.changed_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata SetDedicatedIpEntitlementReply::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[1]);
+}
 
 // ===================================================================
 
@@ -1928,7 +2531,7 @@ void SessionRestoreWatcherStatus::InternalSwap(SessionRestoreWatcherStatus* othe
 ::PROTOBUF_NAMESPACE_ID::Metadata SessionRestoreWatcherStatus::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[0]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[2]);
 }
 
 // ===================================================================
@@ -2173,7 +2776,7 @@ void GetSessionRestoreStatusReply::InternalSwap(GetSessionRestoreStatusReply* ot
 ::PROTOBUF_NAMESPACE_ID::Metadata GetSessionRestoreStatusReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[1]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[3]);
 }
 
 // ===================================================================
@@ -2492,7 +3095,7 @@ void KillAllTrialTerminalsReply::InternalSwap(KillAllTrialTerminalsReply* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata KillAllTrialTerminalsReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[2]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[4]);
 }
 
 // ===================================================================
@@ -2745,7 +3348,7 @@ void DrainRequest::InternalSwap(DrainRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DrainRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[3]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[5]);
 }
 
 // ===================================================================
@@ -3158,7 +3761,7 @@ void DrainReply::InternalSwap(DrainReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DrainReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[4]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[6]);
 }
 
 // ===================================================================
@@ -3561,7 +4164,7 @@ void StopTerminalLocalRequest::InternalSwap(StopTerminalLocalRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata StopTerminalLocalRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[5]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[7]);
 }
 
 // ===================================================================
@@ -3948,7 +4551,7 @@ void StopTerminalLocalReply::InternalSwap(StopTerminalLocalReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata StopTerminalLocalReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[6]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[8]);
 }
 
 // ===================================================================
@@ -4228,7 +4831,7 @@ void GetSessionRestoreLogsRequest::InternalSwap(GetSessionRestoreLogsRequest* ot
 ::PROTOBUF_NAMESPACE_ID::Metadata GetSessionRestoreLogsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[7]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[9]);
 }
 
 // ===================================================================
@@ -4853,7 +5456,7 @@ void SessionRestoreLogEntry::InternalSwap(SessionRestoreLogEntry* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SessionRestoreLogEntry::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[8]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[10]);
 }
 
 // ===================================================================
@@ -5090,7 +5693,7 @@ void GetSessionRestoreLogsReply::InternalSwap(GetSessionRestoreLogsReply* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata GetSessionRestoreLogsReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[9]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[11]);
 }
 
 // ===================================================================
@@ -5353,7 +5956,7 @@ void GetAllLogsRequest::InternalSwap(GetAllLogsRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetAllLogsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[10]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[12]);
 }
 
 // ===================================================================
@@ -5866,7 +6469,7 @@ void AllLogsEntry::InternalSwap(AllLogsEntry* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AllLogsEntry::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[11]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[13]);
 }
 
 // ===================================================================
@@ -6103,7 +6706,7 @@ void GetAllLogsReply::InternalSwap(GetAllLogsReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetAllLogsReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[12]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[14]);
 }
 
 // ===================================================================
@@ -6143,7 +6746,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*VersionRequest::GetClassData()
 ::PROTOBUF_NAMESPACE_ID::Metadata VersionRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[13]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[15]);
 }
 
 // ===================================================================
@@ -6723,7 +7326,7 @@ void VersionReply::InternalSwap(VersionReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata VersionReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[14]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[16]);
 }
 
 // ===================================================================
@@ -6960,7 +7563,7 @@ void ListLogFilesReply::InternalSwap(ListLogFilesReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListLogFilesReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[15]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[17]);
 }
 
 // ===================================================================
@@ -7242,7 +7845,7 @@ void LogFileEntry::InternalSwap(LogFileEntry* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata LogFileEntry::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[16]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[18]);
 }
 
 // ===================================================================
@@ -7522,7 +8125,7 @@ void GetLogFileRequest::InternalSwap(GetLogFileRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetLogFileRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[17]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[19]);
 }
 
 // ===================================================================
@@ -7835,7 +8438,7 @@ void GetLogFileReply::InternalSwap(GetLogFileReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetLogFileReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[18]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[20]);
 }
 
 // ===================================================================
@@ -8115,7 +8718,7 @@ void GetTerminalJournalRequest::InternalSwap(GetTerminalJournalRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetTerminalJournalRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[19]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[21]);
 }
 
 // ===================================================================
@@ -8428,7 +9031,7 @@ void TerminalJournalFile::InternalSwap(TerminalJournalFile* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata TerminalJournalFile::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[20]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[22]);
 }
 
 // ===================================================================
@@ -8715,7 +9318,7 @@ void GetTerminalJournalReply::InternalSwap(GetTerminalJournalReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetTerminalJournalReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[21]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[23]);
 }
 
 // ===================================================================
@@ -8995,7 +9598,7 @@ void GetEventLogEntriesRequest::InternalSwap(GetEventLogEntriesRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetEventLogEntriesRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[22]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[24]);
 }
 
 // ===================================================================
@@ -9237,7 +9840,7 @@ void GetEventLogEntriesReply::InternalSwap(GetEventLogEntriesReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetEventLogEntriesReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[23]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[25]);
 }
 
 // ===================================================================
@@ -9490,7 +10093,7 @@ void CaptureSessionScreenshotRequest::InternalSwap(CaptureSessionScreenshotReque
 ::PROTOBUF_NAMESPACE_ID::Metadata CaptureSessionScreenshotRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[24]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[26]);
 }
 
 // ===================================================================
@@ -9793,7 +10396,7 @@ void CaptureSessionScreenshotOnPodRequest::InternalSwap(CaptureSessionScreenshot
 ::PROTOBUF_NAMESPACE_ID::Metadata CaptureSessionScreenshotOnPodRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[25]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[27]);
 }
 
 // ===================================================================
@@ -10041,7 +10644,7 @@ void CaptureSessionScreenshotReply::InternalSwap(CaptureSessionScreenshotReply* 
 ::PROTOBUF_NAMESPACE_ID::Metadata CaptureSessionScreenshotReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[26]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[28]);
 }
 
 // ===================================================================
@@ -10321,7 +10924,7 @@ void RefreshMrpcRestReply::InternalSwap(RefreshMrpcRestReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata RefreshMrpcRestReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[27]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[29]);
 }
 
 // ===================================================================
@@ -10615,7 +11218,7 @@ void UsageSample::InternalSwap(UsageSample* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UsageSample::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[28]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[30]);
 }
 
 // ===================================================================
@@ -10948,7 +11551,7 @@ void SystemUsageReply::InternalSwap(SystemUsageReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SystemUsageReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[29]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[31]);
 }
 
 // ===================================================================
@@ -11151,7 +11754,7 @@ void ActiveTerminalsRequest::InternalSwap(ActiveTerminalsRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ActiveTerminalsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[30]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[32]);
 }
 
 // ===================================================================
@@ -12152,7 +12755,7 @@ void TerminalInfo::InternalSwap(TerminalInfo* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata TerminalInfo::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[31]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[33]);
 }
 
 // ===================================================================
@@ -12710,7 +13313,7 @@ void ActiveTerminalsReply::InternalSwap(ActiveTerminalsReply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ActiveTerminalsReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[32]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[34]);
 }
 
 // ===================================================================
@@ -13368,7 +13971,7 @@ void PodTerminals::InternalSwap(PodTerminals* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata PodTerminals::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[33]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[35]);
 }
 
 // ===================================================================
@@ -13553,12 +14156,20 @@ void ActiveTerminalsClusterReply::InternalSwap(ActiveTerminalsClusterReply* othe
 ::PROTOBUF_NAMESPACE_ID::Metadata ActiveTerminalsClusterReply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_getter, &descriptor_table_mt5_2dterm_2dapi_2dadmin_2eproto_once,
-      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[34]);
+      file_level_metadata_mt5_2dterm_2dapi_2dadmin_2eproto[36]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace mrpc_admin
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::mrpc_admin::SetDedicatedIpEntitlementRequest*
+Arena::CreateMaybeMessage< ::mrpc_admin::SetDedicatedIpEntitlementRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mrpc_admin::SetDedicatedIpEntitlementRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mrpc_admin::SetDedicatedIpEntitlementReply*
+Arena::CreateMaybeMessage< ::mrpc_admin::SetDedicatedIpEntitlementReply >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mrpc_admin::SetDedicatedIpEntitlementReply >(arena);
+}
 template<> PROTOBUF_NOINLINE ::mrpc_admin::SessionRestoreWatcherStatus*
 Arena::CreateMaybeMessage< ::mrpc_admin::SessionRestoreWatcherStatus >(Arena* arena) {
   return Arena::CreateMessageInternal< ::mrpc_admin::SessionRestoreWatcherStatus >(arena);

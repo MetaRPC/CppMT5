@@ -129,6 +129,12 @@ extern SessionRestoreLogEntryDefaultTypeInternal _SessionRestoreLogEntry_default
 class SessionRestoreWatcherStatus;
 struct SessionRestoreWatcherStatusDefaultTypeInternal;
 extern SessionRestoreWatcherStatusDefaultTypeInternal _SessionRestoreWatcherStatus_default_instance_;
+class SetDedicatedIpEntitlementReply;
+struct SetDedicatedIpEntitlementReplyDefaultTypeInternal;
+extern SetDedicatedIpEntitlementReplyDefaultTypeInternal _SetDedicatedIpEntitlementReply_default_instance_;
+class SetDedicatedIpEntitlementRequest;
+struct SetDedicatedIpEntitlementRequestDefaultTypeInternal;
+extern SetDedicatedIpEntitlementRequestDefaultTypeInternal _SetDedicatedIpEntitlementRequest_default_instance_;
 class StopTerminalLocalReply;
 struct StopTerminalLocalReplyDefaultTypeInternal;
 extern StopTerminalLocalReplyDefaultTypeInternal _StopTerminalLocalReply_default_instance_;
@@ -182,6 +188,8 @@ template<> ::mrpc_admin::PodTerminals* Arena::CreateMaybeMessage<::mrpc_admin::P
 template<> ::mrpc_admin::RefreshMrpcRestReply* Arena::CreateMaybeMessage<::mrpc_admin::RefreshMrpcRestReply>(Arena*);
 template<> ::mrpc_admin::SessionRestoreLogEntry* Arena::CreateMaybeMessage<::mrpc_admin::SessionRestoreLogEntry>(Arena*);
 template<> ::mrpc_admin::SessionRestoreWatcherStatus* Arena::CreateMaybeMessage<::mrpc_admin::SessionRestoreWatcherStatus>(Arena*);
+template<> ::mrpc_admin::SetDedicatedIpEntitlementReply* Arena::CreateMaybeMessage<::mrpc_admin::SetDedicatedIpEntitlementReply>(Arena*);
+template<> ::mrpc_admin::SetDedicatedIpEntitlementRequest* Arena::CreateMaybeMessage<::mrpc_admin::SetDedicatedIpEntitlementRequest>(Arena*);
 template<> ::mrpc_admin::StopTerminalLocalReply* Arena::CreateMaybeMessage<::mrpc_admin::StopTerminalLocalReply>(Arena*);
 template<> ::mrpc_admin::StopTerminalLocalRequest* Arena::CreateMaybeMessage<::mrpc_admin::StopTerminalLocalRequest>(Arena*);
 template<> ::mrpc_admin::SystemUsageReply* Arena::CreateMaybeMessage<::mrpc_admin::SystemUsageReply>(Arena*);
@@ -194,6 +202,361 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace mrpc_admin {
 
 // ===================================================================
+
+class SetDedicatedIpEntitlementRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mrpc_admin.SetDedicatedIpEntitlementRequest) */ {
+ public:
+  inline SetDedicatedIpEntitlementRequest() : SetDedicatedIpEntitlementRequest(nullptr) {}
+  ~SetDedicatedIpEntitlementRequest() override;
+  explicit PROTOBUF_CONSTEXPR SetDedicatedIpEntitlementRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetDedicatedIpEntitlementRequest(const SetDedicatedIpEntitlementRequest& from);
+  SetDedicatedIpEntitlementRequest(SetDedicatedIpEntitlementRequest&& from) noexcept
+    : SetDedicatedIpEntitlementRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SetDedicatedIpEntitlementRequest& operator=(const SetDedicatedIpEntitlementRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetDedicatedIpEntitlementRequest& operator=(SetDedicatedIpEntitlementRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetDedicatedIpEntitlementRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetDedicatedIpEntitlementRequest* internal_default_instance() {
+    return reinterpret_cast<const SetDedicatedIpEntitlementRequest*>(
+               &_SetDedicatedIpEntitlementRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(SetDedicatedIpEntitlementRequest& a, SetDedicatedIpEntitlementRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetDedicatedIpEntitlementRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetDedicatedIpEntitlementRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetDedicatedIpEntitlementRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetDedicatedIpEntitlementRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SetDedicatedIpEntitlementRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SetDedicatedIpEntitlementRequest& from) {
+    SetDedicatedIpEntitlementRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SetDedicatedIpEntitlementRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mrpc_admin.SetDedicatedIpEntitlementRequest";
+  }
+  protected:
+  explicit SetDedicatedIpEntitlementRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAdminKeyFieldNumber = 1,
+    kIdFieldNumber = 2,
+    kEntitledFieldNumber = 3,
+  };
+  // string admin_key = 1;
+  void clear_admin_key();
+  const std::string& admin_key() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_admin_key(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_admin_key();
+  PROTOBUF_NODISCARD std::string* release_admin_key();
+  void set_allocated_admin_key(std::string* admin_key);
+  private:
+  const std::string& _internal_admin_key() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_admin_key(const std::string& value);
+  std::string* _internal_mutable_admin_key();
+  public:
+
+  // string id = 2;
+  void clear_id();
+  const std::string& id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_id();
+  PROTOBUF_NODISCARD std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // bool entitled = 3;
+  void clear_entitled();
+  bool entitled() const;
+  void set_entitled(bool value);
+  private:
+  bool _internal_entitled() const;
+  void _internal_set_entitled(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mrpc_admin.SetDedicatedIpEntitlementRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr admin_key_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+    bool entitled_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_mt5_2dterm_2dapi_2dadmin_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetDedicatedIpEntitlementReply final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mrpc_admin.SetDedicatedIpEntitlementReply) */ {
+ public:
+  inline SetDedicatedIpEntitlementReply() : SetDedicatedIpEntitlementReply(nullptr) {}
+  ~SetDedicatedIpEntitlementReply() override;
+  explicit PROTOBUF_CONSTEXPR SetDedicatedIpEntitlementReply(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetDedicatedIpEntitlementReply(const SetDedicatedIpEntitlementReply& from);
+  SetDedicatedIpEntitlementReply(SetDedicatedIpEntitlementReply&& from) noexcept
+    : SetDedicatedIpEntitlementReply() {
+    *this = ::std::move(from);
+  }
+
+  inline SetDedicatedIpEntitlementReply& operator=(const SetDedicatedIpEntitlementReply& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetDedicatedIpEntitlementReply& operator=(SetDedicatedIpEntitlementReply&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetDedicatedIpEntitlementReply& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetDedicatedIpEntitlementReply* internal_default_instance() {
+    return reinterpret_cast<const SetDedicatedIpEntitlementReply*>(
+               &_SetDedicatedIpEntitlementReply_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(SetDedicatedIpEntitlementReply& a, SetDedicatedIpEntitlementReply& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetDedicatedIpEntitlementReply* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetDedicatedIpEntitlementReply* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetDedicatedIpEntitlementReply* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetDedicatedIpEntitlementReply>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SetDedicatedIpEntitlementReply& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SetDedicatedIpEntitlementReply& from) {
+    SetDedicatedIpEntitlementReply::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SetDedicatedIpEntitlementReply* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mrpc_admin.SetDedicatedIpEntitlementReply";
+  }
+  protected:
+  explicit SetDedicatedIpEntitlementReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kErrorFieldNumber = 3,
+    kChangedFieldNumber = 1,
+    kEntitledFieldNumber = 2,
+  };
+  // string error = 3;
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_NODISCARD std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // bool changed = 1;
+  void clear_changed();
+  bool changed() const;
+  void set_changed(bool value);
+  private:
+  bool _internal_changed() const;
+  void _internal_set_changed(bool value);
+  public:
+
+  // bool entitled = 2;
+  void clear_entitled();
+  bool entitled() const;
+  void set_entitled(bool value);
+  private:
+  bool _internal_entitled() const;
+  void _internal_set_entitled(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mrpc_admin.SetDedicatedIpEntitlementReply)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+    bool changed_;
+    bool entitled_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_mt5_2dterm_2dapi_2dadmin_2eproto;
+};
+// -------------------------------------------------------------------
 
 class SessionRestoreWatcherStatus final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mrpc_admin.SessionRestoreWatcherStatus) */ {
@@ -243,7 +606,7 @@ class SessionRestoreWatcherStatus final :
                &_SessionRestoreWatcherStatus_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    2;
 
   friend void swap(SessionRestoreWatcherStatus& a, SessionRestoreWatcherStatus& b) {
     a.Swap(&b);
@@ -559,7 +922,7 @@ class GetSessionRestoreStatusReply final :
                &_GetSessionRestoreStatusReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(GetSessionRestoreStatusReply& a, GetSessionRestoreStatusReply& b) {
     a.Swap(&b);
@@ -732,7 +1095,7 @@ class KillAllTrialTerminalsReply final :
                &_KillAllTrialTerminalsReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(KillAllTrialTerminalsReply& a, KillAllTrialTerminalsReply& b) {
     a.Swap(&b);
@@ -938,7 +1301,7 @@ class DrainRequest final :
                &_DrainRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   friend void swap(DrainRequest& a, DrainRequest& b) {
     a.Swap(&b);
@@ -1107,7 +1470,7 @@ class DrainReply final :
                &_DrainReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   friend void swap(DrainReply& a, DrainReply& b) {
     a.Swap(&b);
@@ -1330,7 +1693,7 @@ class StopTerminalLocalRequest final :
                &_StopTerminalLocalRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   friend void swap(StopTerminalLocalRequest& a, StopTerminalLocalRequest& b) {
     a.Swap(&b);
@@ -1547,7 +1910,7 @@ class StopTerminalLocalReply final :
                &_StopTerminalLocalReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(StopTerminalLocalReply& a, StopTerminalLocalReply& b) {
     a.Swap(&b);
@@ -1765,7 +2128,7 @@ class GetSessionRestoreLogsRequest final :
                &_GetSessionRestoreLogsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(GetSessionRestoreLogsRequest& a, GetSessionRestoreLogsRequest& b) {
     a.Swap(&b);
@@ -1945,7 +2308,7 @@ class SessionRestoreLogEntry final :
                &_SessionRestoreLogEntry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(SessionRestoreLogEntry& a, SessionRestoreLogEntry& b) {
     a.Swap(&b);
@@ -2232,7 +2595,7 @@ class GetSessionRestoreLogsReply final :
                &_GetSessionRestoreLogsReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(GetSessionRestoreLogsReply& a, GetSessionRestoreLogsReply& b) {
     a.Swap(&b);
@@ -2405,7 +2768,7 @@ class GetAllLogsRequest final :
                &_GetAllLogsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(GetAllLogsRequest& a, GetAllLogsRequest& b) {
     a.Swap(&b);
@@ -2580,7 +2943,7 @@ class AllLogsEntry final :
                &_AllLogsEntry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(AllLogsEntry& a, AllLogsEntry& b) {
     a.Swap(&b);
@@ -2835,7 +3198,7 @@ class GetAllLogsReply final :
                &_GetAllLogsReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(GetAllLogsReply& a, GetAllLogsReply& b) {
     a.Swap(&b);
@@ -3007,7 +3370,7 @@ class VersionRequest final :
                &_VersionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(VersionRequest& a, VersionRequest& b) {
     a.Swap(&b);
@@ -3126,7 +3489,7 @@ class VersionReply final :
                &_VersionReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(VersionReply& a, VersionReply& b) {
     a.Swap(&b);
@@ -3402,7 +3765,7 @@ class ListLogFilesReply final :
                &_ListLogFilesReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(ListLogFilesReply& a, ListLogFilesReply& b) {
     a.Swap(&b);
@@ -3575,7 +3938,7 @@ class LogFileEntry final :
                &_LogFileEntry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(LogFileEntry& a, LogFileEntry& b) {
     a.Swap(&b);
@@ -3759,7 +4122,7 @@ class GetLogFileRequest final :
                &_GetLogFileRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(GetLogFileRequest& a, GetLogFileRequest& b) {
     a.Swap(&b);
@@ -3939,7 +4302,7 @@ class GetLogFileReply final :
                &_GetLogFileReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(GetLogFileReply& a, GetLogFileReply& b) {
     a.Swap(&b);
@@ -4130,7 +4493,7 @@ class GetTerminalJournalRequest final :
                &_GetTerminalJournalRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(GetTerminalJournalRequest& a, GetTerminalJournalRequest& b) {
     a.Swap(&b);
@@ -4310,7 +4673,7 @@ class TerminalJournalFile final :
                &_TerminalJournalFile_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   friend void swap(TerminalJournalFile& a, TerminalJournalFile& b) {
     a.Swap(&b);
@@ -4501,7 +4864,7 @@ class GetTerminalJournalReply final :
                &_GetTerminalJournalReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(GetTerminalJournalReply& a, GetTerminalJournalReply& b) {
     a.Swap(&b);
@@ -4690,7 +5053,7 @@ class GetEventLogEntriesRequest final :
                &_GetEventLogEntriesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   friend void swap(GetEventLogEntriesRequest& a, GetEventLogEntriesRequest& b) {
     a.Swap(&b);
@@ -4870,7 +5233,7 @@ class GetEventLogEntriesReply final :
                &_GetEventLogEntriesReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   friend void swap(GetEventLogEntriesReply& a, GetEventLogEntriesReply& b) {
     a.Swap(&b);
@@ -5049,7 +5412,7 @@ class CaptureSessionScreenshotRequest final :
                &_CaptureSessionScreenshotRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   friend void swap(CaptureSessionScreenshotRequest& a, CaptureSessionScreenshotRequest& b) {
     a.Swap(&b);
@@ -5218,7 +5581,7 @@ class CaptureSessionScreenshotOnPodRequest final :
                &_CaptureSessionScreenshotOnPodRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   friend void swap(CaptureSessionScreenshotOnPodRequest& a, CaptureSessionScreenshotOnPodRequest& b) {
     a.Swap(&b);
@@ -5403,7 +5766,7 @@ class CaptureSessionScreenshotReply final :
                &_CaptureSessionScreenshotReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   friend void swap(CaptureSessionScreenshotReply& a, CaptureSessionScreenshotReply& b) {
     a.Swap(&b);
@@ -5572,7 +5935,7 @@ class RefreshMrpcRestReply final :
                &_RefreshMrpcRestReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   friend void swap(RefreshMrpcRestReply& a, RefreshMrpcRestReply& b) {
     a.Swap(&b);
@@ -5752,7 +6115,7 @@ class UsageSample final :
                &_UsageSample_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   friend void swap(UsageSample& a, UsageSample& b) {
     a.Swap(&b);
@@ -5942,7 +6305,7 @@ class SystemUsageReply final :
                &_SystemUsageReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(SystemUsageReply& a, SystemUsageReply& b) {
     a.Swap(&b);
@@ -6148,7 +6511,7 @@ class ActiveTerminalsRequest final :
                &_ActiveTerminalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(ActiveTerminalsRequest& a, ActiveTerminalsRequest& b) {
     a.Swap(&b);
@@ -6301,7 +6664,7 @@ class TerminalInfo final :
                &_TerminalInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(TerminalInfo& a, TerminalInfo& b) {
     a.Swap(&b);
@@ -6741,7 +7104,7 @@ class ActiveTerminalsReply final :
                &_ActiveTerminalsReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   friend void swap(ActiveTerminalsReply& a, ActiveTerminalsReply& b) {
     a.Swap(&b);
@@ -7035,7 +7398,7 @@ class PodTerminals final :
                &_PodTerminals_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    35;
 
   friend void swap(PodTerminals& a, PodTerminals& b) {
     a.Swap(&b);
@@ -7361,7 +7724,7 @@ class ActiveTerminalsClusterReply final :
                &_ActiveTerminalsClusterReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    36;
 
   friend void swap(ActiveTerminalsClusterReply& a, ActiveTerminalsClusterReply& b) {
     a.Swap(&b);
@@ -7477,6 +7840,224 @@ class ActiveTerminalsClusterReply final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// SetDedicatedIpEntitlementRequest
+
+// string admin_key = 1;
+inline void SetDedicatedIpEntitlementRequest::clear_admin_key() {
+  _impl_.admin_key_.ClearToEmpty();
+}
+inline const std::string& SetDedicatedIpEntitlementRequest::admin_key() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.SetDedicatedIpEntitlementRequest.admin_key)
+  return _internal_admin_key();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SetDedicatedIpEntitlementRequest::set_admin_key(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.admin_key_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.SetDedicatedIpEntitlementRequest.admin_key)
+}
+inline std::string* SetDedicatedIpEntitlementRequest::mutable_admin_key() {
+  std::string* _s = _internal_mutable_admin_key();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.SetDedicatedIpEntitlementRequest.admin_key)
+  return _s;
+}
+inline const std::string& SetDedicatedIpEntitlementRequest::_internal_admin_key() const {
+  return _impl_.admin_key_.Get();
+}
+inline void SetDedicatedIpEntitlementRequest::_internal_set_admin_key(const std::string& value) {
+  
+  _impl_.admin_key_.Set(value, GetArenaForAllocation());
+}
+inline std::string* SetDedicatedIpEntitlementRequest::_internal_mutable_admin_key() {
+  
+  return _impl_.admin_key_.Mutable(GetArenaForAllocation());
+}
+inline std::string* SetDedicatedIpEntitlementRequest::release_admin_key() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.SetDedicatedIpEntitlementRequest.admin_key)
+  return _impl_.admin_key_.Release();
+}
+inline void SetDedicatedIpEntitlementRequest::set_allocated_admin_key(std::string* admin_key) {
+  if (admin_key != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.admin_key_.SetAllocated(admin_key, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.admin_key_.IsDefault()) {
+    _impl_.admin_key_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.SetDedicatedIpEntitlementRequest.admin_key)
+}
+
+// string id = 2;
+inline void SetDedicatedIpEntitlementRequest::clear_id() {
+  _impl_.id_.ClearToEmpty();
+}
+inline const std::string& SetDedicatedIpEntitlementRequest::id() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.SetDedicatedIpEntitlementRequest.id)
+  return _internal_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SetDedicatedIpEntitlementRequest::set_id(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.SetDedicatedIpEntitlementRequest.id)
+}
+inline std::string* SetDedicatedIpEntitlementRequest::mutable_id() {
+  std::string* _s = _internal_mutable_id();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.SetDedicatedIpEntitlementRequest.id)
+  return _s;
+}
+inline const std::string& SetDedicatedIpEntitlementRequest::_internal_id() const {
+  return _impl_.id_.Get();
+}
+inline void SetDedicatedIpEntitlementRequest::_internal_set_id(const std::string& value) {
+  
+  _impl_.id_.Set(value, GetArenaForAllocation());
+}
+inline std::string* SetDedicatedIpEntitlementRequest::_internal_mutable_id() {
+  
+  return _impl_.id_.Mutable(GetArenaForAllocation());
+}
+inline std::string* SetDedicatedIpEntitlementRequest::release_id() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.SetDedicatedIpEntitlementRequest.id)
+  return _impl_.id_.Release();
+}
+inline void SetDedicatedIpEntitlementRequest::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.id_.SetAllocated(id, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.id_.IsDefault()) {
+    _impl_.id_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.SetDedicatedIpEntitlementRequest.id)
+}
+
+// bool entitled = 3;
+inline void SetDedicatedIpEntitlementRequest::clear_entitled() {
+  _impl_.entitled_ = false;
+}
+inline bool SetDedicatedIpEntitlementRequest::_internal_entitled() const {
+  return _impl_.entitled_;
+}
+inline bool SetDedicatedIpEntitlementRequest::entitled() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.SetDedicatedIpEntitlementRequest.entitled)
+  return _internal_entitled();
+}
+inline void SetDedicatedIpEntitlementRequest::_internal_set_entitled(bool value) {
+  
+  _impl_.entitled_ = value;
+}
+inline void SetDedicatedIpEntitlementRequest::set_entitled(bool value) {
+  _internal_set_entitled(value);
+  // @@protoc_insertion_point(field_set:mrpc_admin.SetDedicatedIpEntitlementRequest.entitled)
+}
+
+// -------------------------------------------------------------------
+
+// SetDedicatedIpEntitlementReply
+
+// bool changed = 1;
+inline void SetDedicatedIpEntitlementReply::clear_changed() {
+  _impl_.changed_ = false;
+}
+inline bool SetDedicatedIpEntitlementReply::_internal_changed() const {
+  return _impl_.changed_;
+}
+inline bool SetDedicatedIpEntitlementReply::changed() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.SetDedicatedIpEntitlementReply.changed)
+  return _internal_changed();
+}
+inline void SetDedicatedIpEntitlementReply::_internal_set_changed(bool value) {
+  
+  _impl_.changed_ = value;
+}
+inline void SetDedicatedIpEntitlementReply::set_changed(bool value) {
+  _internal_set_changed(value);
+  // @@protoc_insertion_point(field_set:mrpc_admin.SetDedicatedIpEntitlementReply.changed)
+}
+
+// bool entitled = 2;
+inline void SetDedicatedIpEntitlementReply::clear_entitled() {
+  _impl_.entitled_ = false;
+}
+inline bool SetDedicatedIpEntitlementReply::_internal_entitled() const {
+  return _impl_.entitled_;
+}
+inline bool SetDedicatedIpEntitlementReply::entitled() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.SetDedicatedIpEntitlementReply.entitled)
+  return _internal_entitled();
+}
+inline void SetDedicatedIpEntitlementReply::_internal_set_entitled(bool value) {
+  
+  _impl_.entitled_ = value;
+}
+inline void SetDedicatedIpEntitlementReply::set_entitled(bool value) {
+  _internal_set_entitled(value);
+  // @@protoc_insertion_point(field_set:mrpc_admin.SetDedicatedIpEntitlementReply.entitled)
+}
+
+// string error = 3;
+inline void SetDedicatedIpEntitlementReply::clear_error() {
+  _impl_.error_.ClearToEmpty();
+}
+inline const std::string& SetDedicatedIpEntitlementReply::error() const {
+  // @@protoc_insertion_point(field_get:mrpc_admin.SetDedicatedIpEntitlementReply.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SetDedicatedIpEntitlementReply::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.error_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mrpc_admin.SetDedicatedIpEntitlementReply.error)
+}
+inline std::string* SetDedicatedIpEntitlementReply::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:mrpc_admin.SetDedicatedIpEntitlementReply.error)
+  return _s;
+}
+inline const std::string& SetDedicatedIpEntitlementReply::_internal_error() const {
+  return _impl_.error_.Get();
+}
+inline void SetDedicatedIpEntitlementReply::_internal_set_error(const std::string& value) {
+  
+  _impl_.error_.Set(value, GetArenaForAllocation());
+}
+inline std::string* SetDedicatedIpEntitlementReply::_internal_mutable_error() {
+  
+  return _impl_.error_.Mutable(GetArenaForAllocation());
+}
+inline std::string* SetDedicatedIpEntitlementReply::release_error() {
+  // @@protoc_insertion_point(field_release:mrpc_admin.SetDedicatedIpEntitlementReply.error)
+  return _impl_.error_.Release();
+}
+inline void SetDedicatedIpEntitlementReply::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.error_.SetAllocated(error, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.error_.IsDefault()) {
+    _impl_.error_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:mrpc_admin.SetDedicatedIpEntitlementReply.error)
+}
+
+// -------------------------------------------------------------------
+
 // SessionRestoreWatcherStatus
 
 // bool enabled = 1;
@@ -14679,6 +15260,10 @@ ActiveTerminalsClusterReply::pods() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

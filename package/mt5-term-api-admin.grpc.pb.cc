@@ -40,6 +40,7 @@ static const char* AdminApi_method_names[] = {
   "/mrpc_admin.AdminApi/KillAllTrialTerminalsLocal",
   "/mrpc_admin.AdminApi/Drain",
   "/mrpc_admin.AdminApi/StopTerminalLocal",
+  "/mrpc_admin.AdminApi/SetDedicatedIpEntitlement",
 };
 
 std::unique_ptr< AdminApi::Stub> AdminApi::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -67,6 +68,7 @@ AdminApi::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, 
   , rpcmethod_KillAllTrialTerminalsLocal_(AdminApi_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_Drain_(AdminApi_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_StopTerminalLocal_(AdminApi_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetDedicatedIpEntitlement_(AdminApi_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status AdminApi::Stub::ActiveTerminals(::grpc::ClientContext* context, const ::mrpc_admin::ActiveTerminalsRequest& request, ::mrpc_admin::ActiveTerminalsReply* response) {
@@ -483,6 +485,29 @@ void AdminApi::Stub::async::StopTerminalLocal(::grpc::ClientContext* context, co
   return result;
 }
 
+::grpc::Status AdminApi::Stub::SetDedicatedIpEntitlement(::grpc::ClientContext* context, const ::mrpc_admin::SetDedicatedIpEntitlementRequest& request, ::mrpc_admin::SetDedicatedIpEntitlementReply* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::mrpc_admin::SetDedicatedIpEntitlementRequest, ::mrpc_admin::SetDedicatedIpEntitlementReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetDedicatedIpEntitlement_, context, request, response);
+}
+
+void AdminApi::Stub::async::SetDedicatedIpEntitlement(::grpc::ClientContext* context, const ::mrpc_admin::SetDedicatedIpEntitlementRequest* request, ::mrpc_admin::SetDedicatedIpEntitlementReply* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::mrpc_admin::SetDedicatedIpEntitlementRequest, ::mrpc_admin::SetDedicatedIpEntitlementReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetDedicatedIpEntitlement_, context, request, response, std::move(f));
+}
+
+void AdminApi::Stub::async::SetDedicatedIpEntitlement(::grpc::ClientContext* context, const ::mrpc_admin::SetDedicatedIpEntitlementRequest* request, ::mrpc_admin::SetDedicatedIpEntitlementReply* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetDedicatedIpEntitlement_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mrpc_admin::SetDedicatedIpEntitlementReply>* AdminApi::Stub::PrepareAsyncSetDedicatedIpEntitlementRaw(::grpc::ClientContext* context, const ::mrpc_admin::SetDedicatedIpEntitlementRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::mrpc_admin::SetDedicatedIpEntitlementReply, ::mrpc_admin::SetDedicatedIpEntitlementRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetDedicatedIpEntitlement_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::mrpc_admin::SetDedicatedIpEntitlementReply>* AdminApi::Stub::AsyncSetDedicatedIpEntitlementRaw(::grpc::ClientContext* context, const ::mrpc_admin::SetDedicatedIpEntitlementRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncSetDedicatedIpEntitlementRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 AdminApi::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AdminApi_method_names[0],
@@ -664,6 +689,16 @@ AdminApi::Service::Service() {
              ::mrpc_admin::StopTerminalLocalReply* resp) {
                return service->StopTerminalLocal(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AdminApi_method_names[18],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AdminApi::Service, ::mrpc_admin::SetDedicatedIpEntitlementRequest, ::mrpc_admin::SetDedicatedIpEntitlementReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](AdminApi::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::mrpc_admin::SetDedicatedIpEntitlementRequest* req,
+             ::mrpc_admin::SetDedicatedIpEntitlementReply* resp) {
+               return service->SetDedicatedIpEntitlement(ctx, req, resp);
+             }, this)));
 }
 
 AdminApi::Service::~Service() {
@@ -789,6 +824,13 @@ AdminApi::Service::~Service() {
 }
 
 ::grpc::Status AdminApi::Service::StopTerminalLocal(::grpc::ServerContext* context, const ::mrpc_admin::StopTerminalLocalRequest* request, ::mrpc_admin::StopTerminalLocalReply* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AdminApi::Service::SetDedicatedIpEntitlement(::grpc::ServerContext* context, const ::mrpc_admin::SetDedicatedIpEntitlementRequest* request, ::mrpc_admin::SetDedicatedIpEntitlementReply* response) {
   (void) context;
   (void) request;
   (void) response;
