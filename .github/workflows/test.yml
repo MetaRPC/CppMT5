@@ -38,7 +38,7 @@ jobs:
         python-version: '3.11'
 
     - name: Install MkDocs
-      run: pip install mkdocs mkdocs-material
+      run: pip install mkdocs==1.6.1 mkdocs-material==9.8.0 pymdown-extensions==12.3
 
     - name: Validate Docs Build
       run: mkdocs build
