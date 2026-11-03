@@ -24,6 +24,14 @@ else()
     set(CPPMT5_GRPC_TARGET PkgConfig::GRPCPP)
 endif()
 
+# package/google/api/{annotations,http}.pb.{cc,h} are kept in this repository on purpose: every mt5
+# header includes google/api/annotations.pb.h, and the generator does not emit them.
+foreach(_f annotations.pb.cc annotations.pb.h http.pb.cc http.pb.h)
+    if (NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/package/google/api/${_f})
+        message(FATAL_ERROR "package/google/api/${_f} is missing. It is part of this repository; restore it from git.")
+    endif()
+endforeach()
+
 # All generated protobuf/gRPC sources (they cross-include each other, so compile all of them),
 # plus package/google/api/{annotations,http}.pb.cc which every mt5 header includes.
 file(GLOB_RECURSE CPPMT5_PB_SOURCES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/package/*.pb.cc)

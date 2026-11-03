@@ -5,6 +5,7 @@
 ## Prerequisites
 - **C++17** compatible compiler
 - **CMake 3.15+**
+- **protobuf 3.21.x and gRPC C++** (the generated code in `package/` is protoc 3.21). Debian 12 / Ubuntu 24.04: `sudo apt install libprotobuf-dev protobuf-compiler libgrpc++-dev protobuf-compiler-grpc pkg-config`
 
 ## Minimal Example
 

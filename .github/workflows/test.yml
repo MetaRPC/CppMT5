@@ -6,28 +6,39 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+
 jobs:
   test:
-    runs-on: ubuntu-latest
+    # ubuntu-24.04 ships libprotobuf 3.21.12, which matches the generated code in package/ (protoc 3.21.x).
+    runs-on: ubuntu-24.04
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      with:
+        persist-credentials: false
+
+    - name: Install protobuf and gRPC
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends libprotobuf-dev protobuf-compiler libgrpc++-dev protobuf-compiler-grpc pkg-config
 
     - name: Configure CMake
-      run: cmake -B build -S .
+      run: cmake -B build -S . -DBUILD_EXAMPLES=ON
 
     - name: Build
-      run: cmake --build build --config Release
+      run: cmake --build build --config Release --parallel
 
     - name: Run Tests
       run: ctest --test-dir build --output-on-failure -C Release
 
     - name: Set up Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
       with:
         python-version: '3.11'
 
     - name: Install MkDocs
-      run: pip install mkdocs mkdocs-material
+      run: pip install mkdocs==1.6.1 mkdocs-material==9.8.0 pymdown-extensions==12.3
 
     - name: Validate Docs Build
       run: mkdocs build

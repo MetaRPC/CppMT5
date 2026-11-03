@@ -22,6 +22,8 @@ git clone https://github.com/MetaRPC/CppMT5.git
 ## 🏃 How to Run Examples
 
 ### 1. Clone & Build
+Needs CMake 3.15+, a C++17 compiler, protobuf 3.21.x and gRPC C++ (Debian 12 / Ubuntu 24.04: `sudo apt install libprotobuf-dev protobuf-compiler libgrpc++-dev protobuf-compiler-grpc pkg-config`).
+
 ```bash
 git clone https://github.com/MetaRPC/CppMT5.git
 cd CppMT5
