@@ -85,9 +85,8 @@ nav:
     - gRPC Streaming: All_Guides/GRPC_STREAM_MANAGEMENT.md
     - Return Codes: All_Guides/RETURN_CODES_REFERENCE.md
     - ENUMs Reference: All_Guides/ENUMS_USAGE_REFERENCE.md
+    - Concurrency Model: All_Guides/SYNC_VS_ASYNC.md
     - Protobuf Inspector: All_Guides/PROTOBUF_INSPECTOR_GUIDE.md
-    - UserCode Sandbox: All_Guides/USERCODE_SANDBOX_GUIDE.md
-    - Sync vs Async: All_Guides/SYNC_VS_ASYNC.md
 
   - API Reference:
     - MT5Account API: API_Reference/MT5Account.md
@@ -96,4 +95,9 @@ nav:
 
   - Strategies:
     - Master Overview: Strategies/Strategies.Master.Overview.md
-    - Presets: Strategies/Presets/AdaptiveMarketModePreset.md
+    - Orchestrators:
+      - Trailing Stop: Strategies/Orchestrators/TrailingStop.md
+      - Grid Trader: Strategies/Orchestrators/GridTrader.md
+      - Risk Manager: Strategies/Orchestrators/RiskManager.md
+    - Presets:
+      - Adaptive Market Mode: Strategies/Presets/AdaptiveMarketModePreset.md

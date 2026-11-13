@@ -1,90 +1,104 @@
-# Your First Project in 10 Minutes (C++)
+# Your First Project
 
-> **Hands-on Quick Start** - Create a working trading project with MetaTrader 5 and CppMT5 from scratch.
+A standalone C++ program that connects, reads the account, quotes a symbol, and places one tiny
+order — then closes it. ~10 minutes.
 
----
+## 0. Get an API key
 
-## Step 0: Obtain Your API Key
+To reach MetaRPC (`mt5.mrpc.pro:443`):
 
-To connect to MetaRPC endpoints (`mt5.mrpc.pro:443`), obtain your API key:
-1. Register for free at [https://mrpc.pro/signup](https://mrpc.pro/signup).
-2. Generate your API token in your dashboard at [https://mrpc.pro/my](https://mrpc.pro/my).
-3. Set your token in your environment or connection config.
+1. Register free at [https://mrpc.pro/signup](https://mrpc.pro/signup).
+2. Generate a token in the portal at [https://mrpc.pro/my](https://mrpc.pro/my), under **API Keys**.
+3. Expose it to your program: `export MRPC_API_KEY=your_token` (the SDK reads `MRPC_API_KEY`, falling back to `"TRIAL"`), or pass it to the `MT5Sugar` constructor.
 
----
+You also need an MT5 **demo account** (login, password, server name) — see [MT5 for Beginners](MT5_For_Beginners.md). Keep the trade block below on a demo account you're happy to trade.
 
-## Step 1: Create Your Project
+## 1. Project files
 
-Create a new directory for your trading bot:
-
-```bash
-mkdir my_cppmt5_bot
-cd my_cppmt5_bot
+```
+my_bot/
+├── CMakeLists.txt
+└── main.cpp
 ```
 
-Get the SDK (it is not on a package registry):
+`CMakeLists.txt` — link against the CppMT5 library (built per [Getting Started](GETTING_STARTED.md),
+installed or added via `add_subdirectory`):
 
-```bash
-git clone https://github.com/MetaRPC/CppMT5.git
+```cmake
+cmake_minimum_required(VERSION 3.15)
+project(my_bot CXX)
+set(CMAKE_CXX_STANDARD 17)
+
+add_subdirectory(path/to/CppMT5 cppmt5)   # or find_package if installed
+add_executable(my_bot main.cpp)
+target_link_libraries(my_bot PRIVATE metarpc_cppmt5)
 ```
 
----
-
-## Step 2: Write Your Trading Code
-
-Create your main application file and paste the following snippet:
+## 2. Connect and read
 
 ```cpp
-#include <metarpc/mt5.hpp>
 #include <iostream>
+#include <metarpc/mt5_sugar.hpp>
+using namespace metarpc;
 
 int main() {
-    metarpc::MT5Client client("mt5.mrpc.pro", 443);
+    MT5Sugar sugar("mt5.mrpc.pro", 443 /*, "YOUR_API_KEY" */);
+    try {
+        sugar.connect(5057947437, "YourPassword", "MetaQuotes-Demo");
 
-    if (client.connect(2005432, "account_password")) {
-        std::cout << "Connected to MT5!" << std::endl;
+        std::cout << "connected: " << sugar.isConnected()
+                  << "  balance: " << sugar.getBalance() << "\n";
 
-        metarpc::AccountInfo acc = client.getAccountInfo();
-        std::cout << "Balance: " << acc.balance << " " << acc.currency << std::endl;
+        auto px = sugar.getPriceInfo("EURUSD");
+        std::cout << "EURUSD  bid " << px.bid << "  ask " << px.ask
+                  << "  spread " << px.spread << "\n";
+```
 
-        client.subscribeQuotes({"EURUSD"}, [](const metarpc::Quote& quote) {
-            std::cout << "[" << quote.symbol << "] Bid: " << quote.bid 
-                      << " Ask: " << quote.ask << std::endl;
-        });
+## 3. Size the trade and pre-check
 
-        metarpc::OrderRequest req;
-        req.symbol = "EURUSD";
-        req.action = metarpc::TradeAction::Buy;
-        req.volume = 0.01;
-        req.comment = "CppMT5 Quickstart";
+```cpp
+        double lots = sugar.calculatePositionSize("EURUSD", /*risk%*/ 1.0, /*stopPips*/ 50);
+        std::string why;
+        if (!sugar.canOpenPosition("EURUSD", lots, why)) {
+            std::cout << "cannot open: " << why << "\n";
+            return 0;
+        }
+```
 
-        metarpc::OrderResult result = client.orderSend(req);
-        std::cout << "Order executed! Deal #" << result.deal << std::endl;
+## 4. Open, manage, close
+
+```cpp
+        uint64_t ticket = sugar.buyMarketWithPips("EURUSD", lots, /*sl*/ 50, /*tp*/ 100);
+        if (!ticket) { std::cout << "order rejected\n"; return 0; }
+        std::cout << "opened #" << ticket << " (" << lots << " lots)\n";
+
+        // ... your logic would monitor it here ...
+
+        std::cout << "close -> " << (sugar.closePosition((int64_t)ticket) ? "ok" : "failed") << "\n";
+
+    } catch (const ApiError& e) {
+        std::cerr << "API error: " << e.code << ": " << e.message << "\n";
+        return 1;
+    } catch (const TransportError& e) {
+        std::cerr << "transport error: " << e.what() << "\n";
+        return 1;
     }
-
     return 0;
 }
 ```
 
----
-
-## Step 3: Run the Program
-
-Run your application:
+## 5. Build and run
 
 ```bash
-cmake -B build -S . -DBUILD_EXAMPLES=ON
-cmake --build build --config Release
-./build/quickstart        # Windows: .\build\quickstart.exe or .\build\Release\quickstart.exe
+cmake -G Ninja -B build && cmake --build build
+./build/my_bot
 ```
 
-Run it from the cloned repository: its `examples/quickstart` does the same thing.
+## Where to go next
 
----
-
-## 🚀 Next Steps
-
-Congratulations! You have successfully established a direct gRPC connection to MetaTrader 5. Next:
-- Explore **[gRPC Streaming](GRPC_STREAM_MANAGEMENT.md)** to listen to live ticks.
-- Check the **[API Reference](../API_Reference/MT5Account.md)** for all 40+ available terminal methods.
-- Learn about high-level risk management and auto-normalization in **[MT5Sugar](../API_Reference/MT5Sugar.md)**.
+- Keep it simple with [`MT5Sugar`](../API_Reference/MT5Sugar.md), or step down to
+  [`MT5Service`](../API_Reference/MT5Service.md) for friendly structs and the full method set.
+- Stream live prices: `sugar.service().subscribeTicks({"EURUSD"}, cb)` — see
+  [gRPC Streaming](GRPC_STREAM_MANAGEMENT.md).
+- Build a strategy loop: see the [Strategies](../Strategies/Strategies.Master.Overview.md).
+- Browse `examples/demos/` for 14 runnable examples.

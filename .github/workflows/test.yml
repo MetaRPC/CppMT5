@@ -11,7 +11,8 @@ permissions:
 
 jobs:
   test:
-    # ubuntu-24.04 ships libprotobuf 3.21.12, which matches the generated code in package/ (protoc 3.21.x).
+    # The gRPC stubs are generated at build time by the runner's own protoc from
+    # proto/mt5_term_api.desc, so they match whatever libprotobuf the image ships — no version pin needed.
     runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
