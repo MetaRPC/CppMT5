@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mt5service-api-reference" class="md-skip">
+        <a href="#mt5service-facade-api-layer-2-of-3" class="md-skip">
           Skip to content
         </a>
       
@@ -562,6 +562,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../All_Guides/SYNC_VS_ASYNC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concurrency Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../All_Guides/PROTOBUF_INSPECTOR_GUIDE/" class="md-nav__link">
         
   
@@ -570,62 +598,6 @@
     
   
     Protobuf Inspector
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../All_Guides/USERCODE_SANDBOX_GUIDE/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    UserCode Sandbox
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../All_Guides/SYNC_VS_ASYNC/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Sync vs Async
   
 
     
@@ -790,10 +762,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#construction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📌 Overview
+        Construction
       
     </span>
   </a>
@@ -801,10 +773,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#important-understanding-mt5service-role" class="md-nav__link">
+  <a href="#friendly-types-returned-accepted" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚠️ Important: Understanding MT5Service Role
+        Friendly types (returned / accepted)
       
     </span>
   </a>
@@ -812,77 +784,66 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
+  <a href="#connection-time" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📑 Table of Contents
+        Connection &amp; time
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="📑 Table of Contents">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symbols-quotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symbols &amp; quotes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bars" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bars
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trading">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#account-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        👤 Account Information
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#symbol-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📊 Symbol Information
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#positions-orders" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📈 Positions &amp; Orders
-      
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#market-depth-dom" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📖 Market Depth (DOM)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#trading-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        💰 Trading Operations
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#streaming-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📡 Streaming Methods
+        Market depth (DOM)
       
     </span>
   </a>
@@ -895,10 +856,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#class-mt5service" class="md-nav__link">
+  <a href="#history" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏗️ Class: MT5Service
+        History
       
     </span>
   </a>
@@ -906,539 +867,24 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#methods" class="md-nav__link">
+  <a href="#streaming-friendly" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔧 Methods
+        Streaming (friendly)
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="🔧 Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#init" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        init
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_account" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_account
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#account-information-methods" class="md-nav__link">
+  <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
       
-        👤 Account Information Methods
+        See also
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="👤 Account Information Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_account_summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_account_summary
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_account_double" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_account_double
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_account_integer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_account_integer
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_account_string" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_account_string
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#symbol-information-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📊 Symbol Information Methods
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📊 Symbol Information Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_symbols_total" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbols_total
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#symbol_exist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        symbol_exist
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_symbol_name" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbol_name
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#symbol_select" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        symbol_select
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#is_symbol_synchronized" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        is_symbol_synchronized
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_symbol_double" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbol_double
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_symbol_integer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbol_integer
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_symbol_string" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbol_string
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_symbol_margin_rate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbol_margin_rate
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_symbol_tick" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbol_tick
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_symbol_session_quote" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbol_session_quote
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_symbol_session_trade" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbol_session_trade
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_symbol_params_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbol_params_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#positions-orders-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📈 Positions &amp; Orders Methods
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📈 Positions &amp; Orders Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_positions_total" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_positions_total
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_opened_orders" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_opened_orders
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_opened_tickets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_opened_tickets
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_order_history" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_order_history
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_positions_history" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_positions_history
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#market-depth-dom-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📖 Market Depth (DOM) Methods
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📖 Market Depth (DOM) Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#subscribe_market_depth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        subscribe_market_depth
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unsubscribe_market_depth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        unsubscribe_market_depth
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_market_depth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_market_depth
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#trading-operations-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        💰 Trading Operations Methods
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="💰 Trading Operations Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#place_order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        place_order
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#modify_order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        modify_order
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#close_order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        close_order
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check_order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        check_order
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#calculate_margin" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        calculate_margin
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#calculate_profit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        calculate_profit
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#streaming-methods_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📡 Streaming Methods
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📡 Streaming Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#stream_ticks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        stream_ticks
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stream_trade_updates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        stream_trade_updates
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stream_position_profits" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        stream_position_profits
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stream_opened_tickets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        stream_opened_tickets
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stream_transactions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        stream_transactions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1569,9 +1015,163 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../Strategies/Presets/AdaptiveMarketModePreset/" class="md-nav__link">
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orchestrators
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Orchestrators
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Orchestrators/TrailingStop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trailing Stop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Orchestrators/GridTrader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grid Trader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Orchestrators/RiskManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -1585,7 +1185,51 @@
   
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Presets
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Presets/AdaptiveMarketModePreset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adaptive Market Mode
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1625,10 +1269,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#construction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📌 Overview
+        Construction
       
     </span>
   </a>
@@ -1636,10 +1280,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#important-understanding-mt5service-role" class="md-nav__link">
+  <a href="#friendly-types-returned-accepted" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚠️ Important: Understanding MT5Service Role
+        Friendly types (returned / accepted)
       
     </span>
   </a>
@@ -1647,77 +1291,66 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
+  <a href="#connection-time" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📑 Table of Contents
+        Connection &amp; time
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="📑 Table of Contents">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symbols-quotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symbols &amp; quotes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bars" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bars
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trading">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#account-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        👤 Account Information
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#symbol-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📊 Symbol Information
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#positions-orders" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📈 Positions &amp; Orders
-      
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#market-depth-dom" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📖 Market Depth (DOM)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#trading-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        💰 Trading Operations
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#streaming-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📡 Streaming Methods
+        Market depth (DOM)
       
     </span>
   </a>
@@ -1730,10 +1363,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#class-mt5service" class="md-nav__link">
+  <a href="#history" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏗️ Class: MT5Service
+        History
       
     </span>
   </a>
@@ -1741,539 +1374,24 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#methods" class="md-nav__link">
+  <a href="#streaming-friendly" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔧 Methods
+        Streaming (friendly)
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="🔧 Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#init" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        init
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_account" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_account
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#account-information-methods" class="md-nav__link">
+  <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
       
-        👤 Account Information Methods
+        See also
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="👤 Account Information Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_account_summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_account_summary
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_account_double" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_account_double
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_account_integer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_account_integer
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_account_string" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_account_string
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#symbol-information-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📊 Symbol Information Methods
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📊 Symbol Information Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_symbols_total" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbols_total
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#symbol_exist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        symbol_exist
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_symbol_name" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbol_name
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#symbol_select" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        symbol_select
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#is_symbol_synchronized" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        is_symbol_synchronized
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_symbol_double" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbol_double
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_symbol_integer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbol_integer
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_symbol_string" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbol_string
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_symbol_margin_rate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbol_margin_rate
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_symbol_tick" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbol_tick
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_symbol_session_quote" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbol_session_quote
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_symbol_session_trade" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbol_session_trade
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_symbol_params_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_symbol_params_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#positions-orders-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📈 Positions &amp; Orders Methods
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📈 Positions &amp; Orders Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_positions_total" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_positions_total
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_opened_orders" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_opened_orders
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_opened_tickets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_opened_tickets
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_order_history" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_order_history
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_positions_history" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_positions_history
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#market-depth-dom-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📖 Market Depth (DOM) Methods
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📖 Market Depth (DOM) Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#subscribe_market_depth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        subscribe_market_depth
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unsubscribe_market_depth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        unsubscribe_market_depth
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_market_depth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_market_depth
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#trading-operations-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        💰 Trading Operations Methods
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="💰 Trading Operations Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#place_order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        place_order
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#modify_order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        modify_order
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#close_order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        close_order
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check_order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        check_order
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#calculate_margin" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        calculate_margin
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#calculate_profit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        calculate_profit
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#streaming-methods_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📡 Streaming Methods
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📡 Streaming Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#stream_ticks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        stream_ticks
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stream_trade_updates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        stream_trade_updates
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stream_position_profits" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        stream_position_profits
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stream_opened_tickets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        stream_opened_tickets
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stream_transactions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        stream_transactions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2297,1566 +1415,327 @@
   
 
 
-<h1 id="mt5service-api-reference">🎯 MT5Service API Reference<a class="headerlink" href="#mt5service-api-reference" title="Permanent link">¶</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Documentation Status</p>
-<p><strong>Auto-generated from source code</strong> (<code>src/pymt5/mt5_service.py</code>) and enhanced for readability.
-Complete API reference with enhanced navigation. Single-page format for easy browsing.</p>
-</div>
-<hr />
-<h2 id="overview">📌 Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
-<p>MT5Service represents a mid-level Python wrapper over MT5Account (low-level gRPC client). It provides clean Python API with native types (float, int, str, datetime) instead of protobuf structures, automatically unpacks .data wrappers, converts timestamps, and reduces boilerplate code by 30-70% for common operations.</p>
-<div class="admonition success">
-<p class="admonition-title">Key Features</p>
-<ul>
-<li>✅ Native Python types instead of protobuf (float, int, str, datetime)</li>
-<li>✅ Automatic .data wrapper extraction (no manual <code>.data.requested_value</code> access)</li>
-<li>✅ Timestamp datetime conversion for all time fields</li>
-<li>✅ 36 methods covering all MT5 operations (account, symbols, trading, streaming)</li>
-<li>✅ Cleaner API with dataclasses (AccountSummary, SymbolTick, OrderResult, etc.)</li>
-<li>✅ Built on top of MT5Account with automatic reconnection and error handling</li>
-</ul>
-</div>
-<hr />
-<h2 id="important-understanding-mt5service-role">⚠️ Important: Understanding MT5Service Role<a class="headerlink" href="#important-understanding-mt5service-role" title="Permanent link">¶</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">This is a Middleware Layer - Not for Most Users</p>
-<p><strong>MT5Service exists primarily for MT5Sugar's architectural needs.</strong></p>
-<ul>
-<li>🎯 <strong>For most users</strong>: Use <a href="../MT5Sugar/">MT5Sugar</a> instead (high-level, ready patterns)</li>
-<li>🔧 <strong>For advanced users</strong>: This layer is useful when you need specific mid-level operations</li>
-<li>📦 <strong>Architectural purpose</strong>: Bridges protobuf (MT5Account) and business logic (MT5Sugar)</li>
-</ul>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Value Reality Check</p>
-<p><strong>Not all 36 methods add equal value:</strong></p>
-<ul>
-<li>
-<p>✅ <strong>HIGH value</strong> (8 methods): Complex protobuf unpacking + dataclass conversion</p>
-<ul>
-<li>Worth using directly: <code>get_account_summary()</code>, <code>get_symbol_params_many()</code>, <code>check_order()</code>, <code>place_order()</code>, <code>modify_order()</code>, etc.</li>
-</ul>
-</li>
-<li>
-<p>⚪ <strong>MEDIUM/LOW value</strong> (10 methods): Simple field extraction</p>
-<ul>
-<li>Consider using if convenient, or call MT5Account directly</li>
-</ul>
-</li>
-<li>
-<p>⚪ <strong>NONE value</strong> (18 methods!): Direct pass-through to MT5Account</p>
-<ul>
-<li>Just proxy calls like <code>return await account.method()</code> or <code>yield data</code></li>
-<li><strong>For these, consider calling MT5Account directly</strong> to avoid extra layer</li>
-</ul>
-</li>
-</ul>
-</div>
+<h1 id="mt5service-facade-api-layer-2-of-3">MT5Service — Facade API (Layer 2 of 3)<a class="headerlink" href="#mt5service-facade-api-layer-2-of-3" title="Permanent link">¶</a></h1>
+<p><code>metarpc::MT5Service</code> owns an <code>MT5Account</code> and gives you a comfortable, <strong>protobuf-free</strong> API:
+friendly C++ structs instead of protobuf messages, plain arguments instead of hand-built
+<code>*Request</code> objects, and automatic <strong>UTC ↔ broker-server time</strong> conversion. This is the layer
+most application code should use directly.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;metarpc/mt5_service.hpp&gt;</span><span class="w">   </span><span class="c1">// protobuf-free — compiles fast</span>
+</code></pre></div>
 <div class="admonition tip">
-<p class="admonition-title">Detailed Guides Available</p>
-<p>For in-depth understanding of each method group, see:</p>
+<p class="admonition-title">Why it compiles fast</p>
+<p>This header does not include the generated protobuf headers (it forward-declares
+<code>MT5Account</code>). Reach the low-level layer with <code>account()</code> when you need a raw RPC — that
+translation unit then pays the protobuf include cost, nothing else does.</p>
+</div>
+<h2 id="construction">Construction<a class="headerlink" href="#construction" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">MT5Service</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"mt5.mrpc.pro"</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">443</span><span class="p">,</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">           </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">""</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">""</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">           </span><span class="kt">bool</span><span class="w"> </span><span class="n">utcTimes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+</code></pre></div>
 <ul>
-<li>📖 <a href="./">Complete MT5Service Overview</a> - Value analysis of all 36 methods</li>
-<li>👤 <a href="./">Account Information</a> - 4 methods (1 HIGH, 3 NONE)</li>
-<li>📊 <a href="./">Symbol Information</a> - 13 methods (4 HIGH, 5 LOW, 4 NONE)</li>
-<li>📈 <a href="./">Positions &amp; Orders</a> - 5 methods (1 MEDIUM, 1 LOW, 3 NONE)</li>
-<li>📖 <a href="./">Market Depth</a> - 3 methods (1 HIGH, 2 MEDIUM)</li>
-<li>💰 <a href="./">Trading Operations</a> - 6 methods (3 HIGH, 3 LOW)</li>
-<li>📡 <a href="./">Streaming Methods</a> - 5 methods (1 HIGH, 4 NONE)</li>
+<li><code>utcTimes</code> (default <code>true</code>): every time the facade returns is UTC and every time you pass in is
+  treated as UTC. Set <code>false</code> to work in raw broker-server time.</li>
+<li><code>account()</code> → the underlying <code>MT5Account</code> for raw RPCs.</li>
 </ul>
-</div>
-<hr />
-<h2 id="table-of-contents">📑 Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">¶</a></h2>
-<h3 id="account-information">👤 Account Information<a class="headerlink" href="#account-information" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">metarpc</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">MT5Service</span><span class="w"> </span><span class="n">svc</span><span class="p">(</span><span class="s">"mt5.mrpc.pro"</span><span class="p">,</span><span class="w"> </span><span class="mi">443</span><span class="p">);</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">svc</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="mi">5057947437</span><span class="p">,</span><span class="w"> </span><span class="s">"password"</span><span class="p">,</span><span class="w"> </span><span class="s">"MetaQuotes-Demo"</span><span class="p">);</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">AccountInfo</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">svc</span><span class="p">.</span><span class="n">accountSummary</span><span class="p">();</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">login</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"  "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">balance</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">currency</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"  1:"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">leverage</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="friendly-types-returned-accepted">Friendly types (returned / accepted)<a class="headerlink" href="#friendly-types-returned-accepted" title="Permanent link">¶</a></h2>
+<p><code>AccountInfo</code>, <code>Tick</code>, <code>SymbolInfo</code>, <code>Bar</code>, <code>OrderRequest</code>, <code>OrderResult</code>, <code>Position</code>,
+<code>PendingOrder</code>, <code>OpenedOrders</code>, <code>Deal</code>, <code>HistoryOrder</code>, <code>HistoryItem</code>, <code>PositionHistory</code>,
+<code>MarginRate</code>, <code>SessionTime</code>, <code>OrderCheckResult</code>, <code>BookEntry</code>, <code>TickValueSize</code>, <code>OpenedTickets</code>,
+plus the streaming-event structs (<code>TradeEvent</code>, <code>TransactionEvent</code>, <code>PositionProfitEvent</code>,
+<code>TicketsSnapshot</code>). Enums: <code>TradeMode</code>, <code>Timeframe</code>, <code>TradeAction</code>.</p>
+<p>Errors are the same exceptions as the low level: <code>ApiError</code> / <code>TransportError</code>.</p>
+<h2 id="connection-time">Connection &amp; time<a class="headerlink" href="#connection-time" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>connect(login, password, server, name="", timeoutSeconds=120)</code></td>
+<td><code>void</code></td>
+</tr>
+<tr>
+<td><code>reconnect()</code> / <code>isConnected()</code> / <code>terminalGuid()</code> / <code>disconnect(reason="")</code> / <code>close()</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>options()</code></td>
+<td><code>ClientOptions&amp;</code></td>
+</tr>
+<tr>
+<td><code>serverOffsetSeconds()</code></td>
+<td><code>int64_t</code></td>
+</tr>
+<tr>
+<td><code>toUtc(serverTime)</code> / <code>toServerTime(utc)</code></td>
+<td><code>int64_t</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="account">Account<a class="headerlink" href="#account" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accountSummary()</code></td>
+<td><code>AccountInfo</code></td>
+</tr>
+<tr>
+<td><code>accountInfoDouble(propertyId)</code></td>
+<td><code>double</code></td>
+</tr>
+<tr>
+<td><code>accountInfoInteger(propertyId)</code></td>
+<td><code>int64_t</code></td>
+</tr>
+<tr>
+<td><code>accountInfoString(propertyId)</code></td>
+<td><code>std::string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="symbols-quotes">Symbols &amp; quotes<a class="headerlink" href="#symbols-quotes" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>symbolSelect(symbol, select=true)</code></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td><code>symbolExist(symbol)</code> / <code>symbolIsSynchronized(symbol)</code></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td><code>symbolList()</code></td>
+<td><code>std::vector&lt;std::string&gt;</code></td>
+</tr>
+<tr>
+<td><code>symbolsTotal(selectedOnly=false)</code></td>
+<td><code>int</code></td>
+</tr>
+<tr>
+<td><code>symbolName(index, selectedOnly=false)</code></td>
+<td><code>std::string</code></td>
+</tr>
+<tr>
+<td><code>symbolInfoTick(symbol)</code></td>
+<td><code>Tick</code> (UTC times)</td>
+</tr>
+<tr>
+<td><code>symbolParams(symbol)</code></td>
+<td><code>SymbolInfo</code> (exact-name lookup)</td>
+</tr>
+<tr>
+<td><code>symbolParamsMany(nameFilter="")</code></td>
+<td><code>std::vector&lt;SymbolInfo&gt;</code></td>
+</tr>
+<tr>
+<td><code>symbolInfoDouble/Integer/String(symbol, propertyId)</code></td>
+<td>one property</td>
+</tr>
+<tr>
+<td><code>symbolInfoMarginRate(symbol, orderType)</code></td>
+<td><code>MarginRate</code></td>
+</tr>
+<tr>
+<td><code>symbolInfoSessionQuote/SessionTrade(symbol, dayOfWeek, sessionIndex=0)</code></td>
+<td><code>SessionTime</code></td>
+</tr>
+<tr>
+<td><code>tickValueWithSize(symbols)</code></td>
+<td><code>std::vector&lt;TickValueSize&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="bars">Bars<a class="headerlink" href="#bars" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>priceHistory(symbol, tf, fromUnix, toUnix, maxBars=0)</code></td>
+<td><code>std::vector&lt;Bar&gt;</code> (UTC)</td>
+</tr>
+<tr>
+<td><code>lastBars(symbol, tf, count)</code></td>
+<td>newest N bars</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Bar</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">svc</span><span class="p">.</span><span class="n">lastBars</span><span class="p">(</span><span class="s">"EURUSD"</span><span class="p">,</span><span class="w"> </span><span class="n">Timeframe</span><span class="o">::</span><span class="n">H1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">))</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">time</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"  O="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">open</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" C="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">close</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="trading">Trading<a class="headerlink" href="#trading" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>orderSend(OrderRequest)</code></td>
+<td><code>OrderResult</code> (check <code>.ok()</code> / <code>.retcode</code>)</td>
+</tr>
+<tr>
+<td><code>orderModify(ticket, sl, tp, price=0, stopLimit=0)</code></td>
+<td><code>OrderResult</code></td>
+</tr>
+<tr>
+<td><code>orderClose(ticket, volume=0, slippage=10)</code></td>
+<td><code>OrderResult</code> (volume 0 = whole position)</td>
+</tr>
+<tr>
+<td><code>openedOrders()</code></td>
+<td><code>OpenedOrders</code></td>
+</tr>
+<tr>
+<td><code>positions(magic=-1)</code></td>
+<td><code>std::vector&lt;Position&gt;</code></td>
+</tr>
+<tr>
+<td><code>positionsTotal()</code></td>
+<td><code>int</code></td>
+</tr>
+<tr>
+<td><code>openedOrdersTickets()</code></td>
+<td><code>OpenedTickets</code></td>
+</tr>
+<tr>
+<td><code>orderCheck(OrderRequest)</code></td>
+<td><code>OrderCheckResult</code> (dry run)</td>
+</tr>
+<tr>
+<td><code>orderCalcMargin(symbol, orderType, volume, price)</code></td>
+<td><code>double</code></td>
+</tr>
+<tr>
+<td><code>orderCalcProfit(symbol, orderType, volume, openPrice, closePrice)</code></td>
+<td><code>double</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">OrderRequest</span><span class="w"> </span><span class="n">q</span><span class="p">;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">q</span><span class="p">.</span><span class="n">symbol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"EURUSD"</span><span class="p">;</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="n">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TradeAction</span><span class="o">::</span><span class="n">Buy</span><span class="p">;</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="n">volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">q</span><span class="p">.</span><span class="n">stopLoss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0800</span><span class="p">;</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="n">takeProfit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0900</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">OrderResult</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">svc</span><span class="p">.</span><span class="n">orderSend</span><span class="p">(</span><span class="n">q</span><span class="p">);</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">ok</span><span class="p">())</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"opened #"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">order</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">else</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"rejected: "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">retcode</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">retcodeDescription</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="market-depth-dom">Market depth (DOM)<a class="headerlink" href="#market-depth-dom" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>marketBookAdd(symbol)</code></td>
+<td><code>bool</code> — subscribe to the order book</td>
+</tr>
+<tr>
+<td><code>marketBookGet(symbol)</code></td>
+<td><code>std::vector&lt;BookEntry&gt;</code></td>
+</tr>
+<tr>
+<td><code>marketBookRelease(symbol)</code></td>
+<td><code>bool</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="history">History<a class="headerlink" href="#history" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>orderHistory(fromUnix, toUnix)</code></td>
+<td><code>std::vector&lt;HistoryItem&gt;</code></td>
+</tr>
+<tr>
+<td><code>positionsHistory(fromUnix, toUnix)</code></td>
+<td><code>std::vector&lt;PositionHistory&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="streaming-friendly">Streaming (friendly)<a class="headerlink" href="#streaming-friendly" title="Permanent link">¶</a></h2>
+<p>Each <code>subscribe*/stream*</code> converts the raw payload to friendly structs (times in UTC) and delivers
+them to <code>callback</code> on a background thread. The returned <code>ServiceStream</code> has <code>stop()/running()/
+count()/lastError()</code>. Keep it alive to keep receiving.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Callback payload</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>subscribeTicks(symbols, cb)</code></td>
+<td><code>Tick</code></td>
+</tr>
+<tr>
+<td><code>streamTradeUpdates(cb)</code></td>
+<td><code>TradeEvent</code></td>
+</tr>
+<tr>
+<td><code>streamTransactions(cb)</code></td>
+<td><code>TransactionEvent</code></td>
+</tr>
+<tr>
+<td><code>streamPositionProfits(cb)</code></td>
+<td><code>PositionProfitEvent</code></td>
+</tr>
+<tr>
+<td><code>streamOpenedTickets(cb)</code></td>
+<td><code>TicketsSnapshot</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">svc</span><span class="p">.</span><span class="n">subscribeTicks</span><span class="p">({</span><span class="s">"EURUSD"</span><span class="p">},</span><span class="w"> </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="n">Tick</span><span class="o">&amp;</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">symbol</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"  bid="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">bid</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" ask="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">ask</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"  t="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">time</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" (UTC)</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">});</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">stream</span><span class="o">-&gt;</span><span class="n">stop</span><span class="p">();</span>
+</code></pre></div>
+<h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">¶</a></h2>
 <ul>
-<li><a href="#get_account_summary">get_account_summary</a> — Complete account data in one call</li>
-<li><a href="#get_account_double">get_account_double</a> — Account float property</li>
-<li><a href="#get_account_integer">get_account_integer</a> — Account integer property</li>
-<li><a href="#get_account_string">get_account_string</a> — Account string property</li>
+<li><a href="../MT5Account/">MT5Account</a> — the raw protobuf layer underneath (<code>svc.account()</code>).</li>
+<li><a href="../MT5Sugar/">MT5Sugar</a> — one-line helpers on top of this facade.</li>
 </ul>
-<h3 id="symbol-information">📊 Symbol Information<a class="headerlink" href="#symbol-information" title="Permanent link">¶</a></h3>
-<ul>
-<li><a href="#get_symbols_total">get_symbols_total</a> — Total symbols count</li>
-<li><a href="#symbol_exist">symbol_exist</a> — Check symbol existence</li>
-<li><a href="#get_symbol_name">get_symbol_name</a> — Get symbol name by index</li>
-<li><a href="#symbol_select">symbol_select</a> — Add/remove symbol from Market Watch</li>
-<li><a href="#is_symbol_synchronized">is_symbol_synchronized</a> — Check symbol sync status</li>
-<li><a href="#get_symbol_double">get_symbol_double</a> — Symbol float property</li>
-<li><a href="#get_symbol_integer">get_symbol_integer</a> — Symbol integer property</li>
-<li><a href="#get_symbol_string">get_symbol_string</a> — Symbol string property</li>
-<li><a href="#get_symbol_margin_rate">get_symbol_margin_rate</a> — Margin rates for symbol</li>
-<li><a href="#get_symbol_tick">get_symbol_tick</a> — Current market prices</li>
-<li><a href="#get_symbol_session_quote">get_symbol_session_quote</a> — Quote session times</li>
-<li><a href="#get_symbol_session_trade">get_symbol_session_trade</a> — Trade session times</li>
-<li><a href="#get_symbol_params_many">get_symbol_params_many</a> — Batch symbol parameters</li>
-</ul>
-<h3 id="positions-orders">📈 Positions &amp; Orders<a class="headerlink" href="#positions-orders" title="Permanent link">¶</a></h3>
-<ul>
-<li><a href="#get_positions_total">get_positions_total</a> — Total open positions count</li>
-<li><a href="#get_opened_orders">get_opened_orders</a> — All opened orders and positions</li>
-<li><a href="#get_opened_tickets">get_opened_tickets</a> — Tickets snapshot (lightweight)</li>
-<li><a href="#get_order_history">get_order_history</a> — Historical orders</li>
-<li><a href="#get_positions_history">get_positions_history</a> — Closed positions with P&amp;L</li>
-</ul>
-<h3 id="market-depth-dom">📖 Market Depth (DOM)<a class="headerlink" href="#market-depth-dom" title="Permanent link">¶</a></h3>
-<ul>
-<li><a href="#subscribe_market_depth">subscribe_market_depth</a> — Subscribe to DOM updates</li>
-<li><a href="#unsubscribe_market_depth">unsubscribe_market_depth</a> — Unsubscribe from DOM</li>
-<li><a href="#get_market_depth">get_market_depth</a> — Current DOM snapshot</li>
-</ul>
-<h3 id="trading-operations">💰 Trading Operations<a class="headerlink" href="#trading-operations" title="Permanent link">¶</a></h3>
-<ul>
-<li><a href="#place_order">place_order</a> — Send market/pending order</li>
-<li><a href="#modify_order">modify_order</a> — Modify order or position</li>
-<li><a href="#close_order">close_order</a> — Close position or delete order</li>
-<li><a href="#check_order">check_order</a> — Validate order before sending</li>
-<li><a href="#calculate_margin">calculate_margin</a> — Calculate required margin</li>
-<li><a href="#calculate_profit">calculate_profit</a> — Calculate potential profit</li>
-</ul>
-<h3 id="streaming-methods">📡 Streaming Methods<a class="headerlink" href="#streaming-methods" title="Permanent link">¶</a></h3>
-<ul>
-<li><a href="#stream_ticks">stream_ticks</a> — Real-time tick data stream</li>
-<li><a href="#stream_trade_updates">stream_trade_updates</a> — Trade events stream</li>
-<li><a href="#stream_position_profits">stream_position_profits</a> — Position profit updates</li>
-<li><a href="#stream_opened_tickets">stream_opened_tickets</a> — Tickets stream (lightweight)</li>
-<li><a href="#stream_transactions">stream_transactions</a> — Transaction event stream</li>
-</ul>
-<hr />
-<h2 id="class-mt5service">🏗️ Class: MT5Service<a class="headerlink" href="#class-mt5service" title="Permanent link">¶</a></h2>
-<p><em>Source: Line 222</em></p>
-<p>Mid-level wrapper over MT5Account providing clean Python API with native types.</p>
-<p>MT5Service sits between the low-level MT5Account (protobuf gRPC client) and high-level business logic layers. It simplifies common operations by automatically unpacking protobuf wrappers, converting timestamps to datetime objects, and returning native Python types instead of protobuf structures. This reduces boilerplate code by 30-70% compared to using MT5Account directly.</p>
-<div class="admonition tip">
-<p class="admonition-title">Architecture Position</p>
-<ul>
-<li><strong>LOW</strong> MT5Account (protobuf Request/Data, direct gRPC)</li>
-<li><strong>MID</strong> MT5Service (Python types, removes Data wrappers) <strong>← THIS CLASS</strong></li>
-<li><strong>HIGH</strong> MT5Sugar (business logic, ready-made patterns)</li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Constructor Requirements</p>
-<ul>
-<li>Requires MT5Account instance (already connected low-level client)</li>
-<li>No direct connection logic - uses wrapped account's channel</li>
-<li>Lightweight wrapper - minimal overhead over MT5Account</li>
-</ul>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Usage Pattern</p>
-<ol>
-<li>Create and connect MT5Account instance</li>
-<li>Wrap it with <code>service = MT5Service(account)</code></li>
-<li>Call methods with cleaner API (returns native types)</li>
-<li>Close underlying account connection when done</li>
-</ol>
-</div>
-<div class="admonition success">
-<p class="admonition-title">Key Advantages</p>
-<ul>
-<li><strong>Native types</strong>: Returns <code>float</code>/<code>int</code>/<code>str</code>/<code>datetime</code> instead of protobuf wrappers</li>
-<li><strong>Auto-unpacking</strong>: No manual <code>.data.requested_value</code> extraction needed</li>
-<li><strong>Time conversion</strong>: Timestamps automatically converted to Python datetime</li>
-<li><strong>Dataclasses</strong>: Clean DTOs (AccountSummary, SymbolTick, OrderResult, etc.)</li>
-<li><strong>Code reduction</strong>: 30-70% less boilerplate for common operations</li>
-</ul>
-</div>
-<hr />
-<h2 id="methods">🔧 Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
-<h3 id="init"><strong>init</strong><a class="headerlink" href="#init" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>def __init__(self, account)</code></p>
-<p><em>Source: Line 234</em></p>
-<p>Create MT5Service wrapper.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>account</code></td>
-<td>MT5Account</td>
-<td>Low-level gRPC client instance</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="get_account">get_account<a class="headerlink" href="#get_account" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>def get_account(self) -&gt; MT5Account</code></p>
-<p><em>Source: Line 243</em></p>
-<p>Return the underlying MT5Account for direct low-level access.</p>
-<p><strong>Returns:</strong> MT5Account instance for advanced operations</p>
-<hr />
-<h2 id="account-information-methods">👤 Account Information Methods<a class="headerlink" href="#account-information-methods" title="Permanent link">¶</a></h2>
-<h3 id="get_account_summary">get_account_summary<a class="headerlink" href="#get_account_summary" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_account_summary(self, deadline, cancellation_event) -&gt; AccountSummary</code></p>
-<p><em>Source: Line 254</em></p>
-<p>Get complete account information in ONE method call.</p>
-<p><strong>Returns:</strong> <code>AccountSummary</code> with all account data in native Python types (14 fields)</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Internally makes 5 RPC calls:</p>
-<ol>
-<li><code>account_summary()</code> - gets 11 basic fields (login, balance, equity, username, etc.)
-2-5. <code>account_info_double()</code> × 4 - gets margin, free_margin, margin_level, profit</li>
-</ol>
-<p>Result: AccountSummary dataclass with 14 fields in native Python types.</p>
-</div>
-<div class="admonition success">
-<p class="admonition-title">Advantage</p>
-<p><strong>93% code reduction</strong>: Single method call vs 14 separate <code>AccountInfo*</code> calls</p>
-</div>
-<hr />
-<h3 id="get_account_double">get_account_double<a class="headerlink" href="#get_account_double" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_account_double(self, property_id, deadline, cancellation_event) -&gt; float</code></p>
-<p><em>Source: Line 309</em></p>
-<p>Get individual account double property.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>property_id</code></td>
-<td>int</td>
-<td>Property to retrieve (ACCOUNT_BALANCE, ACCOUNT_EQUITY, etc.)</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> <code>float</code> value directly (no Data struct extraction)</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level method returns <code>AccountInfoDoubleResponse</code> with <code>res.data.requested_value</code>.
-This wrapper auto-extracts the float, eliminating the <code>.data.requested_value</code> access.
-Supports automatic reconnection on gRPC errors via <code>execute_with_reconnect</code>.</p>
-</div>
-<hr />
-<h3 id="get_account_integer">get_account_integer<a class="headerlink" href="#get_account_integer" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_account_integer(self, property_id, deadline, cancellation_event) -&gt; int</code></p>
-<p><em>Source: Line 330</em></p>
-<p>Get individual account integer property.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>property_id</code></td>
-<td>int</td>
-<td>Property to retrieve (ACCOUNT_LEVERAGE, ACCOUNT_LOGIN, etc.)</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> <code>int</code> value directly (no Data struct extraction)</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level returns <code>AccountInfoIntegerResponse</code> with <code>res.data.requested_value</code>.
-This wrapper auto-extracts the int. Used for properties like leverage (1:100), login number.</p>
-</div>
-<hr />
-<h3 id="get_account_string">get_account_string<a class="headerlink" href="#get_account_string" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_account_string(self, property_id, deadline, cancellation_event) -&gt; str</code></p>
-<p><em>Source: Line 350</em></p>
-<p>Get individual account string property.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>property_id</code></td>
-<td>int</td>
-<td>Property to retrieve (ACCOUNT_CURRENCY, ACCOUNT_COMPANY, etc.)</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> <code>str</code> value directly (no Data struct extraction)</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level returns <code>AccountInfoStringResponse</code> with <code>res.data.requested_value</code>.
-This wrapper auto-extracts the string. Used for properties like currency ("USD"), company name.</p>
-</div>
-<hr />
-<h2 id="symbol-information-methods">📊 Symbol Information Methods<a class="headerlink" href="#symbol-information-methods" title="Permanent link">¶</a></h2>
-<h3 id="get_symbols_total">get_symbols_total<a class="headerlink" href="#get_symbols_total" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_symbols_total(self, selected_only, deadline, cancellation_event) -&gt; int</code></p>
-<p><em>Source: Line 377</em></p>
-<p>Get count of available symbols.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>selected_only</code></td>
-<td>bool</td>
-<td>True to count only Market Watch symbols, False for all</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> <code>int</code> count directly (no Data struct)</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level returns <code>SymbolsTotalData</code> with <code>data.total</code> wrapper.
-This auto-extracts the count. <code>selected_only=True</code> counts Market Watch, <code>False</code> counts all available symbols in terminal.</p>
-</div>
-<hr />
-<h3 id="symbol_exist">symbol_exist<a class="headerlink" href="#symbol_exist" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def symbol_exist(self, symbol, deadline, cancellation_event)</code></p>
-<p><em>Source: Line 398</em></p>
-<p>Check if symbol exists in terminal.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>symbol</code></td>
-<td>str</td>
-<td>Symbol name to check</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> Tuple of <code>(exists, is_custom)</code></p>
-<hr />
-<h3 id="get_symbol_name">get_symbol_name<a class="headerlink" href="#get_symbol_name" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_symbol_name(self, index, selected_only, deadline, cancellation_event) -&gt; str</code></p>
-<p><em>Source: Line 416</em></p>
-<p>Get symbol name by index position.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>index</code></td>
-<td>int</td>
-<td>Symbol index (starting at 0)</td>
-</tr>
-<tr>
-<td><code>selected_only</code></td>
-<td>bool</td>
-<td>True to use only Market Watch symbols</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> Symbol name string directly</p>
-<hr />
-<h3 id="symbol_select">symbol_select<a class="headerlink" href="#symbol_select" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def symbol_select(self, symbol, select, deadline, cancellation_event) -&gt; bool</code></p>
-<p><em>Source: Line 436</em></p>
-<p>Add/remove symbol from Market Watch.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>symbol</code></td>
-<td>str</td>
-<td>Symbol name</td>
-</tr>
-<tr>
-<td><code>select</code></td>
-<td>bool</td>
-<td>True to add, False to remove</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> Success status directly</p>
-<hr />
-<h3 id="is_symbol_synchronized">is_symbol_synchronized<a class="headerlink" href="#is_symbol_synchronized" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def is_symbol_synchronized(self, symbol, deadline, cancellation_event) -&gt; bool</code></p>
-<p><em>Source: Line 456</em></p>
-<p>Check if symbol data is synchronized.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>symbol</code></td>
-<td>str</td>
-<td>Symbol name to check</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> <code>True</code> if synchronized, <code>False</code> otherwise</p>
-<hr />
-<h3 id="get_symbol_double">get_symbol_double<a class="headerlink" href="#get_symbol_double" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_symbol_double(self, symbol, property, deadline, cancellation_event) -&gt; float</code></p>
-<p><em>Source: Line 474</em></p>
-<p>Get individual symbol double property.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>symbol</code></td>
-<td>str</td>
-<td>Symbol name</td>
-</tr>
-<tr>
-<td><code>property</code></td>
-<td>int</td>
-<td>Property to retrieve (SYMBOL_BID, SYMBOL_ASK, etc.)</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> <code>float</code> value directly</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level returns <code>SymbolInfoDoubleResponse</code> with <code>data.value</code> wrapper.
-This extracts the float from nested structure. Common properties: SYMBOL_BID, SYMBOL_ASK, SYMBOL_POINT.</p>
-</div>
-<hr />
-<h3 id="get_symbol_integer">get_symbol_integer<a class="headerlink" href="#get_symbol_integer" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_symbol_integer(self, symbol, property, deadline, cancellation_event) -&gt; int</code></p>
-<p><em>Source: Line 497</em></p>
-<p>Get individual symbol integer property.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>symbol</code></td>
-<td>str</td>
-<td>Symbol name</td>
-</tr>
-<tr>
-<td><code>property</code></td>
-<td>int</td>
-<td>Property to retrieve (SYMBOL_DIGITS, SYMBOL_SPREAD, etc.)</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> <code>int</code> value directly</p>
-<hr />
-<h3 id="get_symbol_string">get_symbol_string<a class="headerlink" href="#get_symbol_string" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_symbol_string(self, symbol, property, deadline, cancellation_event) -&gt; str</code></p>
-<p><em>Source: Line 517</em></p>
-<p>Get individual symbol string property.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>symbol</code></td>
-<td>str</td>
-<td>Symbol name</td>
-</tr>
-<tr>
-<td><code>property</code></td>
-<td>int</td>
-<td>Property to retrieve (SYMBOL_DESCRIPTION, etc.)</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> <code>str</code> value directly</p>
-<hr />
-<h3 id="get_symbol_margin_rate">get_symbol_margin_rate<a class="headerlink" href="#get_symbol_margin_rate" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_symbol_margin_rate(self, symbol, order_type, deadline, cancellation_event) -&gt; SymbolMarginRate</code></p>
-<p><em>Source: Line 537</em></p>
-<p>Get margin rates for a symbol and order type.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>symbol</code></td>
-<td>str</td>
-<td>Symbol name</td>
-</tr>
-<tr>
-<td><code>order_type</code></td>
-<td>int</td>
-<td>Order type (BUY, SELL, etc.)</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> <code>SymbolMarginRate</code> with initial and maintenance rates</p>
-<hr />
-<h3 id="get_symbol_tick">get_symbol_tick<a class="headerlink" href="#get_symbol_tick" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_symbol_tick(self, symbol, deadline, cancellation_event) -&gt; SymbolTick</code></p>
-<p><em>Source: Line 560</em></p>
-<p>Get current market prices for a symbol.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>symbol</code></td>
-<td>str</td>
-<td>Symbol name</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> <code>SymbolTick</code> with time already converted to datetime</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level returns <code>SymbolInfoTickData</code> with Unix timestamp (<code>data.time</code>).
-This wrapper converts time field from Unix seconds to Python datetime via <code>fromtimestamp()</code>.
-Also provides <code>time_msc</code> (milliseconds) for sub-second precision and tick flags for tick type detection.</p>
-</div>
-<hr />
-<h3 id="get_symbol_session_quote">get_symbol_session_quote<a class="headerlink" href="#get_symbol_session_quote" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_symbol_session_quote(self, symbol, day_of_week, session_index, deadline, cancellation_event) -&gt; SessionTime</code></p>
-<p><em>Source: Line 594</em></p>
-<p>Get quote session times.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>symbol</code></td>
-<td>str</td>
-<td>Symbol name</td>
-</tr>
-<tr>
-<td><code>day_of_week</code></td>
-<td>int</td>
-<td>Day of the week</td>
-</tr>
-<tr>
-<td><code>session_index</code></td>
-<td>int</td>
-<td>Session index (starting at 0)</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> <code>SessionTime</code> with start/end times as datetime</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level returns <code>SymbolInfoSessionQuoteData</code> with 'from' and 'to' Timestamp fields.
-This wrapper converts both protobuf Timestamps to Python datetimes via <code>ToDatetime()</code>.
-Shows when quotes (prices) are available for symbol on specified day. Most symbols have 1 session (0).</p>
-</div>
-<hr />
-<h3 id="get_symbol_session_trade">get_symbol_session_trade<a class="headerlink" href="#get_symbol_session_trade" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_symbol_session_trade(self, symbol, day_of_week, session_index, deadline, cancellation_event) -&gt; SessionTime</code></p>
-<p><em>Source: Line 628</em></p>
-<p>Get trading session times.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>symbol</code></td>
-<td>str</td>
-<td>Symbol name</td>
-</tr>
-<tr>
-<td><code>day_of_week</code></td>
-<td>int</td>
-<td>Day of the week</td>
-</tr>
-<tr>
-<td><code>session_index</code></td>
-<td>int</td>
-<td>Session index (starting at 0)</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> <code>SessionTime</code> with start/end times as datetime</p>
-<hr />
-<h3 id="get_symbol_params_many">get_symbol_params_many<a class="headerlink" href="#get_symbol_params_many" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_symbol_params_many(self, name_filter, sort_mode, page_number, items_per_page, deadline, cancellation_event)</code></p>
-<p><em>Source: Line 658</em></p>
-<p>Get parameters of multiple symbols at once.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>name_filter</code></td>
-<td>str</td>
-<td>Optional symbol name filter</td>
-</tr>
-<tr>
-<td><code>sort_mode</code></td>
-<td>int</td>
-<td>Optional sort mode</td>
-</tr>
-<tr>
-<td><code>page_number</code></td>
-<td>int</td>
-<td>Optional page number for pagination</td>
-</tr>
-<tr>
-<td><code>items_per_page</code></td>
-<td>int</td>
-<td>Optional items per page</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> Tuple of <code>(list of SymbolParams, total count)</code></p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level returns <code>SymbolParamsManyResponse</code> with <code>data.symbol_infos</code> (protobuf repeated field).
-This wrapper unpacks each <code>SymbolInfo</code> protobuf into <code>SymbolParams</code> dataclass with 17 fields.
-Much faster than 17 separate <code>SymbolInfoDouble/Integer/String</code> calls per symbol.</p>
-</div>
-<hr />
-<h2 id="positions-orders-methods">📈 Positions &amp; Orders Methods<a class="headerlink" href="#positions-orders-methods" title="Permanent link">¶</a></h2>
-<h3 id="get_positions_total">get_positions_total<a class="headerlink" href="#get_positions_total" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_positions_total(self, deadline, cancellation_event) -&gt; int</code></p>
-<p><em>Source: Line 728</em></p>
-<p>Get total number of open positions.</p>
-<p><strong>Returns:</strong> <code>int</code> count directly (no Data struct)</p>
-<hr />
-<h3 id="get_opened_orders">get_opened_orders<a class="headerlink" href="#get_opened_orders" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_opened_orders(self, sort_mode, deadline, cancellation_event) -&gt; Any</code></p>
-<p><em>Source: Line 742</em></p>
-<p>Get all open positions and pending orders.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>sort_mode</code></td>
-<td>int</td>
-<td>Sort mode for results</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> <code>OpenedOrdersData</code> with separate lists for positions and orders</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Returns protobuf <code>OpenedOrdersData</code> with <code>data.position_infos</code> and <code>data.order_infos</code>.
-Each contains full position/order details (ticket, symbol, volume, profit, SL/TP, etc.).
-For tickets only (faster), use <code>get_opened_tickets()</code> which skips detailed field parsing.</p>
-</div>
-<hr />
-<h3 id="get_opened_tickets">get_opened_tickets<a class="headerlink" href="#get_opened_tickets" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_opened_tickets(self, deadline, cancellation_event)</code></p>
-<p><em>Source: Line 763</em></p>
-<p>Get only ticket numbers (lightweight).</p>
-<p><strong>Returns:</strong> Tuple of <code>(position_tickets, order_tickets)</code></p>
-<div class="admonition success">
-<p class="admonition-title">Performance</p>
-<p>10-20x faster than <code>get_opened_orders()</code> when you only need ticket IDs for existence checks or counting.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level returns <code>OpenedOrdersTicketsData</code> with two repeated int64 fields.
-This extracts <code>position_tickets</code> and <code>order_tickets</code> lists without parsing full position/order details.</p>
-</div>
-<hr />
-<h3 id="get_order_history">get_order_history<a class="headerlink" href="#get_order_history" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_order_history(self, from_dt, to_dt, sort_mode, page_number, items_per_page, deadline, cancellation_event) -&gt; Any</code></p>
-<p><em>Source: Line 781</em></p>
-<p>Get historical orders and deals for a time period.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>from_dt</code></td>
-<td>datetime</td>
-<td>Start time</td>
-</tr>
-<tr>
-<td><code>to_dt</code></td>
-<td>datetime</td>
-<td>End time</td>
-</tr>
-<tr>
-<td><code>sort_mode</code></td>
-<td>int</td>
-<td>Sort mode</td>
-</tr>
-<tr>
-<td><code>page_number</code></td>
-<td>int</td>
-<td>Page number for pagination</td>
-</tr>
-<tr>
-<td><code>items_per_page</code></td>
-<td>int</td>
-<td>Items per page</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> <code>OrdersHistoryData</code> with orders and deals</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Returns protobuf <code>OrdersHistoryData</code> with <code>data.order_history_infos</code> (repeated field).
-Includes both orders and their related deals. Supports pagination for large result sets.
-For closed positions with P&amp;L, use <code>get_positions_history()</code> instead (more detailed profit tracking).</p>
-</div>
-<hr />
-<h3 id="get_positions_history">get_positions_history<a class="headerlink" href="#get_positions_history" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_positions_history(self, sort_type, open_from, open_to, page, size, deadline, cancellation_event) -&gt; Any</code></p>
-<p><em>Source: Line 810</em></p>
-<p>Get closed positions history with P&amp;L.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>sort_type</code></td>
-<td>int</td>
-<td>Sort type</td>
-</tr>
-<tr>
-<td><code>open_from</code></td>
-<td>datetime</td>
-<td>Start of open time filter</td>
-</tr>
-<tr>
-<td><code>open_to</code></td>
-<td>datetime</td>
-<td>End of open time filter</td>
-</tr>
-<tr>
-<td><code>page</code></td>
-<td>int</td>
-<td>Page number</td>
-</tr>
-<tr>
-<td><code>size</code></td>
-<td>int</td>
-<td>Items per page</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> <code>PositionsHistoryData</code> with closed positions</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Returns protobuf <code>PositionsHistoryData</code> with <code>data.history_positions</code> (repeated field).
-Each <code>PositionHistoryInfo</code> includes profit, commission, swap, open/close times and prices.
-Filters by position open time (not close time). Better than <code>order_history</code> for profit calculations.</p>
-</div>
-<hr />
-<h2 id="market-depth-dom-methods">📖 Market Depth (DOM) Methods<a class="headerlink" href="#market-depth-dom-methods" title="Permanent link">¶</a></h2>
-<h3 id="subscribe_market_depth">subscribe_market_depth<a class="headerlink" href="#subscribe_market_depth" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def subscribe_market_depth(self, symbol, deadline, cancellation_event) -&gt; bool</code></p>
-<p><em>Source: Line 846</em></p>
-<p>Subscribe to Depth of Market (DOM) updates.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>symbol</code></td>
-<td>str</td>
-<td>Symbol name to subscribe</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> Success status</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level returns <code>MarketBookAddData</code> with <code>data.success</code> wrapper.
-This auto-extracts bool. Required before calling <code>get_market_depth()</code> to receive DOM snapshots.
-Terminal maintains subscription - call <code>unsubscribe_market_depth()</code> when done to free resources.</p>
-</div>
-<hr />
-<h3 id="unsubscribe_market_depth">unsubscribe_market_depth<a class="headerlink" href="#unsubscribe_market_depth" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def unsubscribe_market_depth(self, symbol, deadline, cancellation_event) -&gt; bool</code></p>
-<p><em>Source: Line 868</em></p>
-<p>Unsubscribe from DOM updates.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>symbol</code></td>
-<td>str</td>
-<td>Symbol name to unsubscribe</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> Success status</p>
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>Always unsubscribe when done - brokers may limit concurrent DOM subscriptions.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level returns <code>MarketBookReleaseData</code> with <code>data.success</code> wrapper.
-This auto-extracts bool. Releases DOM subscription to free terminal resources.</p>
-</div>
-<hr />
-<h3 id="get_market_depth">get_market_depth<a class="headerlink" href="#get_market_depth" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def get_market_depth(self, symbol, deadline, cancellation_event)</code></p>
-<p><em>Source: Line 890</em></p>
-<p>Get current DOM snapshot.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>symbol</code></td>
-<td>str</td>
-<td>Symbol name</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> List of <code>BookInfo</code> entries</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level returns <code>MarketBookGetData</code> with <code>data.books</code> (repeated <code>BookRecord</code> protobuf).
-This wrapper unpacks each <code>BookRecord</code> into <code>BookInfo</code> dataclass (type, price, volume, volume_real).
-Requires prior <code>market_book_add</code> subscription. <code>BookRecord.type</code>: 1=BUY (bid), 2=SELL (ask) levels.</p>
-</div>
-<hr />
-<h2 id="trading-operations-methods">💰 Trading Operations Methods<a class="headerlink" href="#trading-operations-methods" title="Permanent link">¶</a></h2>
-<h3 id="place_order">place_order<a class="headerlink" href="#place_order" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def place_order(self, request, deadline, cancellation_event) -&gt; OrderResult</code></p>
-<p><em>Source: Line 929</em></p>
-<p>Send market/pending order to broker.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>request</code></td>
-<td>OrderSendRequest</td>
-<td>Order request details</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> <code>OrderResult</code> with deal/order tickets</p>
-<div class="admonition tip">
-<p class="admonition-title">Success Check</p>
-<p>Check <code>returned_code == 10009</code> (TRADE_RETCODE_DONE) for successful execution.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level returns <code>OrderSendData</code> protobuf with nested broker response fields.
-This wrapper flattens protobuf into <code>OrderResult</code> dataclass with 10 fields (returned_code, deal, order, etc.).</p>
-</div>
-<hr />
-<h3 id="modify_order">modify_order<a class="headerlink" href="#modify_order" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def modify_order(self, request, deadline, cancellation_event) -&gt; OrderResult</code></p>
-<p><em>Source: Line 963</em></p>
-<p>Modify existing order or position (SL/TP).</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>request</code></td>
-<td>OrderModifyRequest</td>
-<td>Modification request details</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> <code>OrderResult</code> with modification details</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level returns <code>OrderModifyData</code> protobuf (same structure as <code>OrderSendData</code>).
-This wrapper flattens into <code>OrderResult</code>. Used to change SL/TP on positions or modify pending order price/SL/TP.</p>
-</div>
-<hr />
-<h3 id="close_order">close_order<a class="headerlink" href="#close_order" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def close_order(self, request, deadline, cancellation_event) -&gt; int</code></p>
-<p><em>Source: Line 996</em></p>
-<p>Close position or delete pending order.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>request</code></td>
-<td>OrderCloseRequest</td>
-<td>Close request details</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> Return code directly (10009 = success)</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level returns <code>OrderCloseData</code> with <code>data.returned_code</code> wrapper.
-This auto-extracts the int return code (10009=TRADE_RETCODE_DONE means successful close/delete).
-For positions, creates opposite market order. For pending orders, sends delete request.</p>
-</div>
-<hr />
-<h3 id="check_order">check_order<a class="headerlink" href="#check_order" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def check_order(self, request, deadline, cancellation_event) -&gt; OrderCheckResult</code></p>
-<p><em>Source: Line 1018</em></p>
-<p>Validate order before sending to broker.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>request</code></td>
-<td>OrderCheckRequest</td>
-<td>Order to validate</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> <code>OrderCheckResult</code> with validation details</p>
-<div class="admonition tip">
-<p class="admonition-title">Use Case</p>
-<p>Use this before <code>place_order()</code> to pre-validate margin requirements without sending to broker.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level returns <code>OrderCheckResponse</code> with deeply nested <code>mrpc_mql_trade_check_result</code>.
-This wrapper extracts 8 validation fields (<code>returned_code=0</code> means valid, balance_after_deal, margin, etc.).</p>
-</div>
-<hr />
-<h3 id="calculate_margin">calculate_margin<a class="headerlink" href="#calculate_margin" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def calculate_margin(self, request, deadline, cancellation_event) -&gt; float</code></p>
-<p><em>Source: Line 1053</em></p>
-<p>Calculate required margin for an order.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>request</code></td>
-<td>OrderCalcMarginRequest</td>
-<td>Margin calculation request</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> Margin value directly (no Data struct)</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level returns <code>OrderCalcMarginResponse</code> with <code>data.margin</code> wrapper.
-This auto-extracts margin float from protobuf response. Use to check margin requirements before placing order.</p>
-</div>
-<hr />
-<h3 id="calculate_profit">calculate_profit<a class="headerlink" href="#calculate_profit" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def calculate_profit(self, request, deadline, cancellation_event) -&gt; float</code></p>
-<p><em>Source: Line 1074</em></p>
-<p>Calculate potential profit for a trade.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>request</code></td>
-<td>OrderCalcProfitRequest</td>
-<td>Profit calculation request</td>
-</tr>
-<tr>
-<td><code>deadline</code></td>
-<td>datetime</td>
-<td>Optional deadline for the operation</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong> Profit value directly (no Data struct)</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level returns <code>OrderCalcProfitResponse</code> with <code>data.profit</code> wrapper.
-This auto-extracts profit float. Calculates P&amp;L for hypothetical trade given entry/exit prices and volume.</p>
-</div>
-<hr />
-<h2 id="streaming-methods_1">📡 Streaming Methods<a class="headerlink" href="#streaming-methods_1" title="Permanent link">¶</a></h2>
-<h3 id="stream_ticks">stream_ticks<a class="headerlink" href="#stream_ticks" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def stream_ticks(self, symbols, cancellation_event)</code></p>
-<p><em>Source: Line 1101</em></p>
-<p>Real-time tick data stream.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>symbols</code></td>
-<td>List[str]</td>
-<td>List of symbol names to stream</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Yields:</strong> <code>SymbolTick</code> with time already converted to datetime</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Low-level streams <code>OnSymbolTickData</code> with <code>symbol_tick.time</code> as protobuf Timestamp.
-This wrapper converts each Timestamp to Python datetime via <code>ToDatetime()</code> for every tick.
-Stream continues until <code>cancellation_event.set()</code> or connection loss (auto-reconnects via <code>execute_stream_with_reconnect</code>).</p>
-</div>
-<hr />
-<h3 id="stream_trade_updates">stream_trade_updates<a class="headerlink" href="#stream_trade_updates" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def stream_trade_updates(self, cancellation_event)</code></p>
-<p><em>Source: Line 1135</em></p>
-<p>Real-time trade events stream (new/closed positions).</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Yields:</strong> <code>OnTradeData</code> events</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Server pushes <code>OnTradeData</code> when position opens/closes or pending order placed/deleted.
-Each event contains <code>position_info</code> or <code>order_info</code> with full details (ticket, symbol, volume, type, etc.).
-Thin wrapper - passes through protobuf <code>OnTradeData</code> without conversion (minimal overhead).</p>
-</div>
-<hr />
-<h3 id="stream_position_profits">stream_position_profits<a class="headerlink" href="#stream_position_profits" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def stream_position_profits(self, interval_ms, ignore_empty, cancellation_event)</code></p>
-<p><em>Source: Line 1155</em></p>
-<p>Real-time position profit updates stream.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>interval_ms</code></td>
-<td>int</td>
-<td>Polling interval in milliseconds</td>
-</tr>
-<tr>
-<td><code>ignore_empty</code></td>
-<td>bool</td>
-<td>Skip frames with no changes</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Yields:</strong> <code>OnPositionProfitData</code> with P&amp;L updates</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Server polls positions every <code>interval_ms</code> and pushes updates when profit changes.
-<code>ignore_empty=True</code> filters out frames where no position P&amp;L changed, reducing bandwidth.
-Each <code>OnPositionProfitData</code> contains <code>position_profits</code> repeated field with ticket→profit mapping.</p>
-</div>
-<hr />
-<h3 id="stream_opened_tickets">stream_opened_tickets<a class="headerlink" href="#stream_opened_tickets" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def stream_opened_tickets(self, interval_ms, cancellation_event)</code></p>
-<p><em>Source: Line 1179</em></p>
-<p>Real-time position/order ticket updates stream (lightweight).</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>interval_ms</code></td>
-<td>int</td>
-<td>Polling interval in milliseconds</td>
-</tr>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Yields:</strong> <code>OnPositionsAndPendingOrdersTicketsData</code> with ticket IDs</p>
-<div class="admonition success">
-<p class="admonition-title">Performance</p>
-<p>10-20x less bandwidth than <code>stream_trade_updates()</code> - use when you only need to track ticket changes.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Server polls every <code>interval_ms</code> and pushes <code>OnPositionsAndPendingOrdersTicketsData</code>.
-Contains <code>opened_position_tickets</code> and <code>opened_orders_tickets</code> repeated int64 fields.</p>
-</div>
-<hr />
-<h3 id="stream_transactions">stream_transactions<a class="headerlink" href="#stream_transactions" title="Permanent link">¶</a></h3>
-<p><strong>Signature:</strong> <code>async def stream_transactions(self, cancellation_event)</code></p>
-<p><em>Source: Line 1201</em></p>
-<p>Real-time trade transaction stream (detailed).</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>cancellation_event</code></td>
-<td>Event</td>
-<td>Optional cancellation event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Yields:</strong> <code>OnTradeTransactionData</code> events</p>
-<div class="admonition note">
-<p class="admonition-title">Technical Details</p>
-<p>Server pushes <code>OnTradeTransactionData</code> for every trade operation step (request→broker→result).
-More detailed than <code>on_trade</code>: includes <code>transaction_type</code> (DEAL_ADD, ORDER_DELETE, etc.) and request details.
-Thin wrapper - passes through protobuf <code>OnTradeTransactionData</code> without conversion.</p>
-</div>
-<hr />
 
 
 
