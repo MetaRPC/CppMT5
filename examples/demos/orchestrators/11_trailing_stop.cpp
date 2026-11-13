@@ -43,6 +43,10 @@ public:
     }
 
     void run() {
+        // ──────────────────────────────────────────────────────────────────────
+        //  1  buyMarket(symbol, volume)   ⚠ opens a REAL demo position to trail
+        //     Returns: uint64_t ticket (0 if rejected).
+        // ──────────────────────────────────────────────────────────────────────
         uint64_t ticket = m_s.buyMarket(m_sym, m_vol);
         if (ticket == 0) { std::cout << "  order rejected (market closed?) — nothing to trail\n"; return; }
         std::cout << "  opened #" << ticket << " BUY " << m_vol << " " << m_sym << "\n";
@@ -50,6 +54,12 @@ public:
         double bestSL = 0;
         for (int c = 1; c <= m_cfg.cycles; ++c) {
             std::this_thread::sleep_for(std::chrono::milliseconds(m_cfg.intervalMs));
+            // ──────────────────────────────────────────────────────────────────
+            //  2  getPositionByTicket(ticket, found&) → Position  — still open?
+            //  3  getBid(symbol)                      → double     — current price
+            //  4  modifyPositionSL(ticket, sl)        → bool       — raise the stop
+            //     Each cycle: read the price and tighten the SL only if it moved up.
+            // ──────────────────────────────────────────────────────────────────
             bool found = false;
             Position p = m_s.getPositionByTicket((int64_t)ticket, found);
             if (!found) { std::cout << "  position gone (closed elsewhere)\n"; return; }
@@ -65,6 +75,10 @@ public:
                 std::cout << "  cycle " << c << "  bid=" << bid << "  SL held at " << bestSL << "\n";
             }
         }
+
+        // ──────────────────────────────────────────────────────────────────────
+        //  5  closePosition(ticket)   ⚠ closes the trailed position at the end
+        // ──────────────────────────────────────────────────────────────────────
         std::cout << "  closing #" << ticket << " -> " << (m_s.closePosition((int64_t)ticket) ? "closed" : "FAILED") << "\n";
     }
 

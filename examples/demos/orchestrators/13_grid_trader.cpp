@@ -44,11 +44,19 @@ public:
     }
 
     void run() {
+        // ──────────────────────────────────────────────────────────────────────
+        //  1  getBid(symbol) / getAsk(symbol) → double   — centre the grid on price
+        // ──────────────────────────────────────────────────────────────────────
         double bid = m_s.getBid(m_sym), ask = m_s.getAsk(m_sym);
         std::cout << "  grid around bid=" << bid << " ask=" << ask
                   << "  (" << m_cfg.levels << " levels/side, " << m_cfg.stepPips << " pips step)\n";
 
         // ── place the grid ───────────────────────────────────────────────────
+        // ──────────────────────────────────────────────────────────────────────
+        //  2  buyLimit(symbol, volume, price)  / sellLimit(...)   ⚠ REAL pending orders
+        //     A buy-limit `i` steps below and a sell-limit `i` steps above, per level.
+        //     Returns: uint64_t ticket each (0 if rejected).
+        // ──────────────────────────────────────────────────────────────────────
         std::vector<uint64_t> tickets;
         for (int i = 1; i <= m_cfg.levels; ++i) {
             double below = bid - i * m_cfg.stepPips * m_pip;    // buy-limit under price
@@ -62,10 +70,18 @@ public:
 
         // ── show the live pending orders ─────────────────────────────────────
         std::this_thread::sleep_for(std::chrono::milliseconds(600));
+        // ──────────────────────────────────────────────────────────────────────
+        //  3  service().openedOrders().orders   — drop to mid-level for the list
+        //     Returns: std::vector<PendingOrder> (the pending orders now live).
+        // ──────────────────────────────────────────────────────────────────────
         auto pendings = m_s.service().openedOrders().orders;
         std::cout << "  pending orders now live: " << pendings.size() << "\n";
 
         // ── clean up: delete everything we placed ────────────────────────────
+        // ──────────────────────────────────────────────────────────────────────
+        //  4  closePosition(ticket)   ⚠ deletes a pending order by ticket
+        //     (same call closes a position; here each ticket is a pending order).
+        // ──────────────────────────────────────────────────────────────────────
         int removed = 0;
         for (uint64_t t : tickets) if (m_s.closePosition((int64_t)t)) ++removed;
         std::cout << "  removed " << removed << "/" << tickets.size() << " grid orders\n";

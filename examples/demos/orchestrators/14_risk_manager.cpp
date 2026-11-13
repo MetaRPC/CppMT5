@@ -45,6 +45,13 @@ public:
                   << "  | limits: drawdown <= " << m_cfg.maxDrawdownPct
                   << "%  margin level >= " << m_cfg.minMarginLevel << "%\n";
         for (int c = 1; c <= m_cfg.cycles; ++c) {
+            // ──────────────────────────────────────────────────────────────────
+            //  Account-health reads, one per cycle (all read-only):
+            //    getEquity()         → double  — balance + floating P&L
+            //    getMarginLevel()    → double  — percent (0 when flat)
+            //    getTotalProfit()    → double  — summed floating P&L
+            //    countOpenPositions()→ int     — how many positions are open
+            // ──────────────────────────────────────────────────────────────────
             double equity = m_s.getEquity();
             double marginLevel = m_s.getMarginLevel();   // 0 when no margin is used
             double floating = m_s.getTotalProfit();
@@ -59,6 +66,10 @@ public:
             bool breach = (ddPct > m_cfg.maxDrawdownPct) ||
                           (open > 0 && marginLevel > 0 && marginLevel < m_cfg.minMarginLevel);
             if (breach) {
+                // ──────────────────────────────────────────────────────────────
+                //  closeAllPositions()   ⚠ kill-switch: flattens EVERY position
+                //     Returns: int (how many were closed).
+                // ──────────────────────────────────────────────────────────────
                 int closed = m_s.closeAllPositions();
                 std::cout << "  ⚠ LIMIT BREACHED — closed " << closed << " positions (kill-switch)\n";
                 ++m_breaches;

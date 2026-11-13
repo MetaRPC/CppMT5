@@ -44,6 +44,11 @@ public:
         : m_s(sugar), m_sym(std::move(symbol)) {}
 
     MarketMode analyse() {
+        // ──────────────────────────────────────────────────────────────────────
+        //  1  service().lastBars(symbol, timeframe, count)   — drop to mid-level
+        //     Pull recent OHLC bars to classify the market (volatility vs trend).
+        //     Returns: std::vector<Bar> (time, open, high, low, close…).
+        // ──────────────────────────────────────────────────────────────────────
         auto bars = m_s.service().lastBars(m_sym, Timeframe::H1, 20);
         if (bars.size() < 5) { std::cout << "  not enough bars — defaulting to RANGING\n"; return MarketMode::Ranging; }
 
@@ -65,6 +70,11 @@ public:
     void execute(const Config& cfg) {
         MarketMode mode = analyse();
         std::cout << "  → market mode: " << name(mode) << "  → dispatching orchestrator\n\n";
+        // ──────────────────────────────────────────────────────────────────────
+        //  2  dispatch to the matching orchestrator (each runs its own API calls):
+        //     TRENDING → demo_trailing_stop   RANGING → demo_grid_trader
+        //     VOLATILE → demo_risk_manager
+        // ──────────────────────────────────────────────────────────────────────
         switch (mode) {
             case MarketMode::Trending: demo_trailing_stop(m_s, cfg); break;
             case MarketMode::Ranging:  demo_grid_trader(m_s, cfg);   break;
