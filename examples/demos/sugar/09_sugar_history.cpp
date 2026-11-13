@@ -27,12 +27,24 @@ using namespace metarpc;
 
 void demo_sugar_history(MT5Sugar& sugar, const Config& /*cfg*/) {
     printSub("Closed deals by window");
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  Windowed history (UTC day boundaries handled for you):
+    //    getDealsToday/Yesterday/ThisWeek/ThisMonth() → std::vector<PositionHistory>
+    //    getProfitToday/ThisWeek/ThisMonth()          → double (net realized profit)
+    // ──────────────────────────────────────────────────────────────────────────
     std::cout << "  today      : " << sugar.getDealsToday().size()     << " deals,  profit " << sugar.getProfitToday()     << "\n";
     std::cout << "  yesterday  : " << sugar.getDealsYesterday().size() << " deals\n";
     std::cout << "  this week  : " << sugar.getDealsThisWeek().size()  << " deals,  profit " << sugar.getProfitThisWeek()  << "\n";
     std::cout << "  this month : " << sugar.getDealsThisMonth().size() << " deals,  profit " << sugar.getProfitThisMonth() << "\n";
 
     printSub("Today's statistics");
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  getDailyStats()
+    //     Today's win/loss summary in one struct.
+    //     Returns: DailyStats (totalDeals, winning/losing, winRate, totalProfit, best/worst).
+    // ──────────────────────────────────────────────────────────────────────────
     DailyStats st = sugar.getDailyStats();
     std::cout << "  total deals  : " << st.totalDeals << "\n";
     std::cout << "  winning      : " << st.winningDeals << "\n";
@@ -42,6 +54,11 @@ void demo_sugar_history(MT5Sugar& sugar, const Config& /*cfg*/) {
     std::cout << "  best / worst : " << st.bestDeal << " / " << st.worstDeal << "\n";
 
     printSub("Most recent closed deals (up to 5)");
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  getDealsThisMonth()  — reuse the month window, show the latest few
+    //     Returns: std::vector<PositionHistory> (ticket, symbol, volume, profit, closeTime…).
+    // ──────────────────────────────────────────────────────────────────────────
     auto deals = sugar.getDealsThisMonth();
     int shown = 0;
     for (auto it = deals.rbegin(); it != deals.rend() && shown < 5; ++it, ++shown)

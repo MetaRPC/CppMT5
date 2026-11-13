@@ -56,12 +56,24 @@ void demo_sugar_basics(MT5Sugar& sugar, const Config& cfg) {
 
     // ── 1. CONNECTION ────────────────────────────────────────────────────────
     printSub("Connection");
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  1  isConnected()  → bool   — have we connected on this client?
+    //  2  ping()         → bool   — live round-trip health check (fetches the summary)
+    //  3  account()      → MT5Account&   — drop to the low level (terminalGuid() here)
+    // ──────────────────────────────────────────────────────────────────────────
     std::cout << "  isConnected : " << (sugar.isConnected() ? "yes" : "no") << "\n";
     std::cout << "  ping        : " << (sugar.ping() ? "ok" : "FAILED") << "\n";
     std::cout << "  terminal id : " << sugar.account().terminalGuid() << "\n";
 
     // ── 2. BALANCE / MARGIN ──────────────────────────────────────────────────
     printSub("Balance / margin");
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  Account money, one getter each (all return double):
+    //    getBalance()  getEquity()  getMargin()  getFreeMargin()
+    //    getMarginLevel() (percent, 0 when flat)  getProfit() (floating P&L)
+    // ──────────────────────────────────────────────────────────────────────────
     std::cout << "  balance     : " << sugar.getBalance() << "\n";
     std::cout << "  equity      : " << sugar.getEquity() << "\n";
     std::cout << "  margin      : " << sugar.getMargin() << "\n";
@@ -71,9 +83,18 @@ void demo_sugar_basics(MT5Sugar& sugar, const Config& cfg) {
 
     // ── 3. PRICES & QUOTES ───────────────────────────────────────────────────
     printSub(std::string("Prices for ") + sym);
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  getBid() / getAsk() / getSpread()  → double   — single values
+    // ──────────────────────────────────────────────────────────────────────────
     std::cout << "  bid    : " << sugar.getBid(sym) << "\n";
     std::cout << "  ask    : " << sugar.getAsk(sym) << "\n";
     std::cout << "  spread : " << sugar.getSpread(sym) << "\n";
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  getPriceInfo(symbol)  — bid/ask/spread/time in ONE call
+    //     Returns: PriceInfo (bid, ask, spread, UTC time).
+    // ──────────────────────────────────────────────────────────────────────────
     PriceInfo pi = sugar.getPriceInfo(sym);
     std::cout << "  priceInfo: bid=" << pi.bid << " ask=" << pi.ask
               << " spread=" << pi.spread << " time=" << pi.time << "\n";

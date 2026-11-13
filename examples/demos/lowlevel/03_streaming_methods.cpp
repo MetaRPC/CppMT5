@@ -35,10 +35,20 @@ void demo_streaming_methods(metarpc::MT5Sugar& sugar, const Config& cfg) {
 
     printSub(std::string("Streaming ticks for ") + sym + " (~5s)");
 
-    // Make sure the symbol is in Market Watch so it streams.
+    // ──────────────────────────────────────────────────────────────────────────
+    //  1  symbolSelect(symbol, select)  — ticks only flow for selected symbols
+    //     Make sure the symbol is in Market Watch before subscribing.
+    //     Returns: SymbolSelectData → success().
+    // ──────────────────────────────────────────────────────────────────────────
     pb::SymbolSelectRequest sel; sel.set_symbol(sym); sel.set_select(true);
     acc.symbolSelect(sel);
 
+    // ──────────────────────────────────────────────────────────────────────────
+    //  2  onSymbolTick(request, callback)  — open the live tick stream
+    //     The SDK reads the server stream on a BACKGROUND thread and calls the
+    //     lambda for every pb::OnSymbolTickData. Keep the returned handle alive.
+    //     Returns: std::unique_ptr<AccountStream>.
+    // ──────────────────────────────────────────────────────────────────────────
     std::atomic<int> n{0};
     pb::OnSymbolTickRequest req; req.add_symbol_names(sym);
     auto stream = acc.onSymbolTick(req, [&](const pb::OnSymbolTickData& d) {
@@ -50,7 +60,10 @@ void demo_streaming_methods(metarpc::MT5Sugar& sugar, const Config& cfg) {
                       << "  bid=" << t.bid() << "  ask=" << t.ask() << "\n";
     });
 
-    // Let it run ~5 seconds.
+    // ──────────────────────────────────────────────────────────────────────────
+    //  3  AccountStream handle — running() / count() / lastError() / stop()
+    //     Let it run ~5 s, then stop() cancels the stream and joins the thread.
+    // ──────────────────────────────────────────────────────────────────────────
     for (int i = 0; i < 50 && stream->running(); ++i)
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
 

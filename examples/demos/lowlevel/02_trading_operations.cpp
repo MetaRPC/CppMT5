@@ -34,7 +34,10 @@ void demo_trading_operations(metarpc::MT5Sugar& sugar, const Config& cfg) {
     const std::string sym = cfg.testSymbol;
     const double vol = cfg.testVolume;
 
-    // Current price for the calculations.
+    // ──────────────────────────────────────────────────────────────────────────
+    //  0  symbolInfoTick(symbol)  — current price for the calculations below
+    //     Returns: MrpcMqlTick → ask().
+    // ──────────────────────────────────────────────────────────────────────────
     pb::SymbolInfoTickRequest treq; treq.set_symbol(sym);
     pb::MrpcMqlTick tick = acc.symbolInfoTick(treq);
     const double ask = tick.ask();
@@ -42,6 +45,12 @@ void demo_trading_operations(metarpc::MT5Sugar& sugar, const Config& cfg) {
 
     // ── orderCalcMargin ──────────────────────────────────────────────────────
     printSub("orderCalcMargin");
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  1  orderCalcMargin(symbol, order_type, volume, open_price)
+    //     Margin a prospective order would require — an affordability pre-check.
+    //     Returns: OrderCalcMarginData → margin() (account currency).
+    // ──────────────────────────────────────────────────────────────────────────
     pb::OrderCalcMarginRequest mreq;
     mreq.set_symbol(sym); mreq.set_order_type((pb::ENUM_ORDER_TYPE_TF)0 /*BUY*/);
     mreq.set_volume(vol); mreq.set_open_price(ask);
@@ -49,6 +58,12 @@ void demo_trading_operations(metarpc::MT5Sugar& sugar, const Config& cfg) {
 
     // ── orderCalcProfit ──────────────────────────────────────────────────────
     printSub("orderCalcProfit (+50 pips)");
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  2  orderCalcProfit(symbol, order_type, volume, open_price, close_price)
+    //     Profit a given price move would yield — size trades by reward.
+    //     Returns: OrderCalcProfitData → profit() (can be negative).
+    // ──────────────────────────────────────────────────────────────────────────
     pb::OrderCalcProfitRequest preq;
     preq.set_symbol(sym); preq.set_order_type((pb::ENUM_ORDER_TYPE_TF)0 /*BUY*/);
     preq.set_volume(vol); preq.set_open_price(ask); preq.set_close_price(ask + 0.0050);
@@ -56,6 +71,12 @@ void demo_trading_operations(metarpc::MT5Sugar& sugar, const Config& cfg) {
 
     // ── orderCheck (dry run) ─────────────────────────────────────────────────
     printSub("orderCheck (dry-run validation)");
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  3  orderCheck(mql_trade_request)
+    //     Dry-run an order WITHOUT sending it: margin, free margin and a retcode.
+    //     Returns: OrderCheckData → mql_trade_check_result() (retcode 0 = would pass).
+    // ──────────────────────────────────────────────────────────────────────────
     pb::OrderCheckRequest creq;
     auto* tr = creq.mutable_mql_trade_request();
     tr->set_action((pb::MRPC_ENUM_TRADE_REQUEST_ACTIONS)0 /*DEAL*/);

@@ -30,12 +30,26 @@ void demo_sugar_positions(MT5Sugar& sugar, const Config& cfg) {
     const std::string sym = cfg.testSymbol;
 
     printSub("Overview");
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  Aggregate reads (one call each):
+    //    countOpenPositions() → int        — how many positions are open
+    //    getTotalProfit()     → double     — summed floating P&L
+    //    hasOpenPosition(sym) → bool        — any position on this symbol?
+    //    getProfitBySymbol(sym) → double    — floating P&L on this symbol
+    // ──────────────────────────────────────────────────────────────────────────
     std::cout << "  open positions : " << sugar.countOpenPositions() << "\n";
     std::cout << "  total profit   : " << sugar.getTotalProfit() << "\n";
     std::cout << "  has " << sym << " position: " << (sugar.hasOpenPosition(sym) ? "yes" : "no") << "\n";
     std::cout << "  profit on " << sym << "   : " << sugar.getProfitBySymbol(sym) << "\n";
 
     printSub("All open positions");
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  getOpenPositions()
+    //     Every open position as a friendly struct.
+    //     Returns: std::vector<Position> (ticket, symbol, type, volume, P/L…).
+    // ──────────────────────────────────────────────────────────────────────────
     auto positions = sugar.getOpenPositions();
     if (positions.empty()) {
         std::cout << "  (none — run demo [7] to open a short-lived test position)\n";
@@ -47,6 +61,12 @@ void demo_sugar_positions(MT5Sugar& sugar, const Config& cfg) {
     }
 
     printSub(std::string("Positions on ") + sym);
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  getPositionsBySymbol(symbol)
+    //     Only the positions on one symbol.
+    //     Returns: std::vector<Position>.
+    // ──────────────────────────────────────────────────────────────────────────
     auto bySym = sugar.getPositionsBySymbol(sym);
     std::cout << "  " << bySym.size() << " position(s) on " << sym << "\n";
 }

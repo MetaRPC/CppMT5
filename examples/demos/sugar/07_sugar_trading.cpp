@@ -38,12 +38,24 @@ void demo_sugar_trading(MT5Sugar& sugar, const Config& cfg) {
     const double vol = cfg.testVolume;
 
     printSub(std::string("Open a market BUY ") + std::to_string(vol) + " " + sym);
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  1  buyMarket(symbol, volume)   ⚠ places a REAL order on the demo account
+    //     Opens a market BUY at the current price.
+    //     Returns: uint64_t ticket (0 if the order was rejected).
+    // ──────────────────────────────────────────────────────────────────────────
     uint64_t ticket = sugar.buyMarket(sym, vol);
     if (ticket == 0) { std::cout << "  order was rejected (market closed / insufficient margin?)\n"; return; }
     std::cout << "  opened position #" << ticket << "\n";
     std::this_thread::sleep_for(std::chrono::milliseconds(800));
 
     printSub("Read it back");
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  2  getPositionByTicket(ticket, found&)
+    //     Look the position up; `found` is set false if there is none.
+    //     Returns: Position (ticket, symbol, type, volume, priceOpen, profit…).
+    // ──────────────────────────────────────────────────────────────────────────
     bool found = false;
     Position p = sugar.getPositionByTicket((int64_t)ticket, found);
     if (found)
@@ -51,11 +63,23 @@ void demo_sugar_trading(MT5Sugar& sugar, const Config& cfg) {
                   << "  vol=" << p.volume << "  open=" << p.priceOpen << "  profit=" << p.profit << "\n";
 
     printSub("Attach SL/TP (30 / 60 pips) then close");
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  3  calculateSLTP(symbol, dir, entry, slPips, tpPips, sl&, tp&)
+    //     Turn pip distances into absolute SL/TP prices (rounded to digits).
+    //  4  modifyPositionSLTP(ticket, sl, tp)   ⚠ modifies the live position
+    //     Returns: bool (true on an accepted retcode).
+    // ──────────────────────────────────────────────────────────────────────────
     double entry = p.priceOpen, sl = 0, tp = 0;
     sugar.calculateSLTP(sym, "buy", entry, 30, 60, sl, tp);
     std::cout << "  modify SL=" << sl << " TP=" << tp << "  -> "
               << (sugar.modifyPositionSLTP((int64_t)ticket, sl, tp) ? "ok" : "failed") << "\n";
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  5  closePosition(ticket)   ⚠ closes the live position (round-trip ends here)
+    //     Returns: bool.
+    // ──────────────────────────────────────────────────────────────────────────
     std::cout << "  close #" << ticket << "  -> "
               << (sugar.closePosition((int64_t)ticket) ? "closed" : "FAILED") << "\n";
 }

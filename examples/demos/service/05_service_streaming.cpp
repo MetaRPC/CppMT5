@@ -33,10 +33,20 @@ void demo_service_streaming(MT5Sugar& sugar, const Config& cfg) {
     MT5Service& svc = sugar.service();
     const std::string sym = cfg.testSymbol;
 
+    // ──────────────────────────────────────────────────────────────────────────
+    //  0  symbolSelect(symbol, select)  — ensure the symbol streams
+    //     Returns: bool.
+    // ──────────────────────────────────────────────────────────────────────────
     svc.symbolSelect(sym, true);
 
     // ── Friendly tick stream ─────────────────────────────────────────────────
     printSub(std::string("Friendly Tick stream for ") + sym + " (~5s)");
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  1  subscribeTicks(symbols, callback)
+    //     Live ticks delivered as friendly Tick structs (UTC) on a background thread.
+    //     Returns: std::unique_ptr<ServiceStream> — keep it alive; stop() to end.
+    // ──────────────────────────────────────────────────────────────────────────
     std::atomic<int> n{0};
     auto ticks = svc.subscribeTicks({sym}, [&](const Tick& t) {
         int i = ++n;
@@ -51,6 +61,12 @@ void demo_service_streaming(MT5Sugar& sugar, const Config& cfg) {
 
     // ── Trade-event stream ───────────────────────────────────────────────────
     printSub("Trade-event stream (~3s; fires only on account activity)");
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  2  streamTradeUpdates(callback)
+    //     Push notifications when positions/orders/deals appear, change or close.
+    //     Returns: std::unique_ptr<ServiceStream>; callback gets a friendly TradeEvent.
+    // ──────────────────────────────────────────────────────────────────────────
     std::atomic<int> ev{0};
     auto trades = svc.streamTradeUpdates([&](const TradeEvent& e) {
         ++ev;

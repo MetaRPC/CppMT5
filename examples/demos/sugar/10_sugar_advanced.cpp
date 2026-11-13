@@ -39,6 +39,14 @@ void demo_sugar_advanced(MT5Sugar& sugar, const Config& cfg) {
 
     // ── 1. SYMBOL HELPERS ────────────────────────────────────────────────────
     printSub(std::string("Symbol helpers for ") + sym);
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  Quick symbol look-ups:
+    //    isSymbolAvailable(sym) → bool     — exists and selectable
+    //    getSymbolDigits(sym)   → int      — price decimal places
+    //    getMinStopLevel(sym)   → int64_t  — min SL/TP distance, in points
+    //    getAllSymbols()        → vector<string>  — every symbol name (count shown)
+    // ──────────────────────────────────────────────────────────────────────────
     std::cout << "  available   : " << (sugar.isSymbolAvailable(sym) ? "yes" : "no") << "\n";
     std::cout << "  digits      : " << sugar.getSymbolDigits(sym) << "\n";
     std::cout << "  min stop lvl: " << sugar.getMinStopLevel(sym) << " points\n";
@@ -46,14 +54,29 @@ void demo_sugar_advanced(MT5Sugar& sugar, const Config& cfg) {
 
     // ── 2. RISK MANAGEMENT ───────────────────────────────────────────────────
     printSub("Risk management (no orders placed)");
+
+    // ──────────────────────────────────────────────────────────────────────────
+    //  calculateRequiredMargin(sym, vol) → double   — margin to open `vol` lots
+    //  getMaxLotSize(sym)                → double   — biggest lot the free margin allows
+    //  calculatePositionSize(sym, risk%, slPips) → double — lots for a % risk on a pip stop
+    // ──────────────────────────────────────────────────────────────────────────
     std::cout << "  required margin for " << vol << " lots : " << sugar.calculateRequiredMargin(sym, vol) << "\n";
     std::cout << "  max lot size (free margin)        : " << sugar.getMaxLotSize(sym) << "\n";
     std::cout << "  size for 1% risk over 50-pip stop : " << sugar.calculatePositionSize(sym, 1.0, 50.0) << " lots\n";
 
+    // ──────────────────────────────────────────────────────────────────────────
+    //  canOpenPosition(sym, vol, reason&)
+    //     Whether a `vol`-lot order can open now; `reason` explains a false.
+    //     Returns: bool.
+    // ──────────────────────────────────────────────────────────────────────────
     std::string reason;
     bool can = sugar.canOpenPosition(sym, vol, reason);
     std::cout << "  can open " << vol << " lots? " << (can ? "yes" : ("no — " + reason)) << "\n";
 
+    // ──────────────────────────────────────────────────────────────────────────
+    //  calculateSLTP(sym, dir, entry, slPips, tpPips, sl&, tp&)
+    //     Absolute SL/TP prices from pip distances (rounded to the symbol's digits).
+    // ──────────────────────────────────────────────────────────────────────────
     double entry = sugar.getAsk(sym), sl = 0, tp = 0;
     sugar.calculateSLTP(sym, "buy", entry, /*slPips*/ 30, /*tpPips*/ 60, sl, tp);
     std::cout << "  buy @ " << entry << "  ->  SL=" << sl << "  TP=" << tp

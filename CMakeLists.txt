@@ -142,3 +142,9 @@ if (BUILD_DEMOS)
         endif()
     endforeach()
 endif()
+
+# --- quickstart: the smallest standalone example (examples/quickstart.cpp) -----------
+if (BUILD_EXAMPLES)
+    add_executable(quickstart ${CMAKE_CURRENT_SOURCE_DIR}/examples/quickstart.cpp)
+    target_link_libraries(quickstart PRIVATE metarpc_cppmt5)
+endif()
