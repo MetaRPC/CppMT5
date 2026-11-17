@@ -48,16 +48,65 @@ public:
     bool isTerminalNotFound() const {
         return code == "TERMINAL_INSTANCE_NOT_FOUND" || code == "TERMINAL_REGISTRY_TERMINAL_NOT_FOUND";
     }
+    /// True when the gateway refused the API key (API_KEY_INVALID / API_KEY_REQUIRED). The
+    /// transport layer never retries or reconnects on these — the key will not become valid.
+    bool isApiKeyError() const {
+        return code == "API_KEY_INVALID" || code == "API_KEY_REQUIRED";
+    }
 };
 
-/// Thrown when a gRPC call keeps failing at the *transport* level (the server could not be
-/// reached or did not answer in time: UNAVAILABLE, DEADLINE_EXCEEDED, …) and the retry
-/// budget in ClientOptions::maxRetries has been spent. `grpcCode` is the raw grpc::StatusCode.
+/// Thrown when a gRPC call fails at the *transport* level (the server could not be reached
+/// or did not answer in time: UNAVAILABLE, DEADLINE_EXCEEDED, …). Reads are retried first
+/// and this is thrown once the retry budget in ClientOptions::maxRetries has been spent;
+/// trade calls are never retried (see TradeOutcomeUnknownError). `grpcCode` is the raw
+/// grpc::StatusCode.
 class TransportError : public std::runtime_error {
 public:
     TransportError(int grpcCode, const std::string& message)
         : std::runtime_error(message), grpcCode(grpcCode) {}
     int grpcCode;               ///< grpc::StatusCode as int (14 = UNAVAILABLE, 4 = DEADLINE_EXCEEDED)
+};
+
+/// Thrown when a trade call (OrderSend / OrderModify / OrderClose) fails at the transport level
+/// with UNAVAILABLE, DEADLINE_EXCEEDED, UNKNOWN or INTERNAL. The request may already have
+/// reached the terminal and been executed, so the SDK does NOT re-send it: check open
+/// positions/orders before retrying. Derives from TransportError, so existing
+/// `catch (const TransportError&)` blocks still catch it; `grpcCode` keeps the original status.
+class TradeOutcomeUnknownError : public TransportError {
+public:
+    static constexpr const char* kCode = "TRADE_OUTCOME_UNKNOWN";
+
+    TradeOutcomeUnknownError(const std::string& operation, int grpcCode, const std::string& grpcMessage)
+        : TransportError(grpcCode, buildMessage(operation, grpcCode, grpcMessage)),
+          m_operation(operation), m_grpcMessage(grpcMessage) {}
+
+    /// Always "TRADE_OUTCOME_UNKNOWN".
+    const std::string& code() const { static const std::string c(kCode); return c; }
+    /// The trade RPC that failed, e.g. "OrderSend".
+    const std::string& operation() const { return m_operation; }
+    /// The original gRPC status message.
+    const std::string& grpcMessage() const { return m_grpcMessage; }
+
+    /// Name of a grpc::StatusCode value (protobuf/gRPC-free), e.g. 14 -> "UNAVAILABLE".
+    static std::string grpcCodeName(int c) {
+        switch (c) {
+            case 2:  return "UNKNOWN";
+            case 4:  return "DEADLINE_EXCEEDED";
+            case 13: return "INTERNAL";
+            case 14: return "UNAVAILABLE";
+            default: return "status " + std::to_string(c);
+        }
+    }
+
+private:
+    static std::string buildMessage(const std::string& operation, int grpcCode, const std::string& grpcMessage) {
+        return std::string(kCode) + ": " + operation + " failed with gRPC " + grpcCodeName(grpcCode) +
+               " after the request may have reached the terminal; the trade may or may not have been executed. "
+               "It was NOT re-sent automatically: check open positions/orders before retrying." +
+               (grpcMessage.empty() ? std::string() : " (grpc: " + grpcMessage + ")");
+    }
+    std::string m_operation;
+    std::string m_grpcMessage;
 };
 #pragma endregion
 
@@ -74,7 +123,7 @@ struct ClientOptions {
     int unaryTimeoutMs{30000};          ///< deadline for ordinary (read) RPCs
     int connectTimeoutMs{200000};       ///< deadline for ConnectEx (a cold terminal start can exceed 1 min)
     int tradeTimeoutMs{60000};          ///< deadline for OrderSend/Modify/Close
-    int maxRetries{5};                  ///< transient-failure / reconnect retry budget per call
+    int maxRetries{5};                  ///< transient-failure / reconnect retry budget per call (trades: reconnect on TERMINAL_INSTANCE_NOT_FOUND only, never a transport retry)
     int maxBackoffMs{5000};             ///< upper bound for the exponential back-off between retries
     int maxReceiveMessageBytes{64 * 1024 * 1024};  ///< gRPC max inbound message size (big histories)
     std::string rootCertsPath;          ///< PEM CA bundle; empty = autodetect common OS locations

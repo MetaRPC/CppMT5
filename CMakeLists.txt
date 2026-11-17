@@ -117,6 +117,16 @@ if (NOT MSVC)
     target_compile_options(metarpc_cppmt5 PRIVATE -Wall -Wno-deprecated-declarations)
 endif()
 
+# --- tests: offline transport test against an in-process fake gateway (localhost) ----
+# tests/test_no_trade_replay.cpp checks that trade calls are never re-sent after a transport
+# failure, that reads still retry, and that API_KEY_* refusals fail fast. Run with ctest.
+if (CPPMT5_BUILD_TESTS)
+    enable_testing()
+    add_executable(test_no_trade_replay ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_no_trade_replay.cpp)
+    target_link_libraries(test_no_trade_replay PRIVATE metarpc_cppmt5)
+    add_test(NAME no_trade_replay COMMAND test_no_trade_replay)
+endif()
+
 # --- demos: the examples/demos/ launcher (menu + per-layer demos) --------------------
 option(BUILD_DEMOS "Build the examples/demos launcher" ON)
 if (BUILD_DEMOS)

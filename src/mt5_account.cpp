@@ -341,14 +341,20 @@ struct MT5Account::Impl {
     // The core transport pattern, shared by every RPC on this client. It wraps a single gRPC
     // invocation (the `fn` closure) with three behaviours:
     //   1. transient-failure retry  — UNAVAILABLE / DEADLINE_EXCEEDED are retried with
-    //      exponential back-off up to opts.maxRetries;
+    //      exponential back-off up to opts.maxRetries (reads only: never for trade calls);
     //   2. auto re-attach           — a TERMINAL_INSTANCE_NOT_FOUND error payload re-issues
     //      ConnectEx (when allowReconnect) and retries, so a terminal restart is transparent;
     //   3. error mapping            — any other error payload becomes an ApiError, and an
     //      exhausted transport failure becomes a TransportError.
     // `what` is the RPC name used in logs and error messages. Returns the successful Reply.
+    //
+    // tradeCall = true (OrderSend / OrderModify / OrderClose): a transport failure with
+    // UNAVAILABLE / DEADLINE_EXCEEDED / UNKNOWN / INTERNAL may have happened AFTER the terminal
+    // executed the trade, so it is never re-sent; it surfaces as TradeOutcomeUnknownError. Only
+    // an in-band TERMINAL_INSTANCE_NOT_FOUND (answered by the gateway before any terminal saw
+    // the request) still re-attaches and re-sends.
     template <class Reply, class Fn>
-    Reply call(const char* what, Fn&& fn, int timeoutMs, bool allowReconnect) {
+    Reply call(const char* what, Fn&& fn, int timeoutMs, bool allowReconnect, bool tradeCall = false) {
         ensureChannel();                       // Step 0: lazily open the channel + stubs
         int attempt = 0;
         int delayMs = 500;
@@ -364,7 +370,17 @@ struct MT5Account::Impl {
             // Step 3: transport-level failure? Retry transient ones, otherwise give up hard.
             if (!st.ok()) {
                 auto c = st.error_code();
-                bool transient = (c == grpc::StatusCode::UNAVAILABLE || c == grpc::StatusCode::DEADLINE_EXCEEDED);
+                if (tradeCall && (c == grpc::StatusCode::UNAVAILABLE || c == grpc::StatusCode::DEADLINE_EXCEEDED ||
+                                  c == grpc::StatusCode::UNKNOWN || c == grpc::StatusCode::INTERNAL)) {
+                    log(std::string(what) + ": grpc " + std::to_string((int)c) + " " + st.error_message() +
+                        " -> trade outcome unknown, NOT re-sent");
+                    throw TradeOutcomeUnknownError(what, (int)c, st.error_message());
+                }
+                // A refused API key never becomes valid: no retry even if it arrives as a transport status.
+                bool apiKeyRefused = st.error_message().find("API_KEY_INVALID") != std::string::npos ||
+                                     st.error_message().find("API_KEY_REQUIRED") != std::string::npos;
+                bool transient = !apiKeyRefused &&
+                                 (c == grpc::StatusCode::UNAVAILABLE || c == grpc::StatusCode::DEADLINE_EXCEEDED);
                 if (transient && attempt < opts.maxRetries) {
                     log(std::string(what) + ": grpc " + std::to_string((int)c) + " " + st.error_message() +
                         " -> retry in " + std::to_string(delayMs) + "ms");
@@ -765,7 +781,7 @@ pb::OrderSendData MT5Account::orderSend(const pb::OrderSendRequest& req) {
     // Step 1: issue the OrderSend RPC (retried/reconnected by call<>, trade-length deadline).
     auto reply = m_impl->call<pb::OrderSendReply>("OrderSend",
         [&](grpc::ClientContext& ctx, pb::OrderSendReply& r) { return m_impl->trade->OrderSend(&ctx, req, &r); },
-        m_impl->opts.tradeTimeoutMs, true);
+        m_impl->opts.tradeTimeoutMs, true, /*tradeCall*/ true);
     // Step 2: return the data payload (returned_code, deal/order tickets, fill price, …).
     return reply.data();
 }
@@ -775,7 +791,7 @@ pb::OrderModifyData MT5Account::orderModify(const pb::OrderModifyRequest& req) {
     // Step 1: issue the OrderModify RPC (retried/reconnected by call<>, trade-length deadline).
     auto reply = m_impl->call<pb::OrderModifyReply>("OrderModify",
         [&](grpc::ClientContext& ctx, pb::OrderModifyReply& r) { return m_impl->trade->OrderModify(&ctx, req, &r); },
-        m_impl->opts.tradeTimeoutMs, true);
+        m_impl->opts.tradeTimeoutMs, true, /*tradeCall*/ true);
     // Step 2: return the data payload (check its returned_code).
     return reply.data();
 }
@@ -785,7 +801,7 @@ pb::OrderCloseData MT5Account::orderClose(const pb::OrderCloseRequest& req) {
     // Step 1: issue the OrderClose RPC (retried/reconnected by call<>, trade-length deadline).
     auto reply = m_impl->call<pb::OrderCloseReply>("OrderClose",
         [&](grpc::ClientContext& ctx, pb::OrderCloseReply& r) { return m_impl->trade->OrderClose(&ctx, req, &r); },
-        m_impl->opts.tradeTimeoutMs, true);
+        m_impl->opts.tradeTimeoutMs, true, /*tradeCall*/ true);
     // Step 2: return the data payload (returned_code + the close_mode the gateway applied).
     return reply.data();
 }
