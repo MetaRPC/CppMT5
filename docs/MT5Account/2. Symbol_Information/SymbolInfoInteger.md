@@ -87,7 +87,7 @@ SymbolInfoIntegerReply {
 | `SYMBOL_SPREAD_FLOAT`     | 18    | Spread is floating (0/1).                     |
 | `SYMBOL_SPREAD`           | 19    | Current spread in points.                     |
 | `SYMBOL_TRADE_CALC_MODE`  | 21    | Contract price calculation mode.              |
-| `SYMBOL_TRADE_MODE`       | 22    | Order execution permissions for the symbol.   |
+| `SYMBOL_TRADE_MODE`       | 22    | Allowed trading mode for the symbol.          |
 | `SYMBOL_START_TIME`       | 23    | Trading start date (epoch seconds; 0 if none).|
 | `SYMBOL_EXPIRATION_TIME`  | 24    | Trading end date (epoch seconds; 0 if none).  |
 | `SYMBOL_TRADE_STOPS_LEVEL`| 25    | Min distance (points) for SL/TP from price.   |
